@@ -81,9 +81,9 @@ The ontology source code is available in the following GitHub repository:
 
 This file contains the SHACL shapes used to validate RDF graphs against the expected structure of the GUIA ontology.
 
-The shapes were generated with **Astrea**, a tool for generating SHACL shapes from ontologies:
+The shapes were generated with [Astrea](https://astrea.linkeddata.es/), a tool for generating SHACL shapes from ontologies:
 
-<https://astrea.linkeddata.es/>
+
 
 ## Naming convention
 
@@ -135,12 +135,14 @@ Before running an evaluation, it is recommended to verify that:
 3. the RDF gold standard only uses classes and properties defined in the GUIA ontology;
 4. the SHACL shapes are aligned with the current version of the ontology and the gold standard.
 
-## Acknowledgements
-
+### Acknowledgements
 This project has been partially funded by:
 
-**Acción financiada por la Comunidad de Madrid en el marco del Convenio entre la Comunidad de Madrid y la Universidad Politécnica de Madrid para la concesión de una subvención directa para el fomento y promoción de la investigación y la transferencia de tecnología 2023-2026, Línea de actuación A, Doctores Emergentes.**
+ | Project       | Grant |
+ |   :---:      |      :---      |
+ | <img height="80" alt="guia-logo" src="https://github.com/user-attachments/assets/84dab4ff-c718-4f07-97bf-54c239fe8f28" />  | [GUIA Project (M230020126A-AJCA)](https://guia-project.github.io/). Acción financiada por la Comunidad de Madrid en el marco del Convenio entre la Comunidad de Madrid y la Universidad Politécnica de Madrid para la concesión de una subvención directa para el fomento y promoción de la investigación y la transferencia de tecnología 2023-2026, Línea de actuación A, Doctores Emergentes. |
 
-## License
 
-Add the corresponding license information for these resources before publishing the repository.
+
+ 
+
