@@ -1,0 +1,592 @@
+@prefix ns1: <http://w3id.org/def/guia#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/previous_courses> a ns1:RequiredKnowledge ;
+    ns1:previousCourses "El plan de estudios Master Universitario En Ingenieria Naval Y Oceanica no tiene definidos otros requisitos para esta asignatura."@es ;
+    ns1:previousKnowledge "El coordinador de la asignatura no ha definido otros conocimientos previos recomendados."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/E.T.S.%20De%20Ingenieros%20Navales> a ns1:UniversityCenter ;
+    ns1:offers <https://guia-kg.skai.etsisi.upm.es/resource/08IN%20-%20Master%20Universitario%20en%20Ingenieria%20Naval%20y%20Oceanica> ;
+    schema:name "E.T.S. De Ingenieros Navales" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/08IN%20-%20Master%20Universitario%20en%20Ingenieria%20Naval%20y%20Oceanica> a ns1:MasterDegree ;
+    ns1:degreeCode "08IN"@es ;
+    ns1:hasCourse <https://guia-kg.skai.etsisi.upm.es/resource/83000141> ;
+    schema:name "Master Universitario en Ingenieria Naval y Oceanica"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141> a ns1:Course ;
+    ns1:courseType "Optativa"@es ;
+    ns1:courseYear 1 ;
+    ns1:semester "Segundo semestre"@es ;
+    schema:courseCode 83000141 ;
+    schema:hasCourseInstance <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26> ;
+    schema:name "Numerical Methods In Fluid Mechanics"@en,
+        "Numerical Methods In Fluid Mechanics"@es ;
+    schema:numberOfCredits 3.0 .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26> a ns1:CourseGuide ;
+    ns1:hasCompetency <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/CE2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/CG1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/CG3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/CTUPM01>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/CTUPM02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/CTUPM05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/CTUPM11> ;
+    ns1:hasDidacticResource <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/didactic_resource/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/didactic_resource/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/didactic_resource/3> ;
+    ns1:hasEvaluation <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/evaluation> ;
+    ns1:hasLearningResult <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/RA73>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/RA74>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/RA75>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/RA76> ;
+    ns1:hasSyllabus <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus> ;
+    ns1:inpersonHours "35 horas (44.9%)"@es ;
+    ns1:numberOfCredits 3.0 ;
+    ns1:otherInformation """La asignatura se relaciona con el ODS7: Garantizar el acceso a una energía asequible, segura, sostenible y
+moderna. En su formulación más habitual en el sector naval, la simulación CFD permite la optimización de los
+barcos y artefactos marinos, con el consiguiente ahorro de costes en la fase de producción y de explotación. Por
+otro lado, los métodos CFD también se están empleando en sistemas de generación de energía renovable, como
+es el caso de los aerogeneradores."""@es ;
+    ns1:periodEndingMonth "Junio"@es ;
+    ns1:periodStartingMonth "Febrero"@es ;
+    ns1:teachingPeriod "2025-26" ;
+    ns1:teachingPeriodMonths "Febrero-Junio"@es ;
+    ns1:totalHours "35 horas"@es ;
+    schema:activitiesWorkload "100%"@es ;
+    schema:courseSchedule <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule> ;
+    schema:description """Esta asignatura está planteada como una introducción a los métodos CFD (dinámica de fluidos computacional, en
+sus siglas en inglés). Consta de una introducción teórica general, centrada en el método de volúmenes finitos, el
+estándar hoy en día en esta área. Como herramienta computacional, se emplea OpenFOAM, un código abierto
+que es también el estándar dentro del software libre.
+
+Este software se suele utilizar dentro de un sistema operativo linux y a un nivel bastante elemental, manejando
+continuamente ficheros de texto. Esto conlleva que el curso también incluya una introducción a este sistema que,
+por motivos técnicos, se ejecuta dentro de una máquina virtual en los PCs de la ETSIN (salvo que los alumnos lo
+quieran instalar en sus ordenadores propios).
+
+Como es habitual en este entorno, se comienza con casos sencillos que el propio OpenFOAM proporciona, los
+"tutorials". Al llegar al flujo alrededor de un cilindro, se empiezan a modificar estos casos para crear otros nuevos,
+de interés.
+
+A mitad del curso, los alumnos deben escoger casos individuales de simulación. La última parte del curso se
+dedica a la discusión abierta de estos casos, ya que las dificultades que se encuentran suelen ser de interés
+general. La evaluación final consiste en la presentación de los casos de simulación."""@es ;
+    schema:director <https://guia-kg.skai.etsisi.upm.es/resource/daniel.duque%40upm.es> ;
+    schema:inLanguage "Castellano"@es ;
+    schema:instructor <https://guia-kg.skai.etsisi.upm.es/resource/daniel.duque%40upm.es> ;
+    schema:name "Numerical Methods In Fluid Mechanics"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/CE2> a ns1:Competency ;
+    ns1:competencyCode "CE2" ;
+    ns1:competencyDescription "(K1)"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/CG1> a ns1:Competency ;
+    ns1:competencyCode "CG1" ;
+    ns1:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos dentro de contextos más amplios (o multidisciplinares) relacionados con su área de estudio.Students should be able to apply their acquired knowledge and problem"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/CG3> a ns1:Competency ;
+    ns1:competencyCode "CG3" ;
+    ns1:competencyDescription "Que los estudiantes sepan comunicar sus conclusiones"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/CTUPM01> a ns1:Competency ;
+    ns1:competencyCode "CTUPM01" ;
+    ns1:competencyDescription "(S2) Creatividad. Los estudiantes deben resolver de forma nueva, original y aportando valor, situaciones o problemas en el ámbito de la ingeniería.Creativity. Students must solve situations or problems in the field of engineering in a new, original and valuable way."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/CTUPM02> a ns1:Competency ;
+    ns1:competencyCode "CTUPM02" ;
+    ns1:competencyDescription "(S3) Organización y planificación. Los estudiantes fijan objetivos, con la planificación y programación de actividades (tiempo y fases) y con la organización y gestión de los recursos necesarios para alcanzarlos.Organization and planning. Students set objectives, with the planning and scheduling of activities (time and phases) and with the organization and management of the resources needed to achieve them."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/CTUPM05> a ns1:Competency ;
+    ns1:competencyCode "CTUPM05" ;
+    ns1:competencyDescription "(S6) Uso de las tecnologías de la información y comunicación (TIC). Los estudiantes aplican conocimientos tecnológicos necesarios de manera que les permitan desenvolverse cómodamente y afrontar los retos que la sociedad les va a imponer en su quehacer profesional empleando la informática.Use of information and communication technologies (ICT). Students apply the necessary technological knowledge in a way that allows them to perform comfortably and meet the challenges that society will impose on them in their professional work using information technology."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/CTUPM11> a ns1:Competency ;
+    ns1:competencyCode "CTUPM11" ;
+    ns1:competencyDescription "Gestión de la información. Los estudiantes tienen la capacidad para buscar, seleccionar, ordenar, relacionar, evaluar, valorar información proveniente de distintas fuentes.Information management. Students have the ability to search, select, order, relate, evaluate, and assess information from different sources."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/RA73> a ns1:LearningResult ;
+    ns1:learningResultCode "RA73" ;
+    ns1:learningResultDescription "Conocer las distintas técnicas numéricas aplicadas a la mecánica de fluidos"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/RA74> a ns1:LearningResult ;
+    ns1:learningResultCode "RA74" ;
+    ns1:learningResultDescription "Aplicar el método de volumen de fluido (VOF) en mecánica de fluidos"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/RA75> a ns1:LearningResult ;
+    ns1:learningResultCode "RA75" ;
+    ns1:learningResultDescription "Manejar el paquete OpenFoam de simulación de fluidos"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/RA76> a ns1:LearningResult ;
+    ns1:learningResultCode "RA76" ;
+    ns1:learningResultDescription "Saber manejar un código CFD para simulación de flujo alrededor de una carena"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/didactic_resource/1> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "https://doc.openfoam.com/2306/"@es ;
+    ns1:bibliographyTitle "Manual oficial OpenFOAM"@es ;
+    ns1:bibliographyType "Recursos web"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/didactic_resource/2> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "https://doc.cfd.direct/openfoam/user-guide-v12/"@es ;
+    ns1:bibliographyTitle "Manual oficial OpenFOAM (versión \".org\")"@es ;
+    ns1:bibliographyType "Recursos web"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/didactic_resource/3> a ns1:DidacticResource ;
+    ns1:bibliographyDescription """An Introduction to Computational Fluid
+Dynamics: The Finite Volume Method,Henk Kaarle Versteeg, Weeratunge Malalasekera, Pearson Education, 2007"""@es ;
+    ns1:bibliographyTitle "An Introduction to Computational Fluid Dynamics: The Finite Volume Method"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/evaluation> a ns1:EvaluationSystem ;
+    ns1:evaluationDescription """La evaluación se basa en la presentación en una sesión pública (todos los estudiantes están invitados, y pueden
+asistir personas interesadas: alumnos de otros cursos, profesores, personal de investigación, etc). Las sesiones
+son de 20 minutos: 10 de exposición y 10 de preguntas. En ellas se evalúan:
+La organización y planificación de los casos de simulación
+La gestión de la información obtenida
+Los conocimientos adquiridos y su capacidad de resolución de problemas
+Conocimiento avanzado técnico de hidrodinámica naval (se pueden considerar otros ámbitos, como
+motores, transferencia de masa y calor, etc)
+Creatividad
+Comunicación de conclusiones
+Esta presentación es la principal, y recibe un peso del 90%. Previamente tiene lugar una breve exposición en la
+cual los estudiantes informan de los avances preliminares en sus casos respectivos. Por lo general, se parte de
+casos ya existentes ("tutorials") y en esta primera sesión se evalúa que los estudiantes puedan ejecutarlos sin
+problema, y analizar los resultados obtenidos. Esta exposición recibe el 10% de la nota."""@es ;
+    ns1:hasEvaluationTrial <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/evaluation/trial1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/evaluation/trial2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/evaluation/trial3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/evaluation/trial4> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/evaluation/trial1> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "10%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/12> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE2-%28K1%29>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CTUPM01>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CTUPM02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CTUPM05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CTUPM11> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Evaluación preliminar de los casos individuales"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "12"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/evaluation/trial2> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "04:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "90%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE2-%28K1%29>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CTUPM01>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CTUPM02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CTUPM05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CTUPM11> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Presentación de los casos individuales"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/evaluation/trial3> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "10%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/12> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE2-%28K1%29>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CTUPM01>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CTUPM02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CTUPM05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CTUPM11> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Evaluación preliminar de los casos individuales"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "12"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/evaluation/trial4> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "04:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "90%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE2-%28K1%29>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CTUPM01>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CTUPM02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CTUPM05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CTUPM11> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Presentación de los casos individuales"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule> a ns1:Schedule ;
+    schema:eventSchedule <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/1> a ns1:ScheduleEvent ;
+    ns1:eventIndex 1 ;
+    ns1:eventWeek "Semana 1"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/1/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/1/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/1/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Introducción a la asignatura"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/1/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Introducción a la asignatura. Entorno de trabajo: máquinas virtuales y sistema linux"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/10> a ns1:ScheduleEvent ;
+    ns1:eventIndex 10 ;
+    ns1:eventWeek "Semana 10"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/10/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/10/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Casos individuales: sesión 2"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "INV: Aprendizaje basado en investigación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/11> a ns1:ScheduleEvent ;
+    ns1:eventIndex 11 ;
+    ns1:eventWeek "Semana 11"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/11/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/11/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Casos individuales: sesión 3"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "INV: Aprendizaje basado en investigación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/12/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Casos individuales: sesión 4"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "INV: Aprendizaje basado en investigación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/12/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Evaluación preliminar de los casos individuales"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PIL: Técnica del tipo Presentación Individual en Laboratorio"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva y Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/13> a ns1:ScheduleEvent ;
+    ns1:eventIndex 13 ;
+    ns1:eventWeek "Semana 13"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/13/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/13/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Casos individuales: sesión 5"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "INV: Aprendizaje basado en investigación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/14> a ns1:ScheduleEvent ;
+    ns1:eventIndex 14 ;
+    ns1:eventWeek "Semana 14"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/14/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/14/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Casos individuales: sesión 6"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "INV: Aprendizaje basado en investigación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/15> a ns1:ScheduleEvent ;
+    ns1:eventIndex 15 ;
+    ns1:eventWeek "Semana 15"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/16> a ns1:ScheduleEvent ;
+    ns1:eventIndex 16 ;
+    ns1:eventWeek "Semana 16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/17/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Presentación de los casos individuales"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PIL: Técnica del tipo Presentación Individual en Laboratorio"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva y Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/2> a ns1:ScheduleEvent ;
+    ns1:eventIndex 2 ;
+    ns1:eventWeek "Semana 2"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/2/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/2/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/2/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "El sistema operativo linux"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/2/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "El entorno OpenFOAM"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/3> a ns1:ScheduleEvent ;
+    ns1:eventIndex 3 ;
+    ns1:eventWeek "Semana 3"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/3/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/3/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/3/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Las ecuaciones de convección y difusión"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/3/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Uso básico de OpenFOAM: el caso \"cavity\""@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/4> a ns1:ScheduleEvent ;
+    ns1:eventIndex 4 ;
+    ns1:eventWeek "Semana 4"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/4/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/4/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/4/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Ecuación de convección-difusión y ecuaciones de Navier-Stokes"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/4/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Análisis de los casos OpenFOAM: \"solvers\", álgebra lineal, operadores..."@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/5> a ns1:ScheduleEvent ;
+    ns1:eventIndex 5 ;
+    ns1:eventWeek "Semana 5"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/5/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/5/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Diseño de casos sencillos: flujo de Poiseuille y de Couette"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/6> a ns1:ScheduleEvent ;
+    ns1:eventIndex 6 ;
+    ns1:eventWeek "Semana 6"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/6/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/6/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Casos de interés naval: la superficie libre, caso \"dam break\", flujo alrededor de un cilindro"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/7> a ns1:ScheduleEvent ;
+    ns1:eventIndex 7 ;
+    ns1:eventWeek "Semana 7"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/7/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/7/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Casos de interés naval: caso DTC, resistencia al avance"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/8> a ns1:ScheduleEvent ;
+    ns1:eventIndex 8 ;
+    ns1:eventWeek "Semana 8"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/8/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/8/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Manejo de mallas: mallador automático snappyHexMesh, mallas dinámicas (caso \"propeller\")"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/9> a ns1:ScheduleEvent ;
+    ns1:eventIndex 9 ;
+    ns1:eventWeek "Semana 9"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/9/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/9/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/9/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Selección de casos individuales"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "AC: Actividad del tipo Acciones Cooperativas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/9/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Casos individuales: sesión 1"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "INV: Aprendizaje basado en investigación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus> a ns1:Syllabus ;
+    ns1:hasItem <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/0>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/18>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/19>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/20>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/21>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/22>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/23>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/0> a ns1:SyllabusItem ;
+    ns1:itemIndex 0 ;
+    ns1:syllabusDescription "1. Presentación de la asignatura Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/1> a ns1:SyllabusItem ;
+    ns1:itemIndex 1 ;
+    ns1:syllabusDescription "2. Introducción al entorno de trabajo"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/10> a ns1:SyllabusItem ;
+    ns1:itemIndex 10 ;
+    ns1:syllabusDescription "4. Casos estándar OpenFOAM"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/11> a ns1:SyllabusItem ;
+    ns1:itemIndex 11 ;
+    ns1:syllabusDescription "4.1. El caso \"cavity\" Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/12> a ns1:SyllabusItem ;
+    ns1:itemIndex 12 ;
+    ns1:syllabusDescription "4.2. Flujo de Poiseuille y de Couette Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/13> a ns1:SyllabusItem ;
+    ns1:itemIndex 13 ;
+    ns1:syllabusDescription "5. Casos de interés naval"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/14> a ns1:SyllabusItem ;
+    ns1:itemIndex 14 ;
+    ns1:syllabusDescription "5.1. La superficie libre, caso \"dam break\" Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/15> a ns1:SyllabusItem ;
+    ns1:itemIndex 15 ;
+    ns1:syllabusDescription "5.2. Flujo alrededor de objetos: cilindro Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/16> a ns1:SyllabusItem ;
+    ns1:itemIndex 16 ;
+    ns1:syllabusDescription "5.3. Resistencia al avance: caso DTC Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/17> a ns1:SyllabusItem ;
+    ns1:itemIndex 17 ;
+    ns1:syllabusDescription "5.4. Hélices: caso \"propeller\" Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/18> a ns1:SyllabusItem ;
+    ns1:itemIndex 18 ;
+    ns1:syllabusDescription "6. Diseño de casos nuevos"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/19> a ns1:SyllabusItem ;
+    ns1:itemIndex 19 ;
+    ns1:syllabusDescription "6.1. Configuración a partir de casos existentes Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/2> a ns1:SyllabusItem ;
+    ns1:itemIndex 2 ;
+    ns1:syllabusDescription "2.1. Máquinas virtuales Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/20> a ns1:SyllabusItem ;
+    ns1:itemIndex 20 ;
+    ns1:syllabusDescription "6.2. Mallado automático: la herramienta snappyHexMesh Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/21> a ns1:SyllabusItem ;
+    ns1:itemIndex 21 ;
+    ns1:syllabusDescription "6.3. Postprocesado Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/22> a ns1:SyllabusItem ;
+    ns1:itemIndex 22 ;
+    ns1:syllabusDescription "6.4. Introducción a la programación OpenFOAM Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/23> a ns1:SyllabusItem ;
+    ns1:itemIndex 23 ;
+    ns1:syllabusDescription "7. Casos individuales Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/3> a ns1:SyllabusItem ;
+    ns1:itemIndex 3 ;
+    ns1:syllabusDescription "2.2. Sistema operativo linux Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/4> a ns1:SyllabusItem ;
+    ns1:itemIndex 4 ;
+    ns1:syllabusDescription "2.3. Entorno OpenFOAM Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/5> a ns1:SyllabusItem ;
+    ns1:itemIndex 5 ;
+    ns1:syllabusDescription "3. Introducción a CFD"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/6> a ns1:SyllabusItem ;
+    ns1:itemIndex 6 ;
+    ns1:syllabusDescription "3.1. Ecuación de convección Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/7> a ns1:SyllabusItem ;
+    ns1:itemIndex 7 ;
+    ns1:syllabusDescription "3.2. Ecuación de difusión Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/8> a ns1:SyllabusItem ;
+    ns1:itemIndex 8 ;
+    ns1:syllabusDescription "3.3. Ecuación de convección-difusión y ecuaciones de Navier-Stokes Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/syllabus/9> a ns1:SyllabusItem ;
+    ns1:itemIndex 9 ;
+    ns1:syllabusDescription "3.4. El papel de la presión Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/daniel.duque%40upm.es> a ns1:Lecturer ;
+    schema:email "daniel.duque@upm.es" ;
+    schema:name "Duque Campayo, Daniel" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/12> a ns1:ScheduleEvent ;
+    ns1:eventIndex 12 ;
+    ns1:eventWeek "Semana 12"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/12/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/12/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/17> a ns1:ScheduleEvent ;
+    ns1:eventIndex 17 ;
+    ns1:eventWeek "Semana 17"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/83000141/2025-26/eventSchedule/17/activity/TEvaluationActivity/1> .
+

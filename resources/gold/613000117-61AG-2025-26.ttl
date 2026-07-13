@@ -1,0 +1,622 @@
+@prefix ns1: <http://w3id.org/def/guia#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/previous_courses> a ns1:RequiredKnowledge ;
+    ns1:previousCourses "El plan de estudios Master Universitario En Software De Sistemas Distribuidos Y Empotrados no tiene definidos otros requisitos para esta asignatura."@es ;
+    ns1:previousKnowledge "Conocimientos básicos de sistemas de redes de datos y protocolos de comunicaciones."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/E.T.S%20De%20Ing.%20De%20Sistemas%20Inform%C3%A1ticos> a ns1:UniversityCenter ;
+    ns1:offers <https://guia-kg.skai.etsisi.upm.es/resource/61AG%20-%20Master%20Universitario%20en%20Software%20de%20Sistemas%20Distribuidos%20y%20Empotrados> ;
+    schema:name "E.T.S De Ing. De Sistemas Informáticos" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117> a ns1:Course ;
+    ns1:courseType "Obligatoria"@es ;
+    ns1:courseYear 1 ;
+    ns1:semester "Segundo semestre"@es ;
+    schema:courseCode 613000117 ;
+    schema:hasCourseInstance <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26> ;
+    schema:name "Wireless Networks"@en,
+        "Redes Inalámbricas"@es ;
+    schema:numberOfCredits 6.0 .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26> a ns1:CourseGuide ;
+    ns1:hasCompetency <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/CE03>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/CG05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/CG12> ;
+    ns1:hasDidacticResource <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/didactic_resource/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/didactic_resource/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/didactic_resource/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/didactic_resource/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/didactic_resource/5> ;
+    ns1:hasEvaluation <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/evaluation> ;
+    ns1:hasLearningResult <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/RA4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/RA5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/RA6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/RA7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/RA8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/RA9> ;
+    ns1:hasSyllabus <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus> ;
+    ns1:inpersonHours "69 horas (44.2%)"@es ;
+    ns1:numberOfCredits 6.0 ;
+    ns1:otherInformation ""@es ;
+    ns1:periodEndingMonth "Junio"@es ;
+    ns1:periodStartingMonth "Febrero"@es ;
+    ns1:teachingPeriod "2025-26" ;
+    ns1:teachingPeriodMonths "Febrero-Junio"@es ;
+    ns1:totalHours "69 horas y 30 minutos"@es ;
+    schema:activitiesWorkload "100%"@es ;
+    schema:courseSchedule <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule> ;
+    schema:description """Las tecnologías de interconexión inalámbrica abarcan desde redes personales y locales orientadas a entornos de corto alcance, hasta sistemas avanzados de comunicaciones móviles que permiten establecer conexiones inalámbricas estables a través de grandes distancias. Estas tecnologías incluyen soluciones basadas en radiofrecuencia, infrarrojos y protocolos estandarizados como WiFi, ZigBee, LoRa o NB-IoT, adaptándose a las necesidades de cada entorno en términos de consumo, alcance, velocidad y movilidad.
+
+En la última década, las comunicaciones inalámbricas han experimentado una evolución acelerada, impulsada por el crecimiento del ecosistema IoT y la demanda de conectividad ubicua. Frente a las limitaciones de las redes cableadas, las soluciones inalámbricas han permitido la aparición de nuevas arquitecturas como WBAN, WPAN y LPWAN, favoreciendo el desarrollo de sistemas inteligentes portátiles, domóticos o industriales. Este nuevo paradigma redefine la movilidad, permitiendo a dispositivos y usuarios moverse libremente dentro de entornos heterogéneos sin perder conectividad.
+
+Las redes de sensores inalámbricas (WSN) representan un pilar fundamental en la recolección y transmisión de datos en tiempo real, especialmente en escenarios donde el cableado no es viable. Estas redes se caracterizan por su capacidad de autoorganización, su bajo consumo energético y su capacidad de adaptación, lo que las hace ideales para aplicaciones como la agricultura de precisión, la monitorización ambiental o la automatización del hogar. Están estrechamente relacionadas con el desarrollo del IoT y el uso de tecnologías específicas como ZigBee, LoRa o SigFox, que permiten cubrir grandes áreas con un consumo mínimo de energía.
+
+Además, el despliegue de soluciones basadas en conectividad celular como LTE-M o NB-IoT, y la llegada de redes móviles avanzadas como 5G, están transformando los modelos de comunicación inalámbrica para aplicaciones críticas o de gran escala. Estas nuevas tecnologías permiten integrar dispositivos móviles, sensores y vehículos en infraestructuras inteligentes, habilitando escenarios como la ciudad conectada, la industria 4.0 o el transporte autónomo, donde la baja latencia y la alta fiabilidad son clave."""@es ;
+    schema:director <https://guia-kg.skai.etsisi.upm.es/resource/silviaalba.uribe%40upm.es> ;
+    schema:inLanguage "Castellano"@es ;
+    schema:instructor <https://guia-kg.skai.etsisi.upm.es/resource/gustavo.hernandez.penaloza%40upm.es>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/silviaalba.uribe%40upm.es> ;
+    schema:name "Redes Inalámbricas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/CE03> a ns1:Competency ;
+    ns1:competencyCode "CE03" ;
+    ns1:competencyDescription "Capacidad para modelar, diseñar, definir la arquitectura, implantar, gestionar, operar, administrar y mantener aplicaciones, redes, sistemas y servicios en el ámbito de los Sistemas Distribuidos y Empotrados."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/CG05> a ns1:Competency ;
+    ns1:competencyCode "CG05" ;
+    ns1:competencyDescription "Gestión de la información."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/CG12> a ns1:Competency ;
+    ns1:competencyCode "CG12" ;
+    ns1:competencyDescription "Aprendizaje autónomo, adaptación a nuevas situaciones y motivación por el desarrollo profesional permanente."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/RA4> a ns1:LearningResult ;
+    ns1:learningResultCode "RA4" ;
+    ns1:learningResultDescription "RA89"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/RA5> a ns1:LearningResult ;
+    ns1:learningResultCode "RA5" ;
+    ns1:learningResultDescription "RA50"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/RA6> a ns1:LearningResult ;
+    ns1:learningResultCode "RA6" ;
+    ns1:learningResultDescription "RA69"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/RA7> a ns1:LearningResult ;
+    ns1:learningResultCode "RA7" ;
+    ns1:learningResultDescription "RA70"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/RA8> a ns1:LearningResult ;
+    ns1:learningResultCode "RA8" ;
+    ns1:learningResultDescription "RA9"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/RA9> a ns1:LearningResult ;
+    ns1:learningResultCode "RA9" ;
+    ns1:learningResultDescription "RA68"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/didactic_resource/1> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "(2nd ed.) Gast, Matthew. O?Relly Associates, Inc Sebastopol, CA. 95474 (2005)"@es ;
+    ns1:bibliographyTitle "802.11 wireless networks : the definitive guide."@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/didactic_resource/2> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "https://mentor.ieee.org/802.15/documents"@es ;
+    ns1:bibliographyTitle "IEEE 802.15 Working Group for Wireless Personal Area Networks"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/didactic_resource/3> a ns1:DidacticResource ;
+    ns1:bibliographyTitle "Colección de diapositivas realizadas por el profesorado de la asignatura"@es ;
+    ns1:bibliographyType "Otros"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/didactic_resource/4> a ns1:DidacticResource ;
+    ns1:bibliographyTitle "Plataforma Moodle"@es ;
+    ns1:bibliographyType "Recursos web"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/didactic_resource/5> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "In this book we focus on XBee brand ZigBee radios because they have a host of features that make them especially easy for beginners to work with."@es ;
+    ns1:bibliographyTitle "Building Wireless Sensor Networks"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/evaluation> a ns1:EvaluationSystem ;
+    ns1:evaluationDescription """Evaluación progresiva:
+La asignatura consta de tres elementos evaluables:
+- la realización y entrega de las prácticas semanales (hasta un 15% de la nota total)
+- la realización y entrega del trabajo final (hasta un 25% de la nota total)
+- la realización y entrega de un examen final (hasta un 60% de la nota total y con una puntuación mínima de 5 para hacer media con el resto de elementos)
+La asignatura se considera aprobada sí y solo sí la nota final ponderada es igual o superior a 5. En caso de que el examen arroje menos de un 4, no será posible hacer media con los otros dos elementos por lo que el alumno será considerado suspenso y su nota será igual a la obtenida en el examen.
+Evaluación global
+La realización y entrega de las prácticas y el trabajo final es evaluable también para los alumnos que opten por global. La asignatura se considera aprobada sí y solo sí la nota final ponderada es igual o superior a 5. En caso de que el examen arroje menos de un 4, no será posible hacer media con los otros dos elementos por lo que el alumno será considerado suspenso y su nota será igual a la obtenida en el examen.
+Evaluación extraordinaria:
+Constará de un único examen final con peso del 100% sobre la nota final. La asignatura sólo se considerará aprobada si el alumno obtiene una calificación igual o superior a 5."""@es ;
+    ns1:hasEvaluationTrial <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/evaluation/trial1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/evaluation/trial2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/evaluation/trial3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/evaluation/trial4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/evaluation/trial5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/evaluation/trial6> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/evaluation/trial1> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:30"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "15%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/6> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE03> ;
+    ns1:trialDescription "Evaluación de las prácticas (RA4, RA5, RA6, RA7, RA8, RA9)"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "6"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/evaluation/trial2> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:30"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "25%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/6> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE03>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG12> ;
+    ns1:trialDescription "Evaluación trabajo final (RA4, RA5, RA6, RA7, RA8, RA9)"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "6"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/evaluation/trial3> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:30"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "60%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/7> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE03>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG12> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Examen final (RA4, RA5, RA6, RA7, RA8, RA9)"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "7"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/evaluation/trial4> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:30"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "60%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE03>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG12> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Examen final"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/evaluation/trial5> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:30"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "40%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE03>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG12> ;
+    ns1:trialDescription "Verificación de las prácticas REALIZADAS DURANTE EL PERIODO LECTIVO"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/evaluation/trial6> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "03:00"@es ;
+    ns1:evaluationType "extraordinaria"@es ;
+    ns1:gradePercentage "100%"@es ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE03>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG12> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Examen final"@es ;
+    ns1:trialType "Presencial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule> a ns1:Schedule ;
+    schema:eventSchedule <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/1> a ns1:ScheduleEvent ;
+    ns1:eventIndex 1 ;
+    ns1:eventWeek "Semana 1"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/1/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/1/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/1/activity/TActivityType1/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/1/activity/TActivityType1/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/1/activity/TActivityType1/5> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/1/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Presentación Asignatura"@es ;
+    ns1:activityDuration "00:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/1/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 1"@es ;
+    ns1:activityDuration "03:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/1/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Actividad Tema 1"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "AC: Actividad del tipo Acciones Cooperativas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/1/activity/TActivityType1/4> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 0: repaso de conceptos básicos (actividad online)"@es ;
+    ns1:activityDuration "03:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "AIV: Aula invertida"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/1/activity/TActivityType1/5> a ns1:ActivityType1 ;
+    ns1:activityDescription "Refuerzo y apoyo tema 1"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "AIV: Aula invertida"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/10> a ns1:ScheduleEvent ;
+    ns1:eventIndex 10 ;
+    ns1:eventWeek "Semana 10"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/11> a ns1:ScheduleEvent ;
+    ns1:eventIndex 11 ;
+    ns1:eventWeek "Semana 11"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/12> a ns1:ScheduleEvent ;
+    ns1:eventIndex 12 ;
+    ns1:eventWeek "Semana 12"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/13> a ns1:ScheduleEvent ;
+    ns1:eventIndex 13 ;
+    ns1:eventWeek "Semana 13"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/14> a ns1:ScheduleEvent ;
+    ns1:eventIndex 14 ;
+    ns1:eventWeek "Semana 14"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/15> a ns1:ScheduleEvent ;
+    ns1:eventIndex 15 ;
+    ns1:eventWeek "Semana 15"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/16> a ns1:ScheduleEvent ;
+    ns1:eventIndex 16 ;
+    ns1:eventWeek "Semana 16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/17/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Examen final"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/17/activity/TEvaluationActivity/2> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Verificación de las prácticas REALIZADAS DURANTE EL PERIODO LECTIVO"@es ;
+    ns1:activityDuration "00:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras técnicas evaluativas"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/2> a ns1:ScheduleEvent ;
+    ns1:eventIndex 2 ;
+    ns1:eventWeek "Semana 2"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/2/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/2/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/2/activity/TActivityType1/3> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/2/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2"@es ;
+    ns1:activityDuration "03:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/2/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Práctica de redes XBEE"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/2/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Refuerzo y apoyo tema 2"@es ;
+    ns1:activityDuration "05:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "AIV: Aula invertida"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/3> a ns1:ScheduleEvent ;
+    ns1:eventIndex 3 ;
+    ns1:eventWeek "Semana 3"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/3/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/3/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/3/activity/TActivityType1/3> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/3/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 3"@es ;
+    ns1:activityDuration "03:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/3/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Práctica redes WiFi"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/3/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Refuerzo y apoyo tema 3"@es ;
+    ns1:activityDuration "05:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "AIV: Aula invertida"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/4> a ns1:ScheduleEvent ;
+    ns1:eventIndex 4 ;
+    ns1:eventWeek "Semana 4"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/4/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/4/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/4/activity/TActivityType1/3> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/4/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 4"@es ;
+    ns1:activityDuration "03:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/4/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Practica simulación redes IoT"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/4/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Refuerzo y apoyo tema 4"@es ;
+    ns1:activityDuration "05:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "AIV: Aula invertida"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/5> a ns1:ScheduleEvent ;
+    ns1:eventIndex 5 ;
+    ns1:eventWeek "Semana 5"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/5/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/5/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/5/activity/TActivityType1/3> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/5/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 5"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/5/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Práctica redes IoT"@es ;
+    ns1:activityDuration "03:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/5/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Refuerzo y apoyo tema 5"@es ;
+    ns1:activityDuration "05:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "AIV: Aula invertida"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/6/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 5"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/6/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Práctica redes IoT"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/6/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Exposición trabajos en grupo"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "AC: Actividad del tipo Acciones Cooperativas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/6/activity/TActivityType1/4> a ns1:ActivityType1 ;
+    ns1:activityDescription "Actividades de refuerzo y apoyo"@es ;
+    ns1:activityDuration "05:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "AIV: Aula invertida"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/6/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Evaluación de las prácticas (RA4, RA5, RA6, RA7, RA8, RA9)"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TG: Técnica del tipo Trabajo en Grupo"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/6/activity/TEvaluationActivity/2> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Evaluación trabajo final (RA4, RA5, RA6, RA7, RA8, RA9)"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PG: Técnica del tipo Presentación en Grupo"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/7/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Examen final (RA4, RA5, RA6, RA7, RA8, RA9)"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/8> a ns1:ScheduleEvent ;
+    ns1:eventIndex 8 ;
+    ns1:eventWeek "Semana 8"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/9> a ns1:ScheduleEvent ;
+    ns1:eventIndex 9 ;
+    ns1:eventWeek "Semana 9"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus> a ns1:Syllabus ;
+    ns1:hasItem <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/0>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/18>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/19>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/20>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/21>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/22>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/0> a ns1:SyllabusItem ;
+    ns1:itemIndex 0 ;
+    ns1:syllabusDescription "1. REDES INALÁMBRICAS: WBAN - WPAN - RFID"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/1> a ns1:SyllabusItem ;
+    ns1:itemIndex 1 ;
+    ns1:syllabusDescription "1.1. INTRODUCCION REDES INALAMBRICAS. Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/10> a ns1:SyllabusItem ;
+    ns1:itemIndex 10 ;
+    ns1:syllabusDescription "3. Redes de Área Local Inalámbricas (Wifi)"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/11> a ns1:SyllabusItem ;
+    ns1:itemIndex 11 ;
+    ns1:syllabusDescription "3.1. El Estándar 802.11 Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/12> a ns1:SyllabusItem ;
+    ns1:itemIndex 12 ;
+    ns1:syllabusDescription "3.2. Capa Física y MAC 802.11 Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/13> a ns1:SyllabusItem ;
+    ns1:itemIndex 13 ;
+    ns1:syllabusDescription "3.3. Operaciones de gestión y seguridad Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/14> a ns1:SyllabusItem ;
+    ns1:itemIndex 14 ;
+    ns1:syllabusDescription "4. Plataformas IoT y redes LPWAN"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/15> a ns1:SyllabusItem ;
+    ns1:itemIndex 15 ;
+    ns1:syllabusDescription "4.1. Plataformas WiFi para IoT (ESP8266/NodeMCU) Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/16> a ns1:SyllabusItem ;
+    ns1:itemIndex 16 ;
+    ns1:syllabusDescription "4.2. Redes LPWAN: LoRa, SigFox, NB-IoT Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/17> a ns1:SyllabusItem ;
+    ns1:itemIndex 17 ;
+    ns1:syllabusDescription "4.3. Comparativa de tecnologías Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/18> a ns1:SyllabusItem ;
+    ns1:itemIndex 18 ;
+    ns1:syllabusDescription "5. Comunicaciones móviles para IoT y movilidad avanzada"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/19> a ns1:SyllabusItem ;
+    ns1:itemIndex 19 ;
+    ns1:syllabusDescription "5.1. LTE-M Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/2> a ns1:SyllabusItem ;
+    ns1:itemIndex 2 ;
+    ns1:syllabusDescription "1.2. WBAN: Wireless Body Area Network. Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/20> a ns1:SyllabusItem ;
+    ns1:itemIndex 20 ;
+    ns1:syllabusDescription "5.2. 5G y slicing para IoT Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/21> a ns1:SyllabusItem ;
+    ns1:itemIndex 21 ;
+    ns1:syllabusDescription "5.3. V2X Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/22> a ns1:SyllabusItem ;
+    ns1:itemIndex 22 ;
+    ns1:syllabusDescription "5.4. Seguridad y tendencias Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/3> a ns1:SyllabusItem ;
+    ns1:itemIndex 3 ;
+    ns1:syllabusDescription "1.3. WPAN: Wireless Personal Area Network. Ultra-WideBand (UWB) Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/4> a ns1:SyllabusItem ;
+    ns1:itemIndex 4 ;
+    ns1:syllabusDescription "1.4. RFID: Radio Frequency IDentification Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/5> a ns1:SyllabusItem ;
+    ns1:itemIndex 5 ;
+    ns1:syllabusDescription "2. REDES DE SENSORES INALÁMBRICAS (WSN)"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/6> a ns1:SyllabusItem ;
+    ns1:itemIndex 6 ;
+    ns1:syllabusDescription "2.1. Redes de Sensores Inalámbricos. Elementos de una WSN Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/7> a ns1:SyllabusItem ;
+    ns1:itemIndex 7 ;
+    ns1:syllabusDescription "2.2. Nodos sensores. Motes. Sistemas operativos y lenguajes. Estándares. Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/8> a ns1:SyllabusItem ;
+    ns1:itemIndex 8 ;
+    ns1:syllabusDescription "2.3. El estándar IEEE 802.15.4. Redes ZigBee. Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/syllabus/9> a ns1:SyllabusItem ;
+    ns1:itemIndex 9 ;
+    ns1:syllabusDescription "2.4. WSN y domotica. Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/61AG%20-%20Master%20Universitario%20en%20Software%20de%20Sistemas%20Distribuidos%20y%20Empotrados> a ns1:MasterDegree ;
+    ns1:degreeCode "61AG"@es ;
+    ns1:hasCourse <https://guia-kg.skai.etsisi.upm.es/resource/613000117> ;
+    schema:name "Master Universitario en Software de Sistemas Distribuidos y Empotrados"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/gustavo.hernandez.penaloza%40upm.es> a ns1:Lecturer ;
+    ns1:office "4409"@es ;
+    ns1:tutorshipsSchedule "Solicitar via mail"@es ;
+    schema:email "gustavo.hernandez.penaloza@upm.es" ;
+    schema:name "Hernandez Peñaloza, Gustavo Adolfo" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/7> a ns1:ScheduleEvent ;
+    ns1:eventIndex 7 ;
+    ns1:eventWeek "Semana 7"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/7/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/silviaalba.uribe%40upm.es> a ns1:Lecturer ;
+    ns1:office "4409"@es ;
+    ns1:tutorshipsSchedule """L - 13:00 - 16:00
+V - 10:00 - 13:00"""@es ;
+    schema:email "silviaalba.uribe@upm.es" ;
+    schema:name "Uribe Mayoral, Silvia Alba" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/17> a ns1:ScheduleEvent ;
+    ns1:eventIndex 17 ;
+    ns1:eventWeek "Semana 17"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/17/activity/TEvaluationActivity/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/17/activity/TEvaluationActivity/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/6> a ns1:ScheduleEvent ;
+    ns1:eventIndex 6 ;
+    ns1:eventWeek "Semana 6"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/6/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/6/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/6/activity/TActivityType1/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/6/activity/TActivityType1/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/6/activity/TEvaluationActivity/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000117/2025-26/eventSchedule/6/activity/TEvaluationActivity/2> .
+

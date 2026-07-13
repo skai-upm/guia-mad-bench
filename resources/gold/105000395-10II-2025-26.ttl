@@ -1,0 +1,491 @@
+@prefix ns1: <http://w3id.org/def/guia#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/previous_courses> a ns1:RequiredKnowledge ;
+    ns1:previousCourses "El plan de estudios Grado En Ingenieria Informatica no tiene definidos otros requisitos para esta asignatura."@es ;
+    ns1:previousKnowledge "no previous courses needed, just not to be afraid of biological terms and notions"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/E.T.S.%20De%20Ingenieros%20Inform%C3%A1ticos> a ns1:UniversityCenter ;
+    ns1:offers <https://guia-kg.skai.etsisi.upm.es/resource/10II%20-%20Grado%20en%20Ingenieria%20Informatica> ;
+    schema:name "E.T.S. De Ingenieros Informáticos" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395> a ns1:Course ;
+    ns1:courseType "Optativa"@es ;
+    ns1:courseYear 4 ;
+    ns1:semester "Séptimo semestre"@es ;
+    schema:courseCode 105000395 ;
+    schema:hasCourseInstance <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26> ;
+    schema:name "Introduction To Biocomputing"@en,
+        "Introducción a la Biocomputación"@es ;
+    schema:numberOfCredits 3.0 .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26> a ns1:CourseGuide ;
+    ns1:hasCompetency <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/CG> ;
+    ns1:hasDidacticResource <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/didactic_resource/1> ;
+    ns1:hasEvaluation <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/evaluation> ;
+    ns1:hasLearningResult <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/RA278>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/RA280>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/RA286> ;
+    ns1:hasSyllabus <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus> ;
+    ns1:inpersonHours "36 horas y 10 minutos (46.4%)"@es ;
+    ns1:numberOfCredits 3.0 ;
+    ns1:otherInformation """Los objetivos de desarrollo sostenibles (SDGs) se adoptaron por las Naciones Unidas en 2015.
+En la UPM el texto relevante sobre SDGs se encuentra en: https://sostenibilidad.upm.es/wp-content/uploads/sites/759/2021/03/Sostenibilidad-estudios-oficiales-UPM-2020.pdf
+Los SDGs cubiertos parcialmente por este curso son: 3, 4, 5, 6, 9, 11, 12, 13, 14, 15"""@es ;
+    ns1:periodEndingMonth "Enero"@es ;
+    ns1:periodStartingMonth "Septiembre"@es ;
+    ns1:teachingPeriod "2025-26" ;
+    ns1:teachingPeriodMonths "Septiembre-Enero"@es ;
+    ns1:totalHours "36 horas y 10 minutos"@es ;
+    schema:activitiesWorkload "125%"@es ;
+    schema:courseSchedule <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule> ;
+    schema:description """En este curso estudiaremos los conceptos básicos de la computación con ADN, la biología sintética o biología programable y unos conceptos básicos sobre la inteligencia artificial aplicada a la microbiología y la biomedicina.
+
+Computación biomolecular: es el término empleado para denominar el procesamiento de información codificada en biomoléculas. Un computador biomolecular es un dispositivo hecho de biomoléculas que procesa información biológica y usa ADN, ARN o proteínas, o una combinación de ellas. Describiremos durante este curso sólo algunos de los dispositivos de cómputo de ADN y ARN más relevantes hasta la fecha y aplicados al diagnóstico en vivo o entrega de fármacos. Este campo comenzó en 2001 con el primer diseño de un autómata de ADN programable (Benenson et al. 2001) aplicado al diagnóstico biomédico (Benenson et al. 2004). Un autómata biomolecular es un dispositivo con memoria que puede operar de forma autónoma sensando entradas, procesándolas y emitiendo una respuesta sin intervención humana. Otra técnica relevante de sensado y detección de ácidos nucleicos es la denominada "hibridación competitiva" o "desplazamiento de hebras de ADN" (Seelig et al. 2006). Esta técnica se emplea para el diseño de circuitos lógicos de ADN para el sensado inteligente y procesado de moléculas de ADN y ARN.
+
+¿Qué es la Biología Sintética? Es la ingeniería de la biología, esto es, la aplicación de principios de ingeniería en la biología para diseñar y construir sistemas biológicos. Este campo considera a la biología como una tecnología que se puede programar para ingeniar nuevos sistemas y dispositivos biológicos sintéticos.
+
+Este campo surgió en el 2000 en el MIT Artificial Intelligence Lab donde ingenieros, informáticos y físicos empezaron a trabajar conjuntamente con biólogos. Los ingenieros formularon la siguiente pregunta: ¿Podemos combinar componentes de hardware biológico (principalmente genes) para construir nuevos sistemas biológicos sintéticos? Podemos diseñar y escribir programas genéticos en ADN (el software) que se ejecuten en un procesador celular (el hardware)? La respuesta fue ?sí?. Las herramientas biotecnológicas y de ingeniería genética ya estaban disponibles. El primer dispositivo sintético se desarrolló en el 2000: una memoria genética (Gardner, Cantor, & Collins, 2000), un circuito genético oscilante
+(Elowitz et al. 2000) y varias puertas lógicas genéticas booleanas (Hasty, McMillen, & Collins, 2002; Weiss et al., 2003).
+
+
+Inteligencia artificial aplicada en microbiología y biomedicina: describiremos algunos de los trabajos más reseñables del grupo LIA-UPM aplicando técnicas de IA en en estos campos (ver artículo en Science del grupo LIA): https://youtu.be/tPZ36vyzAUM
+
+
+Más información en: http://www.lia.upm.es
+
+Also: Alfonso's talk in Valencia, Spain, in ISBBC Summer School, June 2017: "Synthetic Biology for computer scientists in 2 hours"
+
+Towards programmable antibiotics and in silico microbiota: https://www.youtube.com/watch?v=b4ECvhXD5kg
+
+Decrypting bacterial virulence networks: https://youtu.be/tPZ36vyzAUM
+
+¿Cómo funcionan los fármacos programables? https://youtu.be/RwAUjSLwXOc"""@es ;
+    schema:director <https://guia-kg.skai.etsisi.upm.es/resource/alfonso.rodriguez-paton%40upm.es> ;
+    schema:inLanguage "Castellano"@es ;
+    schema:instructor <https://guia-kg.skai.etsisi.upm.es/resource/alfonso.rodriguez-paton%40upm.es> ;
+    schema:name "Introducción a la Biocomputación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/CG> a ns1:Competency ;
+    ns1:competencyCode "CG" ;
+    ns1:competencyDescription "1/21"@es,
+        "19"@es,
+        "2/CE45"@es,
+        "24/25/26/27"@es,
+        "5"@es,
+        "6"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/RA278> a ns1:LearningResult ;
+    ns1:learningResultCode "RA278" ;
+    ns1:learningResultDescription "Desarrollar la solución matemática y algorítmica mas apropiada a un problema informático que requiera un tratamiento especialmente complejo, analizando y exponiendo su viabilidad."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/RA280> a ns1:LearningResult ;
+    ns1:learningResultCode "RA280" ;
+    ns1:learningResultDescription "Obtención de las competencias lingüísticas comunicativas (comprensión, expresión, etc.) habladas y escritas en entornos académicos/profesionales nacionales/internacionales."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/RA286> a ns1:LearningResult ;
+    ns1:learningResultCode "RA286" ;
+    ns1:learningResultDescription "Experiencia de estudio y trabajo en un contexto internacional."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/didactic_resource/1> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "Se facilitará a los alumnos el acceso a texto completo de los artículos científicos explicados en las clases así como las transparencias."@es ;
+    ns1:bibliographyTitle "Artículos científicos"@es ;
+    ns1:bibliographyType "Recursos web"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/evaluation> a ns1:EvaluationSystem ;
+    ns1:evaluationDescription """Presentación oral I (en grupo): elegir y estudiar un paper de una lista de artículos recomendados y hacer una breve presentación del mismo (10 minutos). La presentación se puede hacer en grupos de hasta 3 personas.
+
+Presentación oral II (individual): elegir y estudiar un paper de una lista de artículos recomendados y hacer una breve presentación del mismo (10 minutos). Presentación y trabajo individual. La presentación se graba y se envía por Moodle al profesor.
+
+Examen: Examen evaluando los conceptos básicos explicados durante el curso.
+
+IMPORTANTE: Para superar la asignatura es obligatorio atender de manera presencial al menos al 80% de las clases de la asignatura."""@es ;
+    ns1:hasEvaluationTrial <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/evaluation/trial1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/evaluation/trial2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/evaluation/trial3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/evaluation/trial4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/evaluation/trial5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/evaluation/trial6> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/evaluation/trial1> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "05:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "25%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/13> ;
+    ns1:minimumScore "3 / 10"@es ;
+    ns1:trialDescription "Presentación Oral I"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "13"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/evaluation/trial2> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "05:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "25%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/14> ;
+    ns1:minimumScore "3 / 10"@es ;
+    ns1:trialDescription "Presentación Oral I (las presentaciones orales se realizan durante 2 semanas)"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "14"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/evaluation/trial3> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:10"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "25%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/15> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CG-1/21>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG-19>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG-2/CE45>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG-24/25/26/27>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG-5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG-6> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Presentación oral II"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "15"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/evaluation/trial4> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "50%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/17> ;
+    ns1:minimumScore "3 / 10"@es ;
+    ns1:trialDescription "Examen escrito"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/evaluation/trial5> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:10"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "25%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/15> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CG-1/21>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG-19>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG-2/CE45>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG-24/25/26/27>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG-5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG-6> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Presentación oral II"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "15"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/evaluation/trial6> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "75%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/17> ;
+    ns1:minimumScore "3 / 10"@es ;
+    ns1:trialDescription "Examen escrito"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule> a ns1:Schedule ;
+    schema:eventSchedule <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/1> a ns1:ScheduleEvent ;
+    ns1:eventIndex 1 ;
+    ns1:eventWeek "Semana 1"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/1/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/1/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "DNA Computing"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/10> a ns1:ScheduleEvent ;
+    ns1:eventIndex 10 ;
+    ns1:eventWeek "Semana 10"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/10/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/10/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Programmable Biology"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/11> a ns1:ScheduleEvent ;
+    ns1:eventIndex 11 ;
+    ns1:eventWeek "Semana 11"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/11/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/11/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Artificial intelligence in biomedicine"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/12> a ns1:ScheduleEvent ;
+    ns1:eventIndex 12 ;
+    ns1:eventWeek "Semana 12"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/12/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/12/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Artificial intelligence in biomedicine"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/13/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Presentación Oral I"@es ;
+    ns1:activityDuration "05:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PG: Técnica del tipo Presentación en Grupo"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/14/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Presentación Oral I (las presentaciones orales se realizan durante 2 semanas)"@es ;
+    ns1:activityDuration "05:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PG: Técnica del tipo Presentación en Grupo"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/15/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Presentación oral II"@es ;
+    ns1:activityDuration "00:10" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PI: Técnica del tipo Presentación Individual"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva y Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/16> a ns1:ScheduleEvent ;
+    ns1:eventIndex 16 ;
+    ns1:eventWeek "Semana 16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/17/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Examen escrito"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/17/activity/TEvaluationActivity/2> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Examen escrito"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/2> a ns1:ScheduleEvent ;
+    ns1:eventIndex 2 ;
+    ns1:eventWeek "Semana 2"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/2/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/2/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "DNA Computing"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/3> a ns1:ScheduleEvent ;
+    ns1:eventIndex 3 ;
+    ns1:eventWeek "Semana 3"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/3/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/3/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "DNA Computing"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/4> a ns1:ScheduleEvent ;
+    ns1:eventIndex 4 ;
+    ns1:eventWeek "Semana 4"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/4/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/4/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "DNA Computing"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/5> a ns1:ScheduleEvent ;
+    ns1:eventIndex 5 ;
+    ns1:eventWeek "Semana 5"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/5/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/5/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "DNA Computing"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/6> a ns1:ScheduleEvent ;
+    ns1:eventIndex 6 ;
+    ns1:eventWeek "Semana 6"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/6/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/6/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Synthetic Biology"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/7> a ns1:ScheduleEvent ;
+    ns1:eventIndex 7 ;
+    ns1:eventWeek "Semana 7"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/7/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/7/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Synthetic Biology"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/8> a ns1:ScheduleEvent ;
+    ns1:eventIndex 8 ;
+    ns1:eventWeek "Semana 8"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/8/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/8/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Synthetic Biology"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/9> a ns1:ScheduleEvent ;
+    ns1:eventIndex 9 ;
+    ns1:eventWeek "Semana 9"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/9/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/9/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Synthetic Biology"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus> a ns1:Syllabus ;
+    ns1:hasItem <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/0>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/0> a ns1:SyllabusItem ;
+    ns1:itemIndex 0 ;
+    ns1:syllabusDescription "1. Computación con ADN"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/1> a ns1:SyllabusItem ;
+    ns1:itemIndex 1 ;
+    ns1:syllabusDescription "1.1. DNA structure and operations Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/10> a ns1:SyllabusItem ;
+    ns1:itemIndex 10 ;
+    ns1:syllabusDescription "2.4. CRISPR-based devices and gene drives Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/11> a ns1:SyllabusItem ;
+    ns1:itemIndex 11 ;
+    ns1:syllabusDescription "3. Biología Programable"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/12> a ns1:SyllabusItem ;
+    ns1:itemIndex 12 ;
+    ns1:syllabusDescription "3.1. Automation in Biology Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/13> a ns1:SyllabusItem ;
+    ns1:itemIndex 13 ;
+    ns1:syllabusDescription "3.2. Simulating bacterial colonies with IBM: Gro simulator Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/14> a ns1:SyllabusItem ;
+    ns1:itemIndex 14 ;
+    ns1:syllabusDescription "3.3. Engineering portable biolabs with Arduino cards and bioblocks Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/15> a ns1:SyllabusItem ;
+    ns1:itemIndex 15 ;
+    ns1:syllabusDescription "4. Inteligencia artificial en microbiología y biomedicina Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/2> a ns1:SyllabusItem ;
+    ns1:itemIndex 2 ;
+    ns1:syllabusDescription "1.2. DNA strand-displacement-based biocircuits Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/3> a ns1:SyllabusItem ;
+    ns1:itemIndex 3 ;
+    ns1:syllabusDescription "1.3. Molecular automata Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/4> a ns1:SyllabusItem ;
+    ns1:itemIndex 4 ;
+    ns1:syllabusDescription "1.4. Adleman experiment Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/5> a ns1:SyllabusItem ;
+    ns1:itemIndex 5 ;
+    ns1:syllabusDescription "1.5. DNA storage Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/6> a ns1:SyllabusItem ;
+    ns1:itemIndex 6 ;
+    ns1:syllabusDescription "2. Biología sintética: diseño de circuitos genéticos"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/7> a ns1:SyllabusItem ;
+    ns1:itemIndex 7 ;
+    ns1:syllabusDescription "2.1. Gene expression and regulation Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/8> a ns1:SyllabusItem ;
+    ns1:itemIndex 8 ;
+    ns1:syllabusDescription "2.2. Genetic Boolean logic gates Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/syllabus/9> a ns1:SyllabusItem ;
+    ns1:itemIndex 9 ;
+    ns1:syllabusDescription "2.3. Basic genetic circuits: A toggle switch and an oscillator. Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/10II%20-%20Grado%20en%20Ingenieria%20Informatica> a ns1:BachelorDegree ;
+    ns1:degreeCode "10II"@es ;
+    ns1:hasCourse <https://guia-kg.skai.etsisi.upm.es/resource/105000395> ;
+    schema:name "Grado en Ingenieria Informatica"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/13> a ns1:ScheduleEvent ;
+    ns1:eventIndex 13 ;
+    ns1:eventWeek "Semana 13"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/13/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/14> a ns1:ScheduleEvent ;
+    ns1:eventIndex 14 ;
+    ns1:eventWeek "Semana 14"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/14/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/alfonso.rodriguez-paton%40upm.es> a ns1:Lecturer ;
+    ns1:office "DIA 2106"@es ;
+    ns1:tutorshipsSchedule "make appointment by email"@es ;
+    schema:email "alfonso.rodriguez-paton@upm.es" ;
+    schema:name "Rodriguez-Paton Aradas, Alfonso Vicente" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/15> a ns1:ScheduleEvent ;
+    ns1:eventIndex 15 ;
+    ns1:eventWeek "Semana 15"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/15/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/17> a ns1:ScheduleEvent ;
+    ns1:eventIndex 17 ;
+    ns1:eventWeek "Semana 17"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/17/activity/TEvaluationActivity/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000395/2025-26/eventSchedule/17/activity/TEvaluationActivity/2> .
+

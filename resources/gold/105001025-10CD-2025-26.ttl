@@ -1,0 +1,727 @@
+@prefix ns1: <http://w3id.org/def/guia#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/previous_courses> a ns1:RequiredKnowledge ;
+    ns1:previousCourses "El plan de estudios Grado En Ciencia De Datos E Inteligencia Artificial no tiene definidos otros requisitos para esta asignatura."@es ;
+    ns1:previousKnowledge "El coordinador de la asignatura no ha definido otros conocimientos previos recomendados."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/E.T.S.%20De%20Ingenieros%20Inform%C3%A1ticos> a ns1:UniversityCenter ;
+    ns1:offers <https://guia-kg.skai.etsisi.upm.es/resource/10CD%20-%20Grado%20en%20Ciencia%20de%20Datos%20e%20Inteligencia%20Artificial> ;
+    schema:name "E.T.S. De Ingenieros Informáticos" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025> a ns1:Course ;
+    ns1:courseType "Obligatoria"@es ;
+    ns1:courseYear 3 ;
+    ns1:semester "Quinto semestre"@es ;
+    schema:courseCode 105001025 ;
+    schema:hasCourseInstance <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26> ;
+    schema:name "Cloud Services"@en,
+        "Infraestructuras y Servicios Cloud"@es ;
+    schema:numberOfCredits 6.0 .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26> a ns1:CourseGuide ;
+    ns1:hasCompetency <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/CB04>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/CG06> ;
+    ns1:hasDidacticResource <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/9> ;
+    ns1:hasEvaluation <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation> ;
+    ns1:hasLearningResult <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/RA122> ;
+    ns1:hasSyllabus <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus> ;
+    ns1:inpersonHours "74 horas (47.4%)"@es ;
+    ns1:numberOfCredits 6.0 ;
+    ns1:otherInformation """Metodologías docentes innovadoras aplicadas en la asignatura
+En la asignatura se implementan varias metodologías docentes innovadoras (https://innovacioneducativa.upm.es/guias-pdi) con el fin de motivar y reforzar el aprendizaje por parte de los estudiantes:
+Learning by doing: se utilizan entornos reales (AWS, Docker) donde los estudiantes pueden ir reforzando los conceptos teóricos vistos en clase, aprendiendo desde la experimentación.
+Aprendizaje basado en problemas: durante la asignatura se les proponen pequeñas problemas sobre conceptos individuales que tienen que ir resolviendo ellos solos.
+Aclaración al cronograma
+Para cada actividad se especifica la dedicación en horas que implica para el estudiante. Esta distribución de esfuerzos debe entenderse para el "estudiante medio", por lo que si bien puede servir de orientación, no debe tomarse en ningún caso en sentido estricto a la hora de planificar su trabajo. Cada estudiante deberá hacer su propia planificación para alcanzar los resultados de aprendizaje descritos en esta Guía y ajustar dicha planificación en un proceso iterativo en función de los resultados intermedios que vaya obteniendo."""@es ;
+    ns1:periodEndingMonth "Enero"@es ;
+    ns1:periodStartingMonth "Septiembre"@es ;
+    ns1:teachingPeriod "2025-26" ;
+    ns1:teachingPeriodMonths "Septiembre-Enero"@es ;
+    ns1:totalHours "74 horas"@es ;
+    schema:activitiesWorkload "100%"@es ;
+    schema:courseSchedule <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule> ;
+    schema:description """El objetivo de esta asignatura es capacitar a los estudiantes en el despliegue de sus proyectos en infraestructuras cloud y enseñarles a diseñar servicios ligeros desplegables en cloud como alternativa al desarrollo tradicional de servicios.
+En el segundo tema, los estudiantes conocerán la arquitectura de una infraestructura cloud pública, sus servicios de infraestructura (computación, almacenamiento, redes) y sus principales servicios para aplicaciones, para finalmente aprender a desplegar aplicaciones sobre dicha infraestuctura.
+En el tercer tema, los estudiantes conocerán el uso de contenedores para el despliegue de servicios como alternativa ligera al uso de máquinas virtuales, para finalmente aprender a desplegar aplicaciones conterizadas en cloud.
+En los dos siguientes temas, los estudiantes aprenderán a diseñar microservicios y aplicaciones sin infraestructura (serverless) y a desplegarlos en una infraestructura cloud."""@es ;
+    schema:director <https://guia-kg.skai.etsisi.upm.es/resource/sonia.frutos%40upm.es> ;
+    schema:inLanguage "Castellano"@es ;
+    schema:instructor <https://guia-kg.skai.etsisi.upm.es/resource/ainhoa.azqueta%40upm.es>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/m.jimenez%40upm.es>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/marta.patino%40upm.es>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/sonia.frutos%40upm.es> ;
+    schema:name "Infraestructuras y Servicios Cloud"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/CB04> a ns1:Competency ;
+    ns1:competencyCode "CB04" ;
+    ns1:competencyDescription "Que los estudiantes puedan transmitir información, ideas, problemas y soluciones a un público tanto especializado como no especializado"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/CB05> a ns1:Competency ;
+    ns1:competencyCode "CB05" ;
+    ns1:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/CE06> a ns1:Competency ;
+    ns1:competencyCode "CE06" ;
+    ns1:competencyDescription "Capacidad para describir los fundamentos de las infraestructuras de gestión e intercambio de datos: hardware, sistemas operativos, bases de datos, redes de computadores."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/CG06> a ns1:Competency ;
+    ns1:competencyCode "CG06" ;
+    ns1:competencyDescription "Identificar y utilizar las tecnologías de la información y las comunicaciones más adecuadas en el ámbito de la ingeniería."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/RA122> a ns1:LearningResult ;
+    ns1:learningResultCode "RA122" ;
+    ns1:learningResultDescription "RA"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/1> a ns1:DidacticResource ;
+    ns1:bibliographyDescription """AWS Certified Cloud Practitioner (CLF-C02) Cert Guide, 2nd Ed. Anthony Sequeira. Pearson IT Certification. 2024.
+(https://learning.oreilly.com/library/view/aws-certified-cloud/9780138286002/)"""@es ;
+    ns1:bibliographyTitle "AWS Certified Cloud Practitioner (CLF-C02) Cert Guide, 2nd Ed"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/10> a ns1:DidacticResource ;
+    ns1:bibliographyDescription """Building Microservices, 2nd Ed. O'Reilly Media. 2021.
+(https://learning.oreilly.com/library/view/building-microservices-2nd/9781492034018/)"""@es ;
+    ns1:bibliographyTitle "Building Microservices"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/11> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "Comunicación, evaluación y calificación de laasignatura(https://moodle.upm.es/titulaciones/oficiales/)"@es ;
+    ns1:bibliographyTitle "Moodle de la asignatura"@es ;
+    ns1:bibliographyType "Recursos web"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/2> a ns1:DidacticResource ;
+    ns1:bibliographyDescription """Amazon Web Services (AWS), 3rd Ed.
+Richard Jones. Addison-Wesley Professional. 2022.
+(https://learning.oreilly.com/videos/amazon-web-services/9780134702186/)"""@es ;
+    ns1:bibliographyTitle "AWS Live Sessions"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/3> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "https://docs.aws.amazon.com/index.html?nc2=h_ql_doc_do_v"@es ;
+    ns1:bibliographyTitle "Documentación AWS"@es ;
+    ns1:bibliographyType "Recursos web"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/4> a ns1:DidacticResource ;
+    ns1:bibliographyDescription """Docker: Up & Running, 2nd Ed. Sean P. Kane & Karl Matthias. O'Reilly Media. 2018
+(https://learning.oreilly.com/library/view/docker-up/9781492036722/)"""@es ;
+    ns1:bibliographyTitle "Docker: Up & Running"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/5> a ns1:DidacticResource ;
+    ns1:bibliographyDescription """Using Docker. Adrián Mouat. O'Reilly Media. 2015.
+(https://learning.oreilly.com/library/view/using-docker/9781491915752/)"""@es ;
+    ns1:bibliographyTitle "Using Docker"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/6> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "https://docs.docker.com/"@es ;
+    ns1:bibliographyTitle "Documentación Docker"@es ;
+    ns1:bibliographyType "Recursos web"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/7> a ns1:DidacticResource ;
+    ns1:bibliographyDescription """Kubernetes: Up & Running, 3rd Ed. Brendan Burns et al. O'Reilly. 2022.
+(https://learning.oreilly.com/library/view/kubernetes-up-and/9781098110192/)"""@es ;
+    ns1:bibliographyTitle "Kubernetes: Up & Running"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/8> a ns1:DidacticResource ;
+    ns1:bibliographyDescription """Kubernetes: Best Practices. Brendan Burns et al. O'Reilly Media. 2019.
+(https://learning.oreilly.com/library/view/kubernetes-best-practices/9781492056461/)"""@es ;
+    ns1:bibliographyTitle "Kubernetes: Best Practices"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/didactic_resource/9> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "https://kubernetes.io/es/docs/concepts/overview/what-is-kubernetes/"@es ;
+    ns1:bibliographyTitle "Documentación Kubernetes"@es ;
+    ns1:bibliographyType "Recursos web"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation> a ns1:EvaluationSystem ;
+    ns1:evaluationDescription """Sistema de evaluación progresiva
+La asignatura está organizada en 6 temas. Durante el desarrollo de cada tema se realizarán en el aula informática diferentes despliegues en cloud para obtener los conocimientos que luego permitirán evaluar las competencias (generales/específicas) adquiridas por los estudiantes.
+La asignatura seguirá un proceso de evaluación progresiva, de modo que al final de los temas 2, 3 y 5 se realizan prácticas en el laboratorio donde los alumnos tendrán que desplegar en cloud un servicio realizado por ellos en asignaturas previas:
+Práctica 1 "despliegue en cloud" (no recuperable). En grupo, los estudiantes tendrán que desplegar su servicio en una máquina alojada en un cloud público y analizar las ventajas e inconvenientes de este despliegue respecto a una alternativa on premise. La práctica se realizará y evaluará en horario de clase y no se podrá recuperar en convocatoria ordinaria ni extraordinaria.
+Práctica 2 "despliegue en contenedores" (no recuperable). En grupo, los estudiantes tendrán que desplegar ahora su servicio en contenedores y analizar las ventajas e inconvenientes de este despliegue respecto a las alternativas de on premise y máquina virtual en cloud. La práctica se realizará y evaluará en horario de clase y no se podrá recuperar en convocatoria ordinaria ni extraordinaria.
+Práctica 3 "despliegue de microservicios/serverless" (no recuperable). En grupo, los estudiantes tendrán que rediseñar su servicio para transformarlo en un microservicio/serverless, desplegarlo utilizando servicios cloud y analizar las ventajas e inconvenientes de este despliegue respecto a las alternativas de on premise, máquina virtual en cloud y contenedores. La práctica se realizará y evaluará en horario de clase y no se podrá recuperar en convocatoria ordinaria ni extraordinaria.
+Las prácticas no requieren nota mínima.
+Durante la semana oficial de exámenes programada por Jefatura de Estudios (semana 16), los estudiantes realizarán un examen final de la asignatura que cubrirá todos los temas de la asignatura y que requerirá nota mínima de 4.
+La nota final de la asignatura será la media ponderada de las notas de la práctica 1 (15%), práctica 2 (15%), práctica 3 (15%) y el examen global (55%), siempre que el examen global tenga una nota mínima de 4.
+Evaluación mediante prueba global
+Durante la semana oficial de exámenes programada por Jefatura de Estudios (semana 16), los estudiantes realizarán el examen global de la asignatura pero no podrán recuperar la parte práctica. La realización de dichas prácticas conlleva un desarrollo incremental en las tres etapas/entregas en las que está planificada, una secuencialidad en el tiempo donde los alumnos tienen que ir comparando resultados con los despliegues anteriores y una exposición, corrección y posterior análisis en clase de los resultados de cada grupo de prácticas que imposibilita su recuperación en período ordinario y extraordinario.
+Evaluación en periodo extraordinario
+La convocatoria extraordinaria de julio consistirá en la recuperación del examen global de la asignatura pero no podrán recuperar la parte práctica.
+Actuación ante fraude académico
+Ante la comprobación de fraude académico durante el desarrollo de pruebas de evaluación, se aplicará lo recogido en el artículo 13 de la Normativa de Evaluación UPM aprobada en Consejo de Gobierno de 26 de mayo de 2022."""@es ;
+    ns1:hasEvaluationTrial <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation/trial1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation/trial2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation/trial3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation/trial4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation/trial5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation/trial6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation/trial7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation/trial8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation/trial9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation/trial1> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "04:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "15%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/5> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB04>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "0 / 10"@es ;
+    ns1:trialDescription "Práctica \"despliegue en cloud\" (no recuperable)"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "5"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation/trial2> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "04:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "15%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/10> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB04>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CB05> ;
+    ns1:minimumScore "0 / 10"@es ;
+    ns1:trialDescription "Práctica \"despliegue en contenedores\" (no recuperable)"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "10"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation/trial3> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "04:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "15%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/15> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB04>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CB05> ;
+    ns1:minimumScore "0 / 10"@es ;
+    ns1:trialDescription "Práctica \"despliegue de microservicios/serverless\" (no recuperable)"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "15"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation/trial4> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "55%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/16> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Examen final"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation/trial5> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "04:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "15%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/5> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB04>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "0 / 10"@es ;
+    ns1:trialDescription "Práctica \"despliegue en cloud\" (no recuperable)"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "5"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation/trial6> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "04:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "15%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/10> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB04>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CB05> ;
+    ns1:minimumScore "0 / 10"@es ;
+    ns1:trialDescription "Práctica \"despliegue en contenedores\" (no recuperable)"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "10"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation/trial7> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "04:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "15%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/15> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB04>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CB05> ;
+    ns1:minimumScore "0 / 10"@es ;
+    ns1:trialDescription "Práctica \"despliegue de microservicios/serverless\" (no recuperable)"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "15"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation/trial8> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "55%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/16> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Examen final"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/evaluation/trial9> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:00"@es ;
+    ns1:evaluationType "extraordinaria"@es ;
+    ns1:gradePercentage "55%"@es ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Examen final"@es ;
+    ns1:trialType "Presencial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule> a ns1:Schedule ;
+    schema:eventSchedule <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/1> a ns1:ScheduleEvent ;
+    ns1:eventIndex 1 ;
+    ns1:eventWeek "Semana 1"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/1/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/1/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/1/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 1 - Introducción"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/1/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2 - Infraestructura cloud"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/10/activity/TActivityType2/1> a ns1:ActivityType2 ;
+    ns1:activityDescription "Práctica \"despliegue en contenedores\" (no recuperable)"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/10/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Práctica \"despliegue en contenedores\" (no recuperable)"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TG: Técnica del tipo Trabajo en Grupo"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva y Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/11> a ns1:ScheduleEvent ;
+    ns1:eventIndex 11 ;
+    ns1:eventWeek "Semana 11"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/11/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/11/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/11/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 5 - Microservicios"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/11/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 5 - Microservicios"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/12> a ns1:ScheduleEvent ;
+    ns1:eventIndex 12 ;
+    ns1:eventWeek "Semana 12"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/12/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/12/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 5 - Microservicios"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/13> a ns1:ScheduleEvent ;
+    ns1:eventIndex 13 ;
+    ns1:eventWeek "Semana 13"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/13/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/13/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/13/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 5 - Serverless"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/13/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 5 - Serverless"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/14> a ns1:ScheduleEvent ;
+    ns1:eventIndex 14 ;
+    ns1:eventWeek "Semana 14"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/14/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/14/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 5 - Serverless"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/15/activity/TActivityType2/1> a ns1:ActivityType2 ;
+    ns1:activityDescription "Práctica \"despliegue de microservicios/serverless\" (no recuperable)"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/15/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Práctica \"despliegue de microservicios/serverless\" (no recuperable)"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TG: Técnica del tipo Trabajo en Grupo"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva y Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/16/activity/TActivityType2/1> a ns1:ActivityType2 ;
+    ns1:activityDescription "Examen final"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/16/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Examen final"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva y Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/17> a ns1:ScheduleEvent ;
+    ns1:eventIndex 17 ;
+    ns1:eventWeek "Semana 17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/2> a ns1:ScheduleEvent ;
+    ns1:eventIndex 2 ;
+    ns1:eventWeek "Semana 2"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/2/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/2/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/2/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2 - Seguridad"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/2/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2 - Redes"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/3> a ns1:ScheduleEvent ;
+    ns1:eventIndex 3 ;
+    ns1:eventWeek "Semana 3"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/3/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/3/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/3/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2 - Computación"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/3/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2 - Almacenamiento"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/4> a ns1:ScheduleEvent ;
+    ns1:eventIndex 4 ;
+    ns1:eventWeek "Semana 4"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/4/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/4/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/4/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2 - Monitorización"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/4/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2 - Alta disponibilidad y tolerancia a fallos"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/5/activity/TActivityType2/1> a ns1:ActivityType2 ;
+    ns1:activityDescription "Práctica \"despliegue en cloud\" (no recuperable)"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/5/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Práctica \"despliegue en cloud\" (no recuperable)"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TG: Técnica del tipo Trabajo en Grupo"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva y Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/6> a ns1:ScheduleEvent ;
+    ns1:eventIndex 6 ;
+    ns1:eventWeek "Semana 6"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/6/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/6/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 3 - Contenedores"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/7> a ns1:ScheduleEvent ;
+    ns1:eventIndex 7 ;
+    ns1:eventWeek "Semana 7"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/7/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/7/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 3 - Contenedores"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/8> a ns1:ScheduleEvent ;
+    ns1:eventIndex 8 ;
+    ns1:eventWeek "Semana 8"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/8/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/8/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 3 - Contenedores"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/9> a ns1:ScheduleEvent ;
+    ns1:eventIndex 9 ;
+    ns1:eventWeek "Semana 9"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/9/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/9/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 3 - Contenedores"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus> a ns1:Syllabus ;
+    ns1:hasItem <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/0>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/18>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/19>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/20>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/21>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/22>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/23>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/24>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/0> a ns1:SyllabusItem ;
+    ns1:itemIndex 0 ;
+    ns1:syllabusDescription "1. Introducción a cloud"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/1> a ns1:SyllabusItem ;
+    ns1:itemIndex 1 ;
+    ns1:syllabusDescription "1.1. Evolución de Internet Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/10> a ns1:SyllabusItem ;
+    ns1:itemIndex 10 ;
+    ns1:syllabusDescription "2.4. Servicios para aplicaciones: bases de datos, eventos, monitorización Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/11> a ns1:SyllabusItem ;
+    ns1:itemIndex 11 ;
+    ns1:syllabusDescription "3. Contenedores"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/12> a ns1:SyllabusItem ;
+    ns1:itemIndex 12 ;
+    ns1:syllabusDescription "3.1. Contenedores de aplicaciones y servicios Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/13> a ns1:SyllabusItem ;
+    ns1:itemIndex 13 ;
+    ns1:syllabusDescription "3.2. Grupos de contenedores Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/14> a ns1:SyllabusItem ;
+    ns1:itemIndex 14 ;
+    ns1:syllabusDescription "3.3. Orquestación de servicios Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/15> a ns1:SyllabusItem ;
+    ns1:itemIndex 15 ;
+    ns1:syllabusDescription "3.4. Docker Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/16> a ns1:SyllabusItem ;
+    ns1:itemIndex 16 ;
+    ns1:syllabusDescription "3.5. Kubernetes Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/17> a ns1:SyllabusItem ;
+    ns1:itemIndex 17 ;
+    ns1:syllabusDescription "3.6. Servicios cloud de contenedores Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/18> a ns1:SyllabusItem ;
+    ns1:itemIndex 18 ;
+    ns1:syllabusDescription "4. Microservicios"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/19> a ns1:SyllabusItem ;
+    ns1:itemIndex 19 ;
+    ns1:syllabusDescription "4.1. Características y diseño Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/2> a ns1:SyllabusItem ;
+    ns1:itemIndex 2 ;
+    ns1:syllabusDescription "1.2. Características Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/20> a ns1:SyllabusItem ;
+    ns1:itemIndex 20 ;
+    ns1:syllabusDescription "4.2. Implementación de microservicios en cloud Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/21> a ns1:SyllabusItem ;
+    ns1:itemIndex 21 ;
+    ns1:syllabusDescription "4.3. Servicios cloud de gestión de APIs Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/22> a ns1:SyllabusItem ;
+    ns1:itemIndex 22 ;
+    ns1:syllabusDescription "5. Servicios sin infraestructura (serverless)"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/23> a ns1:SyllabusItem ;
+    ns1:itemIndex 23 ;
+    ns1:syllabusDescription "5.1. Funciones como servicio (FaaS) Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/24> a ns1:SyllabusItem ;
+    ns1:itemIndex 24 ;
+    ns1:syllabusDescription "5.2. Despliegue de aplicaciones sin infraestructura Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/3> a ns1:SyllabusItem ;
+    ns1:itemIndex 3 ;
+    ns1:syllabusDescription "1.3. Modelos de servicio: IaaS, PaaS, SaaS, FaaS Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/4> a ns1:SyllabusItem ;
+    ns1:itemIndex 4 ;
+    ns1:syllabusDescription "1.4. Modelos de despliegue: público, privado, híbrido Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/5> a ns1:SyllabusItem ;
+    ns1:itemIndex 5 ;
+    ns1:syllabusDescription "1.5. Proveedores cloud actuales Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/6> a ns1:SyllabusItem ;
+    ns1:itemIndex 6 ;
+    ns1:syllabusDescription "2. Infraestructura cloud"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/7> a ns1:SyllabusItem ;
+    ns1:itemIndex 7 ;
+    ns1:syllabusDescription "2.1. Arquitectura Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/8> a ns1:SyllabusItem ;
+    ns1:itemIndex 8 ;
+    ns1:syllabusDescription "2.2. Consola, CLI y APIs de desarrollo Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/syllabus/9> a ns1:SyllabusItem ;
+    ns1:itemIndex 9 ;
+    ns1:syllabusDescription "2.3. Servicios de infraestructura: computación, almacenamiento, redes Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/10CD%20-%20Grado%20en%20Ciencia%20de%20Datos%20e%20Inteligencia%20Artificial> a ns1:BachelorDegree ;
+    ns1:degreeCode "10CD"@es ;
+    ns1:hasCourse <https://guia-kg.skai.etsisi.upm.es/resource/105001025> ;
+    schema:name "Grado en Ciencia de Datos e Inteligencia Artificial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/ainhoa.azqueta%40upm.es> a ns1:Lecturer ;
+    ns1:office "D. 2307"@es ;
+    ns1:tutorshipsSchedule """L - 15:00 - 17:00
+X - 10:00 - 12:00
+J - 15:00 - 17:00"""@es ;
+    schema:email "ainhoa.azqueta@upm.es" ;
+    schema:name "Azqueta Alzuaz, Ainhoa" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/m.jimenez%40upm.es> a ns1:Lecturer ;
+    ns1:office "D. 4311"@es ;
+    ns1:tutorshipsSchedule """M - 10:00 - 12:00
+X - 10:00 - 12:00
+V - 12:00 - 14:00"""@es ;
+    schema:email "m.jimenez@upm.es" ;
+    schema:name "Jimenez Gañan, Miguel" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/marta.patino%40upm.es> a ns1:Lecturer ;
+    ns1:office "D. 2313"@es ;
+    ns1:tutorshipsSchedule """M - 14:00 - 16:00
+X - 14:00 - 16:00
+J - 14:00 - 16:00"""@es ;
+    schema:email "marta.patino@upm.es" ;
+    schema:name "Patiño Martinez, Marta" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/sonia.frutos%40upm.es> a ns1:Lecturer ;
+    ns1:office "D. 4308"@es ;
+    ns1:tutorshipsSchedule """M - 09:00 - 12:00
+J - 09:00 - 12:00"""@es ;
+    schema:email "sonia.frutos@upm.es" ;
+    schema:name "Frutos Cid, Sonia Valentina De" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/10> a ns1:ScheduleEvent ;
+    ns1:eventIndex 10 ;
+    ns1:eventWeek "Semana 10"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/10/activity/TActivityType2/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/10/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/15> a ns1:ScheduleEvent ;
+    ns1:eventIndex 15 ;
+    ns1:eventWeek "Semana 15"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/15/activity/TActivityType2/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/15/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/16> a ns1:ScheduleEvent ;
+    ns1:eventIndex 16 ;
+    ns1:eventWeek "Semana 16"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/16/activity/TActivityType2/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/16/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/5> a ns1:ScheduleEvent ;
+    ns1:eventIndex 5 ;
+    ns1:eventWeek "Semana 5"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/5/activity/TActivityType2/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001025/2025-26/eventSchedule/5/activity/TEvaluationActivity/1> .
+

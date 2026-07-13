@@ -1,0 +1,569 @@
+@prefix ns1: <http://w3id.org/def/guia#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/previous_courses> a ns1:RequiredKnowledge ;
+    ns1:previousCourses "El plan de estudios Grado En Ingeniería En Tecnologías Industriales no tiene definidos otros requisitos para esta asignatura."@es ;
+    ns1:previousKnowledge """Control Regulatorio Básico
+Controladores PID"""@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/E.T.S.%20De%20Ingenieros%20Industriales> a ns1:UniversityCenter ;
+    ns1:offers <https://guia-kg.skai.etsisi.upm.es/resource/05TI%20-%20Grado%20en%20Ingenier%C3%ADa%20en%20Tecnolog%C3%ADas%20Industriales> ;
+    schema:name "E.T.S. De Ingenieros Industriales" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/05TI%20-%20Grado%20en%20Ingenier%C3%ADa%20en%20Tecnolog%C3%ADas%20Industriales> a ns1:BachelorDegree ;
+    ns1:degreeCode "05TI"@es ;
+    ns1:hasCourse <https://guia-kg.skai.etsisi.upm.es/resource/55000112> ;
+    schema:name "Grado en Ingeniería en Tecnologías Industriales"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112> a ns1:Course ;
+    ns1:courseType "Optativa"@es ;
+    ns1:courseYear 4 ;
+    ns1:semester "Octavo semestre"@es ;
+    schema:courseCode 55000112 ;
+    schema:hasCourseInstance <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26> ;
+    schema:name "Multivariable Control Systems"@en,
+        "Control de Sistemas Multivariables"@es ;
+    schema:numberOfCredits 3.0 .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26> a ns1:CourseGuide ;
+    ns1:hasCompetency <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/CE28B>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/CG1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/CG10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/CG2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/CG3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/CG5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/CG6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/CG7> ;
+    ns1:hasDidacticResource <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/didactic_resource/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/didactic_resource/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/didactic_resource/3> ;
+    ns1:hasEvaluation <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/evaluation> ;
+    ns1:hasLearningResult <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/RA134>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/RA135>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/RA136>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/RA137>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/RA138>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/RA139> ;
+    ns1:hasSyllabus <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/syllabus> ;
+    ns1:inpersonHours "29 horas y 45 minutos (38.1%)"@es ;
+    ns1:numberOfCredits 3.0 ;
+    ns1:otherInformation "La asignatura debe seguirse mediante su página Moolde"@es ;
+    ns1:periodEndingMonth "Junio"@es ;
+    ns1:periodStartingMonth "Febrero"@es ;
+    ns1:teachingPeriod "2025-26" ;
+    ns1:teachingPeriodMonths "Febrero-Junio"@es ;
+    ns1:totalHours "29 horas y 45 minutos"@es ;
+    schema:activitiesWorkload "100%"@es ;
+    schema:courseSchedule <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule> ;
+    schema:description """Si «la información es poder» y nuestro objetivo es poder controlar el comportamiento de un sistema, ¿qué mejor que tener la máxima información posible sobre dicho sistema,para ser utilizada en su control? Esta es la idea básica del Control en el Espacio de Estado. Es decir, contar con la máxima información posible del sistema con objeto de utilizarla para controlarlo mejor. Con esta idea básica como objetivo principal, la asignatura se halla dividida en distintos temas que abordan las diferentes fases hasta la consecución del control de un sistema partiendo de la máxima información posible de éste, información que viene representada
+por el denominado "estado del sistema". Este nuevo modelo aporta información completa de la evolución del sistema y se contrapone con ello al modelo clásico más limitado de la relación entrada-salida del sistema. Así cada capítulo aborda y resuelve cada una de las importantes cuestiones planteadas, que son:
+
+1.
+¿Cuál es la máxima información que determina el comportamiento de un sistema? En este tema se explicita que dicha información esta formada por un conjunto mínimo de variables, que constituyen el denominado estado del sistema, que junto con la evolución de las entradas al mismo determinan el comportamiento de cualquiera de sus variables. La evolución temporal del estado obedece a unas ecuaciones, que junto con la relación entre sus variables y el resto del sistema, forman el denominado modelo de estado del sistema.
+
+2.
+¿Cuál es la evolución temporal del sistema si conocemos las leyes de variación de las entradas y la información de su estado en el instante inicial? La resolución de esta pregunta es crucial para relacionar las entradas con la evolución del sistema y ésta con sus salidas medibles. Estos resultados son explotados en los temas 3 y 5 para contestar a las preguntas fundamentales que a continuación se enumeran.
+
+3.
+¿Qué parte del sistema puede controlarse con sus entradas disponibles? Esta pregunta se resuelve en este tema, en el que se separan claramente las variables que pueden controlarse con las entradas del sistema, que constituyen el denominado subsistema controlable, de aquellas variables cuya evolución temporal es independiente de las entradas y está solamente relacionada con sus valores iniciales y la propia dinámica interna del sistema.
+
+4.
+Si un sistema, o subsistema, puede ser controlado con sus entradas: ¿Cómo deben calcularse estas entradas en función del estado del sistema, para modificar su dinámica? Esta cuestión es abordada y resuelta en este tema, en el que se ve que en los sistemas controlables, no sólo puede fijarse su evolución temporal con una entrada adecuada, sino que su dinámica puede modificarse de forma sustancial (fijación de sus polos) mediante una realimentación del estado del sistema. En este capítulo se aborda y resuelve igualmente el problema del servoposicionador, en el que se consigue controlar el valor en régimen permanente de la salida de un sistema, modificando adicionalmente su dinámica mediante la realimentación de su estado.
+
+5.
+Si las variables que constituyen el estado del sistema tienen toda la información necesaria de esté en un instante dado ¿cómo se puede conocer su valor? o dicho de forma más precisa: ¿Cuáles son las variables que forman parte del estado del sistema, cuyo valor puede obtenerse a partir de las manifestaciones exteriores del comportamiento de éste (i.e. sus salidas y entradas)? Esta cuestión se resuelve en este tema, en el que se especifica que dicho conjunto de variables del estado constituye el denominado subsistema observable, puesto que su valor puede calcularse a partir de las salidas y las entradas del sistema, separándolo del resto de las variables de estado, cuya evolución temporal no tiene ninguna repercusión sobre el comportamiento de las salidas del sistema. Llegado a este punto y al final de este capítulo, se obtiene un subsistema denominado controlable y observable, constituido por un subconjunto de variables formadas por combinación lineal de las variables de estado del sistema original, tal que la información de su estado puede conocerse con mediciones externas de su salidas y entradas y cuya evolución temporal puede controlarse con el conjunto de entradas disponibles. Éste es por tanto el subsistema que puede y va a ser utilizado en el siguiente tema para efectuar el denominado Control en el Espacio de Estado o control por realimentación del estado del sistema.
+
+
+6.
+Si el tema anterior resuelve la modificación potestativa de la dinámica del sistema a partir del conocimiento de su estado, surge de forma inmediata la importante cuestión: ¿Cómo es posible conocer el estado del sistema a partir de sus manifestaciones exteriores (i.e. sus entradas y salidas) para que pueda ser utilizado en la modificación de la dinámica del sistema?. Esta cuestión es resuelta mediante el diseño de los sistemas denominados observadores del estado. La realización práctica de estos sistemas observadores impide que sus cálculos se efectúen mediante operaciones matemáticas derivativas difícilmente realizables en la práctica, obligando por tanto a que estos observadores constituyan un sistema con su propia dinámica intrínseca en el cálculo de su salida (i.e. variables de estado estimadas del sistema original) y en función de sus entradas (i.e. entradas y salidas del sistema original). En este capítulo se resuelve el diseño de estos sistemas observadores del estado, imponiéndoles consecuentemente una dinámica de cálculo mucho más rápida que la de la evolución de las propias variables de estado que se estiman. Este tema supone la culminación de la estructura completa de Control por Realimentación del Estado en sistemas continuos."""@es ;
+    schema:director <https://guia-kg.skai.etsisi.upm.es/resource/pascual.campoy%40upm.es> ;
+    schema:inLanguage "Castellano"@es ;
+    schema:instructor <https://guia-kg.skai.etsisi.upm.es/resource/pascual.campoy%40upm.es> ;
+    schema:name "Control de Sistemas Multivariables"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/CE28B> a ns1:Competency ;
+    ns1:competencyCode "CE28B" ;
+    ns1:competencyDescription "Conocimiento de los principios de regulación automática y su aplicación a la automatización industrial."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/CG1> a ns1:Competency ;
+    ns1:competencyCode "CG1" ;
+    ns1:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Industrial."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/CG10> a ns1:Competency ;
+    ns1:competencyCode "CG10" ;
+    ns1:competencyDescription "Capacidad para generar nuevas ideas (Creatividad)."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/CG2> a ns1:Competency ;
+    ns1:competencyCode "CG2" ;
+    ns1:competencyDescription "Poseer capacidad para diseñar, desarrollar, implementar, gestionar y mejorar productos, sistemas y procesos en los distintos ámbitos industriales, usando técnicas analíticas, computacionales o experimentales apropiadas."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/CG3> a ns1:Competency ;
+    ns1:competencyCode "CG3" ;
+    ns1:competencyDescription "Aplicar los conocimientos adquiridos para identificar, formular y resolver problemas dentro de contextos amplios y multidisciplinarios, siendo capaces de integrar conocimientos, trabajando en equipos multidisciplinares."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/CG5> a ns1:Competency ;
+    ns1:competencyCode "CG5" ;
+    ns1:competencyDescription "Saber comunicar los conocimientos y conclusiones, de forma oral, escrita y gráfica, a públicos especializados y no especializados de un modo claro y sin ambigüedades."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/CG6> a ns1:Competency ;
+    ns1:competencyCode "CG6" ;
+    ns1:competencyDescription "Poseer habilidades de aprendizaje que permitan continuar estudiando a lo largo de la vida para su adecuado desarrollo profesional."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/CG7> a ns1:Competency ;
+    ns1:competencyCode "CG7" ;
+    ns1:competencyDescription "Incorporar nuevas tecnologías y herramientas de la Ingeniería Industrial en sus actividades profesionales."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/RA134> a ns1:LearningResult ;
+    ns1:learningResultCode "RA134" ;
+    ns1:learningResultDescription "Trabajo en grupo"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/RA135> a ns1:LearningResult ;
+    ns1:learningResultCode "RA135" ;
+    ns1:learningResultDescription "Realización de trabajos prácticos de control sobre sistemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/RA136> a ns1:LearningResult ;
+    ns1:learningResultCode "RA136" ;
+    ns1:learningResultDescription "Controlar un sistema multivariable simple mediante lazos de control básico y desacoplo"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/RA137> a ns1:LearningResult ;
+    ns1:learningResultCode "RA137" ;
+    ns1:learningResultDescription "Entender el modelo de estado de sistemas, así como su obtención y resolución"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/RA138> a ns1:LearningResult ;
+    ns1:learningResultCode "RA138" ;
+    ns1:learningResultDescription "Entender y aplicar los conceptos de controlabilidad y observabilidad de sistemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/RA139> a ns1:LearningResult ;
+    ns1:learningResultCode "RA139" ;
+    ns1:learningResultDescription "Ser capaces de controlar un sistema mediante realimentación del estado, incluyendo para ello la realización de un observador de dicho estado"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/didactic_resource/1> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "libro \"Control en el Espacio de estado\" (2ª edición), Autores: S. Dominguez, P.Campoy, J.M.Sebastián y A.Jimenez, Editorial: Prentice Hall"@es ;
+    ns1:bibliographyTitle "Control en el Espacio de Estado"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/didactic_resource/2> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "incluye: foro de preguntas y respuestas, diapositivas de los videos, tareas semanales, cuestionarios, sistemas Simulink para realizar las tareas, trabajo del curso, etc."@es ;
+    ns1:bibliographyTitle "Pagina Moodle de la asignatura"@es ;
+    ns1:bibliographyType "Recursos web"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/didactic_resource/3> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "Videos de las clases en el canal de youtube de la UPM https://www.youtube.com/playlist?list=PL8bSwVy8_IcMKleykGBRR0Jd0MAB5i1Rr"@es ;
+    ns1:bibliographyTitle "Videos de Control en el Espacio de Estado"@es ;
+    ns1:bibliographyType "Recursos web"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/evaluation> a ns1:EvaluationSystem ;
+    ns1:evaluationDescription """Evaluación progresiva en convocatoria ordinaria de Junio:
+60% Pruebas presenciales
+10% Cuestionarios en clase
+50% Examen final de conjunto
+40% Trabajo Colaborativo
+15% Primera entrega parcial
+25% Entrega final completa
+Las tareas de clase suman un 12% adicional que se suma a la media anterior
+Para aprobar:
+? la nota media ponderada de las pruebas presenciales debe ser ?4
+? la nota media ponderada del Trabajo Colaborativo debe ser ? 4
+? la nota media ponderada total debe ser ? 5
+
+Evaluación global de Junio y Convocatoria extraordinaria de Julio:
+60% Examen Global
+40% Trabajo Individual
+25% documento
+15% examen oral
+Para aprobar la nota del examen debe ser superior a cuatro (4) y la nota media el Trabajo Individual debe ser superior a cuatro (4), igualmente la media ponderada global debe ser superior a cinco (5) puntos.
+
+Compensación y liberación
+La nota del trabajo y del examen (pruebas presenciales en caso de evaluación progresiva) cuestionario puede guardarse para la convocatoria extraordinaria de Julio del mismo curso académico, siempre y cuando dicha nota sea igual o superior a cinco (5), en ningún caso para convocatorias posteriores."""@es ;
+    ns1:hasEvaluationTrial <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/evaluation/trial1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/evaluation/trial2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/evaluation/trial3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/evaluation/trial4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/evaluation/trial5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/evaluation/trial6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/evaluation/trial7> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/evaluation/trial1> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "10%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/2> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE28B>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG6> ;
+    ns1:trialDescription "Cuestionarios en clase"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "2"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/evaluation/trial2> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "15%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/7> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE28B>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG7> ;
+    ns1:trialDescription "Trabajo Colaborativo: Entrega intermedia"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "7"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/evaluation/trial3> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "50%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/14> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE28B>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG6> ;
+    ns1:trialDescription "Examen final de conjunto"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "14"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/evaluation/trial4> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "25%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/14> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE28B>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG7> ;
+    ns1:trialDescription "Trabajo Colaborativo. Entrega final"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "14"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/evaluation/trial5> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:15"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "15%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/14> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE28B>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG7> ;
+    ns1:minimumScore "0 / 10"@es ;
+    ns1:trialDescription "Examen Oral del Trabajo Individual"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "14"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/evaluation/trial6> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:30"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "60%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/14> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE28B>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG6> ;
+    ns1:trialDescription "Examen Global"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "14"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/evaluation/trial7> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "25%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/14> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE28B>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG7> ;
+    ns1:trialDescription "Entrega Trabajo Individual"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "14"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule> a ns1:Schedule ;
+    schema:eventSchedule <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/1> a ns1:ScheduleEvent ;
+    ns1:eventIndex 1 ;
+    ns1:eventWeek "Semana 1"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/1/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/1/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Introducción"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/10> a ns1:ScheduleEvent ;
+    ns1:eventIndex 10 ;
+    ns1:eventWeek "Semana 10"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/10/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/10/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Observabilidad"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/11> a ns1:ScheduleEvent ;
+    ns1:eventIndex 11 ;
+    ns1:eventWeek "Semana 11"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/11/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/11/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Observadores"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/12> a ns1:ScheduleEvent ;
+    ns1:eventIndex 12 ;
+    ns1:eventWeek "Semana 12"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/12/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/12/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Realimentación del Estado Observado (II)"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/13> a ns1:ScheduleEvent ;
+    ns1:eventIndex 13 ;
+    ns1:eventWeek "Semana 13"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/14/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Examen final de conjunto"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/14/activity/TEvaluationActivity/2> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Trabajo Colaborativo. Entrega final"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TG: Técnica del tipo Trabajo en Grupo"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/14/activity/TEvaluationActivity/3> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Examen Oral del Trabajo Individual"@es ;
+    ns1:activityDuration "00:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TG: Técnica del tipo Trabajo en Grupo"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/14/activity/TEvaluationActivity/4> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Examen Global"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/14/activity/TEvaluationActivity/5> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Entrega Trabajo Individual"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TG: Técnica del tipo Trabajo en Grupo"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/15> a ns1:ScheduleEvent ;
+    ns1:eventIndex 15 ;
+    ns1:eventWeek "Semana 15"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/16> a ns1:ScheduleEvent ;
+    ns1:eventIndex 16 ;
+    ns1:eventWeek "Semana 16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/17> a ns1:ScheduleEvent ;
+    ns1:eventIndex 17 ;
+    ns1:eventWeek "Semana 17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/2/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Modelado de estado"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/2/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Cuestionarios en clase"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/3> a ns1:ScheduleEvent ;
+    ns1:eventIndex 3 ;
+    ns1:eventWeek "Semana 3"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/3/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/3/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Modelo de estado (II)"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/4> a ns1:ScheduleEvent ;
+    ns1:eventIndex 4 ;
+    ns1:eventWeek "Semana 4"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/4/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/4/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Solución de la ecuación de estado"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/5> a ns1:ScheduleEvent ;
+    ns1:eventIndex 5 ;
+    ns1:eventWeek "Semana 5"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/5/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/5/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Solución de la ecuación de estado (II)"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/6> a ns1:ScheduleEvent ;
+    ns1:eventIndex 6 ;
+    ns1:eventWeek "Semana 6"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/6/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/6/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Controlabilidad"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/7/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Controlabilidad (II)"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/7/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Trabajo Colaborativo: Entrega intermedia"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TG: Técnica del tipo Trabajo en Grupo"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/8> a ns1:ScheduleEvent ;
+    ns1:eventIndex 8 ;
+    ns1:eventWeek "Semana 8"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/8/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/8/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Realimentación del estado"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/9> a ns1:ScheduleEvent ;
+    ns1:eventIndex 9 ;
+    ns1:eventWeek "Semana 9"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/9/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/9/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Realimentación del estado (II)"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/syllabus> a ns1:Syllabus ;
+    ns1:hasItem <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/syllabus/0>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/syllabus/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/syllabus/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/syllabus/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/syllabus/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/syllabus/5> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/syllabus/0> a ns1:SyllabusItem ;
+    ns1:itemIndex 0 ;
+    ns1:syllabusDescription "1. Modelo de Estado Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/syllabus/1> a ns1:SyllabusItem ;
+    ns1:itemIndex 1 ;
+    ns1:syllabusDescription "2. Evolución del estado Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/syllabus/2> a ns1:SyllabusItem ;
+    ns1:itemIndex 2 ;
+    ns1:syllabusDescription "3. Controlabilidad Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/syllabus/3> a ns1:SyllabusItem ;
+    ns1:itemIndex 3 ;
+    ns1:syllabusDescription "4. Control por realimentación del estado Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/syllabus/4> a ns1:SyllabusItem ;
+    ns1:itemIndex 4 ;
+    ns1:syllabusDescription "5. Observabilidad Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/syllabus/5> a ns1:SyllabusItem ;
+    ns1:itemIndex 5 ;
+    ns1:syllabusDescription "6. Observadores y realimentación Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/2> a ns1:ScheduleEvent ;
+    ns1:eventIndex 2 ;
+    ns1:eventWeek "Semana 2"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/2/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/2/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/7> a ns1:ScheduleEvent ;
+    ns1:eventIndex 7 ;
+    ns1:eventWeek "Semana 7"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/7/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/7/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/pascual.campoy%40upm.es> a ns1:Lecturer ;
+    schema:email "pascual.campoy@upm.es" ;
+    schema:name "Campoy Cervera, Pascual" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/14> a ns1:ScheduleEvent ;
+    ns1:eventIndex 14 ;
+    ns1:eventWeek "Semana 14"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/14/activity/TEvaluationActivity/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/14/activity/TEvaluationActivity/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/14/activity/TEvaluationActivity/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/14/activity/TEvaluationActivity/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55000112/2025-26/eventSchedule/14/activity/TEvaluationActivity/5> .
+

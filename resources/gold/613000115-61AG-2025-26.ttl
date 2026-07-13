@@ -1,0 +1,830 @@
+@prefix ns1: <http://w3id.org/def/guia#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/previous_courses> a ns1:RequiredKnowledge ;
+    ns1:previousCourses "El plan de estudios Master Universitario En Software De Sistemas Distribuidos Y Empotrados no tiene definidos otros requisitos para esta asignatura."@es ;
+    ns1:previousKnowledge """Programación Concurrente
+Sistemas Operativos"""@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/E.T.S%20De%20Ing.%20De%20Sistemas%20Inform%C3%A1ticos> a ns1:UniversityCenter ;
+    ns1:offers <https://guia-kg.skai.etsisi.upm.es/resource/61AG%20-%20Master%20Universitario%20en%20Software%20de%20Sistemas%20Distribuidos%20y%20Empotrados> ;
+    schema:name "E.T.S De Ing. De Sistemas Informáticos" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115> a ns1:Course ;
+    ns1:courseType "Obligatoria"@es ;
+    ns1:courseYear 1 ;
+    ns1:semester "Segundo semestre"@es ;
+    schema:courseCode 613000115 ;
+    schema:hasCourseInstance <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26> ;
+    schema:name "Distributed Real Time Systems"@en,
+        "Sistemas de Tiempo Real Distribuidos"@es ;
+    schema:numberOfCredits 6.0 .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26> a ns1:CourseGuide ;
+    ns1:hasCompetency <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/CE01>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/CG04>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/CG08>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/CG10> ;
+    ns1:hasDidacticResource <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/didactic_resource/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/didactic_resource/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/didactic_resource/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/didactic_resource/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/didactic_resource/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/didactic_resource/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/didactic_resource/7> ;
+    ns1:hasEvaluation <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation> ;
+    ns1:hasLearningResult <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/RA13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/RA14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/RA15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/RA16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/RA17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/RA2> ;
+    ns1:hasSyllabus <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus> ;
+    ns1:inpersonHours "60 horas y 15 minutos (38.6%)"@es ;
+    ns1:numberOfCredits 6.0 ;
+    ns1:otherInformation """1.- COMPETENCIAS TRANSVERSALES
+Esta asignatura tiene asignadas las competencias genéricas CG4 (organización y planificación) y CG10 (resolución de problemas).
+Además se propone abordar el sub-resultado de aprendizaje 6.2 del sello EuroInf: "Identificar las competencias necesarias para trabajar en equipo y liderar equipos compuestos de personas de distintas disciplinas y distintos niveles de cualificación".
+Para desarrollar estas competencias se planteará un problema que esté integrado en el proyecto multidisciplinar. En concreto los alumnos tendrán que desarrollar una parte del proyecto relacionada con la materia de los sistemas de tiempo real.
+Los alumnos tendrán que demostrar su capacidad para organizar y planificar el tiempo, las tareas y los recursos necesarios para la resolución de dicho problema, así como explicar la estrategia seguida. Además deberán demostrar las destrezas necesarias para el trabajo en equipo y el liderazgo. La documentación correspondiente a estas competencias formará parte de la memoria del proyecto. La evaluación se llevará a cabo mediante plantillas de evaluación (o rúbricas)
+
+2.- ACTIVIDADES SEMIPRESENCIALES
+El máster en el que se imparte esta asignatura se ha calificado como semipresencial. Por este motivo algunas de las tutorías del proyecto se ofrecerán para ser realizadas "online".
+Los estudiantes tendrán que resolver diferentes problemas en horas de trabajo personal. Para este trabajo se ofrecerán también tutorías "online" y su entrega forma parte de las actividades de evaluación, tal y como está especificado en la sección 7.1.
+Las presentaciones orales (consistentes en el desarrollo de un trabajo de documentación y estudio por parte de los estudiantes) se podrán realizar mediante la grabación de la presentación en horas de trabajo personal. Posteriormente la presentación se subirán a una plataforma virtual, donde será visualizada y puntuada por el resto de los estudiantes.
+Durante la semana se ofrecen algunas sesiones virtuales para la resolución de problemas.
+
+3.- PREVISIÓN DE SUSPENSIÓN DE CLASES PRESENCIALES
+En previsión de posibles recidivas de la epidemia de COVID, la presente guía contempla la impartición de la asignatura en formato bimodal: todas las actividades formativas planificadas inicialmente como actividades presenciales, en caso de ser necesario pasarán a desarrollarse a través de plataformas online
+Para las actividades de teleformación se utilizará alguna de las plataformas ofrecidas por la UPM en general o por el CiC de la ETSISI (actualmente Zoom o Teams).
+
+4.- OBJETIVOS DE DESARROLLO SOSTENIBLE
+Las asignaturas que participan en el proyecto multidisciplinar, intentan que dicho proyecto aborde algún problema relacionado con alguno de los objetivos de desarrollo sostenible."""@es ;
+    ns1:periodEndingMonth "Junio"@es ;
+    ns1:periodStartingMonth "Febrero"@es ;
+    ns1:teachingPeriod "2025-26" ;
+    ns1:teachingPeriodMonths "Febrero-Junio"@es ;
+    ns1:totalHours "63 horas y 25 minutos"@es ;
+    schema:activitiesWorkload "100%"@es ;
+    schema:courseSchedule <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule> ;
+    schema:description """Los sistemas de tiempo real (STR) son aquellos en los que existen unos requisitos específicos que limitan el tiempo de respuesta del sistema, de manera que si el sistema se retarda se considera que ha fallado. En muchas ocasiones los STR forman parte de un sistema empotrado que se encarga del control de un entorno físico o un sistema más complejo, de forma que el incumplimiento de un límite en el tiempo de respuesta puede acarrear el deterioro del sistema controlado. Por este motivo el aspecto de seguridad adquiere una relevancia especial en estos sistemas. Con la proliferación de los sistemas distribuidos en los entornos industriales surge una nueva problemática para los STR, debiendo asegurar el cumplimiento de las restricciones temporales en entornos en los que colaboran varias unidades de procesamiento y las correspondientes comunicaciones. Esta asignatura se enfoca hacia el estudio de las tecnologías, metodologías y estándares actuales que permiten el desarrollo de este tipo de sistemas.
+La impartición de la asignatura se apoyará en el desarrollo de un proyecto multidisciplinar compartido con otras asignaturas del mismo máster. En particular, se abordará el desarrollo del software del sistema que necesita cumplir las restricciones de tiempo real estricto. Este desarrollo servirá para debatir y estudiar los diferentes aspectos incluidos en el temario."""@es ;
+    schema:director <https://guia-kg.skai.etsisi.upm.es/resource/javier.garciam%40upm.es> ;
+    schema:inLanguage "Castellano"@es ;
+    schema:instructor <https://guia-kg.skai.etsisi.upm.es/resource/javier.garciam%40upm.es>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/josecarlos.gamazo%40upm.es> ;
+    schema:name "Sistemas de Tiempo Real Distribuidos"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/CE01> a ns1:Competency ;
+    ns1:competencyCode "CE01" ;
+    ns1:competencyDescription "Capacidad para la integración de tecnologías y sistemas propios del software de Sistemas Distribuidos y Empotrados en contextos multidisciplinares."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/CE07> a ns1:Competency ;
+    ns1:competencyCode "CE07" ;
+    ns1:competencyDescription "Capacidad de diseñar y desarrollar aplicaciones y servicios informáticos en sistemas móviles, de tiempo real, empotrados y ubicuos."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/CG04> a ns1:Competency ;
+    ns1:competencyCode "CG04" ;
+    ns1:competencyDescription "Organización y plantificación."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/CG08> a ns1:Competency ;
+    ns1:competencyCode "CG08" ;
+    ns1:competencyDescription "Trabajo en equipo."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/CG10> a ns1:Competency ;
+    ns1:competencyCode "CG10" ;
+    ns1:competencyDescription "Resolución de problemas."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/RA13> a ns1:LearningResult ;
+    ns1:learningResultCode "RA13" ;
+    ns1:learningResultDescription "Trabajando en equipo, propone y construye soluciones a problemas en diferentes campos desde una perspectiva global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/RA14> a ns1:LearningResult ;
+    ns1:learningResultCode "RA14" ;
+    ns1:learningResultDescription "Identifica y define eficazmente las metas, objetivos y prioridades de una tarea o proyecto complejo a desempeñar a medio o largo plazo. Utiliza herramientas como diagramas de Gantt y/o Pert para planificar actividades y plazos, dimensiona el uso de recursos en el plazo establecido, prioriza las tareas y describe planes de contingencia"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/RA15> a ns1:LearningResult ;
+    ns1:learningResultCode "RA15" ;
+    ns1:learningResultDescription "El alumno utiliza las herramientas de programación que permiten que los procesos de un sistema centralizado o distribuido cumplan restricciones de tiempo real"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/RA16> a ns1:LearningResult ;
+    ns1:learningResultCode "RA16" ;
+    ns1:learningResultDescription "El alumno aplica los métodos más relevantes de planificación de sistemas de tiempo real, centralizados y distribuidos"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/RA17> a ns1:LearningResult ;
+    ns1:learningResultCode "RA17" ;
+    ns1:learningResultDescription "El alumno interviene en cualquiera de las etapas del ciclo de vida de un proyecto de un sistema distribuido y empotrado"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/RA2> a ns1:LearningResult ;
+    ns1:learningResultCode "RA2" ;
+    ns1:learningResultDescription "RA60 Conocer el estado del arte actualizado en el ámbito de los sistemas distribuidos y empotrados"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/didactic_resource/1> a ns1:DidacticResource ;
+    ns1:bibliographyDescription """Alan Burns and Andy Wellings
+Fourth Edition. 2009. Addison Wesley Longmain"""@es ;
+    ns1:bibliographyTitle "Real-Time Systems and Programming Languages"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/didactic_resource/2> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "J.S.W.Liu. Prentice Hall, 2000."@es ;
+    ns1:bibliographyTitle "Real Time Systems"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/didactic_resource/3> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "Kopetz, H., Klower Academic Publishers, 1997, Chpt. 10-11."@es ;
+    ns1:bibliographyTitle "Real-Time Systems, Distributed Embedded Applications"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/didactic_resource/4> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "Douglass B. P. Addison Wesley, 1999."@es ;
+    ns1:bibliographyTitle "Developing Real-time Systems with UML"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/didactic_resource/5> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "https://moodle.upm.es/titulaciones/oficiales/course/view.php?id=6954"@es ;
+    ns1:bibliographyTitle "Moodle de la UPM"@es ;
+    ns1:bibliographyType "Recursos web"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/didactic_resource/6> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "Laboratorio L-4401 del departamento de Sistemas Informáticos con capacidad para 18 puestos de trabajo"@es ;
+    ns1:bibliographyTitle "Laboratorio l-4401"@es ;
+    ns1:bibliographyType "Equipamiento"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/didactic_resource/7> a ns1:DidacticResource ;
+    ns1:bibliographyDescription """Alan Burns, Andy Wellings.
+Addison Wesley. 2016"""@es ;
+    ns1:bibliographyTitle "Analysable Real-time Systems Programmed in ADA"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation> a ns1:EvaluationSystem ;
+    ns1:evaluationDescription """- EVALUACIÓN CONTIUA
+El estudiante que supere una nota final mayor o igual a 5 mediante las pruebas de evaluación progresiva especificadas en el cronograma no tendrá que presentarse al examen global.
+Durante la evaluación progresiva se controlará la asistencia. Para superar la asignatura se deberá haber asistido al menos al 75% de las clases de laboratorio, salvo causas de fuerza mayor y debidamente justificadas.
+La actividad de evaluación (a) Entrega del proyecto multidisciplinar corresponde a las prácticas de laboratorio de la asignatura. Estas prácticas se deberán realizar exclusivamente durante el periodo docente y es obligatorio superarlas para aprobar la asignatura.
+- CONVOCATORIA GLOBAL
+La semana 17 se corresponde con la semana marcada en el calendario y horario publicado en la web del máster para la realización de pruebas de evaluación global de la asignatura. La fecha, hora y lugar de realización de la prueba de evaluación global están publicadas en la web del máster y han sido aprobadas por la comisión de ordenación académica del máster.
+El estudiante que no haya superado la evaluación progresiva tendrá la posibilidad de aprobar la asignatura en la convocatoria global completando las actividades: (b) Entrega de Modelado de un STR, (c) Trabajo escrito sobre los conceptos teóricos estudiados; (d) Resolución de ejercicios; (e) Entrega de la presentación oral. Se deberá tener en cuenta que la actividad (a) es obligatoria para superar la asignatura y se deberá haber realizado durante las sesiones de laboratorio.
+- CONVOCATORIA EXTRAORDINARIA
+La convocatoria extraordinaria de julio consistirá en un examen escrito en el que el alumno se podrá evaluar de las partes: (b), (c) y (d).
+Para superar la asignatura en la convocatoria extraordinaria, se deberá tener en cuenta que la actividad (a) es obligatoria para superar la asignatura y se deberá haber realizado durante el cuatrimestre lectivo.
+- PRERREQUISITOS SOBRE PROGRAMACIÓN CONCURRENTE
+Los estudiantes que no tengan una formación previa demostrada en programación concurrente, bien por su formación de grado o por su experiencia profesional, deberán entregar la resolución de unos ejercicios de forma previa a la impartición de la asignatura. Para ello los profesores se pondrán en contacto con estos estudiantes y les facilitarán un material de estudio junto a los ejercicios que deben resolver. La obtención de la nota mínima indicada en el apartado anterior será prerrequisito para la superación de la asignatura.
+Estos contenidos permitirán a los estudiantes abordar la realización de las prácticas de laboratorio y alcanzar con mayor éxito los resultados de aprendizaje previstos en la guía de aprendizaje."""@es ;
+    ns1:hasEvaluationTrial <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial1> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/2> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE07> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Entrega de resolución de ejercicios sobre concurrencia. (Prueba sólo para alumnos que no tengan una formación previa en programación concurrente)"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "2"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial10> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "03:00"@es ;
+    ns1:evaluationType "extraordinaria"@es ;
+    ns1:gradePercentage "100%"@es ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE01>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG04>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG10> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Examen extraordinario (40%) // Verificación de las prácticas REALIZADAS DURANTE EL PERIODO LECTIVO (Peso 60%) (RA2, RA13, RA14, RA15, RA16, RA17)"@es ;
+    ns1:trialType "Presencial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial2> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:05"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "10%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/3> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG10> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Resolución de problemas de planificación de STR Distribuidos (I) (RA15, RA16)"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "3"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial3> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:05"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "10%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/4> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG10> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Resolución de problemas de planificación de STR Distribuidos (II) (RA15, RA16)"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "4"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial4> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "15%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/5> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE01>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG10> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Entrega de Modelado de un STR (RA 17)"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "5"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial5> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "10%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE01>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07> ;
+    ns1:minimumScore "0 / 10"@es ;
+    ns1:trialDescription "Entrega de la presentación oral (RA 2)"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "6"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial6> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:05"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "10%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE01>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Trabajo escrito sobre los conceptos teóricos estudiados"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "6"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial7> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "45%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/7> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE01>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG04>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG08>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG10> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Entrega del proyecto multidisciplinar (RA13, RA14, RA15, RA16, RA17)"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "7"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial8> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "03:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "40%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/16> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE01>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG04>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG10> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Examen final (RA2, RA13, RA14, RA15, RA16, RA17)"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/evaluation/trial9> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:10"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "60%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/16> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE01>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG04>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG10> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Verificación de las prácticas REALIZADAS DURANTE EL PERIODO LECTIVO"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule> a ns1:Schedule ;
+    schema:eventSchedule <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/1> a ns1:ScheduleEvent ;
+    ns1:eventIndex 1 ;
+    ns1:eventWeek "Semana 1"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/1/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/1/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/1/activity/TActivityType1/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/1/activity/TActivityType1/4> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/1/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Inroducción"@es ;
+    ns1:activityDuration "00:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/1/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Programación de un STR sobre FreeRTOS y tarjetas STM32F407"@es ;
+    ns1:activityDuration "03:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/1/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Programación de STR (I)"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/1/activity/TActivityType1/4> a ns1:ActivityType1 ;
+    ns1:activityDescription "Desarrollo y tutorías del proyecto"@es ;
+    ns1:activityDuration "05:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/10> a ns1:ScheduleEvent ;
+    ns1:eventIndex 10 ;
+    ns1:eventWeek "Semana 10"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/11> a ns1:ScheduleEvent ;
+    ns1:eventIndex 11 ;
+    ns1:eventWeek "Semana 11"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/12> a ns1:ScheduleEvent ;
+    ns1:eventIndex 12 ;
+    ns1:eventWeek "Semana 12"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/13> a ns1:ScheduleEvent ;
+    ns1:eventIndex 13 ;
+    ns1:eventWeek "Semana 13"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/14> a ns1:ScheduleEvent ;
+    ns1:eventIndex 14 ;
+    ns1:eventWeek "Semana 14"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/15> a ns1:ScheduleEvent ;
+    ns1:eventIndex 15 ;
+    ns1:eventWeek "Semana 15"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/16/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Examen final (RA2, RA13, RA14, RA15, RA16, RA17)"@es ;
+    ns1:activityDuration "03:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/16/activity/TEvaluationActivity/2> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Verificación de las prácticas REALIZADAS DURANTE EL PERIODO LECTIVO"@es ;
+    ns1:activityDuration "00:10" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras técnicas evaluativas"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/17> a ns1:ScheduleEvent ;
+    ns1:eventIndex 17 ;
+    ns1:eventWeek "Semana 17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/2/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Programación de STR (II)"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/2/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Desarrollo del proyecto multidisciplinar (compartido con ISS)"@es ;
+    ns1:activityDuration "03:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/2/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Desarrollo y tutorías del proyecto"@es ;
+    ns1:activityDuration "05:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/2/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Entrega de resolución de ejercicios sobre concurrencia. (Prueba sólo para alumnos que no tengan una formación previa en programación concurrente)"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TI: Técnica del tipo Trabajo Individual"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/3/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Planificación de STR: Introducción y Análisis de tiempo de respuesta"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/3/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Desarrollo del proyecto multidisciplinar (compartido con ISS)"@es ;
+    ns1:activityDuration "03:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/3/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Resolución de ejercicios de planificación"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/3/activity/TActivityType1/4> a ns1:ActivityType1 ;
+    ns1:activityDescription "Desarrollo y tutorías del proyecto"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/3/activity/TActivityType1/5> a ns1:ActivityType1 ;
+    ns1:activityDescription "Planificación de STR: Análisis generalizado (Clase virtual; material de teoría y ejercicios online)"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/3/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Resolución de problemas de planificación de STR Distribuidos (I) (RA15, RA16)"@es ;
+    ns1:activityDuration "00:05" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TI: Técnica del tipo Trabajo Individual"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/4/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Sistemas de Tiempo Real Distribuidos"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/4/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Desarrollo del proyecto multidisciplinar (compartido con ISS)"@es ;
+    ns1:activityDuration "03:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/4/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Resolución de ejercicios de planificación de un STR distribuido"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/4/activity/TActivityType1/4> a ns1:ActivityType1 ;
+    ns1:activityDescription "Desarrollo y tutorías del proyecto"@es ;
+    ns1:activityDuration "03:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/4/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Resolución de problemas de planificación de STR Distribuidos (II) (RA15, RA16)"@es ;
+    ns1:activityDuration "00:05" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TI: Técnica del tipo Trabajo Individual"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/5/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Modelado de STR con SysML-Enterprise Architect"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/5/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Desarrollo del proyecto multidisciplinar (compartido con ISS)"@es ;
+    ns1:activityDuration "03:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/5/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Desarrollo y tutorías del proyecto"@es ;
+    ns1:activityDuration "03:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/5/activity/TActivityType1/4> a ns1:ActivityType1 ;
+    ns1:activityDescription "Ejercicios de Modelado (Clase virtual; Material online)"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/5/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Entrega de Modelado de un STR (RA 17)"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TG: Técnica del tipo Trabajo en Grupo"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Seguridad en STR (Clase virtual; Material online)"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Estándares de seguridad"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Aplicación de estándares de seguridad al proyecto multidisciplinar (RA17)"@es ;
+    ns1:activityDuration "03:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "AC: Actividad del tipo Acciones Cooperativas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6/activity/TActivityType1/4> a ns1:ActivityType1 ;
+    ns1:activityDescription "Desarrollo y tutorías del proyecto"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6/activity/TActivityType1/5> a ns1:ActivityType1 ;
+    ns1:activityDescription "Visualización de las presentaciones orales virtuales de estudiantes sobre tecnologías para STR"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6/activity/TActivityType1/6> a ns1:ActivityType1 ;
+    ns1:activityDescription "Trabajo escrito sobre los conceptos teóricos estudiados"@es ;
+    ns1:activityDuration "00:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Entrega de la presentación oral (RA 2)"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TG: Técnica del tipo Trabajo en Grupo"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6/activity/TEvaluationActivity/2> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Trabajo escrito sobre los conceptos teóricos estudiados"@es ;
+    ns1:activityDuration "00:05" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras técnicas evaluativas"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/7/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Entrega del proyecto multidisciplinar (RA13, RA14, RA15, RA16, RA17)"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TG: Técnica del tipo Trabajo en Grupo"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/8> a ns1:ScheduleEvent ;
+    ns1:eventIndex 8 ;
+    ns1:eventWeek "Semana 8"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/9> a ns1:ScheduleEvent ;
+    ns1:eventIndex 9 ;
+    ns1:eventWeek "Semana 9"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus> a ns1:Syllabus ;
+    ns1:hasItem <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/0>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/18>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/19>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/20>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/21>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/22>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/23>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/24>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/25>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/26>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/27>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/28>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/29>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/0> a ns1:SyllabusItem ;
+    ns1:itemIndex 0 ;
+    ns1:syllabusDescription "1. Introducción"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/1> a ns1:SyllabusItem ;
+    ns1:itemIndex 1 ;
+    ns1:syllabusDescription "1.1. Características y necesidades de los STR Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/10> a ns1:SyllabusItem ;
+    ns1:itemIndex 10 ;
+    ns1:syllabusDescription "3.2. Algoritmos de planificación estática Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/11> a ns1:SyllabusItem ;
+    ns1:itemIndex 11 ;
+    ns1:syllabusDescription "3.3. Análisis de planificabilidad de un sistema Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/12> a ns1:SyllabusItem ;
+    ns1:itemIndex 12 ;
+    ns1:syllabusDescription "3.4. Algoritmos de planificación dinámica Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/13> a ns1:SyllabusItem ;
+    ns1:itemIndex 13 ;
+    ns1:syllabusDescription "4. STR distribuidos"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/14> a ns1:SyllabusItem ;
+    ns1:itemIndex 14 ;
+    ns1:syllabusDescription "4.1. Arquitectura de un STR distribuido Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/15> a ns1:SyllabusItem ;
+    ns1:itemIndex 15 ;
+    ns1:syllabusDescription "4.2. Comunicaciones de tiempo real Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/16> a ns1:SyllabusItem ;
+    ns1:itemIndex 16 ;
+    ns1:syllabusDescription "4.3. Programación de STR distribuidos en varios nodos Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/17> a ns1:SyllabusItem ;
+    ns1:itemIndex 17 ;
+    ns1:syllabusDescription "4.4. Planificación y análisis temporal Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/18> a ns1:SyllabusItem ;
+    ns1:itemIndex 18 ;
+    ns1:syllabusDescription "5. Seguridad en los STR"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/19> a ns1:SyllabusItem ;
+    ns1:itemIndex 19 ;
+    ns1:syllabusDescription "5.1. Conceptos y técnicas de fiabilidad y seguridad Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/2> a ns1:SyllabusItem ;
+    ns1:itemIndex 2 ;
+    ns1:syllabusDescription "1.2. Entornos de desarrollo. Núcleos de tiempo real Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/20> a ns1:SyllabusItem ;
+    ns1:itemIndex 20 ;
+    ns1:syllabusDescription "5.2. Sistemas de Alta Integridad Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/21> a ns1:SyllabusItem ;
+    ns1:itemIndex 21 ;
+    ns1:syllabusDescription "5.3. Estándares de seguridad: DO-178, EN-50128, ARP4754 Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/22> a ns1:SyllabusItem ;
+    ns1:itemIndex 22 ;
+    ns1:syllabusDescription "5.4. Perfiles seguros de lenguajes Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/23> a ns1:SyllabusItem ;
+    ns1:itemIndex 23 ;
+    ns1:syllabusDescription "6. Tecnologías para el desarrollo de STR"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/24> a ns1:SyllabusItem ;
+    ns1:itemIndex 24 ;
+    ns1:syllabusDescription "6.1. Comparativa de lenguajes de programación para STR Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/25> a ns1:SyllabusItem ;
+    ns1:itemIndex 25 ;
+    ns1:syllabusDescription "6.2. Sistemas operativos de tiempo real: Posix para TR; FreeRTOS, VxWorks, RTEMS, linuxRT, MaRTE OS, PikeOS Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/26> a ns1:SyllabusItem ;
+    ns1:itemIndex 26 ;
+    ns1:syllabusDescription "7. Modelado de los STR"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/27> a ns1:SyllabusItem ;
+    ns1:itemIndex 27 ;
+    ns1:syllabusDescription "7.1. Lenguajes de modelado: UML, SysML Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/28> a ns1:SyllabusItem ;
+    ns1:itemIndex 28 ;
+    ns1:syllabusDescription "7.2. Modelado de la estructura de un sistema (SysML- Enterprise Architect) Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/29> a ns1:SyllabusItem ;
+    ns1:itemIndex 29 ;
+    ns1:syllabusDescription "7.3. Modelado del comportamiento de un sistema (SysML- Enterprise Architect) Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/3> a ns1:SyllabusItem ;
+    ns1:itemIndex 3 ;
+    ns1:syllabusDescription "1.3. Introducción a los STR distribuidos Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/4> a ns1:SyllabusItem ;
+    ns1:itemIndex 4 ;
+    ns1:syllabusDescription "2. Programación de STR"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/5> a ns1:SyllabusItem ;
+    ns1:itemIndex 5 ;
+    ns1:syllabusDescription "2.1. Estructura de un STR y herramientas para la programación Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/6> a ns1:SyllabusItem ;
+    ns1:itemIndex 6 ;
+    ns1:syllabusDescription "2.2. Programación de un STR basado en un sistema operativo de tiempo real (RTOS) Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/7> a ns1:SyllabusItem ;
+    ns1:itemIndex 7 ;
+    ns1:syllabusDescription "2.3. Esquemas de tareas en un STR Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/8> a ns1:SyllabusItem ;
+    ns1:itemIndex 8 ;
+    ns1:syllabusDescription "3. Planificación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/syllabus/9> a ns1:SyllabusItem ;
+    ns1:itemIndex 9 ;
+    ns1:syllabusDescription "3.1. Ejecutivo cíclico Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/61AG%20-%20Master%20Universitario%20en%20Software%20de%20Sistemas%20Distribuidos%20y%20Empotrados> a ns1:MasterDegree ;
+    ns1:degreeCode "61AG"@es ;
+    ns1:hasCourse <https://guia-kg.skai.etsisi.upm.es/resource/613000115> ;
+    schema:name "Master Universitario en Software de Sistemas Distribuidos y Empotrados"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/josecarlos.gamazo%40upm.es> a ns1:Lecturer ;
+    ns1:office "4307"@es ;
+    ns1:tutorshipsSchedule "Se establecerán al inicio del semestre y se publicarán en los canales oficiales de la ETSISI"@es ;
+    schema:email "josecarlos.gamazo@upm.es" ;
+    schema:name "Gamazo Real, Jose Carlos" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/2> a ns1:ScheduleEvent ;
+    ns1:eventIndex 2 ;
+    ns1:eventWeek "Semana 2"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/2/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/2/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/2/activity/TActivityType1/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/2/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/3> a ns1:ScheduleEvent ;
+    ns1:eventIndex 3 ;
+    ns1:eventWeek "Semana 3"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/3/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/3/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/3/activity/TActivityType1/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/3/activity/TActivityType1/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/3/activity/TActivityType1/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/3/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/4> a ns1:ScheduleEvent ;
+    ns1:eventIndex 4 ;
+    ns1:eventWeek "Semana 4"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/4/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/4/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/4/activity/TActivityType1/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/4/activity/TActivityType1/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/4/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/5> a ns1:ScheduleEvent ;
+    ns1:eventIndex 5 ;
+    ns1:eventWeek "Semana 5"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/5/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/5/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/5/activity/TActivityType1/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/5/activity/TActivityType1/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/5/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/7> a ns1:ScheduleEvent ;
+    ns1:eventIndex 7 ;
+    ns1:eventWeek "Semana 7"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/7/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/javier.garciam%40upm.es> a ns1:Lecturer ;
+    ns1:office "D-4419"@es ;
+    ns1:tutorshipsSchedule "Se establecerán al inicio del semestre y se publicarán en los canales oficiales de la ETSISI"@es ;
+    schema:email "javier.garciam@upm.es" ;
+    schema:name "Garcia Martin, Javier" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/16> a ns1:ScheduleEvent ;
+    ns1:eventIndex 16 ;
+    ns1:eventWeek "Semana 16"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/16/activity/TEvaluationActivity/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/16/activity/TEvaluationActivity/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6> a ns1:ScheduleEvent ;
+    ns1:eventIndex 6 ;
+    ns1:eventWeek "Semana 6"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6/activity/TActivityType1/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6/activity/TActivityType1/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6/activity/TActivityType1/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6/activity/TActivityType1/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6/activity/TEvaluationActivity/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000115/2025-26/eventSchedule/6/activity/TEvaluationActivity/2> .
+

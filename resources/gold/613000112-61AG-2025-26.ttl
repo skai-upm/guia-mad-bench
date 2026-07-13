@@ -1,0 +1,583 @@
+@prefix ns1: <http://w3id.org/def/guia#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/previous_courses> a ns1:RequiredKnowledge ;
+    ns1:previousCourses "El plan de estudios Master Universitario En Software De Sistemas Distribuidos Y Empotrados no tiene definidos otros requisitos para esta asignatura."@es ;
+    ns1:previousKnowledge "Sistemas Distribuidos. Programación. Sistemas Operativos. Redes."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/E.T.S%20De%20Ing.%20De%20Sistemas%20Inform%C3%A1ticos> a ns1:UniversityCenter ;
+    ns1:offers <https://guia-kg.skai.etsisi.upm.es/resource/61AG%20-%20Master%20Universitario%20en%20Software%20de%20Sistemas%20Distribuidos%20y%20Empotrados> ;
+    schema:name "E.T.S De Ing. De Sistemas Informáticos" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112> a ns1:Course ;
+    ns1:courseType "Obligatoria"@es ;
+    ns1:courseYear 1 ;
+    ns1:semester "Segundo semestre"@es ;
+    schema:courseCode 613000112 ;
+    schema:hasCourseInstance <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26> ;
+    schema:name "Fault Tolerant Distributed Systems"@en,
+        "Sistemas Distribuidos Tolerantes a Fallos"@es ;
+    schema:numberOfCredits 3.0 .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26> a ns1:CourseGuide ;
+    ns1:hasCompetency <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/CE02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/CE04>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/CE05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/CE06> ;
+    ns1:hasDidacticResource <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/didactic_resource/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/didactic_resource/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/didactic_resource/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/didactic_resource/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/didactic_resource/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/didactic_resource/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/didactic_resource/7> ;
+    ns1:hasEvaluation <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/evaluation> ;
+    ns1:hasLearningResult <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/RA68>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/RA69>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/RA70>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/RA71>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/RA72> ;
+    ns1:hasSyllabus <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus> ;
+    ns1:inpersonHours "33 horas (42.3%)"@es ;
+    ns1:numberOfCredits 3.0 ;
+    ns1:otherInformation """1. ACTIVIDADES SEMIPRESENCIALES
+Este máster, al ser semipresencial, ofrece algunas tutorías on-line, que aparecen reflejadas en "Otra actividad presencial" en el cronograma de actividades."""@es ;
+    ns1:periodEndingMonth "Junio"@es ;
+    ns1:periodStartingMonth "Febrero"@es ;
+    ns1:teachingPeriod "2025-26" ;
+    ns1:teachingPeriodMonths "Febrero-Junio"@es ;
+    ns1:totalHours "33 horas"@es ;
+    schema:activitiesWorkload "100%"@es ;
+    schema:courseSchedule <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule> ;
+    schema:description """Cada vez más nuestra sociedad depende de los computadores. En algunos casos esta dependencia es crítica ya que del buen funcionamiento del sistema de computación dependen vidas humanas o supone una gran cantidad de pérdidas económicas o de negocio. Esta dependencia se ve comprometida si fallan los elementos hardware del sistema. Ejemplos típicos de este tipo de dependencia crítica son: los sistemas de control de tráfico aéreo y de trenes, los sistemas de control de centrales nucleares, sistemas hospitalarios, las grandes web de sistemas de reservas, bancos, contratación en bolsa, etc. Este grado de dependencia hace que tengan que existir técnicas que garanticen un alto grado de fiabilidad y disponibilidad en los sistemas de computación. El problema se puede abordar desde el hardware y desde el software. En ambos casos se utiliza redundancia para conseguir tolerar fallos de hardware. Las técnicas hardware son en general muy caras debido al reducido nivel de producción que obliga a repercutir los costos de I+D en menos cantidad de productos. En cambio las técnicas software permiten una mayor versatilidad y adaptabilidad a diferentes hardware.
+Este curso aborda el problema de cómo construir sistemas de computación que garanticen unos grados muy altos de fiabilidad y disponibilidad a las aplicaciones críticas usando técnicas software para tolerar fallos hardware. Para conseguir estas garantías estudiaremos como enmascarar fallos hardware (tolerancia a fallos). Veremos como utilizar la replicación de datos y de procesos. Usaremos como arquitectura de computación el sistema distribuido que nos garantiza redundancia intrínseca con probabilidad de fallos independiente en el funcionamiento de sus componentes. Para conseguir este enmascaramiento es necesario conocer los diferentes tipos de coherencia en el acceso a réplicas. Estudiaremos por tanto las diferentes semánticas de coherencia tanto en procesos como en datos. Estudiaremos en detalle dos de estas semánticas, la atómica (Raft, Zookeeper) y la eventual (Ethereum)."""@es ;
+    schema:director <https://guia-kg.skai.etsisi.upm.es/resource/gustavo.hernandez.penaloza%40upm.es> ;
+    schema:inLanguage "Castellano"@es ;
+    schema:instructor <https://guia-kg.skai.etsisi.upm.es/resource/gustavo.hernandez.penaloza%40upm.es>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/juanantonio.rodrigo%40upm.es>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/silviaalba.uribe%40upm.es> ;
+    schema:name "Sistemas Distribuidos Tolerantes a Fallos"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/CE02> a ns1:Competency ;
+    ns1:competencyCode "CE02" ;
+    ns1:competencyDescription "Capacidad para la dirección de proyectos de desarrollo e innovación del ámbito de los Sistemas Distribuidos y Empotrados, en empresas y centros tecnológicos, con garantía de la seguridad para las personas y bienes, y la calidad final de los productos."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/CE04> a ns1:Competency ;
+    ns1:competencyCode "CE04" ;
+    ns1:competencyDescription "Capacidad de comprender y saber aplicar el funcionamiento y organización de Internet, las tecnologías y protocolos de redes de nueva generación, los modelos de componentes, software intermediario y los servicios."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/CE05> a ns1:Competency ;
+    ns1:competencyCode "CE05" ;
+    ns1:competencyDescription "Capacidad para diseñar, desarrollar, gestionar y evaluar mecanismos de garantía de seguridad en el tratamiento y acceso a la información en un sistema de procesamiento local o distribuido."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/CE06> a ns1:Competency ;
+    ns1:competencyCode "CE06" ;
+    ns1:competencyDescription "Capacidad para diseñar y evaluar aplicaciones y sistemas basados en computación distribuida y para implantar sistemas operativos y servidores."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/RA68> a ns1:LearningResult ;
+    ns1:learningResultCode "RA68" ;
+    ns1:learningResultDescription "RA80"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/RA69> a ns1:LearningResult ;
+    ns1:learningResultCode "RA69" ;
+    ns1:learningResultDescription "RA2"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/RA70> a ns1:LearningResult ;
+    ns1:learningResultCode "RA70" ;
+    ns1:learningResultDescription "RA1"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/RA71> a ns1:LearningResult ;
+    ns1:learningResultCode "RA71" ;
+    ns1:learningResultDescription "RA3"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/RA72> a ns1:LearningResult ;
+    ns1:learningResultCode "RA72" ;
+    ns1:learningResultDescription "RA4"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/didactic_resource/1> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "D. Ongaro, J. Ousterhout. In Search of an Understandable Consensus Algorithm. USENIX Annual Technical Conference (ATC), Philadelphia, PA, 2014"@es ;
+    ns1:bibliographyTitle "Artículo sobre Raft."@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/didactic_resource/2> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "ZooKeeper: Distributed Process Coordination. Flavio Junqueira, Benjamin Reed. O'Reilly, 2013."@es ;
+    ns1:bibliographyTitle "Libro de Zookeeper para las prácticas."@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/didactic_resource/3> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "moodle upm"@es ;
+    ns1:bibliographyTitle "Moodle de la asignatura"@es ;
+    ns1:bibliographyType "Recursos web"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/didactic_resource/4> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "From blockchain consensus back to Byzantine consensus. Vincent Gramoli. Future Generation Computer Systems, V107, June 2020."@es ;
+    ns1:bibliographyTitle "Artículo sobre consenso en Blockchain"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/didactic_resource/5> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "Mastering Ethereum. Andreas Antonopoulos, Gavin Wood. O'Reily 2018."@es ;
+    ns1:bibliographyTitle "Artículo sobre Ethereum"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/didactic_resource/6> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "A parametrized algorithm that implements sequential, causal, and cache memory consistencies. Ernesto Jiménez, Antonio Fernández, Vicent Cholvi. The Journal of Systems and Software 81 (2008)."@es ;
+    ns1:bibliographyTitle "Articulo sobre coherencia de réplicas."@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/didactic_resource/7> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "On Replica Eventual Consistency of Ethereum Blockchain System. Sergio Arévalo, Isabel Muñoz. XXVII Jornadas de Concurrencia y Sistemas Distribuidos. 2021. Barcelona."@es ;
+    ns1:bibliographyTitle "Artículo sobre coherencia de réplicas en el sistema de blockchain Ethereum."@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/evaluation> a ns1:EvaluationSystem ;
+    ns1:evaluationDescription """EVALUACION EN LA CONVOCATORIA ORDINARIA
+
+a) Evaluación progresiva de la asignatura
+La evaluación progresiva de la asignatura se compone de los siguientes bloques:
+Bloque I. Teoría. 1 prueba escrita individual (50%)
+Bloque II. Prácticas. 1 prueba escrita individual (50%)
+La nota final de la asignatura por evaluación progresiva se calcula con el siguiente algoritmo:
+notaTeoria := exTeoria * 0.5
+notaPracticas := exPrac * 0.5
+notaTotal := notaTeoría + notaPracticas
+If notaTotal >= 5:
+notaFinal := notaTotal
+else
+notaFinal := "suspenso"
+
+b) Evaluación mediante prueba global
+La evaluación por prueba global consta de 2 bloques evaluables: teoría y prácticas. Los alumnos cuya nota final mediante evaluación progresiva sea suspenso (notaFinal = suspenso) pero que hayan obtenido una nota igual o mayor que 4 sobre 10 en la nota de prácticas (notaPracticas >= 4) o en la nota de teoría (notaTeoria >= 4) no tendrán que examinarse de dicho bloque de nuevo.
+La evaluación por prueba global se compone de los siguientes bloques:
+Bloque I. Teoría. 1 prueba escrita individual (50%)
+Bloque II. Prácticas. 1 prueba escrita individual (50%)
+La nota final de la asignatura por prueba global se calcula con el siguiente algoritmo:
+if notaTeoria < 4:
+notaTeoria := exGlobalTeoria * 0.5
+if notaPracticas < 4:
+notaPracticas := exGlobalPracticas * 0.5
+notaTotal := notaTeoría + notaPracticas
+If notaTotal >= 5
+notaFinal := notaTotal
+else
+notaFinal := "suspenso".
+
+EVALUACION EN LA CONVOCATORIA EXTRAORDINARIA
+Notadef = Ex (Teoría + Prácticas)
+La asignatura se aprueba si Notadef >= 5."""@es ;
+    ns1:hasEvaluationTrial <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/evaluation/trial1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/evaluation/trial2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/evaluation/trial3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/evaluation/trial4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/evaluation/trial5> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/evaluation/trial1> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "50%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE04>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE06> ;
+    ns1:minimumScore "0 / 10"@es ;
+    ns1:trialDescription "EX-TE-Evaluación progresiva. Teoría. Temas 1 a 4. (RA1, RA2, RA3)"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "6"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/evaluation/trial2> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:30"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "50%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE04>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE06> ;
+    ns1:minimumScore "0 / 10"@es ;
+    ns1:trialDescription "EX-PR-Evaluación progresiva. Practicas. (RA4, RA80)"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "6"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/evaluation/trial3> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "50%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE04>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE06> ;
+    ns1:minimumScore "0 / 10"@es ;
+    ns1:trialDescription "Evaluación global. Teoría. Temas 1 a 4. (RA1, RA2, RA3)"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "6"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/evaluation/trial4> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:30"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "50%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE04>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE06> ;
+    ns1:minimumScore "0 / 10"@es ;
+    ns1:trialDescription "Evaluación global. Prácticas. (RA4, RA80)"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "6"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/evaluation/trial5> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:00"@es ;
+    ns1:evaluationType "extraordinaria"@es ;
+    ns1:gradePercentage "100%"@es ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE04>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE06> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Evaluación global de teoría (RA1, RA2, RA3)"@es ;
+    ns1:trialType "Presencial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule> a ns1:Schedule ;
+    schema:eventSchedule <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/1> a ns1:ScheduleEvent ;
+    ns1:eventIndex 1 ;
+    ns1:eventWeek "Semana 1"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/10> a ns1:ScheduleEvent ;
+    ns1:eventIndex 10 ;
+    ns1:eventWeek "Semana 10"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/11> a ns1:ScheduleEvent ;
+    ns1:eventIndex 11 ;
+    ns1:eventWeek "Semana 11"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/12> a ns1:ScheduleEvent ;
+    ns1:eventIndex 12 ;
+    ns1:eventWeek "Semana 12"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/13> a ns1:ScheduleEvent ;
+    ns1:eventIndex 13 ;
+    ns1:eventWeek "Semana 13"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/14> a ns1:ScheduleEvent ;
+    ns1:eventIndex 14 ;
+    ns1:eventWeek "Semana 14"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/15> a ns1:ScheduleEvent ;
+    ns1:eventIndex 15 ;
+    ns1:eventWeek "Semana 15"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/16> a ns1:ScheduleEvent ;
+    ns1:eventIndex 16 ;
+    ns1:eventWeek "Semana 16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/17> a ns1:ScheduleEvent ;
+    ns1:eventIndex 17 ;
+    ns1:eventWeek "Semana 17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/2> a ns1:ScheduleEvent ;
+    ns1:eventIndex 2 ;
+    ns1:eventWeek "Semana 2"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/3> a ns1:ScheduleEvent ;
+    ns1:eventIndex 3 ;
+    ns1:eventWeek "Semana 3"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/4> a ns1:ScheduleEvent ;
+    ns1:eventIndex 4 ;
+    ns1:eventWeek "Semana 4"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/4/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/4/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/4/activity/TActivityType1/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/4/activity/TActivityType1/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/4/activity/TActivityType1/5> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/4/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tolerancia a fallos con Zookeeper y Kafka."@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/4/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 1. Consistencia en la replicación."@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/4/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2. Teorema de imposibilidad CAP."@es ;
+    ns1:activityDuration "00:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/4/activity/TActivityType1/4> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 3. Introducción a Raft. Elección de líder."@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/4/activity/TActivityType1/5> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tutorias on-line"@es ;
+    ns1:activityDuration "05:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "AIV: Aula invertida"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/5> a ns1:ScheduleEvent ;
+    ns1:eventIndex 5 ;
+    ns1:eventWeek "Semana 5"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/5/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/5/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/5/activity/TActivityType1/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/5/activity/TActivityType1/4> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/5/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 3. Raft. Replicacion de logs. Consistencia. Tolerancia a fallos."@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/5/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 4. Ethereum. Redes peer-to-peer. Consenso eventual."@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/5/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tolerancia a fallos con Zookeeper y Kafka."@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/5/activity/TActivityType1/4> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tutorias on-line"@es ;
+    ns1:activityDuration "05:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "AIV: Aula invertida"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 4. Ethereum. Coherencia eventual."@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tolerancia a fallos con Zookeeper y Kafka."@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tutorias on-line"@es ;
+    ns1:activityDuration "05:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "AIV: Aula invertida"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "EX-TE-Evaluación progresiva. Teoría. Temas 1 a 4. (RA1, RA2, RA3)"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6/activity/TEvaluationActivity/2> a ns1:EvaluationActivity ;
+    ns1:activityDescription "EX-PR-Evaluación progresiva. Practicas. (RA4, RA80)"@es ;
+    ns1:activityDuration "00:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EP: Técnica del tipo Examen de Prácticas"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6/activity/TEvaluationActivity/3> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Evaluación global. Teoría. Temas 1 a 4. (RA1, RA2, RA3)"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6/activity/TEvaluationActivity/4> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Evaluación global. Prácticas. (RA4, RA80)"@es ;
+    ns1:activityDuration "00:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EP: Técnica del tipo Examen de Prácticas"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/7> a ns1:ScheduleEvent ;
+    ns1:eventIndex 7 ;
+    ns1:eventWeek "Semana 7"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/8> a ns1:ScheduleEvent ;
+    ns1:eventIndex 8 ;
+    ns1:eventWeek "Semana 8"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/9> a ns1:ScheduleEvent ;
+    ns1:eventIndex 9 ;
+    ns1:eventWeek "Semana 9"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus> a ns1:Syllabus ;
+    ns1:hasItem <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/0>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/18>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/19>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/20>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/21>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/0> a ns1:SyllabusItem ;
+    ns1:itemIndex 0 ;
+    ns1:syllabusDescription "1. Coherencia en replicación de procesos y datos."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/1> a ns1:SyllabusItem ;
+    ns1:itemIndex 1 ;
+    ns1:syllabusDescription "1.1. Modelo Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/10> a ns1:SyllabusItem ;
+    ns1:itemIndex 10 ;
+    ns1:syllabusDescription "3.3. Elección de líder Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/11> a ns1:SyllabusItem ;
+    ns1:itemIndex 11 ;
+    ns1:syllabusDescription "3.4. Replicación de log Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/12> a ns1:SyllabusItem ;
+    ns1:itemIndex 12 ;
+    ns1:syllabusDescription "3.5. Garantizando la propiedad de safety Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/13> a ns1:SyllabusItem ;
+    ns1:itemIndex 13 ;
+    ns1:syllabusDescription "3.6. Coherencia atómica Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/14> a ns1:SyllabusItem ;
+    ns1:itemIndex 14 ;
+    ns1:syllabusDescription "4. Replicación con coherencia eventual. Blockchain Ethereum."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/15> a ns1:SyllabusItem ;
+    ns1:itemIndex 15 ;
+    ns1:syllabusDescription "4.1. Red peer-to-peer Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/16> a ns1:SyllabusItem ;
+    ns1:itemIndex 16 ;
+    ns1:syllabusDescription "4.2. Proof of work. Consenso tarde o temprano. Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/17> a ns1:SyllabusItem ;
+    ns1:itemIndex 17 ;
+    ns1:syllabusDescription "4.3. Replicación con coherencia eventual. Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/18> a ns1:SyllabusItem ;
+    ns1:itemIndex 18 ;
+    ns1:syllabusDescription "5. Laboratorio. Coherencia atómica. Zookeeper y Raft."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/19> a ns1:SyllabusItem ;
+    ns1:itemIndex 19 ;
+    ns1:syllabusDescription "5.1. Introducción Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/2> a ns1:SyllabusItem ;
+    ns1:itemIndex 2 ;
+    ns1:syllabusDescription "1.2. Coherencia atómica Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/20> a ns1:SyllabusItem ;
+    ns1:itemIndex 20 ;
+    ns1:syllabusDescription "5.2. Interfaz del servicio mediante comandos Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/21> a ns1:SyllabusItem ;
+    ns1:itemIndex 21 ;
+    ns1:syllabusDescription "5.3. Programación del servicio con el API de Java Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/3> a ns1:SyllabusItem ;
+    ns1:itemIndex 3 ;
+    ns1:syllabusDescription "1.3. Coherencia secuencia Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/4> a ns1:SyllabusItem ;
+    ns1:itemIndex 4 ;
+    ns1:syllabusDescription "1.4. Coherencia causal Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/5> a ns1:SyllabusItem ;
+    ns1:itemIndex 5 ;
+    ns1:syllabusDescription "1.5. Coherencia eventual Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/6> a ns1:SyllabusItem ;
+    ns1:itemIndex 6 ;
+    ns1:syllabusDescription "2. Teorema de imposibilidad CAP Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/7> a ns1:SyllabusItem ;
+    ns1:itemIndex 7 ;
+    ns1:syllabusDescription "3. Replicación con coherencia atómica. Raft."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/8> a ns1:SyllabusItem ;
+    ns1:itemIndex 8 ;
+    ns1:syllabusDescription "3.1. Introducción Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/syllabus/9> a ns1:SyllabusItem ;
+    ns1:itemIndex 9 ;
+    ns1:syllabusDescription "3.2. Modelo Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/61AG%20-%20Master%20Universitario%20en%20Software%20de%20Sistemas%20Distribuidos%20y%20Empotrados> a ns1:MasterDegree ;
+    ns1:degreeCode "61AG"@es ;
+    ns1:hasCourse <https://guia-kg.skai.etsisi.upm.es/resource/613000112> ;
+    schema:name "Master Universitario en Software de Sistemas Distribuidos y Empotrados"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/juanantonio.rodrigo%40upm.es> a ns1:Lecturer ;
+    ns1:office "4201"@es ;
+    ns1:tutorshipsSchedule "Las tutorías se conciertan con los alumnos para facilitar su asistencia"@es ;
+    schema:email "juanantonio.rodrigo@upm.es" ;
+    schema:name "Rodrigo Ferran, Juan Antonio" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/silviaalba.uribe%40upm.es> a ns1:Lecturer ;
+    ns1:office "4218"@es ;
+    ns1:tutorshipsSchedule "Las tutorías se conciertan con los alumnos para facilitar su asistencia"@es ;
+    schema:email "silviaalba.uribe@upm.es" ;
+    schema:name "Uribe Mayoral, Silvia Alba" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/gustavo.hernandez.penaloza%40upm.es> a ns1:Lecturer ;
+    ns1:office "4408"@es ;
+    ns1:tutorshipsSchedule "Las tutorías se conciertan con los alumnos para facilitar su asistencia."@es ;
+    schema:email "gustavo.hernandez.penaloza@upm.es" ;
+    schema:name "Hernandez Peñaloza, Gustavo Adolfo" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6> a ns1:ScheduleEvent ;
+    ns1:eventIndex 6 ;
+    ns1:eventWeek "Semana 6"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6/activity/TActivityType1/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6/activity/TEvaluationActivity/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6/activity/TEvaluationActivity/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6/activity/TEvaluationActivity/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/613000112/2025-26/eventSchedule/6/activity/TEvaluationActivity/4> .
+

@@ -1,0 +1,840 @@
+@prefix ns1: <http://w3id.org/def/guia#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/previous_courses> a ns1:RequiredKnowledge ;
+    ns1:previousCourses "El plan de estudios Grado En Ciencia De Datos E Inteligencia Artificial no tiene definidos otros requisitos para esta asignatura."@es ;
+    ns1:previousKnowledge """Bases de datos
+Programación en Python"""@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/E.T.S.%20De%20Ingenieros%20Inform%C3%A1ticos> a ns1:UniversityCenter ;
+    ns1:offers <https://guia-kg.skai.etsisi.upm.es/resource/10CD%20-%20Grado%20en%20Ciencia%20de%20Datos%20e%20Inteligencia%20Artificial> ;
+    schema:name "E.T.S. De Ingenieros Informáticos" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012> a ns1:Course ;
+    ns1:courseType "Obligatoria"@es ;
+    ns1:courseYear 2 ;
+    ns1:semester "Tercer semestre"@es ;
+    schema:courseCode 105001012 ;
+    schema:hasCourseInstance <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26> ;
+    schema:name "Data Representation And Interchange"@en,
+        "Representación e Intercambio de Datos"@es ;
+    schema:numberOfCredits 6.0 .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26> a ns1:CourseGuide ;
+    ns1:hasCompetency <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/CG06> ;
+    ns1:hasDidacticResource <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/9> ;
+    ns1:hasEvaluation <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation> ;
+    ns1:hasLearningResult <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/RA86>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/RA87>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/RA88> ;
+    ns1:hasSyllabus <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus> ;
+    ns1:inpersonHours "64 horas y 30 minutos (41.3%)"@es ;
+    ns1:numberOfCredits 6.0 ;
+    ns1:otherInformation ""@es ;
+    ns1:periodEndingMonth "Enero"@es ;
+    ns1:periodStartingMonth "Septiembre"@es ;
+    ns1:teachingPeriod "2025-26" ;
+    ns1:teachingPeriodMonths "Septiembre-Enero"@es ;
+    ns1:totalHours "64 horas y 30 minutos"@es ;
+    schema:activitiesWorkload "100%"@es ;
+    schema:courseSchedule <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule> ;
+    schema:description """La asignatura se centra en estudiar cómo se realiza el intercambio de datos entre aplicaciones distribuidas a través de Internet. Para ello, se explicarán los conceptos fundamentales de la arquitectura de comunicaciones TCP/IP, sus protocolos y los principales servicios de nivel de aplicación.
+Se pondrá énfasis en la arquitectura del principal servicio de Internet: la World Wide Web, entendida ésta como un espacio de información de recursos interrelacionados cuyos elementos de diseño principales son la identificación de recursos, la representación del estado de los recursos y los protocolos que admiten la interacción entre los agentes y los recursos en ese espacio global. Se relacionarán los componentes básicos del diseño, las restricciones y las buenas prácticas con los principios y propiedades que admiten.
+
+La elección de un formato de datos adecuado marca una diferencia en la velocidad de programación y rendimiento de las aplicaciones intensivas en datos. La asignatura introducirá de forma comparativa dos de los formatos de datos más populares para aplicaciones web, JSON y XML.
+
+Seguidamente, se introducirá la Arquitectura Orientada a Servicios y su implementación mediante Servicios Web XML. Se presentará a continuación el patrón arquitectónico REST y las restricciones que implica a la hora de diseñar el intercambio de datos y los propios servicios, y su implementación en servicios RESTful intensivos en datos.
+
+Finalmente, se introducirá la Arquitectura Guiada por Eventos y las propiedades que introduce en una aplicación distribuida, con énfasis en cómo éstas facilitan el acceso a los datos y al contexto necesario para tomar mejores decisiones de negocio. Se profundizará en el modelo pub/sub, en el modelo de streaming de eventos de dicha arquitectura y en posibles implementaciones, como puede ser la del protocolo MQTT entre otras.
+
+A lo largo de la asignatura, se realizará una serie de prácticas que permitirán consolidar los conocimientos adquiridos y desarrollar competencia en su uso práctico."""@es ;
+    schema:director <https://guia-kg.skai.etsisi.upm.es/resource/m.balvarez%40upm.es> ;
+    schema:inLanguage "Castellano"@es ;
+    schema:instructor <https://guia-kg.skai.etsisi.upm.es/resource/javier.soriano%40upm.es>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/javier.yaguez%40upm.es>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/m.balvarez%40upm.es> ;
+    schema:name "Representación e Intercambio de Datos"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/CB05> a ns1:Competency ;
+    ns1:competencyCode "CB05" ;
+    ns1:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/CE06> a ns1:Competency ;
+    ns1:competencyCode "CE06" ;
+    ns1:competencyDescription "Capacidad para describir los fundamentos de las infraestructuras de gestión e intercambio de datos: hardware, sistemas operativos, bases de datos, redes de computadores."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/CE07> a ns1:Competency ;
+    ns1:competencyCode "CE07" ;
+    ns1:competencyDescription "Capacidad de diseñar e implementar sistemas de información (incluyendo modelos de datos y estrategias de gestión de datos) dimensionados para gestionar el volumen, velocidad y variedad de los datos, de forma adecuada para su almacenamiento, procesamiento y acceso para tratamientos posteriores."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/CG06> a ns1:Competency ;
+    ns1:competencyCode "CG06" ;
+    ns1:competencyDescription "Identificar y utilizar las tecnologías de la información y las comunicaciones más adecuadas en el ámbito de la ingeniería."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/RA86> a ns1:LearningResult ;
+    ns1:learningResultCode "RA86" ;
+    ns1:learningResultDescription "RA"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/RA87> a ns1:LearningResult ;
+    ns1:learningResultCode "RA87" ;
+    ns1:learningResultDescription "RA"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/RA88> a ns1:LearningResult ;
+    ns1:learningResultCode "RA88" ;
+    ns1:learningResultDescription "RA"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/1> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "https://moodle.upm.es/titulaciones/oficiales/login/login.php"@es ;
+    ns1:bibliographyTitle "Sitio web Moodle de la asignatura"@es ;
+    ns1:bibliographyType "Recursos web"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/10> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "http://www.w3.org/TR/webarch/"@es ;
+    ns1:bibliographyTitle "Jacobs I, Walsh N (2004) Architecture of the World Wide Web. Technical report, W3C."@es ;
+    ns1:bibliographyType "Recursos web"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/2> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "Computer Networking: A Top-Down Approach, 8th edition. James F. Kurose & Keith W. Ross. Addison Wesley, 2020."@es ;
+    ns1:bibliographyTitle "Computer Networking: A Top-Down Approach"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/3> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "Eric van der Vlist, XML Schema: The W3C's Object-Oriented Descriptions for XML. O'Reilly"@es ;
+    ns1:bibliographyTitle "XML Schema"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/4> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "Lindsay Bassett Introduction to JavaScript Object Notation: A To-the-Point Guide to JSON. O'Reilly. 2015"@es ;
+    ns1:bibliographyTitle "Introduction to JavaScript Object Notation"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/5> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "RESTful API Design: Matthias Biehl"@es ;
+    ns1:bibliographyTitle "RESTful API Design"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/6> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "Building RESTful Python Web Services. Packt Publishing, 2016"@es ;
+    ns1:bibliographyTitle "Building RESTful Python Web Services"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/7> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "Gaston C. Hillar, Hands-On MQTT Programming with Python: Work with the lightweight IoT protocol in Python, Packt Publishing, 2018"@es ;
+    ns1:bibliographyTitle "Hands-On MQTT Programming with Python"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/8> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "H. Halpin; Social Semantics. The Search for Meaning on the Web. Springer, Semantic Web and Beyond 13 (Ch.2 Architecture of the World Wide Web), DOI 10.1007/978-1-4614-1885-6 2, Springer Science+Business Media New York 2013"@es ;
+    ns1:bibliographyTitle "Architecture of the WWW"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/didactic_resource/9> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "https://www.w3.org/DesignIssues/"@es ;
+    ns1:bibliographyTitle "Tim Berners-Lee; Architectural and Philoshophical Notes"@es ;
+    ns1:bibliographyType "Recursos web"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation> a ns1:EvaluationSystem ;
+    ns1:evaluationDescription """La asignatura se divide en una parte teórica (conceptos y su aplicación) y práctica (Utilización de formatos de representación de datos, utilización de herramientas TCP/IP y desarrollo de software: servicios RESTful y software basado en eventos). La parte teórica tiene un peso del 60% de la calificación final. La parte práctica tiene un peso del 40% de la calificación final, teniendo todas las prácticas que la conforman el mismo peso relativo.
+Una vez se haya obtenido una calificación mínima de 4 puntos sobre 10 en la parte teórica, una calificación mínima de 5 sobre 10 en la parte teoríca y se hayan superado con 5 o más puntos sobre 10 todas y cada una de las entregas de prácticas (actividades obligatorias), se le realizará la media ponderada de las dos partes según los pesos anteriores, y superará la asignatura si dicha media ponderada es de 5 o más puntos sobre 10.
+Tanto la parte teórica, cuando tenga una calificación de 4 o más puntos sobre 10, como la parte práctica, cuando tenga una calificación de 5 o más puntos sobre 10, se guardarán hasta la convocatoria extraordinaria de julio.
+Entre cursos diferentes y mientras no cambie el programa de prácticas de la asignatura, se guardará la parte práctica cuando esté superada completamente con una una nota de 5 o más puntos sobre 10 (cada una de las prácticas y examen). La parte teórica no se guarda entre cursos.
+Tanto en la convocatoria ordinaria como en la extraordinaria se podrá repetir la entrega de las prácticas suspensas (con nota menor que 5 puntos sobre 10) o no entregadas y se realizará una prueba de evaluación global que cubrirá todos los contenidos de la asignatura. Para superar la asignatura, deberá obtener los mismos mínimos que en la evaluación progresiva.
+Actuación ante copias y otros comportamientos fraudulentos
+Ante la comprobación de fraude académico durante el desarrollo de pruebas de evaluación, se aplicará lo recogido en el artículo 13 de la Normativa de Evaluación UPM aprobada en Consejo de Gobierno de 26 de mayo de 2022."""@es ;
+    ns1:hasEvaluationTrial <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial18>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial1> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "5%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/7> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Entrega práctica XML/JSON"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "7"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial10> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "5%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Reentrega de práctica REST (suspensa o no entregada en el periodo establecido)"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial11> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "5%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Reentrega práctica Pub/Sub (suspensa o no entregada en el periodo establecido)"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial12> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:45"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "20%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Examen de prácticas"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial13> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:30"@es ;
+    ns1:evaluationType "extraordinaria"@es ;
+    ns1:gradePercentage "60%"@es ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Examen de teoría"@es ;
+    ns1:trialType "Presencial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial14> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "extraordinaria"@es ;
+    ns1:gradePercentage "5%"@es ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Reentrega de práctica XML/JSON (suspensa o no entregada en el periodo establecido)"@es ;
+    ns1:trialType "Presencial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial15> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "extraordinaria"@es ;
+    ns1:gradePercentage "5%"@es ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Reentrega de práctica TCP/IP (suspensa o no entregada en el periodo establecido)"@es ;
+    ns1:trialType "Presencial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial16> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "extraordinaria"@es ;
+    ns1:gradePercentage "5%"@es ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Reentrega de práctica REST (suspensa o no entregada en el periodo establecido)"@es ;
+    ns1:trialType "Presencial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial17> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "extraordinaria"@es ;
+    ns1:gradePercentage "5%"@es ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Reentrega práctica Pub/Sub (suspensa o no entregada en el periodo establecido)"@es ;
+    ns1:trialType "Presencial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial18> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:45"@es ;
+    ns1:evaluationType "extraordinaria"@es ;
+    ns1:gradePercentage "20%"@es ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Examen de prácticas"@es ;
+    ns1:trialType "Presencial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial2> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "5%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/11> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Entrega práctica TCP/IP"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "11"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial3> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "5%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/14> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Entrega práctica REST"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "14"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial4> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "5%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/16> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Entrega práctica Pub/Sub"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial5> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:30"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "60%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Examen de teoría"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial6> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:45"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "20%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Examen de prácticas"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial7> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:30"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "60%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Examen de teoría"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial8> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "5%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE07>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Reentrega de práctica XML/JSON (suspensa o no entregada en el periodo establecido)"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/evaluation/trial9> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "5%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE06>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG06> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Reentrega de práctica TCP/IP (suspensa o no entregada en el periodo establecido)"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule> a ns1:Schedule ;
+    schema:eventSchedule <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/1> a ns1:ScheduleEvent ;
+    ns1:eventIndex 1 ;
+    ns1:eventWeek "Semana 1"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/1/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/1/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/1/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Presentación de la asignatura"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/1/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Formatos de representación: XML"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/10> a ns1:ScheduleEvent ;
+    ns1:eventIndex 10 ;
+    ns1:eventWeek "Semana 10"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/10/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/10/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "La Arquitectura de la WWW"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/11/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tecnologías de servicios: SOA"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/11/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tecnologías de servicios: REST"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/11/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Entrega práctica TCP/IP"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TI: Técnica del tipo Trabajo Individual"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/12> a ns1:ScheduleEvent ;
+    ns1:eventIndex 12 ;
+    ns1:eventWeek "Semana 12"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/12/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/12/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tecnologías de servicios: REST"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/13> a ns1:ScheduleEvent ;
+    ns1:eventIndex 13 ;
+    ns1:eventWeek "Semana 13"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/13/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/13/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/13/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tecnologías de servicios: REST"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/13/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tecnologías de servicios: EDA"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/14/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tecnologías de servicios: EDA"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/14/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Entrega práctica REST"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TI: Técnica del tipo Trabajo Individual"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/15> a ns1:ScheduleEvent ;
+    ns1:eventIndex 15 ;
+    ns1:eventWeek "Semana 15"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/15/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/15/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tecnologías de servicios: EDA"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/16/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Entrega práctica Pub/Sub"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TI: Técnica del tipo Trabajo Individual"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Otras actividades formativas/evaluación"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Otras actividades formativas/evaluación"@es ;
+    ns1:activityDuration "00:45" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Examen de teoría"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva y Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17/activity/TEvaluationActivity/2> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Reentrega de práctica XML/JSON (suspensa o no entregada en el periodo establecido)"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TI: Técnica del tipo Trabajo Individual"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17/activity/TEvaluationActivity/3> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Reentrega de práctica TCP/IP (suspensa o no entregada en el periodo establecido)"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TI: Técnica del tipo Trabajo Individual"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17/activity/TEvaluationActivity/4> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Reentrega de práctica REST (suspensa o no entregada en el periodo establecido)"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TI: Técnica del tipo Trabajo Individual"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17/activity/TEvaluationActivity/5> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Reentrega práctica Pub/Sub (suspensa o no entregada en el periodo establecido)"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TI: Técnica del tipo Trabajo Individual"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17/activity/TEvaluationActivity/6> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Examen de prácticas"@es ;
+    ns1:activityDuration "00:45" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva y Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/2> a ns1:ScheduleEvent ;
+    ns1:eventIndex 2 ;
+    ns1:eventWeek "Semana 2"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/2/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/2/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Formatos de representación: XML"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/3> a ns1:ScheduleEvent ;
+    ns1:eventIndex 3 ;
+    ns1:eventWeek "Semana 3"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/3/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/3/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/3/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Formatos de representación: JSON"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/3/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Formatos de representación: JSON"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/4> a ns1:ScheduleEvent ;
+    ns1:eventIndex 4 ;
+    ns1:eventWeek "Semana 4"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/4/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/4/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/4/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Formatos de representación: JSON"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/4/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Formatos de representación: JSON"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/5> a ns1:ScheduleEvent ;
+    ns1:eventIndex 5 ;
+    ns1:eventWeek "Semana 5"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/5/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/5/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/5/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Formatos de representación: JSON"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/5/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Comunicaciones de datos en Internet"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/6> a ns1:ScheduleEvent ;
+    ns1:eventIndex 6 ;
+    ns1:eventWeek "Semana 6"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/6/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/6/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Comunicaciones de datos en Internet"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/7/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Comunicaciones de datos en Internet"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/7/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Entrega práctica XML/JSON"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TI: Técnica del tipo Trabajo Individual"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/8> a ns1:ScheduleEvent ;
+    ns1:eventIndex 8 ;
+    ns1:eventWeek "Semana 8"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/8/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/8/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Comunicaciones de datos en Internet"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/9> a ns1:ScheduleEvent ;
+    ns1:eventIndex 9 ;
+    ns1:eventWeek "Semana 9"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/9/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/9/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Comunicaciones de datos en Internet"@es ;
+    ns1:activityDuration "04:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus> a ns1:Syllabus ;
+    ns1:hasItem <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/0>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/0> a ns1:SyllabusItem ;
+    ns1:itemIndex 0 ;
+    ns1:syllabusDescription "1. Presentación Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/1> a ns1:SyllabusItem ;
+    ns1:itemIndex 1 ;
+    ns1:syllabusDescription "2. Formatos de representación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/10> a ns1:SyllabusItem ;
+    ns1:itemIndex 10 ;
+    ns1:syllabusDescription "3.5. La Arquitectura de la WWW Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/11> a ns1:SyllabusItem ;
+    ns1:itemIndex 11 ;
+    ns1:syllabusDescription "4. Tecnologías de servicios"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/12> a ns1:SyllabusItem ;
+    ns1:itemIndex 12 ;
+    ns1:syllabusDescription "4.1. La Arquitectura Orientada a Servicios (SOA). Servicios Web XML Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/13> a ns1:SyllabusItem ;
+    ns1:itemIndex 13 ;
+    ns1:syllabusDescription "4.2. Estilos arquitectónicos basados en red. REST y Servicios RESTful Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/14> a ns1:SyllabusItem ;
+    ns1:itemIndex 14 ;
+    ns1:syllabusDescription "4.3. La Arquitectura Guiada por Eventos. Middleware pub/sub. MQTT Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/2> a ns1:SyllabusItem ;
+    ns1:itemIndex 2 ;
+    ns1:syllabusDescription "2.1. Tecnologías XML Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/3> a ns1:SyllabusItem ;
+    ns1:itemIndex 3 ;
+    ns1:syllabusDescription "2.2. JSON Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/4> a ns1:SyllabusItem ;
+    ns1:itemIndex 4 ;
+    ns1:syllabusDescription "2.3. Otros Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/5> a ns1:SyllabusItem ;
+    ns1:itemIndex 5 ;
+    ns1:syllabusDescription "3. Comunicaciones de datos en Internet"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/6> a ns1:SyllabusItem ;
+    ns1:itemIndex 6 ;
+    ns1:syllabusDescription "3.1. La arquitectura de comunicaciones TCP/IP Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/7> a ns1:SyllabusItem ;
+    ns1:itemIndex 7 ;
+    ns1:syllabusDescription "3.2. Nivel de red. El protocolo IP Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/8> a ns1:SyllabusItem ;
+    ns1:itemIndex 8 ;
+    ns1:syllabusDescription "3.3. Nivel de transporte. El protocolo TCP, UDP Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/syllabus/9> a ns1:SyllabusItem ;
+    ns1:itemIndex 9 ;
+    ns1:syllabusDescription "3.4. Nivel de aplicación. El protocolo http, DNS Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/10CD%20-%20Grado%20en%20Ciencia%20de%20Datos%20e%20Inteligencia%20Artificial> a ns1:BachelorDegree ;
+    ns1:degreeCode "10CD"@es ;
+    ns1:hasCourse <https://guia-kg.skai.etsisi.upm.es/resource/105001012> ;
+    schema:name "Grado en Ciencia de Datos e Inteligencia Artificial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/javier.soriano%40upm.es> a ns1:Lecturer ;
+    ns1:office "4309"@es ;
+    ns1:tutorshipsSchedule """L - 15:00 - 17:00
+X - 15:00 - 17:00
+J - 15:00 - 17:00"""@es ;
+    schema:email "javier.soriano@upm.es" ;
+    schema:name "Soriano Camino, Francisco Javier" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/javier.yaguez%40upm.es> a ns1:Lecturer ;
+    ns1:office "D4308"@es ;
+    ns1:tutorshipsSchedule """L - 12:00 - 14:00
+M - 14:00 - 16:00
+V - 10:00 - 12:00"""@es ;
+    schema:email "javier.yaguez@upm.es" ;
+    schema:name "Yaguez Garcia, Fco. Javier" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/11> a ns1:ScheduleEvent ;
+    ns1:eventIndex 11 ;
+    ns1:eventWeek "Semana 11"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/11/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/11/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/11/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/14> a ns1:ScheduleEvent ;
+    ns1:eventIndex 14 ;
+    ns1:eventWeek "Semana 14"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/14/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/14/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/16> a ns1:ScheduleEvent ;
+    ns1:eventIndex 16 ;
+    ns1:eventWeek "Semana 16"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/16/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/7> a ns1:ScheduleEvent ;
+    ns1:eventIndex 7 ;
+    ns1:eventWeek "Semana 7"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/7/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/7/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/m.balvarez%40upm.es> a ns1:Lecturer ;
+    ns1:office "4310"@es ;
+    ns1:tutorshipsSchedule """L - 12:00 - 14:00
+X - 12:00 - 16:00"""@es ;
+    schema:email "m.balvarez@upm.es" ;
+    schema:name "Barbero Alvarez, Miguel Antonio" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17> a ns1:ScheduleEvent ;
+    ns1:eventIndex 17 ;
+    ns1:eventWeek "Semana 17"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17/activity/TEvaluationActivity/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17/activity/TEvaluationActivity/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17/activity/TEvaluationActivity/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17/activity/TEvaluationActivity/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17/activity/TEvaluationActivity/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105001012/2025-26/eventSchedule/17/activity/TEvaluationActivity/6> .
+

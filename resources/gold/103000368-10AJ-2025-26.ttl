@@ -1,0 +1,519 @@
+@prefix ns1: <http://w3id.org/def/guia#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/previous_courses> a ns1:RequiredKnowledge ;
+    ns1:previousCourses "El plan de estudios Master Universitario En Inteligencia Artificial no tiene definidos otros requisitos para esta asignatura."@es ;
+    ns1:previousKnowledge "El coordinador de la asignatura no ha definido otros conocimientos previos recomendados."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/E.T.S.%20De%20Ingenieros%20Inform%C3%A1ticos> a ns1:UniversityCenter ;
+    ns1:offers <https://guia-kg.skai.etsisi.upm.es/resource/10AJ%20-%20Master%20Universitario%20en%20Inteligencia%20Artificial> ;
+    schema:name "E.T.S. De Ingenieros Informáticos" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368> a ns1:Course ;
+    ns1:courseType "Optativa"@es ;
+    ns1:courseYear 1 ;
+    ns1:semester "Primer semestre"@es ;
+    schema:courseCode 103000368 ;
+    schema:hasCourseInstance <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26> ;
+    schema:name "Models Of Reasoning"@en,
+        "Modelos de Razonamiento"@es ;
+    schema:numberOfCredits 5.0 .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26> a ns1:CourseGuide ;
+    ns1:hasCompetency <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/C14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/C9>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/K5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/S5> ;
+    ns1:hasDidacticResource <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/didactic_resource/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/didactic_resource/2> ;
+    ns1:hasEvaluation <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/evaluation> ;
+    ns1:hasLearningResult <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/RA115> ;
+    ns1:hasSyllabus <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus> ;
+    ns1:inpersonHours "42 horas (32.3%)"@es ;
+    ns1:numberOfCredits 5.0 ;
+    ns1:otherInformation """Se utilizan diferentes métodos docentes en el desarrollo de la asignatura:
+1) El profesor realiza presentaciones en el aula, utilizando diapositivas compartidas con los alumnos, para impartir clases teóricas (método "lección magistral").
+2) Se utiliza el método de "aprendizaje experiencial" en donde los alumnos presentan reflexiones sobre trabajos prácticos realizados, indicando resultados positivos y negativos que se debaten en el aula.
+3) Los alumnos utilizan herramientas software especializadas para realizar trabajos prácticos relacionados con representación del conocimiento y razonamiento.
+Esta asignatura está relacionada con el "Objetivo de Desarrollo Sostenible 9" (Industria, innovación e infraestructura) definido por el Programa de las Naciones Unidas para el Desarrollo (www.undp.org) en lo referente a innovación e investigación científica en tecnologías de la información."""@es ;
+    ns1:periodEndingMonth "Enero"@es ;
+    ns1:periodStartingMonth "Septiembre"@es ;
+    ns1:teachingPeriod "2025-26" ;
+    ns1:teachingPeriodMonths "Septiembre-Enero"@es ;
+    ns1:totalHours "42 horas"@es ;
+    schema:activitiesWorkload "100%"@es ;
+    schema:courseSchedule <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule> ;
+    schema:description """La asignatura "Modelos de Razonamiento" presenta modelos computacionales de razonamiento, que tienen aplicación en el diseño y construcción de sistemas inteligentes. La asignatura se centra principalmente en técnicas simbólicas de inteligencia artificial para simular formas de razonamiento (por ejemplo, basadas en lógica) y su aplicación como base a procesos deliberativos de sistemas autónomos.
+La asignatura comienza con una introducción que incluye generalidades sobre los sistemas inteligentes como fundamento para el posterior desarrollo de la asignatura. Esta introducción proporciona una visión integradora de diferentes tipos de métodos de inteligencia artificial, algunos de los cuales se describen con más detalle en otras asignaturas.
+A continuación, la asignatura describe conceptos básicos relacionados con el razonamiento y la representación del conocimiento en donde se presentan definiciones de términos utilizados y los diferentes enfoques generales existentes para automatizar procesos de razonamiento.
+Seguidamente se revisan diferentes métodos específicos para razonamiento automático junto con herramientas software relacionadas. Se describen métodos simbólicos con semántica formal basada en lógica (por ejemplo, reglas, restricciones, programas lógicos, demostradores automáticos de teoremas, etc.). Después, se describen otros métodos simbólicos que abordan otros problemas (tales como no monotonía o razonar sobre los efectos de acciones) junto con técnicas existentes (por ejemplo, circunscripción, cálculo de eventos, etc.). Al final de esta parte se incluye también una breve descripción sobre el uso reciente de modelos de lenguaje con redes neuronales para razonamiento, resumiendo logros alcanzados y sus principales limitaciones.
+Finalmente, se describe el rol que tienen los métodos de razonamiento automático en la construcción de sistemas inteligentes autónomos que necesitan tomar decisiones seguras y eficientes en entornos dinámicos complejos, como los que se utilizan en sistemas robóticos o vehículos autónomos. En esta parte, se discuten funciones reactivas y deliberativas de un agente para comprender su entorno y para decidir acciones a realizar.
+La asignatura ofrece principalmente una descripción teórica de una serie de métodos, ilustrada en algunos casos con herramientas y aplicaciones relacionadas con dominios prácticos (por ejemplo, robots aéreos autónomos). Se espera que los estudiantes que cursen esta asignatura desarrollen una comprensión general de métodos de razonamiento que ayude a complementar otras áreas de la inteligencia artificial en donde se hace uso de dichos métodos (por ejemplo, sistemas multiagente, planificación automática, robots autónomos, etc.).
+Al cursar esta asignatura, los estudiantes desarrollarán habilidades de investigación en inteligencia artificial a través de la realización de un trabajo que explore un tema de su interés, relacionado con los modelos de razonamiento. En este trabajo, los estudiantes podrán optar por desarrollar un prototipo de sistema inteligente con capacidad deliberativa o por investigar en mayor profundidad un área específica mediante análisis de fuentes bibliográficas. Los alumnos presentarán en clase los resultados del trabajo realizado.
+NOTA: En esta asignatura, las clases se imparten en español pero el material escrito utilizado están en inglés (por ejemplo, las diapositivas utilizadas en clase o la bibliografía recomendada)."""@es ;
+    schema:director <https://guia-kg.skai.etsisi.upm.es/resource/martin.molina%40upm.es> ;
+    schema:inLanguage "Castellano"@es ;
+    schema:instructor <https://guia-kg.skai.etsisi.upm.es/resource/martin.molina%40upm.es> ;
+    schema:name "Modelos de Razonamiento"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/C14> a ns1:Competency ;
+    ns1:competencyCode "C14" ;
+    ns1:competencyDescription "Capacidad de leer y comprender publicaciones dentro de su ámbito de estudio/investigación, así como su catalogación y valor científico. (Ability to read and understand publications within their area of study/research, as well as their categorization and"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/C9> a ns1:Competency ;
+    ns1:competencyCode "C9" ;
+    ns1:competencyDescription "Tener la capacidad de evaluar la aplicación de los algoritmos de Inteligencia Artificial, sus ventajas y limitaciones, y de seleccionar adecuadamente las técnicas apropiadas para un problema práctico o de investigación. (To have the ability to evaluate the application of Artificial Intelligence algorithms, their advantages and limitations, and to appropriately select the techniques suitable for a practical or research problem). TIPO: Competencias."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/K5> a ns1:Competency ;
+    ns1:competencyCode "K5" ;
+    ns1:competencyDescription "Conocer los métodos de representación del conocimiento y razonamiento aplicables al desarrollo de sistemas inteligentes en entornos centralizados y distribuidos. (To understand the methods of knowledge representation and reasoning applicable to the development of intelligent systems in centralized and distributed environaments). TIPO: Conocimientos o contenidos."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/RA115> a ns1:LearningResult ;
+    ns1:learningResultCode "RA115" ;
+    ns1:learningResultDescription "Los resultados del aprendizaje correspondientes a esta asignatura han quedado definidos en el apartado de competencias de este documento, señalando los que corresponden a conocimientos, habilidades y competencias propiamente dichas."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/S5> a ns1:Competency ;
+    ns1:competencyCode "S5" ;
+    ns1:competencyDescription "Almacenar conocimiento de forma que sea procesable por sistemas informáticos, posibilitando su reutilización en diferentes aplicaciones, y construir sistemas con capacidades de razonamiento para realizar de forma automática tareas tales como planificación o análisis de consistencia. (To store knowledge in a way that is processable by computer systems, enabling its reuse in different applications, and build systems with reasoning capabilities to automatically perform tasks such as planning or consistency analysis). TIPO: Habilidades o destrezas."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/didactic_resource/1> a ns1:DidacticResource ;
+    ns1:bibliographyTitle "Moodle UPM"@es ;
+    ns1:bibliographyType "Recursos web"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/didactic_resource/2> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "Bibliografía seleccionada (artículos y libros)"@es ;
+    ns1:bibliographyTitle "Bibliografía"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/evaluation> a ns1:EvaluationSystem ;
+    ns1:evaluationDescription "Las calificaciones parciales y finales se hacen en la escala de 0 a 10. Para aprobar el curso se requiere que la nota final G sea G >= 5 y, además, obtener una calificación igual o superior a la nota mínima que indican las actividades de evaluación."@es ;
+    ns1:hasEvaluationTrial <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/evaluation/trial1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/evaluation/trial2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/evaluation/trial3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/evaluation/trial4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/evaluation/trial5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/evaluation/trial6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/evaluation/trial7> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/evaluation/trial1> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "40%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/12> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/C14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/C9>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/S5> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Presentación oral de trabajo práctico"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "12"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/evaluation/trial2> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "20%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/16> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/K5> ;
+    ns1:minimumScore "7 / 10"@es ;
+    ns1:trialDescription "Asistencia y participación en clase"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/evaluation/trial3> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "40%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/16> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/C14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/C9>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/S5> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Informe escrito de trabajo práctico"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/evaluation/trial4> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "40%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/16> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/C14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/C9>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/S5> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Informe escrito de trabajo práctico"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/evaluation/trial5> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "60%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/16> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/C9>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/K5> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Examen de trabajo individual"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/evaluation/trial6> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:00"@es ;
+    ns1:evaluationType "extraordinaria"@es ;
+    ns1:gradePercentage "60%"@es ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/C9>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/K5> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Examen de trabajo individual"@es ;
+    ns1:trialType "Presencial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/evaluation/trial7> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "extraordinaria"@es ;
+    ns1:gradePercentage "40%"@es ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/C14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/C9>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/S5> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Informe escrito de trabajo práctico"@es ;
+    ns1:trialType "Presencial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule> a ns1:Schedule ;
+    schema:eventSchedule <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/1> a ns1:ScheduleEvent ;
+    ns1:eventIndex 1 ;
+    ns1:eventWeek "Semana 1"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/1/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/1/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Introducción"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/10> a ns1:ScheduleEvent ;
+    ns1:eventIndex 10 ;
+    ns1:eventWeek "Semana 10"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/10/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/10/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 4"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/11> a ns1:ScheduleEvent ;
+    ns1:eventIndex 11 ;
+    ns1:eventWeek "Semana 11"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/11/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/11/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/11/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 4"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/11/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Actividades transversales"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/12/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Presentaciones de alumnos. Discusión en grupo. Respuestas del profesor a preguntas de alumnos."@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/12/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Presentación oral de trabajo práctico"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PG: Técnica del tipo Presentación en Grupo"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/13> a ns1:ScheduleEvent ;
+    ns1:eventIndex 13 ;
+    ns1:eventWeek "Semana 13"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/13/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/13/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/13/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Presentaciones de alumnos. Discusión en grupo. Respuestas del profesor a preguntas de alumnos."@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/13/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Actividades transversales"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/14> a ns1:ScheduleEvent ;
+    ns1:eventIndex 14 ;
+    ns1:eventWeek "Semana 14"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/14/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/14/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Presentaciones de alumnos. Discusión en grupo. Respuestas del profesor a preguntas de alumnos."@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/15> a ns1:ScheduleEvent ;
+    ns1:eventIndex 15 ;
+    ns1:eventWeek "Semana 15"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/15/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/15/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/15/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Presentaciones de alumnos. Discusión en grupo. Respuestas del profesor a preguntas de alumnos."@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/15/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Actividades transversales"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/16/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Asistencia y participación en clase"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras técnicas evaluativas"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/16/activity/TEvaluationActivity/2> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Informe escrito de trabajo práctico"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TG: Técnica del tipo Trabajo en Grupo"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva y Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/16/activity/TEvaluationActivity/3> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Examen de trabajo individual"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PI: Técnica del tipo Presentación Individual"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/17> a ns1:ScheduleEvent ;
+    ns1:eventIndex 17 ;
+    ns1:eventWeek "Semana 17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/2> a ns1:ScheduleEvent ;
+    ns1:eventIndex 2 ;
+    ns1:eventWeek "Semana 2"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/2/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/2/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 1"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/3> a ns1:ScheduleEvent ;
+    ns1:eventIndex 3 ;
+    ns1:eventWeek "Semana 3"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/3/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/3/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 1"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/4> a ns1:ScheduleEvent ;
+    ns1:eventIndex 4 ;
+    ns1:eventWeek "Semana 4"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/4/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/4/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/5> a ns1:ScheduleEvent ;
+    ns1:eventIndex 5 ;
+    ns1:eventWeek "Semana 5"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/5/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/5/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/6> a ns1:ScheduleEvent ;
+    ns1:eventIndex 6 ;
+    ns1:eventWeek "Semana 6"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/6/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/6/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/7> a ns1:ScheduleEvent ;
+    ns1:eventIndex 7 ;
+    ns1:eventWeek "Semana 7"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/7/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/7/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 3"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/8> a ns1:ScheduleEvent ;
+    ns1:eventIndex 8 ;
+    ns1:eventWeek "Semana 8"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/8/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/8/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 3"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/9> a ns1:ScheduleEvent ;
+    ns1:eventIndex 9 ;
+    ns1:eventWeek "Semana 9"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/9/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/9/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/9/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 3"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/9/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Actividades transversales"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus> a ns1:Syllabus ;
+    ns1:hasItem <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/0>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/0> a ns1:SyllabusItem ;
+    ns1:itemIndex 0 ;
+    ns1:syllabusDescription "1. Intelligent systems"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/1> a ns1:SyllabusItem ;
+    ns1:itemIndex 1 ;
+    ns1:syllabusDescription "1.1. Properties of intelligent systems Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/10> a ns1:SyllabusItem ;
+    ns1:itemIndex 10 ;
+    ns1:syllabusDescription "3.3. Reasoning using language models Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/11> a ns1:SyllabusItem ;
+    ns1:itemIndex 11 ;
+    ns1:syllabusDescription "4. The role of reasoning in autonomous systems"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/12> a ns1:SyllabusItem ;
+    ns1:itemIndex 12 ;
+    ns1:syllabusDescription "4.1. Reasoning for environment understanding Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/13> a ns1:SyllabusItem ;
+    ns1:itemIndex 13 ;
+    ns1:syllabusDescription "4.2. Reasoning to act in the environment Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/2> a ns1:SyllabusItem ;
+    ns1:itemIndex 2 ;
+    ns1:syllabusDescription "1.2. Functional components of intelligent systems Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/3> a ns1:SyllabusItem ;
+    ns1:itemIndex 3 ;
+    ns1:syllabusDescription "2. Basic concepts of automated reasoning"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/4> a ns1:SyllabusItem ;
+    ns1:itemIndex 4 ;
+    ns1:syllabusDescription "2.1. Symbolism and connectionism in artificial intelligence Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/5> a ns1:SyllabusItem ;
+    ns1:itemIndex 5 ;
+    ns1:syllabusDescription "2.2. Knowledge representation Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/6> a ns1:SyllabusItem ;
+    ns1:itemIndex 6 ;
+    ns1:syllabusDescription "2.3. Automated reasoning Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/7> a ns1:SyllabusItem ;
+    ns1:itemIndex 7 ;
+    ns1:syllabusDescription "3. Methods for automated reasoning"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/8> a ns1:SyllabusItem ;
+    ns1:itemIndex 8 ;
+    ns1:syllabusDescription "3.1. Symbolic methods with logic-based semantics Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/syllabus/9> a ns1:SyllabusItem ;
+    ns1:itemIndex 9 ;
+    ns1:syllabusDescription "3.2. Other symbolic methods for reasoning Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/10AJ%20-%20Master%20Universitario%20en%20Inteligencia%20Artificial> a ns1:MasterDegree ;
+    ns1:degreeCode "10AJ"@es ;
+    ns1:hasCourse <https://guia-kg.skai.etsisi.upm.es/resource/103000368> ;
+    schema:name "Master Universitario en Inteligencia Artificial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/12> a ns1:ScheduleEvent ;
+    ns1:eventIndex 12 ;
+    ns1:eventWeek "Semana 12"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/12/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/12/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/martin.molina%40upm.es> a ns1:Lecturer ;
+    ns1:office "2111"@es ;
+    schema:email "martin.molina@upm.es" ;
+    schema:name "Molina Gonzalez, Martin" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/16> a ns1:ScheduleEvent ;
+    ns1:eventIndex 16 ;
+    ns1:eventWeek "Semana 16"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/16/activity/TEvaluationActivity/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/16/activity/TEvaluationActivity/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/103000368/2025-26/eventSchedule/16/activity/TEvaluationActivity/3> .
+

@@ -1,0 +1,706 @@
+@prefix ns1: <http://w3id.org/def/guia#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/previous_courses> a ns1:RequiredKnowledge ;
+    ns1:previousCourses "El plan de estudios Grado En Ingenieria Informatica no tiene definidos otros requisitos para esta asignatura."@es ;
+    ns1:previousKnowledge "Paradigmas de programación: imperativo, funcional"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/E.T.S.%20De%20Ingenieros%20Inform%C3%A1ticos> a ns1:UniversityCenter ;
+    ns1:offers <https://guia-kg.skai.etsisi.upm.es/resource/10II%20-%20Grado%20en%20Ingenieria%20Informatica> ;
+    schema:name "E.T.S. De Ingenieros Informáticos" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088> a ns1:Course ;
+    ns1:courseType "Optativa"@es ;
+    ns1:courseYear 4 ;
+    ns1:semester "Octavo semestre"@es ;
+    schema:courseCode 105000088 ;
+    schema:hasCourseInstance <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26> ;
+    schema:name "Computability: Fundamentals And Applications"@en,
+        "Computabilidad: Fundamentos y Aplicaciones"@es ;
+    schema:numberOfCredits 3.0 .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26> a ns1:CourseGuide ;
+    ns1:hasCompetency <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/CG>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/Ce%2013/18>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/Ce%2017>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/Ce%2019/20> ;
+    ns1:hasDidacticResource <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/didactic_resource/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/didactic_resource/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/didactic_resource/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/didactic_resource/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/didactic_resource/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/didactic_resource/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/didactic_resource/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/didactic_resource/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/didactic_resource/9> ;
+    ns1:hasEvaluation <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/evaluation> ;
+    ns1:hasLearningResult <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/RA279>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/RA384>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/RA385>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/RA386>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/RA387>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/RA388>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/RA520> ;
+    ns1:hasSyllabus <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus> ;
+    ns1:inpersonHours "34 horas (43.6%)"@es ;
+    ns1:numberOfCredits 3.0 ;
+    ns1:otherInformation ""@es ;
+    ns1:periodEndingMonth "Junio"@es ;
+    ns1:periodStartingMonth "Febrero"@es ;
+    ns1:teachingPeriod "2025-26" ;
+    ns1:teachingPeriodMonths "Febrero-Junio"@es ;
+    ns1:totalHours "34 horas"@es ;
+    schema:activitiesWorkload "130%"@es ;
+    schema:courseSchedule <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule> ;
+    schema:description """Supongamos que Alice y Bob estén implementando un sistema informático. Alice se encuentra con un fragmento de código P que quiere reutilizar, pero no está segura de lo que el código hace. Por esto pide a Bob que le diga lo que P calcula (Nota: este programa está escrito en el lenguaje usado por el analizador Interproc; se trata de
+una lenguaje muy sencillo que cualquier informático con conocimientos de algún lenguaje imperativo puede entender fácilmente):
+
+RUTINA:
+proc p(a:int) returns (b:int)
+begin
+____b = a*2;
+end
+
+PROGRAMA PRINCIPAL:
+var x:int, y:int;
+begin
+____x = 20;
+____y = p(x);
+end
+Es muy fácil entender el resultado del cálculo de P, así que Bob puede contestar a la pregunta en pocos segundos y sin ningún impedimento.
+Ahora supongamos que Alice encuentra otro fragmento de código, Q, y, otra vez, quiere usarlo en su sistema. Para ello, pide a Bob que eche un vistazo a Q y le diga lo que calcula (Nota: para los que tengan dudas, "/" es la división entera y "%" es el resto):
+RUTINA:
+proc p(a:int) returns (b:int)
+var c1:int, c2:int, c3:int;
+begin
+____c1 = a / 3;
+____c2 = a % 3 - 1;
+____b = c2;
+____c3 = c1;
+____while (c3>0) do
+________b = b + c3 % 3 + 2;
+________c3 = c3 - 1;
+____done;
+____if (c2 > 1) then b = b + 2;
+____else b = b + c2 + 1;
+____endif;
+____b = b + c1 * 3;
+____if (c1 % 3 == 2) then b = b + c3;
+____else b = b + 1;
+____endif;
+end
+PROGRAMA PRINCIPAL:
+var x:int, y:int;
+begin
+____x = 20;
+____y = p(x);
+end
+Es evidente que entender lo que hace Q es mucho más difícil, así que Bob tarda un buen rato para contestar. Sin embargo, el resultado final
+es que... ¡P y Q calculan exactamente lo mismo!
+En general, Bob podrá con cualquier fragmento de código, y encontrará una respuesta para todas las preguntas que Alice le pueda poner. Lo malo es que podría tardar muchísimo (no sería muy difícil producir programas mucho más largos y complejos que sigan calculando la misma función). Por esto los informáticos intentan desarrollar unos programas, que llamaremos analizadores, que realicen el trabajo de Bob tardando mucho menos y con un mayor nivel de fiabilidad.
+Lo que pasa es que ni siquiera el analizador más potente podrá contestar a todas las preguntas de Alice: siempre habrá un programa para el que no sabrá dar una respuesta (en este caso, que el valor final de "y" es 40).
+En este curso vamos a entender por qué pasa esto."""@es ;
+    schema:director <https://guia-kg.skai.etsisi.upm.es/resource/damiano.zanardini%40upm.es> ;
+    schema:inLanguage "Castellano"@es ;
+    schema:instructor <https://guia-kg.skai.etsisi.upm.es/resource/damiano.zanardini%40upm.es>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/josefaz.hernandez%40upm.es> ;
+    schema:name "Computabilidad: Fundamentos y Aplicaciones"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/CG> a ns1:Competency ;
+    ns1:competencyCode "CG" ;
+    ns1:competencyDescription "1/21"@es,
+        "2/CE45"@es,
+        "6"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/Ce%2013/18> a ns1:Competency ;
+    ns1:competencyCode "Ce 13/18" ;
+    ns1:competencyDescription "Comprender lo que pueden y no pueden conseguir las tecnologías actuales, y las limitaciones de la informática, que implica distinguir entre lo que, inherentemente, la informática no es capaz de hacer y lo que puede lograrse a través de la ciencia y la tecnología futuras."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/Ce%2017> a ns1:Competency ;
+    ns1:competencyCode "Ce 17" ;
+    ns1:competencyDescription "Conocer los temas informáticos avanzados de modo que permita a los alumnos vislumbrar y entender las fronteras de la disciplina, por medio de la inclusión de experiencias de aprendizaje que dirigen a los alumnos desde los temas elementales a los temas avanzados o los temas de los que se nutren los novísimos desarrollos."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/Ce%2019/20> a ns1:Competency ;
+    ns1:competencyCode "Ce 19/20" ;
+    ns1:competencyDescription "Conocimiento de los tipos apropiados de soluciones, y comprensión de la complejidad de los problemas informáticos y la viabilidad de su solución."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/RA279> a ns1:LearningResult ;
+    ns1:learningResultCode "RA279" ;
+    ns1:learningResultDescription "Explicar cuales son los limites y fronteras de los fundamentos científicos de la informática, y la base de las nuevas tendencias y desarrollos y de los temas avanzados y su posible aplicación. Tanto para el Prácticum como para la Movilidad Internacional:"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/RA384> a ns1:LearningResult ;
+    ns1:learningResultCode "RA384" ;
+    ns1:learningResultDescription "Estudiar potencialidad y límites teóricos de la computación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/RA385> a ns1:LearningResult ;
+    ns1:learningResultCode "RA385" ;
+    ns1:learningResultDescription "Aprender los orígenes de la historia de la Informática"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/RA386> a ns1:LearningResult ;
+    ns1:learningResultCode "RA386" ;
+    ns1:learningResultDescription "Conocer y aplicar diversos formalismos para la computación y sus relaciones"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/RA387> a ns1:LearningResult ;
+    ns1:learningResultCode "RA387" ;
+    ns1:learningResultDescription "Conocer cómo los límites de la computación afectan a la práctica de la Informática"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/RA388> a ns1:LearningResult ;
+    ns1:learningResultCode "RA388" ;
+    ns1:learningResultDescription "Comparar algunos aspectos relevantes de la computación automática con las características más algorítmicas del pensamiento humano"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/RA520> a ns1:LearningResult ;
+    ns1:learningResultCode "RA520" ;
+    ns1:learningResultDescription "Conocer los principios fundamentales de la verificación de programas en relación con la Teoría de la Computabilidad"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/didactic_resource/1> a ns1:DidacticResource ;
+    ns1:bibliographyTitle "Material didáctico de la asignatura, disponible en Moodle."@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/didactic_resource/2> a ns1:DidacticResource ;
+    ns1:bibliographyTitle "H. Lewis, C. H. Papadimitriou. Elements of the Theory of Computation. Prentice Hall, 1997."@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/didactic_resource/3> a ns1:DidacticResource ;
+    ns1:bibliographyTitle "N.J. Cutland. Computabilility. Cambridge University Press, 1980."@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/didactic_resource/4> a ns1:DidacticResource ;
+    ns1:bibliographyTitle "S. B. Cooper. Computability Theory. Chapman & Hall/CRC, 2004."@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/didactic_resource/5> a ns1:DidacticResource ;
+    ns1:bibliographyTitle "H, Rogers, Theory of Recursive Functions and Effective Computability. McGraw-Hill, 1967."@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/didactic_resource/6> a ns1:DidacticResource ;
+    ns1:bibliographyTitle "G. S. Boolos, R. C. Jeffrey. Computability and Logic, 3rd ed. Cambridge University Press, 1994."@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/didactic_resource/7> a ns1:DidacticResource ;
+    ns1:bibliographyTitle "H. Simon. Explaining the Ineffable. Proc., 14th IJCAI, 1995."@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/didactic_resource/8> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "http://pop-art.inrialpes.fr/interproc/interprocweb.cgi"@es ;
+    ns1:bibliographyTitle "The Interproc Analyzer"@es ;
+    ns1:bibliographyType "Recursos web"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/didactic_resource/9> a ns1:DidacticResource ;
+    ns1:bibliographyTitle "D. Zanardini. Teoría de la Computabilidad - de los resultados clásicos al día a día de la Informática. Administracióndigital S.L."@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/evaluation> a ns1:EvaluationSystem ;
+    ns1:evaluationDescription """Modalidad de Evaluación Progresiva
+En caso de haber elegido la modalidad de Evaluación Continua, la calificación final se calcula a partir de las notas obtenidas en cada una de las actividades de evaluación especificadas como Evaluación Sumativa en la tabla de la siguiente forma:
+Nota_final = MIN (10, Primer_Parcial * Peso1 + Segundo_Parcial * Peso2 + Practicas )
+donde Peso1 y Peso2 son los pesos (en porcentaje) de cada una de las pruebas parciales, y MIN selecciona el valor mínimo entre sus argumentos.
+NOTA: A pesar de que los pesos indicados en la tabla son 50% y 50%, respectivamente, a lo largo del curso se podrá modificar dicho pesos si fuera necesario por la colocación de las pruebas en el calendario (debido a las vacaciones durante el segundo semestre, es frecuente que el primer parcial se haga bastante tarde, por lo que su peso se debería ajustar para que sea mayor que el segundo parcial). En todo caso, los pesos de las dos pruebas deberán ser comunicados a los alumnos al menos una semana antes de la primera prueba.
+La asignatura se supera sólo si el resultado de este cálculo es mayor o igual a 5 sobre 10.
+La tercera actividad de evaluación ("Prácticas semanales...") está asociada a la semana 15, pero en realidad se desarrolla a lo largo de todo el curso; se trata de prácticas en forma de ejercicios a desarrollar semanalmente. La corrección de la prácticas será, total o parcialmente, por parte de los compañeros (evaluación por pares). Esta actividad de evaluación puede consistir también en la presentación en clase por parte del alumno de contenidos relevantes para la asignatura. La nota máxima que se puede obtener en esta actividad de evaluación es 3 puntos. Estas pruebas son no recuperables, dado que (1) se conciben como parte del aprendizaje y las soluciones se publican después de la entrega y se discuten en clase; y (2) las entregas son corregidas por los compañeros (evaluación por pares), por lo que no se pueden realizar una vez terminado el semestre; en cualquier caso, tal y como se comenta en el siguiente párrafo, no realizar las prácticas NO impide que se pueda obtener el máximo de la nota como calificación final.
+NOTA: La suma de los pesos de las actividades es 130%, y efectivamente la fórmula detallada anteriormente permite una calificación máxima de 13 sobre 10 (antes de aplicar el operador MIN en la fórmula), pero no se trata de un error: estos números están pensados para fomentar que el alumno realice las prácticas semanales o haga presentaciones en clase y, con esto pueda compensar unos resultados poco satisfactorios en las pruebas parciales; en ningún caso la calificación final será más de 10. Es importante destacar que no hay ningún compromiso por parte de los profesores de la asignatura a otorgar la totalidad del 30% correspondiente a "Prácticas semanales a realizar individualmente o breves presentaciones realizadas por los alumnos a lo largo de todo el semestre"; los profesores podrán decidir qué parte de esta cantidad usar para evaluar las actividades mencionadas (es decir, podría corresponder a un 30%, pero también a un 10% si el trabajo requerido por las actividades no fuera suficiente).
+Los alumnos que no alcancen la nota global de 5 sobre 10 podrán presentarse a la Convocatoria Extraordinaria para ser evaluados nuevamente sobre el contenido de toda la asignatura.
+Modalidad de Evaluación con Prueba Global
+El alumno que lo elija podrá realizar un examen global en la Convocatoria Ordinaria de junio, en el día fijado por Jefatura de Estudios, sobre el contenido de toda la asignatura. Dicho examen contendrá ejercicios de respuesta larga (desarrollo) y respuesta breve, y tendrá una duración aproximada de 2 horas. El alumno que obtenga en la calificación de dicho examen una nota superior o igual a 5 sobre 10 habrá superado la asignatura con la nota obtenida. En caso contrario, su calificación será de suspenso y podrá presentarse a la Convocatoria Extraordinaria para ser evaluado nuevamente sobre el contenido de toda la asignatura.
+Convocatoria Extraordinaria
+La calificación del alumno en la Convocatoria Extraordinaria de julio será la obtenida en el examen que se realizará en el día fijado por Jefatura de Estudios sobre el contenido de toda la asignatura. Dicho examen contendrá ejercicios de respuesta larga (desarrollo) y respuesta breve, y tendrá una duración aproximada de 2 horas. El alumno que obtenga en dicha calificación una nota superior o igual a 5 sobre 10 habrá superado la asignatura con la nota obtenida. En caso contrario, su calificación será de suspenso."""@es ;
+    ns1:hasEvaluationTrial <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/evaluation/trial1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/evaluation/trial2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/evaluation/trial3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/evaluation/trial4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/evaluation/trial5> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/evaluation/trial1> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "50%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/8> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CG-1/21>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG-6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/Ce%2013/18>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/Ce%2017>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/Ce%2019/20> ;
+    ns1:minimumScore "0 / 10"@es ;
+    ns1:trialDescription "Primera prueba parcial"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "8"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/evaluation/trial2> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "50%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/15> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CG-1/21>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG-6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/Ce%2013/18>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/Ce%2017>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/Ce%2019/20> ;
+    ns1:minimumScore "0 / 10"@es ;
+    ns1:trialDescription "Segunda prueba parcial"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "15"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/evaluation/trial3> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:30"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "30%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/15> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CG-1/21>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG-2/CE45>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG-6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/Ce%2013/18>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/Ce%2017>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/Ce%2019/20> ;
+    ns1:minimumScore "0 / 10"@es ;
+    ns1:trialDescription "Prácticas semanales a realizar individualmente o breves presentaciones realizadas por los alumnos a lo largo de todo el semestre."@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "15"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/evaluation/trial4> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "100%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/16> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CG-1/21>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG-2/CE45>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG-6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/Ce%2013/18>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/Ce%2017>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/Ce%2019/20> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Prueba global"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/evaluation/trial5> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:00"@es ;
+    ns1:evaluationType "extraordinaria"@es ;
+    ns1:gradePercentage "100%"@es ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CG-1/21>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG-2/CE45>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG-6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/Ce%2013/18>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/Ce%2017>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/Ce%2019/20> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Prueba global"@es ;
+    ns1:trialType "Presencial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule> a ns1:Schedule ;
+    schema:eventSchedule <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/1> a ns1:ScheduleEvent ;
+    ns1:eventIndex 1 ;
+    ns1:eventWeek "Semana 1"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/1/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/1/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/1/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Explicación de contenidos de la unidad 1.1"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/1/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Resolución de ejercicios sobre la unidad 1.1"@es ;
+    ns1:activityDuration "00:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/10> a ns1:ScheduleEvent ;
+    ns1:eventIndex 10 ;
+    ns1:eventWeek "Semana 10"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/10/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/10/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/10/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Explicación de contenidos de la unidad 2.4"@es ;
+    ns1:activityDuration "00:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/10/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Resolución de ejercicios sobre la unidad 2.4 y anteriores"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/11> a ns1:ScheduleEvent ;
+    ns1:eventIndex 11 ;
+    ns1:eventWeek "Semana 11"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/11/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/11/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/11/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Resolución de ejercicios sobre la unidad 2.4 y anteriores"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/11/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Explicación de contenidos de la unidad 2.4"@es ;
+    ns1:activityDuration "00:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/12> a ns1:ScheduleEvent ;
+    ns1:eventIndex 12 ;
+    ns1:eventWeek "Semana 12"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/12/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/12/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/12/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Explicación de contenidos de la unidad 3.1"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/12/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Resolución de ejercicios sobre la unidad 3.1"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/13> a ns1:ScheduleEvent ;
+    ns1:eventIndex 13 ;
+    ns1:eventWeek "Semana 13"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/13/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/13/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/13/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Explicación de contenidos de la unidad 3.1"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/13/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Resolución de ejercicios sobre la unidad 3.1"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/14> a ns1:ScheduleEvent ;
+    ns1:eventIndex 14 ;
+    ns1:eventWeek "Semana 14"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/14/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/14/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/14/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Explicación de contenidos de la unidad 3.2"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/14/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Resolución de ejercicios sobre las unidades 3.2 y 3.3"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/15/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Explicación de contenidos de las unidades 3.3 y 3.4"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/15/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Segunda Prueba Parcial"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/15/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Segunda prueba parcial"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/15/activity/TEvaluationActivity/2> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Prácticas semanales a realizar individualmente o breves presentaciones realizadas por los alumnos a lo largo de todo el semestre."@es ;
+    ns1:activityDuration "00:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PI: Técnica del tipo Presentación Individual"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/16/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Prueba global"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/17> a ns1:ScheduleEvent ;
+    ns1:eventIndex 17 ;
+    ns1:eventWeek "Semana 17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/2> a ns1:ScheduleEvent ;
+    ns1:eventIndex 2 ;
+    ns1:eventWeek "Semana 2"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/2/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/2/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/2/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Explicación de contenidos de la unidad 1.1"@es ;
+    ns1:activityDuration "00:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/2/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Resolución de ejercicios sobre la unidad 1.1"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/3> a ns1:ScheduleEvent ;
+    ns1:eventIndex 3 ;
+    ns1:eventWeek "Semana 3"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/3/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/3/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/3/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Explicación de contenidos de la unidad 1.2"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/3/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Resolución de ejercicios sobre la unidad 1.2"@es ;
+    ns1:activityDuration "00:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/4> a ns1:ScheduleEvent ;
+    ns1:eventIndex 4 ;
+    ns1:eventWeek "Semana 4"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/4/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/4/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/4/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Explicación de contenidos de la unidad 1.2"@es ;
+    ns1:activityDuration "00:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/4/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Resolución de ejercicios sobre la unidad 1.2"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/5> a ns1:ScheduleEvent ;
+    ns1:eventIndex 5 ;
+    ns1:eventWeek "Semana 5"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/5/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/5/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/5/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Explicación de contenidos de las unidades 1.3 y 2.1"@es ;
+    ns1:activityDuration "00:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/5/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Resolución de ejercicios sobre las unidads 1.3 y 2.1"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/6> a ns1:ScheduleEvent ;
+    ns1:eventIndex 6 ;
+    ns1:eventWeek "Semana 6"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/6/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/6/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/6/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Explicación de contenidos de las unidades 2.1 y 2.2"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/6/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Resolución de ejercicios sobre las unidades 2.1 y 2.2"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/7> a ns1:ScheduleEvent ;
+    ns1:eventIndex 7 ;
+    ns1:eventWeek "Semana 7"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/7/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/7/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/7/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Explicación de contenidos de la unidad 2.3"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/7/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Resolución de ejercicios sobre la unidad 2.3"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/8/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Resolución de ejercicios sobre la unidad 2.3"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/8/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Primera Prueba Parcial"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/8/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Primera prueba parcial"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/9> a ns1:ScheduleEvent ;
+    ns1:eventIndex 9 ;
+    ns1:eventWeek "Semana 9"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/9/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/9/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Explicación de contenidos de las unidades 2.3 (1h) y 2.4 (1h)"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus> a ns1:Syllabus ;
+    ns1:hasItem <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/0>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/0> a ns1:SyllabusItem ;
+    ns1:itemIndex 0 ;
+    ns1:syllabusDescription "1. Formalismos de computación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/1> a ns1:SyllabusItem ;
+    ns1:itemIndex 1 ;
+    ns1:syllabusDescription "1.1. Máquinas de Turing. Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/10> a ns1:SyllabusItem ;
+    ns1:itemIndex 10 ;
+    ns1:syllabusDescription "3. Consecuencias teóricas y prácticas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/11> a ns1:SyllabusItem ;
+    ns1:itemIndex 11 ;
+    ns1:syllabusDescription "3.1. Ideas y ejemplos de Análisis de Programas en lenguajes de programación imperativos Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/12> a ns1:SyllabusItem ;
+    ns1:itemIndex 12 ;
+    ns1:syllabusDescription "3.2. La teoría de la Computabilidad en las tareas de Análisis de Programas. Implicaciones del Teorema de Rice. Falsos positivos y falsos negativos Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/13> a ns1:SyllabusItem ;
+    ns1:itemIndex 13 ;
+    ns1:syllabusDescription "3.3. Ideas fundamentales de Ofuscación de Código Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/14> a ns1:SyllabusItem ;
+    ns1:itemIndex 14 ;
+    ns1:syllabusDescription "3.4. (optativo) Aspectos filosóficos de la Teoría de la Computabilidad. Teoremas de Gödel. Planteamiento de Lucas y Penrose con respecto al problema mente-máquina. Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/2> a ns1:SyllabusItem ;
+    ns1:itemIndex 2 ;
+    ns1:syllabusDescription "1.2. (optativo) Funciones Primitivas Recursivas y mu-Recursivas. Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/3> a ns1:SyllabusItem ;
+    ns1:itemIndex 3 ;
+    ns1:syllabusDescription "1.3. Lenguajes for y while. Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/4> a ns1:SyllabusItem ;
+    ns1:itemIndex 4 ;
+    ns1:syllabusDescription "2. Tesis de Church y problemas indecidibles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/5> a ns1:SyllabusItem ;
+    ns1:itemIndex 5 ;
+    ns1:syllabusDescription "2.1. Equivalencia entre formalismos; Turing-equivalencia. Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/6> a ns1:SyllabusItem ;
+    ns1:itemIndex 6 ;
+    ns1:syllabusDescription "2.2. Tesis de Church. Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/7> a ns1:SyllabusItem ;
+    ns1:itemIndex 7 ;
+    ns1:syllabusDescription "2.3. Cardinalidad de conjuntos, aplicada a conjuntos infinitos; consecuencias para la existencia de problemas no calculables Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/8> a ns1:SyllabusItem ;
+    ns1:itemIndex 8 ;
+    ns1:syllabusDescription "2.4. Problema de la parada; problemas indecibidibles; lenguajes recursivos y recursivamente enumerables. Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/syllabus/9> a ns1:SyllabusItem ;
+    ns1:itemIndex 9 ;
+    ns1:syllabusDescription "2.5. Teorema del Parámetro; comparación entre problemas; reducción; Teorema de Rice Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/10II%20-%20Grado%20en%20Ingenieria%20Informatica> a ns1:BachelorDegree ;
+    ns1:degreeCode "10II"@es ;
+    ns1:hasCourse <https://guia-kg.skai.etsisi.upm.es/resource/105000088> ;
+    schema:name "Grado en Ingenieria Informatica"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/josefaz.hernandez%40upm.es> a ns1:Lecturer ;
+    ns1:office "2205"@es ;
+    schema:email "josefaz.hernandez@upm.es" ;
+    schema:name "Hernandez Diego, Josefa Zuleide" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/16> a ns1:ScheduleEvent ;
+    ns1:eventIndex 16 ;
+    ns1:eventWeek "Semana 16"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/16/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/8> a ns1:ScheduleEvent ;
+    ns1:eventIndex 8 ;
+    ns1:eventWeek "Semana 8"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/8/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/8/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/8/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/damiano.zanardini%40upm.es> a ns1:Lecturer ;
+    ns1:office "2205"@es ;
+    schema:email "damiano.zanardini@upm.es" ;
+    schema:name "Zanardini, Damiano" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/15> a ns1:ScheduleEvent ;
+    ns1:eventIndex 15 ;
+    ns1:eventWeek "Semana 15"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/15/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/15/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/15/activity/TEvaluationActivity/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/105000088/2025-26/eventSchedule/15/activity/TEvaluationActivity/2> .
+

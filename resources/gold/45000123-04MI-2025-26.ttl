@@ -1,0 +1,791 @@
+@prefix ns1: <http://w3id.org/def/guia#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/previous_courses> a ns1:RequiredKnowledge ;
+    ns1:previousCourses "El plan de estudios Grado En Ingenieria De Materiales no tiene definidos otros requisitos para esta asignatura."@es ;
+    ns1:previousKnowledge "Some previous relation with a programming language will be very useful, matlab, python, C, fortran"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/E.T.S.%20De%20Ing.%20De%20Caminos%20Canales%20Y%20P.> a ns1:UniversityCenter ;
+    ns1:offers <https://guia-kg.skai.etsisi.upm.es/resource/04MI%20-%20Grado%20en%20Ingenieria%20de%20Materiales> ;
+    schema:name "E.T.S. De Ing. De Caminos Canales Y P." .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/04MI%20-%20Grado%20en%20Ingenieria%20de%20Materiales> a ns1:BachelorDegree ;
+    ns1:degreeCode "04MI"@es ;
+    ns1:hasCourse <https://guia-kg.skai.etsisi.upm.es/resource/45000123> ;
+    schema:name "Grado en Ingenieria de Materiales"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123> a ns1:Course ;
+    ns1:courseType "Obligatoria"@es ;
+    ns1:courseYear 3 ;
+    ns1:semester "Quinto semestre"@es ;
+    schema:courseCode 45000123 ;
+    schema:hasCourseInstance <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26> ;
+    schema:name "Numerical Simulation"@en,
+        "Numerical Simulation"@es ;
+    schema:numberOfCredits 6.0 .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26> a ns1:CourseGuide ;
+    ns1:hasCompetency <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/CE%202.>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/CG%201>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/CG%2010>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/CG%204>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/CG%209> ;
+    ns1:hasDidacticResource <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/didactic_resource/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/didactic_resource/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/didactic_resource/3> ;
+    ns1:hasEvaluation <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation> ;
+    ns1:hasLearningResult <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/RA100>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/RA101>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/RA98>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/RA99> ;
+    ns1:hasSyllabus <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus> ;
+    ns1:inpersonHours "74 horas y 30 minutos (47.8%)"@es ;
+    ns1:numberOfCredits 6.0 ;
+    ns1:otherInformation """* Esta asignatura contribuye a los siguientes Objetivos de Desarrollo sostenible de la ONU, a través de sus procesos de aprendizaje y con los resultados obtenidos:
+
+En particular,
+
+4. Garantizar una educación de calidad inclusiva y equitativa, y promover las oportunidades de aprendizaje permanente para todos:
+Se contribuye mediante el uso de software libre y gratuito (octave) como herramienta de aprendizaje y profesional en el futuro.
+
+5. Alcanzar la igualdad entre los géneros y empoderar a todas las mujeres y niñas.
+Se contribuye introduciendo esta asignatura, clásicamente una asignatura STEM con poco tirón para las estudiantes, como obligatoria . De esta forma se da una formación básica en una tecnología útil y que clásicamente ha sido uttilizada por hombres.
+
+9. Desarrollar infraestructuras resilientes, promover la industrialización inclusiva y sostenible, y fomentar la innovación.
+El uso de técnicas de simulación permite avanzar hacia una mejor y más eficiente tecnología y es una de las mayores áreas de innovación en materiales
+
+
+* Se señala de que en caso de necesidad por razones sanitarias, las actividades docentes y de evaluación pasarán a tener lugar en modalidad telemática"""@es ;
+    ns1:periodEndingMonth "Enero"@es ;
+    ns1:periodStartingMonth "Septiembre"@es ;
+    ns1:teachingPeriod "2025-26" ;
+    ns1:teachingPeriodMonths "Septiembre-Enero"@es ;
+    ns1:totalHours "86 horas y 30 minutos"@es ;
+    schema:activitiesWorkload "100%"@es ;
+    schema:courseSchedule <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule> ;
+    schema:description """This is a fundamental subject for Engineers in general and Materials Engineers in particular.
+As a summary, in this subject we will teach the basic skills to allow the student to implement and solve equations, mathematical problems and simple physical/engineering models using a computer and a programming language, in this case MATLAB/Octave/Python.
+
+The particular objectives are:
+Learning the fundamentals of computer programming: mathematical operations, loops, conditionals, etc
+Introduction to a specific Math-oriented programming language: Matlab/Octave
+Learning and programming of some basic algorithms for solving algebraical equations, numerical integration, etc
+Introduction to Monte-Carlo (probabilistic) based simulation methods
+Introduction to the numerical resolution of Ordinary Differential Equations: Implicit and explicit Euler methods
+Introduction to the Finite Element Method and its implementation in a programming language"""@es ;
+    schema:director <https://guia-kg.skai.etsisi.upm.es/resource/javier.segurado%40upm.es> ;
+    schema:inLanguage "Inglés"@es ;
+    schema:instructor <https://guia-kg.skai.etsisi.upm.es/resource/alvaro.ridruejo%40upm.es>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/javier.segurado%40upm.es> ;
+    schema:name "Numerical Simulation"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/CE%202.> a ns1:Competency ;
+    ns1:competencyCode "CE 2." ;
+    ns1:competencyDescription "Saber modelizar el comportamiento (mecánico, electrónico, químico o biológico) de los materiales y su integración en componentes y dispositivos./ Know how to model the behavior (mechanical, electronic, chemical or biological) of materials and their integration into components and devices."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/CG%201> a ns1:Competency ;
+    ns1:competencyCode "CG 1" ;
+    ns1:competencyDescription "Uso de la lengua inglesa/ Use of the English language"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/CG%2010> a ns1:Competency ;
+    ns1:competencyCode "CG 10" ;
+    ns1:competencyDescription "Adaptación a nuevas situaciones/ Adaptation to new situations"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/CG%204> a ns1:Competency ;
+    ns1:competencyCode "CG 4" ;
+    ns1:competencyDescription "Uso de las Tecnologías de la Información y de las Comunicaciones/ Use of Information and Communication Technologies"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/CG%209> a ns1:Competency ;
+    ns1:competencyCode "CG 9" ;
+    ns1:competencyDescription "Capacidad de trabajo interdisciplinar/ Capacity for interdisciplinary work"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/RA100> a ns1:LearningResult ;
+    ns1:learningResultCode "RA100" ;
+    ns1:learningResultDescription "Wide overview of different numerical approaches to solve common mathematical problems"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/RA101> a ns1:LearningResult ;
+    ns1:learningResultCode "RA101" ;
+    ns1:learningResultDescription "Ability in using MATLAB or some open source substitute as OCTAVE as a programmer"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/RA98> a ns1:LearningResult ;
+    ns1:learningResultCode "RA98" ;
+    ns1:learningResultDescription "Ability to translate a formula or model to a programming language to be solved in a computer"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/RA99> a ns1:LearningResult ;
+    ns1:learningResultCode "RA99" ;
+    ns1:learningResultDescription "Ability to understand and use the basic concepts of programming: variables, loops, conditions, etc"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/didactic_resource/1> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "Book covering T2,T3 and T4, and some parts of T5 and T6"@es ;
+    ns1:bibliographyTitle "Scientific computing with MATLAB and OCTAVE A. Quarteroni and F. Saleri, Springler 2006 (Spanish version also available)"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/didactic_resource/2> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "A nice introductory book to Finite Elements, covering by far T6"@es ;
+    ns1:bibliographyTitle "A first course in Finite Elements, Jacob Fish and Ted Belytschko, Wiley, 2007"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/didactic_resource/3> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "All the theory explained and examples will be available as pdf presentations. It is not a book, but short notes so complementing with class explanations and/or other text is mandatory"@es ;
+    ns1:bibliographyTitle "PDF presentations"@es ;
+    ns1:bibliographyType "Otros"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation> a ns1:EvaluationSystem ;
+    ns1:evaluationDescription """Continuous evaluation:
+It will consider two partial exams and complementary activities:
+The two partials will weight 75% of continuous evaluation. They will be done during classtime and will last 2.5h. They will be practical exercises to be resolved using a personal computer. The weight of each partial will be 50%
+The complementary activities will consist in (1) a first test about programming that will be done during a class by the beginning of October, this part will be 12.5% of the continuous evaluation (2) A homework exercise that will be proposed near December, this part will be 12.5% of the continuous evaluation.
+A fundamental knowledge test (high-school and first year of the degree level) over subjects of chemistry, physics and mathematics has to be passed (minimum grade of 7). There will be three opportunities to pass the test on fundamentals on the continuous assessment evaluation and a fourth opportunity will be provided for the re-sit examination.
+The subject will be passed (no need of final exam) with average global score higher than 50%. For passing the subject, a minimum mark of 30% in each partial is required. And the fundamental knowledge exam should be passed (minimum grade 7) in any of its sittings.
+
+Final evaluation:
+It will consist on a final exam covering the whole program. Marks in complementary activities will not be considered in the final evaluation.
+In order to pass the subject through the final evaluation, the fundamental knowledge test has to be passed (minimum grade 7) in any of its sittings."""@es ;
+    ns1:hasEvaluationTrial <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial1> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:30"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/2> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CG%204> ;
+    ns1:minimumScore "7 / 10"@es ;
+    ns1:trialDescription "Test on fundamental knowledge I Multiple choice test"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "2"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial10> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "03:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "100%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE%202.>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG%201>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG%204> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Final exam covering all the subject"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial11> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:30"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/17> ;
+    ns1:minimumScore "7 / 10"@es ;
+    ns1:trialDescription "Test on fundamental knowledge III Multiple choice test"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial12> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "03:00"@es ;
+    ns1:evaluationType "extraordinaria"@es ;
+    ns1:gradePercentage "100%"@es ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE%202.>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG%201>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG%204>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG%209> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Extraordinary exam covering the full subject"@es ;
+    ns1:trialType "Presencial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial13> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:30"@es ;
+    ns1:evaluationType "extraordinaria"@es ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CG%204> ;
+    ns1:minimumScore "7 / 10"@es ;
+    ns1:trialDescription "Test on fundamental knowledge IV Mutile choice test"@es ;
+    ns1:trialType "Presencial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial2> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "12.5%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/5> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CG%201>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG%2010>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG%204>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG%209> ;
+    ns1:trialDescription "Test on programming"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "5"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial3> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:30"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "37.5%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/8> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE%202.>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG%204> ;
+    ns1:minimumScore "3 / 10"@es ;
+    ns1:trialDescription "First partial exam"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "8"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial4> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:30"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/10> ;
+    ns1:minimumScore "7 / 10"@es ;
+    ns1:trialDescription "Test on fundamental knowledge II Multiple choice test"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "10"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial5> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:30"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "37.5%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/16> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE%202.>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG%204> ;
+    ns1:minimumScore "3 / 10"@es ;
+    ns1:trialDescription "Second partial exam"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial6> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "12:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "12.5%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/16> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CG%2010>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG%209> ;
+    ns1:trialDescription "Group Homework"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial7> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:30"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/17> ;
+    ns1:minimumScore "7 / 10"@es ;
+    ns1:trialDescription "Test on fundamental knowledge III Multiple choice test"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial8> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:30"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/2> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CG%204> ;
+    ns1:minimumScore "7 / 10"@es ;
+    ns1:trialDescription "Test on fundamental knowledge I Multiple choice test"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "2"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/evaluation/trial9> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:30"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/10> ;
+    ns1:minimumScore "7 / 10"@es ;
+    ns1:trialDescription "Test on fundamental knowledge II Multiple choice test"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "10"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule> a ns1:Schedule ;
+    schema:eventSchedule <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/1> a ns1:ScheduleEvent ;
+    ns1:eventIndex 1 ;
+    ns1:eventWeek "Semana 1"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/1/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/1/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/1/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Introduccion"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/1/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "T2: Introduction to programming"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/10/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "T5: Partial Differential Equations: The Finite Element Method"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/10/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "T5: Partial Differential Equations: The Finite Element Method"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/10/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Test on fundamental knowledge II Multiple choice test"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "ET: Técnica del tipo Prueba Telemática"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva y Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/11> a ns1:ScheduleEvent ;
+    ns1:eventIndex 11 ;
+    ns1:eventWeek "Semana 11"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/11/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/11/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/11/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "T6: Probablistic models"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/11/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "T6: Probablistic models"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/12> a ns1:ScheduleEvent ;
+    ns1:eventIndex 12 ;
+    ns1:eventWeek "Semana 12"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/12/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/12/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/12/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "T6: Probablistic models"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/12/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "T6: Probablistic models"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/13> a ns1:ScheduleEvent ;
+    ns1:eventIndex 13 ;
+    ns1:eventWeek "Semana 13"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/13/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/13/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/13/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "T6: Probablistic models"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/13/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "T5: Probablistic models"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/14> a ns1:ScheduleEvent ;
+    ns1:eventIndex 14 ;
+    ns1:eventWeek "Semana 14"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/14/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/14/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/14/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "T5: Probablistic models"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/14/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "T5: Probablistic models"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/15> a ns1:ScheduleEvent ;
+    ns1:eventIndex 15 ;
+    ns1:eventWeek "Semana 15"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/15/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/15/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/15/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "T5: Probablistic models"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/15/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "T5: Probablistic models"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/16/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Second partial exam"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EP: Técnica del tipo Examen de Prácticas"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/16/activity/TEvaluationActivity/2> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Group Homework"@es ;
+    ns1:activityDuration "12:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TG: Técnica del tipo Trabajo en Grupo"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/17/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Final exam covering all the subject"@es ;
+    ns1:activityDuration "03:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EP: Técnica del tipo Examen de Prácticas"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/17/activity/TEvaluationActivity/2> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Test on fundamental knowledge III Multiple choice test"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "ET: Técnica del tipo Prueba Telemática"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva y Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/2/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "T2: Introduction to programming"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/2/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "T2: Introduction to programming"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/2/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Test on fundamental knowledge I Multiple choice test"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "ET: Técnica del tipo Prueba Telemática"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva y Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/3> a ns1:ScheduleEvent ;
+    ns1:eventIndex 3 ;
+    ns1:eventWeek "Semana 3"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/3/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/3/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/3/activity/TActivityType1/3> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/3/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "T2: Introduction to programming"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/3/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "T2: Introduction to programming"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/3/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "T2: Introduction to programming"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/4> a ns1:ScheduleEvent ;
+    ns1:eventIndex 4 ;
+    ns1:eventWeek "Semana 4"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/4/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/4/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/4/activity/TActivityType1/3> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/4/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "T3: Systems of algebraical equations"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/4/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "T3: Systems of algebraical equations"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/4/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "T3: Systems of algebraical equations"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/5/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "T3: Systems of algebraical equations"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/5/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "T3: Systems of algebraical equations"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/5/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "T3: Systems of algebraical equations"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/5/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Test on programming"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EP: Técnica del tipo Examen de Prácticas"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/6> a ns1:ScheduleEvent ;
+    ns1:eventIndex 6 ;
+    ns1:eventWeek "Semana 6"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/6/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/6/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/6/activity/TActivityType1/3> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/6/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "T4: Ordinary differential equations"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/6/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "T4: Ordinary differential equations"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/6/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "T4: Ordinary differential equations"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/7> a ns1:ScheduleEvent ;
+    ns1:eventIndex 7 ;
+    ns1:eventWeek "Semana 7"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/7/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/7/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/7/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "T5: Partial Differential Equations: The Finite Element Method"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/7/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "T5: Partial Differential Equations: The Finite Element Method"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/8/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "T5: Partial Differential Equations: The Finite Element Method"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/8/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "T5: Partial Differential Equations: The Finite Element Method"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/8/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "First partial exam"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EP: Técnica del tipo Examen de Prácticas"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/9> a ns1:ScheduleEvent ;
+    ns1:eventIndex 9 ;
+    ns1:eventWeek "Semana 9"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/9/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/9/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/9/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "T5: Partial Differential Equations: The Finite Element Method"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/9/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "T5: Partial Differential Equations: The Finite Element Method"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus> a ns1:Syllabus ;
+    ns1:hasItem <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/0>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/0> a ns1:SyllabusItem ;
+    ns1:itemIndex 0 ;
+    ns1:syllabusDescription "1. Introduction Introduction to the subject. General description contents and subject Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/1> a ns1:SyllabusItem ;
+    ns1:itemIndex 1 ;
+    ns1:syllabusDescription "2. Fundamentals of programming: introduction to MATLAB/OCTAVE/Python Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/10> a ns1:SyllabusItem ;
+    ns1:itemIndex 10 ;
+    ns1:syllabusDescription "5.2. Poisson Equation and Galerkin approach Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/11> a ns1:SyllabusItem ;
+    ns1:itemIndex 11 ;
+    ns1:syllabusDescription "5.3. The FEM method Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/12> a ns1:SyllabusItem ;
+    ns1:itemIndex 12 ;
+    ns1:syllabusDescription "6. Probabilistic methods"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/13> a ns1:SyllabusItem ;
+    ns1:itemIndex 13 ;
+    ns1:syllabusDescription "6.1. Monte Carlo simulation. An introduction Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/14> a ns1:SyllabusItem ;
+    ns1:itemIndex 14 ;
+    ns1:syllabusDescription "6.2. Random walk Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/15> a ns1:SyllabusItem ;
+    ns1:itemIndex 15 ;
+    ns1:syllabusDescription "6.3. Kinetic Monte Carlo Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/16> a ns1:SyllabusItem ;
+    ns1:itemIndex 16 ;
+    ns1:syllabusDescription "7. Other simulation techniques Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/2> a ns1:SyllabusItem ;
+    ns1:itemIndex 2 ;
+    ns1:syllabusDescription "3. Systems of algebraic equations"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/3> a ns1:SyllabusItem ;
+    ns1:itemIndex 3 ;
+    ns1:syllabusDescription "3.1. Linear systems of equations. Direct methods. Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/4> a ns1:SyllabusItem ;
+    ns1:itemIndex 4 ;
+    ns1:syllabusDescription "3.2. Non Linear systems of equations. Bisection method, Newton-Raphson, etc Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/5> a ns1:SyllabusItem ;
+    ns1:itemIndex 5 ;
+    ns1:syllabusDescription "4. Ordinary differential equations"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/6> a ns1:SyllabusItem ;
+    ns1:itemIndex 6 ;
+    ns1:syllabusDescription "4.1. First order linear Ordinary Differential equations: Euler methods First order linear Ordinary Differential equations: Euler methods Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/7> a ns1:SyllabusItem ;
+    ns1:itemIndex 7 ;
+    ns1:syllabusDescription "4.2. Systems of Ordinary Differential equations and higher order equations Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/8> a ns1:SyllabusItem ;
+    ns1:itemIndex 8 ;
+    ns1:syllabusDescription "5. Partial Differential Equations: The Finite Element Method"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/syllabus/9> a ns1:SyllabusItem ;
+    ns1:itemIndex 9 ;
+    ns1:syllabusDescription "5.1. Introduction: PDEs and boundary value problems Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/alvaro.ridruejo%40upm.es> a ns1:Lecturer ;
+    ns1:tutorshipsSchedule """L - 14:30 - 16:30
+X - 14:30 - 16:30"""@es ;
+    schema:email "alvaro.ridruejo@upm.es" ;
+    schema:name "Ridruejo Rodriguez, Alvaro" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/5> a ns1:ScheduleEvent ;
+    ns1:eventIndex 5 ;
+    ns1:eventWeek "Semana 5"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/5/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/5/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/5/activity/TActivityType1/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/5/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/8> a ns1:ScheduleEvent ;
+    ns1:eventIndex 8 ;
+    ns1:eventWeek "Semana 8"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/8/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/8/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/8/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/javier.segurado%40upm.es> a ns1:Lecturer ;
+    ns1:tutorshipsSchedule """L - 14:30 - 16:30
+X - 14:30 - 16:30"""@es ;
+    schema:email "javier.segurado@upm.es" ;
+    schema:name "Segurado Escudero, Javier" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/10> a ns1:ScheduleEvent ;
+    ns1:eventIndex 10 ;
+    ns1:eventWeek "Semana 10"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/10/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/10/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/10/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/16> a ns1:ScheduleEvent ;
+    ns1:eventIndex 16 ;
+    ns1:eventWeek "Semana 16"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/16/activity/TEvaluationActivity/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/16/activity/TEvaluationActivity/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/2> a ns1:ScheduleEvent ;
+    ns1:eventIndex 2 ;
+    ns1:eventWeek "Semana 2"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/2/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/2/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/2/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/17> a ns1:ScheduleEvent ;
+    ns1:eventIndex 17 ;
+    ns1:eventWeek "Semana 17"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/17/activity/TEvaluationActivity/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/45000123/2025-26/eventSchedule/17/activity/TEvaluationActivity/2> .
+

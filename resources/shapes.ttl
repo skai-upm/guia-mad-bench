@@ -1,0 +1,878 @@
+@prefix :      <http://w3id.org/def/guia#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix sch:   <https://schema.org/> .
+@prefix om:    <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<https://astrea.linkeddata.es/shapes#e4c3b5402867414cf9c6ec2c561362db>
+        a               sh:NodeShape ;
+        rdfs:label      "Evaluation System"@en ;
+        sh:description  "The overall framework that defines how student learning is assessed in a course, including criteria, components, and grading structure."@en ;
+        sh:name         "Evaluation System"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#dc24aa317357d984912eb2c5a92833f2> , <https://astrea.linkeddata.es/shapes#25be76d03ada2134301dbc8f229d0dcd> ;
+        sh:targetClass  guide:EvaluationSystem .
+
+<https://astrea.linkeddata.es/shapes#9c8da9bed7c9e24a9fd8df8efe4b10e1>
+        a               sh:PropertyShape ;
+        rdfs:label      "has syllabus"@en , "Links a course guide to the syllabus that describes the thematic contents of the course."@en ;
+        sh:class        guide:Syllabus ;
+        sh:description  "Links a course guide to the syllabus that describes the thematic contents of the course."@en ;
+        sh:name         "has syllabus"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         guide:hasSyllabus .
+
+<https://astrea.linkeddata.es/shapes#650dc0cae58c68982f6d3a3362d12d8c>
+        a               sh:NodeShape ;
+        rdfs:label      "Bachelor's Degree"@en ;
+        sh:description  "An undergraduate degree programme that provides foundational higher education in a given field of study."@en ;
+        sh:name         "Bachelor's Degree"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  guide:BachelorDegree .
+
+<https://astrea.linkeddata.es/shapes#37e9bd6cff0f1b9c2fd0723147699470>
+        a               sh:PropertyShape ;
+        rdfs:label      "event schedule"@en , "Links a schedule to one of its schedule events."@en ;
+        sh:class        guide:ScheduleEvent ;
+        sh:description  "Links a schedule to one of its schedule events."@en ;
+        sh:name         "event schedule"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         sch:eventSchedule .
+
+<https://astrea.linkeddata.es/shapes#f1ddb520de38dd0fa173c2b72e62fdfa>
+        a               sh:NodeShape ;
+        rdfs:label      "Degree"@en ;
+        sh:description  "An academic degree programme that structures and groups courses within a formal higher education curriculum."@en ;
+        sh:name         "Degree"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b184d5a71ef51f2fee36ff14c9215cec> , <https://astrea.linkeddata.es/shapes#ad1f101de05ba916ceada38e8c15ad89> ;
+        sh:targetClass  guide:Degree .
+
+<https://astrea.linkeddata.es/shapes#60ba947b23c586d402886d968962c583>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sch:CourseInstance .
+
+<https://astrea.linkeddata.es/shapes#cef79bd000f605c498e955dc74686742>
+        a               sh:PropertyShape ;
+        rdfs:label      "email"@en , "Provides the email address of a person involved in teaching or coordination."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Provides the email address of a person involved in teaching or coordination."@en ;
+        sh:name         "email"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         sch:email ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#59283ccef877445a79a052381725a5b7>
+        a               sh:NodeShape ;
+        rdfs:label      "Master's Degree"@en ;
+        sh:description  "A postgraduate degree programme corresponding to advanced academic or professional specialization."@en ;
+        sh:name         "Master's Degree"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  guide:MasterDegree .
+
+<https://astrea.linkeddata.es/shapes#8b72ed5d2010a23f59924fbb082f6f21>
+        a               sh:PropertyShape ;
+        rdfs:label      "in language"@en , "Indicates the language in which the course guide or teaching is delivered."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Indicates the language in which the course guide or teaching is delivered."@en ;
+        sh:name         "in language"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         sch:inLanguage .
+
+<https://astrea.linkeddata.es/shapes#7b2b50618aff719c541c2e272bc248ef>
+        a               sh:PropertyShape ;
+        rdfs:label      "period ending month"@en , "Indicates the month in which the teaching period ends."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Indicates the month in which the teaching period ends."@en ;
+        sh:name         "period ending month"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:periodEndingMonth .
+
+<https://astrea.linkeddata.es/shapes#d185ab1d991547ca6d76869cd40d288d>
+        a               sh:PropertyShape ;
+        rdfs:label      "item index"@en , "Indicates the position or order of a syllabus item within the syllabus structure."@en ;
+        sh:datatype     xsd:integer ;
+        sh:description  "Indicates the position or order of a syllabus item within the syllabus structure."@en ;
+        sh:name         "item index"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:itemIndex ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#d41baaf1789f2479e89df435011baa88>
+        a               sh:NodeShape ;
+        rdfs:label      "Schedule Event"@en ;
+        sh:description  "A dated or timed element within a course schedule, such as a class session, deadline, exam, or planned activity."@en ;
+        sh:name         "Schedule Event"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#05a0b543d4f9524c1e8e3f73a11a51f0> , <https://astrea.linkeddata.es/shapes#0696e3aa4184402372bf482644453bb2> , <https://astrea.linkeddata.es/shapes#51ee10fdf9a82d123157e1a358fa55d9> ;
+        sh:targetClass  guide:ScheduleEvent .
+
+<https://astrea.linkeddata.es/shapes#201192639cd267a3aaa885b55197dc79>
+        a               sh:PropertyShape ;
+        rdfs:label      "in-person hours"@en , "Specifies the number or description of face-to-face hours within the course guide."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Specifies the number or description of face-to-face hours within the course guide."@en ;
+        sh:name         "in-person hours"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:inpersonHours .
+
+<https://astrea.linkeddata.es/shapes#6893b52a151b6a89f73b9953fdd1541d>
+        a               sh:PropertyShape ;
+        rdfs:label      "activity description"@en , "Provides a textual description of an academic activity."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Provides a textual description of an academic activity."@en ;
+        sh:name         "activity description"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:activityDescription .
+
+<https://astrea.linkeddata.es/shapes#d2d36d9bf16d93277228c8e1276ba40c>
+        a               sh:PropertyShape ;
+        rdfs:label      "offers"@en , "Links a university center to a degree programme that it offers."@en ;
+        sh:class        guide:Degree ;
+        sh:description  "Links a university center to a degree programme that it offers."@en ;
+        sh:name         "offers"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         guide:offers .
+
+<https://astrea.linkeddata.es/shapes#f4e922771205b63e3ece97f98db92421>
+        a               sh:PropertyShape ;
+        rdfs:label      "teaching period months"@en , "Describes the months or span of months during which the course is taught."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Describes the months or span of months during which the course is taught."@en ;
+        sh:name         "teaching period months"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:teachingPeriodMonths .
+
+<https://astrea.linkeddata.es/shapes#47f4605e3649797dad20a9512f415c24>
+        a               sh:PropertyShape ;
+        rdfs:label      "has item"@en , "Links a syllabus to one of its constituent syllabus items."@en ;
+        sh:class        guide:SyllabusItem ;
+        sh:description  "Links a syllabus to one of its constituent syllabus items."@en ;
+        sh:name         "has item"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         guide:hasItem .
+
+<https://astrea.linkeddata.es/shapes#053e8a26e1dee55affab63ebb36668d1>
+        a               sh:PropertyShape ;
+        rdfs:label      "semester"@en , "Indicates the semester or semesters in which a course is taught."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Indicates the semester or semesters in which a course is taught."@en ;
+        sh:name         "semester"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:semester .
+
+<https://astrea.linkeddata.es/shapes#ba6549d0b86dfb780d8e7271aa3b2cd8>
+        a               sh:NodeShape ;
+        rdfs:label      "Remote Activity"@en ;
+        sh:description  "An activity designed to be carried out remotely, typically through online or distance-learning modalities."@en ;
+        sh:name         "Remote Activity"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  guide:RemoteActivity .
+
+<https://astrea.linkeddata.es/shapes#17dc5f5a399e8413414121bbec756e99>
+        a               sh:PropertyShape ;
+        rdfs:label      "course schedule"@en , "Links a course guide to the schedule that organizes its planned events."@en ;
+        sh:class        guide:Schedule ;
+        sh:description  "Links a course guide to the schedule that organizes its planned events."@en ;
+        sh:name         "course schedule"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         sch:courseSchedule .
+
+<https://astrea.linkeddata.es/shapes#54b1919494a675dc686b5dc27def7bc2>
+        a               sh:PropertyShape ;
+        rdfs:label      "has evaluation"@en , "Links a course guide to its evaluation system."@en ;
+        sh:class        guide:EvaluationSystem ;
+        sh:description  "Links a course guide to its evaluation system."@en ;
+        sh:name         "has evaluation"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         guide:hasEvaluation .
+
+<https://astrea.linkeddata.es/shapes#6bddd7874441d9397db65a9a1277b79a>
+        a               sh:PropertyShape ;
+        rdfs:label      "previous knowledge"@en , "Describes prior knowledge or skills expected from students before taking the course."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Describes prior knowledge or skills expected from students before taking the course."@en ;
+        sh:name         "previous knowledge"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:previousKnowledge .
+
+<https://astrea.linkeddata.es/shapes#719d95ac09d1345057911a75bc0f21ec>
+        a               sh:NodeShape ;
+        rdfs:label      "Required Knowledge"@en ;
+        sh:description  "Prior knowledge, skills, or academic background expected from students before taking a course."@en ;
+        sh:name         "Required Knowledge"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#04d5f4121a1dd2335ceee293c493a99c> , <https://astrea.linkeddata.es/shapes#6bddd7874441d9397db65a9a1277b79a> ;
+        sh:targetClass  guide:RequiredKnowledge .
+
+<https://astrea.linkeddata.es/shapes#7d3a24d28041d73bf59064bbb6838884>
+        a               sh:NodeShape ;
+        rdfs:label      "Learning Result"@en ;
+        sh:description  "A specific and assessable statement of what a student is expected to know, understand, or be able to do after completing the course."@en ;
+        sh:name         "Learning Result"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#be2055c0c81b615b6490d8a64b6bf713> , <https://astrea.linkeddata.es/shapes#76ca12a8ab33ba4cbe8babb0ca0a1f75> ;
+        sh:targetClass  guide:LearningResult .
+
+<https://astrea.linkeddata.es/shapes#1a318ab5cabe93c5a4868c4b14dfcb8c>
+        a               sh:PropertyShape ;
+        rdfs:label      "instructor"@en , "Links a course guide to a lecturer involved in teaching the course."@en ;
+        sh:class        guide:Lecturer ;
+        sh:description  "Links a course guide to a lecturer involved in teaching the course."@en ;
+        sh:name         "instructor"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         sch:instructor .
+
+<https://astrea.linkeddata.es/shapes#68d20a6b18067c4536d7fd29c5d013db>
+        a               sh:NodeShape ;
+        rdfs:label      "Course Guide"@en ;
+        sh:description  "A structured academic document that describes a course, including objectives, contents, methodology, resources, schedule, and evaluation."@en ;
+        sh:name         "Course Guide"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#94f676d4f5e6826805d98e3b074d952e> , <https://astrea.linkeddata.es/shapes#7c61c18f27d874fbe6650e3795a4253c> , <https://astrea.linkeddata.es/shapes#17dc5f5a399e8413414121bbec756e99> , <https://astrea.linkeddata.es/shapes#201192639cd267a3aaa885b55197dc79> , <https://astrea.linkeddata.es/shapes#54b1919494a675dc686b5dc27def7bc2> , <https://astrea.linkeddata.es/shapes#a8e0a4057ba2222e986ab4c4a55fc5d8> , <https://astrea.linkeddata.es/shapes#a91706b13a2f3a497b61bf502a393743> , <https://astrea.linkeddata.es/shapes#41d9d191d2bfb7e91414f1abc451af70> , <https://astrea.linkeddata.es/shapes#b4f834f903771bcdd2a39b98ffa93d82> , <https://astrea.linkeddata.es/shapes#b51922c48dfc407fa98fdd69dfab311e> , <https://astrea.linkeddata.es/shapes#9c8da9bed7c9e24a9fd8df8efe4b10e1> , <https://astrea.linkeddata.es/shapes#bd210be94a9e7f1040f316d96f48ae2c> , <https://astrea.linkeddata.es/shapes#7b2b50618aff719c541c2e272bc248ef> , <https://astrea.linkeddata.es/shapes#3656dcca35a5b9fa21916c55198c7c1c> , <https://astrea.linkeddata.es/shapes#f4e922771205b63e3ece97f98db92421> , <https://astrea.linkeddata.es/shapes#af38bacf1650960088ca94725456b725> , <https://astrea.linkeddata.es/shapes#1a318ab5cabe93c5a4868c4b14dfcb8c> , <https://astrea.linkeddata.es/shapes#f32f23dedde408324846d262d6aae4fa> , <https://astrea.linkeddata.es/shapes#da00ec0234596702093f923f71fee773> , <https://astrea.linkeddata.es/shapes#4cb2d6dde8af7918be972538fc43777a> , <https://astrea.linkeddata.es/shapes#8b72ed5d2010a23f59924fbb082f6f21> ;
+        sh:targetClass  guide:CourseGuide .
+
+<https://astrea.linkeddata.es/shapes#7c61c18f27d874fbe6650e3795a4253c>
+        a               sh:PropertyShape ;
+        rdfs:label      "teaching period"@en , "Identifies the academic year to which the course guide applies."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Identifies the academic year to which the course guide applies."@en ;
+        sh:name         "teaching period"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:teachingPeriod ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#25be76d03ada2134301dbc8f229d0dcd>
+        a               sh:PropertyShape ;
+        rdfs:label      "evaluation description"@en , "Describes the criteria, rules, or overall structure of the evaluation system."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Describes the criteria, rules, or overall structure of the evaluation system."@en ;
+        sh:name         "evaluation description"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:evaluationDescription .
+
+<https://astrea.linkeddata.es/shapes#c413e3c1b6a32c7de7def4c958654636>
+        a               sh:PropertyShape ;
+        rdfs:label      "involves competency"@en , "Links an evaluation trial to a competency involved in that assessment."@en ;
+        sh:class        guide:Competency ;
+        sh:description  "Links an evaluation trial to a competency involved in that assessment."@en ;
+        sh:name         "involves competency"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         guide:involvesCompetency .
+
+<https://astrea.linkeddata.es/shapes#3656dcca35a5b9fa21916c55198c7c1c>
+        a               sh:PropertyShape ;
+        rdfs:label      "description"@en , "Provides a textual description of the course guide or academic entity."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Provides a textual description of the course guide or academic entity."@en ;
+        sh:name         "description"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         sch:description .
+
+<https://astrea.linkeddata.es/shapes#0e00fdb93a14eaf6281c692f1f9fb40c>
+        a               sh:PropertyShape ;
+        rdfs:label      "office"@en , "Provides the office or location assigned to a lecturer for student attention."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Provides the office or location assigned to a lecturer for student attention."@en ;
+        sh:name         "office"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:office .
+
+<https://astrea.linkeddata.es/shapes#053586add0b8fdc82e116e451281bf8b>
+        a               sh:PropertyShape ;
+        rdfs:label      "type"@en , "Specifies a local type classification used for an activity or evaluation element. For instance, in spanish university the following categories exist: progressive, final, extraordinay."@en , "evaluation type"@en , "Specifies the type of evaluation associated with an assessment activity or trial."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Specifies the type of evaluation associated with an assessment activity or trial."@en , "Specifies a local type classification used for an activity or evaluation element. For instance, in spanish university the following categories exist: progressive, final, extraordinay."@en ;
+        sh:name         "type"@en , "evaluation type"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:evaluationType .
+
+<https://astrea.linkeddata.es/shapes#9d10fadfb2ee5533a2734032fead40e5>
+        a               sh:PropertyShape ;
+        rdfs:label      "course code"@en , "Provides the institutional code used to identify a course."@en ;
+        sh:datatype     xsd:integer ;
+        sh:description  "Provides the institutional code used to identify a course."@en ;
+        sh:name         "course code"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         sch:courseCode ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#a8e0a4057ba2222e986ab4c4a55fc5d8>
+        a               sh:PropertyShape ;
+        rdfs:label      "has didactic resource"@en , "Links a course guide to a didactic or bibliographic resource used in the course."@en ;
+        sh:class        guide:DidacticResource ;
+        sh:description  "Links a course guide to a didactic or bibliographic resource used in the course."@en ;
+        sh:name         "has didactic resource"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         guide:hasDidacticResource .
+
+<https://astrea.linkeddata.es/shapes#725498cc6b9e365253ab2523e73a6c1c>
+        a               sh:PropertyShape ;
+        rdfs:label      "activity format"@en , "Indicates the delivery format or modality of an academic activity."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Indicates the delivery format or modality of an academic activity."@en ;
+        sh:name         "activity format"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:activityFormat .
+
+<https://astrea.linkeddata.es/shapes#76ca12a8ab33ba4cbe8babb0ca0a1f75>
+        a               sh:PropertyShape ;
+        rdfs:label      "learning result code"@en , "Provides the institutional or academic code that identifies a learning result."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Provides the institutional or academic code that identifies a learning result."@en ;
+        sh:name         "learning result code"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:learningResultCode ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#b694e96461184fbf9a2889bacfc8234e>
+        a               sh:NodeShape ;
+        rdfs:label      "Activity"@en ;
+        sh:description  "A teaching or learning activity carried out as part of the course, such as lectures, labs, seminars, tutorials, or independent work."@en ;
+        sh:name         "Activity"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#cc4d2e64e615037154d302dfe7e599d2> , <https://astrea.linkeddata.es/shapes#f52a6c07ba114e4e622b8e9379893c66> , <https://astrea.linkeddata.es/shapes#72b95d7258cf0616bd5b8bb2258b9980> , <https://astrea.linkeddata.es/shapes#6893b52a151b6a89f73b9953fdd1541d> , <https://astrea.linkeddata.es/shapes#725498cc6b9e365253ab2523e73a6c1c> ;
+        sh:targetClass  guide:Activity .
+
+<https://astrea.linkeddata.es/shapes#f52a6c07ba114e4e622b8e9379893c66>
+        a               sh:PropertyShape ;
+        rdfs:label      "activity duration unit"@en , "Links an activity to the unit used to express its duration."@en ;
+        sh:class        om:Unit ;
+        sh:description  "Links an activity to the unit used to express its duration."@en ;
+        sh:name         "activity duration unit"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         guide:activityDurationUnit .
+
+<https://astrea.linkeddata.es/shapes#d65038f64d48bcfe52175aeda9c11b3a>
+        a               sh:PropertyShape ;
+        rdfs:label      "minimum score"@en , "Indicates the minimum score required for an evaluation activity or assessment component."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Indicates the minimum score required for an evaluation activity or assessment component."@en ;
+        sh:name         "minimum score"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:minimumScore .
+
+<https://astrea.linkeddata.es/shapes#0696e3aa4184402372bf482644453bb2>
+        a               sh:PropertyShape ;
+        rdfs:label      "event week"@en , "Indicates the teaching week or temporal slot in which a schedule event takes place."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Indicates the teaching week or temporal slot in which a schedule event takes place."@en ;
+        sh:name         "event week"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:eventWeek .
+
+<https://astrea.linkeddata.es/shapes#2a1d8e862fb2c079f62417bf6031c5ca>
+        a               sh:NodeShape ;
+        rdfs:label      "Activity Type 2"@en ;
+        sh:description  "A second-level or more specific category used to refine the classification of academic activities in the course guide."@en ;
+        sh:name         "Activity Type 2"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  guide:ActivityType2 .
+
+<https://astrea.linkeddata.es/shapes#1c22f18207cb28091d0553b9e009d445>
+        a               sh:PropertyShape ;
+        rdfs:label      "has course instance"@en , "Links a course to a concrete course guide or offering for a given academic period."@en ;
+        sh:class        guide:CourseGuide ;
+        sh:description  "Links a course to a concrete course guide or offering for a given academic period."@en ;
+        sh:name         "has course instance"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         sch:hasCourseInstance .
+
+<https://astrea.linkeddata.es/shapes#00bf12596c5201b8e3f651f1ddbad3bd>
+        a               sh:NodeShape ;
+        rdfs:label      "Activity Type 1"@en ;
+        sh:description  "A first-level category used to classify academic activities according to the pedagogical structure adopted in the course guide."@en ;
+        sh:name         "Activity Type 1"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  guide:ActivityType1 .
+
+<https://astrea.linkeddata.es/shapes#ad1f101de05ba916ceada38e8c15ad89>
+        a               sh:PropertyShape ;
+        rdfs:label      "degree code"@en , "Indicates the identification code of a degree."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Indicates the identification code of a degree."@en ;
+        sh:name         "degree code"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:degreeCode ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#bb43707e000b20ba27782b29cc69b61d>
+        a               sh:NodeShape ;
+        rdfs:label      "Course"@en ;
+        sh:description  "An academic course as defined in the GUIA model, typically described through its content, teaching organization, assessment, and related course guide."@en ;
+        sh:name         "Course"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1c22f18207cb28091d0553b9e009d445> , <https://astrea.linkeddata.es/shapes#9d10fadfb2ee5533a2734032fead40e5> , <https://astrea.linkeddata.es/shapes#63853012b6878b6e00312f3a51c0362c> , <https://astrea.linkeddata.es/shapes#46ee068e8e8ad7b9360458fc9fb35246> , <https://astrea.linkeddata.es/shapes#2233cd3e43f5742e01e0afe48d9de9b7> , <https://astrea.linkeddata.es/shapes#053e8a26e1dee55affab63ebb36668d1> ;
+        sh:targetClass  guide:Course .
+
+<https://astrea.linkeddata.es/shapes#502c978aa8072c5ac5ae743501702d5a>
+        a               sh:PropertyShape ;
+        rdfs:label      "bibliography description"@en , "Provides a textual description or reference for a bibliographic or didactic resource."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Provides a textual description or reference for a bibliographic or didactic resource."@en ;
+        sh:name         "bibliography description"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:bibliographyDescription .
+
+<https://astrea.linkeddata.es/shapes#f32f23dedde408324846d262d6aae4fa>
+        a               sh:PropertyShape ;
+        rdfs:label      "director"@en , "Links a course guide to the lecturer acting as course coordinator or academic lead."@en ;
+        sh:class        guide:Lecturer ;
+        sh:description  "Links a course guide to the lecturer acting as course coordinator or academic lead."@en ;
+        sh:name         "director"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         sch:director .
+
+<https://astrea.linkeddata.es/shapes#da00ec0234596702093f923f71fee773>
+        a               sh:PropertyShape ;
+        rdfs:label      "remote hours"@en , "Specifies the number or description of remote hours within the course guide."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Specifies the number or description of remote hours within the course guide."@en ;
+        sh:name         "remote hours"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:remoteHours .
+
+<https://astrea.linkeddata.es/shapes#04d5f4121a1dd2335ceee293c493a99c>
+        a               sh:PropertyShape ;
+        rdfs:label      "previous courses"@en , "Provides a textual statement about prior courses recommended or required before taking the course."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Provides a textual statement about prior courses recommended or required before taking the course."@en ;
+        sh:name         "previous courses"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:previousCourses .
+
+<https://astrea.linkeddata.es/shapes#7df8b3c3f6c5ce3f787bb9386d93243e>
+        a               sh:NodeShape ;
+        rdfs:label      "Competency"@en ;
+        sh:description  "A capability, skill, or integrated learning outcome that students are expected to develop through the course."@en ;
+        sh:name         "Competency"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5cc2f40902658e40f30b3ce55a9c5545> , <https://astrea.linkeddata.es/shapes#9733f48c06167678d2fd517466018ffe> ;
+        sh:targetClass  guide:Competency .
+
+<https://astrea.linkeddata.es/shapes#a0005af2635b82beb671b40f25536d31>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  rdfs:Resource .
+
+<https://astrea.linkeddata.es/shapes#be2055c0c81b615b6490d8a64b6bf713>
+        a               sh:PropertyShape ;
+        rdfs:label      "learning result description"@en , "Provides the textual description of an expected learning result associated with a course guide."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Provides the textual description of an expected learning result associated with a course guide."@en ;
+        sh:name         "learning result description"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:learningResultDescription .
+
+<https://astrea.linkeddata.es/shapes#72b95d7258cf0616bd5b8bb2258b9980>
+        a               sh:PropertyShape ;
+        rdfs:label      "activity duration"@en , "States the duration value assigned to an academic activity."@en ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "States the duration value assigned to an academic activity."@en ;
+        sh:name         "activity duration"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:activityDuration ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#46ee068e8e8ad7b9360458fc9fb35246>
+        a               sh:PropertyShape ;
+        rdfs:label      "course year"@en , "Indicates the academic year or course year associated with a course."@en ;
+        sh:datatype     xsd:integer ;
+        sh:description  "Indicates the academic year or course year associated with a course."@en ;
+        sh:name         "course year"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:courseYear ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#a4480ecd3711c3693c92acb2077fa1e0>
+        a               sh:PropertyShape ;
+        rdfs:label      "trial week"@en , "Indicates the week in which an evaluation trial takes place."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Indicates the week in which an evaluation trial takes place."@en ;
+        sh:name         "trial week"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:trialWeek .
+
+<https://astrea.linkeddata.es/shapes#af38bacf1650960088ca94725456b725>
+        a               sh:PropertyShape ;
+        rdfs:label      "has learning result"@en , "Links a course guide to a learning result expected from the course."@en ;
+        sh:class        guide:LearningResult ;
+        sh:description  "Links a course guide to a learning result expected from the course."@en ;
+        sh:name         "has learning result"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         guide:hasLearningResult .
+
+<https://astrea.linkeddata.es/shapes#423696a7f2d6a2ff65a89de96942e628>
+        a               sh:NodeShape ;
+        rdfs:label      "Evaluation Activity"@en ;
+        sh:description  "An activity specifically intended to assess student performance, achievement, or progress within the course."@en ;
+        sh:name         "Evaluation Activity"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  guide:EvaluationActivity .
+
+<https://astrea.linkeddata.es/shapes#699669e8eab18a72b0210d246b2310d2>
+        a               sh:NodeShape ;
+        rdfs:label      "University Center"@en ;
+        sh:name         "University Center"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d2d36d9bf16d93277228c8e1276ba40c> ;
+        sh:targetClass  guide:UniversityCenter .
+
+<https://astrea.linkeddata.es/shapes#2665cba7fea2087f8a5fdaf289703779>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sch:Syllabus .
+
+<https://astrea.linkeddata.es/shapes#fe589dda5032f94cfdca781494d2766f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sch:Event .
+
+<https://astrea.linkeddata.es/shapes#24c9fbd449bb8f46fd8ab45e0619c748>
+        a               sh:PropertyShape ;
+        rdfs:label      "has schedule event"@en , "Links an evaluation trial to the schedule event in which it takes place."@en ;
+        sh:class        guide:ScheduleEvent ;
+        sh:description  "Links an evaluation trial to the schedule event in which it takes place."@en ;
+        sh:name         "has schedule event"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         guide:hasScheduleEvent .
+
+<https://astrea.linkeddata.es/shapes#2f1f7a5093a0bce0fbe8120cc6f2b71d>
+        a               sh:PropertyShape ;
+        rdfs:label      "bibliography type"@en , "Specifies the category of a bibliographic or didactic resource."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Specifies the category of a bibliographic or didactic resource."@en ;
+        sh:name         "bibliography type"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:bibliographyType .
+
+<https://astrea.linkeddata.es/shapes#5f7d0e03e35cb75b2550c809197b03c4>
+        a               sh:PropertyShape ;
+        rdfs:label      "grade percentage"@en , "Specifies the percentage weight of an evaluation activity in the final grade."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Specifies the percentage weight of an evaluation activity in the final grade."@en ;
+        sh:name         "grade percentage"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:gradePercentage .
+
+<https://astrea.linkeddata.es/shapes#0dccb47daebc19038b08e941685ae251>
+        a               sh:PropertyShape ;
+        rdfs:label      "trial description"@en , "Provides a textual description of an evaluation trial."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Provides a textual description of an evaluation trial."@en ;
+        sh:name         "trial description"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:trialDescription .
+
+<https://astrea.linkeddata.es/shapes#67702ba855772a554f176642c5356bec>
+        a               sh:PropertyShape ;
+        rdfs:label      "evaluation duration"@en , "States the duration of an evaluation activity or trial."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "States the duration of an evaluation activity or trial."@en ;
+        sh:name         "evaluation duration"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:evaluationDuration .
+
+<https://astrea.linkeddata.es/shapes#0433104b3b78e2f6b856c35eea1b4554>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sch:Course .
+
+<https://astrea.linkeddata.es/shapes#59910b917a4ef46d1cf776293f853d4a>
+        a               sh:NodeShape ;
+        rdfs:label      "Schedule"@en ;
+        sh:description  "A temporal organization of course-related events, activities, or milestones across the academic period."@en ;
+        sh:name         "Schedule"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#37e9bd6cff0f1b9c2fd0723147699470> ;
+        sh:targetClass  guide:Schedule .
+
+<https://astrea.linkeddata.es/shapes#bba1f264b409058dd00a7cb112be6b93>
+        a               sh:PropertyShape ;
+        rdfs:label      "trial mode"@en , "Indicates the mode in which an evaluation trial is carried out, such as on-site or remote."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Indicates the mode in which an evaluation trial is carried out, such as on-site or remote."@en ;
+        sh:name         "trial mode"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:trialMode .
+
+<https://astrea.linkeddata.es/shapes#e99955366aca3448bdbf451b45f7f915>
+        a               sh:NodeShape ;
+        rdfs:label      "Syllabus Item"@en ;
+        sh:description  "A single element of a syllabus, representing a topic, unit, lesson, or other content component within the course structure."@en ;
+        sh:name         "Syllabus Item"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d185ab1d991547ca6d76869cd40d288d> , <https://astrea.linkeddata.es/shapes#5e4b377e8a8902697cbf0a434feed582> ;
+        sh:targetClass  guide:SyllabusItem .
+
+<https://astrea.linkeddata.es/shapes#69490eb8f27e9fa0c5174750f8da6457>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sch:Schedule .
+
+<https://astrea.linkeddata.es/shapes#8c7778e5574f57dec6168bf824a8a42f>
+        a               sh:NodeShape ;
+        rdfs:label      "Evaluation Trial"@en ;
+        sh:description  "A specific assessment instance or examination opportunity within the evaluation system, such as an ordinary or extraordinary attempt."@en ;
+        sh:name         "Evaluation Trial"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#053586add0b8fdc82e116e451281bf8b> , <https://astrea.linkeddata.es/shapes#d65038f64d48bcfe52175aeda9c11b3a> , <https://astrea.linkeddata.es/shapes#c413e3c1b6a32c7de7def4c958654636> , <https://astrea.linkeddata.es/shapes#0dccb47daebc19038b08e941685ae251> , <https://astrea.linkeddata.es/shapes#67702ba855772a554f176642c5356bec> , <https://astrea.linkeddata.es/shapes#5f7d0e03e35cb75b2550c809197b03c4> , <https://astrea.linkeddata.es/shapes#24c9fbd449bb8f46fd8ab45e0619c748> , <https://astrea.linkeddata.es/shapes#a4480ecd3711c3693c92acb2077fa1e0> , <https://astrea.linkeddata.es/shapes#bba1f264b409058dd00a7cb112be6b93> , <https://astrea.linkeddata.es/shapes#bc88f4370d5a2f695301a078f1f48d8d> ;
+        sh:targetClass  guide:EvaluationTrial .
+
+<https://astrea.linkeddata.es/shapes#dde1dbfeadbf207a137fa7aa2f4471c7>
+        a               sh:NodeShape ;
+        rdfs:label      "Didactic Resource"@en ;
+        sh:description  "A teaching or learning resource used in the course, such as readings, software, audiovisual material, or practical tools."@en ;
+        sh:name         "Didactic Resource"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#502c978aa8072c5ac5ae743501702d5a> , <https://astrea.linkeddata.es/shapes#2f1f7a5093a0bce0fbe8120cc6f2b71d> , <https://astrea.linkeddata.es/shapes#c10ce47aa208d8e5cbb1b60bd54d3197> ;
+        sh:targetClass  guide:DidacticResource .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#0696e3aa4184402372bf482644453bb2> , <https://astrea.linkeddata.es/shapes#04d5f4121a1dd2335ceee293c493a99c> , <https://astrea.linkeddata.es/shapes#bb43707e000b20ba27782b29cc69b61d> , <https://astrea.linkeddata.es/shapes#a4480ecd3711c3693c92acb2077fa1e0> , <https://astrea.linkeddata.es/shapes#41d9d191d2bfb7e91414f1abc451af70> , <https://astrea.linkeddata.es/shapes#5f7d0e03e35cb75b2550c809197b03c4> , <https://astrea.linkeddata.es/shapes#650dc0cae58c68982f6d3a3362d12d8c> , <https://astrea.linkeddata.es/shapes#00bf12596c5201b8e3f651f1ddbad3bd> , <https://astrea.linkeddata.es/shapes#502c978aa8072c5ac5ae743501702d5a> , <https://astrea.linkeddata.es/shapes#3656dcca35a5b9fa21916c55198c7c1c> , <https://astrea.linkeddata.es/shapes#053e8a26e1dee55affab63ebb36668d1> , <https://astrea.linkeddata.es/shapes#72b95d7258cf0616bd5b8bb2258b9980> , <https://astrea.linkeddata.es/shapes#25be76d03ada2134301dbc8f229d0dcd> , <https://astrea.linkeddata.es/shapes#05a0b543d4f9524c1e8e3f73a11a51f0> , <https://astrea.linkeddata.es/shapes#b4f834f903771bcdd2a39b98ffa93d82> , <https://astrea.linkeddata.es/shapes#9d10fadfb2ee5533a2734032fead40e5> , <https://astrea.linkeddata.es/shapes#bd210be94a9e7f1040f316d96f48ae2c> , <https://astrea.linkeddata.es/shapes#76ca12a8ab33ba4cbe8babb0ca0a1f75> , <https://astrea.linkeddata.es/shapes#5cc2f40902658e40f30b3ce55a9c5545> , <https://astrea.linkeddata.es/shapes#423696a7f2d6a2ff65a89de96942e628> , <https://astrea.linkeddata.es/shapes#e99955366aca3448bdbf451b45f7f915> , <https://astrea.linkeddata.es/shapes#db1d274ed62faf406e556b9e7efe6690> , <https://astrea.linkeddata.es/shapes#1c22f18207cb28091d0553b9e009d445> , <https://astrea.linkeddata.es/shapes#24c9fbd449bb8f46fd8ab45e0619c748> , <https://astrea.linkeddata.es/shapes#7c61c18f27d874fbe6650e3795a4253c> , <https://astrea.linkeddata.es/shapes#cef79bd000f605c498e955dc74686742> , <https://astrea.linkeddata.es/shapes#d2d36d9bf16d93277228c8e1276ba40c> , <https://astrea.linkeddata.es/shapes#b51922c48dfc407fa98fdd69dfab311e> , <https://astrea.linkeddata.es/shapes#2a1d8e862fb2c079f62417bf6031c5ca> , <https://astrea.linkeddata.es/shapes#af38bacf1650960088ca94725456b725> , <https://astrea.linkeddata.es/shapes#54b1919494a675dc686b5dc27def7bc2> , <https://astrea.linkeddata.es/shapes#b184d5a71ef51f2fee36ff14c9215cec> , <https://astrea.linkeddata.es/shapes#63853012b6878b6e00312f3a51c0362c> , <https://astrea.linkeddata.es/shapes#60ba947b23c586d402886d968962c583> , <https://astrea.linkeddata.es/shapes#2665cba7fea2087f8a5fdaf289703779> , <https://astrea.linkeddata.es/shapes#6893b52a151b6a89f73b9953fdd1541d> , <https://astrea.linkeddata.es/shapes#f52a6c07ba114e4e622b8e9379893c66> , <https://astrea.linkeddata.es/shapes#7b2b50618aff719c541c2e272bc248ef> , <https://astrea.linkeddata.es/shapes#47f4605e3649797dad20a9512f415c24> , <https://astrea.linkeddata.es/shapes#ad1f101de05ba916ceada38e8c15ad89> , <https://astrea.linkeddata.es/shapes#7d3a24d28041d73bf59064bbb6838884> , <https://astrea.linkeddata.es/shapes#6bddd7874441d9397db65a9a1277b79a> , <https://astrea.linkeddata.es/shapes#2233cd3e43f5742e01e0afe48d9de9b7> , <https://astrea.linkeddata.es/shapes#fe589dda5032f94cfdca781494d2766f> , <https://astrea.linkeddata.es/shapes#201192639cd267a3aaa885b55197dc79> , <https://astrea.linkeddata.es/shapes#59910b917a4ef46d1cf776293f853d4a> , <https://astrea.linkeddata.es/shapes#51ee10fdf9a82d123157e1a358fa55d9> , <https://astrea.linkeddata.es/shapes#46ee068e8e8ad7b9360458fc9fb35246> , <https://astrea.linkeddata.es/shapes#a91706b13a2f3a497b61bf502a393743> , <https://astrea.linkeddata.es/shapes#f1ddb520de38dd0fa173c2b72e62fdfa> , <https://astrea.linkeddata.es/shapes#94f676d4f5e6826805d98e3b074d952e> , <https://astrea.linkeddata.es/shapes#37e9bd6cff0f1b9c2fd0723147699470> , <https://astrea.linkeddata.es/shapes#8c7778e5574f57dec6168bf824a8a42f> , <https://astrea.linkeddata.es/shapes#a8e0a4057ba2222e986ab4c4a55fc5d8> , <https://astrea.linkeddata.es/shapes#cac532c3d970f6af255b08ff6a1db507> , <https://astrea.linkeddata.es/shapes#69490eb8f27e9fa0c5174750f8da6457> , <https://astrea.linkeddata.es/shapes#0e00fdb93a14eaf6281c692f1f9fb40c> , <https://astrea.linkeddata.es/shapes#f32f23dedde408324846d262d6aae4fa> , <https://astrea.linkeddata.es/shapes#1a318ab5cabe93c5a4868c4b14dfcb8c> , <https://astrea.linkeddata.es/shapes#9c8da9bed7c9e24a9fd8df8efe4b10e1> , <https://astrea.linkeddata.es/shapes#67702ba855772a554f176642c5356bec> , <https://astrea.linkeddata.es/shapes#0433104b3b78e2f6b856c35eea1b4554> , <https://astrea.linkeddata.es/shapes#0dccb47daebc19038b08e941685ae251> , <https://astrea.linkeddata.es/shapes#d65038f64d48bcfe52175aeda9c11b3a> , <https://astrea.linkeddata.es/shapes#f4e922771205b63e3ece97f98db92421> , <https://astrea.linkeddata.es/shapes#0c9c7e5d2b8bc969402273a9d46220e4> , <https://astrea.linkeddata.es/shapes#053586add0b8fdc82e116e451281bf8b> , <https://astrea.linkeddata.es/shapes#618f724e37d7536d360d2a567c8d45af> , <https://astrea.linkeddata.es/shapes#b694e96461184fbf9a2889bacfc8234e> , <https://astrea.linkeddata.es/shapes#e4c3b5402867414cf9c6ec2c561362db> , <https://astrea.linkeddata.es/shapes#cc4d2e64e615037154d302dfe7e599d2> , <https://astrea.linkeddata.es/shapes#d185ab1d991547ca6d76869cd40d288d> , <https://astrea.linkeddata.es/shapes#dde1dbfeadbf207a137fa7aa2f4471c7> , <https://astrea.linkeddata.es/shapes#59283ccef877445a79a052381725a5b7> , <https://astrea.linkeddata.es/shapes#7d31e878918619ad12be68dcc0363395> , <https://astrea.linkeddata.es/shapes#da00ec0234596702093f923f71fee773> , <https://astrea.linkeddata.es/shapes#bc88f4370d5a2f695301a078f1f48d8d> , <https://astrea.linkeddata.es/shapes#5860bac6756e1a91658aa604e290f882> , <https://astrea.linkeddata.es/shapes#8b72ed5d2010a23f59924fbb082f6f21> , <https://astrea.linkeddata.es/shapes#c413e3c1b6a32c7de7def4c958654636> , <https://astrea.linkeddata.es/shapes#a0005af2635b82beb671b40f25536d31> , <https://astrea.linkeddata.es/shapes#2f1f7a5093a0bce0fbe8120cc6f2b71d> , <https://astrea.linkeddata.es/shapes#be2055c0c81b615b6490d8a64b6bf713> , <https://astrea.linkeddata.es/shapes#17dc5f5a399e8413414121bbec756e99> , <https://astrea.linkeddata.es/shapes#dc24aa317357d984912eb2c5a92833f2> , <https://astrea.linkeddata.es/shapes#7df8b3c3f6c5ce3f787bb9386d93243e> , <https://astrea.linkeddata.es/shapes#9733f48c06167678d2fd517466018ffe> , <https://astrea.linkeddata.es/shapes#d41baaf1789f2479e89df435011baa88> , <https://astrea.linkeddata.es/shapes#9e9cb48c1174c31afed273d1a674e5ba> , <https://astrea.linkeddata.es/shapes#725498cc6b9e365253ab2523e73a6c1c> , <https://astrea.linkeddata.es/shapes#719d95ac09d1345057911a75bc0f21ec> , <https://astrea.linkeddata.es/shapes#bba1f264b409058dd00a7cb112be6b93> , <https://astrea.linkeddata.es/shapes#699669e8eab18a72b0210d246b2310d2> , <https://astrea.linkeddata.es/shapes#c10ce47aa208d8e5cbb1b60bd54d3197> , <https://astrea.linkeddata.es/shapes#4cb2d6dde8af7918be972538fc43777a> , <https://astrea.linkeddata.es/shapes#68d20a6b18067c4536d7fd29c5d013db> , <https://astrea.linkeddata.es/shapes#ba6549d0b86dfb780d8e7271aa3b2cd8> , <https://astrea.linkeddata.es/shapes#5e4b377e8a8902697cbf0a434feed582> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#41d9d191d2bfb7e91414f1abc451af70>
+        a               sh:PropertyShape ;
+        rdfs:label      "has competency"@en , "Links a course guide to a competency developed or addressed in the course."@en ;
+        sh:class        guide:Competency ;
+        sh:description  "Links a course guide to a competency developed or addressed in the course."@en ;
+        sh:name         "has competency"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         guide:hasCompetency .
+
+<https://astrea.linkeddata.es/shapes#51ee10fdf9a82d123157e1a358fa55d9>
+        a               sh:PropertyShape ;
+        rdfs:label      "event index"@en , "Indicates the position or order of a schedule event within the course schedule."@en ;
+        sh:datatype     xsd:integer ;
+        sh:description  "Indicates the position or order of a schedule event within the course schedule."@en ;
+        sh:name         "event index"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:eventIndex ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#b184d5a71ef51f2fee36ff14c9215cec>
+        a               sh:PropertyShape ;
+        rdfs:label      "has course"@en , "Links a degree programme to a course included in its curriculum."@en ;
+        sh:class        guide:Course ;
+        sh:description  "Links a degree programme to a course included in its curriculum."@en ;
+        sh:name         "has course"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         guide:hasCourse .
+
+<https://astrea.linkeddata.es/shapes#b4f834f903771bcdd2a39b98ffa93d82>
+        a               sh:PropertyShape ;
+        rdfs:label      "other information"@en , "Provides additional general information relevant to the course guide."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Provides additional general information relevant to the course guide."@en ;
+        sh:name         "other information"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:otherInformation .
+
+<https://astrea.linkeddata.es/shapes#2233cd3e43f5742e01e0afe48d9de9b7>
+        a               sh:PropertyShape ;
+        rdfs:label      "number of credits"@en , "States the number of academic credits assigned to a course."@en ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "States the number of academic credits assigned to a course."@en ;
+        sh:name         "number of credits"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         sch:numberOfCredits ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#cc4d2e64e615037154d302dfe7e599d2>
+        a               sh:PropertyShape ;
+        rdfs:label      "attendance mode"@en , "Indicates whether an activity is face-to-face, remote, or follows another attendance modality."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Indicates whether an activity is face-to-face, remote, or follows another attendance modality."@en ;
+        sh:name         "attendance mode"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:attendanceType .
+
+<https://astrea.linkeddata.es/shapes#4cb2d6dde8af7918be972538fc43777a>
+        a               sh:PropertyShape ;
+        rdfs:label      "published at"@en , "Provides the URL where the course guide is publicly available."@en ;
+        sh:class        rdfs:Resource ;
+        sh:description  "Provides the URL where the course guide is publicly available."@en ;
+        sh:name         "published at"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         guide:publishedAt .
+
+<https://astrea.linkeddata.es/shapes#94f676d4f5e6826805d98e3b074d952e>
+        a               sh:PropertyShape ;
+        rdfs:label      "period starting month"@en , "Indicates the month in which the teaching period starts."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Indicates the month in which the teaching period starts."@en ;
+        sh:name         "period starting month"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:periodStartingMonth .
+
+<https://astrea.linkeddata.es/shapes#bc88f4370d5a2f695301a078f1f48d8d>
+        a               sh:PropertyShape ;
+        rdfs:label      "trial type"@en , "Specifies the specific kind of evaluation trial, such as exam, assignment, or presentation."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Specifies the specific kind of evaluation trial, such as exam, assignment, or presentation."@en ;
+        sh:name         "trial type"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:trialType .
+
+<https://astrea.linkeddata.es/shapes#7d31e878918619ad12be68dcc0363395>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sch:Organization .
+
+<https://astrea.linkeddata.es/shapes#db1d274ed62faf406e556b9e7efe6690>
+        a               sh:NodeShape ;
+        rdfs:label      "Lecturer"@en ;
+        sh:description  "A teaching person responsible for delivering, coordinating, or supporting a course within an academic programme."@en ;
+        sh:name         "Lecturer"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5860bac6756e1a91658aa604e290f882> , <https://astrea.linkeddata.es/shapes#0e00fdb93a14eaf6281c692f1f9fb40c> , <https://astrea.linkeddata.es/shapes#cef79bd000f605c498e955dc74686742> ;
+        sh:targetClass  guide:Lecturer .
+
+<https://astrea.linkeddata.es/shapes#cac532c3d970f6af255b08ff6a1db507>
+        a               sh:NodeShape ;
+        rdfs:label      "Syllabus"@en ;
+        sh:description  "The structured outline of the course content, usually organized into thematic units, topics, or instructional blocks."@en ;
+        sh:name         "Syllabus"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#47f4605e3649797dad20a9512f415c24> ;
+        sh:targetClass  guide:Syllabus .
+
+<https://astrea.linkeddata.es/shapes#5860bac6756e1a91658aa604e290f882>
+        a               sh:PropertyShape ;
+        rdfs:label      "tutorship schedule"@en , "Specifies the timetable or availability for tutoring sessions."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Specifies the timetable or availability for tutoring sessions."@en ;
+        sh:name         "tutorship schedule"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:tutorshipsSchedule .
+
+<https://astrea.linkeddata.es/shapes#c10ce47aa208d8e5cbb1b60bd54d3197>
+        a               sh:PropertyShape ;
+        rdfs:label      "bibliography title"@en , "Provides the title or name of a bibliographic or didactic resource."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Provides the title or name of a bibliographic or didactic resource."@en ;
+        sh:name         "bibliography title"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:bibliographyTitle .
+
+<https://astrea.linkeddata.es/shapes#5cc2f40902658e40f30b3ce55a9c5545>
+        a               sh:PropertyShape ;
+        rdfs:label      "competency description"@en , "Provides the textual description of a competency addressed by a course guide."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Provides the textual description of a competency addressed by a course guide."@en ;
+        sh:name         "competency description"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:competencyDescription .
+
+<https://astrea.linkeddata.es/shapes#a91706b13a2f3a497b61bf502a393743>
+        a               sh:PropertyShape ;
+        rdfs:label      "total hours"@en , "States the total student workload of the course guide expressed in hours."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "States the total student workload of the course guide expressed in hours."@en ;
+        sh:name         "total hours"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:totalHours .
+
+<https://astrea.linkeddata.es/shapes#618f724e37d7536d360d2a567c8d45af>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  om:Unit .
+
+<https://astrea.linkeddata.es/shapes#05a0b543d4f9524c1e8e3f73a11a51f0>
+        a               sh:PropertyShape ;
+        rdfs:label      "has activity"@en , "Links a schedule event to an academic activity carried out during that event."@en ;
+        sh:class        guide:Activity ;
+        sh:description  "Links a schedule event to an academic activity carried out during that event."@en ;
+        sh:name         "has activity"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         guide:hasActivity .
+
+<https://astrea.linkeddata.es/shapes#bd210be94a9e7f1040f316d96f48ae2c>
+        a               sh:PropertyShape ;
+        rdfs:label      "number of credits"@en , "States the number of academic credits assigned to a course guide or course offering."@en ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "States the number of academic credits assigned to a course guide or course offering."@en ;
+        sh:name         "number of credits"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:numberOfCredits ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#9e9cb48c1174c31afed273d1a674e5ba>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sch:Person .
+
+<https://astrea.linkeddata.es/shapes#63853012b6878b6e00312f3a51c0362c>
+        a               sh:PropertyShape ;
+        rdfs:label      "course type"@en , "Specifies the academic nature of the course, such as basic, mandatory, elective, or similar categories."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Specifies the academic nature of the course, such as basic, mandatory, elective, or similar categories."@en ;
+        sh:name         "course type"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:courseType .
+
+<https://astrea.linkeddata.es/shapes#0c9c7e5d2b8bc969402273a9d46220e4>
+        a               sh:PropertyShape ;
+        rdfs:label      "name"@en , "Provides the name of an entity such as a course, person, or university center."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Provides the name of an entity such as a course, person, or university center."@en ;
+        sh:name         "name"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         sch:name .
+
+<https://astrea.linkeddata.es/shapes#5e4b377e8a8902697cbf0a434feed582>
+        a               sh:PropertyShape ;
+        rdfs:label      "syllabus description"@en , "Provides the textual description of a syllabus item or thematic unit."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "Provides the textual description of a syllabus item or thematic unit."@en ;
+        sh:name         "syllabus description"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:syllabusDescription .
+
+<https://astrea.linkeddata.es/shapes#9733f48c06167678d2fd517466018ffe>
+        a               sh:PropertyShape ;
+        rdfs:label      "competency code"@en , "Provides the institutional or academic code that identifies a competency."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Provides the institutional or academic code that identifies a competency."@en ;
+        sh:name         "competency code"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         guide:competencyCode ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#b51922c48dfc407fa98fdd69dfab311e>
+        a               sh:PropertyShape ;
+        rdfs:label      "activities workload"@en , "States the workload distribution associated with course activities."@en ;
+        sh:datatype     rdf:langString ;
+        sh:description  "States the workload distribution associated with course activities."@en ;
+        sh:name         "activities workload"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         sch:activitiesWorkload .
+
+<https://astrea.linkeddata.es/shapes#dc24aa317357d984912eb2c5a92833f2>
+        a               sh:PropertyShape ;
+        rdfs:label      "has evaluation trial"@en , "Links an evaluation system to one of its evaluation trials."@en ;
+        sh:class        guide:EvaluationTrial ;
+        sh:description  "Links an evaluation system to one of its evaluation trials."@en ;
+        sh:name         "has evaluation trial"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         guide:hasEvaluationTrial .

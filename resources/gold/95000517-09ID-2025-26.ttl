@@ -1,0 +1,832 @@
+@prefix ns1: <http://w3id.org/def/guia#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/previous_courses> a ns1:RequiredKnowledge ;
+    ns1:previousCourses "El plan de estudios Grado En Ingenieria Y Sistemas De Datos no tiene definidos otros requisitos para esta asignatura."@es ;
+    ns1:previousKnowledge "El coordinador de la asignatura no ha definido otros conocimientos previos recomendados."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/E.T.S.%20De%20Ingenieros%20De%20Telecomunicacion> a ns1:UniversityCenter ;
+    ns1:offers <https://guia-kg.skai.etsisi.upm.es/resource/09ID%20-%20Grado%20en%20Ingenieria%20y%20Sistemas%20de%20Datos> ;
+    schema:name "E.T.S. De Ingenieros De Telecomunicacion" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/09ID%20-%20Grado%20en%20Ingenieria%20y%20Sistemas%20de%20Datos> a ns1:BachelorDegree ;
+    ns1:degreeCode "09ID"@es ;
+    ns1:hasCourse <https://guia-kg.skai.etsisi.upm.es/resource/95000517> ;
+    schema:name "Grado en Ingenieria y Sistemas de Datos"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517> a ns1:Course ;
+    ns1:courseType "Básica"@es ;
+    ns1:courseYear 2 ;
+    ns1:semester "Cuarto semestre"@es ;
+    schema:courseCode 95000517 ;
+    schema:hasCourseInstance <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26> ;
+    schema:name "Statistical Inference And Time Series"@en,
+        "Inferencia Estadística y Series Temporales"@es ;
+    schema:numberOfCredits 6.0 .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26> a ns1:CourseGuide ;
+    ns1:hasCompetency <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/CE02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/CG09> ;
+    ns1:hasDidacticResource <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/didactic_resource/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/didactic_resource/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/didactic_resource/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/didactic_resource/4> ;
+    ns1:hasEvaluation <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation> ;
+    ns1:hasLearningResult <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/RA014>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/RA015> ;
+    ns1:hasSyllabus <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus> ;
+    ns1:inpersonHours "61 horas y 30 minutos (39.4%)"@es ;
+    ns1:numberOfCredits 6.0 ;
+    ns1:otherInformation ""@es ;
+    ns1:periodEndingMonth "Junio"@es ;
+    ns1:periodStartingMonth "Febrero"@es ;
+    ns1:teachingPeriod "2025-26" ;
+    ns1:teachingPeriodMonths "Febrero-Junio"@es ;
+    ns1:totalHours "61 horas y 30 minutos"@es ;
+    schema:activitiesWorkload "140%"@es ;
+    schema:courseSchedule <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule> ;
+    schema:description """Se trata de una asignatura introductoria a las técnicas de Inferencia estadística aplicadas al análisis de datos. El objetivo es presentar las principales técnicas estadísticas utilizadas en la extracción de información útil contenida en conjuntos de datos tomados de fenómenos reales.
+
+Se comienza revisando los conceptos básicos de estadística estudiados en la asignatura 'Probabilidad y Señales Aleatorias' e introduciendo la Estadística Descriptiva: disciplina científica que pretende ajustar modelos estadísticos a un conjunto de medidas tomadas de datos reales y realizar operaciones de inferencia, predicción del comportamiento y decisión a partir de dichos modelos estadísticos.
+
+La primera parte de la asignatura está dedicada a las técnicas básicas de inferencia:
+i) postulado de un modelo estadístico para un conjunto de datos medidos.
+ii) técnicas de estimación de sus parámetros y estimación de la calidad del modelo (intervalos de confianza).
+iii) establecimiento de hipótesis basadas en modelos estadísticos cuya verosimilitud se establece utilizando el conjunto de datos reales (test de hipótesis).
+iv) Establecimiento de las relaciones de dependencia entre distintos conjuntos de datos reales con comportamiento estadístico (técnicas de regresión).
+
+En toda la asignatura se tratará de transmitir el concepto de 'confianza de la estimación' que debe ir unida al juicio de cualquier indicador numérico extraído de datos medidos de un fenómeno real. Todo indicador numérico calculado a partir de datos debe llevar asociado un marcador riguroso de su fiabilidad. De esta forma, se podrá estimar numéricamente el grado de 'confianza' que se puede tener sobre las decisiones tomadas a partir de dicho indicador estadístico.
+La segunda parte de la asignatura está dedicada a la aplicación de las técnicas de Estadística Descriptiva a tres problemas prácticos: i) el análisis y predicción de series temporal, ii) el análisis espectral y iii) las técnicas de simulación estadística.
+
+La asignatura se desarrollará mediante la descripción teórica de los métodos, ilustrada con problemas prácticos. Esta enseñanza se complementará con una serie de prácticas realizadas sobre software comercial con capacidad para el tratamiento estadístico ( R, MATLAB, Python, Microsoft Excel). Dichas prácticas tendrán una parte presencial, que el alumno realizará en el aula sobre su ordenador personal, y otra parte que se considerará como trabajo personal."""@es ;
+    schema:director <https://guia-kg.skai.etsisi.upm.es/resource/gonzalo.demiguel%40upm.es> ;
+    schema:inLanguage "Castellano"@es ;
+    schema:instructor <https://guia-kg.skai.etsisi.upm.es/resource/anamaria.bernardos%40upm.es>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/gonzalo.demiguel%40upm.es>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/joseramon.casar%40upm.es>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/pedro.zufiria%40upm.es> ;
+    schema:name "Inferencia Estadística y Series Temporales"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/CB05> a ns1:Competency ;
+    ns1:competencyCode "CB05" ;
+    ns1:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/CE02> a ns1:Competency ;
+    ns1:competencyCode "CE02" ;
+    ns1:competencyDescription "Que los estudiantes sepan emplear los conceptos y las herramientas de la estadística para modelar el comportamiento de sistemas complejos o aleatorios y construir y contrastar modelos probabilísticos."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/CG09> a ns1:Competency ;
+    ns1:competencyCode "CG09" ;
+    ns1:competencyDescription "Desarrollar la capacidad de aprendizaje a lo largo de la vida (lifelong learning) para adaptarse a un sector tecnológico en continua evolución."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/RA014> a ns1:LearningResult ;
+    ns1:learningResultCode "RA014" ;
+    ns1:learningResultDescription "Comprender las herramientas de la inferencia estadística para construir y contrastar modelos probabilísticos a partir de datos."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/RA015> a ns1:LearningResult ;
+    ns1:learningResultCode "RA015" ;
+    ns1:learningResultDescription "Aplicar los modelos estadísticos para comprender un sistema, predecir su comportamiento y tomar decisiones empleando herramientas informáticas."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/didactic_resource/1> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "Libro básico de Inferencia que cubre los capítulos 1 a 6."@es ;
+    ns1:bibliographyTitle "\"Applied Statistics and Probability for Engineers\", Douglas C. Mongomery, George C. Runger. John Wiley and Sons, 2018"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/didactic_resource/2> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "cubre capítulos 7 y 8"@es ;
+    ns1:bibliographyTitle "\"Introduction to time series analysis and forecasting\", D. C. Montgomery, C. L. Jennings, M. Kulahci. Wiley, 2015"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/didactic_resource/3> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "Cubre el capítulo 9"@es ;
+    ns1:bibliographyTitle "\"Simulation Modeling and Analysis\", A. M. Law, W. D. Kelton. McGraw Hill. 2014"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/didactic_resource/4> a ns1:DidacticResource ;
+    ns1:bibliographyDescription "Página Moodle de la asignatura"@es ;
+    ns1:bibliographyTitle "www.moodle.upm.es"@es ;
+    ns1:bibliographyType "Recursos web"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation> a ns1:EvaluationSystem ;
+    ns1:evaluationDescription """Sistema de evaluación de la asignatura:
+La evaluación de los alumnos estará formada por las siguientes pruebas:
+1- Primer examen parcial: Examen escrito sobre los contenidos de los capítulos 1 a 5. Se puntuará sobre 10 y la nota mínima en este parcial debe ser mayor de 4 para ser liberado. Aquellos alumnos que obtengan una nota menor deben presentarse a un examen de repesca de esta parte que será realizado en la convocatoria ordinaria, a continuación del 2º parcial. La nota de este examen contará un 40% de la nota final.
+2- Segundo examen parcial: Examen escrito sobre los contenidos de los capítulos 6 a 10. Se puntuará sobre 10 y la nota mínima en este parcial debe ser mayor que 4 para poder hacer media con el resto de las notas. La nota de este examen contará un 40% de la nota final.
+3- Evaluación de las prácticas: el 20 % de la nota corresponderá a la evaluación de los informes de las prácticas cuya entrega se le solicitará después de cada una antes de una fecha concreta. La asistencia a las sesiones de prácticas es obligatoria. Una vez calificada de forma positiva la nota de prácticas se conserva para convocatorias posteriores si el alumno suspendiese la parte teórica.
+Nota: Si el alumno suspendiese la evaluación de la asignatura pero la media de los dos parciales de teoría fuese superior a 5, en la convocatoria extraordinaria solamente tendría que realizar el examen de prácticas.
+
+Evaluación por prueba global
+La evaluación de los alumnos que decidan ir por evaluación por prueba global estará formada por las siguientes pruebas:
+1- Examen teórico escrito realizado en el día de la convocatoria ordinaria. El examen consta de dos partes, correspondientes al primer parcial (Capítulos 1 a 5) y segundo parcial (Capítulos 6 a 10). Cada parte se puntuará sobre 10 y será necesario que la nota de cada una sea superior a un 4 para poder aprobar. La nota de teoría será la media de las dos partes. El peso de la nota del examen en la nota final es del 80%.
+2- Evaluación de las prácticas: el 20 % de la nota corresponderá a la evaluación de los informes de las prácticas cuya entrega se le solicitará después de cada una antes de una fecha concreta. La asistencia a las sesiones de prácticas es obligatoria. Una vez calificada de forma positiva la nota de prácticas se conserva para convocatorias posteriores si el alumno suspendiese la parte teórica.
+Nota: Si el alumno suspendiese la evaluación de la asignatura pero la media de los dos parciales de teoría fuese superior a 5, en la convocatoria extraordinaria solamente tendría que realizar el examen de prácticas.
+Nota: En caso de suspenso por no alcanzar la nota mínima en alguna parte de la asignatura en el acta aparecerá como nota aquella que no ha superado el límite mínimo.
+
+Convocatoria extraordinaria
+La convocatoria extraordinaria constará de dos pruebas:
+1- Examen teórico escrito realizado en el día de la convocatoria extraordinaria. Examen de teoría y problemas que comprende todo el temario teórico (Capítulos 1 a 10). Este examen tendrán que realizarlo aquellos alumnos que no tengan aprobada la parte de teoría en la convocatoria ordinaria. El peso de la nota del examen en la nota final es del 80%. A esta parte deberán presentarse aquellos alumnos cuya nota de teoría en la convocatoria ordinaria (media de los dos parciales) sea menor que 5.
+2- Evaluación de las prácticas: el 20 % de la nota corresponderá a un examen especial de prácticas. A esta parte deberán presentarse aquellos alumnos cuya nota de prácticas en la convocatoria ordinaria sea menor que 5. Una vez calificada de forma positiva la nota de prácticas se conserva para convocatorias posteriores si el alumno suspendiese la parte teórica.
+
+La evaluación comprobará si los estudiantes han adquirido las competencias de la asignatura. Por tanto, la evaluación en la convocatoria extraordinaria usará los mismos tipos de técnicas evaluativas que se usan en la evaluación de la convocatoria ordinaria (EX, ET, TG, etc.)."""@es ;
+    ns1:hasEvaluationTrial <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation/trial1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation/trial2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation/trial3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation/trial4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation/trial5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation/trial6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation/trial7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation/trial8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation/trial9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation/trial1> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "40%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/8> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG09> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Prueba parcial: Tema 1 a 5"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "8"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation/trial2> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "40%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG09> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Segunda Prueba parcial: Tema 6 a 10"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation/trial3> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "40%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG09> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Recuperación Prueba parcial: Tema 1 a 5"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation/trial4> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "20%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG09> ;
+    ns1:minimumScore "0 / 10"@es ;
+    ns1:trialDescription "Evaluación de los informes de prácticas"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation/trial5> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "40%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG09> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Segunda Prueba parcial: Tema 6 a 10"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation/trial6> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "40%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG09> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Recuperación Prueba parcial: Tema 1 a 5"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation/trial7> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "20%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG09> ;
+    ns1:minimumScore "0 / 10"@es ;
+    ns1:trialDescription "Evaluación de los informes de prácticas"@es ;
+    ns1:trialType "No Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation/trial8> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "03:00"@es ;
+    ns1:evaluationType "extraordinaria"@es ;
+    ns1:gradePercentage "80%"@es ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG09> ;
+    ns1:minimumScore "4 / 10"@es ;
+    ns1:trialDescription "Examen de la parte teórica de la asignatura"@es ;
+    ns1:trialType "Presencial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/evaluation/trial9> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "01:00"@es ;
+    ns1:evaluationType "extraordinaria"@es ;
+    ns1:gradePercentage "20%"@es ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CB05>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE02>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG09> ;
+    ns1:minimumScore "0 / 10"@es ;
+    ns1:trialDescription "Examen de prácticas"@es ;
+    ns1:trialType "Presencial"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule> a ns1:Schedule ;
+    schema:eventSchedule <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/1> a ns1:ScheduleEvent ;
+    ns1:eventIndex 1 ;
+    ns1:eventWeek "Semana 1"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/1/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/1/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/1/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 1.1: Probabilidad y Estadística"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/1/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 1.2: Modelado e Inferencia"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/10> a ns1:ScheduleEvent ;
+    ns1:eventIndex 10 ;
+    ns1:eventWeek "Semana 10"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/10/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/10/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/10/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 7.2: Análisis de regresión de series temporales"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/10/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 7.3: Modelado MA, AR, ARMA, ARIMA"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/11> a ns1:ScheduleEvent ;
+    ns1:eventIndex 11 ;
+    ns1:eventWeek "Semana 11"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/11/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/11/activity/TActivityType2/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/11/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 7.4: Método básico de estimación de parámetros. Propiedades"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/11/activity/TActivityType2/1> a ns1:ActivityType2 ;
+    ns1:activityDescription "Tema 7.5: Aplicaciones"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/12> a ns1:ScheduleEvent ;
+    ns1:eventIndex 12 ;
+    ns1:eventWeek "Semana 12"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/12/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/12/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/12/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 8.1: Concepto de espectro. Revisión y propiedades"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/12/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 8.2: Análisis Espectral paramétrico y no paramétrico"@es ;
+    ns1:activityDuration "03:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/13> a ns1:ScheduleEvent ;
+    ns1:eventIndex 13 ;
+    ns1:eventWeek "Semana 13"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/13/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/13/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/13/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 9.1: Planteamiento y elementos de la simulación estadística"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/13/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 9.2: Simulación de series temporales y multidimensionales"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/14> a ns1:ScheduleEvent ;
+    ns1:eventIndex 14 ;
+    ns1:eventWeek "Semana 14"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/14/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/14/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/14/activity/TActivityType2/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/14/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 9.2: Simulación de series temporales y multidimensionales"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/14/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 10: Conclusión: Interpretación de datos y toma de decisiones"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/14/activity/TActivityType2/1> a ns1:ActivityType2 ;
+    ns1:activityDescription "Tema 9.3: Ejemplos"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/15> a ns1:ScheduleEvent ;
+    ns1:eventIndex 15 ;
+    ns1:eventWeek "Semana 15"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/16> a ns1:ScheduleEvent ;
+    ns1:eventIndex 16 ;
+    ns1:eventWeek "Semana 16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/17/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Segunda Prueba parcial: Tema 6 a 10"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva y Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/17/activity/TEvaluationActivity/2> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Recuperación Prueba parcial: Tema 1 a 5"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva y Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/17/activity/TEvaluationActivity/3> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Evaluación de los informes de prácticas"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TI: Técnica del tipo Trabajo Individual"@es ;
+    ns1:attendanceType "No presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva y Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/2> a ns1:ScheduleEvent ;
+    ns1:eventIndex 2 ;
+    ns1:eventWeek "Semana 2"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/2/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/2/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/2/activity/TActivityType1/3> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/2/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2.1: Herramientas de descripción de datos. Aplicaciones"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/2/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2.1: Presentación de la herramienta de prácticas"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/2/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2.2: Muestreo aleatorio y estadísticos"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/3> a ns1:ScheduleEvent ;
+    ns1:eventIndex 3 ;
+    ns1:eventWeek "Semana 3"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/3/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/3/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/3/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 3.1: Métodos de estimación de parámetros"@es ;
+    ns1:activityDuration "03:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/3/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 3.2: Introducción a la estimación bayesiana"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/4> a ns1:ScheduleEvent ;
+    ns1:eventIndex 4 ;
+    ns1:eventWeek "Semana 4"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/4/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/4/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/4/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 3.3: Intervalos de confianza"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/4/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 4.1: Test de hipótesis"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/5> a ns1:ScheduleEvent ;
+    ns1:eventIndex 5 ;
+    ns1:eventWeek "Semana 5"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/5/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/5/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/5/activity/TActivityType2/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/5/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 4.1: Test de hipótesis"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/5/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 4.2: Introducción a los tests bayesianos"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/5/activity/TActivityType2/1> a ns1:ActivityType2 ;
+    ns1:activityDescription "Tema 4.3: Práctica de conceptos básicos de inferencia"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/6> a ns1:ScheduleEvent ;
+    ns1:eventIndex 6 ;
+    ns1:eventWeek "Semana 6"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/6/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/6/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/6/activity/TActivityType1/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/6/activity/TActivityType2/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/6/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 5.1: Revisión de conceptos. Correlación"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/6/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 5.2: Mínimos cuadrados ordinarios"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/6/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 5.3: Residuos y propiedades estadísticas de los estimadores"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/6/activity/TActivityType2/1> a ns1:ActivityType2 ;
+    ns1:activityDescription "Tema 4.3: Práctica de conceptos básicos de inferencia"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/7> a ns1:ScheduleEvent ;
+    ns1:eventIndex 7 ;
+    ns1:eventWeek "Semana 7"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/7/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/7/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/7/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 5.4: Ejemplos y Aplicaciones"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/7/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 6.1: Estimación: Mínimos cuadrados ordinarios. Propiedades. Bondad de ajuste"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/8/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 6.2: Inferencia y Test de hipótesis sobre modelos de regresión múltiple"@es ;
+    ns1:activityDuration "03:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/8/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 6.3: Regresión con información cualitativa"@es ;
+    ns1:activityDuration "01:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/8/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Prueba parcial: Tema 1 a 5"@es ;
+    ns1:activityDuration "01:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/8/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Prueba parcial: Tema 1 a 5"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/9> a ns1:ScheduleEvent ;
+    ns1:eventIndex 9 ;
+    ns1:eventWeek "Semana 9"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/9/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/9/activity/TActivityType2/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/9/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 7.1: Series temporales"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/9/activity/TActivityType2/1> a ns1:ActivityType2 ;
+    ns1:activityDescription "Tema 6.4: Ejemplos y aplicaciones-I y II"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PL: Actividad del tipo Prácticas de Laboratorio"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus> a ns1:Syllabus ;
+    ns1:hasItem <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/0>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/18>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/19>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/20>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/21>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/22>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/23>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/24>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/25>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/26>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/27>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/28>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/29>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/30>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/31>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/32>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/33>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/34>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/35>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/36>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/37>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/0> a ns1:SyllabusItem ;
+    ns1:itemIndex 0 ;
+    ns1:syllabusDescription "1. Introducción y Revisión"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/1> a ns1:SyllabusItem ;
+    ns1:itemIndex 1 ;
+    ns1:syllabusDescription "1.1. Probabilidad y Estadística Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/10> a ns1:SyllabusItem ;
+    ns1:itemIndex 10 ;
+    ns1:syllabusDescription "4. Test de hipótesis"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/11> a ns1:SyllabusItem ;
+    ns1:itemIndex 11 ;
+    ns1:syllabusDescription "4.1. Test de hipótesis Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/12> a ns1:SyllabusItem ;
+    ns1:itemIndex 12 ;
+    ns1:syllabusDescription "4.2. Introducción a los tests bayesianos Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/13> a ns1:SyllabusItem ;
+    ns1:itemIndex 13 ;
+    ns1:syllabusDescription "5. Regresión simple"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/14> a ns1:SyllabusItem ;
+    ns1:itemIndex 14 ;
+    ns1:syllabusDescription "5.1. Revisión de conceptos. Correlación Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/15> a ns1:SyllabusItem ;
+    ns1:itemIndex 15 ;
+    ns1:syllabusDescription "5.2. Mínimos cuadrados ordinarios Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/16> a ns1:SyllabusItem ;
+    ns1:itemIndex 16 ;
+    ns1:syllabusDescription "5.3. Residuos y propiedades estadísticas de los estimadores Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/17> a ns1:SyllabusItem ;
+    ns1:itemIndex 17 ;
+    ns1:syllabusDescription "5.4. Ejemplos y Aplicaciones Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/18> a ns1:SyllabusItem ;
+    ns1:itemIndex 18 ;
+    ns1:syllabusDescription "6. Regresión múltiple"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/19> a ns1:SyllabusItem ;
+    ns1:itemIndex 19 ;
+    ns1:syllabusDescription "6.1. Estimación: Mínimos cuadrados ordinarios. Propiedades. Bondad de ajuste Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/2> a ns1:SyllabusItem ;
+    ns1:itemIndex 2 ;
+    ns1:syllabusDescription "1.2. Modelado e Inferencia Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/20> a ns1:SyllabusItem ;
+    ns1:itemIndex 20 ;
+    ns1:syllabusDescription "6.2. Inferencia y Test de hipótesis sobre modelos de regresión múltiple Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/21> a ns1:SyllabusItem ;
+    ns1:itemIndex 21 ;
+    ns1:syllabusDescription "6.3. Regresión con información cualitativa Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/22> a ns1:SyllabusItem ;
+    ns1:itemIndex 22 ;
+    ns1:syllabusDescription "6.4. Ejemplos y aplicaciones Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/23> a ns1:SyllabusItem ;
+    ns1:itemIndex 23 ;
+    ns1:syllabusDescription "7. Modelado de series temporales"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/24> a ns1:SyllabusItem ;
+    ns1:itemIndex 24 ;
+    ns1:syllabusDescription "7.1. Series temporales Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/25> a ns1:SyllabusItem ;
+    ns1:itemIndex 25 ;
+    ns1:syllabusDescription "7.2. Análisis de regresión de series temporales Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/26> a ns1:SyllabusItem ;
+    ns1:itemIndex 26 ;
+    ns1:syllabusDescription "7.3. Modelado MA, AR, ARMA, ARIMA Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/27> a ns1:SyllabusItem ;
+    ns1:itemIndex 27 ;
+    ns1:syllabusDescription "7.4. Métodos básicos de estimación de parámetros. Propiedades Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/28> a ns1:SyllabusItem ;
+    ns1:itemIndex 28 ;
+    ns1:syllabusDescription "7.5. Aplicaciones Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/29> a ns1:SyllabusItem ;
+    ns1:itemIndex 29 ;
+    ns1:syllabusDescription "8. Análisis espectral de secuencias de datos"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/3> a ns1:SyllabusItem ;
+    ns1:itemIndex 3 ;
+    ns1:syllabusDescription "2. Introducción a la Estadística Descriptiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/30> a ns1:SyllabusItem ;
+    ns1:itemIndex 30 ;
+    ns1:syllabusDescription "8.1. Concepto de espectro. Revisión y propiedades Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/31> a ns1:SyllabusItem ;
+    ns1:itemIndex 31 ;
+    ns1:syllabusDescription "8.2. Análisis Espectral paramétrico y no paramétrico Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/32> a ns1:SyllabusItem ;
+    ns1:itemIndex 32 ;
+    ns1:syllabusDescription "8.3. Aplicaciones Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/33> a ns1:SyllabusItem ;
+    ns1:itemIndex 33 ;
+    ns1:syllabusDescription "9. Introducción a la simulación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/34> a ns1:SyllabusItem ;
+    ns1:itemIndex 34 ;
+    ns1:syllabusDescription "9.1. Planteamiento y elementos de la simulación estadística Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/35> a ns1:SyllabusItem ;
+    ns1:itemIndex 35 ;
+    ns1:syllabusDescription "9.2. Simulación de series temporales y multidimensionales Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/36> a ns1:SyllabusItem ;
+    ns1:itemIndex 36 ;
+    ns1:syllabusDescription "9.3. Ejemplos Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/37> a ns1:SyllabusItem ;
+    ns1:itemIndex 37 ;
+    ns1:syllabusDescription "10. Conclusión: Interpretación de datos y Toma de Decisiones Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/4> a ns1:SyllabusItem ;
+    ns1:itemIndex 4 ;
+    ns1:syllabusDescription "2.1. Herramientas de descripción de datos. Aplicaciones Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/5> a ns1:SyllabusItem ;
+    ns1:itemIndex 5 ;
+    ns1:syllabusDescription "2.2. Muestreo aleatorio y estadísticos Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/6> a ns1:SyllabusItem ;
+    ns1:itemIndex 6 ;
+    ns1:syllabusDescription "3. Estimación de parámetros e intervalos de confianza"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/7> a ns1:SyllabusItem ;
+    ns1:itemIndex 7 ;
+    ns1:syllabusDescription "3.1. Métodos de estimación de parámetros Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/8> a ns1:SyllabusItem ;
+    ns1:itemIndex 8 ;
+    ns1:syllabusDescription "3.2. Introducción a la estimación bayesiana Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/syllabus/9> a ns1:SyllabusItem ;
+    ns1:itemIndex 9 ;
+    ns1:syllabusDescription "3.3. Intervalos de confianza Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/anamaria.bernardos%40upm.es> a ns1:Lecturer ;
+    ns1:office "C-315.1"@es ;
+    ns1:tutorshipsSchedule "Sin horario. Concertar cita por correo electrónico"@es ;
+    schema:email "anamaria.bernardos@upm.es" ;
+    schema:name "Bernardos Barbolla, Ana Maria" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/joseramon.casar%40upm.es> a ns1:Lecturer ;
+    ns1:office "C-316"@es ;
+    ns1:tutorshipsSchedule "Sin horario. Concertar cita por correo electrónico"@es ;
+    schema:email "joseramon.casar@upm.es" ;
+    schema:name "Casar Corredera, Jose Ramon" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/pedro.zufiria%40upm.es> a ns1:Lecturer ;
+    ns1:office "A-306"@es ;
+    ns1:tutorshipsSchedule "Sin horario. Concertar cita por correo electrónico"@es ;
+    schema:email "pedro.zufiria@upm.es" ;
+    schema:name "Zufiria Zatarain, Pedro Jose" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/8> a ns1:ScheduleEvent ;
+    ns1:eventIndex 8 ;
+    ns1:eventWeek "Semana 8"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/8/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/8/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/8/activity/TActivityType1/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/8/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/gonzalo.demiguel%40upm.es> a ns1:Lecturer ;
+    ns1:office "C-317"@es ;
+    ns1:tutorshipsSchedule "Sin horario. Concertar cita por correo electrónico"@es ;
+    schema:email "gonzalo.demiguel@upm.es" ;
+    schema:name "Miguel Vela, Gonzalo C. De" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/17> a ns1:ScheduleEvent ;
+    ns1:eventIndex 17 ;
+    ns1:eventWeek "Semana 17"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/17/activity/TEvaluationActivity/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/17/activity/TEvaluationActivity/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/95000517/2025-26/eventSchedule/17/activity/TEvaluationActivity/3> .
+

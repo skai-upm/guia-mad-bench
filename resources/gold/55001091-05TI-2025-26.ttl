@@ -1,0 +1,614 @@
+@prefix ns1: <http://w3id.org/def/guia#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/previous_courses> a ns1:RequiredKnowledge ;
+    ns1:previousCourses "El plan de estudios Grado En Ingeniería En Tecnologías Industriales no tiene definidos otros requisitos para esta asignatura."@es ;
+    ns1:previousKnowledge "El coordinador de la asignatura no ha definido otros conocimientos previos recomendados."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/E.T.S.%20De%20Ingenieros%20Industriales> a ns1:UniversityCenter ;
+    ns1:offers <https://guia-kg.skai.etsisi.upm.es/resource/05TI%20-%20Grado%20en%20Ingenier%C3%ADa%20en%20Tecnolog%C3%ADas%20Industriales> ;
+    schema:name "E.T.S. De Ingenieros Industriales" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/05TI%20-%20Grado%20en%20Ingenier%C3%ADa%20en%20Tecnolog%C3%ADas%20Industriales> a ns1:BachelorDegree ;
+    ns1:degreeCode "05TI"@es ;
+    ns1:hasCourse <https://guia-kg.skai.etsisi.upm.es/resource/55001091> ;
+    schema:name "Grado en Ingeniería en Tecnologías Industriales"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091> a ns1:Course ;
+    ns1:courseType "Optativa"@es ;
+    ns1:courseYear 4 ;
+    ns1:semester "Octavo semestre"@es ;
+    schema:courseCode 55001091 ;
+    schema:hasCourseInstance <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26> ;
+    schema:name "Mathematical Models In Electrical Engineering"@en,
+        "Modelos Matemáticos en Ingenieria Eléctrica"@es ;
+    schema:numberOfCredits 3.0 .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26> a ns1:CourseGuide ;
+    ns1:hasCompetency <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/CE24I>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/CE25I>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/CG1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/CG10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/CG3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/CG5> ;
+    ns1:hasDidacticResource <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/didactic_resource/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/didactic_resource/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/didactic_resource/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/didactic_resource/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/didactic_resource/5> ;
+    ns1:hasEvaluation <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/evaluation> ;
+    ns1:hasLearningResult <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/RA247>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/RA268>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/RA319>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/RA569>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/RA84>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/RA85> ;
+    ns1:hasSyllabus <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus> ;
+    ns1:inpersonHours "35 horas (44.9%)"@es ;
+    ns1:numberOfCredits 3.0 ;
+    ns1:otherInformation ""@es ;
+    ns1:periodEndingMonth "Junio"@es ;
+    ns1:periodStartingMonth "Febrero"@es ;
+    ns1:teachingPeriod "2025-26" ;
+    ns1:teachingPeriodMonths "Febrero-Junio"@es ;
+    ns1:totalHours "35 horas"@es ;
+    schema:activitiesWorkload "100%"@es ;
+    schema:courseSchedule <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule> ;
+    schema:description """La asignatura tiene por objetivo el análisis de los modelos de series temporales para explicar la evolución de una variable (tendencia, ciclos, estacionalidades, etc) y el estudio de las técnicas de aprendizaje automático en las que se deja al algoritmo cierta libertad para elegir el modelo.
+La base de la primera parte del curso son los modelos autorregresivos y de media móvil (ARIMA). Se explicará la metodología Box-Jenkins para su identificación, estimación y diagnosis. La segunda parte se dedicará principalmente a los modelos de redes neuronales.
+El cincuenta por ciento de las sesiones consistirá en ejercicios prácticos en las que se utilizará el programa estadístico R o Python. Los problemas a resolver estarán relacionados con el mercado eléctrico español: predicción de demanda de energía eléctrica, producción de energía solar y eólica, evolución de los precios de la electricidad, etc. El objetivo es desarrollar el curso a través de ejemplos. Entre los casos a estudiar se considerarán ejemplos de otras áreas distintas al mercado eléctrico, en el que se introducirán los conceptos y modelos fundamentales.
+Breve descripción de los dos estudios de caso que principalmente se tratarán en la asignatura:
+
+La predicción de la demanda de energía eléctrica:
+
+La energía eléctrica que se consume en España es necesaria producirla en el momento que se consume debido al problema que supone su almacenamiento. Por ello a la hora de programar la generación de energía eólica se necesita conocer una estimación de la demanda de energía eléctrica lo mejor posible. La demanda tiene una componente temporal muy clara ya que el consumo de energía eléctrica de las familias y empresas depende de las horas del día, pero también del día de la semana y con una dependencia de la meteorología, los mayores momentos de demanda de energía se producen durante las olas de frío o de calor. Por ello, la demanda de energía es una serie temporal con componentes estacionales diarias y semanales que se ve afectada por efectos del calendario (día de la semana, festivos, etc.) y con una correlación con la meteorología.
+
+La predicción de producción de energía eólica:
+
+La energía eólica aportó el 21,9% de la electricidad consumida en España en 2020 y el 49,7% de la energía renovable. Sin embargo su dependencia de la meteorología hace que su aportación al sistema sea muy variable a lo largo incluso del día. Tener buenas previsiones de su producción es muy importante para la buena y eficiente operación del sistema y para el incremento futuro del porcentaje de energía renovable cuya generación no es totalmente elegible (eólica y solar).
+
+Ambos problemas tienen una componente temporal clara. Habitualmente cuando uno piensa en un problema de estas características, este se puede abordar desde distintos puntos de vista, el primero es modelar el efecto de cada una de los factores que afectan a la variable a predecir y quedarse con aquellos que ajusten mejor los datos. Esto no deja de ser una regresión, donde la dependencia de las variables de entrada viene fijada por el modelo. Este será el enfoque en la primera parte de la asignatura. El segundo enfoque es el de buscar una buena regresión cualquiera que dados los datos de entrada aproxime los datos de salida sin modelo aparente. Es decir una regresión donde el tipo de función con el que se ajusta tiene muchos parámetros y en principio no tiene un modelo claro detrás. En este sentido la asignatura es continuación de la de análisis de datos o estadística. Este será el enfoque de la segunda parte de la asignatura.
+
+En cualquier caso un problema de regresión o aproximación, se puede ver como un problema de optimización, es decir, queremos encontrar la función de entre una cierta clase que mejor aproxima la función real. Para cuantificar ese ?mejor aproxima" es común utilizaz una noción de distancia o función de coste a minimizar. Es decir, lo que se quiere es elegir de entre todas las funciones de una cierta clase la que minimiza esa función de coste. Por ello en la segunda parte de la asignatura veremos algunas de las técnicas de optimización que se utilizan en este sentido (ayudará haber cursado Optimización y Simulación)."""@es ;
+    schema:director <https://guia-kg.skai.etsisi.upm.es/resource/carlos.gguillen%40upm.es> ;
+    schema:inLanguage "Castellano"@es ;
+    schema:instructor <https://guia-kg.skai.etsisi.upm.es/resource/carlos.gguillen%40upm.es>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/jesus.juan%40upm.es> ;
+    schema:name "Modelos Matemáticos en Ingenieria Eléctrica"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/CE24I> a ns1:Competency ;
+    ns1:competencyCode "CE24I" ;
+    ns1:competencyDescription "Capacidad para elegir y aplicar técnicas de modelado de grandes bases de datos y técnicas de predicción para variables cuantitativas y cualitativas."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/CE25I> a ns1:Competency ;
+    ns1:competencyCode "CE25I" ;
+    ns1:competencyDescription "Capacidad de relacionar y analizar exigencias y soluciones técnicas aplicando la metodología de implantación de modelos matemáticos a un caso práctico y de valorar y justificar los resultados."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/CG1> a ns1:Competency ;
+    ns1:competencyCode "CG1" ;
+    ns1:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Industrial."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/CG10> a ns1:Competency ;
+    ns1:competencyCode "CG10" ;
+    ns1:competencyDescription "Capacidad para generar nuevas ideas (Creatividad)."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/CG3> a ns1:Competency ;
+    ns1:competencyCode "CG3" ;
+    ns1:competencyDescription "Aplicar los conocimientos adquiridos para identificar, formular y resolver problemas dentro de contextos amplios y multidisciplinarios, siendo capaces de integrar conocimientos, trabajando en equipos multidisciplinares."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/CG5> a ns1:Competency ;
+    ns1:competencyCode "CG5" ;
+    ns1:competencyDescription "Saber comunicar los conocimientos y conclusiones, de forma oral, escrita y gráfica, a públicos especializados y no especializados de un modo claro y sin ambigüedades."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/RA247> a ns1:LearningResult ;
+    ns1:learningResultCode "RA247" ;
+    ns1:learningResultDescription "Planteamiento y modelización matemática de problemas de ingeniería, con especial atención a los más relevantes en la Especialidad de Ingeniería Eléctrica."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/RA268> a ns1:LearningResult ;
+    ns1:learningResultCode "RA268" ;
+    ns1:learningResultDescription "Capacidad de comunicar oral y por escrito los conocimientos adquiridos a especialistas y legos"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/RA319> a ns1:LearningResult ;
+    ns1:learningResultCode "RA319" ;
+    ns1:learningResultDescription "Reconocer e implementar buenas prácticas científicas y técnicas de medida y experimentación."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/RA569> a ns1:LearningResult ;
+    ns1:learningResultCode "RA569" ;
+    ns1:learningResultDescription "EUR"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/RA84> a ns1:LearningResult ;
+    ns1:learningResultCode "RA84" ;
+    ns1:learningResultDescription "Comprender las limitaciones de los modelos estadísticos cuando se trabaja con problemas reales. Evaluar posibles métodos alternativos."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/RA85> a ns1:LearningResult ;
+    ns1:learningResultCode "RA85" ;
+    ns1:learningResultDescription "Utilizar programas de ordenador de análisis estadístico general y de cálculo científico."@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/didactic_resource/1> a ns1:DidacticResource ;
+    ns1:bibliographyTitle "Apuntes de la asignatura"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/didactic_resource/2> a ns1:DidacticResource ;
+    ns1:bibliographyTitle "Géron, Aurélien. Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow: Concepts, tools, and techniques to build intelligent systems. O'Reilly Media, 2019."@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/didactic_resource/3> a ns1:DidacticResource ;
+    ns1:bibliographyTitle "Goodfellow, Ian, et al. Deep learning. Vol. 1. No. 2. Cambridge: MIT press, 2016."@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/didactic_resource/4> a ns1:DidacticResource ;
+    ns1:bibliographyTitle "Peña, Daniel \"Análisis de series temporales.\" La Rioja: Alianza Editorial (2010)"@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/didactic_resource/5> a ns1:DidacticResource ;
+    ns1:bibliographyTitle "Shumway, Robert H., and David S. Stoffer. \"Time Series Analysis and Its Applications: With R Examples.\" (2017)."@es ;
+    ns1:bibliographyType "Bibliografía"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/evaluation> a ns1:EvaluationSystem ;
+    ns1:evaluationDescription "Los alumnos de evaluación progresiva realizarán dos trabajos por los cuales se podrá obtener hasta el 60% de la nota y actividades de evaluación en aula mediante las cuales se podrá obtener hasta el 40% de la nota. Si no aprobaran estos trabajos o las actividades en aula, deberán realizar un examen escrito en la convocatoria ordinaria de la parte correspondiente."@es ;
+    ns1:hasEvaluationTrial <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/evaluation/trial1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/evaluation/trial2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/evaluation/trial3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/evaluation/trial4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/evaluation/trial5> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/evaluation/trial1> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "30%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/6> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE24I>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE25I>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG5> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Presentación de trabajo"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "6"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/evaluation/trial2> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "20%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/6> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Examen"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "6"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/evaluation/trial3> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "20%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/12> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE24I>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG5> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Examen final"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "12"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/evaluation/trial4> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "00:00"@es ;
+    ns1:evaluationType "progresiva"@es ;
+    ns1:gradePercentage "30%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/13> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE25I>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG5> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Presentación de trabajo"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "13"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/evaluation/trial5> a ns1:EvaluationTrial ;
+    ns1:evaluationDuration "02:00"@es ;
+    ns1:evaluationType "global"@es ;
+    ns1:gradePercentage "100%"@es ;
+    ns1:hasScheduleEvent <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/17> ;
+    ns1:involvesCompetency <https://guia-kg.skai.etsisi.upm.es/resource/CE24I>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CE25I>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/CG5> ;
+    ns1:minimumScore "5 / 10"@es ;
+    ns1:trialDescription "Examen final"@es ;
+    ns1:trialType "Presencial"@es ;
+    ns1:trialWeek "17"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule> a ns1:Schedule ;
+    schema:eventSchedule <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/15>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/16>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/17>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/1> a ns1:ScheduleEvent ;
+    ns1:eventIndex 1 ;
+    ns1:eventWeek "Semana 1"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/1/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/1/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/1/activity/TActivityType1/3> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/1/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Visita a OMIE e introducción al mercado eléctrico"@es ;
+    ns1:activityDuration "03:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "OT: Otras actividades formativas / Evaluación"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/1/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 1"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/1/activity/TActivityType1/3> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 1"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/10> a ns1:ScheduleEvent ;
+    ns1:eventIndex 10 ;
+    ns1:eventWeek "Semana 10"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/10/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/10/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/10/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 7.1"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/10/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 7.1"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/11> a ns1:ScheduleEvent ;
+    ns1:eventIndex 11 ;
+    ns1:eventWeek "Semana 11"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/11/activity/TActivityType1/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/11/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 7.2"@es ;
+    ns1:activityDuration "02:30" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/12/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 7.3"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/12/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 7.3"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/12/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Examen final"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/13/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Presentación de trabajo"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TI: Técnica del tipo Trabajo Individual"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/14> a ns1:ScheduleEvent ;
+    ns1:eventIndex 14 ;
+    ns1:eventWeek "Semana 14"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/15> a ns1:ScheduleEvent ;
+    ns1:eventIndex 15 ;
+    ns1:eventWeek "Semana 15"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/16> a ns1:ScheduleEvent ;
+    ns1:eventIndex 16 ;
+    ns1:eventWeek "Semana 16"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/17/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Examen final"@es ;
+    ns1:activityDuration "02:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Global"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/2> a ns1:ScheduleEvent ;
+    ns1:eventIndex 2 ;
+    ns1:eventWeek "Semana 2"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/2/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/2/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/2/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2.1"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/2/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2.1"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/3> a ns1:ScheduleEvent ;
+    ns1:eventIndex 3 ;
+    ns1:eventWeek "Semana 3"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/3/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/3/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/3/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2.2"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/3/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2.2"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/4> a ns1:ScheduleEvent ;
+    ns1:eventIndex 4 ;
+    ns1:eventWeek "Semana 4"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/4/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/4/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/4/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2.3"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/4/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 2.3"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/5> a ns1:ScheduleEvent ;
+    ns1:eventIndex 5 ;
+    ns1:eventWeek "Semana 5"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/5/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/5/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/5/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 3"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/5/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 3"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/6/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 4"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/6/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 4"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/6/activity/TEvaluationActivity/1> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Presentación de trabajo"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "TI: Técnica del tipo Trabajo Individual"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/6/activity/TEvaluationActivity/2> a ns1:EvaluationActivity ;
+    ns1:activityDescription "Examen"@es ;
+    ns1:activityDuration "00:00" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "EX: Técnica del tipo Examen Escrito"@es ;
+    ns1:attendanceType "Presencial"@es ;
+    ns1:evaluationType "Evaluación Progresiva"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/7> a ns1:ScheduleEvent ;
+    ns1:eventIndex 7 ;
+    ns1:eventWeek "Semana 7"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/7/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/7/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/7/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 5"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/7/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 5"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/8> a ns1:ScheduleEvent ;
+    ns1:eventIndex 8 ;
+    ns1:eventWeek "Semana 8"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/8/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/8/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/8/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 6.1"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/8/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 6.1"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/9> a ns1:ScheduleEvent ;
+    ns1:eventIndex 9 ;
+    ns1:eventWeek "Semana 9"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/9/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/9/activity/TActivityType1/2> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/9/activity/TActivityType1/1> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 6.2"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "LM: Actividad del tipo Lección Magistral"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/9/activity/TActivityType1/2> a ns1:ActivityType1 ;
+    ns1:activityDescription "Tema 6.2"@es ;
+    ns1:activityDuration "01:15" ;
+    ns1:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+    ns1:activityFormat "PR: Actividad del tipo Clase de Problemas"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus> a ns1:Syllabus ;
+    ns1:hasItem <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/0>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/10>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/11>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/12>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/13>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/14>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/3>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/4>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/5>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/6>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/7>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/8>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/9> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/0> a ns1:SyllabusItem ;
+    ns1:itemIndex 0 ;
+    ns1:syllabusDescription "1. Introducción a las Series temporales Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/1> a ns1:SyllabusItem ;
+    ns1:itemIndex 1 ;
+    ns1:syllabusDescription "2. Modelos Autorregresivos y de Media Móvil"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/10> a ns1:SyllabusItem ;
+    ns1:itemIndex 10 ;
+    ns1:syllabusDescription "6.2. Metodos Kernel Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/11> a ns1:SyllabusItem ;
+    ns1:itemIndex 11 ;
+    ns1:syllabusDescription "7. Redes Neuronales"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/12> a ns1:SyllabusItem ;
+    ns1:itemIndex 12 ;
+    ns1:syllabusDescription "7.1. Algoritmos de optimización y Backpropagation. Tasa de aprendizaje. Inicialización de parámetros Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/13> a ns1:SyllabusItem ;
+    ns1:itemIndex 13 ;
+    ns1:syllabusDescription "7.2. Curvas de aprendizaje. Técnicas de Regularización y aumento de datos Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/14> a ns1:SyllabusItem ;
+    ns1:itemIndex 14 ;
+    ns1:syllabusDescription "7.3. Redes neuronales profundas. Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/2> a ns1:SyllabusItem ;
+    ns1:itemIndex 2 ;
+    ns1:syllabusDescription "2.1. Modelos Autoregresivos: AR(p) Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/3> a ns1:SyllabusItem ;
+    ns1:itemIndex 3 ;
+    ns1:syllabusDescription "2.2. Modelos de Media Móvil: MA(q) Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/4> a ns1:SyllabusItem ;
+    ns1:itemIndex 4 ;
+    ns1:syllabusDescription "2.3. Modelos Autorregresivos y de Media Móvil: ARIMA(p,q). Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/5> a ns1:SyllabusItem ;
+    ns1:itemIndex 5 ;
+    ns1:syllabusDescription "3. Identificación y estimación de modelos ARIMA con R Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/6> a ns1:SyllabusItem ;
+    ns1:itemIndex 6 ;
+    ns1:syllabusDescription "4. Modelos Reg-Arima Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/7> a ns1:SyllabusItem ;
+    ns1:itemIndex 7 ;
+    ns1:syllabusDescription "5. Introducción al aprendizaje automatico Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/8> a ns1:SyllabusItem ;
+    ns1:itemIndex 8 ;
+    ns1:syllabusDescription "6. Máquinas de Vectores Soporte"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/syllabus/9> a ns1:SyllabusItem ;
+    ns1:itemIndex 9 ;
+    ns1:syllabusDescription "6.1. Caso lineal y no lineal. Sin subniveles"@es .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/jesus.juan%40upm.es> a ns1:Lecturer ;
+    ns1:office "Estadística"@es ;
+    schema:email "jesus.juan@upm.es" ;
+    schema:name "Juan Ruiz, Jesus" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/12> a ns1:ScheduleEvent ;
+    ns1:eventIndex 12 ;
+    ns1:eventWeek "Semana 12"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/12/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/12/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/12/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/13> a ns1:ScheduleEvent ;
+    ns1:eventIndex 13 ;
+    ns1:eventWeek "Semana 13"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/13/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/17> a ns1:ScheduleEvent ;
+    ns1:eventIndex 17 ;
+    ns1:eventWeek "Semana 17"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/17/activity/TEvaluationActivity/1> .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/carlos.gguillen%40upm.es> a ns1:Lecturer ;
+    ns1:office "Matematicas"@es ;
+    ns1:tutorshipsSchedule """X - 08:30 - 11:00
+X - 13:30 - 16:30
+Pedir cita por email"""@es ;
+    schema:email "carlos.gguillen@upm.es" ;
+    schema:name "Gonzalez Guillen, Carlos Eduardo" .
+
+<https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/6> a ns1:ScheduleEvent ;
+    ns1:eventIndex 6 ;
+    ns1:eventWeek "Semana 6"@es ;
+    ns1:hasActivity <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/6/activity/TActivityType1/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/6/activity/TActivityType1/2>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/6/activity/TEvaluationActivity/1>,
+        <https://guia-kg.skai.etsisi.upm.es/resource/55001091/2025-26/eventSchedule/6/activity/TEvaluationActivity/2> .
+
