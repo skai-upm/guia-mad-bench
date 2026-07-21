@@ -15,8 +15,8 @@ from pathlib import Path
 from typing import Iterable
 import pandas as pd
 
-from efficiency_metrics.generation import evaluate_efficiency
-from efficiency_metrics.correctness_efficiency import evaluate_benchmark as evaluate_correctness
+from efficiency.generation import evaluate_efficiency
+from efficiency.correctness_efficiency import evaluate_benchmark as evaluate_correctness
 
 
 def _check_efficiency_inputs(pred_dir: Path, gold_dir: Path, monitor_csv: Path) -> None:
