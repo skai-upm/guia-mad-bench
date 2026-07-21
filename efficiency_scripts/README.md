@@ -1,20 +1,22 @@
-# Evaluación de Eficiencia (GUIA-MAD-BENCH)
+# Efficiency Evaluation (GUIA-MAD-BENCH)
 
-Este módulo se encarga de calcular exclusivamente las **Métricas de Eficiencia de Generación** y **Métricas de Eficiencia de Correctitud** de las propuestas de extracción RDF. Está diseñado para ofrecer una evaluación computacional y de productividad sin incurrir en los altos costes de cálculo de las métricas semánticas estrictas de efectividad.
+This module is responsible for exclusively calculating the **Generation Efficiency Metrics** and **Correctness Efficiency Metrics** of RDF extraction proposals. It is designed to provide a computational and productivity evaluation without incurring the high computational costs of strict semantic effectiveness metrics.
 
-## 📋 Prerrequisitos
+## 📋 Prerequisites
 
-Antes de ejecutar este script, es **estrictamente necesario** haber ejecutado el monitor de sistema (`monitor.py`) durante la inferencia de tu modelo. 
+Before running this script, it is **strictly necessary** to have run the system monitor (`monitor.py`) during your model's inference.
 
-El script de eficiencia buscará el archivo `monitor_results_summary.csv` en el directorio de salida para extraer el tiempo total de ejecución ($T_{seconds}$). Sin este archivo, las métricas no se podrán calcular.
+The efficiency script will look for the `monitor_results_summary.csv` file in the output directory to extract the total execution time ($T_{seconds}$). **Without this file, the metrics cannot be calculated.**
 
-## 🚀 Uso
+## 🚀 Usage
 
-Para ejecutar el cálculo de eficiencia, utiliza el script `run_efficiency.py` pasando las rutas a los datos generados (predicciones), el estándar de oro (Gold Standard) y la ontología.
+To execute the efficiency calculation, use the `run_efficiency.py` script by passing the paths to the generated data (predictions), the gold standard, and the ontology.
 
 ```bash
 python run_efficiency.py \
-  --pred-dir ruta/a/predicciones_ttl \
-  --gold-dir ruta/a/gold_standard_ttl \
-  --ontology ruta/a/ontologia.owl \
-  --output-dir ruta/a/resultados
+  --pred-dir path/to/predictions_ttl \
+  --gold-dir path/to/gold_standard_ttl \
+  --ontology path/to/ontology.owl \
+  --output-dir path/to/results
+
+```
