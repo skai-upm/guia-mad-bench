@@ -4,8 +4,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from rdflib import Graph
-from guia_metrics.rdf_utils import load_rdf, extract_ontology_classes, extract_ontology_properties
-from guia_metrics.evaluate import build_universe_po
+from utils import load_rdf, extract_ontology_classes, extract_ontology_properties, build_universe_po
 
 try:
     from sentence_transformers import SentenceTransformer, util
