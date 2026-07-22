@@ -4,7 +4,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from rdflib import Graph
-from efficiency_utils import load_rdf, extract_ontology_classes, extract_ontology_properties, build_universe_po
+from .efficiency_utils import load_rdf, extract_ontology_classes, extract_ontology_properties, build_universe_po
 
 try:
     from sentence_transformers import SentenceTransformer, util
