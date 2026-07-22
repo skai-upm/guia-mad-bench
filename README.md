@@ -146,7 +146,7 @@ Open it in a browser to compare the results of the evaluated systems.
 
 ### 4. Compute efficiency metrics
 
-After running your RDF generation process with the monitoring script, compute efficiency metrics as follows:
+After running your RDF generation process with the monitoring script (monitor.py), compute efficiency metrics as follows:
 
 ```bash
 cd ../efficiency_scripts
