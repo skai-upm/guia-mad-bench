@@ -1,0 +1,138 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:CourseGuide_53001432 rdf:type guide:CourseGuide ;
+    sch:name "Integración De Procesos Químicos" ;
+    guide:numberOfCredits 4.5 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Tercer semestre" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCourse :Course_53001432 ;
+    guide:hasCompetency :Comp_CE1, :Comp_CE2, :Comp_CE3, :Comp_CG2, :Comp_CG5 ;
+    guide:hasLearningResult :LR_RA69, :LR_RA67 ;
+    guide:hasEvaluation :EvalSystem_53001432 ;
+    guide:hasDidacticResource :Res_Kemp, :Res_Smith ;
+    sch:instructor :Lecturer_Francisco ;
+    sch:director :Lecturer_Francisco .
+
+# Course Instance
+:Course_53001432 rdf:type guide:Course ;
+    sch:courseCode 53001432 ;
+    guide:courseYear 2025 ;
+    sch:hasCourseInstance :CourseGuide_530014_2526 .
+
+# Degree Instance
+:Degree_05BC rdf:type guide:MasterDegree ;
+    sch:name "Master Universitario En Ingenieria Quimica" ;
+    guide:degreeCode "05BC" .
+
+# University Center Instance
+:UnivCenter_ETS rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Industriales" .
+
+# Lecturer Instances
+:Lecturer_Manuel rdf:type guide:Lecturer ;
+    sch:name "Manuel Rodriguez Hernandez" ;
+    sch:email "manuel.rodriguezh@upm.es" ;
+    guide:office "201" ;
+    guide:tutorshipsSchedule "M - 14:30 - 15:30" .
+
+:Lecturer_Francisco rdf:type guide:Lecturer ;
+    sch:name "Francisco Ismael Diaz Moreno" ;
+    sch:email "ismael.diaz@upm.es" ;
+    guide:office "207" ;
+    guide:tutorshipsSchedule "M - 14:30 - 15:30" .
+
+# Competency Instances
+:Comp_CE1 rdf:type guide:Competency ;
+    guide:competencyCode "CE1" ;
+    guide:competencyDescription "Aplicar conocimientos de matemáticas, física, química, biología y otras ciencias naturales..." .
+
+:Comp_CE2 rdf:type guide:Competency ;
+    guide:competencyCode "CE2" ;
+    guide:competencyDescription "Diseñar productos, procesos, sistemas y servicios de la industria química..." .
+
+:Comp_CE3 rdf:type guide:Competency ;
+    guide:competencyCode "CE3" ;
+    guide:competencyDescription "Conceptualizar modelos de ingeniería, aplicar métodos innovadores..." .
+
+:Comp_CG2 rdf:type guide:Competency ;
+    guide:competencyCode "CG2" ;
+    guide:competencyDescription "Concebir, proyectar, calcular, y diseñar procesos, equipos, instalaciones industriales..." .
+
+:Comp_CG5 rdf:type guide:Competency ;
+    guide:competencyCode "CG5" ;
+    guide:competencyDescription "Saber establecer modelos matemáticos y desarrollarlos mediante la informática apropiada..." .
+
+# Learning Result Instances
+:LR_RA69 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA69" ;
+    guide:learningResultDescription "Ser capaz de realizar la evaluación económica básica de un proceso químico" .
+
+:LR_RA67 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA67" ;
+    guide:learningResultDescription "Ser capaz de realizar la integración energética de un proceso químico" .
+
+# Evaluation System and Trials
+:EvalSystem_53001432 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva, global y extraordinaria." ;
+    guide:hasEvaluationTrial :Trial_TareasEnergia, :Trial_PruebaIntegracion, :Trial_EntregasMasica .
+
+:Trial_TareasEnergia rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Tareas integración energética" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "15%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+:Trial_PruebaIntegracion rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Prueba integración energética" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+:Trial_EntregasMasica rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Entregas integración másica" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "No presencial" .
+
+# Schedule and Activities
+:Schedule_53001432 rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week1, :Event_Week2, :Event_Week3, :Event_Week4, :Event_Week5, :Event_Week6, :Event_Week7, :Event_Week8, :Event_Week9, :Event_Week10, :Event_Week12, :Event_Week13, :Event_Week14, :Event_Week17 .
+
+:Event_Week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :Act_LeccionMagistral_Fundamentos .
+
+:Act_LeccionMagistral_Fundamentos rdf:type guide:Activity ;
+    guide:activityDescription "Clase teórica. Fundamentos" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:Res_Kemp rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Kemp, I. C. (200<0xC2>                7). Pinch Analysis and Process Integration (Second Edition). Oxford: Butterworth-Heinemann." ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_Smith rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Smith, R. (2005), Chemical Process Design and Integration. Ed. John Willey and Sons." ;
+    guide:bibliographyType "Bibliografía" .
+
+# Required Knowledge
+:ReqKnow_Previas rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Process Design Project Ii, OptimizaciÓn De Procesos, IngenierÍa De Procesos Y Productos, Process Design Project I" .
+
+# Other Information
+:CourseGuide_53001432 guide:otherInformation "Esta asignatura contribuye al ODS 7 ya que se trata específicamente el tema del uso eficiente de la energía en los sistemas de la industria química." .

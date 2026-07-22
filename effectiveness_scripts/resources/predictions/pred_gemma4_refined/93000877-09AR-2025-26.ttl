@@ -1,0 +1,158 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:course_guide_93000877 rdf:type guide:CourseGuide ;
+    sch:name "Redes Neuronales Y Aprendizaje Estadístico" ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriod "2: 2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:totalHours "26-27 hours per ECTS" ;
+    guide:hasSyllabus :syllabus_93000877 ;
+    guide:hasCompetency :comp_CE1, :comp_CE2, :comp_CE4, :comp_CE5, :comp_CE6, :comp_CG1, :comp_CG3, :comp_CG5, :comp_CG6 ;
+    guide:hasLearningResult :lr_RA54, :lr_RA53, :lr_RA55, :lr_RA8, :lr_RA28 ;
+    guide:hasEvaluation :eval_system_93000877 ;
+    guide:hasDidacticResource :res_alpaydin, :res_bishop, :res_cucker, :res_deisenroth, :res_goodfellow, :res_haykin, :res_herbrich, :res_james, :res_kohonen, :res_martin, :res_mitchell, :res_pearl, :res_vapnik, :res_vidyasagar_nonlinear, :res_vidyasagar_learning ;
+    sch:instructor :prof_pedro_zufiria ;
+    sch:director :prof_pedro_implicado ;
+    sch:description "Se presentan diferentes tipos de problemas que se pueden abordar mediante técnicas de aprendizaje estadístico." .
+
+# Course Instance
+:course_93000877 rdf:type guide:Course ;
+    sch:name "93000877 - Redes Neuronales Y Aprendizaje Estadístico" ;
+    guide:courseYear 2025 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Segundo semestre" ;
+    sch:hasCourseInstance :course_guide_93000877 .
+
+# Degree Instance
+:degree_09AR rdf:type guide:MasterDegree ;
+    sch:name "09AR - Master Univ. En Tratament Estadistico-Computacional De La Informacion" ;
+    guide:degreeCode "09AR" .
+
+# University Center Instance
+:univ_center_ets rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros De Telecomunicacion" ;
+    guide:offers :degree_09AR .
+
+# Lecturer Instance
+:prof_pedro_zufiria rdf:type guide:Lecturer ;
+    sch:name "Pedro Jose Zufiria Zatarain" ;
+    sch:email "pedro.zufiria@upm.es" ;
+    guide:office "A-306" ;
+    guide:tutorshipsSchedule "Sin horario. Flexible, previa petición de cita." .
+
+:prof_pedro_implicado rdf:type guide:Lecturer ;
+    sch:name "Pedro Jose Zufiria Zatarain" .
+
+# Syllabus and Items
+:syllabus_93000877 rdf:type guide:Syllabus ;
+    guide:hasItem :item_unit1, :item_unit2, :item_unit3, :item_unit4, :item_unit5, :item_unit6, :item_unit7 .
+
+:item_unit1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción: tipos de problemas; aprendizaje automático y aprendizaje estadístico; redes neuronales artificiales." .
+
+:item_unit2 rdf:type guide:SylabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Fundamentos matemáticos: dinámica de sistemas; teoría de optimización; inferencia estadística y teoría de regresión (lineal y logística)." .
+
+:item_unit3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Aprendizaje supervisado: regresión y clasificación; modelos neuronales y otros modelos para su implementación." .
+
+:item_unit4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Aprendizaje no supervisado; modelos neuronales para su implementación." .
+
+:item_unit5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Modelos alternativos/avanzados para aprendizaje supervisado y no supervisado: modelos gráficos, máquinas de Boltzmann, arquitecturas profundas, etc." .
+
+:item_unit6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Otros tipos de problemas: aprendizaje en entornos dinámicos, aprendizaje por refuerzo, aprendizaje semisupervisado, inferencia causal, etc." .
+
+:item_unit7 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Aplicaciones prácticas: tratamiento de señal, optimización de funciones tipo caja negra, predicción en series temporales, diagnóstico de fallos, control de sistemas y análisis de redes complejas." .
+
+# Competencies
+:comp_CE1 rdf:type guide:Competency ; guide:competencyCode "CE1" ; guide:competencyDescription "Adquisición de una formación sólida y rigurosa en temas avanzados de Estadística, Matemática computacional..." .
+:comp_CE2 rdf:type guide:Competency ; guide:competencyCode "CE2" ; guide:competencyDescription "Capacidad para planificar la resolución de un problema en función de las herramientas de que se disponga..." .
+:comp_CE4 rdf:type guide:Competency ; guide:competencyCode "CE4" ; guide:competencyDescription "Desarrollar habilidades de aprendizaje en Estadística Computacional y Matemáticas..." .
+:comp_CE5 rdf:type guide:Competency ; guide:competencyCode "CE5" ; guide:competencyDescription "Resolver problemas y casos reales planteados en el tratamiento estadístico-computacional..." .
+:comp_CE6 rdf:type guide:Competency ; guide:competencyCode "CE6" ; guide:competencyDescription "Desarrollar programas que resuellam problemas matemáticos utilizando para cada caso el entorno computacional adecuado." .
+:comp_CG1 rdf:type guide:Competency ; guide:competencyCode "CG1" ; guide:competencyDescription "Aprender a aplicar los conocimientos adquiridos y a explotar su potencial..." .
+:comp_CG3 rdf:type guide:Competency ; guide:competencyCode "CG3" ; guide:competencyDescription "Integrar los conocimientos adecuados y enfrentarse a la complejidad de emitir juicios..." .
+:comp_CG5 rdf:type guide:Competency ; guide:competencyCode "CG5" ; guide:competencyDescription "Comprender y utilizar el lenguaje y las herramientas matemáticas para modelizar y resolver problemas complejos..." .
+:comp_CG6 rdf:type guide:Competency ; guide:competencyCode "CG6" ; guide:competencyDescription "Conocer los modelos, métodos y técnicas relevantes en distintas áreas de aplicación..." .
+
+# Learning Results
+:lr_RA54 rdf:type guide:LearningResult ; guide:learningResultCode "RA54" ; guide:learningResultDescription "Capacidad para diseñar modelos neuronales que resuelvan problemas de aprendizaje estadístico." .
+:lr_RA53 rdf:type guide:LearningResult ; guide:learningResultCode "RA53" ; guide:learningResultDescription "Capacidad para delimitar tipos de problemas de aprendizaje estadístico." .
+:lr_RA55 rdf:type guide:LearningResult ; guide:learningResultCode "RA55" ; guide:learningResultDescription "Capacidad para simular los modelos neuronales en plataformas de propósito general (R, Octave)." .
+:lr_RA8 rdf:type guide:LearningResult ; guide:learningResultCode "RA8" ; guide:learningResultDescription "Sabrán emplear los métodos y modelos de esta disciplina en su futura actividad investigadora." .
+:lr_RA28 rdf:type guide:LearningResult ; guide:learningResultCode "RA28" ; guide:learningResultDescription "Los alumnos conocerán los fundamentos matemáticos necesarios para contextualizar los modelos neuronales..." .
+
+# Evaluation System and Trials
+:eval_system_93000877 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación progresiva se traduce en una calificación ponderada entre los ejercicios realizados on-line, en clase y el trabajo final." ;
+    guide:hasEvaluationTrial :trial_exercises_moodle_w2, :trial_simulations_w5, :trial_exam_written_w9, :trial_final_work_w10 .
+
+:trial_exercises_moodle_w2 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "10%" ;
+    guide:trialMode "No presencial" ;
+    guide:eventSchedule :event_week2 .
+
+:trial_simulations_w5 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:trialMode "No presencial" ;
+    guide:eventSchedule :event_week5 .
+
+:trial_exam_written_w9 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "30%" ;
+    guide:trialMode "Presencial" ;
+    guide:eventSchedule :event_week9 .
+
+:trial_final_work_w10 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "30%" ;
+    guide:trialMode "No presencial" ;
+    guide:eventSchedule :event_week10 .
+
+# Schedule Events
+:event_week2 rdf:type guide:ScheduleEvent ; guide:eventWeek "Semana 2" .
+:event_week5 rdf:type guide:ScheduleEvent ; guide:eventWeek "Semana 5" .
+:event_week9 rdf:type guide:ScheduleEvent ; guide:eventWeek "Semana 9" .
+:event_week10 rdf:type guide:ScheduleEvent ; guide:eventWeek "Semana 10" .
+
+# Didactic Resources
+:res_alpaydin rdf:type guide:DidacticResource ; guide:bibliographyTitle "Introduction to Machine Learning" ; guide:bibliographyDescription "E. Alpaydin, MIT Press, 2004" .
+:res_bishop rdf:type guide:DidacticResource ; guide:bibliographyTitle "Pattern Recognition and Machine Learning" ; guide:bibliographyDescription "C. Bishop" .
+:res_cucker rdf:type guide:DidacticResource ; guide:bibliographyTitle "Learning Theory. An Approximation Theory Viewprint" ; guide:bibliographyDescription "F. Cucker and D. X. Zhou, Cambridge University Press, 2007" .
+:res_deisenroth rdf:type guide:DidacticResource ; guide:bibliographyTitle "Mathematics for Machine Learning" ; guide:bibliographyDescription "M. P. Deisenroth et al., Cambridge University Press, 2020" .
+:res_goodfellow rdf:type guide:DidacticResource ; guide:bibliographyTitle "Deep Learning" ; guide:bibliographyDescription "I. Goodfellow, W. Bengio and A. Courville, 2016" .
+:res_haykin rdf:type guide:DidacticResource ; guide:bibliographyTitle "Neural Networks and Learning Machines" ; guide:bibliographyDescription "S. Haykin, Prentice Hall, 2008" .
+:res_herbrich rdf:type guide:DidacticResource ; guide:bibliographyTitle "Learning Kernel Classifiers. Theory and algorithms" ; guide:bibliographyDescription "R. Herbrich, MIT Press, 2002" .
+:res_james rdf:type guide:DidacticResource ; guide:bibliographyTitle "An Introduction to Statistical Learning" ; guide:bibliographyDescription "G. James, D. Witten, T. Hastie, R. Tibshirani, Springer, 2014" .
+:res_kohonen rdf:type guide:DidacticResource ; guide:bibliographyTitle "Self-Organizing Maps" ; guide:bibliographyDescription "T. Kohonen, Springer, 1995" .
+:res_martin rdf:type guide:DidacticResource ; guide:bibliographyTitle "Aplicación de las redes neuronales artificiales a la regresión" ; guide:bibliographyDescription "Q. Martín, Y. de Paz, Cuadernos de Estadística, 2007" .
+:res_mitchell rdf:type guide:DidacticResource ; guide:bibliographyTitle "Machine Learning" ; guide:bibliographyDescription "T. M. Mitchell, McGraw-Hill, 1997" .
+:res_pearl rdf:type guide:DidacticResource ; guide:bibliographyTitle "Causal Inference in Statistics. A primer" ; guide:bibliographyDescription "J. Pearl et al., Wiley 2016" .
+:res_vapnik rdf:type guide:DidacticResource ; guide:bibliographyTitle "Statistical Learning Theory" ; guide:bibliographyDescription "V. N. Vapnik, John Wiley & Sons, 1998" .
+:res_vidyasagar_nonlinear rdf:type guide:DidacticResource ; guide:bibliographyTitle "Nonlinear Systems Analysis" ; guide:bibliographyDescription "M. Vidyasagar, Prentice-Hall, Inc., 1993" .
+:res_vidyasagar_learning rdf:type guide:DidacticResource ; guide:bibliographyTitle "Learning and Generalisation" ; guide:bibliographyDescription "M. Vidyasagar, Springer, 2003" .
+
+# Software/Other Resources
+:res_r rdf:type guide:DidacticResource ; guide:bibliographyTitle "R" ; guide:bibliographyType "Otros" ; guide:bibliographyDescription "Entorno de programación para procesamiento estadístico de datos." .
+:res_python rdf:type guide:DidacticResource ; guide:bibliographyTitle "Python" ; guide:bibliographyType "Otros" ; guide:bibliographyDescription "Entorno de programación para procesamiento estadístico de datos." .

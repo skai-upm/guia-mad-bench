@@ -1,0 +1,215 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+guide:GA_04AI_43000554_2025_26
+    rdf:type guide:CourseGuide ;
+    sch:name "Experimental Structural Analysis" ;
+    sch:description "This course deals with the fundamentals and applications of experimental techniques in structural engineering. This course is divided into three parts: the first part is aimed at the study of instrumentation techniques and equipment; the second part deals with the design of load tests in bridges and buildings; the goal of the last part is the study of dynamic testing techniques." ;
+    guide:numberOfCredits 4.5 ;
+    guide:courseType "Optional/elective" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "September" ;
+    guide:periodEndingMonth "January" ;
+    sch:inLanguage "English" ;
+    sch:instructor guide:Carlos_Martin_De_La_Concha_Renedo ;
+    sch:director guide:Carlos_Zanuy_Sanches ;
+    guide:hasSyllabus guide:Syllabus_ExpStructAnal ;
+    guide:hasCompetency guide:MICCPCE38, guide:MICCPCGP11, guide:MICCPCT01, guide:MICCPCT03, guide:MICCPCT08 ;
+    guide:hasLearningResult guide:RA121, guide:RA122 ;
+    guide:hasEvaluation guide:EvalSystem_ExpStructAnal ;
+    sch:courseSchedule guide:Schedule_ExpStructAnal ;
+    guide:hasDidacticResource guide:Moodle_Platform, guide:Book_Instrumentacion_Aplicada, guide:Book_Modal_Testing, guide:Book_Analisis_Experimental, guide:Equipment_Lab_Structures ;
+    guide:otherInformation "Semester 3" .
+
+# Course Instance
+guide:43000554
+    rdf:type guide:Course ;
+    sch:courseCode 43000554 ;
+    sch:numberOfCredits 4.5 ;
+    guide:courseType "Optional/elective" ;
+    sch:hasCourseInstance guide:GA_04AI_43000554_2025_26 .
+
+# Degree Programme
+guide:04AI
+    rdf:type guide:MasterDegree ;
+    sch:name "04AI - Doble Master Universitario En Iccp Y En Sistemas De Ingenieria Civil" ;
+    guide:hasCourse guide:43000554 .
+
+# University Center
+guide:ETS_Caminos
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ing. De Caminos Canales Y P." ;
+    guide:offers guide:04AI .
+
+# Faculty Members
+guide:Carlos_Martin_De_La_Concha_Renedo
+    rdf:type guide:Lecturer ;
+    sch:name "Carlos Martin De La Concha Renedo" ;
+    sch:email "carlos.martindelaconcha@upm.es" ;
+    guide:office "Lab. Structures" ;
+    guide:tutorshipsSchedule "Tu - 11:00 - 12:00, Th - 11:00 - 12:00" .
+
+guide:Antonio_Jose_Madrid_Ramos
+    rdf:type guide:Lecturer ;
+    sch:name "Antonio Jose Madrid Ramos" ;
+    sch:email "antoniojose.madrid@upm.es" ;
+    guide:office "Lab. Structures" ;
+    guide:tutorshipsSchedule "Th - 10:30 - 13:30, F - 16:00 - 19:00" .
+
+guide:Ivan_Munoz_Diaz
+    rdf:type guide:Lecturer ;
+    sch:name "Ivan Muñoz Diaz" ;
+    sch:email "ivan.munoz@upm.es" ;
+    guide:office "Lab. Structures" ;
+    guide:tutorshipsSchedule "W - 11:00 - 14:00, Th - 11:00 - 14:00" .
+
+guide:Carlos_Zanuy_Sanches
+    rdf:type guide:Lecturer ;
+    sch:name "Carlos Zanuy Sanchez" ;
+    sch:email "carlos.zanuy@upm.es" ;
+    guide:office "Lab. Structures" ;
+    guide:tutorshipsSchedule "Th - 11:00 - 14:00, F - 11:00 - 14:00" .
+
+guide:Jose_Manuel_Soria_Herrera
+    rdf:type guide:Lecturer ;
+    sch:name "Jose Manuel Soria Herrera" ;
+    sch:email "jm.soria@upm.es" ;
+    guide:office "9th Floor" ;
+    guide:tutorshipsSchedule "Tu - 12:00 - 14:00, W - 12:00 - 14:00, Th - 12:00 - 14:00" .
+
+guide:Gonzalo_Sanz_Diez
+    rdf:type guide:Lecturer ;
+    sch:name "Gonzalo Sanz-Diez De Ulzurrun Casals" ;
+    sch:email "g.ulzurrun@upm.es" ;
+    guide:office "Lab. Structures" ;
+    guide:tutorshipsSchedule "Th - 11:00 - 16:00" .
+
+# Competencies
+guide:MICCPCE38
+    rdf:type guide:Competency ;
+    guide:competencyCode "MICCPCE3．38" ;
+    guide:competencyDescription "Capacidad para integrar y aplicar los conocimientos técnicos en asesoría, análisis, diseño y modelización físico-matemática en ingeniería estructural." .
+
+guide:MICCPCGP11
+    rdf:type guide:Competency ;
+    guide:competencyCode "MICCPCGP11" ;
+    guide:competencyDescription "Capacidad para el proyecto, ejecución e inspección de estructuras (puentes, edificaciones, etc.), de obras de cimentación y de obras subterráneas de uso civil (túneles, aparcamientos), y el diagnóstico sobre su integridad." .
+
+guide:MICCPCT01
+    rdf:type guide:Competency ;
+    guide:competencyCode "MICCPCT01" ;
+    guide:competencyDescription "Capacidad de preparar y presentar comunicaciones orales, escritas y gráficas, estructurada y argumentadamente." .
+
+guide:MICCPCT03
+    rdf:type guide:Competency ;
+    guide:competencyCode "MICCPCT03" ;
+    guide:competencyDescription "Capacidad de comunicación técnica oral y escrita en lengua inglesa." .
+
+guide:MICCPCT08
+    rdf:<0xC2>type guide:Competency ;
+    guide:competencyCode "MICCPCT08" ;
+    guide:competencyDescription "Capacidad de diseñar, analizar e interpretar experimentos relevantes en ingeniería civil." .
+
+# Learning Results
+guide:RA121
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA121" ;
+    guide:learningResultDescription "The student knows the fundamentals and applications of the most relevant transducers for instrumentation of structures." .
+
+guide:RA122
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA122" ;
+    guide:learningResultDescription "The student acquires the fundamentals of static and dynamic experimental techniques in structural engineering, and understands the structural implications of taken measurements." .
+
+# Syllabus
+guide:Syllabus_ExpStructAnal
+    rdf:type guide:Syllabus ;
+    guide:hasItem guide:Unit1, guide:Unit2, guide:Unit3, guide:Unit4, guide:Unit5, guide:Unit6, guide:Unit7, guide:Unit8, guide:Unit9, guide:Unit10, guide:Unit11, guide:Unit12 .
+
+guide:Unit1
+    rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Introduction to instrumentation" ;
+    guide:itemIndex 1 .
+
+guide:Unit2
+    rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Signal conditioning" ;
+    guide:itemIndex 2 .
+
+# Evaluation System and Trials
+guide:EvalSystem_ExpStructAnal
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Continuous assessment (EM1, EM2) and Final exam only." ;
+    guide:hasEvaluationTrial guide:Trial_Tasks, guide:Trial_FinalExam .
+
+guide:Trial_Tasks
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Assignment" ;
+    guide:trialDescription "Resolution and submission of assigned tasks (exercises and case-studies)" ;
+    guide:gradePercentage "5.7%" ;
+    guide:minimumScore "3.5 / 10" ;
+    guide:evaluationDuration "03:00" ;
+    guide:trialMode "Not Presential" .
+
+guide:Trial_FinalExam
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Written test" ;
+    guide:trialDescription "Final exam" ;
+    guide:gradePercentage "60.1%" ;
+    guide:minimumScore "3.5 / 10" ;
+    guide:evaluationDuration "03:00" ;
+    guide:trialMode "Face-to-face" .
+
+# Schedule and Activities
+guide:Schedule_ExpStructAnal
+    rdf:type guide:Schedule ;
+    sch:eventSchedule guide:Event_Week4, guide:Event_Week17 .
+
+guide:Event_Week4
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "4" ;
+    guide:hasActivity guide:Activity_Tasks .
+
+guide:Activity_Tasks
+    rdf:type guide:Activity ;
+    guide:activityDescription "Resolution and submission of assigned tasks (exercises and case-studies)" ;
+    guide:activityDuration 3.0 ;
+    guide:attendanceType "Not Presential" .
+
+guide:Event_Week17
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "17" ;
+    guide:hasActivity guide:Activity_FinalExam .
+
+guide:Activity_FinalExam
+    rdf:type guide:Activity ;
+    guide:activityDescription "Final exam - Written test" ;
+    guide:activityDuration 3.0 ;
+    guide:attendanceType "Face-to-face" .
+
+# Didactic Resources
+guide:Moodle_Platform
+    rdf:type guide:DidacticResource ;
+    sch:name "Moodle platform" ;
+    guide:bibliographyType "Web resource" .
+
+guide:Book_Instrumentacion_Aplicada
+    rdf:type guide:DidacticResource ;
+    sch:name "Instrumentación aplicada a la ingeniería" ;
+    guide:bibliographyDescription "Fraile Mora J., García Gutiérrez P., Fraile Ardanuy J. (2012). Editorial Garceta, Madrid." .
+
+guide:Book_Modal_Testing
+    rdf:type guide:DidacticResource ;
+    sch:name "Modal Testing: theory, practice and Application" ;
+    guide:bibliographyDescription "Ewins D. J. (2000). Editorial Research Studies Press." .
+
+guide:Equipment_Lab_Structures
+    rdf:type guide:DidacticResource ;
+    sch:name "Laboratory of Structures" ;
+    guide:bibliographyType "Equipment" .

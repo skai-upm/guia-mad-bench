@@ -1,0 +1,911 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide/anx-pr-cl-001-01> a :CourseGuide ;
+    dc:title "Guía de Aprendizaje - Modelado De Sistemas Biomédicos"@en ;
+    dct:creator <http://w3id.org/def/guia#Gema_Garcia_Saez>,
+               <http://w3id.org/def/guia#Maria_Elena_Hernando_Perez> ;
+    sch:name "Modelado De Sistemas Biomédicos"@en ;
+    guide:numberOfCredits 3^^xsd:decimal ;
+    dct:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
+    rdfs:comment "Guía de aprendizaje para el Master Universitario En Ingenieria Biomedica, Curso Académico 2025-26"@en .
+
+<http://guia-mad-bench.es/data/course-guide/anx-pr-cl-001-01> sch:courseCode "93000965"^^xsd:string ;
+    guide:syllabus <http://guia-mad-bench.es/data/syllabus/ANX_PR_CL_001_01> .
+
+<http://w3id.org/def/guia#Gema_Garcia_Saez> a :Lecturer ;
+    sch:name "Gema Garcia Saez"@en ;
+    sch:email <mailto:gema.garcia.saez@upm.es> ;
+    guide:office "B-317"^^xsd:string .
+
+<http://w3id.org/def/guia#Maria_Elena_Hernando_Perez> a :Lecturer ;
+    sch:name "Maria Elena Hernando Perez"@en ;
+    sch:email <mailto:mariaelena.hernando@upm.es> ;
+    guide:office "B-316"^^xsd:string .
+
+<http://w3id.org/def/guia#Jose_Tapia_Galisteo> a :Lecturer ;
+    sch:name "Jose Tapia Galisteo"@en ;
+    sch:email <mailto:jose.tapia.galisteo@upm.es> .
+
+<http://guia-mad-bench.es/data/syllabus/ANX_PR_CL_001_01> a :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus-item/intro-modeling>,
+                  <http://guia-mad-bench.es/data/syllabus-item/model-construction>,
+                  <http://guia-mad-bench.es/data/syllabus-item/math-techniques>,
+                  <http://guia-mad-bench.es/data/syllabus-item/compartmental-modeling>,
+                  <http://guia-mad-bench.es/data/syllabus-item/chronobiological-modeling>,
+                  <http://guia-mad-bench.es/data/syllabus-item/applications> .
+
+<http://guia-mad-bench.es/data/syllabus-item/intro-modeling> a :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    sch:description "Introduction to the modelling of physiological systems"@en .
+
+<http://guia-mad-bench.es/data/syllabus-item/model-construction> a :SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer ;
+    sch:description "Model construction: modelling the system, modelling from data"@en .
+
+<http://guia-mad-bench.es/data/syllabus-item/math-techniques> a :SyllabusItem ;
+    guide:itemIndex 3^^xsd:integer ;
+    sch:description "Mathematical modelling techniques: Compartmental modelling, data-driven modelling, distributred models"@en .
+
+<http://guia-mad-bench.es/data/syllabus-item/compartmental-modeling> a :SyllabusItem ;
+    guide:itemIndex 4^^xsd:integer ;
+    sch:description "Compartmental modelling"^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus-item/chronobiological-modeling> a :SyllabusItem ;
+    guide:itemIndex 5^^xsd:integer ;
+    sch:description "Chronobiological modelling"^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus-item/applications> a :SyllabusItem ;
+    guide:itemIndex 6^^xsd:integer ;
+    sch:description "Applications"@en .
+
+<http://w3id.org/def/guia#CB06> a :Competency ;
+    guide:competencyCode "CB06"^^xsd:string ;
+    guide:competencyDescription "Poseer y comprender conocimientos que aportan una base u oportunidad de ser originales en el desarrollo y/o aplicación de ideas"@en .
+
+<http://w3id.org/def/guia#CG-MIB11> a :Competency ;
+    guide:competencyCode "CG-MIB11"^^xsd:string ;
+    guide:competencyDescription "Seleccionar y aplicar métodos avanzados de modelado para el diseño y simulación de sistemas biomédicos"@en .
+
+<http://w3id.org/def/guia#RA15> a :LearningResult ;
+    guide:learningResultCode "RA15"^^xsd:string ;
+    sch:description "Aplicar los fundamentos del modelado matemático de sistemas fisiológicos, siendo capaz de expresar las ecuaciones que rigen los fenómenos físicos y químicos más sencillos"@en .
+
+<http://w3id.org/def/guia#Schedule> a :Schedule ;
+    guide:hasCourseInstance <http://guia-mad-bench.es/data/course-guide/anx-pr-cl-001-01> .
+
+<http://guia-mad-bench.es/data/schedule/event_1> a :ScheduleEvent ;
+    sch:eventIndex 1^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#CoursePresentation>,
+             <https://schema.org/Lecture> .
+
+<http://guia-mad-bench.es/data/schedule/event_2> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#PracticalWork>,
+             <https://schema.org/LaboratoryPractice> .
+
+<http://guia-mad-bench.es/data/schedule/event_3> a :ScheduleEvent ;
+    sch:eventIndex 3^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#PracticalWork>,
+             <https://schema.org/LaboratoryPractice> .
+
+<http://guia-mad-bench.es/data/schedule/event_4> a :ScheduleEvent ;
+    sch:eventIndex 4^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#PracticalWork>,
+             <https://schema.org/LaboratoryPractice> .
+
+<http://guia-mad-bench.es/data/schedule/event_5> a :ScheduleEvent ;
+    sch:eventIndex 5^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#StudentsWork>,
+             <https://schema.org/Seminar> .
+
+<http://guia-mad-bench.es/data/schedule/event_6> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#PracticalWork>,
+             <https://schema.org/LaboratoryPractice> .
+
+<http://guia-mad-bench.es/data/schedule/event_7> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Presentation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Presentation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17> a :ScheduleEvent ;
+    sch:eventIndex 17^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Exam>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_6_progressive> a :ScheduleEvent ;
+    sch:eventIndex 6^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_7_progressive> a :ScheduleEvent ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_8_progressive> a :ScheduleEvent ;
+    sch:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_9_progressive> a :ScheduleEvent ;
+    sch:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_10_progressive> a :ScheduleEvent ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench.es/data/schedule/event_17_progressive> a :ScheduleEvent ;
+    sch:eventIndex 2^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    rdf:type <https://schema.org/ActivityType#Evaluation>,
+             <https://schema.org/EvaluationTrial> .
+
+<http://guia-mad-bench

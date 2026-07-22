@@ -1,0 +1,187 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+# Course Guide
+guide:CG_20505084
+    rdf:type guide:CourseGuide ;
+    sch:name "Conceptos De Biología" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:numberOfCredits 3.0 ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:hasSyllabus guide:Syllabus_20505084 ;
+    guide:hasCompetency guide:CB03, guide:CE05 ;
+    guide:hasLearningResult guide:RA121, guide:RA203 ;
+    guide:hasEvaluation guide:EvalSystem_20505084 ;
+    guide:hasDidacticResource guide:Res_Moodle, guide:Res_Youtube, guide:Res_Libro ;
+    sch:instructor guide:Lecturer_Pablo ;
+    sch:courseSchedule guide:Schedule_20505084 ;
+    sch:inLanguage "Castellano" .
+
+# Course
+guide:Course_20505084
+    rdf:type guide:Course ;
+    sch:name "Conceptos De Biología" ;
+    guide:courseYear 2025 ;
+    guide:courseType "Básica" ;
+    guide:semester "Segundo semestre" ;
+    sch:hasCourseInstance guide:CG_20505084 .
+
+# Degree
+guide:Degree_20BT
+    rdf:type guide:Degree ;
+    sch:name "Grado En Biotecnología" ;
+    guide:degreeCode "20BT" ;
+    guide:hasCourse guide:Course_20505084 .
+
+# University Center
+guide:UC_ETSI
+    rdf:type guide:UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas" ;
+    guide:offers guide:Degree_20BT .
+
+# Lecturer
+guide:Lecturer_Pablo
+    rdf:type guide:Lecturer ;
+    sch:name "Pablo Rodriguez Pal	eluela" ;
+    sch:email "pablo.rpalenzuela@upm.es" .
+
+# Competencies
+guide:CB03
+    rdf:type guide:Competency ;
+    guide:competencyCode "CB03" ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes (normalmente dentro de su área de estudio) para emitir juicios que incluyan una reflexión sobre temas relevantes de índole social, científica - ética" .
+
+guide:CE05
+    rdf:type guide:Competency ;
+    guide:competencyCode "CE05" ;
+    guide:competencyDescription "Capacidad para comprender los principales conceptos de Biología y saber relacionarlos con otras ciencias." .
+
+# Learning Results
+guide:RA121
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA121" ;
+    guide:learningResultDescription "Comprender la dimensión ética y social de la biotecnología" .
+
+guide:RA203
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA203" ;
+    guide:learningResultDescription "Conocimiento profundo de los conceptos fundamentales de la Biología" .
+
+# Syllabus
+guide:Syllabus_20505084
+    rdf:type guide:Syllabus ;
+    guide:hasItem guide:SI_1, guide:SI_2, guide:SI_3, guide:SI_4 .
+
+guide:SI_1
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Vida, Energía e Información" .
+
+guide:SI_2
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Biología Evolutiva" .
+
+guide:SI_3
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Bases Biológicas de la Enfermedad" .
+
+guide:SI_4
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Naturaleza Humana" .
+
+# Evaluation System
+guide:EvalSystem_20505084
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y evaluación global." ;
+    guide:hasEvaluationTrial guide:ET_Progressive, guide:ET_Global, guide:ET_Extraordinary .
+
+# Evaluation Trials
+guide:ET_Progressive
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Evaluación Progresiva" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "7.1%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "01:00" ;
+    guide:hasScheduleEvent guide:SE_Progressive .
+
+guide:ET_Global
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "01:00" ;
+    guide:hasScheduleEvent guide:SE_Global .
+
+guide:ET_Extraordinary
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "03:00" .
+
+# Schedule and Events
+guide:Schedule_20505084
+    rdf:type guide:Schedule ;
+    sch:eventSchedule guide:SE_Progressive, guide:SE_Global .
+
+guide:SE_Progressive
+    rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1 a 13" ;
+    guide:hasActivity guide:Act_ClaseTeorica, guide:Act_Video .
+
+guide:SE_Global
+    rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 17 ;
+    guide:eventWeek "Semana 17" ;
+    guide:hasActivity guide:Act_ExamenGlobal .
+
+# Activities
+guide:Act_ClaseTeorica
+    rdf:type guide:Activity ;
+    guide:activityDescription "Clase teórica participativa" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Aula invertida" ;
+    guide:attendanceType "Presencial" .
+
+guide:Act_Video
+    rdf:type guide:Activity ;
+    guide:activityDescription "Vídeo on-line" ;
+    guide:activityDuration 0.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Remoto" .
+
+guide:Act_ExamenGlobal
+    rdf:type guide:Activity ;
+    guide:activityDescription "Prueba evaluación global" ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+guide:Res_Moodle
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Moodle" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:Res_Youtube
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Canal YouTube" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Clases grabadas en un canal de YouTube" .
+
+guide:Res_Libro
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Cómo entender a los humanos" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Libro publicado por la editorial NEXTDOOR en mayo de 2022" .

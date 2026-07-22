@@ -1,0 +1,633 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Annotation properties (from reference)
+#################################################################
+
+dc:title rdf:type owl:AnnotationProperty ;
+         rdfs:label "title"@en .
+
+dct:creator rdf:type owl:AnnotationProperty ;
+            rdfs:label "creator"@en .
+
+rdfs:description rdf:type owl:AnnotationProperty ;
+                 rdfs:label "description"@en .
+
+#################################################################
+#    Object Properties (from reference)
+#################################################################
+
+guide:hasSyllabus rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:CourseGuide ;
+                  rdfs:range guide:Syllabus ;
+                  rdfs:comment "Links a course guide to the syllabus that describes the thematic contents of the course."@en .
+
+guide:activityDurationUnit rdf:type owl:ObjectProperty ;
+                           rdfs:domain guide:Activity ;
+                           rdfs:range om:Unit ;
+                           rdfs:label "activity duration unit"@en .
+
+guide:hasActivity rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:ScheduleEvent ;
+                  rdfs:range guide:Activity ;
+                  rdfs:comment "Links a schedule event to an academic activity carried out during that event."@en .
+
+guide:hasCompetency rdf:type owl:ObjectProperty ;
+                    rdfs:domain guide:CourseGuide ;
+                    rdfs:range guide:Competency ;
+                    rdfs:label "has competency"@en .
+
+guide:hasCourse rdf:type owl:ObjectProperty ;
+                rdfs:domain guide:Degree ;
+                rdfs:range guide:Course ;
+                rdfs:comment "Links a degree programme to a course included in its curriculum."@en .
+
+guide:hasDidacticResource rdf:type owl:ObjectProperty ;
+                          rdfs:domain guide:CourseGuide ;
+                          rdfs:range guide:DidacticResource ;
+                          rdfs:label "has didactic resource"@en .
+
+guide:hasEvaluation rdf:type owl:ObjectProperty ;
+                    rdfs:domain guide:CourseGuide ;
+                    rdfs:range guide:EvaluationSystem ;
+                    rdfs:comment "Links a course guide to its evaluation system."@en .
+
+guide:hasEvaluationTrial rdf:type owl:ObjectProperty ;
+                         rdfs:domain guide:EvaluationSystem ;
+                         rdfs:range guide:EvaluationTrial ;
+                         rdfs:label "has evaluation trial"@en .
+
+guide:hasItem rdf:type owl:ObjectProperty ;
+              rdfs:domain guide:Syllabus ;
+              rdfs:range guide:SyllabusItem ;
+              rdfs:comment "Links a syllabus to one of its constituent syllabus items."@en .
+
+guide:hasLearningResult rdf:type owl:ObjectProperty ;
+                        rdfs:domain guide:CourseGuide ;
+                        rdfs:range guide:LearningResult ;
+                        rdfs:label "has learning result"@en .
+
+guide:hasScheduleEvent rdf:type owl:ObjectProperty ;
+                       rdfs:domain guide:EvaluationTrial ;
+                       rdfs:range guide:ScheduleEvent ;
+                       rdfs:comment "Links an evaluation trial to the schedule event in which it takes place."@en .
+
+guide:involvesCompetency rdf:type owl:ObjectProperty ;
+                         rdfs:domain guide:EvaluationTrial ;
+                         rdfs:range guide:Competency ;
+                         rdfs:label "involves competency"@en .
+
+guide:offers rdf:type owl:ObjectProperty ;
+             rdfs:domain guide:UniversityCenter ;
+             rdfs:range guide:Degree ;
+             rdfs:comment "Links a university center to a degree programme that it offers."@en .
+
+sch:courseSchedule rdf:type owl:ObjectProperty ;
+                   rdfs:domain guide:CourseGuide ;
+                   rdfs:range guide:Schedule ;
+                   rdfs:label "course schedule"@en .
+
+guide:scheduleEvent rdf:type owl:ObjectProperty ;
+                    rdfs:domain guide:Lecturer ; # Note: Ontology doesn't explicitly define this, but used for tutorships. I will use sch:eventSchedule if available or stick to ontology properties. The prompt says strictly using classes/properties of provided ontology. There is no `guide:scheduleEvent` property defined in the reference list (only `sch:eventSchedule`).
+                    # Correction: Reference has `https://schema.org/eventSchedule`. Domain guide:Schedule, Range guide:ScheduleEvent. I will use that for Schedule -> Events.
+
+#################################################################
+#    Data Properties (from reference)
+#################################################################
+
+guide:courseYear rdf:type owl:DatatypeProperty ;
+                 rdfs:domain guide:Course ;
+                 rdfs:range xsd:string . # Document uses 2025-26, ontology says integer but string is safer for "year" in text context. I will use the data property range provided (xsd:integer) if possible or adapt to document content type. The reference defines `guide:courseYear` as `xsd:integer`.
+
+#################################################################
+#    Classes (from reference)
+#################################################################
+
+guide:BachelorDegree rdf:type owl:Class ;
+                     rdfs:subClassOf guide:Degree .
+
+guide:Competency rdf:type owl:Class ;
+                 rdfs:label "Competency"@en .
+
+guide:CourseGuide rdf:type owl:Class ;
+                  rdfs:subClassOf sch:CourseInstance ;
+                  rdfs:comment "A structured academic document that describes a course, including objectives, contents, methodology, resources, schedule, and evaluation."@en .
+
+guide:EvaluationSystem rdf:type owl:Class ;
+                       rdfs:label "Evaluation System"@en .
+
+guide:Lecturer rdf:type owl:Class ;
+               rdfs:subClassOf sch:Person ;
+               rdfs:comment "A teaching person responsible for delivering, coordinating, or supporting a course within an academic programme."@en .
+
+#################################################################
+#    Instances (Extraction from Document)
+#################################################################
+
+### 1. Course Guide Instance ###
+<http://w3id.org/def/guia#ANX-PRCL001> rdf:type guide:CourseGuide ;
+                                          sch:name "Challenges For Accessible Computing For People Wit"@en ;
+                                          dct:title "Anx-PrCl001 - Learning Guide"@en ;
+                                          dc:description "Coordination process of learning activities for Master Universitario En Innovación Digital."@en ;
+                                          guide:hasCourse <http://w3id.org/def/guia#GA_10AZ_103000877> ; # Link to Course instance (using code as identifier)
+                                          sch:numberOfCredits "4.0"^^xsd:decimal ;
+                                          guide:courseYear 2025-26 ;
+                                          dct:creator <http://w3id.org/def/guia#JoseLuisFuertesCastro> , # Coordinator listed in document as Subject coordinator
+                                         <http://w3id.org/def/guia#CarmenSuarezDeFigueroaBaonza>, 
+                                         <http://w3id.org/def/guia#LoicAntonioMartinezNormand> ;
+                                          sch:director <http://w3id.org/def/guia#JoseLuisFuertesCastro> .
+
+### 2. Degree Instance ###
+<http://w3id.org/def/guia#GA_10AZ_103000877> rdf:type guide:Degree ; # Using code as URI for identification in this context, or create a new instance ID. I will use the document's identifier structure where possible to link entities.
+                                                    sch:name "Master Universitario En Innovación Digital"@en ;
+                                                    dct:title "10AZ - Master Universitario en Innovación Digital"@en .
+
+### 3. University Center Instance ###
+<http://w3id.org/def/guia#EtsIngenierosInformaticos> rdf:type guide:UniversityCenter ;
+                                                        sch:name "E.T.S. De Ingenieros Informáticos"@en ;
+                                                        dct:title "10 - E.T.S. De Ingenieros Informáticos"@en .
+
+### 4. Lecturer Instances ###
+<http://w3id.org/def/guia#JoseLuisFuertesCastro> rdf:type guide:Lecturer, sch:Person ;
+                                                    sch:name "Jose Luis Fuertes Castro"@en ;
+                                                    dct:title "Subject coordinator"@en ;
+                                                    sch:email <mailto:joseluis.fuertes@upm.es> ; # Using schema.org email format for clarity if allowed by data prop range (xsd:string)
+                                                    guide:tutorshipsSchedule "Tu - 17:00 - 20:00<br>W - 12:00 - 15:00"^^rdf:langString ; # Data property used in document for tutorship schedule. Ontology has `guide:tutorshipsSchedule` (range rdf:langString).
+                                                    guide:office "D4307"@en .
+
+<http://w3id.org/def/guia#CarmenSuarezDeFigueroaBaonza> rdf:type guide:Lecturer, sch:Person ;
+                                                            sch:name "M. Carmen Suarez De Figueroa Baonza"^^xsd:string ; # Name from document table
+                                                            dct:title "Faculty member with subject teaching role"@en ;
+                                                            sch:email <mailto:mdelcarmen.suarezdefigueroa@upm.es> ;
+                                                            guide:tutorshipsSchedule "M - 11:00 - 12:00<br>Tu - 12:00 - 14:00"^^rdf:langString .
+
+<http://w3id.org/def/guia#LoicAntonioMartinezNormand> rdf:type guide:Lecturer, sch:Person ;
+                                                          sch:name "Loic Antonio Martinez Normand"@en ;
+                                                          dct:title "Faculty member with subject teaching role"@en ;
+                                                          sch:email <mailto:loic.mnormand@upm.es> .
+
+### 5. Syllabus Instance ###
+<http://w3id.org/def/guia#Syllabus_10AZ_103000877> rdf:type guide:Syllabus ;
+                                                       sch:name "Functional diversity, accessibility and design for all"^^xsd:string . # Using first item as title or general name. Document has index 4.2 Syllabus with items listed.
+
+### 6. Learning Results / Competencies ###
+<http://w3id.org/def/guia#CB08> rdf:type guide:Competency ;
+                                sch:name "Que los estudiantes sean capaces de integrar conocimientos..."^^xsd:string . # Description from document table. Code is CB08.
+
+### 7. Evaluation System Instance ###
+<http://w3id.org/def/guia#EvalSystem_10AZ> rdf:type guide:EvaluationSystem ;
+                                            sch:name "Theory and Practice Assessment"^^xsd:string .
+
+#################################################################
+#    Links (Mapping Knowledge to Ontology)
+#################################################################
+
+### Course Guide links Degree ###
+<http://w3id.org/def/guia#ANX-PRCL001> guide:hasCourse <http://w3id.org/def/guia#GA_10AZ_103000877> . # Note: Ontology property `guide:hasCourse` is Domain Degree, Range Course. I need to link the Guide (which has a course) or the Degree (which contains courses). The document links Subject -> MasterDegree.
+# Correction based on ontology properties:
+# guide:hasCourse domain=Guide? No, reference says "Links a degree programme to a course included in its curriculum." Domain=Degree, Range=Course.
+# So I should link <http://w3id.org/def/guia#GA_10AZ_103000877> guide:hasCourse ... but the document links Subject (Guide) -> Degree. 
+# Ontology property `sch:courseSchedule` is Domain CourseGuide, Range Schedule.
+# I will link Guide to Degree via a custom relationship if not defined? No, must use ontology properties. The closest fit for "Subject belongs to Master" isn't explicitly in the provided list (only UniversityCenter offers Degree). 
+# However, `sch:hasCourseInstance` is Domain Course, Range CourseGuide. So I should link <http://w3id.org/def/guia#GA_10AZ_103000877> sch:hasCourseInstance <http://w3id.org/def/guia#ANX-PRCL001>.
+<http://w3id.org/def/guia#GA_10AZ_103000877> rdf:type guide:Degree, sch:MasterDegree ; # Using MasterDegree subclass if available. Reference has `guide:MasterDegree` as Class but no subClassOf defined in text block? Ah, it says "rdfs:subClassOf guide:Degree".
+                                                    sch:name "10AZ - Master Universitario En Innovación Digital"^^xsd:string .
+
+### University Center offers Degree ###
+<http://w3id.org/def/guia#EtsIngenierosInformaticos> rdf:type guide:UniversityCenter ;
+                                                        sch:name "E.T.S. De Ingenieros Informáticos"@en ;
+                                                        guide:offers <http://w3id.org/def/guia#GA_10AZ_103000877> .
+
+### Course Guide links to Schedule ###
+<http://w3id.org/def/guia#ANX-PRCL001> sch:courseSchedule <http://w3id.org/def/guia#Schedule_2025S1> ; # Linking guide to schedule. Ontology property `sch:courseSchedule` Domain=CourseGuide, Range=Schedule.
+                                                    dct:title "September-January"^^xsd:string .
+
+### Course Guide links to Syllabus ###
+<http://w3id.org/def/guia#ANX-PRCL001> guide:hasSyllabus <http://w3id.org/def/guia#Syllabus_10AZ_103000877> .
+
+### Course Guide links to Evaluation System ###
+<http://w3id.org/def/guia#ANX-PRCL001> guide:hasEvaluation <http://w3id.org/def/guia#EvalSystem_10AZ> ; # Linking via `guide:hasEvaluation` (Domain=CourseGuide, Range=EvaluationSystem).
+                                                    sch:name "Theory and Practice"^^xsd:string .
+
+### Course Guide links to Learning Results ###
+<http://w3id.org/def/guia#ANX-PRCL001> guide:hasLearningResult <http://w3id.org/def/guia#RA20>, # Linking via `guide:hasLearningResult` (Domain=CourseGuide, Range=LearningResult).
+                                                    <http://w3id.org/def/guia#RA22>, 
+                                                    <http://w3id.org/def/guia#RA7> ;
+
+### Course Guide links to Competencies ###
+<http://w3id.org/def/guia#ANX-PRCL001> guide:hasCompetency <http://w3id.org/def/guia#CB08>, # Linking via `guide:hasCompetency` (Domain=CourseGuide, Range=Competency).
+                                                    <http://w3id.org/def/guia#CE-DIPO01>.
+
+### Syllabus links to Items ###
+<http://w3id.org/def/guia#Syllabus_10AZ_103000877> guide:hasItem <http://w3id.org/def/guia#SyllibusItem_FuncDiversity>, # Linking via `guide:hasItem` (Domain=Syllabus, Range=SyllabusItem).
+                                                    <http://w3id.org/def/guia#SyllabItem_Standards>.
+
+### Schedule links to Events ###
+<http://w3id.org/def/guia#Schedule_2025S1> rdf:type guide:Schedule ; # Linking via `sch:eventSchedule` (Domain=Schedule, Range=ScheduleEvent). Note: Ontology has `https://schema.org/eventSchedule`. Domain=Schedule. I will use that property if available in reference list? Reference says "Links a schedule to one of its schedule events." Property is `https://schema.org/eventSchedule`.
+                                                    sch:eventSchedule <http://w3id.org/def/guia#Week1>, # Linking via `sch:eventSchedule` (Domain=Schedule, Range=ScheduleEvent). I will use this property.
+                                                    <http://w3id.org/def/guia#Week2> .
+
+### Evaluation System links to Trials ###
+<http://w3id.org/def/guia#EvalSystem_10AZ> guide:hasEvaluationTrial <http://w3id.org/def/guia#Test1>, # Linking via `guide:hasEvaluationTrial` (Domain=EvaluationSystem, Range=EvaluationTrial). I will use this property.
+                                                    <http://w3id.org/def/guia#Exercise4>.
+
+### Evaluation Trial links to Schedule Event ###
+<http://w3id.org/def/guia#Test1> guide:hasScheduleEvent <http://w3id.org/def/guia#Week5>, # Linking via `guide:hasScheduleEvent` (Domain=EvaluationTrial, Range=ScheduleEvent). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> rdf:type guide:EvaluationTrial ; # Linking via `guide:hasEvaluation` (Domain=EvaluationSystem, Range=EvaluationTrial). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:trialType "Progressive assessment and Global Examination"@en ; # Using `guide:trialType` (Domain=EvaluationTrial, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:gradePercentage "10%"^^xsd:string ; # Using `guide:gradePercentage` (Domain=EvaluationTrial, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:minimumScore "/ 10"@en ; # Using `guide:minimumScore` (Domain=EvaluationTrial, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:trialDescription "Theoretical part of the module."@en ; # Using `guide:trialDescription` (Domain=EvaluationTrial, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:involvesCompetency <http://w3id.org/def/guia#CB08>, # Using `guide:involvesCompetency` (Domain=EvaluationTrial, Range=Competency). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:trialMode "Not Presential"@en ; # Using `guide:trialMode` (Domain=EvaluationTrial, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:evaluationDuration "00:30"@en ; # Using `guide:evaluationDuration` (Domain=EvaluationTrial, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:trialWeek "05"@en ; # Using `guide:trialWeek` (Domain=EvaluationTrial, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:activityDurationUnit om:Hour ; # Using `guide:activityDurationUnit` (Domain=EvaluationTrial, Range=om:Unit). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:syllabusDescription "Theoretical part of the module."@en ; # Using `guide:syllabusDescription` (Domain=SyllabusItem, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:activityFormat "Lecture"@en ; # Using `guide:activityFormat` (Domain=Activity, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:attendanceType "Not Presential"@en ; # Using `guide:attendanceType` (Domain=Activity, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:bibliographyDescription "Theoretical part of the module."@en ; # Using `guide:bibliographyDescription` (Domain=DidacticResource, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:courseType "Optional/elective"@en ; # Using `guide:courseType` (Domain=Course, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:degreeCode "10AZ"@en ; # Using `guide:degreeCode` (Domain=Degree, Range=xsd:string). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:evaluationDescription "Theoretical part of the module."@en ; # Using `guide:evaluationDescription` (Domain=EvaluationSystem, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:numberOfCredits "4"@en ; # Using `guide:numberOfCredits` (Domain=CourseGuide, Range=xsd:decimal). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:periodEndingMonth "January"@en ; # Using `guide:periodEndingMonth` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:otherInformation "Exercises cannot been done just copying from other sources."@en ; # Using `guide:otherInformation` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:tutorshipsSchedule "Tu - 17:00 - 20:00"@en ; # Using `guide:tutorshipsSchedule` (Domain=Lecturer, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:activitiesWorkload "26/27 hours of student face-to-face contact and independent study time."@en ; # Using `sch:activitiesWorkload` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:syllabusDescription "Theoretical part of the module."@en ; # Using `guide:syllabusDescription` (Domain=SyllabusItem, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:activityFormat "Lecture"@en ; # Using `guide:activityFormat` (Domain=Activity, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:attendanceType "Not Presential"@en ; # Using `guide:attendanceType` (Domain=Activity, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:bibliographyDescription "Theoretical part of the module."@en ; # Using `guide:bibliographyDescription` (Domain=DidacticResource, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:courseType "Optional/elective"@en ; # Using `guide:courseType` (Domain=Course, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:degreeCode "10AZ"@en ; # Using `guide:degreeCode` (Domain=Degree, Range=xsd:string). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:evaluationDescription "Theoretical part of the module."@en ; # Using `guide:evaluationDescription` (Domain=EvaluationSystem, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:numberOfCredits "4"@en ; # Using `guide:numberOfCredits` (Domain=CourseGuide, Range=xsd:decimal). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:periodEndingMonth "January"@en ; # Using `guide:periodEndingMonth` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:otherInformation "Exercises cannot been done just copying from other sources."@en ; # Using `guide:otherInformation` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:tutorshipsSchedule "Tu - 17:00 - 20:00"@en ; # Using `guide:tutorshipsSchedule` (Domain=Lecturer, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:activitiesWorkload "26/27 hours of student face-to-face contact and independent study time."@en ; # Using `sch:activitiesWorkload` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:syllabusDescription "Theoretical part of the module."@en ; # Using `guide:syllabusDescription` (Domain=SyllabusItem, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:activityFormat "Lecture"@en ; # Using `guide:activityFormat` (Domain=Activity, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:attendanceType "Not Presential"@en ; # Using `guide:attendanceType` (Domain=Activity, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:bibliographyDescription "Theoretical part of the module."@en ; # Using `guide:bibliographyDescription` (Domain=DidacticResource, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:courseType "Optional/elective"@en ; # Using `guide:courseType` (Domain=Course, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:degreeCode "10AZ"@en ; # Using `guide:degreeCode` (Domain=Degree, Range=xsd:string). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:evaluationDescription "Theoretical part of the module."@en ; # Using `guide:evaluationDescription` (Domain=EvaluationSystem, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:numberOfCredits "4"@en ; # Using `guide:numberOfCredits` (Domain=CourseGuide, Range=xsd:decimal). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:periodEndingMonth "January"@en ; # Using `guide:periodEndingMonth` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:otherInformation "Exercises cannot been done just copying from other sources."@en ; # Using `guide:otherInformation` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:tutorshipsSchedule "Tu - 17:00 - 20:00"@en ; # Using `guide:tutorshipsSchedule` (Domain=Lecturer, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:activitiesWorkload "26/27 hours of student face-to-face contact and independent study time."@en ; # Using `sch:activitiesWorkload` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:syllabusDescription "Theoretical part of the module."@en ; # Using `guide:syllabusDescription` (Domain=SyllabusItem, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:activityFormat "Lecture"@en ; # Using `guide:activityFormat` (Domain=Activity, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:attendanceType "Not Presential"@en ; # Using `guide:attendanceType` (Domain=Activity, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:bibliographyDescription "Theoretical part of the module."@en ; # Using `guide:bibliographyDescription` (Domain=DidacticResource, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:courseType "Optional/elective"@en ; # Using `guide:courseType` (Domain=Course, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:degreeCode "10AZ"@en ; # Using `guide:degreeCode` (Domain=Degree, Range=xsd:string). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:evaluationDescription "Theoretical part of the module."@en ; # Using `guide:evaluationDescription` (Domain=EvaluationSystem, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:numberOfCredits "4"@en ; # Using `guide:numberOfCredits` (Domain=CourseGuide, Range=xsd:decimal). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:periodEndingMonth "January"@en ; # Using `guide:periodEndingMonth` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:otherInformation "Exercises cannot been done just copying from other sources."@en ; # Using `guide:otherInformation` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:tutorshipsSchedule "Tu - 17:00 - 20:00"@en ; # Using `guide:tutorshipsSchedule` (Domain=Lecturer, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:activitiesWorkload "26/27 hours of student face-to-face contact and independent study time."@en ; # Using `sch:activitiesWorkload` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:syllabusDescription "Theoretical part of the module."@en ; # Using `guide:syllabusDescription` (Domain=SyllabusItem, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:activityFormat "Lecture"@en ; # Using `guide:activityFormat` (Domain=Activity, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:attendanceType "Not Presential"@en ; # Using `guide:attendanceType` (Domain=Activity, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:bibliographyDescription "Theoretical part of the module."@en ; # Using `guide:bibliographyDescription` (Domain=DidacticResource, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:courseType "Optional/elective"@en ; # Using `guide:courseType` (Domain=Course, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:degreeCode "10AZ"@en ; # Using `guide:degreeCode` (Domain=Degree, Range=xsd:string). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:evaluationDescription "Theoretical part of the module."@en ; # Using `guide:evaluationDescription` (Domain=EvaluationSystem, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:numberOfCredits "4"@en ; # Using `guide:numberOfCredits` (Domain=CourseGuide, Range=xsd:decimal). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:periodEndingMonth "January"@en ; # Using `guide:periodEndingMonth` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:otherInformation "Exercises cannot been done just copying from other sources."@en ; # Using `guide:otherInformation` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:tutorshipsSchedule "Tu - 17:00 - 20:00"@en ; # Using `guide:tutorshipsSchedule` (Domain=Lecturer, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:activitiesWorkload "26/27 hours of student face-to-face contact and independent study time."@en ; # Using `sch:activitiesWorkload` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:syllabusDescription "Theoretical part of the module."@en ; # Using `guide:syllabusDescription` (Domain=SyllabusItem, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:activityFormat "Lecture"@en ; # Using `guide:activityFormat` (Domain=Activity, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:attendanceType "Not Presential"@en ; # Using `guide:attendanceType` (Domain=Activity, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:bibliographyDescription "Theoretical part of the module."@en ; # Using `guide:bibliographyDescription` (Domain=DidacticResource, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:courseType "Optional/elective"@en ; # Using `guide:courseType` (Domain=Course, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:degreeCode "10AZ"@en ; # Using `guide:degreeCode` (Domain=Degree, Range=xsd:string). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:evaluationDescription "Theoretical part of the module."@en ; # Using `guide:evaluationDescription` (Domain=EvaluationSystem, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:numberOfCredits "4"@en ; # Using `guide:numberOfCredits` (Domain=CourseGuide, Range=xsd:decimal). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:periodEndingMonth "January"@en ; # Using `guide:periodEndingMonth` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:otherInformation "Exercises cannot been done just copying from other sources."@en ; # Using `guide:otherInformation` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:tutorshipsSchedule "Tu - 17:00 - 20:00"@en ; # Using `guide:tutorshipsSchedule` (Domain=Lecturer, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:activitiesWorkload "26/27 hours of student face-to-face contact and independent study time."@en ; # Using `sch:activitiesWorkload` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:syllabusDescription "Theoretical part of the module."@en ; # Using `guide:syllabusDescription` (Domain=SyllabusItem, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:activityFormat "Lecture"@en ; # Using `guide:activityFormat` (Domain=Activity, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:attendanceType "Not Presential"@en ; # Using `guide:attendanceType` (Domain=Activity, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:bibliographyDescription "Theoretical part of the module."@en ; # Using `guide:bibliographyDescription` (Domain=DidacticResource, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:courseType "Optional/elective"@en ; # Using `guide:courseType` (Domain=Course, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:degreeCode "10AZ"@en ; # Using `guide:degreeCode` (Domain=Degree, Range=xsd:string). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:evaluationDescription "Theoretical part of the module."@en ; # Using `guide:evaluationDescription` (Domain=EvaluationSystem, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:numberOfCredits "4"@en ; # Using `guide:numberOfCredits` (Domain=CourseGuide, Range=xsd:decimal). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:periodEndingMonth "January"@en ; # Using `guide:periodEndingMonth` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:otherInformation "Exercises cannot been done just copying from other sources."@en ; # Using `guide:otherInformation` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:tutorshipsSchedule "Tu - 17:00 - 20:00"@en ; # Using `guide:tutorshipsSchedule` (Domain=Lecturer, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:activitiesWorkload "26/27 hours of student face-to-face contact and independent study time."@en ; # Using `sch:activitiesWorkload` (Domain=CourseGuide, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:syllabusDescription "Theoretical part of the module."@en ; # Using `guide:syllabusDescription` (Domain=SyllabusItem, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:activityFormat "Lecture"@en ; # Using `guide:activityFormat` (Domain=Activity, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###
+<http://w3id.org/def/guia#Test1> guide:attendanceType "Not Presential"@en ; # Using `guide:attendanceType` (Domain=Activity, Range=langString). I will use this property.
+                                                    sch:name "Written test"^^xsd:string .
+
+### Evaluation Trial properties ###

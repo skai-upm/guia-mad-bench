@@ -1,0 +1,243 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@base <http://guia-mad_bench.es/data/> .
+
+# --- Course Guide Instance ---
+:course_guide_so_2025 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje: Sistemas Operativos" ;
+    sch:description "Guía de aprendizaje para la asignatura Sistemas Operativos, curso 2025-26." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    guide:numberOfCredits 6.0 ;
+    guide:inpersonHours "No especificado" ;
+    guide:remoteHours "No especificado" ;
+    guide:totalHours "No especificado" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :prof_pablo, :prof_javier, :prof_maria, :prof_antonio, :prof_fernando ;
+    guide:hasSyllabus :syllabus_so ;
+    guide:hasEvaluation :eval_system_so ;
+    guide:hasCompetency :comp_C1, :comp_C2, :comp_C7, :comp_K4, :comp_S19, :comp_S21 ;
+    guide:hasLearningResult :lr_RA20 ;
+    guide:hasDidacticResource :res_moodle, :res_book_carretero, :res_book_stallings, :res_book_antonakos, :res_book_kernighan_ritchie, :res_book_afzal, :res_book_kernighan_pike ;
+    sch:courseSchedule :schedule_so ;
+    sch:activitiesWorkload "Estimación de 26-27 horas por crédito ECTS" .
+
+# --- Course and Degree ---
+:course_so a guide:Course ;
+    sch:name "Sistemas Operativos" ;
+    sch:courseCode 105000127 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Sexto semestre" ;
+    sch:hasCourseInstance :course_guide_so_2025 .
+
+:degree_math_info a guide:Degree ;
+    sch:name "10ML - Grado En Matematicas E Informática" ;
+    guide:degreeCode "10ML" ;
+    guide:hasCourse :course_so .
+
+:center_ets_informaticos a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Informáticos" ;
+    guide:offers :degree_math_info .
+
+# --- Professors ---
+:prof_pablo a guide:Lecturer ;
+    sch:name "Pablo Toharia Rabasco" ;
+    sch:email "pablo.toharia@upm.es" ;
+    guide:office "4102" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:prof_javier a guide:Lecturer ;
+    sch:name "Fco Javier Rosales Garcia" ;
+    sch:email "francisco.rosales@upm.es" ;
+    guide:office "4204" ;
+    guide:tutorshipsSchedule "Sin horario. Para tutorías con cualquier profesor, preferiblemente solicite cita previa por correo electrónico." .
+
+:prof_maria a guide:Lecturer ;
+    sch:name "Maria De Los Santos Perez Hernandez" ;
+    sch:email "maria.s.perez@upm.es" ;
+    guide:office "4203" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:prof_antonio a guide:Lecturer ;
+    sch:name "Antonio Latorre De La Fuente" ;
+    sch:email "a.latorre@upm.es" ;
+    guide:office "4201" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:prof_fernando a guide:Lecturer ;
+    sch:name "Fernando Perez Costoya" ;
+    sch:email "fernando.perez@upm.es" ;
+    guide:office "4201" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+# --- Competencies and Learning Results ---
+:comp_C1 a guide:Competency ;
+    guide:competencyCode "C1" ;
+    guide:competencyDescription "Capacidad de resolución de problemas aplicando conocimientos de matemáticas, ciencias e ingeniería." .
+
+:comp_C2 a guide:Competency ;
+    guide:competencyCode "C2" ;
+    guide:competencyDescription "Capacidad para el aprendizaje autónomo y la actualización de conocimientos, y reconocimiento de su necesidad en las áreas de..." .
+
+:comp_C7 a guide:Competency ;
+    guide:competencyCode "C7" ;
+    guide:competencyDescription "Capacidad para tomar iniciativas y espíritu emprendedor, el liderazgo, la dirección, la gestión de equipos y proyectos." .
+
+:comp_K4 a guide:Competency ;
+    guide:competencyCode "K4" ;
+    guide:competencyDescription "Entender el soporte físico (hardware) de los ordenadores desde el punto de vista del soporte lógico (software)..." .
+
+:comp_S19 a guide:Competency ;
+    guide:competencyCode "S19" ;
+    guide:competencyDescription "Capacidad de aplicar sus conocimientos e intuición para diseñar el hardware/software que cumple unos requisitos especificados." .
+
+:comp_S21 a guide:Competency ;
+    guide:competencyCode "S21" ;
+    guide:competencyDescription "Concebir y diseñar la arquitectura de un sistema software." .
+
+:lr_RA20 a guide:LearningResult ;
+    guide:learningResultCode "RA20" ;
+    guide:learningResultDescription "Los resultados del aprendizaje correspondientes a esta asignatura han quedado definimos en el apartado de competencias..." .
+
+# --- Syllabus ---
+:syllabus_so a guide:Syllabus ;
+    guide:hasItem :item_intro, :item_ficheros, :item_procesos, :item_memoria, :item_sincronizacion .
+
+:item_intro a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción al SSOO (Conceptos hardware, ejecución de instrucciones, interrupciones, Memoria virtual, Procesos, Protección, Ficheros)." .
+
+:item_ficheros a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Gestión de Ficheros (E/S, Organización, Directorios, Servicios)." .
+
+:item_procesos a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Gestión de Procesos (Planificación, Servicios, Señales)." .
+
+:item_memoria a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Gestión de Memoria (Mapa de memoria, Creación de ejecutables, Regiones)." .
+
+:item_sincronizacion a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Sincronización y Comunicación (Concurrencia, Problemas clásicos, Mecanismos, Interbloqueos)." .
+
+# --- Evaluation System ---
+:eval_system_so a guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación compuesto por Parte Teórica (50%) y Parte Práctica (50%)." ;
+    guide:hasEvaluationTrial :trial_prueba_nivel, :trial_modulo_linux, :trial_parcial_sf, :trial_proyecto_1, :trial_examen_final .
+
+:trial_prueba_nivel a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:evaluationDuration "01:00" ;
+    guide:gradePercentage "0%" ;
+    guide:minimumScore "0/10" ;
+    guide:trialMode "Presencial" .
+
+:trial_modulo_linux a guide:EvaluationTrial ;
+    guide:evaluationType "Trabajo Individual" ;
+    guide:evaluationDuration "02:00" ;
+    guide:gradePercentage "2.5%" ;
+    guide:minimumScore "4/10" ;
+    guide:trialMode "No presencial" .
+
+:trial_parcial_sf a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:evaluationDuration "01:00" ;
+    guide:gradePercentage "12.5%" ;
+    guide:minimumScore "0/10" ;
+    guide:trialMode "Presencial" .
+
+:trial_proyecto_1 a guide:EvaluationTrial ;
+    guide:evaluationType "Trabajo Individual" ;
+    guide:evaluationDuration "10:00" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "4/10" ;
+    guide:trialMode "No presencial" .
+
+:trial_examen_final a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:evaluationDuration "02:00" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4.5/10" ;
+    guide:trialMode "Presencial" .
+
+# --- Schedule ---
+:schedule_so a guide:Schedule ;
+    sch:eventSchedule :event_sem1, :event_sem2, :event_sem7, :event_sem17 .
+
+:event_sem1 a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :act_presentacion .
+
+:act_presentacion a guide:Activity ;
+    guide:activityDescription "Presentación de Asignatura y Práctica" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:event_sem7 a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 7" ;
+    guide:eventIndex 7 ;
+    guide:hasActivity :act_parcial_sf .
+
+:act_parcial_sf a guide:Activity ;
+    guide:activityDescription "Parcial Tema SF" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:attendanceType "Presencial" .
+
+# --- Required Knowledge ---
+:req_knowledge_so a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Manejo como usuario en entorno Unix: Línea de mandatos y Shell. Programación C en entorno Unix." ;
+    guide:previousCourses "Estructura De Computadores, Concurrencia, Programacion Para Sistemas" .
+
+# --- Didactic Resources ---
+:res_moodle a guide:DidacticResource ;
+    sch:name "Moodle de la Asignatura" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "https://moodle.upm.es/titulaciones/oficiales/" .
+
+:res_book_carretero a guide:DidacticResource ;
+    sch:name "Sistemas Operativos, Una visión Aplicada 2ª edición" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "J. Carretero, P. de Miguel, F. García, F. Pérez. McGraw-Hill, 2007." .
+
+:res_book_stallings a guide:DidacticResource ;
+    sch:name "Sistemas Operativos 5a edición" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "William Stallings. Prentice-Hall International, 2005." .
+
+:res_book_antonakos a guide:DidacticResource ;
+    sch:name "Programación Estructurada en C" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "J. L. Antonakos, K. C. Mansfiled Jr. Prentice-Hall, 1997." .
+
+:res_book_kernighan_ritchie a guide:DidacticResource ;
+    sch:name "The C programming language" ;
+    guide:bibliographyType "Bibli．ografía" ;
+    guide:bibliographyDescription "B. Kernighan, D. Ritchie. Second Edition. Prentice-Hall, 1988." .
+
+:res_book_afzal a guide:DidacticResource ;
+    sch:name "Introducción a UNIX" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "A. Afzal. Prentice-Hall, 1997." .
+
+:res_book_kernighan_pike a guide:DidacticResource ;
+    sch:name "The UNIX programming environment" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "B. Kernighan, R. Pike. Second Edition, Prentice-Hall, 1988." .
+
+# --- Additional Info ---
+:info_sdg a guide:CourseGuide ;
+    guide:otherInformation "Esta asignatura está relacionada con los Objetivos de Desarrollo Sostenible: ODS-4 Educación de Calidad, ODS-5 Lograr la igualdad entre los géneros, ODS-8 Trabajo Decente y Crecimiento Económico." .

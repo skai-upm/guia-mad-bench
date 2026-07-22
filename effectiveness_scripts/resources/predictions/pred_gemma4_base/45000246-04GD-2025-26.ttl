@@ -1,0 +1,159 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+
+# Course Guide Instance
+guide:course_guide_45000246
+    rdf:type guide:CourseGuide ;
+    sch:name "45000246 - Economía Mundial, Española y Regional" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:numberOfCredits 3.0 ;
+    sch:inLanguage "Castellano" ;
+    sch:description "La asignatura es una introducción a la Economía Aplicada, proporcionando instrumentos para la medición y la interpretación de la $\text{realidad económica}$." ;
+    sch:instructor guide:lecturer_jose_balibrea ;
+    sch:director guide:lecturer_jose_balibrea ;
+    guide:hasSyllabus guide:syllabus_45000246 ;
+    guide:hasCompetency guide:comp_30AD_E15, guide:comp_30AD_E16, guide:comp_30AD_E17, guide:comp_30AD_E18, guide:comp_30AD_E19, guide:comp_30AD_E20, guide:comp_30AD_G01, guide:comp_30AD_G06, guide:comp_30AD_G07, guide:comp_30AD_G09 ;
+    guide:hasLearningResult guide:lr_ra185_ra2, guide:lr_ra186_ra4, guide:lr_ra189_ra3, guide:lr_ra184_ra1, guide:lr_ra188_ra6, guide:lr_ra187_ra5 ;
+    guide:hasEvaluation guide:eval_system_45000246 ;
+    guide:hasDidacticResource guide:res_moodle, guide:res_ine, guide:res_worldbank, guide:res_book_munoz, guide:res_book_alonso, guide:res_book_krugman ;
+    sch:activitiesWorkload "26-27 horas de trabajo presencial y no presencial por cada crédito ECTS" .
+
+# Course Instance
+guide:course_45000246
+    rdf:type guide:Course ;
+    sch:name "45000246 - Economía Mundial, Española y Regional" ;
+    sch:courseCode 45000246 ;
+    guide:courseYear 4 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Séptimo semestre" ;
+    sch:numberOfCredits 3.0 ;
+    sch:hasCourseInstance guide:course_guide_45000246 .
+
+# Degree Instance
+guide:degree_04GD
+    rdf:type guide:BachelorDegree ;
+    sch:name "04GD - Doble Grado En Ingenieria Civil Y Territorial Y En Ade" ;
+    guide:degreeCode "04GD" ;
+    guide:hasCourse guide:course_45000246 .
+
+# University Center Instance
+guide:center_ets_caminos
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ing. De Caminos Canally P." ;
+    guide:offers guide:degree_04GD .
+
+# Lecturers
+guide:lecturer_jose_balibrea
+    rdf:type guide:Lecturer ;
+    sch:name "Jose Balibrea Iniesta" ;
+    sch:email "jose.balibrea@upm.es" ;
+    guide:office "6ª planta" ;
+    guide:tutorshipsSchedule "X - 08:00 - 12:00" .
+
+guide:lecturer_antonio_sanchez
+    rdf:type guide:Lecturer ;
+    sch:name "Antonio Sanchez Soliño" ;
+    sch:email "antonio.sanchezso@upm.es" ;
+    guide:office "6ª planta" ;
+    guide:tutorshipsSchedule "X - 16:00 - 20:00, J - 16:00 - 20:00" .
+
+# Competencies
+guide:comp_30AD_E15
+    rdf:type guide:Competency ;
+    guide:competencyCode "30AD. E15" ;
+    guide:competencyDescription "Entender el funcionamiento de los mercados financieros nacionales e internacionales." .
+
+guide:comp_30AD_E18
+    rdf:type guide:Competency ;
+    guide:competencyCode "30AD. E18" ;
+    guide:competencyDescription "Conocer la determinación de los principales indicadores y agregados económicos, así como su impacto sobre las decisiones de la empresa." .
+
+# Learning Results
+guide:lr_ra185_ra2
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA185 - RA2" ;
+    guide:learningResultDescription "Entender los fundamentos de los intercambios comerciales y del marco monetario que los condiciona, así como las implicaciones para la adopción de políticas comerciales y macroeconómicas." .
+
+# Syllabus
+guide:syllabus_45000246
+    rdf:type guide:Syllabus ;
+    guide:hasItem guide:item_topic1, guide:item_topic2, guide:item_topic3, guide:item_topic4, guide:item_topic5, guide:item_topic6, guide:item_topic7, guide:item_topic8, guide:item_topic9, guide:item_topic10, guide:item_topic11, guide:item_topic12 .
+
+guide:item_topic1
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Operaciones y agregados económicos" .
+
+guide:item_topic12
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 12 ;
+    guide:syllabusDescription "Integración económica" .
+
+# Evaluation System and Trials
+guide:eval_system_45000246
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La calificación final de la asignatura se obtendrá ponderando cada actividad de evaluación, tal como aparecen descritas en el cronograma y en la tabla de actividades de evaluación." ;
+    guide:hasEvaluationTrial guide:trial_asistencia, guide:trial_trabajo_individual, guide:trial_trabajo_grupo, guide:trial_examen_final .
+
+guide:trial_asistencia
+    rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Asistencia a clase y participación" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "/ 10" ;
+    guide:trialWeek "9" ;
+    guide:trialMode "Presencial" .
+
+guide:trial_examen_final
+    rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Examen final" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "65%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialWeek "16" ;
+    guide:trialMode "Presancencial" .
+
+# Schedule Events and Activities
+guide:event_week9_topic1
+    rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 9 ;
+    guide:eventWeek "Semana 9" ;
+    guide:hasActivity guide:act_leccion_magistral_1 .
+
+guide:act_leccion_magistral_1
+    rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1" ;
+    guide:activityDuration 1.25 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+guide:res_book_munoz
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Muñoz Cidad, C., Iraizoz, B., y Rapún, M. (2016): Introducción a la economía aplicada, 5ª ed. Civitas, Pamplona." ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:res_ine
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "www.ine.es" ;
+    guide:bibliographyDescription "Instituto Nacional de Estadística. Datos oficiales de la Economía Española." ;
+    guide:bibliographyType "Recursos web" .
+
+# Required Knowledge
+guide:req_knowledge_math
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Se recomienda tener conocimientos básicos de matemáticas, análisis gráfico y manejo de Excel." .
+
+guide:req_courses_micro
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Microeconomía, Ampliación De Macroeconomía" .

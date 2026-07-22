@@ -1,0 +1,59 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide-56DD_2025-26> rdf:type :CourseGuide ;
+    dct:title "Ampliacion De Expresion Grafica"@en ;
+    sch:name "Ampliacion De Expresion Grafica" ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus-56DD_2025-26> ;
+    guide:hasEvaluationSystem <http://guia-mad-bench.es/data/evaluation-system-56DD_2025-26> ;
+    sch:director <http://guia-mad-bench.es/data/lecturer-lucia-garijo-alonso> ,
+                <http://guia-mad-bench.es/data/lecturer-pedro-jose-loorca-hernando> ;
+    guide:numberOfCredits "4.5"^^xsd:decimal ;
+    sch:courseCode 565000566 ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/syllabus-56DD_2025-26> .
+
+<http://guia-mad-bench.es/data/degree-56DD> rdf:type :BachelorDegree , sch:CourseInstance ;
+    guide:hasCourseGuide <http://guia-mad-bench.es/data/course-guide-56DD_2025-26> ;
+    guide:numberOfCredits "4.5"^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/syllabus-56DD_2025-26> rdf:type :Syllabus , sch:Syllabus ;
+    dct:title "Temario de la asignatura"@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://guia-mad-bench.es/data/syllabus-item-curvas-planas> rdf:type :SyllabusItem ;
+    guide:syllabusDescription <http://w3id.org/def/guia#Curvas planas y alabeadas>@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-56DD_2025-26> rdf:type :Schedule , sch:Schedule ;
+    dct:title "Cronograma de la asignatura"@en ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event-schedule-week8> .
+
+<http://guia-mad-bench.es/data/evaluation-system-56DD_2025-26> rdf:type :EvaluationSystem , dct:hasSyllabusItem ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-progresiva> .
+
+<http://guia-mad-bench.es/data/lecturer-lucia-garijo-alonso> rdf:type :Lecturer , sch:Person ;
+    dct:title "Lucia Garijo Alonso"@en ;
+    sch:name "Lucia Garijo Alonso" ;
+    guide:sch:email <mailto:lucia.garijo@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer-pedro-jose-loorca-hernando> rdf:type :Lecturer , sch:Person ;
+    dct:title "Pedro Jose Lorca Hernando"@en ;
+    sch:name "Pedro Jose Lorca Hernando" .
+
+<http://guia-mad-bench.es/data/trial-progresiva> rdf:type :EvaluationTrial ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/event-schedule-week8> ;
+    guide:evaluationType "Progresiva"@es ;
+    sch:name "Prueba de evaluación progresiva" .
+
+<http://guia-mad-bench.es/data/trial-global> rdf:type :EvaluationTrial , dct:title "Evaluación Global";
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/event-schedule-week17> ;
+    sch:name "Prueba global" .
+
+<http://guia-mad-bench.es/data/competency-cg5> rdf:type :Competency , dct:title "CG5"@en ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/result-RA36> .

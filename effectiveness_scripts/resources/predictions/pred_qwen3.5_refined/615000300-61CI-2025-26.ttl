@@ -1,0 +1,456 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_61CI_615000300> rdf:type :CourseGuide ;
+    sch:name "Bases De Datos"@en ;
+    guide:numberOfCredits 9.0^^xsd:decimal ;
+    guide:syllabusDescription "Temario de la asignatura"@es ;
+    guide:teachingPeriodMonths "Septiembre-Enero"^^rdf:langString ;
+    sch:description "Guía de Aprendizaje para Bases De Datos"@en .
+
+<http://guia-mad-bench.es/data/degree/GA_61CI> rdf:type :BachelorDegree ;
+    sch:name "Grado En Ingenieria De Computadores"^^rdf:langString ;
+    guide:hasCourse <http://w3id.org/def/guia#GA_61CI_615000300> .
+
+<http://guia-mad-bench.es/data/course/GA_61CI_615000300> rdf:type :Course ;
+    sch:name "Bases De Datos"^^rdf:langString ;
+    guide:numberOfCredits 9.0^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_61CI_615000300> :hasCourse <http://w3id.org/def/guia#GA_61CI_615000300> ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule/GA_61CI_615000300> .
+
+<http://w3id.org/def/guia#GA_61CI_615000300> :hasCourseInstance <http://guia-mad-bench.es/data/courseGuide/GA_61CI_615000300> ;
+    guide:courseYear 2025^^xsd:string .
+
+<http://w3id.org/def/guia#GA_61CI_615000300> :hasSyllabus <http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> .
+
+<http://w3id.org/def/guia#GA_61CI_615000300> :hasLearningResult <http://guia-mad-bench.es/data/learningresult/RA1>,
+    <http://guia-mad-bench.es/data/learningresult/RA2>,
+    <http://guia-mad-bench.es/data/learningresult/RA7>,
+    <http://guia-mad-bench.es/data/learningresult/RA6>,
+    <http://guia-mad-bench.es/data/learningresult/RA3>,
+    <http://guia-mad-bench.es/data/learningresult/RA4>,
+    <http://guia-mad-bench.es/data/learningresult/RA5> .
+
+<http://w3id.org/def/guia#GA_61CI_615000300> :hasCompetency <http://guia-mad-bench.es/data/competency/CB01>,
+    <http://guia-mad-bench.es/data/competency/CC12>,
+    <http://guia-mad-bench.es/data/competency/CC13>,
+    <http://guia-mad-bench.es/data/competency/CT7>,
+    <http://w3id.org/def/guia#GA_61CI_615000300> :hasCompetency <http://guia-mad-bench.es/data/competency/CT2>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> rdf:type :Syllabus ;
+    guide:hasItem <http://w3id.org/def/guia#Tema 1>,
+        <http://w3id.org/def/guia#Tema 2>,
+        <http://w3id.org/def/guia#Tema 3>,
+        <http://w3id.org/def/guia#Tema 4>,
+        <http://w3id.org/def/guia#Tema 5>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Tema 6>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Práctica de la asignatura>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Almacenamiento de información>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Programación contra bases de datos>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Seguridad en bases de datos>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Modelado de datos>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Modelo relacional>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Lenguaje SQL>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :hasItem <http://w3id.org/def/guia#Tema 7>,
+    <http://w3id.org/def/guia#Introducción>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_61CI_615000300> :

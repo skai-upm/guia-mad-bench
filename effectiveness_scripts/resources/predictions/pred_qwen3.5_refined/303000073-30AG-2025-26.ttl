@@ -1,0 +1,103 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/#ANX_PR_CL_001> rdf:type owl:Class ;
+    :hasSyllabus <http://guia-mad-bench.es/data/#SYLLABUS_ANX_PR_CL_001> ;
+    sch:name "Organizacion De Los Centros Docentes de Enseñanza Secundaria y de Formación Profesional"@es ;
+    guide:numberOfCredits 3^^xsd:decimal ;
+    guide:teachingPeriod "2025-26 - Primer semestre"^^xsd:string ;
+    sch:description "La asignatura Organización y Dirección de los Centros Escolares tiene como objetivo dotar al alumnado del Máster del Profesorado de las competencias necesarias para comprender y analizar los distintos elementos que configuran la organización y gestión de los centros educativos."@es .
+
+<http://guia-mad-bench.es/data/#SYLLABUS_ANX_PR_CL_001> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/#ITEM_TEMA_1>,
+                 <http://guia-mad-bench.es/data/#ITEM_TEMA_2>,
+                 <http://guia-mad-bench.es/data/#ITEM_TEMA_3> ;
+    guide:hasItem <http://guia-mad-bench.es/data/#ITEM_TEMA_4>.
+
+<http://guia-mad-bench.es/data/#ITEM_TEMA_1> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "MARCO LEGAL Y EVOLUCIÓN DEL SISTEMA EDUCATIVO"@es .
+
+<http://guia-mad-bench.es/data/#ITEM_TEMA_2> rdf:type :SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer ;
+    guide:syllabusDescription "ORGANIZACIÓN Y GESTIÓN DE LOS CENTROS ESCOLARES"@es .
+
+<http://guia-mad-bench.es/data/#ITEM_TEMA_3> rdf:type :SyllabusItem ;
+    guide:itemIndex 3^^xsd:integer ;
+    guide:syllabusDescription "DOCUMENTOS INSTITUCIONALES"@es .
+
+<http://guia-mad-bench.es/data/#ITEM_TEMA_4> rdf:type :SyllabusItem ;
+    guide:itemIndex 4^^xsd:integer ;
+    guide:syllabusDescription "CONTEXTO ESPECÍFICO DE EDUCACIÓN FÍSICA"@es .
+
+<http://guia-mad-bench.es/data/#CE05> rdf:type :Competency ;
+    guide:competencyCode "CE05"^^xsd:string ;
+    guide:competencyDescription "Conocer los procesos de interacción en el aula y en el centro, abordar y resolver posibles problemas."@es .
+
+<http://guia-mad-bench.es/data/#CE06> rdf:type :Competency ;
+    guide:competencyCode "CE06"^^xsd:string ;
+    guide:competencyDescription "Conocer la evolución histórica del sistema educativo."@es .
+
+<http://guia-mad-bench.es/data/#RA63> rdf:type :LearningResult ;
+    guide:learningResultCode "RA63"^^xsd:string ;
+    guide:learningResultDescription "Saber identificar, elaborar y evaluar los diferentes documentos de trabajo relativos a la organización docente en los centros educativos"@es .
+
+<http://guia-mad-bench.es/data/#ANX_PR_CL_001> sch:hasCourseInstance <http://guia-mad-bench.es/data/#COURSE_303000073>.
+<http://guia-mad-bench.es/data/#COURSE_303000073> rdf:type :Course ;
+    guide:syllabusDescription "Organizacion De Los Centros Docentes de Enseñanza Secundaria y de Formación Profesional"@es .
+
+<http://guia-mad-bench.es/data/#RODRIGO_PARDO_GARCIA> rdf:type :Lecturer, sch:Person ;
+    sch:name "Rodrigo Pardo Garcia"^^xsd:string ;
+    guide:office "503"^^xsd:string ;
+    sch:email "rodrigo.pardo@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#ANX_PR_CL_001> :hasEvaluation <http://guia-mad-bench.es/data/#EVAL_SYSTEM_ANX>.
+<http://guia-mad-bench.es/data/#EVAL_SYSTEM_ANX> rdf:type :EvaluationSystem ;
+    guide:evaluationDescription "El desarrollo de la asignatura responde a la conjugación de presentaciones expositivas por parte del profesorado, a actividades prácticas y presentaciones expositivas por parte de los propios alumnos."@es .
+
+<http://guia-mad-bench.es/data/#EVAL_TRIAL_1> rdf:type :EvaluationTrial ;
+    guide:trialType "Progresiva"^^xsd:string ;
+    guide:gradePercentage 50^^xsd:decimal ;
+    sch:name "Desafío de la escuela del S. XXI"@es .
+
+<http://guia-mad-bench.es/data/#EVAL_TRIAL_2> rdf:type :EvaluationTrial ;
+    guide:trialType "Progresiva"^^xsd:string ;
+    guide:gradePercentage 40^^xsd:decimal ;
+    sch:name "Prueba escrita de los contenidos"@es .
+
+<http://guia-mad-bench.es/data/#EVAL_TRIAL_3> rdf:type :EvaluationTrial ;
+    guide:trialType "Progresiva"^^xsd:string ;
+    guide:gradePercentage 10^^xsd:decimal ;
+    sch:name "Autoevaluación dialogada"@es .
+
+<http://guia-mad-bench.es/data/#EVAL_TRIAL_4> rdf:type :EvaluationTrial ;
+    guide:trialType "Global"^^xsd:string ;
+    guide:gradePercentage 100^^xsd:decimal ;
+    sch:name "Prueba evaluación global"@es .
+
+<http://guia-mad-bench.es/data/#EVAL_TRIAL_5> rdf:type :EvaluationTrial ;
+    guide:trialType "Extraordinaria"^^xsd:string ;
+    guide:gradePercentage 100^^xsd:decimal ;
+    sch:name "Examen teórico"@es .
+
+<http://guia-mad-bench.es/data/#EVAL_SYSTEM_ANX> :hasEvaluationTrial <http://guia-mad-bench.es/data/#EVAL_TRIAL_1>,
+                 <http://guia-mad-bench.es/data/#EVAL_TRIAL_2>,
+                 <http://guia-mad-bench.es/data/#EVAL_TRIAL_3>,
+                 <http://guia-mad-bench.es/data/#EVAL_TRIAL_4>.
+
+<http://guia-mad-bench.es/data/#ANX_PR_CL_001> sch:hasScheduleEvent <http://guia-mad-bench.es/data/#SCHED_EVENT_1>,
+                 <http://guia-mad-bench.es/data/#SCHED_EVENT_2>.
+
+<http://guia-mad-bench.es/data/#SCHED_EVENT_1> rdf:type :ScheduleEvent ;
+    guide:eventIndex 1^^xsd:integer ;
+    sch:name "Introducción asignatura"@es .
+
+<http://guia-mad-bench.es/data/#SCHED_EVENT_2> rdf:type :ScheduleEvent ;
+    guide:eventIndex 2^^xsd:integer ;
+    sch:name "Explicación del temario. Tema 1"@es .

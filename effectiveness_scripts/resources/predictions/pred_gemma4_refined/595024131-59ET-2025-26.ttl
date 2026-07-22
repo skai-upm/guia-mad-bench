@@ -1,0 +1,167 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+_:courseGuide a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Ingenieria De Audio II" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:numberOfCredits 6.0 ;
+    guide:inpersonHours "Not specified" ;
+    guide:remoteHours "Not specified" ;
+    guide:totalHours "Not specified" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCourse _:course ;
+    guide:hasSyllabus _:syllabus ;
+    guide:hasCompetency _:compEC01, _:compSO01, _:compSO02, _:compSO05, _:compCG02, _:compCG04 ;
+    guide:hasLearningResult _:lrRA165 ;
+    guide:hasEvaluation _:evalSystem ;
+    guide:hasDidacticResource _:resVideo, _:resManuals ;
+    sch:instructor _:lecturerLino, _:lecturerDaniel, _:lecturerMaria ;
+    sch:director _:lecturerLino ;
+    sch:description "Asignatura destinada al estudio de los equipos que permiten el tratamiento y manipulación de la señal de audio." .
+
+# Course Instance
+_:course a guide:Course ;
+    sch:name "595024131 - Ingenieria De Audio II" ;
+    guide:courseYear 2025 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Sexto semestre" ;
+    sch:courseCode 595024131 .
+
+# Degree Instance
+_:degree a guide:Degree ;
+    sch:name "5: 59ET - Doble Grado En Ing.Electronica De Comunicaciones Y En Ing.Telematica" ;
+    guide:degreeCode "59ET" .
+
+# University Center Instance
+_:univCenter a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingeniería y Sist. de Telecom." ;
+    guide:offers _:degree .
+
+# Lecturer Instances
+_:lecturerLino a guide:Lecturer ;
+    sch:name "Lino Pedro Garcia Morales" ;
+    sch:email "lino.garcia@upm.es" ;
+    guide:office "8208" ;
+    guide:tutorshipsSchedule "Sin horario. Consultar horario en Moodle." .
+
+_:lecturerDaniel a guide:Lecturer ;
+    sch:name "Daniel De La Prida Caballero" ;
+    sch:email "daniel.prida@upm.es" ;
+    guide:office "D8209" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+_:lecturerMaria a guide:Lecturer ;
+    sch:name "Maria Larrosa Navarro" ;
+    sch:email "m.larrosa@upm.es" ;
+    guide:office "D8209" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+# Competency Instances
+_:compEC01 a guide:Competency ;
+    guide:competencyCode "CE EC01" ;
+    guide:competencyDescription "Capacidad de construir, explotar y gestionar sistemas de captación, transporte, representación, procesado, almacenamiento, gestión y presentación de información multimedia..." .
+
+_:compSO01 a guide:Competency ;
+    guide:competencyCode "CE SO01" ;
+    guide:competencyDescription "Capacidad de construir, explotar y gestionar servicios y aplicaciones de telecomunicaciones..." .
+
+_:compSO02 a guide:Competency ;
+    guide:competencyCode "CE SO02" ;
+    guide:competencyDescription "Capacidad de analizar, especificar, realizar y mantener sistemas, equipos, cabeceras e instalaciones de televisión, audio y vídeo..." .
+
+_:compSO05 a guide:Competency ;
+    guide:competencyCode "CE SO05" ;
+    guide:competencyDescription "Capacidad para crear, codificar, gestionar, difundir y distribuir contenidos multimedia..." .
+
+_:compCG02 a guide:Competency ;
+    guide:competencyCode "CG 02" ;
+    guide:competencyDescription "Capacidad de búsqueda y selección de información, de razonamiento crítico y de elaboración y defensa de argumentos dentro del área." .
+
+_:compCG04 a guide:Competency ;
+    guide:competencyCode "CG 04" ;
+    guide:competencyDescription "Capacidad de abstracción, de análisis y de síntesis y de resolución de problemas." .
+
+# Learning Result Instance
+_:lrRA165 a guide:LearningResult ;
+    guide:learningResultCode "RA165" ;
+    guide:learningResultDescription "Conocimiento de la arquitectura multicapa" .
+
+# Syllabus and Items
+_:syllabus a guide:Syllabus ;
+    guide:hasItem _:item1, _:item2, _:item3 .
+
+_:item1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW)" .
+
+_:item2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Diseño de Estudios" .
+
+_:item3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Digitalización de la señal de audio" .
+
+# Evaluation System and Trials
+_:evalSystem a guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación de la asignatura es del tipo progresiva: suma de todos los controles de clase donde se incluye el control de laboratorio y el proyecto de diseño." ;
+    guide:hasEvaluationTrial _:trialControl1, _:trialControl2, _:trialGlobal .
+
+_:trialControl1 a guide:EvaluationTrial ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "18%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialWeek "4" ;
+    guide:trialMode "Presencial" .
+
+_:trialControl2 a guide:EvaluationTrial ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "18%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialWeek "8" ;
+    guide:trialMode "Presencial" .
+
+_:trialGlobal a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "90%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:trialMode "Presencial" .
+
+# Didactic Resources
+_:resVideo a guide:DidacticResource ;
+    sch:name "Vídeos clasificados" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Vídeos realizados por el profesorado para complementar la docencia en clase." .
+
+_:resManuals a guide:DidacticResource ;
+    sch:name "Guiones de prácticas" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Guiones propios de todas las prácticas de laboratorio." .
+
+# Schedule Events and Activities
+_:eventControl1 a guide:ScheduleEvent ;
+    guide:eventIndex 4 ;
+    guide:eventWeek "Semana 4" ;
+    guide:hasActivity _:actControl1 .
+
+_:actControl1 a guide:Activity ;
+    guide:activityDescription "Control 1" ;
+    guide:activityDuration 0.16 ;
+    guide:activityFormat "Prueba Telemática" ;
+    guide:attendanceType "Presencial" .
+
+_:eventLab1 a guide:ScheduleEvent ;
+    guide:eventIndex 2 ;
+    guide:eventWeek "Semana 2" ;
+    guide:hasActivity _:actLab1 .
+
+_:actLab1 a guide:Activity ;
+    guide:activityDescription "Práctica 1. Puesto de laboratorio" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:attendanceType "Presencial" .

@@ -1,0 +1,148 @@
+@prefix ex: <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+ex:CourseGuide_65004047 rdf:type guide:CourseGuide ;
+    sch:name "65004047 - Ingenieria de Fluidos" ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:totalHours "Estimado según créditos ECTS (26-27h por crédito)" ;
+    guide:hasCourse ex:Course_65004047 ;
+    guide:hasSyllabus ex:Syllabus_65004047 ;
+    guide:hasCompetency ex:Comp_CE11, ex:Comp_CE19, ex:Comp_CE23, ex:Comp_CG1, ex:Comp_CG5, ex:Comp_CG6, ex:Comp_CG7 ;
+    guide:hasLearningResult ex:LR_RA324, ex:LR_RA325, ex:LR_RA323, ex:LR_RA326, ex:LR_RA327, ex:LR_RA328, ex:LR_RA150 ;
+    guide:hasEvaluation ex:EvalSystem_65004047 ;
+    guide:hasDidacticResource ex:Res_LibroCrespo, ex:Res_EjerciciosExamenes ;
+    sch:instructor ex:Lecturer_JorgeDuenas ;
+    sch:director ex:Lecturer_JorgeDuenas .
+
+# Course Instance
+ex:Course_65004047 rdf:type guide:Course ;
+    sch:name "65004047 - Ingenieria de Fluidos" ;
+    guide:courseType "Optativa" ;
+    guide:semester "Quinto semestre" ;
+    sch:courseCode 65004047 .
+
+# Degree Instance
+ex:Degree_06IE rdf:type guide:Degree ;
+    sch:name "06IE - Grado en Ingenieria de la Energia" ;
+    guide:degreeCode "06IE" ;
+    guide:hasCourse ex:Course_65004047 .
+
+# University Center Instance
+ex:UnivCenter_ETS rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros De Minas Y Energía" ;
+    guide:offers ex:Degree_06IE .
+
+# Lecturer Instance
+ex:Lecturer_JorgeDuenas rdf:type guide:Lecturer ;
+    sch:name "Jorge Dueñas Pamplona" ;
+    sch:email "jorgeduenas.pamplona@upm.es" ;
+    guide:office "10" ;
+    guide:tutorshipsSchedule "Sin horario. Contactar previamente con el profesor vía correo electrónico." .
+
+# Competencies
+ex:Comp_CE11 rdf:type guide:Competency ;
+    guide:competencyCode "CE11" ;
+    guide:competencyDescription "Comprender las leyes generales de la mecánica y aplicarlas a la resolución de problemas propios de la ingeniería." .
+
+ex:Comp_CE19 rdf:type guide:Competency ;
+    guide:competencyCode "CE19" ;
+    guide:competencyDescription "Comprender los principios de mecánica de fluidos e hidráulica y aplicarlos en la Ingeniería de la Energía." .
+
+ex:Comp_CG5 rdf:type guide:Competency ;
+    guide:competencyCode "CG5" ;
+    guide:competencyDescription "Saber comunicar los conocimientos y conclusiones, tanto de forma oral, escrita y gráfica, a públicos especializados y no especializados de un modo claro y sin ambigüedades." .
+
+# Learning Results
+ex:LR_RA324 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA324" ;
+    guide:learningResultDescription "Poseer capacidad para diseñar, desarrollar, implementar, gestionar y mejorar productos, sistemas y procesos en los distintos ámbitos industriales, usando técnicas analíticas, computacionales o experimentales apropiadas." .
+
+ex:LR_RA150 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA150" ;
+    guide:learningResultDescription "Capacidad para caracterizar y comprender el comportamiento de los fluidos en distintas situaciones de interés para el ingeniero industrial de la especialidad de Técnicas Energéticas" .
+
+# Syllabus
+ex:Syllabus_65004047 rdf:type guide:Syllabus ;
+    guide:hasItem ex:SyllabusItem_1, ex:SyllabusItem_2, ex:SyllabusItem_3, ex:SyllabusItem_4, ex:SyllabusItem_5, ex:SyllabusItem_6 .
+
+ex:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Leyes de conservación" .
+
+ex:SyllabusItem_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Conservación de la masa" .
+
+ex:SyllabusItem_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Conservación del momento" .
+
+ex:SyllabusItem_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Conservación de la energía" .
+
+ex:SyllabusItem_5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Flujo compresible e ideal" .
+
+ex:SyllabusItem_6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Aerodinámica" .
+
+# Evaluation System and Trials
+ex:EvalSystem_65004047 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Existen dos opciones: evaluación progresiva, o evaluación global." ;
+    guide:hasEvaluationTrial ex:Trial_PEP1, ex:Trial_PEP2, ex:Trial_Final .
+
+ex:Trial_PEP1 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Prueba de evaluación progresiva 1" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialWeek "7" ;
+    guide:trialMode "Presencial" .
+
+ex:Trial_PEP2 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Prueba de evaluación progresiva 2" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialWeek "17" ;
+    guide:trialMode "Presencial" .
+
+ex:Trial_Final rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen final" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:trialMode "Presencial" .
+
+# Didactic Resources
+ex:Res_LibroCrespo rdf:type guide:DidacticResource ;
+    sch:name "Libro 'Mecánica de Fluidos', A. Crespo" ;
+    guide:bibliographyType "Bibliografía básica" .
+
+ex:Res_EjerciciosExamenes rdf:type guide:DidacticResource ;
+    sch:name "Colección de ejercicios y exámenes resueltos" ;
+    guide:bibliographyType "Recursos web" .
+
+# Activities (from Schedule)
+ex:Activity_Teoria rdf:type guide:Activity ;
+    guide:activityDescription "Clase de teoría" ;
+    guide:activityDuration 1.16 ; # 01:10 in decimal hours approx
+    guide:activityFormat "Lección Magistral" .
+
+ex:Activity_Problemas rdf:type guide:Activity ;
+    guide:activityDescription "Clase de problemas" ;
+    guide:activityDuration 1.16 ;
+    guide:activityFormat "Clase de Problemas" .

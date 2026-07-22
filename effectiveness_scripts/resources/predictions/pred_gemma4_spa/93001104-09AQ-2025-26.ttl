@@ -1,0 +1,219 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# --- Degree and University Center ---
+
+:degree_09AQ rdf:type guide:MasterDegree ;
+    sch:name "09AQ - Master Universitario En Ingenieria De Telecomunicacion" ;
+    guide:degreeCode "09AQ" ;
+    guide:hasCourse :course_93001104 .
+
+:center_ETS rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" ;
+    guide:offers :degree_09AQ .
+
+# --- Course and Course Guide ---
+
+:course_93001104 rdf:type guide:Course ;
+    sch:name "93001104 - Sistemas Electronicos Para Iot" ;
+    sch:courseCode 93001104 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Tercer semestre" ;
+    sch:hasCourseInstance :course_guide_93001104 .
+
+:course_guide_93001104 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Sistemas Electronicos Para Iot" ;
+    sch:description "Guía de aprendizaje para la asignatura Sistemas Electrónicos Para Iot." ;
+    guide:numberOfCredits 4.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:inpersonHours "No especificado" ;
+    guide:remoteHours "No especificado" ;
+    guide:totalHours "No especificado" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :lecturer_alvaro, :lecturer_pedro ;
+    sch:director :lecturer_alvaro ;
+    guide:hasSyllabus :syllabus_93001104 ;
+    guide:hasCompetency :comp_CE12, :comp_CE15, :comp_CG2 ;
+    guide:hasLearningResult :lr_RA116, :lr_RA218, :lr_RA217, :lr_RA115, :lr_RA327, :lr_RA215 ;
+    guide:hasEvaluation :eval_system_93001104 ;
+    guide:hasDidacticResource :res_moodle, :res_book_lee, :res_book_wolf, :res_book_liu, :res_book_grenning ;
+    sch:courseSchedule :schedule_93001104 ;
+    guide:otherInformation "Conocimientos previos recomendados: Lenguaje de programación C (tutorial MIT), Electrónica digital básica." .
+
+# --- Lecturers ---
+
+:lecturer_alvaro rdf:type guide:Lecturer ;
+    sch:name "Alvaro Araujo Pinto" ;
+    sch:email "alvaro.araujo@upm.es" ;
+    guide:office "B-104.1b" ;
+    guide:tutorshipsSchedule "X - 12:00 - 14:00. Para cualquier otra hora, concertar cita por correo electrónico." .
+
+:lecturer_pedro rdf:type guide:Lecturer ;
+    sch:name "Pedro Jose Malagon Marzo" ;
+    sch:email "pedro.malagon.marzo@upm.es" ;
+    guide:office "B-113" ;
+    guide:tutorshipsSchedule "Sin horario. Solicitar tutorías concertándolas por correo electrónico." .
+
+# --- Competencies ---
+
+:comp_CE12 rdf:type guide:Competency ;
+    guide:competencyCode "CE12" ;
+    guide:competencyDescription "Capacidad para utilizar dispositivos lógicos programables, así como para diseñar sistemas electrónicos avanzados, tanto analógicos como digitales. Capacidad para diseñar componentes de comunicaciones..." .
+
+:comp_CE15 rdf:type guide:Competency ;
+    guide:competencyCode "CE15" ;
+    guide:competencyDescription "Capacidad para la integración de tecnologías y sistemas propios de la Ingeniería de Telecomunicación, con carácter generalista, y en contextos más amplios y multidisciplinares..." .
+
+:comp_CG2 rdf:type guide:Competency ;
+    guide:competencyCode "CG2" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos..." .
+
+# --- Learning Results ---
+
+:lr_RA116 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA116" ;
+    guide:learningResultDescription "Diseñar e implementar aplicaciones reales usando plataformas de diseño basadas en procesadores avanzados" .
+
+:lr_RA218 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA218" ;
+    guide:learningResultDescription "Analizar y diseñar el software de un sistema electrónico" .
+
+:lr_RA217 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA21．7" ;
+    guide:learningResultDescription "Analizar la fiabilidad de un sistema electrónico y diseñar sistemas en base a restricciones de fiabilidad" .
+
+:lr_RA115 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA115" ;
+    guide:learningResultDescription "Implementar aplicaciones sobre un Sistema Operativo de tiempo real en sistemas avanzados de procesadores" .
+
+:lr_RA327 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA327" ;
+    guide:learningResultDescription "Conocimientos cualitativos y cuantitativos del diseño de sistemas electrónicos" .
+
+:lr_RA215 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA215" ;
+    guide:learningResultDescription "Analizar y diseñar sistemas electrónicos teniendo en cuenta aspectos de compatibilidad electromagnética" .
+
+# --- Syllabus ---
+
+:syllabus_93001104 rdf:type guide:Syllabus ;
+    guide:hasItem :item_1, :item_2, :item_3, :item_4, :item_5, :item_6 .
+
+:item_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a los sistemas empotrados (Aplicaciones, Ejemplo motivante, Proceso de diseño)" .
+
+:item_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Diseño hardware de sistemas empotrados (Microcontroladores, Arquitectura de memoria, Entrada/Salida)" .
+
+:item_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Diseño software de sistemas empotrados (Capa de abstracción hardware y BSP, Sistemas Operativos para un único núcleo, Tareas, Mecanismos de comunicación)" .
+
+:item_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Sistemas en tiempo real (Métodos de planificación, Ejecutivo cíclico, Planificación con prioridades)" .
+
+:item_5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Entorno de pruebas para sistemas empotrados (Diseño orientado a test, Diseño guiado por test, Test unitarios, Test de integración, Modularización y abstracción)" .
+
+:item_6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Seguridad en Sistemas Empotrados (Protección de código, Integridad y privacidad, Ataques, Mejoras arquitecturales)" .
+
+# --- Evaluation System and Trials ---
+
+:eval_system_93001104 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La asignatura se aprobará con una calificación mayor o igual a 5 puntos. Incluye evaluación progresiva y global." ;
+    guide:hasEvaluationTrial :trial_prac0, :trial_prac1, :trial_prac2, :trial_prac3, :trial_exam_prog, :trial_exam_global, :trial_prac4, :trial_prac5 .
+
+:trial_prac0 rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "5%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "No presencial" ;
+    guide:involvesCompetency :comp_CG2, :comp_CE12, :comp_CE15 .
+
+:trial_prac1 rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Práctica 1: FSM y entrada/salida" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "15%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "No presencial" ;
+    guide:involvesCompetency :comp_CE12, :comp_CE15, :comp_CG2 .
+
+:trial_exam_prog rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Examen para evaluación progresiva" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_CE12, :comp_CE15, :comp_CG2 .
+
+:trial_exam_global rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Examen global" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "70%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_CE12, :comp_CE15, :comp_CG2 .
+
+# --- Schedule and Activities ---
+
+:schedule_93001104 rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week2, :event_week3, :event_week4, :event_week5 .
+
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_lecture1, :act_coop1, :act_lecture2 .
+
+:act_lecture1 rdf:type guide:Activity ;
+    guide:activityDescription "Introducción a los sistemas empotrados. Sistemas ciber-físicos. Restricciones. Desarrollo cruzado." ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+:act_coop1 rdf:type guide:Activity ;
+    guide:activityDescription "Ejemplo motivador" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Acciones Cooperativas" .
+
+:event_week5 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 5 ;
+    guide:eventWeek "Semana 5" ;
+    guide:hasActivity :act_lecture3, :act_lab0 .
+
+:act_lab0 rdf:type guide:Activity ;
+    guide:activityDescription "Práctica 0: Introducción al entorno de desarrollo" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Prácticas de Laboratorio" .
+
+# --- Didactic Resources ---
+
+:res_moodle rdf:type guide:DidacticResource ;
+    sch:name "Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_book_lee rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Introduction to Embedded Systems, A Cyber-Physical Systems Approach" ;
+    guide:bibliographyDescription "Edward A. Lee and Sanjit A. Seshia, 2011." .
+
+:res_book_wolf rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Computers as Components: Principles of Embedded Computing System Design" ;
+    guide:bibliographyDescription "Marilyn Wolf, 3rd edition, 2012. Complementario, nivel básico." .
+
+:res_book_liu rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Real-Time Systems" ;
+    guide:bibliographyDescription "Jane W. S. Liu, 2000. Complementario, planificación de sistemas de tiempo real." .
+
+:res_book_grenning rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Test-Driven Development for Embedded C" ;
+    guide:bibliographyDescription "James W. Grenning. Complementario, módulo de pruebas." .

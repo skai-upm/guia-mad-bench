@@ -1,0 +1,221 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+
+# --- University Center ---
+guide:ETS_Sistemas_Informaticos rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S De Ing. De Sistemas Informáticos" ;
+    guide:offers guide:Master_61AH .
+
+# --- Degree ---
+guide:Master_61AH rdf:type guide:MasterDegree ;
+    sch:name "Máster Universitario En Aprendizaje Automático Y Datos Masivos" ;
+    guide:degreeCode "61AH" ;
+    guide:hasCourse guide:Course_613000136 .
+
+# --- Course ---
+guide:Course_613000136 rdf:type guide:Course ;
+    sch:name "Metodología y Técnicas de Investigación" ;
+    sch:courseCode 613000136 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Primer semestre" ;
+    sch:hasCourseInstance guide:Guide_613000136 .
+
+# --- Course Guide ---
+guide:Guide_613000136 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Metodología y Técnicas de Investigación" ;
+    sch:description "La metodología y las técnicas de investigación son fundamentales en el ámbito científico..."@en ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:numberOfCredits 3.0 ;
+    guide:totalHours "78" ; # Calculated based on 26h per ECTS as per doc note (approx)
+    sch:activitiesWorkload "26-27 hours per ECTS" ;
+    sch:instructor guide:David_Camacho_Fernandez, guide:Jose_E_Naranjo_Hernandez ;
+    guide:hasSyllabus guide:Syllabus_613000136 ;
+    guide:hasCompetency guide:Comp_CB10, guide:Comp_CB6, guide:Comp_CB7, guide:Comp_CB8, guide:Comp_CB9, guide:Comp_CE01, guide:Comp_CG1, guide:Comp_CG2, guide:Comp_CG3, guide:Comp_CG4, guide:Comp_CG5, guide:Comp_CT1, guide:Comp_CT2, guide:Comp_CT3, guide:Comp_CT4, guide:Comp_CT5, guide:Comp_S01 ;
+    guide:hasLearningResult guide:LR_RA50, guide:LR_RA51, guide:LR_RA52, guide:LR_RA53, guide:LR_RA54, guide:LR_RA55 ;
+    guide:hasEvaluation guide:EvalSystem_613000136 ;
+    guide:hasDidacticResource guide:Res_Hopf_2019, guide:Res_Jones_2015, guide:Res_Lukic_2014, guide:Res_Reynolds_2011, guide:Res_Kothari_2004, guide:Res_Vakkari_2003, guide:Res_Dodig_2002, guide:Res_Gregar_1994, guide:Res_Theocharis_1987, guide:Res_Web_JCR .
+
+# --- Lecturers ---
+guide:David_Camacho_Fernandez rdf:type guide:Lecturer ;
+    sch:name "David Camacho Fernandez" ;
+    sch:email "david.camacho@upm.es" ;
+    guide:office "1215" ;
+    guide:tutorshipsSchedule "Las tutorías serán concertadas vía correo electrónico." .
+
+guide:Jose_E_Naranjo_Hernandez rdf:type guide:Lecturer ;
+    sch:name "Jose Eugenio Naranjo Hernandez" ;
+    sch:email "joseeugenio.naranjo@upm.es" ;
+    guide:office "4120" ;
+    guide:tutorshipsSchedule "Las tutorías serán concertadas vía correo electrónico." .
+
+# --- Competencies ---
+guide:Comp_CB10 rdf:type guide:Competency ; guide:competencyCode "CB10" ; guide:competencyDescription "Habilidades de aprendizaje autodirigido o autónomo."@en .
+guide:Comp_CB6 rdf:type guide:Competency ; guide:competencyCode "CB6" ; guide:competencyDescription "Poseer y comprender conocimientos para la investigación."@en .
+guide:Comp_CB7 rdf:type guide:Competency ; guide:competencyCode "CB7" ; guide:competencyDescription "Aplicar conocimientos en entornos nuevos."@en .
+guide:Comp_CB8 rdf:type guide:Competency ; guide:competencyCode "CB8" ; guide:competencyDescription "Integrar conocimientos y enfrentar la complejidad ética."@en .
+guide:Comp_CB9 rdf:type guide:Competency ; guide:competencyCode "CB9" ; guide:competencyDescription "Comunicar conclusiones a públicos especializados."@en .
+guide:Comp_CE01 rdf:type guide:Competency ; guide:competencyCode "CE01" ; guide:competencyDescription "Emplear resultados de aprendizaje automático."@en .
+guide:Comp_CG1 rdf:type guide:Competency ; guide:competencyCode "CG1" ; guide:competencyDescription "Aplicar el método científico en aprendizaje automático."@en .
+guide:Comp_CG2 rdf:type guide:Competency ; guide:competencyCode "CG2" ; guide:competencyDescription "Participar en la evaluación de resultados experimentales."@en .
+guide:Comp_CG3 rdf:type guide:Competency ; guide:competencyCode "CG3" ; guide:competencyDescription "Reunir e interpretar datos masivos con reflexión ética."@en .
+guide:Comp_CG4 rdf:type guide:Competency ; guide:competencyCode "CG4" ; guide:competencyDescription "Capacidad de trabajo en equipo y discusión crítica."@en .
+guide:Comp_CG5 rdf:type guide:Competency ; guide:competencyCode "CG5" ; guide:competencyDescription "Transmisión de información generada."@en .
+guide:Comp_CT1 rdf:type guide:Competency ; guide:competencyCode "CT1" ; guide:comptencyDescription "Creatividad"@en .
+guide:Comp_CT2 rdf:type guide:Competency ; guide:competencyCode "CT2" ; guide:comptencyDescription "Organización y planificación"@en .
+guide:Comp_CT3 rdf:type guide:Competency ; guide:competencyCode "CT3" ; guide:comptencyDescription "Gestión de la información"@en .
+guide:Comp_CT4 rdf:type guide:Competency ; guide:competencyCode "CT4" ; guide:comptencyDescription "Liderazgo de equipos"@en .
+guide:Comp_CT5 rdf:type guide:Competency ; guide:competencyCode "CT5" ; guide:comptencyDescription "Trabajo en contextos internacionales"@en .
+guide:Comp_S01 rdf:type guide:Competency ; guide:competencyCode "S01" ; guide:comptencyDescription "El alumno elabora artículos e informes científicos."@en .
+
+# --- Learning Results ---
+guide:LR_RA50 rdf:type guide:LearningResult ; guide:learningResultCode "RA50" ; guide:learningResultDescription "Buscar bibliografía científica, herramientas software y recursos para validación de resultados"@en .
+guide:LR_RA51 rdf:type guide:LearningResult ; guide:learningResultCode "RA51" ; guide:learningResultDescription "Abordar y plantear un tema de investigación de interés"@en .
+guide:LR_RA52 rdf:type guide:LearningResult ; guide:learningResultCode "RA52" ; guide:learningResultDescription "Conocer y aplicar la metodología científica en ciencia e ingeniería"@en .
+guide:LR_RA53 rdf:type guide:LearningResult ; guide:learningResultCode "RA53" ; guide:learningResultDescription "Abordar y planificar un trabajo de investigación"@en .
+guide:LR_RA54 rdf:type guide:LearningResult ; guide:learningResultCode "RA54" ; guide:learningResultDescription "Redactar un trabajo científico"@en .
+guide:LR_RA55 rdf:type guide:LearningResult ; guide:learningResultCode "RA55" ; guide:learningResultDescription "Realizar una presentación oral"@en .
+
+# --- Syllabus ---
+guide:Syllabus_613000136 rdf:type guide:Syllabus ;
+    guide:hasItem guide:SyllabusItem_B1, guide:SyllabusItem_B2 .
+
+guide:SyllabusItem_B1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Bloque I (INVESTIGACIÓN): El conocimiento y la investigación, Impacto y diseminación, Redacción, Malas prácticas, Tesis Doctoral."@en .
+
+guide:SyllabusItem_B2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Bloque II (PROYECTOS): Concepción y diseño, Desarrollo de tema, Consorcio, Proyectos competitivos, Transferencia, Foros."@en .
+
+# --- Evaluation System ---
+guide:EvalSystem_613000136 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global con dos trabajos principales de 50% cada uno."@en ;
+    guide:hasEvaluationTrial guide:Trial_Prog_1, guide:Trial_Prog_2, guide:Trial_Global, guide:Trial_Extraordinary .
+
+guide:Trial_Prog_1 rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Presentación de un trabajo de investigación" ;
+    guide:trialType "Presentación en Grupo" ;
+    guide:trialWeek "3" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" ;
+    guide:involvesCompetency guide:Comp_S01, guide:Comp_CB6, guide:Comp_CB8, guide:Comp_CB9, guide:Comp_CB10, guide:Comp_CG5, guide:Comp_CG1, guide:Comp_CG2, guide:Comp_CG3, guide:Comp_CG4, guide:Comp_CT1, guide:Comp_CT2, guide:Comp_CT3, guide:Comp_CT5 .
+
+guide:Trial_Prog_2 rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Exposición de un proyecto de investigación" ;
+    guide:trialType "Presentación en Grupo" ;
+    guide:trialWeek "5" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" ;
+    guide:involvesCompetency guide:Comp_CB6, guide:Comp_CB7, guide:Comp_CB8, guide:Comp_CG5, guide:Comp_CG2, guide:Comp_CG4, guide:Comp_CE01, guide:Comp_CT1, guide:Comp_CT2, guide:Comp_CT3, guide:Comp_CT4, guide:Comp_CT5 .
+
+guide:Trial_Global rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Presentación de un trabajo de investigación y de un proyecto de I+D+i" ;
+    guide:trialType "Presentación Individual" ;
+    guide:trialWeek "17" ;
+    guide:evaluationType "global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "03:00" ;
+    guide:involvesCompetency guide:Comp_S01, guide:Comp_CB6, guide:Comp_CB7, guide:Comp_CB8, guide:Comp_CB9, guide:Comp_CB10, guide:Comp_CG5, guide:Comp_CG1, guide:Comp_CG2 .
+
+guide:Trial_Extraordinary rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Presentación de un trabajo de investigación y de un proyecto de I+D+i" ;
+    guide:trialType "Presentación Individual" ;
+    guide:evaluationType "extraordinaria" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "03:00" ;
+    guide:involvesCompetency guide:Comp_S01, guide:Comp_CB6, guide:Comp_CB7, guide:Comp_CB8, guide:Comp_CB9, guide:Comp_CB10, guide:Comp_CG5, guide:Comp_CG1, guide:Comp_CG2, guide:Comp_CG3, guide:Comp_CG4, guide:Comp_CE01, guide:Comp_CT1, guide:Comp_CT2, guide:Comp_CT3, guide:Comp_CT4, guide:Comp_CT5 .
+
+# --- Schedule Events & Activities ---
+guide:Event_Week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "1" ;
+    sch:eventSchedule guide:Act_LM_1_1, guide:Act_AC_1_2 .
+
+guide:Act_LM_1_1 rdf:type guide:Activity ;
+    guide:activityDescription "Bloque I: 1.1. El conocimiento y la investigación" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 3.0 ;
+    guide:attendanceType "Presencial" .
+
+guide:Act_AC_1_2 rdf:type guide:Activity ;
+    guide:activityDescription "Bloque I: 1.2. Impacto y diseminación de la ciencia" ;
+    guide:activityFormat "Acciones Cooperativas" ;
+    guide:activityDuration 3.0 ;
+    guide:attendanceType "Presencial" .
+
+guide:Event_Week3 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 3 ;
+    guide:eventWeek "3" ;
+    sch:eventSchedule guide:Act_LM_1_4, guide:Act_LM_1_5 .
+
+# --- Didactic Resources ---
+guide:Res_Hopf_2019 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Fake science and the knowledge crisis" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Hopf, H., Krief, A., Mehta, G., & Matlin, S. A. (2019). Royal Society open science."@en .
+
+guide:Res_Jones_2015 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Writing a research proposal" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Jones, M. (2015). MasterClass in Geography Education."@en .
+
+guide:Res_Lukic_2014 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Predatory and fake scientific journals/publishers" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Lukic, T., et al. (2014). Geographica Pannonica."@en .
+
+guide:Res_Reynolds_2011 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Presentation Zen" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Reynolds, G. (2011). New Riders."@en .
+
+guide:Res_Kothari_2004 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Research methodology" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Kothari, C. R. (2004)."@en .
+
+guide:Res_Vakkari_2003 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Changes of search terms and tactics" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Vakkari, P., et al. (2003). Information processing & management."@en .
+
+guide:Res_Dodig_2002 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Scientific methods in computer science" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Dodig-Crnkovic, G. (2002). Proceedings of the Conference for the Promotion of Research in IT."@en .
+
+guide:Res_Gregar_1994 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Research design" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Gregar, J. (1994). SAGE Publications."@en .
+
+guide:Res_Theocharis_1987 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Where science has gone wrong" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Theocharis, T., & Psimopoulos, M. (1987). Nature."@en .
+
+guide:Res_Web_JCR rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Journal Citation Reports" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "https://jcr.clarivate.com/"@en .

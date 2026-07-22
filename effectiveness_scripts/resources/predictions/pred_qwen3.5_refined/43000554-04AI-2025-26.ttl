@@ -1,0 +1,129 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide-mad-bench: <http://guia-mad-bench.es/data/> ;
+
+<http://w3id.org/def/guia#CourseGuide_ANX_PR_CL_001_01> rdf:type :CourseGuide, sch:CourseInstance ;
+    dct:title "ANX-PR/CL/001 - LEARNING GUIDE"@en ;
+    guide-mad-bench:numberOfCredits 4.5^^xsd:decimal ;
+    guide-mad-bench:teachingPeriodMonths "September-January" ;
+    sch:name "Experimental Structural Analysis" ;
+    guide-mad-bench:syllabusDescription "This course deals with the fundamentals and applications of experimental techniques in structural engineering."@en .
+
+<http://w3id.org/def/guia#Degree_04AI> rdf:type :BachelorDegree, :MasterDegree ; # Note: Document says Doble Master (Double Master)
+    guide-mad-bench:numberOfCredits 12^^xsd:decimal ; # Assuming standard double master credits or inferred from context if not explicit. The doc mentions "Doble Master". I will use the code provided.
+    guide-mad-bench:degreeCode "04AI" .
+
+<http://w3id.org/def/guia#Course_Experimental_Structural_Analysis> rdf:type :Course ;
+    sch:name "Experimental Structural Analysis" ;
+    guide-mad-bench:numberOfCredits 4.5^^xsd:decimal ; # From Section 1 table (No of credits)
+    guide-mad-bench:syllabusDescription "This course deals with the fundamentals and applications of experimental techniques in structural engineering."@en .
+
+<http://w3id.org/def/guia#Lecturer_Carlos_Martin> rdf:type :Lecturer ;
+    sch:name "Carlos Martin De La Concha Renedo" ;
+    guide-mad-bench:office "Lab. Structures" ;
+    sch:email <mailto:carlos.martindelaconcha@upm.es> .
+
+<http://w3id.org/def/guia#Lecturer_Antonio_Madrid> rdf:type :Lecturer ;
+    sch:name "Antonio Jose Madrid Ramos" ;
+    guide-mad-bench:office "Lab. Structures" ;
+    sch:email <mailto:antoniojose.madrid@upm.es> .
+
+<http://w3id.org/def/guia#Lecturer_Ivan_Munoz> rdf:type :Lecturer ;
+    sch:name "Ivan Muñoz Diaz" ;
+    guide-mad-bench:office "Lab. Structures" ;
+    sch:email <mailto:ivan.munoz@upm.es> .
+
+<http://w3id.org/def/guia#Lecturer_Carlos_Zanuy> rdf:type :Lecturer, sch:Lecturer ; # Coordinator mentioned in table on page 1 bottom. Note: Ontology has guide:Lecturer subClassOf sch:Person
+    sch:name "Carlos Zanuy Sanchez" ;
+    guide-mad-bench:office "Lab. Structures" ;
+    sch:email <mailto:carlos.zanuy@upm.es> .
+
+<http://w3id.org/def/guia#Lecturer_Jose_Soria> rdf:type :Lecturer ;
+    sch:name "Jose Manuel Soria Herrera" ;
+    guide-mad-bench:office "9th Floor" ;
+    sch:email <mailto:jm.soria@upm.es> .
+
+<http://w3id.org/def/guia#Competency_MICCPCE38> rdf:type :Competency ;
+    guide-mad-bench:competencyCode "MICCPCE38" ;
+    guide-mad-bench:competencyDescription "Capacidad para integrar y aplicar los conocimientos técnicos en asesoría, análisis, diseño y modelización físico-matemática en ingeniería estructural. Incorpora las competencias CB6, CB7 y CB8"@es .
+
+<http://w3id.org/def/guia#Competency_MICCPCGP11> rdf:type :Competency ;
+    guide-mad-bench:competencyCode "MICCPCGP11" ;
+    guide-mad-bench:competencyDescription "Capacidad para el proyecto, ejecución e inspección de estructuras (puentes, edificaciones, etc.), de obras de cimentación y de obras subterráneas de uso civil (túneles, aparcamientos), y el diagnóstico sobre su integridad. Incorpora las competencias CB6, CB7 y CB8"@es .
+
+<http://w3id.org/def/guia#Competency_MICCPCT01> rdf:type :Competency ;
+    guide-mad-bench:competencyCode "MICCPCT01" ;
+    guide-mad-bench:competencyDescription "Capacidad de preparar y presentar comunicaciones orales, escritas y gráficas, estructurada y argumentadamente. Desarrolla la competencia CB9"@es .
+
+<http://w3id.org/def/guia#Competency_MICCPCT08> rdf:type :Competency ;
+    guide-mad-bench:competencyCode "MICCPCT08" ;
+    guide-mad-bench:competencyDescription "Capacidad de diseñar, analizar e interpretar experimentos relevantes en ingeniería civil"@es .
+
+<http://w3id.org/def/guia#LearningResult_RA121> rdf:type :LearningResult ;
+    guide-mad-bench:learningResultCode "RA121" ;
+    guide-mad-bench:learningResultDescription "The student knows the fundamentals and applications of the most relevant transducers for instrumentation of structures."@en .
+
+<http://w3id.org/def/guia#LearningResult_RA122> rdf:type :LearningResult ;
+    guide-mad-bench:learningResultCode "RA122" ;
+    guide-mad-bench:learningResultDescription "The student acquires the fundamentals of static and dynamic experimental techniques in structural engineering, and understands the structural implications of taken measurements."@en .
+
+<http://w3id.org/def/guia#Syllabus_43000554> rdf:type :Sylbus ;
+    guide-mad-bench:syllabusDescription "This course is divided into three parts: instrumentation techniques, design of load tests in bridges and buildings, dynamic testing techniques."@en .
+
+<http://w3id.org/def/guia#SylbusItem_1> rdf:type :SylbusItem ;
+    guide-mad-bench:itemIndex 1^^xsd:integer ;
+    guide-mad-bench:syllabusDescription "Introduction to instrumentation" .
+
+<http://w3id.org/def/guia#SylbusItem_2> rdf:type :SylbusItem ;
+    guide-mad-bench:itemIndex 2^^xsd:integer ;
+    guide-mad-bench:syllabusDescription "Signal conditioning" .
+
+<http://w3id.org/def/guia#SylbusItem_3> rdf:type :SylbusItem ;
+    guide-mad-bench:itemIndex 3^^xsd:integer ;
+    guide-mad-bench:syllabusDescription "Strain measurement" .
+
+<http://w3id.org/def/guia#ScheduleEvent_W1> rdf:type :ScheduleEvent, sch:Event ;
+    sch:eventIndex 1^^xsd:integer ;
+    om:Unit "03:00" ; # Using Unit class for duration if applicable or just data property. Ontology has guide:activityDuration on Activity. I will use the ontology's Schedule Event properties where available (eventWeek, etc). The table doesn't explicitly have event week in a separate column but implies weeks 1-26/27.
+    sch:eventSchedule <http://w3id.org/def/guia#CourseGuide_ANX_PR_CL_001_01> .
+
+<http://w3id.org/def/guia#EvaluationTrial_Assessment_W4> rdf:type :EvaluationTrial ;
+    guide-mad-bench:trialDescription "Resolution and submission of assigned tasks (exercises and case-studies) during the course."@en ;
+    guide-mad-bench:gradePercentage 5.7^^xsd:string ; # Document says 5.7% but datatype is string in ontology for this property? Yes, `guide:gradePercentage` range rdf:langString. I will use xsd:decimal if possible or keep as per doc text representation "5.7%" -> "5.7".
+    guide-mad-bench:minScore 3.5^^xsd:string ; # Document says 3.5 / 10, ontology is string for min score? Yes `guide:minimumScore` range rdf:langString. I will use the value found in text.
+
+<http://w3id.org/def/guia#EvaluationTrial_Final_Exam> rdf:type :EvaluationTrial ;
+    guide-mad-bench:trialDescription "Final exam" . # Document says Final exam is 100% weight, min grade 5 / 10. Ontology `guide:minScore` range string. I will use the value found in text.
+
+<http://w3id.org/def/guia#EvaluationSystem_43000554> rdf:type :EvaluationSystem ;
+    guide-mad-bench:evaluationDescription "The final score will be the weighted average of the results obtained in EM1 and EM2 according to the indicated weights."@en .
+
+<http://w3id.org/def/guia#DidacticResource_Moodle> rdf:type :DidacticResource, sch:CourseInstance ;
+    guide-mad-bench:bibliographyTitle "Moodle platform" ; # Using bibliography title as name for resource. Ontology has `sch:name` and specific properties if applicable. I will use generic ones where not specified in ontology (like `guide:syllabusDescription`). Actually, looking at DidacticResource class definition: no sub-properties defined except via schema.org reuse? The document lists "Name", "Type".
+    sch:name "Moodle platform" ; # Using name property from Schema.
+
+<http://w3id.org/def/guia#DidacticResource_Book1> rdf:type :DidacticResource, sch:CourseInstance ;
+    guide-mad-bench:bibliographyTitle "Instrumentación aplicada a la ingeniería" .
+
+<http://w3id.org/def/guia#Degree_Master_Doble> rdf:type :MasterDegree ; # Document says Doble Master. Ontology has Bachelor and Master classes. I will use the class provided in ONTOLOGY section `guide:MasterDegree`.
+    guide-mad-bench:degreeCode "04AI" .
+
+<http://w3id.org/def/guia#CourseGuide_ANX_PR_CL_001_01> sch:eventSchedule <http://w3id.org/def/guia#Schedule_Event_W1> ; # Linking Guide to Schedule Event via schema property if available. Ontology has `sch:courseSchedule` (Guide -> Schedule). I will create a main Schedule instance and link it properly.
+    guide-mad-bench:schedule <http://w3id.org/def/guia#Course_Schedule_43000554> .
+
+<http://w3id.org/def/guia#Schedule_Course_43000554> rdf:type :Schedule, sch:Schedule ;
+    guide-mad-bench:eventIndex 1^^xsd:string ; # Using string for index as per table structure. Ontology `guide:eventIndex` range xsd:integer. I will use integer where possible or follow doc text if ambiguous. Table has "Week". Let's assume Week is the event week property on ScheduleEvent? No, ontology doesn't have schedule.week directly but `eventWeek`.
+    sch:name "Schedule for Experimental Structural Analysis" .
+
+<http://w3id.org/def/guia#Activity_Lecture_W1> rdf:type :Activity ; # Ontology has Activity class. Table lists activities per week. I will link them to ScheduleEvent or just use properties on Guide if simpler? The ontology allows `guide:hasSyllabus` and `sch:eventSchedule`.
+    guide-mad-bench:activityDescription "Unit 1 - Lecture" .
+
+<http://w3id.org/def/guia#Activity_Lab_Assignment> rdf:type :Activity ; # Table lists Lab assignments.
+    sch:name "Laboratory Assignments" .

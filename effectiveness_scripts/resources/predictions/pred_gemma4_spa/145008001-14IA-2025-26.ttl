@@ -1,0 +1,237 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.php.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+guide:course_145008001
+    rdf:type guide:CourseGuide ;
+    sch:name "Inglés Profesional Y Académico" ;
+    sch:courseCode "145008001"^^xsd:integer ;
+    guide:numberOfCredits "6.0"^^xsd:decimal ;
+    guide:courseType "Obligatoria" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Inglés/Castellano" ;
+    guide:semester "Segundo semestre" ;
+    guide:hasCourse guide:degree_14IA ;
+    guide:hasCompetency guide:comp_CG2, guide:comp_CG4, guide:comp_CG7, guide:comp_CG9 ;
+    guide:hasLearningResult guide:lr_RA147, guide:lr_RA145, guide:lr_RA581, guide:lr_RA146 ;
+    guide:hasEvaluation guide:eval_system_progressive, guide:eval_system_global ;
+    guide:hasSyllabus guide:syllabus_145008001 ;
+    guide:hasDidacticResource guide:res_airbus, guide:res_boeing_video, guide:res_edutopia_video, guide:res_coulson_report, guide:res_monash_guidelines, guide:res_nasa_report;
+    sch:description "Una vez que el alumno ha acreditado su dominio de la lengua inglesa a nivel de usuario-independiente-intermedio alto (B2)..." .
+
+guide:degree_14IA
+    rdf:type guide:Degree ;
+    sch:name "Grado en Ingeniería Aeroespacial" ;
+    guide:degreeCode "14IA" .
+
+guide:center_ETSI
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S.I. Aeronáutica y del Espacio" ;
+    guide:offers guide:degree_14IA .
+
+guide:lecturer_dulcinea
+    rdf:type guide:Lecturer ;
+    sch:name "Dulcinea Tomas Camara" ;
+    sch:email "dulcinea.tomas@upm.es" ;
+    guide:office "B-106" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:lecturer_mairin
+    rdf:type guide:Lecturer ;
+    sch:name "Mairin Kelly" ;
+    sch:email "mairin.kelly@upm.es" ;
+    guide:office "A-265" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:lecturer_oana
+    rdf:type guide:Lecturer ;
+    sch:name "Oana Alexandra Parlea Parlea" ;
+    sch:email "alexandra.parlea@upm.es" ;
+    guide:office "B-106" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:comp_CG2
+    rdf:type guide:Competency ;
+    guide:competencyCode "CG2" ;
+    guide:competencyDescription "Uso de la lengua inglesa" .
+
+guide:comp_CG4
+    rdf:type guide:Competency ;
+    guide:competencyCode "CG4" ;
+    guide:competencyDescription "Capacidad para integrarse y formar parte activa de equipos de trabajo. Trabajo en equipo" .
+
+guide:comp_CG7
+    rdf:type guide:Competency ;
+    guide:competencyCode "CG7" ;
+    guide:competencyDescription "Comunicación oral y escrita" .
+
+guide:comp_CG9
+    rdf:type guide:Competency ;
+    guide:competencyCode "CG9" ;
+    guide:competencyDescription "Razonamiento crítico y capacidad de asociación que posibiliten el aprendizaje continuo" .
+
+guide:lr_RA147
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA147" ;
+    guide:learningResultDescription "Puede producir textos claros y detallados sobre temas diversos así como defender un punto de vista sobre temas generales indicando los pros y los contras de las distintas opciones." .
+
+guide:lr_RA145
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA145" ;
+    guide:learningResultDescription "Es capaz de entender las ideas principales de textos complejos que traten de temas tanto concretos como abstractos, incluso si son de carácter técnico dentro de su campo de especialización." .
+
+guide:lr_RA581
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA581" ;
+    guide:learningResultDescription "Puede relacionarse con hablantes nativos con un grado suficiente de fluidez y naturalidad..." .
+
+guide:lr_RA146
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA146" ;
+    guide:learningResultDescription "Puede relacionarse con hablantes nativos con un grado suficiente de fluidez y naturalidad de modo que la comunicación se realice sin esfuerzo..." .
+
+guide:eval_system_progressive
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva por módulos" ;
+    guide:hasEvaluationTrial guide:trial_mod1, guide:trial_mod2, guide:trial_mod3, guide:trial_mod4 .
+
+guide:eval_system_global
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Prueba evaluación global" ;
+    guide:hasEvaluationTrial guide:trial_final_ord, guide:trial_final_ext .
+
+guide:trial_mod1
+    rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "4" ;
+    guide:trialDescription "Actividad evaluable (Módulo 1)" .
+
+guide:trial_mod2
+    rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "7" ;
+    guide:trialDescription "Actividad evaluable (Módulo 2)" .
+
+guide:trial_mod3
+    rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Presentación Individual" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "10" ;
+    guide:trialDescription "Actividad evaluable (Módulo 3)" .
+
+guide:trial_mod4
+    rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Otras técnicas evaluativas" ;
+    guide:gradePercentage "2%5" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "13" ;
+    guide:trialDescription "Actividad evaluable (Módulo 4)" .
+
+guide:trial_final_ord
+    rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Otras técnicas evaluativas" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "16" ;
+    guide:trialDescription "Examen Final Ordinario" .
+
+guide:trial_final_ext
+    rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Otras técnicas evaluativas" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:trialDescription "Examen Final Extraordinario" .
+
+guide:syllabus_145008001
+    rdf:type guide:Syllabus ;
+    guide:hasItem guide:item_mod1, guide:item_mod2, guide:item_mod3, guide:item_mod4 .
+
+guide:item_mod1
+    rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "MODULE 1 | Academic and Professional Writing" ;
+    guide:itemIndex 1 .
+
+guide:item_mod2
+    rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "MODULE 2 | Technical English" ;
+    guide:itemIndex 2 .
+
+guide:item_mod3
+    rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "MODULE 3 | Professional Communication" ;
+    guide:itemIndex 3 .
+
+guide:item_mod4
+    rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "MODULE 4 | Professional English" ;
+    guide:itemIndex 4 .
+
+guide:act_mod0
+    rdf:type guide:Activity ;
+    guide:activityDescription "Module 0. Critical Thinking Lab" ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:activityDuration "2.0"^^xsd:decimal ;
+    guide:attendanceType "Presencial" .
+
+guide:event_week1
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity guide:act_pres_mod1 .
+
+guide:act_pres_mod1
+    rdf:type guide:Activity ;
+    guide:activityDescription "Presentación: Descripción de módulos, encuesta pretest" ;
+    guide:activityDuration "3.5"^^xsd:decimal ;
+    guide:activityFormat "Clase de Problemas" .
+
+guide:res_airbus
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Airbus. Flying into the future. Editor: Philip Butterworth Hayes." ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:res_boeing_video
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Video: Testing a dream. An in-depth look at Boeing 747 flight test." ;
+    guide:bibliographyType "Recursos web" .
+
+guide:res_edutopia_video
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Video: Engineering success: Students build understanding." ;
+    guide:bibliographyType "Recursos web" .
+
+guide:res_coulson_report
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "An Introduction to Technical Report Writing by Benjamin Coulson" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:res_monash_guidelines
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Guidelines for Writing Reports in Engineering. Monash University." ;
+    guide:bibliographyType "Recursos web" .
+
+guide:res_nasa_report
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "NASA - TM 105419 Technical report writing" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:req_knowledge_b2
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Nivelación B2 en Lengua Inglesa" .
+
+guide:req_knowledge_b1
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Para poder matricularse en esta asignatura, el estudiante deberá acreditar previamente el nivel B1 del CFRL..." .

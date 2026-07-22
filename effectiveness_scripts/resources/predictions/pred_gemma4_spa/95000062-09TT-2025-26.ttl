@@ -1,0 +1,206 @@
+@prefix gmb: <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# University Center
+gmb:ETS_Telecom rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" .
+
+# Degree
+gmb:Degree_09TT rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Ingenier<0xC2>ios De Tecnologias Y Servicios De Telecomunicacion" ;
+    guide:degreeCode "09TT" ;
+    guide:hasCourse gmb:Course_95000062 .
+
+# Course
+gmb:Course_95000062 rdf:type guide:Course ;
+    sch:name "Fabricacion De Equipos Electronicos" ;
+    sch:courseCode 95000062 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 2025 ;
+    guide:semester "Séptimo semestre" ;
+    sch:numberOfCredits 4.5 .
+
+# Course Guide
+gmb:CourseGuide_95000062 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Fabricacion De Equipos Electronicos" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:inpersonHours "Not specified" ;
+    guide:remoteHours "Not specified" ;
+    sch:instructor gmb:Lecturer_Alvaro, gmb:Lecturer_Jorge ;
+    sch:director gmb:Lecturer_Alvaro ;
+    guide:hasSyllabus gmb:Syllabus_95000062 ;
+    guide:hasCompetency gmb:Comp_SE1, gmb:Comp_SE3, gmb:Comp_SE5, gmb:Comp_SE9, gmb:Comp_CG7, gmb:Comp_CG12, gmb:Comp_CG13, gmb:Comp_CG9 ;
+    guide:hasLearningResult gmb:LR_732, gmb:LR_733, gmb:LR_76, gmb:LR_734, gmb:LR_71, gmb:LR_70, gmb:LR_74 ;
+    guide:hasEvaluation gmb:EvalSystem_95000062 ;
+    guide:hasDidacticResource gmb:Res_Moodle, gmb:Res_Coombs, gmb:Res_Altium, gmb:Res_Horno .
+
+# Lecturers
+gmb:Lecturer_Jorge rdf:type guide:Lecturer ;
+    sch:name "Jorge Pedros Ayala" ;
+    sch:email "j.pedros@upm.es" ;
+    guide:office "B-308" ;
+    guide:tutorshipsSchedule "J - 16:00 - 18:00" .
+
+gmb:Lecturer_Alvaro rdf:type guide:Lecturer ;
+    sch:name "Alvaro Araujo Pinto" ;
+    sch:email "alvaro.araujo@upm.es" ;
+    guide:office "B-104.B" ;
+    guide:tutorshipsSchedule "M - 16:00 - 18:00" .
+
+# Competencies
+gmb:Comp_SE1 rdf:type guide:Competency ;
+    guide:competencyCode "CE-SE1" ;
+    guide:competencyDescription "Capacidad de construir, explotar y gestionar sistemas de captación, transporte, representación, procesado, almacenamiento, gestión y presentación de información multimedia..." .
+
+gmb:Comp_SE3 rdf:type guide:Competency ;
+    guide:competencyCode "CE-SE3" ;
+    guide:competencyDescription "Capacidad de realizar la especificación, implementación, documentación y puesta a punto de equipos y sistemas electrónicos..." .
+
+gmb:Comp_SE5 rdf:type guide:Competency ;
+    guide:competencyCode "CE-SE5" ;
+    guide:competencyDescription "Capacidad de diseñar circuitos de electrónica analógica y digital, de conversión analógico-digital y digital analógica..." .
+
+gmb:Comp_SE9 rdf:type guide:Competency ;
+    guide:competencyCode "CE-SE9" ;
+    guide:competencyDescription "Capacidad de analizar y solucionar los problemas de interferencias y compatibilidad electromagnética" .
+
+gmb:Comp_CG7 rdf:type guide:Competency ;
+    guide:competencyCode "CG7" ;
+    guide:competencyDescription "Trabajo en equipo" .
+
+gmb:Comp_CG12 rdf:type guide:Competency ;
+    guide:competencyCode "CG12" ;
+    guide:competencyDescription "Organización y planificación" .
+
+gmb:Comp_CG13 rdf:type guide:Competency ;
+    guide:competencyCode "CG13" ;
+    guide:competencyDescription "Respeto medioambiental" .
+
+gmb:Comp_CG9 rdf:type guide:Competency ;
+    guide:competencyCode "CG9" ;
+    guide:competencyDescription "Uso de Tecnologías de la Información y de las Comunicaciones" .
+
+# Learning Results
+gmb:LR_732 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA732" ;
+    guide:learningResultDescription "Diseñar una placa de circuito impreso orientada a fabricación" .
+
+gmb:LR_733 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA733" ;
+    guide:learningResultDescription "Distinguir las distintas fases del desarrollo de producto" .
+
+gmb:LR_76 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA76" ;
+    guide:learningResultDescription "Conocimientos de las normativas reguladoras aplicables a los equipos electrónicos." .
+
+gmb:LR_734 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA734" ;
+    guide:learningResultDescription "Conocimientos básicos de técnicas de soldadura de sistemas electrónicos" .
+
+gmb:LR_71 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA71" ;
+    guide:learningResultDescription "Conocimiento de las técnicas de diseño de circuitos electrónicos." .
+
+gmb:LR_70 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA70" ;
+    guide:learningResultDescription "Conocimientos de dispositivos, circuitos, equipos y sistemas electrónicos." .
+
+gmb:LR_74 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA74" ;
+    guide:learningResultDescription "Conocimientos de interferencias y compatibilidad electromagnética." .
+
+# Syllabus
+gmb:Syllabus_95000062 rdf:type guide:Syllabus ;
+    guide:hasItem gmb:SyllabusItem_1, gmb:SyllabusItem_2, gmb:SyllabusItem_3, gmb:SyllabusItem_4, gmb:SyllabusItem_5 .
+
+gmb:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a la fabricación" .
+
+gmb:SyllabusItem_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Materiales" .
+
+gmb:SyllabusItem_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Diseño orientado a fabricación" .
+
+gmb:SyllabusItem_4 rdf:type guide:SyllableItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Aspectos prácticos de fabricación" .
+
+gmb:SyllabusItem_5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Pruebas y fiabilidad" .
+
+# Evaluation System
+gmb:EvalSystem_95000062 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación comprobará si los estudiantes han adquirido las competencias de la asignatura." ;
+    guide:hasEvaluationTrial gmb:Trial_Prog, gmb:Trial_Global .
+
+gmb:Trial_Prog rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "10%" ;
+    guide:hasScheduleEvent gmb:Event_Week4 .
+
+gmb:Trial_Global rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "50%" ;
+    guide:hasScheduleEvent gmb:Event_Week17 .
+
+# Schedule Events and Activities
+gmb:Event_Week4 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 4" ;
+    guide:eventIndex 4 ;
+    guide:hasActivity gmb:Act_Analisis_Componentes .
+
+gmb:Act_Analisis_Componentes rdf:type guide:Activity ;
+    guide:activityDescription "Análisis de componentes y normativa caso práctico" ;
+    guide:activityDuration 0.0 ;
+    guide:activityFormat "Trabajo Individual" ;
+    guide:attendanceType "No presencial" .
+
+gmb:Event_Week17 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 17" ;
+    guide:eventIndex 17 ;
+    guide:hasActivity gmb:Act_Examen_Global .
+
+gmb:Act_Examen_Global rdf:type guide:Activity ;
+    guide:activityDescription "Examen evaluación global" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+gmb:Res_Moodle rdf:type guide:DidacticResource ;
+    sch:name "Sitio Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "https://moodle.upm.es/titulaciones/oficiales/" .
+
+gmb:Res_Coombs rdf:type guide:DidacticResource ;
+    sch:name "Coombs, C.F. Printed Circuits Handbook. 7th ed." ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Libro de referencia de la asignatura" .
+
+gmb:Res_Altium rdf:type guide:DidacticResource ;
+    sch:name "Altium Designer" ;
+    guide:bibliographyType "Otros" ;
+    guide:bibliographyDescription "Herramientas de diseño electrónico" .
+
+gmb:Res_Horno rdf:type guide:DidacticResource ;
+    sch:name "Horno de soldadura" ;
+    guide:bibliographyType "Equipamiento" ;
+    guide:bibliographyDescription "Horno de soldadura por calor" .
+
+# Required Knowledge
+gmb:ReqKnow_Pre1 rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Electronica E Instrumentacion Basicas" .
+
+gmb:ReqKnow_Pre2 rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Electrónica analógica, Electrónica digital" .

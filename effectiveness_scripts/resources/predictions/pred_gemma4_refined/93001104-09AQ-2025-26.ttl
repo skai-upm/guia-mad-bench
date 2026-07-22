@@ -1,0 +1,180 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+# Course Guide
+guide:course_93001104 rdf:type guide:CourseGuide ;
+    sch:name "Sistemas Electronicos Para Iot" ;
+    guide:numberOfCredits 4.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus guide:syllabus_93001104 ;
+    guide:hasCompetency guide:comp_CE12, guide:comp_CE15, guide:comp_CG2 ;
+    guide:hasLearningResult guide:lr_RA116, guide:lr_RA218, guide:lr_RA217, guide:lr_RA115, guide:lr_RA327, guide:lr_RA215 ;
+    sch:instructor guide:prof_alvaro_pinto, guide:prof_pedro_malagon ;
+    guide:hasEvaluation guide:eval_system_93001104 ;
+    guide:hasDidacticResource guide:res_moodle, guide:res_book_lee, guide:res_book_wolf, guide:res_book_liu, guide:res_book_grenning ;
+    sch:courseSchedule guide:schedule_93001104 .
+
+# Degree and University Center
+guide:degree_09AQ rdf:type guide:MasterDegree ;
+    sch:name "Master Universitario En Ingenieria De Telecomunicacion" ;
+    guide:hasCourse guide:course_93001104 .
+
+guide:univ_center_ets rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros De Telecomunicacion" ;
+    guide:offers guide:degree_09AQ .
+
+# Lecturers
+guide:prof_alvaro_pinto rdf:type guide:Lecturer ;
+    sch:name "Alvaro Araujo Pinto" ;
+    sch:email "alvaro.araujo@upm.es" ;
+    guide:office "B-104.1b" ;
+    guide:tutorshipsSchedule "X - 12:00 - 14:00" .
+
+guide:prof_pedro_malagon rdf:type guide:Lecturer ;
+    sch:name "Pedro Jose Malagon Marzo" ;
+    sch:email "pedro.malagon.marzo@upm.es" ;
+    guide:office "B-113" ;
+    guide:tutorshipsSchedule "Sin horario" .
+
+# Competencies
+guide:comp_CE12 rdf:type guide:Competency ;
+    guide:competencyCode "CE12" ;
+    guide:competencyDescription "Capacidad para utilizar dispositivos lógicos programables, así como para diseñar sistemas electrónicos avanzados, tanto analógicos como digitales. Capacidad para diseñar componentes de comunicaciones como por ejemplo encaminadores, conmutadores, concentradores, emisores y receptores en diferentes bandas." .
+
+guide:comp_CE15 rdf:type guide:Competency ;
+    guide:competencyCode "CE15" ;
+    guide:competencyDescription "Capacidad para la integración de tecnologías y sistemas propios de la Ingeniería de Telecomunicación, con carácter generalista, y en contextos más amplios y multidisciplinares como por ejemplo en bioingeniería, conversión fotovoltaica, nanotecnología, telemedicina." .
+
+guide:comp_CG2 rdf:type guide:Competency ;
+    guide:competencyCode "CG2" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos dentro de contextos más amplios (o multidisciplinares) relacionados con su área de estudio." .
+
+# Learning Results
+guide:lr_RA116 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA116" ;
+    guide:learningResultDescription "Diseñar e implementar aplicaciones reales usando plataformas de diseño basadas en procesadores avanzados" .
+
+guide:lr_RA218 rdf:type guide:LearningResult ;
+    guide:learning_resultCode "RA218" ;
+    guide:learningResultDescription "Analizar y diseñar el software de un sistema electrónico" .
+
+guide:lr_RA217 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA217" ;
+    guide:learningResultDescription "Analizar la fiabilidad de un sistema electrónico y diseñar sistemas en base a restricciones de fiabilidad" .
+
+guide:lr_RA115 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA115" ;
+    guide:learningResultDescription "Implementar aplicaciones sobre un Sistema Operativo de tiempo real en sistemas avanzados de procesadores" .
+
+guide:lr_RA327 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA327" ;
+    guide:learningResultDescription "Conocimientos cualitativos y cuantitativos del diseño de sistemas electrónicos" .
+
+guide:lr_RA215 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA215" ;
+    guide:learningResultDescription "Analizar y diseñar sistemas electrónicos teniendo en cuenta aspectos de compatibilidad electromagnética" .
+
+# Syllabus
+guide:syllabus_93001104 rdf:type guide:Syllabus ;
+    guide:hasItem guide:item_1, guide:item_2, guide:item_3, guide:item_4, guide:item_5, guide:item_6 .
+
+guide:item_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a los sistemas empotrados" .
+
+guide:item_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Diseño hardware de sistemas empotrados" .
+
+guide:item_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Diseño software de sistemas empotrados" .
+
+guide:item_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Sistemas en tiempo real" .
+
+guide:item_5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Entorno de pruebas para sistemas empotrados" .
+
+guide:item_6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Seguridad en Sistemas Empotrados" .
+
+# Evaluation System
+guide:eval_system_93001104 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global." ;
+    guide:hasEvaluationTrial guide:trial_prac0, guide:trial_prac1, guide:trial_prac2, guide:trial_prac3, guide:trial_exam_prog, guide:trial_exam_global, guide:trial_prac4, guide:trial_prac5 .
+
+guide:trial_prac0 rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "5%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "No presencial" .
+
+guide:trial_exam_prog rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Examen para evaluación progresiva" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+guide:trial_exam_global rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Examen global" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "70%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+# Schedule and Activities
+guide:schedule_93001104 rdf:type guide:Schedule ;
+    sch:eventSchedule guide:event_week1, guide:event_week2, guide:event_week3, guide:event_week5 .
+
+guide:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity guide:act_leccion_magistral_1 .
+
+guide:act_leccion_magistual_1 rdf:type guide:Activity ;
+    guide:activityDescription "Introducción y conceptos básicos. Sistemas empotrados. Sistemas ciber-físicos. Restricciones. Desarrollo cruzado." ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+guide:event_week5 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 5 ;
+    guide:eventWeek "Semana 5" ;
+    guide:hasActivity guide:act_practica_0 .
+
+guide:act_practica_0 rdf:type guide:Activity ;
+    guide:activityDescription "Práctica 0: Introducción al entorno de desarrollo" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Prácticas de Laboratorio" .
+
+# Didactic Resources
+guide:res_moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:res_book_lee rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Introduction to Embedded Systems, A Cyber-Physical Systems Approach" ;
+    guide:bibliographyDescription "Edward A. Lee and Sanjit A. Seshia, 2011." .
+
+guide:res_book_wolf rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Computers as Components: Principles of Embedded Computing System Design" ;
+    guide:bibliographyDescription "Marilyn Wolf, 3rd edition, 2012. Complementario, nivel básico." .
+
+# Required Knowledge
+guide:req_knowledge_c rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Lenguaje de programación C: 1/11 primeros temas del tutorial MIT" .
+
+guide:req_knowledge_elec rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Electrónica digital básica" .

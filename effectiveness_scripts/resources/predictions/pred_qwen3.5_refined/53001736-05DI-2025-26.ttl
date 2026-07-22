@@ -1,0 +1,132 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> rdf:type :CourseGuide ;
+    sch:name "Sistemas De Control Y Automatización"@en ;
+    guide:numberOfCredits 3.0^^xsd:decimal ;
+    dct:title "53001736 - Sistemas De Control Y Automatización"@en ;
+    sch:inLanguage "Castellano" ;
+    :teachingPeriodMonths "Septiembre-Enero" ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/anx-pr-cl-001-01> ;
+    guide:sch:director <http://guia-mad-bench.es/data/lecturer/jose-sebastian-zuniga> .
+
+<http://w3id.org/def/guia#D_M_U_En_Ingenieria_Industrial_y_Automatica_Robotica> rdf:type :BachelorDegree ;
+    guide:degreeCode "05DI"^^xsd:string ;
+    sch:name "D.M.U. En Ingeniería Industrial y en Automática Y Robótica"@en .
+
+<http://guia-mad-bench.es/data/course/sistemas-control-y-automatizacion> rdf:type :Course ;
+    sch:courseCode 53001736^^xsd:integer ;
+    guide:courseYear "2025"^^xsd:integer ;
+    sch:numberOfCredits 3.0^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> :sch:hasCourseInstance <http://w3id.org/def/guia#Sistemas_Control_Y_Automatizacion_Course_Instance> ;
+    guide:sch:director <http://guia-mad-bench.es/data/lecturer/jose-sebastian-zuniga> .
+
+<http://guia-mad-bench.es/data/syllabus/anx-pr-cl-001-01> rdf:type :Syllabus ;
+    sch:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/programacion-automatas>,<http://guia-mad-bench.es/data/syllabusitem/modelo-de-estado>,<http://guia-mad-bench.es/data/syllabusitem/controlabilidad>,<http://guia-mad-bench.es/data/syllabusitem/observabilidad>,<http://guia-mad-bench.es/data/syllabusitem/control-realimentacion>,<http://guia-mad-bench.es/data/syllabusitem/diseño-observadores>,<http://guia-mad-bench.es/data/syllabusitem/regulador-lineal-optimo>,<http://guia-mad-bench.es/data/syllabusitem/control-avanzado>.
+
+<http://w3id.org/def/guia#Sistemas_Control_Y_Automatizacion_Course_Instance> rdf:type :CourseGuide ;
+    sch:hasCourseInstance <http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> .
+
+<http://guia-mad-bench.es/data/syllabusitem/programacion-automatas> guide:itemIndex 1^^xsd:integer ;
+    sch:SyllabusItem ;
+    rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Programación de autómatas industriales"@en .
+
+<http://guia-mad-bench.es/data/syllabusitem/modelo-de-estado> guide:itemIndex 2^^xsd:integer ;
+    sch:SyllabusItem ;
+    rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Modelo de estado"@en .
+
+<http://guia-mad-bench.es/data/syllabusitem/controlabilidad> guide:itemIndex 3^^xsd:integer ;
+    sch:SyllabusItem ;
+    rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Controlabilidad"@en .
+
+<http://guia-mad-bench.es/data/syllabusitem/observabilidad> guide:itemIndex 4^^xsd:integer ;
+    sch:SyllabusItem ;
+    rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Observabilidad"@en .
+
+<http://guia-mad-bench.es/data/syllabusitem/control-realimentacion> guide:itemIndex 5^^xsd:integer ;
+    sch:SyllabusItem ;
+    rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Control por realimentación del estado"@en .
+
+<http://guia-mad-bench.es/data/syllabusitem/diseño-observadores> guide:itemIndex 6^^xsd:integer ;
+    sch:SyllabusItem ;
+    rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Diseño de observadores"@en .
+
+<http://guia-mad-bench.es/data/syllabusitem/regulador-lineal-optimo> guide:itemIndex 7^^xsd:integer ;
+    sch:SyllabusItem ;
+    rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Introducción al regulador lineal óptimo"@en .
+
+<http://guia-mad-bench.es/data/syllabusitem/control-avanzado> guide:itemIndex 8^^xsd:integer ;
+    sch:SyllabusItem ;
+    rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Control avanzado de procesos"@en .
+
+<http://guia-mad-bench.es/data/schedule/anx-pr-cl-001-01> rdf:type :Schedule ;
+    sch:courseSchedule <http://w3id.org/def/guia#Sistemas_Control_Y_Automatizacion_Course_Instance> ;
+    guide:eventIndex 5^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule/anx-pr-cl-001-01> sch:eventSchedule <http://w3id.org/def/guia#Tarea_1_Programacion_Automatas>,<http://w3id.org/def/guia#Examen_Final>.
+
+<http://guia-mad-bench.es/data/schedule/anx-pr-cl-001-01> sch:eventSchedule <http://w3id.org/def/guia#Tarea_2_Control_Realimentacion>,<http://w3id.org/def/guia#Tarea_3_Regulador_Lineal>.
+
+<http://guia-mad-bench.es/data/schedule/anx-pr-cl-001-01> sch:eventSchedule <http://w3id.org/def/guia#Examen_Final_Convocatoria_Especial>.
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluation/anx-pr-cl-001-01> .
+<http://w3id.org/def/guia#Sistemas_Control_Y_Automatizacion_Course_Instance> :sch:eventSchedule <http://guia-mad-bench.es/data/schedule/anx-pr-cl-001-01>.
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasSyllabus <http://w3id.org/def/guia#ANX_PR_CL_001_01_Syllabus_Instance> .
+<http://w3id.org/def/guia#ANX_PR_CL_001_01_Syllabus_Instance> rdf:type :Syllabus ;
+    sch:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/programacion-automatas>,<http://guia-mad-bench.es/data/syllabusitem/modelo-de-estado>.
+
+<http://w3id.org/def/guia#MUAR_CB06> rdf:type :Competency ;
+    guide:competencyCode "MUAR.CB06"^^xsd:string ;
+    sch:description "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales en el desarrollo y/o aplicación de ideas, a menudo en un contexto de investigación"@en .
+
+<http://w3id.org/def/guia#MUAR_CB07> rdf:type :Competency ;
+    guide:competencyCode "MUAR.CB07"^^xsd:string ;
+    sch:description "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos"@en .
+
+<http://w3id.org/def/guia#MUII_a> rdf:type :Competency ;
+    guide:competencyCode "MUII. (a)"^^xsd:string ;
+    sch:description "APLICA. Habilidad para aplicar conocimientos científicos, matemáticos y tecnológicos en sistemas relacionados con la práctica de la ingeniería"@en .
+
+<http://w3id.org/def/guia#RA_101> rdf:type :LearningResult ;
+    guide:learningResultCode "RA101"^^xsd:string ;
+    sch:description "Realización de trabajos prácticos sobre simulación de sistemas"@en .
+
+<http://w3id.org/def/guia#RA_102> rdf:type :LearningResult ;
+    guide:learningResultCode "RA102"^^xsd:string ;
+    sch:description "Modelado y simulación de sistemas de eventos discretos"@en .
+
+<http://guia-mad-bench.es/data/lecturer/jose-sebastian-zuniga> rdf:type :Lecturer, sch:Person ;
+    sch:name "Jose Maria Sebastian Zuñiga" ;
+    guide:sch:director <http://w3id.org/def/guia#ANX_PR_CL_001_01_Course_Guide_Instance>.
+
+<http://guia-mad-bench.es/data/syllabusitem/programacion-automatas> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01_Course_Guide_Instance> rdf:type :CourseGuide, sch:CourseInstance ;
+    sch:name "53001736 - Sistemas De Control Y Automatización" ;
+    guide:numberOfCredits 3.0^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/schedule/anx-pr-cl-001-01> rdf:type :Schedule, sch:EventSchedule ;
+    sch:eventSchedule <http://w3id.org/def/guia#Tarea_1_Programacion_Automatas>,<http://w3id.org/def/guia#Examen_Final>.
+
+<http://guia-mad-bench.es/data/schedule/anx-pr-cl-001-01> sch:eventSchedule <http://w3id.org/def/guia#Tarea_2_Control_Realimentacion>,<http://w3id.org/def/guia#Tarea_3_Regulador_Lineal>.
+
+<http://guia-mad-bench.es/data/schedule/anx-pr-cl-001-01> sch:eventSchedule <http://w3id.org/def/guia#Examen_Final_Convocatoria_Especial>.

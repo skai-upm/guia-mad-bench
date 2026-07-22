@@ -1,0 +1,830 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guide/GA_14IA_145005302> rdf:type :CourseGuide ;
+    sch:name "Instalaciones Electricas"@en ;
+    guide:numberOfCredits 4.5^^xsd:decimal ;
+    guide:syllabusDescription "Configuración y funcionamiento de sistemas eléctricos en aeronaves y aeropuertos."@es ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    sch:description "Guía de aprendizaje para la asignatura Instalaciones Electricas del Grado en Ingeniería Aeroespacial."@en .
+
+<http://guia-mad-bench.es/data/degree/Bachelor_14IA> rdf:type :BachelorDegree ;
+    dct:title "Grado En Ingeniería Aeroespacial"@es ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course/145005302> .
+
+<http://guia-mad-bench.es/data/center/EtsiAeronautica> rdf:type :UniversityCenter, sch:Organization ;
+    dct:title "E.T.S.I Aeronáutica y del Espacio"@es ;
+    guide:offers <http://guia-mad-bench.es/data/degree/Bachelor_14IA> .
+
+<http://guia-mad-bench.es/data/course/145005302> rdf:type sch:Course, :Degree ;
+    dct:title "Instalaciones Electricas"@es ;
+    guide:numberOfCredits 4.5^^xsd:decimal ;
+    guide:syllabusDescription "Estudio de sistemas eléctricos en aeronaves y aeropuertos."@en .
+
+<http://guia-mad-bench.es/data/lecturer/M_Victoria_Alonso> rdf:type :Lecturer, sch:Person ;
+    dct:title "M Victoria Alonso Maldonado"@es ;
+    guide:office "A-208" ;
+    sch:email <mailto:mariavictoria.alonso@upm.es> .
+
+<http://guia-mad-bench.es/data/competency/CE67> rdf:type :Competency ;
+    dct:title "Conocimiento adecuado y aplicado a la Ingeniería de las instalaciones eléctricas"@es ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/result/Ra144> .
+
+<http://guia-mad-bench.es/data/competency/CG3> rdf:type :Competency ;
+    dct:title "Capacidad para identificar y resolver problemas aplicando conocimientos"@es ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/result/Ra144> .
+
+<http://guia-mad-bench.es/data/competency/CG9> rdf:type :Competency ;
+    dct:title "Razonamiento crítico y capacidad de asociación"@es ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/result/Ra143> .
+
+<http://guia-mad-bench.es/data/competency/CE71> rdf:type :Competency ;
+    dct:title "Conocimiento aplicado de transmisores, receptores y sistemas radiantes"@es ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/result/Ra143> .
+
+<http://guia-mad-bench.es/data/learningresult/Ra144> rdf:type :LearningResult ;
+    dct:title "Conocimiento, comprensión y aplicación de sistemas eléctricos en sectores aeronáuticos"@es ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/competency/CG3>, <http://guia-mad-bench.es/data/competency/CE67> .
+
+<http://guia-mad-bench.es/data/learningresult/Ra143> rdf:type :LearningResult ;
+    dct:title "Aplicación de técnicas del laboratorio y medidas de seguridad"@es ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/competency/CG9>, <http://guia-mad-bench.es/data/competency/CE71> .
+
+<http://guia-mad-bench.es/data/syllabus/Sy_145005302> rdf:type :Syllabus, sch:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/item/Tema1>, <http://guia-mad-bench.es/data/item/Tema2>, <http://guia-mad-bench.es/data/item/Tema3> .
+
+<http://guia-mad-bench.es/data/syllabus/Sy_145005302> guide:hasItem <http://guia-mad-bench.es/data/item/Configuracion>, <http://guia-mad-bench.es/data/item/GeneradoresCC>, <http://guia-mad-bench.es/data/item/Baterias>.
+
+<http://guia-mad-bench.es/data/syllabus/Sy_145005302> guide:hasItem <http://guia-mad-bench.es/data/item/GeneradoresCA>, <http://guia-mad-bench.es/data/item/MandoControl>.
+
+<http://guia-mad-bench.es/data/syllabus/Sy_145005302> guide:hasItem <http://guia-mad-bench.es/data/item/Protecciones>, <http://guia-mad-bench.es/data/item/Distribucion>.
+
+<http://guia-mad-bench.es/data/syllabus/Sy_145005302> guide:hasItem <http://guia-mad-bench.es/data/item/MedidaSeñalizacion>, <http://guia-mad-bench.es/data/item/Aeropuertos>.
+
+<http://guia-mad-bench.es/data/syllabus/Sy_145005302> guide:hasItem <http://guia-mad-bench.es/data/item/EnergiaAeronaves>, <http://guia-mad-bench.es/data/item/Consumidores>.
+
+<http://guia-mad-bench.es/data/syllabus/Sy_145005302> guide:hasItem <http://guia-mad-bench.es/data/item/GeneradoresCC>, <http://guia-mad-bench.es/data/item/GeneradoresCA>.
+
+<http://guia-mad-bench.es/data/syllabus/Sy_145005302> guide:hasItem <http://guia-mad-bench.es/data/item/Baterias>, <http://guia-mad-bench.es/data/item/Convertidores>.
+
+<http://guia-mad-bench.es/data/course/GuideGA_14IA_145005302> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus/Sy_145005302> ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/Sc_GA_14IA_145005302>.
+
+<http://guia-mad-bench.es/data/course/GuideGA_14IA_145005302> guide:hasEvaluation <http://guia-mad-bench.es/data/eval/Eval_GA_14IA_145005302>.
+
+<http://guia-mad-bench.es/data/schedule/Sc_GA_14IA_145005302> rdf:type :Schedule, sch:Schedule ;
+    guide:eventIndex 1^^xsd:integer .
+
+<http://guia-mad-bench.es/data/activity/Lec_Magistral_Tema1> rdf:type :ActivityType1 ;
+    dct:title "Presentación de la asignatura"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour>.
+
+<http://guia-mad-bench.es/data/activity/Lec_Magistral_Tema1> guide:hasActivity <http://guia-mad-bench.es/data/schedule/Sem_1_Event1>.
+<http://guia-mad-bench.es/data/eval/Eval_GA_14IA_145005302> rdf:type :EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global mediante exámenes escritos."@es .
+
+<http://guia-mad-bench.es/data/schedule/Sem_1_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Examen Final Ordinario (Evaluación Global)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Final>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Intermedio>.
+
+<http://guia-mad-bench.es/data/schedule/Sem_2_Event1> rdf:type :ScheduleEvent, sch:Event ;
+    dct:title "Prueba de evaluación intermedia (BLOQUE 1)" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity/Examen_Inter

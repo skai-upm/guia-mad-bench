@@ -1,0 +1,74 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guide/GA_05BI_53001608> rdf:type :CourseGuide ;
+    dc:title "Sistemas Integrados De Fabricacion"@en ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer/Jose_Rios_Chueco> ,
+                <http://guia-mad-bench.es/data/lecturer/Carlos_Polvorinos_Fernandez> ;
+    sch:name "Sistemas Integrados De Fabricacion"@en ;
+    guide:numberOfCredits 3^^xsd:decimal ;
+    dct:description "La asignatura de Sistemas Integrados de Fabricación tiene como objetivo principal adquirir una visión global..."@es .
+
+<http://guia-mad-bench.es/data/degree/Doble_Master_05BI> rdf:type :MasterDegree ;
+    sch:name "Doble Master Universitario Ingenieria Industrial - Electronica Industrial"@en ;
+    guide:courseYear 2026^^xsd:string ; # Using string as per document context for academic year, though ontology says integer on Course class. I will use available data structure.
+
+<http://guia-mad-bench.es/data/lecturer/Carlos_Polvorinos_Fernandez> rdf:type :Lecturer ,
+    sch:Person ;
+    dct:title "Carlos Polvorinos Fernandez"@en ;
+    guide:office "Lab Fabricacion"^^xsd:string ;
+    sch:email <mailto:c.polvorinos@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer/Jose_Rios_Chueco> rdf:type :Lecturer ,
+    sch:Person ;
+    dct:title "Jose Rios Chueco"@en ;
+    guide:office "Lab Fabricacion"^^xsd:string ;
+    sch:email <mailto:jose.rios@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer/Juan_De_Juanes_Marquez> rdf:type :Lecturer ,
+    sch:Person ;
+    dct:title "Juan De Juanes Marquez"@en ;
+    guide:tutorshipsSchedule "Sin horario. Solicitar por correo electrónico"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/MUII_CB07> rdf:type :Competency ;
+    guide:competencyCode "MUII.CB07"@en ;
+    sch:description "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos dentro de contextos más amplios"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/MUII_CE02> rdf:type :Competency ;
+    guide:competencyCode "MUII.CE02"@en ;
+    sch:description "Conocimiento y capacidad para proyectar, calcular y diseñar sistemas integrados de fabricación"^^xsd:string .
+
+<http://guia-mad-bench.es/data/learning_result/RA40> rdf:type :LearningResult ;
+    guide:learningResultCode "RA40"@en ;
+    sch:description "Capacidad para analizar la influencia de determinadas variables en la eficiencia de un proceso"^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus/SI_53001608> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/learning_result/RA40> , # Placeholder for Syllabus Item structure if needed, but document lists topics. I will create items directly linked to Guide via implicit or explicit relations based on ontology `guide:Syllabus` -> `guide:hasItem`.
+    ;
+
+<http://guia-mad-bench.es/data/schedule_event/Sem_1_Activity_Systems> rdf:type :ScheduleEvent ,
+    sch:Event ;
+    guide:eventIndex 1^^xsd:integer ;
+    sch:description "Sistemas de fabricación"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluation_trial/T1> rdf:type :EvaluationTrial ;
+    dct:title "Evaluación Intermedia 1 (T1)"@en ;
+    guide:trialDescription "Trabajo en Grupo. Evaluación Progresiva"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluation_trial/T2> rdf:type :EvaluationTrial ;
+    dct:title "Evaluación Intermedia 2 (T2)"@en ;
+    guide:trialDescription "Trabajo en Grupo. Evaluación Progresiva"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluation_trial/T3> rdf:type :EvaluationTrial ;
+    dct:title "Evaluación Intermedia 3 (T3)"@en ;
+    guide:trialDescription "Trabajo en Grupo. Evaluación Progresiva"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluation_trial/GlobalExam> rdf:type :EvaluationTrial ;
+    dct:title "Evaluación Global"@en ;
+    sch:description "Prueba de evaluación global (convocatoria ordinaria)"^^xsd:string .

@@ -1,0 +1,154 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Information
+guide:Course_113000033 rdf:type guide:Course ;
+    sch:name "Redaccion Técnica De Inglés Aplicada A La Actividad Fisica Y El Deporte" ;
+    sch:courseCode 113000033 ;
+    guide:courseType "Obligatoria" ;
+    sch:numberOfCredits 3.0 ;
+    sch:hasCourseInstance guide:CourseGuide_113000033 .
+
+guide:Degree_11AB rdf:type guide:MasterDegree ;
+    sch:name "Master Universitario En Ciencias De La Actividad Fisica Y Del Deporte" ;
+    guide:degreeCode "11AB" .
+
+guide:CourseGuide_113000033 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Redaccion Técnica De Inglés Aplicada A La Actividad Fisica Y El Deporte" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:semester "Primer semestre" ;
+    sch:inLanguage "Castellano" ;
+    guide:numberOfCredits 3.0 ;
+    guide:hasSyllabus guide:Syllabus_113000033 ;
+    guide:hasEvaluation guide:EvalSystem_113000033 ;
+    guide:hasCompetency guide:Comp_CB10, guide:Comp_CG5, guide:Comp_CG6, guide:Comp_T2, guide:Comp_T3, guide:Comp_T6 ;
+    guide:hasLearningResult guide:LR_RA94, guide:LR_RA91, guide:LR_RA96, guide:LR_RA19, guide:LR_RA95 ;
+    guide:hasDidacticResource guide:Res_Moodle, guide:Res_GoogleDrive ;
+    sch:director guide:Lecturer_MariaJoseGomez .
+
+guide:UniversityCenter_FacultadCC rdf:type guide:UniversityCenter ;
+    sch:name "Facultary CC. Actividad Fisica y Deporte" ;
+    guide:offers guide:Degree_11AB .
+
+# Lecturer Information
+guide:Lecturer_MariaJoseGomez rdf:type guide:Lecturer ;
+    sch:name "Maria Jose Gomez Ortiz" ;
+    sch:email "maria.gomez.ortiz@upm.es" ;
+    guide:office "403" ;
+    guide:tutorshipsSchedule "M - 10:00 - 12:00, X - 10:00 - 14:00" .
+
+# Competencies
+guide:Comp_CB10 rdf:type guide:Competency ;
+    guide:competencyCode "CB10" ;
+    guide:competencyDescription "Que los estudiantes posean las habilidades de aprendizaje que les permitan continuar estudiando de un modo que habrá de ser en gran medida autodirigido o autónomo" .
+
+guide:Comp_CG5 rdf:type guide:Competency ;
+    guide:competencyCode "CG5" ;
+    guide:competencyDescription "Desarrollo de la habilidades humanas necesarias para el trabajo en equipo y de ese modo asumir el compromiso de la investigación científica con valores humanos que favorezcan la sana convivencia." .
+
+guide:Comp_CG6 rdf:type guide:Competency ;
+    guide:competencyCode "CG6" ;
+    guide:competencyDescription "Capacidad para comunicarse y relacionarse en un ámbito científico en la lengua inglesa." .
+
+guide:Comp_T2 rdf:type guide:Competency ;
+    guide:competencyCode "T2" ;
+    guide:competencyDescription "Capacidad para el aprendizaje autónomo y la actualización de conocimientos, y reconocimiento de su necesidad en el área de las Ciencias de la Actividad Física y del Deporte." .
+
+guide:Comp_T3 rdf:type guide:Competency ;
+    guide:competencyCode "T3" ;
+    guide:competencyDescription "Capacidad para trabajar dentro de un equipo, organizado, planificado, tomando decisiones, negociando y resolviendo conflictos, relacionándose y criticando y haciendo autocrítica." .
+
+guide:Comp_T6 rdf:type guide:Competency ;
+    guide:competencyCode "T6" ;
+    guide:competencyDescription "Capacidad para usar las tecnologías de la información y la comunicación." .
+
+# Learning Results
+guide:LR_RA94 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA94" ;
+    guide:learningResultDescription "Mejorar la calidad de la escritura técnica en inglés beneficiándose de herramientas digitales y sus sugerencias en tiempo real sobre corrección de spelling, grammar y punctuation." .
+
+guide:LR_RA91 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA91" ;
+    guide:learningResultDescription "Write a Research Article in English" .
+
+guide:LR_RA96 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA9<0xC2>6" ;
+    guide:learningResultDescription "Redactar en inglés con claridad, precisión y cohesión cuidando la gramática." .
+
+guide:LR_RA19 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA19" ;
+    guide:learningResultDescription "El objetivo principal del curso es dotar al estudiante de las herramientas y estrategias necesarias para afrontar de forma autónoma y satisfactoria la redacción de artículos de investigación en inglés." .
+
+guide:LR_RA95 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA95" ;
+    guide:learningResultDescription "Expandir el vocabulario académico y la terminología específica en inglés de las ciencias de la actividad física y el deporte." .
+
+# Syllabus
+guide:Syllabus_113000033 rdf:type guide:Syllabus ;
+    guide:hasItem guide:SyllabusItem_1, guide:SyllabusItem_2 .
+
+guide:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Structure of a Research Article (Introduction, Method, Results, Discussion and Conclusions)" ;
+    guide:itemIndex 1 .
+
+guide:SyllabusItem_2 rdf:type guide:SyllableItem ;
+    guide:syllabusDescription "How to write a good abstract and get published" ;
+    guide:itemIndex 2 .
+
+# Evaluation System
+guide:EvalSystem_113000033 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Progressive assessment and compulsory attendance in a 75%" .
+
+guide:Trial_Vocab rdf:type guide:EvaluationTrial ;
+    sch:name "Academic Vocabulary Exercise" ;
+    guide:evaluationType "Progresiva" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:eventWeek "4" ;
+    guide:involvesCompetency guide:Comp_CG6, guide:Comp_CG5, guide:Comp_T2, guide:Comp_CB10, guide:Comp_T3 .
+
+guide:Trial_Writing rdf:type guide:EvaluationTrial ;
+    sch:name "Effective writing and common mistakes exercise" ;
+    guide:evaluationType "Progresiva" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:eventWeek "8" ;
+    guide:involvesCompetency guide:Comp_CG6, guide:Comp_CG5, guide:Comp_T2, guide:Comp_T6, guide:Comp_CB10, guide:Comp_T3 .
+
+guide:Trial_Global rdf:type guide:EvaluationTrial ;
+    sch:name "Global exercise" ;
+    guide:evaluationType "Global" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "03:00" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:eventWeek "17" ;
+    guide:involvesCompetency guide:Comp_CG6, guide:Comp_T2, guide:Comp_T6, guide:Comp_T3, guide:Comp_CB10, guide:Comp_CG5 .
+
+# Didactic Resources
+guide:Res_Moodle rdf:type guide:DidacticResource ;
+    sch:name "Moodle" ;
+    guide:bibliographyType "Web resource" .
+
+guide:Res_GoogleDrive rdf:type guide:DidacticResource ;
+    sch:name "Google Drive, Teams, Zoom" ;
+    guide:bibliographyType "Web resource" .
+
+# Schedule Events (Activities)
+guide:Event_Sem1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity guide:Act_Intro .
+
+guide:Act_Intro rdf:type guide:Activity ;
+    guide:activityDescription "General Introduction. Academic vocabulary" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Acciones Cooperativas" .

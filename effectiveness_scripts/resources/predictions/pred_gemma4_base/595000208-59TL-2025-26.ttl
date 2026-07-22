@@ -1,0 +1,273 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://guia-mad-bench.es/data/> .
+
+# --- Degree and University Center ---
+
+guide:Degree_59TL rdf:type guide:BachelorDegree ;
+    sch:name "59TL - Grado en Ingeniería Telemática" ;
+    guide:degreeCode "59TL" .
+
+guide:UniversityCenter_ETS rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingeniería y Sist. de Telecom." ;
+    guide:offers guide:Degree_59TL .
+
+# --- Course and Course Guide ---
+
+guide:Course_595000208 rdf:type guide:Course ;
+    sch:name "Electronica I" ;
+    sch:courseCode 595000208 ;
+    guide:courseYear 2025 ;
+    guide:courseType "Básica" ;
+    guide:semester "Segundo semestre" ;
+    sch:hasCourseInstance guide:CourseGuide_595000208 .
+
+guide:CourseGuide_595000208 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Electronica I" ;
+    sch:description "Guía de aprendizaje para la asignatura Electrónica I."@en ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    guide:numberOfCredits 6.0 ;
+    sch:inLanguage "Castellano" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:hasSyllabus guide:Syllabus_ElectronicaI ;
+    guide:hasCompetency guide:Comp_CEB4, guide:Comp_CETEL12, guide:Comp_CG02, guide:Comp_CG04, guide:Comp_CG05 ;
+    guide:hasLearningResult guide:LR_RA68, guide:LR_RA69, guide:LR_RA67, guide:LR_RA70, guide:LR_RA71, guide:LR_RA66 ;
+    guide:hasEvaluation guide:EvalSystem_ElectronicaI ;
+    guide:hasDidacticResource guide:Res_Hambley, guide:Res_SedraSmith, guide:Res_Malvino, guide:Res_Storey, guide:Res_Moodle ;
+    sch:instructor guide:Lecturer_PedroCobos, guide:Lecturing_Agustin, guide:Lecturer_LuisNarvarte, guide:Lecturer_RitaHogan, guide:Lecturer_FranciscoMartinez, guide:Lecturer_JavierMalo, guide:Lecturer_JorgeDePonga, guide:Lecturer_GuidoVallerotto ;
+    sch:director guide:Lecturer_RitaHogan ;
+    sch:courseSchedule guide:Schedule_ElectronicaI .
+
+# --- Lecturers ---
+
+guide:Lecturer_PedroCobos rdf:type guide:Lecturer ;
+    sch:name "Pedro Cobos Arribas" ;
+    guide:office "A4210" ;
+    sch:email "pedro.cobos@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:Lecturer_Agustin rdf:type guide:Lecturer ;
+    sch:name "Agustin Rodriguez Herrero" ;
+    guide:office "A4214" ;
+    sch:email "agustin.rodriguez@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:Lecturer_LuisNarvarte rdf:type guide:Lecturer ;
+    sch:name "Luis Narvarte Fernandez" ;
+    guide:office "A4218" ;
+    sch:email "luis.narvarte@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:Lecturer_RitaHogan rdf:type guide:Lecturer ;
+    sch:name "Rita Hogan Teves De Almeida" ;
+    guide:office "A4202" ;
+    sch:email "rita.hogan@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:Lecturer_FranciscoMartinez rdf:type guide:Lecturer ;
+    sch:name "Francisco Martinez Moreno" ;
+    guide:office "A4210" ;
+    sch:email "francisco.martinez@upm.es" .
+
+guide:Lecturer_JavierMalo rdf:type guide:Lecturer ;
+    sch:name "Javier Malo Gomez" ;
+    guide:office "A4220" ;
+    sch:email "javier.malo@upm.es" .
+
+guide:Lecturer_JorgeDePonga rdf:type guide:Lecturer ;
+    sch:name "Jorge De Ponga Del Pozo" ;
+    guide:office "A4220" ;
+    sch:email "jorge.deponga@upm.es" .
+
+guide:Lecturer_GuidoVallerotto rdf:type guide:Lecturer ;
+    sch:name "Guido Vallerotto" ;
+    guide:office "A4218" ;
+    sch:email "guido.vallerotto@upm.es" .
+
+# --- Competencies ---
+
+guide:Comp_CEB4 rdf:type guide:Competency ;
+    guide:competencyCode "CE B4" ;
+    guide:competencyDescription "Comprensión y dominio de los conceptos básicos de sistemas lineales..."@en .
+
+guide:Comp_CETEL12 rdf:type guide:Competency ;
+    guide:competencyCode "CE TEL12" ;
+    guide:competencyDescription "Capacidad de utilizar distintas fuentes de energía..."@en .
+
+guide:Comp_CG02 rdf:type guide:Competency ;
+    guide:competencyCode "CG 02" ;
+    guide:competencyDescription "Capacidad de búsqueda y selección de información..."@en .
+
+guide:Comp_CG04 rdf:type guide:Competency ;
+    guide:competencyCode "CG 04" ;
+    guide:competencyDescription "Capacidad de abstracción, de análisis y de síntesis..."@en .
+
+guide:Comp_CG05 rdf:type guide:Competency ;
+    guide:competencyCode "CG 05" ;
+    guide:competencyDescription "Capacidad de trabajo en equipo y en entornos multidisciplinares."@en .
+
+# --- Learning Results ---
+
+guide:LR_RA68 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA68" ;
+    guide:learningResultDescription "Entender el diagrama de bloques de sistemas electrónicos sencillos..."@en .
+
+guide:LR_RA69 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA69" ;
+    guide:learningResultDescription "Conocer la función y características básicas de los componentes electrónicos pasivos..."@en .
+
+guide:LR_RA67 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA67" ;
+    guide:learningResultDescription "Entender las características principales de los bloques funcionales..."@en .
+
+guide:LR_RA70 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA70" ;
+    guide:learningResultDescription "Entender el modelo y las propiedades básicas de los amplificadores..."@en .
+
+guide:LR_RA71 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA71" ;
+    guide:learningResultDescription "Conocer la función y características básicas de los componentes electrónicos activos..."@<0xE2><0x80><0xAF>en .
+
+guide:LR_RA66 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA66" ;
+    guide:learningResultDescription "Entender la nomenclatura y propiedades básicas de las señales elementales..."@en .
+
+# --- Syllabus ---
+
+guide:Syllabus_ElectronicaI rdf:type guide:Syllabus ;
+    guide:hasItem guide:SI_1, guide:SI_2, guide:SI_3, guide:SI_4 .
+
+guide:SI_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a los sistemas electrónicos" .
+
+guide:SI_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Componentes y dispositivos electrónicos" .
+
+guide:SI_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Subsistemas electrónicos integrados" .
+
+guide:SI_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Prácticas" .
+
+# --- Evaluation System ---
+
+guide:EvalSystem_ElectronicaI rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva con exámenes en grupo y examen global."@en ;
+    guide:hasEvaluationTrial guide:ET_ExG1, guide:ET_ExP1, guide:ET_ExGL, guide:ET_ExG2, guide:ET_ExGT, guide:ET_ExExtraordinario .
+
+guide:ET_ExG1 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen" ;
+    guide:trialWeek "6" ;
+    guide:gradePercentage "4%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:evaluationType "progresiva" ;
+    guide:involvesCompetency guide:Comp_CEB4, guide:Comp_CETEL12, guide:Comp_CG02, guide:Comp_CG04, guide:Comp_CG05 .
+
+guide:ET_ExP1 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen" ;
+    guide:trialWeek "7" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:evaluationType "progresiva" ;
+    guide:involvesCompetency guide:Comp_CEB4, guide:Comp_CETEL12, guide:Comp_CG02, guide:Comp_CG04 .
+
+guide:ET_ExGL rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:trialWeek "12" ;
+    guide:gradePercentage "12%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:evaluationType "progresiva" ;
+    guide:involvesCompetency guide:Comp_CEB4, guide:Comp_CETEL12, guide:Comp_CG02, guide:Comp_CG04 .
+
+guide:ET_ExG2 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen" ;
+    guide:trialWeek "13" ;
+    guide:gradePercentage "4%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:evaluationType "progresiva" ;
+    guide:involvesCompetency guide:Comp_CEB4, guide:Comp_CETEL12, guide:Comp_CG02, guide:Comp_CG04, guide:Comp_CG05 .
+
+guide:ET_ExGT rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen" ;
+    guide:trialWeek "17" ;
+    guide:gradePercentage "60%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:evaluationType "progresiva" ;
+    guide:involvesCompetency guide:Comp_CEB4, guide:Comp_CETEL12, guide:Comp_CG02, guide:Comp_CG04 .
+
+guide:ET_ExExtraordinario rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen" ;
+    guide:gradePercentage "88%" ;
+    guide:minimumScore "4.5 / 10" ;
+    guide:evaluationType "extraordinaria" .
+
+# --- Schedule and Activities ---
+
+guide:Schedule_ElectronicaI rdf:type guide:Schedule ;
+    sch:eventSchedule guide:SE_Week1, guide:SE_Week2, guide:SE_Week3, guide:SE_Week4, guide:SE_Week5, guide:SE_Week6, guide:SE_Week7, guide:SE_Week8, guide:SE_Week9, guide:SE_Week10, guide:SE_Week11, guide:SE_Week12, guide:SE_Week13, guide:SE_Week17 .
+
+guide:SE_Week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "1" ;
+    guide:hasActivity guide:Act_Lecture1, guide:Act_ProblemClass1 .
+
+guide:Act_Lecture1 rdf:type guide:Activity ;
+    guide:activityDescription "Presentación de la asignatura. Señales. Potencia. Unidades logarítmicas."@en ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 3.0 ;
+    guide:attendanceType "Presencial" .
+
+guide:Act_ProblemClass1 rdf:type guide:Activity ;
+    guide:activityDescription "Resolución de ejercicios" ;
+    guide:activityFormat "Clase de Problemas" ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "Presencial" .
+
+guide:SE_Week6 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 6 ;
+    guide:eventWeek "6" ;
+    guide:hasActivity guide:Act_ExamG1 .
+
+guide:Act_ExamG1 rdf:type guide:Activity ;
+    guide:activityDescription "Examen en Grupo 1 (Tema 1 y Tema 2 hasta diodos incluido)" ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:activityDuration 0.5 ;
+    guide:attendanceType "Presencial" .
+
+# --- Didactic Resources ---
+
+guide:Res_Hambley rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Hambley: Electrónica, 2ª ed. Prentice Hall, 2001." ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Libro para los cursos introductorios de electrónica..."@en .
+
+guide:Res_SedraSmith rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Sedra y Smith: Circuitos Microelectrónicos, 5ª ed. McGraw-Hill" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Obra de consulta para el análisis y diseño de circuitos electrónicos"@en .
+
+guide:Res_Malvino rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Malvino: Principios de electrónica, 7ª ed. McGraw-Hill, 2007." ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Libro de consulta para el análisis de circuitos electrónicos"@en .
+
+guide:Res_Storey rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Storey: Electrónica, de los sistemas a los componentes, Addison-Wesley Iberoamericana, 1995." ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Libro de consulta para los temas 2 y 3 de la asignatura"@en .
+
+guide:Res_Moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Página de la asignatura en Moodle" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "La página de la asignatura contiene todos los recursos..."@en .

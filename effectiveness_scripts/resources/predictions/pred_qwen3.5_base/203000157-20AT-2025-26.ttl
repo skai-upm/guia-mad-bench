@@ -1,0 +1,136 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Instance Data Extraction from Document ANX-PR/CL/001-01
+#################################################################
+
+###  Course Guide Instance
+<http://guia-mad-bench.es/data/guia/anx-pr-cl-001-01> rdf:type :CourseGuide ;
+                                               dc:title "Guía de Aprendizje - Nuevas Tecnologías De Envasado De Alimentos"@es ;
+                                               dct:creator <http://w3id.org/def/guia#FernandoCalderon>, 
+                                                           <http://w3id.org/def/guia#EvaNavascues> ,
+                                                           <http://w3id.org/def/guia#FelipePalomero> ;
+                                               dct:license "CC-BY-4.0"@en ;
+                                               guide:numberOfCredits 4^^xsd:decimal ;
+                                               sch:description "En la asignatura se presentan y desarrollan las nuevas tecnologías de envasado de alimentos..."@es .
+
+###  Degree Instance (Master)
+<http://guia-mad-bench.es/data/degree/master-20AT> rdf:type :Degree, 
+                                                       guide:MasterDegree ;
+                                                      sch:name "Master Universitario En Ingenieria Alimentaria Aplicada A La Salud"@en ;
+                                                      dct:title "20AT - Master Universitario..."@es .
+
+###  Course Instance (Mapped to Guide)
+<http://guia-mad-bench.es/data/course/203000157> rdf:type :Course, 
+                                                       sch:CourseInstance ;
+                                                     guide:numberOfCredits 4^^xsd:decimal ;
+                                                     guide:syllabusDescription "Nuevas Tecnologías De Envasado de Alimentos"@es .
+
+###  Syllabus Instance
+<http://guia-mad-bench.es/data/syllabus/203000157> rdf:type :Syllabus, 
+                                                           sch:Syllabus ;
+                                                       guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/t-1>,
+                                                                   <http://guia-mad-bench.es/data/syllabusitem/t-2>,
+                                                                   <http://guia-mad-bench.es/data/syllabusitem/t-3> .
+
+###  Syllabus Items (Temario)
+<http://guia-mad-bench.es/data/syllabusitem/t-1> rdf:type :SyllabusItem ;
+                                                   guide:itemIndex "1"^^xsd:integer ;
+                                                   sch:description "Introducción"@es .
+
+<http://guia-mad-bench.es/data/syllabusitem/t-2> rdf:type :SyllabusItem ;
+                                                    guide:itemIndex "2"^^xsd:integer ;
+                                                    sch:description "Avances en materiales de envasado tradicionales"@es .
+
+<http://guia-mad-bench.es/data/syllabusitem/t-3> rdf:type :SyllabusItem ;
+                                                     guide:itemIndex "3"^^xsd:integer ;
+                                                     sch:description "Nuevos materiales de envasado"@es .
+
+###  Schedule Instance (Cronograma)
+<http://guia-mad-bench.es/data/schedule/20AT_203000157> rdf:type :Schedule, 
+                                                           sch:CourseSchedule ;
+                                                         guide:syllabusDescription "Temario de la asignatura"@es .
+
+###  Schedule Events (Table 6)
+<http://guia-mad-bench.es/data/scheduleevent/semana-1> rdf:type :ScheduleEvent, 
+                                                               sch:Event ;
+                                                           om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+                                                          guide:eventIndex "1"^^xsd:integer .
+
+<http://guia-mad-bench.es/data/scheduleevent/semana-7> rdf:type :ScheduleEvent, 
+                                                                   sch:Event ;
+                                                             om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+                                                            guide:eventIndex "7"^^xsd:integer .
+
+###  Evaluation System Instance
+<http://guia-mad-bench.es/data/evaluation/guia-anx-pr-cl-001-01> rdf:type :EvaluationSystem, 
+                                                                        sch:Evaluationsystem ;
+                                                                      guide:syllabusDescription "Dos pruebas de seguimiento escritas..."@es .
+
+###  Evaluation Trials (Table 7)
+<http://guia-mad-bench.es/data/evaltrial/examen-progresiva-1> rdf:type :EvaluationTrial, 
+                                                                           sch:EvaluationActivity ;
+                                                                       om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+                                                                      guide:hasScheduleEvent <http://guia-mad-bench.es/data/scheduleevent/semana-7>,
+                                                                                  <http://guia-mad-bench.es/data/scheduleevent/semana-13>,
+                                                                                  <http://guia-mad-bench.es/data/scheduleevent/semana-15> ;
+                                                                      guide:trialType "Examen Escrito"@es .
+
+###  Lecturers (Table 2)
+<http://w3id.org/def/guia#FernandoCalderon> rdf:type :Lecturer, 
+                                                        sch:Person ;
+                                              sch:name "Fernando Calderon Fernandez"@en ;
+                                              guide:tutorshipsSchedule "M - 10:30 - 12:30"@es .
+
+<http://w3id.org/def/guia#EvaNavascues> rdf:type :Lecturer, 
+                                                     sch:Person ;
+                                           sch:name "Eva Navascues Lopez-Cordon"@en ;
+                                           guide:tutorshipsSchedule "M - 10:30 - 12:00"@es .
+
+<http://w3id.org/def/guia#FelipePalomero> rdf:type :Lecturer, 
+                                                 sch:Person ;
+                                             sch:name "Felipe Palomero Rodriguez"@en ;
+                                             guide:tutorshipsSchedule "M - 10:30 - 12:30"@es .
+
+###  Competencies (Section 4.1)
+<http://guia-mad-bench.es/data/competency/cb8> rdf:type :Competency, 
+                                                           sch:EducationalGoal ;
+                                                 guide:competencyCode "CB8"^^xsd:string ;
+                                                 guide:competencyDescription "Que los estudiantes sean capaces de integrar conocimientos..."@es .
+
+<http://guia-mad-bench.es/data/competency/cg1> rdf:type :Competency, 
+                                                       sch:EducationalGoal ;
+                                                guide:competencyCode "CG1"^^xsd:string ;
+                                                guide:competencyDescription "Capacidad de observación..."@es .
+
+###  Learning Results (Section 4.2)
+<http://guia-mad-bench.es/data/learningresult/ra7> rdf:type :LearningResult, 
+                                                               sch:EducationalGoal ;
+                                                     guide:learningResultCode "RA7"^^xsd:string ;
+                                                     guide:learningResultDescription "Evaluar resultados analíticos..."@es .
+
+###  Didactic Resources (Section 8)
+<http://guia-mad-bench.es/data/resource/baaghan> rdf:type :DidacticResource, 
+                                                           sch:EducationalMaterial ;
+                                                   guide:bibliographyTitle "Baaghan, J.S. and D. Attwood..."@es .
+
+###  Links from Course Guide to Entities
+<http://guia-mad-bench.es/data/guia/anx-pr-cl-001-01> :hasSyllabus <http://guia-mad-bench.es/data/syllabus/203000157> ;
+                                                          guide:hasCompetency <http://guia-mad-bench.es/data/competency/cb8>, 
+                                                                      <http://guia-mad-bench.es/data/competency/cg1> .
+
+<http://guia-mad-bench.es/data/guia/anx-pr-cl-001-01> :hasLearningResult <http://guia-mad-bench.es/data/learningresult/ra7>, 
+                                                                                <http://guia-mad-bench.es/data/learningresult/ra2> .
+
+<http://guia-mad-bench.es/data/guia/anx-pr-cl-001-01> :hasEvaluationSystem <http://guia-mad-bench.es/data/evaluation/guia-anx-pr-cl-001-01> ;
+                                                          sch:director <http://w3id.org/def/guia#FernandoCalderon>, 
+                                                                      <http://w3id.org/def/guia#EvaNavascues>.
+
+<http://guia-mad-bench.es/data/course/203000157> sch:hasCourseInstance <http://guia-mad-bench.es/data/guia/anx-pr-cl-001-01> .

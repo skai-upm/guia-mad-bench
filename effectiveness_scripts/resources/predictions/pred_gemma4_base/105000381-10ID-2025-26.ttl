@@ -1,0 +1,153 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl/org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# --- Course Guide Instance ---
+:Estructura_Computadores_Guide
+    rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje: Estructura De Computadores" ;
+    sch:description "La asignatura describe la arquitectura von Neumann, presentando una arquitectura de un computador elemental..."@en ;
+    guide:teachingPeriod "2025-26" ;
+    guide:numberOfCredits 6.0 ;
+    guide:inpersonHours "No especificado" ;
+    guide:remoteHours "No especificado" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :Syllabus_Estructura_Computadores ;
+    guide:hasCompetency :Comp_10II_CE05, :Comp_10II_CE07, :Comp_10II_CE22, :Comp_10II_CG01_21, :Comp_10II_CG05, :Comp_10II_CG06 ;
+    guide:hasLearningResult :LR_RA103, :LR_RA104 ;
+    guide:hasEvaluation :EvalSystem_Estructura_Computadores ;
+    sch:courseSchedule :Schedule_Estructura_Computadores ;
+    sch:instructor :Lecturer_Rafael_Sautua_Ruiz, :Lecturer_Antonio_Garcia_Dopico, :Lecturer_Jose_Luis_Pedraza_Dominguez, :Lecturer_Manuel_Maria_Nieto_Rodriguez, :Lecturer_Maria_Luisa_Cordoba_Cabeza, :Lecturer_Maria_Isabel_Garcia_Clemente, :Lecturer_Santiago_Rodriguez_De_La_Fuente, :Lecturer_Angel_Grover_Perez_Munoz ;
+    sch:director :Lecturer_Santiago_Rodriguez_De_La_Fuente ;
+    guide:hasDidacticResource :Res_Libro_de_Miguel, :Res_Libro_Stallings, :Res_Libro_Patterson, :Res_Libro_Garcia_Clemente, :Res_Web_Asignatura ;
+    guide:otherInformation "Las horas de tutoría son orientativas y pueden sufrir modificaciones."@en .
+
+# --- Course Instance ---
+:Estructura_Computadores
+    rdf:type guide:Course ;
+    sch:name "105000381 - Estructura De Computadores" ;
+    sch:courseCode 105000381 ;
+    guide:courseYear 2025 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Quinto semestre" ;
+    sch:hasCourseInstance :Estructura_Computadores_Guide .
+
+# --- Degree Instance ---
+:Doble_Grado_Informatica_ADE
+    rdf:type guide:BachelorDegree ;
+    sch:name "10ID - Doble Grado En Ingenieria Informatica Y En ADE" ;
+    guide:degreeCode "10ID" ;
+    guide:hasCourse :Estructura_Computadores .
+
+# --- University Center Instance ---
+:ETS_Ingenieros_Informaticos
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Informáticos" ;
+    guide:offers :Doble_Grado_Informatica_ADE .
+
+# --- Lecturers ---
+:Lecturer_Rafael_Sautua_Ruiz
+    rdf:type guide:Lecturer ;
+    sch:name "Rafael Sautua Ruiz" ;
+    sch:email "rafael.saturua@upm.es" ;
+    guide:office "4107" ;
+    guide:tutorshipsSchedule "Sin horario. Se debe concertar cita por correo electrónico."@en .
+
+:Lecturer_Antonio_Garcia_Dopico
+    rdf:type guide:Lecturer ;
+    sch:name "Antonio Garcia Dopico" ;
+    sch:email "antonio.garcia.dopico@upm.es" ;
+    guide:office "4202" ;
+    guide:tutorshipsSchedule "Sin horario. Se debe concertar cita por correo electrónico."@en .
+
+:Lecturer_Santiago_Rodriguez_De_La_Fuente
+    rdf:type guide:Lecturer ;
+    sch:name "Santiago Rodriguez De La Fuente" ;
+    sch:email "santiago.rodriguez@upm.es" ;
+    guide:office "4107" ;
+    guide:tutorshipsSchedule "Sin horario. Se debe concertar cita por correo electrónico."@en .
+
+# --- Competencies ---
+:Comp_10II_CE05
+    rdf:type guide:Competency ;
+    guide:competencyCode "10II-CE05" ;
+    guide:competencyDescription "Capacidad de diseñar y realizar experimentos apropiados, interpretar los datos y extraer conclusiones."@en .
+
+:Comp_10II_CG01_21
+    rdf:type guide:Competency ;
+    guide:competencyCode "10II-CG01/21" ;
+    guide:competencyDescription "Capacidad de resolución de problemas aplicando conocimientos de matemáticas, ciencias e ingeniería."@．
+
+# --- Learning Results ---
+:LR_RA103
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA103" ;
+    guide:learningResultDescription "Utilizar eficientemente los recursos básicos del computador mediante el lenguaje nativo del mismo."@en .
+
+# --- Syllabus ---
+:Syllabus_Estructura_Computadores
+    rdf:type guide:Syllabus ;
+    guide:hasItem :SyllabusItem_Unit1, :SyllabusItem_Unit2, :SyllabusItem_Unit3, :SyllabusItem_Unit4, :SyllabusItem_Unit5 .
+
+:SyllabusItem_Unit1
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a los computadores" .
+
+# --- Evaluation System ---
+:EvalSystem_Estructura_Computadores
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La asignatura consta de dos partes: teoría y proyecto, no liberatorias."@en ;
+    guide:hasEvaluationTrial :Trial_Examen_Parcial_1, :Trial_Examen_Proyecto_Ensamblador .
+
+:Trial_Examen_Parcial_1
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "44%" ;
+    guide:minimumScore "2 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" .
+
+# --- Schedule & Activities ---
+:Schedule_Estructura_Computadores
+    rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week1, :Event_Week11, :Event_Week17 .
+
+:Event_Week1
+    rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :Act_Lecture_Topic1 .
+
+:Act_Lecture_Topic1
+    rdf:type guide:Activity ;
+    guide:activityDescription "Explicación de contenidos teóricos del Tema 1" ;
+    guide:activityDuration 4.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+# --- Didactic Resources ---
+:Res_Libro_de_Miguel
+    rdf:type guide:DidacticResource ;
+    sch:name "Libro P. de Miguel" ;
+    guide:bibliographyTitle "Fundamentos de los computadores" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_Web_Asignatura
+    rdf:type guide:DidacticResource ;
+    sch:name "Página web de la asignatura" ;
+    guide:bibliographyDescription "http://www.datsi.fi.upm.es/docencia/Estructura_09/" ;
+    guide:bibliographyType "Recursos web" .
+
+# --- Required Knowledge ---
+:ReqKnowledge_Previa
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Sistemas Digitales, Programación I" ;
+    guide:previousCourses "Sistemas Digitales, Programación I" .

@@ -1,0 +1,162 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# University Center
+:Etsi_Agronomica_Aliment_y_Biosistemas rdf:type guide:UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas" .
+
+# Degree Programme
+:Master_Biologia_Computacional rdf:type guide:MasterDegree ;
+    sch:name "Master Universitario En Biologia Computacional" ;
+    guide:degreeCode "20BC" .
+
+:Etsi_Agronomica_Aliment_y_Biosistemas guide:offers :Master_Biologia_Computacional .
+
+# Course
+:Computational_Approaches_In_Evolutionary_Biology rdf:type guide:Course ;
+    sch:name "203000027 - Computational Approaches In Evolutionary Biology" ;
+    sch:courseCode 203000027 ;
+    guide:courseType "Optional/elective" ;
+    sch:numberOfCredits 3.0 ;
+    sch:hasCourseInstance :CourseGuide_203000027 .
+
+:Master_Biologia_Computacional guide:hasCourse :Computational_Approaches_In_Evolutionary_Biology .
+
+# Course Guide
+:CourseGuide_203000027 rdf:type guide:CourseGuide ;
+    sch:name "Learning Guide - Computational Approaches In Evolutionary Biology" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:semester "Semester 1" ;
+    guide:periodStartingMonth "September" ;
+    guide:periodEndingMonth "January" ;
+    sch:inLanguage "English" ;
+    guide:hasSyllabus :Syllabus_203000027 ;
+    guide:hasEvaluation :EvaluationSystem_203000027 ;
+    guide:hasLearningResult :RA18, :RA19, :RA16, :RA17 ;
+    guide:hasCompetency :CE02, :CE03, :CE05, :CE10, :CG03, :CG05, :CT02 ;
+    guide:hasDidacticResource :Resource_Nei, :Resource_Hartl, :Resource_Lemey ;
+    sch:courseSchedule :Schedule_203000027 ;
+    sch:instructor :Jesus_Israel_Pagan_Munoz, :Cristina_Saez_Sanchez .
+
+# Faculty
+:Jesus_Israel_Pagan_Munoz rdf:type guide:Lecturer ;
+    sch:name "Jesus Israel Pagan Muñoz" ;
+    sch:email "jesusisrael.pagan@upm.es" ;
+    guide:office "231" ;
+    guide:tutorshipsSchedule "Tu - 12:00 - 13:00" .
+
+:Cristina_Saez_Sanchez rdf:type guide:Lecturer ;
+    sch:name "Cristina Saez Sanchez" ;
+    sch:email "cristina.saez@upm.es" ;
+    guide:office "202 - CBGP" ;
+    guide:tutorshipsSchedule "M - 08:00 - 08:15" .
+
+# Competencies
+:CE02 rdf:type guide:Competency ;
+    guide:competencyCode "CE02" ;
+    guide:competencyDescription "Utilizar sistemas operativos, programas y herramientas de uso común en biología computacional..." .
+
+:CE03 rdf:type guide:Competency ;
+    guide:competencyCode "CE03" ;
+    guide:competencyDescription "Analizar e interpretar bioinformáticamente los datos que se derivan de las tecnologías ómicas..." .
+
+:CE05 rdf:type guide:Competency ;
+    guide:competencyCode "CE05" ;
+    guide:competencyDescription "Utilizar herramientas de biología computacional para el análisis genómico..." .
+
+:CG03 rdf:type guide:Competency ;
+    guide:competencyCode "CG03" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas..." .
+
+# Learning Results
+:RA18 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA18" ;
+    guide:learningResultDescription "Conocer los supuestos teóricos y la base bioestadística en la que se apoyan los diferentes métodos de análisis computacional..." .
+
+:RA19 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA19" ;
+    guide:learningResultDescription "Adquirir los conocimientos necesarios para el uso e interpretación de paquetes informáticos enfocados al estudio de la evolución..." .
+
+# Syllabus
+:Syllabus_203000027 rdf:type guide:Syllabus ;
+    guide:hasItem :SyllabusItem_1, :SyllabusItem_2, :SyllabusItem_3 .
+
+:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Mechanisms of evolution: mutation" .
+
+:SyllabusItem_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Natural selection" .
+
+:SyllabusItem_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Evolution in finite populations: genetic drift" .
+
+# Evaluation System and Trials
+:EvaluationSystem_203000027 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Progressive evaluation through individual works and global examination." ;
+    guide:hasEvaluationTrial :Trial_ProblemSolving, :Trial_PracticalWork_8, :Trial_GlobalExam .
+
+:Trial_ProblemSolving rdf:type guide:EvaluationTrial ;
+    trialType "Problem-solving test" ;
+    evaluationType "Progressive assessment" ;
+    evaluationDuration "03:00" ;
+    gradePercentage "25%" ;
+    minimumScore "5 / 10" ;
+    trialMode "Not Presential" ;
+    involvesCompetency :CE05, :CG03 .
+
+:Trial_GlobalExam rdf:type guide:EvaluationTrial ;
+    trialType "Global examination" ;
+    evaluationType "Global evaluation" ;
+    evaluationDuration "05:00" ;
+    gradePercentage "100%" ;
+    minimumScore "5 / 10" ;
+    trialMode "Not Presential" .
+
+# Schedule and Activities
+:Schedule_203000027 rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week1, :Event_Week4 .
+
+:Event_Week1 rdf:type guide:ScheduleEvent ;
+    eventWeek "1" ;
+    eventIndex 1 ;
+    guide:hasActivity :Activity_Lecture_Mutation .
+
+:Activity_Lecture_Mutation rdf:type guide:Activity ;
+    activityDescription "Lecture on Mechanisms of evolution: mutation" ;
+    activityDuration 2.0 ;
+    activityFormat "Lecture" .
+
+:Event_Week4 rdf:type guide:ScheduleEvent ;
+    eventWeek "4" ;
+    eventIndex 4 ;
+    guide:hasActivity :Activity_Lab_Selection .
+
+:Activity_Lab_Selection rdf:type guide:Activity ;
+    activityDescription "Laboratory assignments on Selection coefficients and heritability" ;
+    activityDuration 2.0 ;
+    activityFormat "Laboratory assignments" ;
+    attendanceType "Not Presential" .
+
+# Didactic Resources
+:Resource_Nei rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Nei, M. (1987) Molecular Evolutionary Genetics. Columbia University Press, New York" ;
+    guide:bibliographyType "Bibliography" .
+
+:Resource_Hartl rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Hartl, D,L., Clark, A.G. (2007) Principles of population genetics, fourth ed. Sinauer, Sunderland." ;
+    guide:bibliographyType "Bibliography" .
+
+:Resource_Lemey rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Lemey, P., Salemi, M., Vandamme, A-.M. (2009) The Phylogenetic Handbook..." ;
+    guide:bibliographyType "Bibliography" .

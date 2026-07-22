@@ -1,0 +1,113 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+guide:course_guide_ecologia rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Ecología"@en ;
+    sch:description "El objetivo de la asignatura de Ecología es que el alumno adquiera el conocimiento de conceptos básicos de Ecología, sus objetivos, metodología y modo de estudiar el biotopo, la biocenosis y sus interrelaciones."@en ;
+    guide:teachingPeriod "2025-26"@en ;
+    guide:numberOfCredits 6.0 ;
+    guide:inpersonHours "No especificado"@en ;
+    guide:remoteHours "No especificado"@en ;
+    sch:inLanguage "Castellano"@en ;
+    guide:hasSyllabus guide:syllabus_ecologia ;
+    guide:hasCompetency guide:competency_ce14, guide:competency_ce47, guide:competency_cg1, guide:competency_cg12, guide:competency_cg6, guide:competency_cg7 ;
+    guide:hasLearningResult guide:learning_result_ra80, guide:learning_result_ra83, guide:learning_result_ra84, guide:learning_result_ra85, guide:learning_result_ra86, guide:learning_result_ra81, guide:learning_result_ra82 ;
+    guide:hasEvaluation guide:evaluation_system_ecologia ;
+    guide:hasDidacticResource guide:resource_smith, guide:resource_odum, guide:resource_begon, guide:resource_gotelli, guide:resource_pinol, guide:resource_alstad, guide:resource_molles, guide:resource_lambers ;
+    sch:instructor guide:lecturer_santiago, guide:lecturer_daniel .
+
+guide:course_ecologia rdf:type guide:Course ;
+    sch:name "25001210 - Ecologia"@en ;
+    guide:courseYear 2025 ;
+    guide:courseType "Obligatoria"@en ;
+    guide:semester "Segundo semestre"@en ;
+    sch:hasCourseInstance guide:course_guide_ecologia .
+
+guide:degree_agroambiental rdf:type guide:Degree ;
+    sch:name "02IA - Grado En Ingenieria Agroambiental"@en ;
+    guide:hasCourse guide:course_ecologia .
+
+guide:center_etsi rdf:type guide:UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas"@en ;
+    guide:offers guide:degree_agroambiental .
+
+guide:lecturer_santiago rdf:type guide:Lecturer ;
+    sch:name "Santiago Moreno Vazquez"@en ;
+    sch:email "santiago.moreno@upm.es"@en ;
+    guide:office "Banco Semillas"@en ;
+    guide:tutorshipsSchedule "Sin horario. Las tutorías se concertarán mediante mensaje de<0xC2>correo-e"@en .
+
+guide:lecturer_daniel rdf:type guide:Lecturer ;
+    sch:name "Daniel De La Torre Llorente"@en ;
+    sch:email "daniel.delatorre@upm.es"@en ;
+    guide:office "Edificio A"@en ;
+    guide:tutorshipsSchedule "Sin horario. Las tutorías se concertarán mediante mensaje de correo-e."@en .
+
+guide:competency_ce14 rdf:type guide:Competency ;
+    guide:competencyCode "CE14"@en ;
+    guide:competencyDescription "Conocimiento de los conceptos básicos de Ecología, sus objetivos, metodología y modo de estudiar el biotopo, la biocenosis y sus relaciones."@en .
+
+guide:competency_ce47 rdf:type guide:Competency ;
+    guide:competencyCode "CE47"@en ;
+    guide:competencyDescription "Capacitar para el análisis y conservación de la biodiversidad y describir los métodos de caracterización de la gestión de recursos biológicos en los agroecosistemas."@en .
+
+guide:competency_cg1 rdf:type guide:Competency ;
+    guide:competencyCode "CG1"@en ;
+    guide:competencyDescription "Que los estudiantes hayan demostrado pose de conocimientos en un área de estudio..."@en .
+
+guide:learning_result_ra80 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA80"@en ;
+    guide:learningResultDescription "Conocimientos sobre el medio físico y los componentes biológicos de los ecosistemas."@en .
+
+guide:learning_result_ra83 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA83"@en ;
+    guide:learningResultDescription "Utilizar modelos informáticos en estudio de ecosistemas."@en .
+
+guide:syllabus_ecologia rdf:type guide:Syllabus ;
+    guide:hasItem guide:syllabus_item_1, guide:syllabus_item_2, guide:syllabus_item_3, guide:syllabus_item_4, guide:syllabus_item_5, guide:syllabus_item_6, guide:syllabus_item_7, guide:syllabus_item_8, guide:syllabus_item_9, guide:syllabus_item_10, guide:syllabus_item_11, guide:syllabus_item_12, guide:syllabus_item_13, guide:syllabus_item_14, guide:syllabus_item_15, guide:syllabus_item_16 .
+
+guide:syllabus_item_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a la Ecología. Definición. Datos históricos. Conceptos básicos utilizados en Ecología."@en .
+
+guide:syllabus_item_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Los organismos y el medio. Recursos y condiciones del medio físico. Hábitat. Factores ambientales. Clima. Suelo. Homeostasis. Biomas."@en .
+
+guide:evaluation_system_ecologia rdf:type guide:EvaluationSystem ;
+    guide:hasEvaluationTrial guide:trial_p01, guide:trial_exam_progresiva, guide:trial_p04, guide:trial_p05, guide:trial_p07, guide:trial_presentacion_trabajos, guide:trial_examen_global, guide:trial_examen_practicas .
+
+guide:trial_p01 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Informe práctica"@en ;
+    guide:gradePercentage "4%"@en ;
+    guide:minimumScore "5 / 10"@en ;
+    guide:trialMode "No Presencial"@en .
+
+guide:trial_exam_progresiva rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito"@en ;
+    guide:gradePercentage "32.5%"@en ;
+    guide:minimumScore "5 / 10"@en ;
+    guide:trialMode "Presencial"@en .
+
+guide:resource_smith rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Ecología"@en ;
+    guide:bibliographyDescription "Autor: R.L. Smith y T.M. Smith. Editorial: Addison Wesley. Sexta Edición."@en ;
+    guide:bibliographyType "Libro de texto general"@en .
+
+guide:resource_odum rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Fundamentos de Ecología"@en ;
+    guide:bibliographyDescription "Autor: E. P. Odum y G. W. Warret. Quinta Edición. Editorial Thomson 2006."@en ;
+    guide:bibliographyType "Libro de texto general"@en .
+
+guide:resource_gotelli rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "A Primer of Ecology"@en ;
+    guide:bibliographyDescription "Autor: N.J. Gotelli. Cuarta Edición. Editorial: Sinauer Associates, Inc. Publishers 2008."@en ;
+    guide:bibliographyType "Libro de texto recomendado"@en .
+
+guide:resource_pinol rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Ecología con números"@en ;
+    guide:bibliographyDescription "Autor: J. Piñol y J. Martínez-Vilalta. Editorial: Lynx 2006."@en ;
+    guide:bibliographyType "Libro de ejercicios y problemas"@en .

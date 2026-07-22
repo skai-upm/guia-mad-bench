@@ -1,0 +1,985 @@
+@prefix data: <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix sch: <https://schema.org/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+data:Ciencia_Tecnologia_Sociedad rdf:type guide:CourseGuide ;
+    sch:name "595044117 - Ciencia, Tecnología Y Sociedad"@en ;
+    dct:title "Ciencia, Tecnología y Sociedad" ;
+    guide:numberOfCredits 3^^xsd:decimal ;
+    guide:teachingPeriodMonths "Febrero-Junio"@en ;
+    sch:inLanguage "Castellano"@en ;
+    guide:syllabusDescription "La asignatura pretende promover la reflexión sobre las interacciones entre la sociedad actual y el desarrollo tecnológico."@en .
+
+data:Ciencia_Tecnologia_Sociedad rdf:type guide:Syllabus ;
+    guide:hasSylbus data:Ciencia_Tecnologia_Sociedad ;
+    sch:name "Temario de la asignatura" .
+
+data:Tema_1 rdf:type guide:SyllabusItem ;
+    rdfs:label "Sostenibilidad ecológica y social"@en ;
+    guide:syllabusDescription "Sostenibilidad ecológica y social"@en ;
+    guide:itemIndex 1^^xsd:integer .
+
+data:Tema_2 rdf:type guide:SyllabusItem ;
+    rdfs:label "Las revoluciones tecnológicas"@en ;
+    guide:syllabusDescription "Revoluciones tecnológicas y política científica"@en ;
+    guide:itemIndex 2^^xsd:integer .
+
+data:Tema_3 rdf:type guide:SyllabusItem ;
+    rdfs:label "TIC, ética y derechos humanos"@en ;
+    guide:syllabusDescription "TIC, ética y derechos humanos"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+data:Tema_4 rdf:type guide:SyllabusItem ;
+    rdfs:label "Casos de uso de tecnología social. Evaluación Voluntaria"@en ;
+    guide:syllabusDescription "Evaluación voluntaria en proyectos sociales y ecológicos"@en ;
+    guide:itemIndex 4^^xsd:integer .
+
+data:Ivan_Pau_De_La_Cruz rdf:type sch:Person, guide:Lecturer ;
+    rdfs:label "Ivan Pau De La Cruz" ;
+    sch:name "Ivan Pau De La Cruz (Coordinador/a)"@en ;
+    sch:email "ivan.pau@upm.es"@en .
+
+data:Miguel_Angel_Valero_Duboy rdf:type sch:Person, guide:Lecturer ;
+    rdfs:label "Miguel Angel Valero Duboy" ;
+    sch:name "Miguel Angel Valero Duboy"@en ;
+    sch:email "miguelangel.valero@upm.es"@en .
+
+data:Ciencia_Tecnologia_Sociedad rdf:type guide:Lecturer, data:Ivan_Pau_De_La_Cruz ;
+    sch:director data:Ivan_Pau_De_La_Cruz ;
+    sch:instructor data:Miguel_Angel_Valero_Duboy .
+
+data:Evaluacion_Progresiva rdf:type guide:EvaluationTrial ;
+    rdfs:label "Evaluación progresiva"@en ;
+    sch:name "Evaluación Progresiva" ;
+    guide:trialType "Progresiva"@en ;
+    guide:gradePercentage 25^^xsd:string ;
+    guide:minimumScore "3 / 10"@en .
+
+data:Evaluacion_Final rdf:type guide:EvaluationTrial ;
+    rdfs:label "Examen global"@en ;
+    sch:name "Examen Global" ;
+    guide:trialType "Global"@en ;
+    guide:gradePercentage 100^^xsd:string ;
+    guide:minimumScore "5 / 10"@en .
+
+data:Evaluacion_Progresiva rdf:type guide:EvaluationSystem ;
+    sch:name "Sistema de Evaluación Progresiva" ;
+    guide:evaluationDescription "La evaluación progresiva libera cada tema a partir de una nota de 3 sobre 10."@en ;
+    guide:hasEvaluationTrial data:Evaluacion_Progresiva .
+
+data:Ciencia_Tecnologia_Sociedad rdf:type sch:CourseInstance, guide:CourseGuide ;
+    guide:courseYear "2025-26"^^xsd:string ;
+    guide:syllabusDescription "La asignatura estudia todos los ODS en el Tema 1."@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:00"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 9^^xsd:string ;
+    om:Unit "00:20"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 13^^xsd:string ;
+    om:Unit "01:40"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 17^^xsd:string ;
+    om:Unit "02:00"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 17^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .
+
+data:Evaluacion_Progresiva rdf:type sch:EventSchedule, data:Ciencia_Tecnologia_Sociedad ;
+    rdfs:label "Cronograma de la asignatura" ;
+    guide:scheduleEventIndex 4^^xsd:string ;
+    om:Unit "01:30"@en .

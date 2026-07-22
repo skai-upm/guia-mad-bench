@@ -1,0 +1,105 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/GA_14IB_143002004> rdf:type :CourseGuide ;
+    dct:title "Desarrollo De Infraestructuras Aeronáuticas"@en ;
+    sch:courseCode 143002004 ;
+    guide:numberOfCredits "6"^^xsd:decimal ;
+    guide:syllabusDescription "Conocimiento del ámbito de las infraestructuras aeroportuarias, desde el punto de vista de su relación con las operaciones de las aeronaves..."@en ;
+    sch:description "Se persigue dar un enfoque práctico y orientado a la industria."@en ;
+    dct:creator "Angel Paris Loreiro" , "Nicolas Diego Garcia Ortiz" , "Alvaro Rodriguez Sanz" , "Santiago Pindado Carrion" , "Daniel Alfonso Corcuera"@en ;
+    guide:syllabus <http://guia-mad-bench.es/data/SYLLABUS_143002004> ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/SCHEME_14IB_2S_2025-26> .
+
+<http://w3id.org/def/guia#MasterDegree_14IB> rdf:type :MasterDegree ;
+    guide:degreeCode "14IB"@en ;
+    sch:name "Master Universitario En Ingenieria Aeronautica" .
+
+<http://guia-mad-bench.es/data/SYLLABUS_143002004> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/ITEM_Tema_1> , <http://guia-mad-bench.es/data/ITEM_Tema_2> , <http://guia-mad-bench.es/data/ITEM_Tema_3> .
+
+<http://w3id.org/def/guia#Degree_14IB> rdf:type :MasterDegree ;
+    guide:degreeCode "14IB"@en ;
+    sch:name "Master Universitario En Ingenieria Aeronautica" .
+
+### Lecturers ###
+<NICOLAS_DIEGO_GARCIA_ORTIZ_DEVILLOJOS> rdf:type :Lecturer ;
+    sch:name "Nicolas Diego Garcia Ortiz De Villajos"@en ;
+    guide:office ""@en ;
+    sch:email <diego.garcia.ortizdevillajos@upm.es> .
+
+<ALVARO_RODRIGUEZ_SANZ> rdf:type :Lecturer ;
+    sch:name "Alvaro Rodriguez Sanz"@en ;
+    guide:office ""@en ;
+    sch:email <alvaro.rodriguez.sanz@upm.es> .
+
+<SANTIAGO_PINDAO_CARRION> rdf:type :Lecturer ;
+    sch:name "Santiago Pindado Carrion"@en ;
+    guide:tutorshipsSchedule "Sin horario. Tutorías publicadas en el tablón y en la Web del Departamento"^^xsd:string ;
+    sch:email <santiago.pindado@upm.es> .
+
+<DANIEL_ALFONSO_CORCUERA> rdf:type :Lecturer ;
+    sch:name "Daniel Alfonso Corcuera"@en ;
+    guide:tutorshipsSchedule "L - 08:00 - 08:15"^^xsd:string ;
+    sch:email <daniel.alfonso.corcuera@upm.es> .
+
+<ANGEL_PARIS_LOREIRO_COORDINADOR> rdf:type :Lecturer ;
+    sch:name "Angel Paris Loreiro"@en ;
+    guide:tutorshipsSchedule ""^^xsd:string ;
+    sch:email <angel.paris@upm.es> ,
+        sch:director .
+
+### Competencies ###
+<CE_IA_1> rdf:type :Competency ;
+    guide:competencyCode "CE-IA-1"@en ;
+    guide:competencyDescription "Aptitud para realizar los Planes Directores de aeropuertos y los proyectos..."@en .
+
+<CG_2> rdf:type :Competency ;
+    guide:competencyCode "CG2"@en ;
+    guide:competencyDescription "Capacidad para planificar, proyectar y controlar los procesos de construcción..."@en .
+
+### Learning Results ###
+<RA49> rdf:type :LearningResult ;
+    guide:learningResultCode "RA49"@en ;
+    guide:learningResultDescription "Identifica las unidades estratégicas de análisis del negocio de explotación aeroportuaria"^^xsd:string .
+
+### Syllabus Items (Sample) ###
+<Tema_1> rdf:type :SyllabusItem ;
+    guide:itemIndex 1 ,
+        sch:name "Tema 1. CARACTERÍSTICAS FÍSICAS"@en ;
+    guide:syllabusDescription "CARACTERÍSTICAS FÍSICAS"^^xsd:string .
+
+### Schedule Events ###
+<WEK_1> rdf:type :ScheduleEvent ;
+    guide:eventIndex 1 ,
+        sch:name "Tema 1. Características físicas"^^xsd:string ;
+    om:Unit "04:00"^^xsd:gDayTime ;
+    guide:activityDurationUnit <http://www.w3.org/2001/XMLSchema#decimal> .
+
+### Evaluation System ###
+<EVAL_SYSTEM_14IB> rdf:type :EvaluationSystem ;
+    sch:name "Evaluación de Desarrollo De Infraestructuras Aeronáuticas"^^xsd:string ;
+    guide:evaluationDescription "La asignatura consta de cuatro partes..."@en ;
+    guide:hasEvaluationTrial <EXAMEN_ORDINARIO_14IB> , <TRABAJO_VOLUNTARIO_14IB> .
+
+<EXAMEN_ORDINARIO_14IB> rdf:type :EvaluationTrial ;
+    sch:name "Examen Final Ordinario"^^xsd:string ;
+    guide:trialType "Presencial"@en ;
+    guide:gradePercentage "50%"^^xsd:gDayTime ,
+        "25%"^^xsd:gDayTime .
+
+### Resources ###
+<MOODLE_LINK> rdf:type :DidacticResource ;
+    sch:name "Espacio MOODLE de la asignatura"^^xsd:string ;
+    guide:bibliographyType "Recursos web"@en ;
+    dct:identifier <http://moodle.upm.es/> .
+
+### Other Info ###
+<SDG_9> rdf:type :LearningResult ;
+    sch:name "Objetivo de Desarrollo Sostenible ODS9"^^xsd:string .

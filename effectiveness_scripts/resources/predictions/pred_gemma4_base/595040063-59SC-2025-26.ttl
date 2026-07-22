@@ -1,0 +1,204 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://w3id.org/def/guia#> .
+
+# Course
+:course_595040063 rdf:type guide:Course ;
+    sch:name "Programación de Clientes Web Ligeros" ;
+    guide:courseYear 2025 ;
+    guide:courseType "Optativa" ;
+    sch:hasCourseInstance :course_guide_595040063_2025_26 ;
+    sch:courseCode 595040063 .
+
+# Course Guide
+:course_guide_595040063_2025_26 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Programación de Clientes Web Ligeros" ;
+    sch:description "Guía de aprendizaje para la asignatura Programación de Clientes Web Ligeros."@en ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    guide:numberOfCredits 6.0 ;
+    guide:inpersonHours "No especificado" ;
+    guide:remoteHours "No especificado" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :lecturer_vicente_hernandez ;
+    guide:hasSyllabus :syllabus_595040063 ;
+    guide:hasEvaluation :eval_system_595040063 ;
+    guide:hasCompetency :comp_CE_B2, :comp_CE_SC01 ;
+    guide:hasLearningResult :lr_RA1239, :lr_RA1240, :lr_RA1238, :lr_RA1241, :lr_RA1242 ;
+    sch:courseSchedule :schedule_595040063 ;
+    guide:hasDidacticResource :res_apuntes, :res_moodle, :res_mdn, :res_w3schools, :res_jsinfo, :res_nodejs, :res_sequelize, :res_expressjs, :res_passportjs, :res_heroku, :res_glitch, :res_book_fullstack, :res_book_webprog, :res_book_architecture, :res_book_jquery ;
+    guide:otherInformation "La asignatura puede contribuir a los ODS 4 y 9."@en .
+
+# Degree
+:degree_59SC rdf:type guide:BachelorDegree ;
+    sch:name "Grado en Ingeniería de Sistemas de Telecomunicación" ;
+    guide:degreeCode "59SC" ;
+    guide:hasCourse :course_595040063 .
+
+# University Center
+:center_ets_telecom rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Sist. De Telecom." ;
+    guide:offers :degree_59SC .
+
+# Lecturers
+:lecturer_vicente_hernandez rdf:type guide:Lecturer ;
+    sch:name "Vicente Hernandez Diaz" ;
+    sch:description "Coordinador/a" ;
+    guide:office "A4412" ;
+    sch:email "vicente.hernandez@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. A determinar" .
+
+:lecturer_carrillo_sanchez rdf:type guide:Lecturer ;
+    sch:name "Carlos Carrillo Sanchez" ;
+    guide:office "A4	401" ;
+    sch:email "carlos.carrillo@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. A determinar" .
+
+# Competencies
+:comp_CE_B2 rdf:type guide:Competency ;
+    guide:competencyCode "CE B2" ;
+    guide:competencyDescription "Conocimientos básicos sobre el uso y programación de los ordenadores, sistemas operativos, bases de datos y programas informáticos con aplicación en ingeniería."@en .
+
+:comp_CE_SC01 rdf:type guide:Competency ;
+    guide:competencyCode "CE SC01" ;
+    guide:competencyDescription "Capacidad para construir, explotar y gestionar las redes, servicios, procesos y aplicaciones de telecomunicaciones..."@en .
+
+# Learning Results
+:lr_RA1239 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA1239" ;
+    guide:learningResultDescription "Identificar, comprender y aplicar la sintaxis y semántica de lenguajes para el desarrollo de aplicaciones web actuales"@en .
+
+:lr_RA1240 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA12<0xC2>40" ;
+    guide:learningResultDescription "Utiliza entornos y herramientas de desarrollo para la programación de aplicaciones con interfaces en línea de comandos e interfaces gráficas"@en .
+
+:lr_RA1238 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA1238" ;
+    guide:learningResultDescription "Implementa, prueba y verifica soluciones atendiendo a criterios de eficacia, legibilidad y documentación"@en .
+
+:lr_RA1241 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA1241" ;
+    guide:learningResultDescription "Desarrolla soluciones con tecnologías Web"@en .
+
+:lr_RA1242 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA1242" ;
+    guide:learningResultDescription "Utilizar adecuadamente los entornos de desarrollo con herramientas de libre distribución"@en .
+
+# Syllabus
+:syllabus_595040063 rdf:type guide:Syllabus ;
+    guide:hasItem :item_topic1, :item_topic2, :item_topic3, :item_topic4, :item_topic5 .
+
+:item_topic1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a la asignatura"@en .
+
+:item_topic2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Arquitectura de la WEB (Introducción, Modelo cliente-servidor, URL y HTTP)"@en .
+
+:item_topic3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Tecnologías WEB básicas (HTML, CSS, JavaScript)"@en .
+
+:item_topic4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Tecnologías WEB avanzadas (jQuery, SPA, Mapas interactivos)"@en .
+
+:item_topic5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Temas avanzados (Aplicaciones adaptativas, Terminales móviles, React)"@en .
+
+# Evaluation System
+:eval_system_595040063 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación progresiva y global."@en ;
+    guide:hasEvaluationTrial :trial_exam_1, :trial_exam_2, :trial_prac3 .
+
+:trial_exam_1 rdf:type guide:EvaluationTrial ;
+    sch:name "Examen Primer Parcial" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:trialWeek "8" ;
+    guide:involvesCompetency :comp_CE_B2, :comp_CE_SC01 .
+
+:trial_exam_2 rdf:type guide:EvaluationTrial ;
+    sch:name "Examen Segundo Parcial" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:trialWeek "17" ;
+    guide:involvesCompetency :comp_CE_B2, :comp_CE_SC01 .
+
+:trial_prac3 rdf:type guide:EvaluationTrial ;
+    sch:name "Evaluación Práctica 3" ;
+    guide:evaluationType "Examen de Prácticas" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:trialWeek "13" ;
+    guide:involvesCompetency :comp_CE_B2, :comp_CE_SC01 .
+
+# Schedule
+:schedule_595040063 rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week2, :event_week8, :event_week13, :event_week17 .
+
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_leccion_magistral_1 .
+
+:act_leccion_magistral_1 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1 y Tema 2" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:event_week8 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 8 ;
+    guide:eventWeek "Semana 8" ;
+    guide:hasActivity :act_exam_1 .
+
+:act_exam_1 rdf:type guide:Activity ;
+    guide:activityDescription "Examen Primer Parcial" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:attendanceType "Presencial" .
+
+# Required Knowledge
+:req_knowledge_595040063 rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Programacion I, Programacion II, Redes Y Servicios De Telecomunicacion"@en .
+
+# Didactic Resources
+:res_apuntes rdf:type guide:DidacticResource ;
+    sch:name "Apuntes de la asignatura" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Diapositivas disponibles en la sede Moodle"@en .
+
+:res_mdn rdf:type guide:DidacticResource ;
+    sch:name "MDN Web Docs" ;
+    guide:bibliographyType "Recurso web" ;
+    guide:bibliographyDescription "https://developer.mozilla.org"@en .
+
+:res_book_fullstack rdf:type guide:DidacticResource ;
+    sch:name "The Full Stack Web Development" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Autor: Eduonix. Vídeo publicado por Packt Publishing 2017"@en .
+
+:res_book_architecture rdf:type guide:DidacticResource ;
+    sch:name "Fundamentals of Software Architecture" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Autor: Richards, M.; Ford, N. Publicado por O'Reilly Media Inc. 2020."@en .
+
+:res_book_jquery rdf:type guide:DidacticResource ;
+    sch:name "jQuery in Action, Third Edition" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Autor: Aurelio De Rosa, Yehuda Katz, Bear Bibeault"@en .

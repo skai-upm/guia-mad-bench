@@ -1,0 +1,136 @@
+@prefix data: <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Guide Information
+data:Course_135004529 rdf:type guide:Course ;
+    sch:name "Ampliación De Sistemas De Información Geográfica" ;
+    sch:courseCode 135004529 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Octavo semestre" ;
+    sch:numberOfCredits 3.0 .
+
+data:CourseGuide_135004529 rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance data:Course_135004529 ;
+    sch:instructor data:Lecturer_EmilioOrtega ;
+    sch:director data:Lecturer_EmilioOrtega ;
+    guide:hasSyllabus data:Syllabus_1350_SIG ;
+    guide:hasCompetency data:Competency_CB02, data:Competency_CE101 ;
+    guide:hasLearningResult data:LR_RA204, data:LR_RA206, data:LR_RA207, data:LR_RA203, data:LR_RA205 ;
+    guide:hasEvaluation data:EvalSystem_1350_SIG ;
+    guide:hasDidacticResource data:Res_Moodle, data:Res_ArcGIS ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:inpersonHours "Presencial" ;
+    sch:inLanguage "Castellano" ;
+    sch:description "Los contenidos de la asignatura permiten el uso de los Sistemas de Información Geográfica (SIG) como herramienta para poder aplicar los conocimientos adquiridos previamente..." .
+
+# Degree and University Center
+data:Degree_13MP rdf:type guide:Degree ;
+    sch:name "Grado En Ingenieria Del Medio Natural" ;
+    guide:degreeCode "13MP" ;
+    guide:hasCourse data:Course_135004529 .
+
+data:UniversityCenter_ETSI rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S.I. Montes, Forestal Y Medio Natur." ;
+    guide:offers data:Degree_13MP .
+
+# Lecturer Information
+data:Lecturer_EmilioOr	rdf:type guide:Lecturer ;
+    sch:name "Emilio Ortega Perez" ;
+    sch:email "emilio.ortega.perez@upm.es" ;
+    guide:office "07B.01.004.0" ;
+    guide:tutorshipsSchedule "L - 09:30 - 12:30, J - 09:30 - 12:30" .
+
+data:Lecturer_Rodrigo rdf:type guide:Lecturer ;
+    sch:name "Cuevas Wizner, Rodrigo" ;
+    sch:email "r.cuevas@upm.es" .
+
+# Competencies
+data:Competency_CB02 rdf:type guide:Competency ;
+    guide:competencyCode "CB02" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional..." .
+
+data:Competency_CE101 rdf:type guide:Competency ;
+    guide:competencyCode "CE 1.01" ;
+    guide:competencyDescription "Conocer los campos de aplicación de la Ingeniería del Medio Natural..." .
+
+# Learning Results
+data:LR_RA204 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA204" ;
+    guide:learningResultDescription "Capacidad para integrar en un Sistemas de Información Geográfica información espacial y alcanumérica de diferentes fuentes" .
+
+data:LR_RA206 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA206" ;
+    guide:learningResultDescription "El alumno será capaz de realizar proyectos de gestión ambiental mediante los Sistemas de Información Geográfica" .
+
+# Syllabus
+data:Syllabus_1350_SIG rdf:type guide:Syllabus ;
+    guide:hasItem data:SyllabusItem_1, data:SyllabusItem_2, data:SyllabusItem_3 .
+
+data:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Herramientas avanzadas de análisis vectorial y ráster" ;
+    guide:itemIndex 1 .
+
+data:SyllabusItem_2 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Hidrología: Delimitación de cuencas; red de drenaje" ;
+    guide:itemIndex 2 .
+
+data:SyllabusItem_3 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Ordenación de montes: Creación de mapas; creación de bases de datos" ;
+    guide:itemIndex 3 .
+
+# Evaluation System and Trials
+data:EvalSystem_1350_SIG rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación se realizará de acuerdo a la normativa... La realización del trabajo práctico (TP) en grupo es obligatorio." ;
+    guide:hasEvaluationTrial data:Trial_TP_Intermedia, data:Trial_Final_Exposicion, data:Trial_Exam_T .
+
+data:Trial_TP_Intermedia rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Entrega trabajo práctico intermedia" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "0%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:eventWeek "Semana 10" .
+
+data:Trial_Final_Exposicion rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Entrega y Exposición del trabajo final" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:eventWeek "Semana 15" .
+
+data:Trial_Exam_T rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Examen teórico/práctico (T)" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:eventWeek "Semana 16" .
+
+# Didactic Resources
+data:Res_Moodle rdf:type guide:DidacticResource ;
+    sch:name "Plataforma Moodle de la UPM" ;
+    guide:bibliographyType "Recursos web" .
+
+data:Res_ArcGIS rdf:type guide:DidacticResource ;
+    sch:name "ArcGIS" ;
+    guide:bibliographyDescription "Los estudiantes dispondrán de una licencia de ArcGIS durante todo el curso." .
+
+# Required Knowledge
+data:RequiredKnowledge_1350_SIG rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Topografia Y Sistemas De Informacion Geografica" ;
+    guide:previousKnowledge "Planificación territorial" .
+
+# Schedule Events (Sample from Chronogram)
+data:Event_Week1_LM rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity data:Activity_Lecture_Vectorial .
+
+data:Activity_Lecture_Vectorial rdf:type guide:Activity ;
+    guide:activityDescription "Herramientas avanzadas de análisis vectorial y raster" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .

@@ -1,0 +1,212 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@base <http://guia-mad-bench.es/data/> .
+
+# --- Course Guide Instance ---
+:ga_65001024_2S_2025_26 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje: Teoria de Estructuras y Procedimientos de Construcción" ;
+    sch:description "Guía de aprendizaje para la asignatura 65001024" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    guide:numberOfCredits 4.5 ;
+    sch:inLanguage "Castellano" ;
+    guide:totalHours "135" ; # Estimated based on 4.5 ECTS * 30h/ECTS approx
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:courseSchedule :schedule_65001024 ;
+    guide:hasSyllabus :syllabus_65001024 ;
+    guide:hasEvaluation :eval_system_65001024 ;
+    guide:hasCompetency :comp_CG1, :comp_CG2, :comp_CG3, :comp_CG4, :comp_CG5, :comp_CG6, :comp_CG9, :comp_F12, :comp_F13, :comp_F14, :comp_F19, :comp_F20, :comp_F30 ;
+    guide:hasLearningResult :lr_RA122, :lr_RA123, :lr_RA121, :lr_RA111, :lr_RA124, :lr_RA125, :lr_RA126, :lr_RA120 ;
+    guide:hasDidacticResource :res_benito_olmeda, :res_carretero_perez, :res_cervera_ruiz_1, :res_cervera_ruiz_2, :res_miquel_canet, :res_arguelles_1, :res_arguelles_2, :res_monfort_1, :res_monfort_2, :res_jimenez_montoya, :res_web_cte, :res_web_codigo_estructural, :res_moodle ;
+    sch:instructor :lecturer_anastasio, :lecturer_maria, :lecturer_covadonga, :lecturer_rogelio ;
+    guide:otherInformation "El alumno deberá optar por el método de evaluación que desee seguir para superar esta asignatura." .
+
+# --- Course Instance ---
+:course_65001024 a guide:Course ;
+    sch:name "65001024 - Teoria de Estestructuras y Procedimientos de Construc" ;
+    sch:courseCode 65001024 ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 2025 ;
+    guide:semester "Sexto semestre" ;
+    sch:numberOfCredits 4.5 ;
+    sch:hasCourseInstance :ga_65001024_2S_2025_26 .
+
+# --- Degree Instance ---
+:degree_06TM a guide:BachelorDegree ;
+    sch:name "06TM - Grado en Ingenieria en Tecnologia Minera" ;
+    guide:degreeCode "06TM" ;
+    guide:hasCourse :course_65001024 .
+
+# --- University Center Instance ---
+:center_ETS_Minas a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Minas y Energía" ;
+    guide:offers :degree_06TM .
+
+# --- Lecturers ---
+:lecturer_anastasio a guide:Lecturer ;
+    sch:name "Anastasio Pedro Santos Yanguas" ;
+    sch:email "tasio.santos@up	m.es" ;
+    guide:office "632-M3" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 11:00 - 13:00, J - 12:00 - 14:00" .
+
+:lecturer_maria a guide:Lecturer ;
+    sch:name "Maria Chiquito Nieto" ;
+    sch:email "maria.chiquito@upm.es" ;
+    guide:office "629-M3" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 11:00 - 13:00, J - 12:00 - 14:00" .
+
+:lecturer_covadonga a guide:Lecturer ;
+    sch:name "M. Covadonga Alarcon Reyero" ;
+    sch:email "c.alarcon@upm.es" ;
+    guide:office "716-M3" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 12:00 - 14:00, J - 12:00 - 14:00" .
+
+:lecturer_rogelio a guide:Lecturer ;
+    sch:name "Rogelio De La Vega Panizo" ;
+    sch:email "rogelio.delavega@upm.es" ;
+    guide:office "602-M3" ;
+    guide:tutorshipsSchedule "M - 11:00 - 14:00, X - 11:00 - 14:00" .
+
+# --- Prerequisites (Required Knowledge) ---
+:req_knowledge_65001024 a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Tecnologia De Materiales, Mecanica, Geomatica" ;
+    guide:previousCourses "Tecnologia De Materiales, Mecanica, Geomatica" .
+
+# --- Syllabus ---
+:syllabus_65001024 a guide:Syllabus ;
+    guide:hasItem :item_topic1, :item_topic2, :item_topic3, :item_topic4, :item_topic5, :item_topic6, :item_topic7, :item_topic8, :item_topic9, :item_topic10 .
+
+:item_topic1 a guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "Fundamentos de Análisis de Estructuras" .
+:item_topic2 a guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "Esfuerzos y Movimientos" .
+:item_topic3 a guide:SyllabusItem ; guide:itemIndex 3 ; guide:syllabusDescription "Trabajo y energía" .
+:item_topic4 a guide:SyllabusItem ; guide:itemIndex 4 ; guide:syllabusDescription "El método de compatibilidad" .
+:item_topic5 a guide:SyllabusItem ; guide:itemIndex 5 ; guide:syllabusDescription "El método de equilibrio" .
+:item_topic6 a guide:SyllabusItem ; guide:itemIndex 6 ; guide:syllabusDescription "El método de rigidez: cálculo matricial de estructuras" .
+:item_topic7 a guide:SyllabusItem ; guide:itemIndex 7 ; guide:syllabusDescription "Normativa de edificación" .
+:item_topic8 a guide:SyllabusItem ; guide:itemIndex 8 ; guide:syllabusDescription "Estructuras metálicas" .
+:item_topic9 a guide:SyllabusItem ; guide:itemIndex 9 ; guide:syllabusDescription "Procedimientos de construcción en edificación" .
+:item_topic10 a guide:SyllabusItem ; guide:itemIndex 10 ; guide:syllabusDescription "Replanteos y mediciones" .
+
+# --- Competencies ---
+:comp_CG1 a guide:Competency ; guide:competencyCode "CG 1" ; guide:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas..." .
+:comp_CG2 a guide:Competency ; guide:competencyCode "CG 2" ; guide:competencyDescription "Poseer capacidad para diseñar, analizar, calcular..." .
+:comp_CG3 a guide:Competency ; guide:competencyCode "CG 3" ; guide:competencyDescription "Aplicar los conocimientos adquiridos para identificar, formular y resolver problemas..." .
+:comp_CG4 a guide:Competency ; guide:competencyCode "CG 4" ; guide:competencyDescription "Comprender el impacto de la tecnología minera en el medio ambiente..." .
+:comp_CG5 a guide:Competency ; guide:competencyCode "CG 5" ; guide:competencyDescription "Saber comunicar los conocimientos y conclusiones..." .
+:comp_CG6 a guide:Competency ; guide:competencyCode "CG 6" ; guide:competencyDescription "Poseer habilidades de aprendizaje..." .
+:comp_CG9 a guide:Competency ; guide:competencyCode "CG 9" ; guide:competencyDescription "Organización y planificación en el ámbito de la empresa..." .
+:comp_F12 a guide:Competency ; guide:competencyCode "F12" ; guide:competencyDescription "Conocimiento de geotecnia y mecánica de suelos y de rocas" .
+:comp_F13 a guide:Competency ; guide:competencyCode "F13" ; guide:competencyDescription "Conocimiento de resistencia de materiales y teoría de estructuras" .
+:comp_F14 a guide:Competency ; guide:competencyCode "F14" ; guide:competencyDescription "Conocimiento de topografía, fotogrametría y cartografía" .
+:comp_F19 a guide:Competency ; guide:competencyCode "F19" ; guide:competency．description "Capacidad de planificación y gestión integral de obras..." .
+:comp_F20 a guide:Competency ; guide:competencyCode "F20" ; guide:competencyDescription "Conocimiento de procedimientos de construcción" .
+:comp_F30 a guide:Competency ; guide:competencyCode "F30" ; guide:competencyDescription "Técnicas de perforación y sostenimiento aplicadas..." .
+
+# --- Learning Results ---
+:lr_RA122 a guide:LearningResult ; guide:learningResultCode "RA122" ; guide:learningResultDescription "Conocer y utilizar los aspectos básicos de la normativa de edificación..." .
+:lr_RA123 a guide:LearningResult ; guide:learningResultCode "RA123" ; guide:learningResultDescription "Calcular y comprobar diferentes elementos constructivos de las estructuras metálicas." .
+:lr_RA121 a guide:LearningResult ; guide:learningResultCode "RA121" ; guide:learningResultDescription "Aplicar los fundamentos del cálculo matricial de estructuras." .
+:lr_RA111 a guide:LearningResult ; guide:learningResultCode "RA111" ; guide:learningResultDescription "Conocimiento de resistencia de materiales y cálculo de estructuras" .
+:lr_RA124 a guide:LearningResult ; guide:learningResultCode "RA124" ; guide:learningResultDescription "Calcular y comprobar diferentes elementos constructivos de las estructuras de hormigón armado (H.A.)." .
+:lr_RA125 a guide:LearningResult ; guide:learningResultCode "RA125" ; guide:learningResultDescription "Conocimiento de los procedimientos de construcción." .
+:lr_RA126 a guide:LearningAT_LearningResult ; guide:learningResultCode "RA126" ; guide:learningResultDescription "Capacidad para replantear y medir sobre el terreno..." .
+:lr_RA120 a guide:LearningResult ; guide:learningResultCode "RA120" ; guide:learningResultDescription "Aplicar las herramientas para el cálculo de estructuras." .
+
+# --- Evaluation System ---
+:eval_system_65001024 a guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación continua y examen final." ;
+    guide:hasEvaluationTrial :trial_cont_1, :trial_cont_2, :trial_final .
+
+:trial_cont_1 a guide:EvaluationTrial ;
+    sch:name "Prueba evaluación continua 1" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialWeek "Semana 8" ;
+    guide:trialMode "Presencial" ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationDuration "02:00" ;
+    guide:involvesCompetency :comp_CG1, :comp_CG2, :comp_CG3, :comp_CG4, :comp_CG5, :comp_CG6, :comp_CG9, :comp_F13, :comp_F14, :comp_F19 .
+
+:trial_cont_2 a guide:EvaluationTrial ;
+    sch:name "Prueba evaluación continua 2" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialWeek "Semana 15" ;
+	guide:trialMode "Presencial" ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationDuration "02:00" ;
+    guide:involvesCompetency :comp_F20, :comp_CG1, :comp_CG2, :comp_CG3, :comp_CG4, :comp_CG5, :comp_CG6, :comp_CG9, :comp_F12, :comp_F13, :comp_F30 .
+
+:trial_final a guide:EvaluationTrial ;
+    sch:name "Prueba evaluación final" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "Semana 17" ;
+    guide:trialMode "Presencial" ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationDuration "03:00" ;
+    guide:involvesCompetency :comp_F20, :comp_CG1, :comp_CG2, :comp_CG3, :comp_CG4, :comp_CG5, :comp_CG6, :comp_CG9, :comp_F12, :AT_F13, :comp_F14, :comp_F19, :comp_F30 .
+
+# --- Schedule ---
+:schedule_65001024 a guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week2, :event_week3, :event_week4, :event_week5, :event_week6, :event_week7, :event_week8, :event_week9, :event_week10, :event_week11, :event_week12, :event_week13, :event_week14, :event_week15, :event_week17 .
+
+:event_week1 a guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_tema10_lm, :act_tema10_pr .
+
+:act_tema10_lm a guide:Activity ;
+    guide:activityDescription "Tema 10 - Lección Magistral" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "LM" ;
+    guide:attendanceType "Presencial" .
+
+:act_tema10_pr a guide:Activity ;
+    guide:activityDescription "Tema 10 - Clase de Problemas" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "PR" ;
+    guide:attendanceType "Presencial" .
+
+# (Note: For brevity, only a subset of the full schedule is mapped here following the pattern)
+:event_week8 a guide:ScheduleEvent ;
+    guide:eventIndex 8 ;
+    guide:eventWeek "Semana 8" ;
+    guide:hasActivity :act_eval_cont1 .
+
+:act_eval_cont1 a guide:Activity ;
+    guide:activityDescription "Prueba evaluación continua 1" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Evaluación" ;
+	guide:attendanceType "Presencial" .
+
+# --- Didactic Resources ---
+:res_benito_olmeda a guide:DidacticResource ;
+    guide:bibliographyTitle "Benito Olmeda, J. y Carretero Pérez, J.: Principios básicos de estructuras metálicas." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_carretero_perez a guide:DidacticResource ;
+    guide:bibliographyTitle "Carretero Pérez, J. y Benito Olmeda, J.: Problemas de estructuras metálicas." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_cervera_ruiz_1 a guide:DidacticResource ;
+    guide:bibliographyTitle "Cervera Ruiz M. y Blanco Díaz, E.: Mecánica de estructuras: Libro 2 : métodos de análisis." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_web_cte a guide:DidacticResource ;
+    guide:bibliographyTitle "Código Técnico de la Edificación (CTE)" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_moodle a guide:DidacticResource ;
+    guide:bibliographyTitle "Plataforma Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" .

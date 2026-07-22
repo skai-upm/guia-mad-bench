@@ -1,0 +1,179 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# Course Guide Instance
+:guide_105001050_2025_26 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje: Ecuaciones Diferenciales y Modelización de Fenómenos" ;
+    sch:description "Guía de aprendizaje para la asignatura 105001050 - Ecuaciones Diferenciales y Modelización de Fenómenos." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:numberOfCredits 6.0 ;
+    guide:totalHours "150" ; # Estimated based on ECTS (6 * 25)
+    guide:inpersonHours "60" ; 
+    guide:remoteHours "90" ;
+    sch:courseSchedule :schedule_105001050 ;
+    guide:hasSyllabus :syllabus_105001050 ;
+    guide:hasCompetency :comp_CB04, :comp_CE01, :comp_CG02, :comp_CG03, :comp_CG06 ;
+    guide:hasLearningResult :lr_RA133, :lr_RA136, :lr_RA134, :lr_RA135, :lr_RA138 ;
+    guide:hasEvaluation :eval_system_105001050 ;
+    guide:hasDidacticResource :res_zill, :res_hirsch, :res_edwards, :res_robinson, :res_simmons, :res_viana, :res_gomez, :res_moodle ;
+    sch:instructor :lecturer_javier, :lectructure_paulo .
+
+# Course Entity
+:course_105001050 a guide:Course ;
+    sch:name "105001050 - Ecuaciones Diferenciales y Modelización de Fenómenos" ;
+    sch:courseCode 105001050 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 4 ;
+    guide:semester "Séptimo semestre" ;
+    sch:hasCourseInstance :guide_105001050_2025_26 .
+
+# Degree Entity
+:degree_10CD a guide:BachelorDegree ;
+    sch:name "10CD - Grado en Ciencia de Datos e Inteligencia Artificial" ;
+    guide:degreeCode "10CD" .
+
+# University Center
+:center_ETS_II a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Informáticos" ;
+    guide:offers :degree_10CD .
+
+# Lecturers
+:lecturer_javier a guide:Lecturer ;
+    sch:name "Javier Lopez De La $\text{Cruz}$" ;
+    sch:email "javier.lopez.delacruz@upm.es" ;
+    guide:office "1312" ;
+    guide:tutorshipsSchedule "Sin horario. Contactar por correo electrónico." .
+
+:lecturer_paulo a guide:Lecturer ;
+    sch:name "Paulo Nicanor Seminario Huertas" ;
+    sch:email "paulo.seminario.huertas@upm.es" ;
+    guide:office "1312" ;
+    guide:tutorshipsSchedule "Sin horario. Contactar por correo electrónico." .
+
+# Competencies
+:comp_CB04 a guide:Competency ;
+    guide:competencyCode "CB04" ;
+    guide:competencyDescription "Que los estudiantes puedan transmitir información, ideas, problemas y soluciones a un público tanto especializado como no especializado" .
+
+:comp_CE01 a guide:Competency ;
+    guide:competencyCode "CE01" ;
+    guide:competencyDescription "Capacidad para utilizar con destreza los conceptos y métodos matemáticos que subyacen a los problemas de la ciencia de datos y la inteligencia artificial para su modelización y resolución." .
+
+:comp_CG02 a guide:Competency ;
+    guide:competencyCode "CG02" ;
+    guide:competencyDescription "Capacidad para organizar y planificar tareas y proyectos, identificando objetivos, prioridades, plazos, recursos y riesgos, y controlando los procesos establecidos." .
+
+:comp_CG03 a guide:Competency ;
+    guide:competencyCode "CG03" ;
+    guide:competencyDescription "Capacidad de emprendimiento y de liderazgo para dirigir y gestionar equipos y proyectos, generando confianza y compromiso en el grupo de colaboradores." .
+
+:comp_CG06 a guide:Competency ;
+    guide:competencyCode "CG06" ;
+    guide:competencyDescription "Identificar y utilizar las tecnologías de la información y las comunicaciones más adecuadas en el ámbito de la ingeniería." .
+
+# Learning Results
+:lr_RA133 a guide:LearningResult ;
+    guide:learningResultCode "RA133" ;
+    guide:learningResultDescription "Entender la importancia de las ecuaciones diferenciales y su utilidad para modelar fenómenos de la</em> vida real." .
+
+:lr_RA136 a guide:LearningResult ;
+    guide:learningResultCode "RA136" ;
+    guide:learningResultDescription "Saber realizar un estudio cualitativo de sistemas diferenciales no lineales." .
+
+:lr_RA134 a guide:LearningResult ;
+    guide:learningResultCode "RA134" ;
+    guide:learningResultDescription "Modelar matemáticamente problemas reales mediante ecuaciones diferenciales o sistemas diferenciales" .
+
+:lr_RA135 a guide:LearningResult ;
+    guide:learningResultCode "RA135" ;
+    guide:learningResultDescription "Conocer técnicas para resolver algunos tipos de ecuaciones diferenciales y sistemas diferenciales lineales." .
+
+:lr_RA138 a guide:LearningResult ;
+    guide:learningResultCode "RA138" ;
+    guide:learningResultDescription "Dominar diferentes métodos numéricos de diferencias finitas y su programación para estudiar problemas de la vida real descritos mediante ecuaciones o sistemas diferenciales." .
+
+# Syllabus
+:syllabus_105001050 a guide:Syllabus ;
+    guide:hasItem :unit_1, :unit_2, :unit_3, :unit_4 .
+
+:unit_1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Ecuaciones diferenciales de primer orden." .
+
+:unit_2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Ecuaciones diferenciales de orden superior." .
+
+:unit_3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Sistemas diferenciales lineales de primer orden." .
+
+:unit_4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Sistemas diferenciales no lineales autónomos de primer orden." .
+
+# Schedule and Activities
+:schedule_105001050 a guide:Schedule ;
+    sch:eventSchedule :event_week_1, :event_week_2, :event_week_17 .
+
+:event_week_1 a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :act_lecture_1 .
+
+:act_lecture_1 a guide:Activity ;
+    guide:activityDescription "Explicación de contenidos teóricos y prácticos. Lección Magistral." ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 4.0 ;
+    guide:attendanceType "Presencial" .
+
+:event_week_17 a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 17" ;
+    guide:eventIndex 17 ;
+    guide:hasActivity :act_groupwork_1, :act_groupwork_2, :act_groupwork_3, :act_groupwork_4 .
+
+:act_groupwork_1 a guide:Activity ;
+    guide:activityDescription "Trabajo sobre ecuaciones diferenciales de primer orden..." ;
+    guide:activityFormat "Trabajo en Grupo" ;
+    guide:attendanceType "No presencial" .
+
+# Evaluation System
+:eval_system_105001050 a guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación consiste en la entrega de trabajos (progresiva y global) con una nota mínima de 3.5/10 por cada uno y una final $\ge$ 5/10." ;
+    guide:hasEvaluationTrial :trial_work_1, :trial_work_2, :trial_work_3, :trial_work_4 .
+
+:trial_work_1 a guide:EvaluationTrial ;
+    guide:trialType "Trabajo en Grupo" ;
+    guide:trialDescription "Trabajo sobre ecuaciones diferenciales de primer orden..." ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "3.5 / 10" ;
+    guide:trialWeek "Semana 17" ;
+    involvesCompetency :comp_CB04, :comp_CG02, :comp_CG03, :comp_CG06, :comp_CE01 .
+
+# Didactic Resources
+:res_zill a guide:DidacticResource ;
+    sch:name "D. G. Zill, Ecuaciones diferenciales con aplicación al modelado" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Contiene teoría básica y aplicaciones." .
+
+:res_moodle a guide:DidacticResource ;
+    sch:name "Moodle" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Plataforma para el desarrollo de la asignatura." .
+
+# Prerequisites
+:pre_calc_i a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Cálculo I" .
+
+:pre_calc_ii a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Cálculo II" .

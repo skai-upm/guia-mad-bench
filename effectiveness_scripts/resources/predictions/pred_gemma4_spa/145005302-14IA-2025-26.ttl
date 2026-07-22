@@ -1,0 +1,174 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:Instalaciones_Electricas_CourseGuide rdf:type guide:CourseGuide ;
+    sch:name "145005302 - Instalaciones Electricas" ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCourse :Instalaciones_Electricas_Course ;
+    guide:hasCompetency :CE67, :CE71, :CG3, :CG9 ;
+    guide:hasLearningResult :RA144, :RA143 ;
+    guide:hasEvaluation :EvalSystem_Instalaciones_Electricas ;
+    guide:hasSyllabus :Syllabus_Instalaciones_Electricas ;
+    guide:hasDidacticResource :Res_Moodle, :Res_Biblio_Aena ;
+    sch:instructor :M_Victoria_Alonso_Maldonado ;
+    guide:otherInformation "En la asignatura se trabajan aspectos relacionados con los Objetivos de Desarrollo Sostenible ODS 7 y ODS 9." .
+
+# Course Instance
+:Instalaciones_Electricas_Course rdf:type guide:Course ;
+    sch:courseCode 145005302 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Quinto semestre" ;
+    sch:hasCourseInstance :Instalaciones_Electricas_CourseGuide .
+
+# Degree Instance
+:Grado_Ingenieria_Aeroespacial rdf:type guide:BachelorDegree ;
+    sch:name "14IA - Grado En Ingeniería Aeroespial" ;
+    guide:degreeCode "14IA" ;
+    guide:hasCourse :Instalaciones_Electricas_Course .
+
+# University Center Instance
+:ETSI_Aeronautica_Espacio rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S.I. Aeronáutica y del Espacio" ;
+    guide:offers :Grado_Ingenieria_Aeroespacial .
+
+# Lecturer Instance
+:M_Victoria_Alonso_Maldonado rdf:type guide:Lecturer ;
+    sch:name "M Victoria Alonso Maldonado" ;
+    sch:email "mariavictoria.alonso@upm.es" ;
+    guide:office "A-208" ;
+    guide:tutorshipSchedule "Sin horario. Al comienzo del curso se publicará un horario de tutorías orientativo en el tablón del Departamento." .
+
+# Competencies
+:CE67 rdf:type guide:Competency ;
+    guide:competencyCode "CE67" ;
+    guide:competencyDescription "Conocimiento adecuado y aplicado a la Ingeniería de: Las instalaciones eléctricas y electrónicas." .
+
+:CE71 rdf:type guide:Competency ;
+    guide:competencyCode "CE71" ;
+    guide:competencyDescription "Conocimiento aplicado de: Transmisores y receptores; Líneas de transmisión y sistemas radiantes de señales para la navegación aérea; Sistemas de navegación; Instalaciones eléctricas en el sector tierra y sector aire; Mecánica del Vuelo; Cartografía; Cosmografía; Meteorología; Distribución, gestión y economía del transporte aéreo." .
+
+:CG3 rdf:type guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Capacidad para identificar y resolver problemas aplicando, con creatividad, los conocimientos adquiridos" .
+
+:CG9 rdf:type guide:Competency ;
+    guide:competencyCode "CG9" ;
+    guide:competencyDescription "Razonamiento crítico y capacidad de asociación que posibiliten el aprendizaje continuo" .
+
+# Learning Results
+:RA144 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA144" ;
+    guide:learningResultDescription "Conocimiento, comprensión, aplicación, análisis y síntesis de los fundamentos, concepción, mantenimiento y operatividad de los sistemas e instalaciones eléctricos de potencia en los sectores aeronáuticos tierra y aire." .
+
+:RA143 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA143" ;
+    guide:learningResultDescription "Aplicación de las técnicas utilizadas en el laboratorio y conocimiento de las medidas de seguridad dispuestas." .
+
+# Syllabus
+:Syllabus_Instalaciones_Electricas rdf:type guide:Syllabus ;
+    guide:hasItem :SyllabusItem_1, :SyllabusItem_2, :SyllabusItem_3, :SyllabusItem_4, :SyllabusItem_5, :SyllabusItem_6, :SyllabusItem_7, :SyllabusItem_8, :SyllabusItem_9, :SyllabusItem_10, :SyllabusItem_11, :SyllabusItem_12 .
+
+:SyllabusItem_1 rdf:type guide:SyllabusItem ; guide:itemIndex 1 ; syllabusDescription "LA ENERGÍA ELÉCTRICA EN LAS AERONAVES" .
+:SyllabusItem_2 rdf:type guide:SyllabusItem ; guide:itemIndex 2 ; syllabusDescription "CONFIGURACIÓN DEL SISTEMA ELÉCTRICO" .
+:SyllabusItem_3 rdf:type guide:SyllabusItem ; guide:itemIndex 3 ; syllabusDescription "LOS CONSUMIDORES ELÉCTRICOS" .
+:SylllabusItem_4 rdf:type guide:SyllabusItem ; guide:itemIndex 4 ; syllabusDescription "LOS GENERADORES DE CC" .
+:SyllabusItem_5 rdf:type guide:SyllabusItem ; guide:itemIndex 5 ; syllabusDescription "LOS GENERADORES DE CA" .
+:SyllabusItem_6 rdf:type guide:SyllabusItem ; guide:itemIndex 6 ; syllabusDescription "LAS BATERÍAS" .
+:SyllabusItem_7 rdf:type guide:SyllabusItem ; guide:itemIndex 7 ; syllabusDescription "LOS CONVERTIDORES" .
+:SyllabusItem_8 rdf:type guide:SyllabusItem ; guide:itemIndex 8 ; syllabusDescription "EL MANDO Y CONTROL" .
+:SyllabusItem_9 rdf:type guide:SyllabusItem ; guide:itemIndex 9 ; syllabusDescription "LAS PROTECCIONES" .
+:SyllabusItem_10 rdf:type guide:SyllabusItem ; guide:itemIndex 10 ; syllabusDescription "LA DISTRIBUCIÓN" .
+:SyllabusItem_11 rdf:type guide:SyllabusItem ; guide:itemIndex 11 ; syllabusDescription "LA MEDIDA, LA SEÑALIZACIÓN, LA PRESENTACIÓN Y EL REGISTRO DE LA INFORMACIÓN" .
+:SyllabusItem_12 rdf:type guide:SyllabusItem ; guide:itemIndex 12 ; syllabusDescription "EL SISTEMA ELÉCTRICO DE LOS AEROPUERTOS" .
+
+# Evaluation System
+:EvalSystem_Instalaciones_Electricas rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global." ;
+    guide:hasEvaluationTrial :Prueba_Intermedia, :Examen_Final_Ordinario, :Examen_Final_Extraordinario .
+
+:Prueba_Intermedia rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "01:30" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialWeek "10" ;
+    guide:involvesCompetency :CG3, :CG9, :CE67, :CE71 .
+
+:Examen_Final_Ordinario rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "03:00" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:involvesCompetency :CG3, :CG9, :CE67, :CE71 .
+
+:Examen_Final_Extraordinario rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:involvesCompetency :CG3, :CG9, :CE67, :CE71 .
+
+# Didactic Resources
+:Res_Moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Espacio MOODLE de la asignatura" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "http://moodle.upm.es/" .
+
+:Res_Biblio_Aena rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "EL SISTEMA ELÉCTRICO DE LOS AVIONES. R. Sanjurjo y E. Lázaro." ;
+    guide:bibliographyType "Bibliografía" .
+
+# Required Knowledge
+:Knowledge_Previo_Instalaciones rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Electronica Y Automatica, Ingenieria Electrica" ;
+    guide:previousKnowledge "El plan de estudios Grado en Ingeniería Aeroespacial no tiene definidos otros conocimientos previos para esta asignatura." .
+
+# Schedule Events and Activities
+:Schedule_Instalaciones rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Semana1, :Event_Semana4, :Event_Semana10, :Event_Semana17 .
+
+:Event_Semana1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :Act_Presentacion, :Act_Tema1 .
+
+:Act_Presentacion rdf:type guide:Activity ;
+    guide:activityDescription "Presentación de la asignatura" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:Act_Tema1 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:Event_Semana4 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 4 ;
+    guide:eventWeek "4" ;
+    guide:hasActivity :Act_Tema4_LM, :Act_Tema4_PR .
+
+:Act_Tema4_LM rdf:type guide:Activity ;
+    guide:activityDescription "Tema 4" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:Act_Tema4_PR rdf:type guide:Activity ;
+    guide:activityDescription "Tema 4" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Clase de Problemas" ;
+    guide:attendanceType "Presencial" .

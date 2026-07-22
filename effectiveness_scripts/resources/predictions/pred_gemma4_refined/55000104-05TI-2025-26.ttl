@@ -1,0 +1,133 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+:Grado_Ingenieria_Tecnologias_Industriales rdf:type guide:Degree ;
+    sch:name "05TI - Grado en Ingeniería en Tecnologias Industriales" ;
+    guide:degreeCode "05TI" .
+
+:ETS_Ingenieros_Industriales rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Industriales" ;
+    guide:offers :Grado_Ingenieria_Tecnologias_Industriales .
+
+# Course
+:Electronica_Digital rdf:type guide:Course ;
+    sch:name "55000104 - Electronica Digital" ;
+    sch:courseCode 55000104 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Séptimo semestre" .
+
+# Course Guide
+:Electronica_Digital_Guide rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Electronica Digital" ;
+    sch:hasCourseInstance :Electronica_Digital ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :Syllabus_Electronica_Digital ;
+    guide:hasCompetency :CE21A, :CE24A, :CG1, :CG10, :CG2, :CG3, :CG5, :CG6, :CG7, :CG9 ;
+    guide:hasLearningResult :RA8, :RA9 ;
+    guide:hasEvaluation :EvalSystem_Electronica_Digital ;
+    guide:hasDidacticResource :Res_Transparencias, :Res_FPGAs, :Res_Weblab, :Res_Videotutoriales .
+
+# Lecturers
+:Jose_Andres_Otero_Marnotes rdf:type guide:Lecturer ;
+    sch:name "Jose Andres Otero Marnotes" ;
+    sch:email "joseandres.otero@upm.es" ;
+    guide:tutorshipsSchedule "L - 08:00 - 08:15" .
+
+:Jorge_Portilla_Berrueco rdf:type guide:Lecturer ;
+    sch:name "Jorge Portilla Berrueco" ;
+    sch:email "jorge.portilla@upm.es" .
+
+:Electronica_Digital_Guide sch:instructor :Jose_Andres_Otero_Marnotes, :Jorge_Portilla_Berrueco .
+
+# Competencies
+:CE21A rdf:type guide:Competency ;
+    guide:competencyCode "CE21A" ;
+    guide:competencyDescription "Conocimiento de los fundamentos y aplicaciones de la electrónica digital y microprocesadores." .
+
+:CE24A rdf:type guide:Competency ;
+    guide:competencyCode "CE24A" ;
+    guide:competencyDescription "Capacidad para diseñar sistemas electrónicos analógicos, digitales y de potencia." .
+
+:CG1 rdf:type guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Industrial." .
+
+# Learning Results
+:RA8 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA8" ;
+    guide:learningResultDescription "Capacidad y habilidades para diseñar circuitos digitales de complejidad intermedia, a partir de bloques funcionales conocidos, combinados con máquinas de estados." .
+
+:RA9 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA9" ;
+    guide:learningResultDescription "Adquirir criterios para seleccionar las diferentes posibilidades tecnológicas de implementación de circuitos." .
+
+# Syllabus
+:Syllabus_Electronica_Digital rdf:type guide:Syllabus ;
+    guide:hasItem :Topic_1, :Topic_2, :Topic_3, :Topic_4, :Topic_5, :Topic_6, :Topic_7 .
+
+:Topic_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a los Sistemas Digitales" .
+
+:Topic_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Diseño Digital con Lenguajes de descripción Hardware (VHDL)" .
+
+# Evaluation System
+:EvalSystem_Electronica_Digital rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La nota en la convocatoria ordinaria será 2,5% por cada una de las cuatro prácticas (10% en total), 20% para la PEC, 30% Para el trabajo práctico, y 40% el examen final." ;
+    guide:hasEvaluationTrial :Trial_Examen_VHDL, :Trial_Trabajo, :Trial_Practicas_Lab .
+
+:Trial_Examen_VHDL rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Examen" ;
+    guide:gradePercentage "20%" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" .
+
+:Trial_Trabajo rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo en Grupo" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "30%" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "01:00" .
+
+# Schedule and Activities
+:Schedule_Electronica_Digital rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week2, :Event_Week6 .
+
+:Event_Week2 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "2" ;
+    guide:hasActivity :Act_Practica_1 .
+
+:Act_Practica_1 rdf:type guide:Activity ;
+    guide:activityDescription "Práctica 1. Introducción a Vivado. Implementación de bloques básicos: Decodificación BCD a 7 segmentos." ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:Res_Transparencias rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Transparencias de clase" ;
+    guide:bibliographyType "Recursos web" .
+
+:Res_FPGAs rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Placas y SW de diseño con FPGAs" ;
+    guide:bibliographyType "Equipamiento" .
+
+:Res_Weblab rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Weblab" ;
+    guide:bibliographyType "Recursos web" .
+
+:Res_Videotutoriales rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Videotutoriales de prácticas" ;
+    guide:bibliographyType "Otros" .

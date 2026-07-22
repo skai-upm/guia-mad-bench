@@ -1,0 +1,109 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/#Course_65001013> rdf:type :CourseGuide ;
+    dct:title "Electrotecnia"@en ;
+    sch:name "65001013 - Electrotecnia" ;
+    guide:numberOfCredits 6.0 ;
+    guide:teachingPeriodMonths "Febrero-Junio"@es ;
+    sch:inLanguage "Castellano"@es ;
+    dct:creator <http://guia-mad-bench.es/data/#Luis_Javier_SanJose_Gallego> ,
+                <http://guia-mad-bench.es/data/#Daniel_Serrano_Jimenez> ,
+                <http://guia-mad-bench.es/data/#Eduardo_Conde_Lazaro> ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/#Electrotecnia_Schedule> .
+
+<http://guia-mad-bench.es/data/#06GE> rdf:type :BachelorDegree ;
+    guide:degreeCode "06GE"@en ;
+    dct:title "Grado En Ingenieria Geologica"@es .
+
+<http://guia-mad-bench.es/data/#Luis_Javier_SanJose_Gallego> rdf:type sch:Person , :Lecturer ;
+    sch:name "Luis Javier San Jose Gallego"@en ;
+    guide:office "516" ;
+    guide:tutorshipsSchedule "M - 16:30 - 19:30<br>V - 13:00 - 16:00" .
+
+<http://guia-mad-bench.es/data/#Daniel_Serrano_Jimenez> rdf:type sch:Person , :Lecturer ;
+    sch:name "Daniel Serrano Jimenez"@en ;
+    guide:office "501" ;
+    guide:tutorshipsSchedule "M - 08:00 - 10:00<br>X - 08:00 - 10:00<br>J - 08:00 - 10:00" .
+
+<http://guia-mad-bench.es/data/#Eduardo_Conde_Lazaro> rdf:type sch:Person , :Lecturer ;
+    sch:name "Eduardo Conde Lazaro"@en ;
+    guide:tutorshipsSchedule "L - 12:00 - 14:00<br>M - 12:00 - 14:00<br>J - 12:00 - 14:00" .
+
+<http://guia-mad-bench.es/data/#Course_65001013> sch:director <http://guia-mad-bench.es/data/#Eduardo_Conde_Lazaro> ;
+    guide:sch:instructor <http://guia-mad-bench.es/data/#Luis_Javier_SanJose_Gallego> ,
+                        <http://guia-mad-bench.es/data/#Daniel_Serrano_Jimenez> .
+
+<http://guia-mad-bench.es/data/#CG1> rdf:type :Competency ;
+    guide:competencyCode "CG1"@en ;
+    guide:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Geológica."@es .
+
+<http://guia-mad-bench.es/data/#RA74> rdf:type :LearningResult ;
+    guide:learningResultCode "RA74"@en ;
+    guide:learningResultDescription "Comprender los fundamentos del sistema eléctrico de potencia"@es .
+
+<http://guia-mad-bench.es/data/#Syllabus_65001013> rdf:type :Syllabus ;
+    sch:name "Electrotecnia_Syllabus"@en .
+
+<http://guia-mad-bench.es/data/#Item_1> rdf:type :SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Componentes de los circuitos"@es .
+
+<http://guia-mad-bench.es/data/#Schedule_65001013> rdf:type :Schedule ;
+    sch:name "Electrotecnia_Schedule"@en .
+
+<http://guia-mad-bench.es/data/#Event_1> rdf:type :ScheduleEvent ;
+    guide:eventIndex 1 ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ,
+                xsd:string "02" .
+
+<http://guia-mad-bench.es/data/#EvaluationSystem_65001013> rdf:type :EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global con laboratorio obligatorio."@es .
+
+<http://guia-mad-bench.es/data/#Trial_Cuestionario_Tema_1> rdf:type :EvaluationTrial ;
+    sch:name "Cuestionario tema 1"@en ;
+    guide:trialType "Examen Escrito" ;
+    guide:gradePercentage "7.5%"@es .
+
+<http://guia-mad-bench.es/data/#Resource_Bibliografia_65001013> rdf:type :DidacticResource ;
+    sch:name "Electrotecnia para ingenieros"@en ;
+    guide:bibliographyType "Bibliografía"@es .
+
+<http://guia-mad-bench.es/data/#Course_65001013> guide:hasSyllabus <http://guia-mad-bench.es/data/#Syllabus_65001013> ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/#Schedule_65001013> .
+
+<http://guia-mad-bench.es/data/#Course_65001013> guide:hasEvaluation <http://guia-mad-bench.es/data/#EvaluationSystem_65001013> ;
+    sch:name "Electrotecnia"@en .
+
+<http://guia-mad-bench.es/data/#Course_65001013> guide:hasDidacticResource <http://guia-mad-bench.es/data/#Resource_Bibliografia_65001013> ;
+    sch:name "Electrotecnia para ingenieros"@en .
+
+<http://guia-mad-bench.es/data/#Course_65001013> guide:hasLearningResult <http://guia-mad-bench.es/data/#RA74> ,
+                                    <http://guia-mad-bench.es/data/#RA79> ;
+    sch:name "Electrotecnia"@en .
+
+<http://guia-mad-bench.es/data/#Course_65001013> guide:hasCompetency <http://guia-mad-bench.es/data/#CG1> ,
+                                    <http://guia-mad-bench.es/data/#F17> ;
+    sch:name "Electrotecnia"@en .
+
+<http://guia-mad-bench.es/data/#Schedule_65001013> sch:eventSchedule <http://guia-mad-bench.es/data/#Event_1> ,
+                                    <http://guia-mad-bench.es/data/#Event_2> ;
+    rdf:type :CourseGuide .
+
+<http://guia-mad-bench.es/data/#EvaluationSystem_65001013> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/#Trial_Cuestionario_Tema_1> ,
+                                    <http://guia-mad-bench.es/data/#Trial_Examen_Laboratorio> ;
+    rdf:type :CourseGuide .
+
+<http://guia-mad-bench.es/data/#Event_2> guide:hasActivity "Lección Magistral"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ,
+                xsd:string "02" .
+
+<http://guia-mad-bench.es/data/#Trial_Examen_Laboratorio> guide:trialMode "Presencial"@es ;
+    sch:name "Examen Laboratorio"@en ;
+    guide:gradePercentage "10%"@es .

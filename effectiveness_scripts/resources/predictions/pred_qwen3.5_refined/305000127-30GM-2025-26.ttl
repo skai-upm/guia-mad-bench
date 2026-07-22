@@ -1,0 +1,151 @@
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix data: <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dct: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+### Course Guide Instance
+data:#CourseGuide_305000127 a guide:CourseGuide ;
+    dc:title "Modelización Y Simulación Iii"@en ;
+    dct:creator "Maria Barbero Liñan" ;
+    sch:name "305000127 - Modelización y Simulación III"@en ;
+    guide:numberOfCredits 6.0^^xsd:decimal ;
+    guide:teachingPeriod "2025-26"@en ;
+    guide:periodStartingMonth "Febrero"^^rdf:langString ;
+    guide:periodEndingMonth "Junio"^^rdf:langString ;
+    sch:director data:#Maria_Barbero_Liñan .
+
+### Degree Instance
+data:#Degree_30GM a guide:BachelorDegree ;
+    dct:title "Grado En Matematicas"@en ;
+    sch:name "Matemáticas"@en .
+
+### Lecturer Instance
+data:#Maria_Barbero_Liñan a guide:Lecturer, sch:Person ;
+    sch:name "Maria Barbero Liñan"^^rdf:langString ;
+    sch:email <mailto:m.barbero@upm.es> ;
+    guide:tutorshipsSchedule "Sin horario. Concretar por correo electrónico."^^xsd:string .
+
+### Syllabus Instance & Items
+data:#Syllabus_305000127 a guide:Syllabus ;
+    sch:name "Temario Modelización Y Simulación III"@en .
+
+# Item 1: Diseño geométrico asistido por ordenador
+data:#Item_Diseño_Geometria a guide:SyllabusItem, data:#Syllabus_305000127 ;
+    guide:itemIndex "1"^^xsd:string ;
+    guide:syllabusDescription "Diseño geométrico asistido por ordenador. Curvas y superficies de forma libre."^^rdf:langString .
+
+# Item 2: Modelización de superficies mínimas
+data:#Item_Superficies_Minimas a guide:SyllabusItem, data:#Syllabus_305000127 ;
+    guide:itemIndex "2"^^xsd:string ;
+    guide:syllabusDescription "Modelización de superficies mínimas. Problema de Plateau."^^rdf:langString .
+
+# Item 3: Métodos geométricos en robótica
+data:#Item_Robotica a guide:SyllabusItem, data:#Syllabus_305000127 ;
+    guide:itemIndex "3"^^xsd:string ;
+    guide:syllabusDescription "Métodos geométricos en robótica. Grupos y álgebras de Lie."^^rdf:langString .
+
+### Schedule Events (Sample)
+data:#Event_Sem5_Control a guide:ScheduleEvent, data:#CourseGuide_305000127 ;
+    sch:eventIndex "5"^^xsd:string ;
+    guide:scheduleDescription "Control sobre curvas y superficies forma libre."^^rdf:langString .
+
+### Competencies & Learning Results (Sample)
+data:#Comp_CB2 a guide:Competency, data:#CourseGuide_305000127 ;
+    guide:competencyCode "CB2"^^xsd:string ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional..."^^rdf:langString .
+
+data:#Comp_CE1 a guide:Competency, data:#CourseGuide_305000127 ;
+    guide:competencyCode "CE1"^^xsd:string ;
+    guide:competencyDescription "Comprender y utilizar el lenguaje matemático..."^^rdf:langString .
+
+data:#Comp_CE6 a guide:Competency, data:#CourseGuide_305000127 ;
+    guide:competencyCode "CE6"^^xsd:string ;
+    guide:competencyDescription "Proponer, analizar, validar e interpretar modelos matemáticos..."^^rdf:langString .
+
+data:#Comp_CE8 a guide:Competency, data:#CourseGuide_305000127 ;
+    guide:competencyCode "CE8"^^xsd:string ;
+    guide:competencyDescription "Utilizar aplicaciones informáticas de análisis estadístico..."^^rdf:langString .
+
+data:#Comp_CE9 a guide:Competency, data:#CourseGuide_305000127 ;
+    guide:competencyCode "CE9"^^xsd:string ;
+    guide:competencyDescription "Desarrollar programas que ejecuten algoritmos..."^^rdf:langString .
+
+data:#Comp_CE3 a guide:Competency, data:#CourseGuide_305000127 ;
+    guide:competencyCode "CE3"^^xsd:string ;
+    guide:competencyDescription "Asimilar la definición de un nuevo objeto matemático..."^^rdf:langString .
+
+data:#Comp_CE4 a guide:Competency, data:#CourseGuide_305000127 ;
+    guide:competencyCode "CE4"^^xsd:string ;
+    guide:competencyDescription "Abstraer las propiedades estructurales de objetos matemáticos..."^^rdf:langString .
+
+data:#Comp_CE7 a guide:Competency, data:#CourseGuide_305000127 ;
+    guide:competencyCode "CE7"^^xsd:string ;
+    guide:competencyDescription "Resolver problemas de Matemáticas..."^^rdf:langString .
+
+### Learning Results (Sample)
+data:#LR_RA146 a guide:LearningResult, data:#CourseGuide_305000127 ;
+    guide:learningResultCode "RA146"^^xsd:string ;
+    guide:learningResultDescription "Programar, realizar e interpretar simulaciones de los modelos utilizados."^^rdf:langString .
+
+data:#LR_RA193 a guide:LearningResult, data:#CourseGuide_305000127 ;
+    guide:learningResultCode "RA193"^^xsd:string ;
+    guide:learningResultDescription "Conocer y explicar los usos de las curvas y superficies NURBS..."^^rdf:langString .
+
+data:#LR_RA187 a guide:LearningResult, data:#CourseGuide_305000127 ;
+    guide:learningResultCode "RA187"^^xsd:string ;
+    guide:learningResultDescription "Aplicar las herramientas del cálculo diferencial..."^^rdf:langString .
+
+### Evaluation System & Trials (Sample)
+data:#EvalSystem_305000127 a guide:EvaluationSystem, data:#CourseGuide_305000127 ;
+    sch:name "Evaluación Modelización Y Simulación III"@en .
+
+# Trial 1: Control sobre curvas y superficies forma libre (EX)
+data:#Trial_EX_Sem5 a guide:EvaluationTrial, data:#EvalSystem_305000127 ;
+    guide:trialDescription "Control sobre curvas y superficies forma libre."^^rdf:langString ;
+    sch:name "Examen Escrito"^^xsd:string ;
+    guide:gradePercentage "10%"^^xsd:string ;
+    guide:minimumScore "3 / 10"^^xsd:string .
+
+# Trial 2: Presentación de las aplicaciones (PG)
+data:#Trial_PG_Sem6 a guide:EvaluationTrial, data:#EvalSystem_305000127 ;
+    guide:trialDescription "Presentación de las aplicaciones investigadas..."^^rdf:langString ;
+    sch:name "Presentación en Grupo"^^xsd:string ;
+    guide:gradePercentage "10%"^^xsd:string .
+
+# Trial 3: Práctica con software (EP)
+data:#Trial_EP_Sem8 a guide:EvaluationTrial, data:#EvalSystem_305000127 ;
+    guide:trialDescription "Práctica con software de diseño geométrico..."^^rdf:langString ;
+    sch:name "Examen de Prácticas"^^xsd:string ;
+    guide:gradePercentage "10%"^^xsd:string .
+
+# Trial 4: Entrega trabajo en grupo (TG) - Sem 9
+data:#Trial_TG_Sem9 a guide:EvaluationTrial, data:#EvalSystem_305000127 ;
+    guide:trialDescription "Entrega del fichero del trabajo en grupo..."^^rdf:langString ;
+    sch:name "Trabajo en Grupo"^^xsd:string ;
+    guide:gradePercentage "20%"^^xsd:string .
+
+# Trial 5: Examen teórico-práctico (Global) - Sem 17
+data:#Trial_Global_Sem17 a guide:EvaluationTrial, data:#EvalSystem_305000127 ;
+    guide:trialDescription "Examen teórico-práctico."^^rdf:langString ;
+    sch:name "Examen Escrito"^^xsd:string ;
+    guide:gradePercentage "100%"^^xsd:string .
+
+### Didactic Resources (Sample)
+data:#Res_Leonardo_Fernandez a guide:DidacticResource, data:#CourseGuide_305000127 ;
+    sch:name "Diseño Geométrico Asistido por Ordenador"^^rdf:langString ;
+    guide:bibliographyTitle "Leonardo Fernández. Diseño Geométrico..."^^xsd:string .
+
+data:#Res_George_Farin a guide:DidacticResource, data:#CourseGuide_305000127 ;
+    sch:name "Curves and Surfaces for CAGD"^^rdf:langString ;
+    guide:bibliographyTitle "George Farin. Curves and Surfaces..."^^xsd:string .
+
+data:#Res_Grasshopper a guide:DidacticResource, data:#CourseGuide_305000127 ;
+    sch:name "Grasshopper y GhPython"^^rdf:langString ;
+    guide:bibliographyTitle "Software de diseño geométrico asistido por ordenador."^^xsd:string .
+
+data:#Res_MatLab_Python a guide:DidacticResource, data:#CourseGuide_305000127 ;
+    sch:name "MatLab/Python"^^rdf:langString ;
+    guide:bibliographyTitle "Programa de cálculo numérico."^^xsd:string .

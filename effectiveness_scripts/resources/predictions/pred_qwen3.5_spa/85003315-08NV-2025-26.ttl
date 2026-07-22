@@ -1,0 +1,85 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_08NV_85003315> rdf:type guide:CourseGuide ;
+    dct:title "Termodinámica"@es ;
+    sch:name "Termodinámica" ;
+    guide:numberOfCredits 6.0^^xsd:decimal ;
+    guide:teachingPeriodMonths "Septiembre-Enero"@en ;
+    guide:courseYear 2025-26 ;
+    guide:syllabus <http://guia-mad-bench.es/data/syllabus/GA_08NV_85003315> .
+
+<http://guia-mad-bench.es/data/degree/GradoEnArquitecturaNaval> rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Arquitectura Naval"@es ;
+    guide:degreeCode "08NV"^^xsd:string ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course/GA_08NV_85003315> .
+
+<http://guia-mad-bench.es/data/course/GA_08NV_85003315> rdf:type guide:Course ;
+    sch:name "Termodinámica"@es ;
+    guide:courseCode 85003315^^xsd:string ;
+    guide:numberOfCredits 6.0^^xsd:decimal ;
+    guide:syllabus <http://guia-mad-bench.es/data/syllabus/GA_08NV_85003315> .
+
+<http://guia-mad-bench.es/data/lecturer/RafaelFedericoDamoreDomenech> rdf:type guide:Lecturer ;
+    sch:name "Rafael Federico D'amore Domenech"@es ;
+    guide:office "Despacho"^^xsd:string ;
+    sch:email <mailto:r.damore@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer/TeresaDeJesusLeoMena> rdf:type guide:Lecturer ;
+    sch:name "Teresa De Jesus Leo Mena"@es ;
+    rdfs:comment "(Coordinador/a)"^^xsd:string ;
+    guide:office "Despacho"^^xsd:string ;
+    sch:email <mailto:teresa.leo.mena@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer/VladimirLuisMecaLopez> rdf:type guide:Lecturer ;
+    sch:name "Vladimir Luis Meca Lopez"@es ;
+    guide:office "Despacho"^^xsd:string ;
+    sch:email <mailto:vl.meca@upm.es> .
+
+<http://guia-mad-bench.es/data/competency/CB1> rdf:type guide:Competency ;
+    guide:competencyCode "CB1"^^xsd:string ;
+    rdfs:comment "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de estudio que parte de la base de la educación secundaria general"@en .
+
+<http://guia-mad-bench.es/data/learningResult/RA192> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA192"^^xsd:string ;
+    rdfs:comment "Conocer los ciclos termodinámicos"@es .
+
+<http://guia-mad-bench.es/data/syllabus/GA_08NV_85003315> rdf:type guide:Syllabus ;
+    sch:name "Termodinámica - Guía de Aprendizaje"^^xsd:string ;
+    guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllabus/GA_08NV_85003315/Tema1> .
+
+<http://guia-mad-bench.es/data/syllabus/GA_08NV_85003315/Tema1> rdf:type guide:SyllabusItem ;
+    rdfs:comment "Conceptos básicos y definiciones"@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule/GA_08NV_85003315> rdf:type guide:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event/Semestre1_GA_08NV_85003315> .
+
+<http://guia-mad-bench.es/data/activity/LeccionMagistral_Tema1> rdf:type guide:Activity ;
+    sch:name "Tema 1 - Lección Magistral"@es ;
+    guide:activityDescription "Introducción. Método termodinámico y método estadístico."^^xsd:string .
+
+<http://guia-mad-bench.es/data/activity/PruebaTelematica_Laboratorio> rdf:type guide:EvaluationTrial ;
+    sch:name "Cuestionario eliminatorio guión Practica de Laboratorio 1"@es ;
+    guide:trialType "ET"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluationSystem/GA_08NV_85003315> rdf:type guide:EvaluationSystem ;
+    sch:name "Evaluación Termodinámica"@es ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial/ExamenFinalOrdinario_GA_08NV_85003315> .
+
+<http://guia-mad-bench.es/data/trial/ExamenFinalOrdinario_GA_08NV_85003315> rdf:type guide:EvaluationTrial ;
+    sch:name "Examen Final ordinario"@es ;
+    guide:trialType "EX"^^xsd:string ;
+    guide:gradePercentage 9.5^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/center/EtsIngenierosNavales> rdf:type sch:Organization ;
+    sch:name "E.T.S. de Ingenieros Navales"@es ;
+    guide:offers <http://guia-mad-bench.es/data/degree/GradoEnArquitecturaNaval> .

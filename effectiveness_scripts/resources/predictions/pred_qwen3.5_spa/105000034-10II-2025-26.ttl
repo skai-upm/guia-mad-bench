@@ -1,0 +1,67 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> rdf:type guide:CourseGuide ;
+    dc:title "Proyecto De Instalacion Informatica"@en ;
+    sch:name "Proyecto De Instalacion Informatica" ;
+    dct:publisher <http://guia-mad-bench.es/data/center-upm-etsi-informaticos> ;
+    guide:numberOfCredits 3^^xsd:decimal ;
+    guide:syllabusDescription "Instalaciones informáticas, Data Centers, Refrigeración, Seguridad eléctrica..."@en ;
+    sch:inLanguage "Castellano"@en ;
+    guide:teachingPeriodMonths "Febrero-Junio" .
+
+<http://guia-mad-bench.es/data/degree-grado-informatica-10ii> rdf:type guide:BachelorDegree ;
+    dct:title "Grado En Ingenieria Informatica"@es ;
+    sch:name "Grado en Ingeniería Informática".
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> sch:hasCourseInstance <http://guia-mad-bench.es/data/curso-proyecto-instalacion-informatica> .
+<http://guia-mad-bench.es/data/degree-grado-informatica-10ii> guide:hasCourse <http://guia-mad-bench.es/data/course-proyecto-instalacion-informatica>.
+
+<http://guia-mad-bench.es/data/course-proyecto-instalacion-informatica> rdf:type guide:Course ;
+    sch:name "Proyecto De Instalacion Informatica" .
+
+<http://guia-mad-bench.es/data/lecturer-latorre> rdf:type guide:Lecturer ;
+    dct:title "Antonio Latorre De La Fuente"@es ;
+    sch:email "a.latorre@upm.es"^^xsd:string ;
+    guide:office "4202".
+
+<http://guia-mad-bench.es/data/lecturer-crespo> rdf:type guide:Lecturer ;
+    dct:title "Juan Carlos Crespo Zaragoza"@es ;
+    sch:name "Coordinador/a";
+    sch:email "juancarlos.crespo@upm.es"^^xsd:string ;
+    guide:office "4102".
+
+<http://guia-mad-bench.es/data/competency-cg-001> rdf:type guide:Competency ;
+    dct:title "Capacidad de resolución de problemas"@es ;
+    guide:competencyCode "CG-1/21"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> guide:hasCompetency <http://guia-mad-bench.es/data/competency-cg-001>.
+<http://guia-mad-bench.es/data/competency-ce45> rdf:type guide:Competency ;
+    dct:title "Capacidad para el aprendizaje autónomo"@es ;
+    guide:competencyCode "CG-2/CE45"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> guide:hasCompetency <http://guia-mad-bench.es/data/competency-ce45>.
+<http://guia-mad-bench.es/data/learning-result-ra-001> rdf:type guide:LearningResult ;
+    dct:title "Comprender y aplicar principios de diseño"@es ;
+    guide:learningResultCode "RA564"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> guide:hasLearningResult <http://guia-mad-bench.es/data/learning-result-ra-001>.
+<http://guia-mad-bench.es/data/resource-libro> rdf:type guide:DidacticResource ;
+    dct:title "Instalaciones informáticas"@es ;
+    sch:name "Pedro de Miguel Anasagasti" .
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> guide:hasDidacticResource <http://guia-mad-bench.es/data/resource-libro>.
+<http://guia-mad-bench.es/data/center-upm-etsi-informaticos> rdf:type sch:Organization ;
+    dct:title "E.T.S. de Ingenieros Informáticos" .
+
+<http://w3id.org/def/guia#ANX-PR-CL-001-01> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluation-system-progresiva>.
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> sch:eventSchedule <http://guia-mad-bench.es/data/schedule-cronograma>.
+
+<http://guia-mad-bench.es/data/evaluation-system-progresiva> rdf:type guide:EvaluationSystem ;
+    dct:title "Evaluación Progresiva y Global"@es .

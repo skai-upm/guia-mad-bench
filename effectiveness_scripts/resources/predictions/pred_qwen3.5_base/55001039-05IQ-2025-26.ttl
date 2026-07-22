@@ -1,0 +1,136 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guia#55001039> rdf:type :CourseGuide ;
+    dc:title "Ingenieria Procesos Y Productos"@en ;
+    sch:name "55001039 - Ingenieria Procesos Y Productos" ;
+    guide:numberOfCredits 4.5^^xsd:decimal ;
+    guide:syllabusDescription "La asignatura es eminentemente práctica, aunque tiene una base teórica que es importante manejar con soltura."@en ;
+    sch:description "El objetivo de la asignatura es familiarizarse con las distintas etapas necesarias para llevar a cabo el diseño de procesos y productos..."@en ;
+    guide:teachingPeriodMonths "Septiembre-Enero"@en ;
+    dct:creator <http://guia-mad-bench.es/data/guia#Maria_Gonzalez_Miquel> ,
+                <http://guia-mad-bench.es/data/guia#Francisco_Ismael_Diaz_Moreno> .
+
+<http://w3id.org/def/guia#BachelorDegree> rdf:type owl:Class ;
+    rdfs:subClassOf :Degree ;
+    rdfs:label "Bachelor's Degree"@en .
+
+<http://guia-mad-bench.es/data/guia#05IQ> rdf:type :BachelorDegree ;
+    guide:degreeCode "05IQ"^^xsd:string ;
+    sch:name "Grado En Ingeniería Química" ;
+    dct:title "05IQ - Grado En Ingeniería Química"@en .
+
+<http://w3id.org/def/guia#UniversityCenter> rdf:type owl:Class ;
+    rdfs:subClassOf sch:Organization ;
+    rdfs:label "University Center"@en .
+
+<http://guia-mad-bench.es/data/guia#ETSII_05> rdf:type :UniversityCenter ;
+    guide:syllabusDescription "E.T.S. De Ingenieros Industriales"@en ;
+    sch:name "E.T.S. de Ingenieros Industriales" .
+
+<http://w3id.org/def/guia#Lecturer> rdf:type owl:Class ;
+    rdfs:subClassOf sch:Person ;
+    rdfs:label "Lecturer"@en .
+
+<http://guia-mad-bench.es/data/guia#Maria_Gonzalez_Miquel> rdf:type :Lecturer ,
+        sch:CourseInstanceDirector ;
+    guide:syllabusDescription "Coordinador/a"@en ;
+    sch:name "Maria Gonzalez Miquel"@en ;
+    sch:email <mailto:maria.gonzalezmiquel@upm.es>^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#Francisco_Ismael_Diaz_Moreno> rdf:type :Lecturer ,
+        sch:CourseInstanceInstructor ;
+    guide:syllabusDescription "Profesor"@en ;
+    sch:name "Francisco Ismael Diaz Moreno"@en ;
+    sch:email <mailto:ismael.diaz@upm.es>^^xsd:string .
+
+<http://w3id.org/def/guia#Competency> rdf:type owl:Class ;
+    rdfs:label "Competency"@en .
+
+<http://guia-mad-bench.es/data/guia#CE_15> rdf:type :Competency ;
+    guide:competencyCode "CE 15"^^xsd:string ;
+    sch:description "Conocimientos básicos de los sistemas de producción y fabricación industrial"@en .
+
+<http://w3id.org/def/guia#LearningResult> rdf:type owl:Class ;
+    rdfs:label "Learning Result"@en .
+
+<http://guia-mad-bench.es/data/guia#RA_190> rdf:type :LearningResult ;
+    guide:learningResultCode "RA 1.2"^^xsd:string ;
+    sch:description "Conocimiento y comprensión de las disciplinas de ingeniería propias de su especialidad..."@en .
+
+<http://w3id.org/def/guia#Syllabus> rdf:type owl:Class ;
+    rdfs:subClassOf sch:Syllabus ;
+    rdfs:label "Syllabus"@en .
+
+<http://guia-mad-bench.es/data/guia#55001039_Syllabus> rdf:type :Syllabus ;
+    guide:syllabusDescription "Introducción. Diagramas de proceso; Simulación estacionaria; Diseño de procesos..."@en ;
+    sch:name "Temario 55001039" .
+
+<http://w3id.org/def/guia#SyllabusItem> rdf:type owl:Class ;
+    rdfs:label "Syllabus Item"@en .
+
+<http://guia-mad-bench.es/data/guia#Intro_Item> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    sch:description "Introducción. Diagramas de proceso"@en .
+
+<http://w3id.org/def/guia#Schedule> rdf:type owl:Class ;
+    rdfs:subClassOf sch:Schedule ;
+    rdfs:label "Schedule"@en .
+
+<http://guia-mad-bench.es/data/guia#55001039_Schedule> rdf:type :Schedule ,
+        sch:EventSchedule ;
+    guide:syllabusDescription "Cronograma de la asignatura"@en ;
+    sch:courseSchedule <http://w3id.org/def/guia#CourseGuide> .
+
+<http://guia-mad-bench.es/data/guia#Sem_5_Event> rdf:type :ScheduleEvent ,
+        guide:SyllabusItem ;
+    guide:eventIndex 1^^xsd:integer ;
+    sch:description "Entrega Proyecto Diseño de Procesos (Síntesis del proceso)"@en .
+
+<http://w3id.org/def/guia#Activity> rdf:type owl:Class ;
+    rdfs:label "Activity"@en .
+
+<http://guia-mad-bench.es/data/guia#Sem_5_Activity> rdf:type :ScheduleEvent ,
+        guide:SyllabusItem ;
+    sch:description "Entrega Proyecto Diseño de Procesos (Síntesis del proceso)"@en ;
+    om:Unit 1^^xsd:string .
+
+<http://w3id.org/def/guia#EvaluationSystem> rdf:type owl:Class ;
+    rdfs:label "Evaluation System"@en .
+
+<http://guia-mad-bench.es/data/guia#55001039_EvalSys> rdf:type :EvaluationSystem ,
+        sch:EvaluationActivity ;
+    guide:syllabusDescription "Evaluación progresiva"@en ;
+    dct:creator <http://w3id.org/def/guia#CourseGuide> .
+
+<http://guia-mad-bench.es/data/guia#Trial_15> rdf:type :EvaluationTrial ,
+        sch:EvaluationActivity ;
+    guide:syllabusDescription "Entrega Proyecto Diseño de Procesos (Síntesis del proceso)"@en ;
+    guide:gradePercentage 0.15^^xsd:string .
+
+<http://w3id.org/def/guia#ScheduleEvent> rdf:type owl:Class ;
+    rdfs:subClassOf sch:Event ;
+    rdfs:label "Schedule Event"@en .
+
+<http://guia-mad-bench.es/data/guia#Sem_17_Event> rdf:type :EvaluationTrial ,
+        guide:SyllabusItem ;
+    sch:description "Examen Teórico-Práctico"@en ;
+    om:Unit 30^^xsd:string .
+
+<http://w3id.org/def/gusia#DidacticResource> rdf:type owl:Class ;
+    rdfs:label "Didactic Resource"@en .
+
+<http://guia-mad-bench.es/data/guia#Dimian_Book> rdf:type :DidacticResource ,
+        sch:BibliographicWork ;
+    guide:syllabusDescription "Diseño de procesos"@en ;
+    sch:name "Integrated design and simulation of chemical processes. Computer-aided chemical engineering, 2003"@en .
+
+<http://w3id.org/def/guia#Course> rdf:type owl:Class ;
+    rdfs:subClassOf sch:Course ;
+    rdfs:label "Course"@en .

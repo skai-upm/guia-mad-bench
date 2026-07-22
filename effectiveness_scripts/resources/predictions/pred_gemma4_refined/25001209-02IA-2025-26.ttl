@@ -1,0 +1,168 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+:Grado_En_Ingenieria_Agroambiental rdf:type guide:Degree ;
+    sch:name "02IA - Grado En Ingenieria Agroambiental" ;
+    guide:degreeCode "02IA" .
+
+:Etsi_Agronomica_Aliment_y_Biosistemas rdf:type guide:UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas" ;
+    guide:offers :Grado_En_Ingenieria_Agroambiental .
+
+# Course
+:Botanica_Agricola_Y_Flora rdf:type guide:Course ;
+    sch:name "25001209 - Botanica Agricola Y Flora" ;
+    sch:courseCode 25001209 ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 2025 ;
+    guide:semester "Segundo semestre" .
+
+:Grado_En_Ingenieria_Agroambiental guide:hasCourse :Botanica_Agricola_Y_Flora .
+
+# Course Guide
+:Botanica_Agricola_Y_Flora_Guide rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Botanica Agricola Y Flora" ;
+    sch:hasCourseInstance :Botanica_Agricola_Y_Flora ;
+    sch:inLanguage "Castellano" ;
+    guide:numberOfCredits 4.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:totalHours "104" ; # Calculated based on ECTS (4 * 26)
+    sch:description "La asignatura se estructura en torno al objetivo establecido en la Orden CIN 323/2009 relativo a la adquisición de la capacidad de conocer, comprender y utilizar los principios de la identificación y caracterización de especies vegetales." ;
+    guide:hasCompetency :CE15, :CG16, :CG3, :CG5, :CG7 ;
+    guide:hasLearningResult :RA47, :RA48, :RA49, :RA50, :RA45, :RA46 ;
+    guide:hasSyllabus :Syllabus_Botanica ;
+    guide:hasEvaluation :EvalSystem_Botanica ;
+    guide:hasDidacticResource :Recurso_Biblioteca, :Recurso_Web_Anthos, :Recurso_Herbario ;
+    sch:instructor :M_Dolores_Curt_Fernandez_De_Sch_La_Mora, :Pedro_Luis_Aguado_Cortijo ;
+    sch:director :Agustin_Garzon_Hidalgo ;
+    sch:courseSchedule :Schedule_Botanica .
+
+# Lecturers
+:M_Dolores_Curt_Fernandez_De_La_Mora rdf:type guide:Lecturer ;
+    sch:name "M. Dolores Curt Fernandez De La Mora" ;
+    sch:email "md.curt@upm.es" ;
+    guide:office "UD Bot.Agricola" ;
+    guide:tutorshipsSchedule "A acordar entre el estudiante y el profesor" .
+
+:Pedro_Luis_Aguado_Cortijo rdf:type guide:Lecturer ;
+    sch:name "Pedro Luis Aguado Cortijo" ;
+    sch:email "pl.aguado@upm.es" ;
+    guide:office "UD Bot.Agricola" ;
+    guide:tutorshipsSchedule "A acordar entre el estudiante y el profesor" .
+
+:Agustin_Garzon_Hidalgo rdf:type guide:Lecturer ;
+    sch:name "Agustin Garzon Hidalgo" ;
+    sch:email "agustin.garzon@upm.es" .
+
+# Competencies
+:CE15 rdf:type guide:Competency ;
+    guide:competencyCode "CE15" ;
+    guide:competencyDescription "Capacidad para aplicar los principios de la botánica en la identificación y caracterización de especies vegetales..." .
+
+:CG16 rdf:type guide:Competency ;
+    guide:competencyCode "CG16" ;
+    guide:competencyDescription "Aplicar conocimientos adquiridos a la práctica de la ingeniería agraria" .
+
+:CG3 rdf:type guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes..." .
+
+:CG5 rdf:type guide:Competency ;
+    guide:competencyCode "CG5" ;
+    guide:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía" .
+
+:CG7 rdf:type guide:Competency ;
+    guide:competencyCode "CG7" ;
+    guide:competencyDescription "Compromiso ético y profesional y respeto por el medio ambiente y la diversidad" .
+
+# Learning Results
+:RA47 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA47" ;
+    guide:learningResultDescription "Reconocer y caracterizar las principales especies vegetales de interés en los campos de la agronomía y la flora española" .
+
+:RA48 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA48" ;
+    guide:learningResultDescription "Relacionar caracteres botánicos con las aplicaciones de las especies vegetales y sus requerimientos de hábitat" .
+
+# Syllabus
+:Syllabus_Botanica rdf:type guide:Syllabus ;
+    guide:hasItem :SyllabusItem_1, :SyllabusItem_2, :SyllabusItem_3 .
+
+:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Principios generales" .
+
+:SyllabusItem_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Terminología" .
+
+:SyllabusItem_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Gimnospermas de interés agrícola y medioambiental" .
+
+# Evaluation System
+:EvalSystem_Botanica rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación progresiva y global." ;
+    guide:hasEvaluationTrial :Trial_Prog_1, :Trial_Global_Examen .
+
+:Trial_Prog_1 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "35%" ;
+    guide:evaluationDuration "01:00" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "5/10" .
+
+:Trial_Global_Examen rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "75%" ;
+    guide:evaluationDuration "02:00" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "5/10" .
+
+# Schedule and Activities
+:Schedule_Botanica rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Semana_1, :Event_Semana_7 .
+
+:Event_Semana_1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :Activity_Tema_1 .
+
+:Activity_Tema_1 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "Presencial" .
+
+:Event_Semana_7 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 7 ;
+    guide:eventWeek "Semana 7" ;
+    guide:hasActivity :Activity_Prueba_1 .
+
+:Activity_Prueba_1 rdf:type guide:Activity ;
+    guide:activityDescription "Prueba de evaluación progresiva 1" ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:Recurso_Biblioteca rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Biblioteca de Botánica" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Recurso_Web_Anthos rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "http://www.anthos.es/" ;
+    guide:bibliographyType "Recursos web" .
+
+:Recurso_Herbario rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Herbario de la U.D. Botánica Agrícola" ;
+    guide:bibliographyType "Otros" .

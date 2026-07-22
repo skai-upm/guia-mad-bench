@@ -1,0 +1,140 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+# Course and Degree Information
+guide:Degree_30AG rdf:type guide:BachelorDegree ;
+    sch:name "30AG - M U En Formacion Del Profesorado En Eso Bachillerato Y Fp (esp Educ Física)" ;
+    guide:degreeCode "30AG" .
+
+guide:UniversityCenter_Facultad_CC_ADF rdf:type guide:UniversityCenter ;
+    sch:name "Facultad CC. Actividad Fisica y Deporte" ;
+    guide:offers guide:Degree_30AG .
+
+guide:Course_303000073 rdf:type guide:Course ;
+    sch:name "303000073 - Organizacion De Los Centros Docentes De Enseñanza Secundaria Y De Formacion Profesional" ;
+    sch:courseCode 303000073 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Primer semestre" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    sch:hasCourseInstance guide:CourseGuide_303000073 ;
+    sch:numberOfCredits 3.0 .
+
+guide:CourseGuide_303000073 rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance guide:Course_303000073 ;
+    sch:instructor guide:Lecturer_Rodrigo_Pardo_Garcia ;
+    sch:instructor guide:Lecturer_Olga_Segovia_Pulido ;
+    sch:director guide:Lecturer_Rodrigo_Pardo_Garcia ;
+    sch:inLanguage "Castellano" ;
+    guide:numberOfCredits 3.0 ;
+    guide:hasSyllabus guide:Syllabus_303000073 ;
+    guide:hasEvaluation guide:EvalSystem_Progresiva ;
+    guide:hasCompetency guide:Competency_CE05, guide:Competency_CE06, guide:Competency_CE09, guide:Competency_CE15, guide:Competency_CE16, guide:Competency_CE29, guide:Competency_CG09, guide:Competency_CG10, guide:Competency_CT04, guide:Competency_CT05, guide:Competency_CT06 ;
+    guide:hasLearningResult guide:LearningResult_RA63, guide:LearningResult_RA64, guide:LearningResult_RA31, guide:LearningResult_RA48, guide:LearningResult_RA60, guide:LearningResult_RA61, guide:LearningResult_RA65, guide:LearningResult_RA59 ;
+    guide:hasDidacticResource guide:Resource_Moodle, guide:Resource_Webs_Ministerio, guide:Resource_Biblio_1 ;
+    guide:totalHours "26-27 horas por crédito ECTS" .
+
+# Lecturers
+guide:Lecturer_Rodrigo_Pardo_Garcia rdf:type guide:Lecturer ;
+    sch:name "Rodrigo Pardo Garcia" ;
+    sch:email "rodrigo.pardo@upm.es" ;
+    guide:office "503" ;
+    guide:tutorshipsSchedule "Sin horario. Consultar la web del Departamento" .
+
+guide:Lecturer_Olga_Segovia_Pulido rdf:type guide:Lecturer ;
+    sch:name "Olga Segovia Pulido" ;
+    sch:email "olga.segovia@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. Consultar la web del Departamento" .
+
+# Competencies
+guide:Competency_CE05 rdf:type guide:Competency ;
+    guide:competencyCode "CE05" ;
+    guide:competencyDescription "Conocer los procesos de interacción en el aula y en el centro, abordar y resolver posibles problemas." .
+
+guide:Competency_CE06 rdf:type guide:Competency ;
+    guide:competencyCode "CE06" ;
+    guide:competencyDescription "Conocer la evolución histórica del sistema educativo." .
+
+guide:Competency_CE09 rdf:type guide:Competency ;
+    guide:competencyCode "CE09" ;
+    guide:competencyDescription "Participar en la definición del proyecto educativo y en las actividades generales del centro..." .
+
+guide:Competency_CT05 rdf:type guide:Competency ;
+    guide:competencyCode "CT05" ;
+    guide:competencyDescription "Generar aptitudes relacionadas con la gestión de la información." .
+
+# Learning Results
+guide:LearningResult_RA63 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA63" ;
+    guide:learningResultDescription "Saber identificar, elaborar y evaluar los diferentes documentos de trabajo relativos a la organización docente en los centros educativos" .
+
+guide:LearningResult_RA64 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA64" ;
+    guide:learningResultDescription "Conocer la organización y funcionamiento de los Centros Escolares, tanto en relación a los Recursos Humanos como a los elementos normativos" .
+
+# Syllabus
+guide:Syllabus_303000073 rdf:type guide:Syllabus ;
+    guide:hasItem guide:SyllabusItem_Tema1, guide:SyllabusItem_Tema2, guide:SyllabusItem_Tema3, guide:SyllabusItem_Tema4, guide:SyllabusItem_Tema5 .
+
+guide:SyllabusItem_Tema1 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "MARCO LEGAL Y EVOLUCIÓN DEL SISTEMA EDUCATIVO" ;
+    guide:itemIndex 1 .
+
+guide:SyllabusItem_Tema2 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "ORGANIZACIÓN Y GESTIÓN DE LOS CENTROS ESCOLARES" ;
+    guide:itemIndex 2 .
+
+# Evaluation System and Trials
+guide:EvalSystem_Progresiva rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación continua formativa. Se tendrá en cuenta el proceso de aprendizaje a lo largo de la materia." ;
+    guide:hasEvaluationTrial guide:Trial_Desafio_Escuela, guide:Trial_Pacto_Educativo, guide:Trial_Analisis_LOMLOE, guide:Trial_Supuestos_Practicos, guide:Trial_Entrega_Practicas, guide:Trial_Autoevaluacion, guide:Trial_Prueba_Escrita .
+
+guide:Trial_Desafio_Escuela rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo Individual" ;
+    guide:gradePercentage "0%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:involvesCompetency guide:Competency_CT05, guide:Competency_CE29 ;
+    guide:trialMode "Presencial" .
+
+guide:Trial_Entrega_Practicas rdf:type guide:EvaluationTrial ;
+    guide:trialType "Otras técnicas evaluativas" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+guide:Trial_Prueba_Escrita rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+# Activities (from Cronograma)
+guide:Activity_Leccion_Magistral_Tema1 rdf:type guide:Activity ;
+    guide:activityDescription "Explicación del temario. Tema 1" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" ;
+    guide:activityDuration 1.5 .
+
+# Didactic Resources
+guide:Resource_Moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Plataforma Moodle" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "El seguimiento y presentación de trabajos a través de la plataforma Moodle será obligado." .
+
+guide:Resource_Webs_Ministerio rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Páginas WEB del Ministerio de Educación" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:Resource_Biblio_1 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "La organización escolar. Práctica y fundamentos." ;
+    guide:bibliographyDescription "Álvarez Rojo, V. y Lázaro Martínez, A (2002). Barcelona: Grao." .
+
+# Schedule Events
+guide:Event_Sem1_Act1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity guide:Activity_Leccion_Magistral_Tema1 .

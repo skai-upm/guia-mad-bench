@@ -1,0 +1,194 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/ANX-PRCL001_2025> rdf:type guide:CourseGuide ;
+    sch:name "Redes Y Servicios De Telecomunicacion"@en ;
+    guide:numberOfCredits 6^^xsd:decimal ;
+    guide:courseYear 2025^^xsd:integer ;
+    dct:title "ANX-PR/CL/001 - Guía de Aprendizaje"@en ;
+    sch:description "Guía para el curso académico 2025/26, primer semestre."@es .
+
+<http://guia-mad-bench.es/data/degree_59SO> rdf:type guide:Degree ;
+    dct:title "Grado En Ingenieria De Sonido E Imagen"@en ;
+    sch:name "59 - E.T.S. De Ingeniería Y Sist. De Telecom."@es .
+
+<http://guia-mad-bench.es/data/course_instance_595000115> rdf:type guide:Course ;
+    dct:title "Redes y Servicios de Telecomunicacion"@en ;
+    sch:name 595000115^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus_redes_telecomunicacion> rdf:type guide:Syllabus ;
+    rdfs:comment "Temario y estructura de contenidos."@en ;
+    dct:title "Redes Y Servicios De Telecomunicación"@en .
+
+# Lecturers (Profesorado)
+<http://guia-mad-bench.es/data/lecturer_sury_bravo> rdf:type guide:Lecturer ;
+    sch:name "Sury Bravo Lasprilla"^^xsd:string ;
+    sch:email "sury.bravo@upm.es"@en ;
+    guide:office "A4413"@es .
+
+<http://guia-mad-bench.es/data/lecturer_miguel_valero> rdf:type guide:Lecturer ;
+    sch:name "Miguel Angel Valero Duboy"^^xsd:string ;
+    sch:email "miguelangel.valero@upm.es"@en ;
+    guide:office "A4422"@es .
+
+<http://guia-mad-bench.es/data/lecturer_javier_espejo> rdf:type guide:Lecturer ;
+    sch:name "Javier Espejo Garrido"^^xsd:string ;
+    sch:email "j.espejo@upm.es"@en ;
+    guide:office "A4404"@es .
+
+<http://guia-mad-bench.es/data/lecturer_lucas_elvira> rdf:type guide:Lecturer ;
+    sch:name "Lucas Gonzalo Elvira Martin"^^xsd:string ;
+    sch:email "lucas.elvira@upm.es"@en ;
+    guide:office "A4422"@es .
+
+<http://guia-mad-bench.es/data/lecturer_juana_gutierrez> rdf:type guide:Lecturer ;
+    sch:name "Juana Maria Gutierrez Arriola"^^xsd:string ;
+    sch:email "juana.gutierrez.arriola@upm.es"@en .
+
+# Competencies (CE)
+<http://guia-mad-bench.es/data/comp_tel01> rdf:type guide:Competency ;
+    guide:competencyCode "CE TEL01"^^xsd:string ;
+    guide:competencyDescription "Capacidad para aprender de manera autónoma nuevos conocimientos y técnicas adecuados..."@en .
+
+<http://guia-mad-bench.es/data/comp_tel06> rdf:type guide:Competency ;
+    guide:competencyCode "CE TEL06"^^xsd:string ;
+    guide:competencyDescription "Capacidad de concebir, desplegar, organizar y gestionar redes..."@en .
+
+<http://guia-mad-bench.es/data/comp_tel13> rdf:type guide:Competency ;
+    guide:competencyCode "CE TEL13"^^xsd:string ;
+    guide:competencyDescription "Conocimiento y utilización de los conceptos de arquitectura de red..."@en .
+
+<http://guia-mad-bench.es/data/comp_tel14> rdf:type guide:Competency ;
+    guide:competencyCode "CE TEL14"^^xsd:string ;
+    guide:competencyDescription "Capacidad de diferenciar los conceptos de redes de acceso y transporte..."@en .
+
+<http://guia-mad-bench.es/data/comp_tel15> rdf:type guide:Competency ;
+    guide:competencyCode "CE TEL15"^^xsd:string ;
+    guide:competencyDescription "Conocimiento de los métodos de interconexión de redes y encaminamiento..."@en .
+
+# Learning Results (RA) - Sample extraction of key results found in document section 4.2
+<http://guia-mad-bench.es/data/ra_1295> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA1295"^^xsd:string ;
+    guide:learningResultDescription "Enumerar los medios físicos para el despliegue de redes de área local."@en .
+
+<http://guia-mad-bench.es/data/ra_1296> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA1296"^^xsd:string ;
+    guide:learningResultDescription "Describir las características y el modo de funcionamiento de Ethernet."@en .
+
+<http://guia-mad-bench.es/data/ra_242> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA242"^^xsd:string ;
+    guide:learningResultDescription "Capacidad de aprender de manera autónoma nuevos conocimientos..."@en .
+
+<http://guia-mad-bench.es/data/ra_1075> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA1075"^^xsd:string ;
+    guide:learningResultDescription "Analizar y estudiar los conceptos básicos de protocolos..."@en .
+
+# Syllabus Items (Temario) - Extracted from Section 5.2 and Table 6
+<http://guia-mad-bench.es/data/syll_item_1> rdf:type guide:SyllabusItem ;
+    guide:itemIndex "1"^^xsd:integer ;
+    guide:syllabusDescription "UNIDAD 1: INTRODUCCIÓN A LAS REDES DE TELECOMUNICACIÓN"@en .
+
+<http://guia-mad-bench.es/data/syll_item_2> rdf:type guide:SyllabusItem ;
+    guide:itemIndex "2"^^xsd:integer ;
+    guide:syllabusDescription "UNIDAD 2: ARQUITECTURAS DE COMUNICACIÓN ESTRATIFICADAS EN NIVELES"@en .
+
+<http://guia-mad-bench.es/data/syll_item_3> rdf:type guide:SyllabusItem ;
+    guide:itemIndex "3"^^xsd:integer ;
+    guide:syllabusDescription "UNIDAD 3: LA CAPA DE ENLACE Y REDES DE ÁREA LOCAL"@en .
+
+<http://guia-mad-bench.es/data/syll_item_4> rdf:type guide:SyllabusItem ;
+    guide:itemIndex "4"^^xsd:integer ;
+    guide:syllabusDescription "UNIDAD 4: LA CAPA DE RED"@en .
+
+<http://guia-mad-bench.es/data/syll_item_5> rdf:type guide:SyllabusItem ;
+    guide:itemIndex "5"^^xsd:integer ;
+    guide:syllabusDescription "UNIDAD 5: INTRODUCCIÓN A LAS APLICACIONES Y SERVICIOS DE INTERNET"@en .
+
+<http://guia-mad-bench.es/data/syll_item_6> rdf:type guide:SyllabusItem ;
+    guide:itemIndex "6"^^xsd:integer ;
+    guide:syllabusDescription "PRÁCTICA 1: Generación y análisis de tráfico de voz sobre IP (VoIP)"@en .
+
+<http://guia-mad-bench.es/data/syll_item_7> rdf:type guide:SyllabusItem ;
+    guide:itemIndex "7"^^xsd:integer ;
+    guide:syllabusDescription "PRÁCTICA 2: Análisis de protocolos. WireShark"@en .
+
+<http://guia-mad-bench.es/data/syll_item_8> rdf:type guide:SyllabusItem ;
+    guide:itemIndex "8"^^xsd:integer ;
+    guide:syllabusDescription "PRÁCTICA 3: Análisis y diseño de un protocolo de comunicación (NOC y OC)"@en .
+
+<http://guia-mad-bench.es/data/syll_item_9> rdf:type guide:SyllabusItem ;
+    guide:itemIndex "9"^^xsd:integer ;
+    guide:syllabusDescription "PRÁCTICA 4: El protocolo HTTP"@en .
+
+# Schedule (Cronograma) - Extracted from Section 6 and Table 7.1/7.2
+<http://guia-mad-bench.es/data/schedule_59SO> rdf:type guide:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event_ud1>, 
+                     <http://guia-mad-bench.es/data/event_p1>, 
+                     <http://guia-mad-bench.es/data/eval_trial_global>.
+
+<http://guia-mad-bench.es/data/schedule_59SO> sch:courseInstance <http://guia-mad-bench.es/data/course_instance_595000115> .
+# Note: The ontology links CourseGuide to Schedule via `sch:courseSchedule`.
+
+<http://guia-mad-bench.es/data/event_ud1> rdf:type guide:ScheduleEvent ;
+    sch:eventIndex "1"^^xsd:integer ;
+    guide:syllabusDescription "UD1 - Introducción a las redes de telecomunicación"@en .
+
+# Evaluation System and Trials (Section 7)
+<http://guia-mad-bench.es/data/eval_system_59SO> rdf:type guide:EvaluationSystem ;
+    sch:name "Evaluación Progresiva y Global"^^xsd:string ;
+    guide:evaluationDescription "Sistema de evaluación progresiva con dos evaluaciones parciales (EV1, EV2) más examen global."@en .
+
+<http://guia-mad-bench.es/data/eval_trial_p1> rdf:type guide:EvaluationTrial ;
+    sch:name "Entrega Práctica 1"^^xsd:string ;
+    guide:trialType "Presentación Individual"@es ;
+    guide:gradePercentage "0%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_p2> rdf:type guide:EvaluationTrial ;
+    sch:name "Entrega Práctica 2"^^xsd:string ;
+    guide:trialType "Presentación Individual"@es ;
+    guide:gradePercentage "0%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_p3> rdf:type guide:EvaluationTrial ;
+    sch:name "Entrega Práctica 3"^^xsd:string ;
+    guide:trialType "Presentación Individual"@es ;
+    guide:gradePercentage "0%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_p4> rdf:type guide:EvaluationTrial ;
+    sch:name "Entrega Práctica 4"^^xsd:string ;
+    guide:trialType "Presentación Individual"@es ;
+    guide:gradePercentage "0%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_exam1> rdf:type guide:EvaluationTrial ;
+    sch:name "Evaluación P1 y P2 y UD1 y 2"^^xsd:string ;
+    guide:trialType "Examen Escrito"@es ;
+    guide:gradePercentage "50%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_exam_global> rdf:type guide:EvaluationTrial ;
+    sch:name "Evaluación Global"^^xsd:string ;
+    guide:trialType "Examen Escrito"@es ;
+    guide:gradePercentage "50%"^^xsd:string .
+
+# Links from Course Guide to Entities
+<http://guia-mad-bench.es/data/ANX-PRCL001_2025> sch:name "Redes Y Servicios De Telecomunicacion" ;
+    guide:numberOfCredits 6^^xsd:decimal ;
+    guide:syllabus <http://guia-mad-bench.es/data/syllabus_redes_telecomunicacion> .
+
+<http://guia-mad-bench.es/data/ANX-PRCL001_2025> sch:hasCourseInstance <http://guia-mad-bench.es/data/course_instance_595000115> ;
+    guide:hasEvaluation <http://guia-mad-bench.es/data/eval_system_59SO> .
+
+<http://guia-mad-bench.es/data/ANX-PRCL001_2025> sch:director <http://guia-mad-bench.es/data/lecturer_sury_bravo> ;
+    guide:syllabusDescription "Redes Y Servicios De Telecomunicación"@en .
+
+<http://guia-mad-bench.es/data/course_instance_595000115> sch:hasCourseInstance <http://guia-mad-bench.es/data/ANX-PRCL001_2025> ;
+    guide:numberOfCredits 6^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/course_instance_595000115> sch:name "Redes y Servicios de Telecomunicacion" ;
+    guide:courseYear 2025^^xsd:integer .

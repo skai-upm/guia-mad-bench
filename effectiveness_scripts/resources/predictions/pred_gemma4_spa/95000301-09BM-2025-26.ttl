@@ -1,0 +1,116 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# Course Guide Instance
+guide:Fisica_CourseGuide rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje: Física" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:numberOfCredits 6.0 ;
+    guide:courseType "Básica" ;
+    guide:hasSyllabus guide:Fisica_Syllabus ;
+    guide:hasCompetency guide:CE06, guide:CE07, guide:CE10, guide:CE11, guide:CG01, guide:CG04, guide:CG05, guide:CG07, guide:CG08, guide:CG09, guide:CG11 ;
+    guide:hasLearningResult guide:RA31_RA34, guide:RA4, guide:RA30_RA32, guide:RA17, guide:RA55, guide:RA132, guide:RA155, guide:RA212, guide:RA209, guide:RA34_RA41, guide:RA35_RA42, guide:RA33_RA40, guide:RA131, guide:RA150, guide:RA36_RA43, guide:RA37_RA44 ;
+    guide:hasEvaluation guide:Fisica_EvalSystem ;
+    guide:hasDidacticResource guide:Tipler_Resource, guide:Sears_Resource, guide:KhanAcademy_Resource ;
+    sch:instructor guide:Elisa_Antolin_Lecturer ;
+    sch:director guide:Elisa_Antolin_Lecturer .
+
+# Course Instance
+guide:Fisica_Course rdf:type guide:Course ;
+    sch:name "95000301 - Física" ;
+    sch:courseCode 95000301 ;
+    guide:courseYear 2025 ;
+    guide:semester "Primer semestre" ;
+    sch:hasCourseInstance guide:Fisica_CourseGuide .
+
+# Degree Instance
+guide:Ingenieria_Biomedica_Degree rdf:type guide:BachelorDegree ;
+    sch:name "09BM - Grado en Ingenieria Biomedica" ;
+    guide:degreeCode "09BM" ;
+    guide:hasCourse guide:Fisica_Course .
+
+# University Center Instance
+guide:ETS_Telecomunicacion_Center rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" ;
+    guide:offers guide:Ingenieria_Biomedica_Degree .
+
+# Lecturer Instances
+guide:Elisa_Antolin_Lecturer rdf:type guide:Lecturer ;
+    sch:name "Elisa Antolin Fernandez" ;
+    sch:email "elisa.antolin@upm.es" ;
+    guide:office "Sin despacho asignado" .
+
+guide:Simon_Aurel_Svatek_Lecturer rdf:type guide:Lecturer ;
+    sch:name "Simon Aurel Svatek" ;
+    sch:email "simon.svatek@upm.es" .
+
+guide:Miguel_Montes_Bajo_Lecturer rdf:type guide:Lecturer ;
+    sch:name "Miguel Montes Bajo" ;
+    sch:email "miguel.montes@upm.es" .
+
+# Competency Instances
+guide:CE06 rdf:type guide:Competency ;
+    guide:competencyCode "CE06" ;
+    guide:competencyDescription "Comprender y saber calcular el equilibrio y la dinámica de sistemas mecánicos" .
+
+guide:CG04 rdf:type guide:Competency ;
+    guide:competencyCode "CG04" ;
+    guide:competencyDescription "Trabajar de forma adecuada en un laboratorio incluyendo un registro anotado de las actividades y seguridad, manipulación y eliminación de residuos químicos o biológicos" .
+
+# Learning Result Instances
+guide:RA31_RA34 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA31 - RA34" ;
+    guide:learningResultDescription "Conocer, comprender y dominar los conceptos y principios básicos de la Dinámica de sistemas" .
+
+guide:RA4 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA4" ;
+    guide:learningResultDescription "Capacidad para emplear con rigor el lenguaje matemático" .
+
+# Evaluation System and Trials
+guide:Fisica_EvalSystem rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global" ;
+    guide:hasEvaluationTrial guide:Prueba1_Trial, guide:Laboratorio_Trial, guide:ExamenFinal_Trial .
+
+guide:Prueba1_Trial rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "37.5%" ;
+    guide:trialMode "Presencial" .
+
+guide:Laboratorio_Trial rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo en Grupo" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "15%" ;
+    guide:trialMode "Presencial" .
+
+# Syllabus and Items
+guide:Fisica_Syllabus rdf:type guide:Syllabus ;
+    guide:hasItem guide:Topic_Mecanica, guide:Topic_Elasticidad, guide:Topic_Fluidos, guide:Topic_Termodinamica .
+
+guide:Topic_Mecanica rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Mecánica: Análisis dimensional, Vectores, Dinámica y cinemática de la partícula, Trabajo y energía, Sistemas de partículas y sólido rígido, Equilibrio y estática" .
+
+# Didactic Resources
+guide:Tipler_Resource rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Tipler, P.A., Mosca, G. Física, vol. 1 y 2" ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:KhanAcademy_Resource rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Khan Academy Physics" ;
+    guide:bibliographyType "Recurso web" .
+
+# Schedule Events (Examples from Cronograma)
+guide:Event_Semana1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity guide:Actividad_Leccion_Magistral_1 .
+
+guide:Actividad_Leccion_Magistral_1 rdf:type guide:Activity ;
+    guide:activityDescription "Análisis dimensional. Vectores." ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 2.0 .

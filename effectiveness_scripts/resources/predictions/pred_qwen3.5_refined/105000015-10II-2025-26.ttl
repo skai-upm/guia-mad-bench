@@ -1,0 +1,123 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/#ANX_PR_CL_001> rdf:type :CourseGuide ;
+    dc:title "Programación Ii"@en ;
+    sch:name "Programación II" ;
+    dct:creator <http://w3id.org/def/guia#Javier_Galve_Frances>,
+               <http://w3id.org/def/guia#Santiago_Tapia_Fernandez> ,
+               <http://w3id.org/def/guia#Tonghong_Li>,
+               <http://w3id.org/def/guia#Angel_Herranz_Nieva>,
+               <http://w3id.org/def/guia#Raul_Alonso_Calvo> ,
+               <http://w3id.org/def/guia#Luis_Eduardo_Bueso_De_Barrio> ;
+    sch:courseCode "105000015"^^xsd:string ;
+    guide:numberOfCredits 6.0^^xsd:decimal ;
+    guide:teachingPeriodMonths "Febrero-Junio"@en ;
+    guide:periodStartingMonth "Febbraio"@en ;
+    guide:periodEndingMonth "Junio"@en ;
+    sch:inLanguage <http://purl.org/dc/terms/eng> , <http://purl.org/dc/terms/esn> ;
+    :hasCourse <http://guia-mad-bench.es/data/#10II_Grado_Ingenieria_Infomatica> ;
+    guide:syllabusDescription "Introducción a la programación orientada a objetos (POO). Su objetivo principal es presentar a los estudiantes los principios de la resolución de problemas en el paradigma POO y el estudio de los modelos de datos básicos."@en .
+
+<http://guia-mad-bench.es/data/#10II_Grado_Ingenieria_Infomatica> rdf:type :BachelorDegree ;
+    sch:name "Grado En Ingenieria Informatica"@es ;
+    guide:courseYear 2025^^xsd:string .
+
+<http://guia-mad-bench.es/data/#Javier_Galve_Frances> rdf:type :Lecturer ;
+    sch:name "Javier Galve Frances" ;
+    guide:office "D-2315"@en ;
+    sch:email <mailto:javier.galve@upm.es> .
+
+<http://guia-mad-bench.es/data/#Santiago_Tapia_Fernandez> rdf:type :Lecturer ;
+    sch:name "Santiago Tapia Fernandez" ;
+    guide:office "D-2307"@en ;
+    sch:email <mailto:santiago.tapia@upm.es> .
+
+<http://guia-mad-bench.es/data/#Tonghong_Li> rdf:type :Lecturer ;
+    sch:name "Tonghong Li" ;
+    guide:office "D-2312"@en ;
+    sch:email <mailto:tonghong.li@upm.es> .
+
+<http://guia-mad-bench.es/data/#Angel_Herranz_Nieva> rdf:type :Lecturer ;
+    sch:name "Angel Herranz Nieva" ;
+    guide:office "D-2309"@en ;
+    sch:email <mailto:angel.herranz@upm.es> .
+
+<http://guia-mad-bench.es/data/#Raul_Alonso_Calvo> rdf:type :Lecturer ;
+    sch:name "Raul Alonso Calvo" ;
+    guide:office "D-2315"@en ;
+    sch:email <mailto:raul.alonso@upm.es> .
+
+<http://guia-mad-bench.es/data/#Luis_Eduardo_Bueso_De_Barrio> rdf:type :Lecturer ;
+    sch:name "Luis Eduardo Bueso De Barrio" ;
+    guide:office "D-2310"@en ;
+    sch:email <mailto:luiseduardo.bueso.debarrio@upm.es> .
+
+<http://guia-mad-bench.es/data/#CG_1_21> rdf:type :Competency ;
+    guide:competencyCode "CG-1/21"@en ;
+    sch:description "Capacidad de resolución de problemas aplicando conocimientos de matemáticas, ciencias e ingeniería."@es .
+
+<http://guia-mad-bench.es/data/#Ce_3_4> rdf:type :Competency ;
+    guide:competencyCode "Ce 3/4"@en ;
+    sch:description "Capacidad para elegir y usar los métodos analíticos y de modelización relevantes, y de describir una solución de forma abstracta."@es .
+
+<http://guia-mad-bench.es/data/#Ra_287> rdf:type :LearningResult ;
+    guide:learningResultCode "RA287"@en ;
+    sch:description "Traducir especificaciones de tipos abstractos de datos (TADs) a implementaciones."@es .
+
+<http://guia-mad-bench.es/data/#Ra_290> rdf:type :LearningResult ;
+    guide:learningResultCode "RA290"@en ;
+    sch:description "Realizar pruebas para asegurar el correcto funcionamiento de un TAD así como"^^xsd:string .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/#Intro_POO>,
+                 <http://guia-mad-bench.es/data/#Modelo_Objetos>,
+                 <http://guia-mad-bench.es/data/#Listas> .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001> rdf:type :Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/#Semana_1>,
+                     <http://guia-mad-bench.es/data/#Semana_2>.
+
+<http://w3id.org/def/guia#ANX_PR_CL_001> rdf:type :EvaluationSystem ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/#AEP>,
+                            <http://guia-mad-bench.es/data/#EG>.
+
+<http://w3id.org/def/guia#ANX_PR_CL_001> rdf:type :DidacticResource ;
+    sch:name "Sitio Moodle UPM de la asignatura" .
+
+<http://guia-mad-bench.es/data/#Intro_POO> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "Introducción a la programación orientada a objetos (POO)"@es .
+
+<http://guia-mad-bench.es/data/#Modelo_Objetos> rdf:type :SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer ;
+    guide:sylbusDescription "Modelo de objetos: abstracciones de datos, clases y objetos"@es .
+
+<http://guia-mad-bench.es/data/#Listas> rdf:type :SyllabusItem ;
+    guide:itemIndex 3^^xsd:integer ;
+    guide:sylbusDescription "Listas"@en .
+
+<http://w3id.org/def/guia#Semana_1> rdf:type :ScheduleEvent ;
+    sch:eventIndex 1^^xsd:integer ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/def/guia#Semana_1> rdf:type :Activity ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#Ra_287>,
+                          <http://guia-mad-bench.es/data/#CG_1_21>.
+
+<http://w3id.org/def/guia#Semana_1> rdf:type :EvaluationTrial ;
+    guide:trialType "Actividades de Evaluación Progresiva en Aula"@en .
+
+<http://w3id.org/def/guia#AEP> rdf:type :EvaluationTrial ;
+    sch:name "Actividades de Evaluación Progresiva"@es ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/#Semana_1>,
+                          <http://guia-mad-bench.es/data/#Semana_2>.
+
+<http://w3id.org/def/guia#EG> rdf:type :EvaluationTrial ;
+    sch:name "Examen Global"@es .

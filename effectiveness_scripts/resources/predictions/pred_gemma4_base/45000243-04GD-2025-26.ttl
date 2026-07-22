@@ -1,0 +1,167 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+# --- Degree and University Center ---
+
+:degree_04GD rdf:type guide:BachelorDegree ;
+    sch:name "04GD - Doble Grado En Ingenieria Civil Y Territorial Y En Ade" ;
+    guide:degreeCode "04GD" .
+
+:ets_caminos rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ing. de Caminos Canales y P." .
+
+:degree_04GD guide:offers :ets_caminos . # Note: ontology says UniversityCenter offers Degree, so:
+:ets_caminos guide:offers :degree_04GD .
+
+# --- Course ---
+
+:course_45000243 rdf:type guide:Course ;
+    sch:name "Transportes" ;
+    sch:courseCode 45000243 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Séptimo semestre" .
+
+# --- Course Guide ---
+
+:course_guide_45000243 rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance :course_45000243 ;
+    sch:name "Guía de Aprendizaje - Transportes" ;
+    sch:inLanguage "Castellano" ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2.2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:totalHours "135" ; # Calculated based on ECTS (4.5 * 30)
+    sch:instructor :lecturer_maria_eugenia ;
+    sch:director :lecturer_maria_eugenia ;
+    guide:hasSyllabus :syllabus_transportes ;
+    guide:hasCompetency :comp_CM40_2, :comp_CM41_1, :comp_CT1 ;
+    guide:hasLearningResult :lr_RA03, :lr_RA137, :lr_RA100 ;
+    guide:hasEvaluation :eval_system_transportes ;
+    guide:hasDidacticResource :res_biblio_1, :res_web_1 ;
+    sch:courseSchedule :schedule_transportes .
+
+# --- Lecturers ---
+
+:lecturer_natalia rdf:type guide:Lecturer ;
+    sch:name "Natalia Sobrino Vazquez" ;
+    sch:email "natalia.sobrino@upm.es" ;
+    guide:office "TRANSyT" ;
+    guide:tutorshipsSchedule "M - 10:00 - 11:00, X - 10:00 - 11:00" .
+
+:lecturer_aniceto rdf:type guide:Lecturer ;
+    sch:name "Anicert Zaragoza Ramirez" ;
+    sch:email "aniceto.zaragoza@upm.es" ;
+    guide:office "transportes" ;
+    guide:tutorshipsSchedule "L - 16:00 - 19:00, V - 16:00 - 19:00" .
+
+:lecturer_maria_eugenia rdf:type guide:Lecturer ;
+    sch:name "Maria Eugenia Lopez Lambas" ;
+    sch:email "mariaeugenia.lopez@upm.es" ;
+    guide:office "transyt" ;
+    guide:tutorshipsSchedule "L - 09:00 - 11:00, X - 09:00 - 11:00" .
+
+# --- Competencies ---
+
+:comp_CM40_2 rdf:type guide:Competency ;
+    guide:competencyCode "04GC. CM40.2" ;
+    guide:competencyDescription "Comprensión del fenómeno urbano y sus factores determinantes (historia, economía, actividad humana, movilidad)." .
+
+:comp_CM41_1 rdf:type guide:Competency ;
+    guide:competencyCode "04GC. CM41.1" ;
+    guide:competencyDescription "Conocimiento de la influencia de las infraestructuras en la ordenación del territorio..." .
+
+:comp_CT1 rdf:type guide:Competency ;
+    guide:competencyCode "04GC. CT1" ;
+    guide:compet．description "Compromiso y capacidad para aplicar los principios de sostenibilidad en las actuaciones profesionales." .
+
+# --- Learning Results ---
+
+:lr_RA03 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA180 - RA03" ;
+    guide:learningResultDescription "Trabajar de forma autónoma y con iniciativa personal" .
+
+:lr_RA137 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA137" ;
+    guide:learningResultDescription "Interioriza los principios de deontología profesional de ingeniería civil." .
+
+:lr_RA100 rdf:type guide:Learning .
+
+# --- Syllabus ---
+
+:syllabus_transportes rdf:type guide:Syllabus ;
+    guide:hasItem :item_tema1, :item_tema2, :item_tema3, :item_tema4, :item_tema5, :item_tema6, :item_tema7, :item_tema8, :item_tema9, :item_tema10, :item_tema11, :item_tema12 .
+
+:item_tema1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Tema 1. Características y funciones." .
+
+:item_tema2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Tema 2. Características de los modos de transporte." .
+
+# --- Evaluation System ---
+
+:eval_system_transportes rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación continua mediante tests progresivos y exámenes parciales/finales." ;
+    guide:hasEvaluationTrial :trial_test_tema1, :trial_examen_parcial, :trial_examen_final .
+
+:trial_test_tema1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación progresiva" ;
+    guide:gradePercentage "2.3%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialType "Test" ;
+    guide:trialMode "Presencial" .
+
+:trial_examen_parcial rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación progresiva" ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" .
+
+:trial_examen_final rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" .
+
+# --- Schedule ---
+
+:schedule_transportes rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week2, :event_week8, :event_week17 .
+
+:event_week2 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 2" ;
+    guide:eventIndex 2 ;
+    guide:hasActivity :act_leccion_magistral_tema1 ;
+    guide:hasActivity :act_practicas_tema1 .
+
+:act_leccion_magistral_tema1 rdf:type guide:Activity ;
+    guide:activityDescription "Lección Magistral Tema 1" ;
+    guide:activityFormat "LM" ;
+    guide:attendanceType "Presencial" ;
+    guide:activityDuration 2.1666 . # 02:10 in decimal hours
+
+:act_practicas_tema1 rdf:type guide:Activity ;
+    guide:activityDescription "Prácticas Tema 1" ;
+    guide:activityFormat "AC" ;
+    guide:attendanceType "Presencial" ;
+    guide:activityDuration 1.3333 . # 01:20 in decimal hours
+
+# --- Didactic Resources ---
+
+:res_biblio_1 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Introducción a la ingeniería del Transporte: Teoría y práctica." ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Truyols Mateu, Sebastián et. al. (2009). Editorial Delta." .
+
+:res_web_1 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "ELTIS (European Local Transport Information System)" ;
+    guide:bibliographyType "Recurso Web" ;
+    guide:bibliographyDescription "www.eltis.org" .

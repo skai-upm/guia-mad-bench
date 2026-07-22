@@ -1,0 +1,413 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix sch: <https://schema.org/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> rdf:type guide:CourseGuide ;
+    dct:title "Guía de Aprendizaje"@en ;
+    sch:name "Fisiología De Sistemas" ;
+    dc:description "Esta asignatura estudia las características específicas y el funcionamiento de los sistemas implicados en la dinámica funcional del cuerpo humano."@es .
+
+<http://guia-mad-bench.es/data/degree/09BM> rdf:type guide:BachelorDegree ;
+    dct:title "Grado En Ingenieria Biomedica"@en ;
+    guide:degreeCode "09BM"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course/GA_09BM_95000317> rdf:type guide:Course ;
+    sch:name "Fisiología De Sistemas" ;
+    sch:courseCode 95000317^^xsd:integer .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasCourse <http://guia-mad-bench.es/data/course/GA_09BM_95000317> ;
+    sch:courseInstance "GA_09BM_95000317"^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer/Milagros_Ramos_Gomez> rdf:type guide:Lecturer ;
+    dct:title "Milagros Ramos Gomez"@en ;
+    sch:email <mailto:milagros.ramos@upm.es> ;
+    guide:office "A035"^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer/Daniel_Gonzalez_Nieto> rdf:type guide:Lecturer ;
+    dct:title "Daniel Gonzalez Nieto"@en ;
+    sch:email <mailto:daniel.gonzalez.nieto@upm.es> ;
+    guide:office "A-035"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CE12> rdf:type guide:Competency ;
+    dct:title "Saber buscar, obtener e interpretar la información de las principales bases de datos biomédicas y bibliográficos"@en ;
+    guide:competencyCode "CE12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CE49> rdf:type guide:Competency ;
+    dct:title "Conocer los sistemas fisiológicos y órganos humanos tanto a nivel estructural como funcional y sus patologías más relevantes"@en ;
+    guide:competencyCode "CE49"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CE52> rdf:type guide:Competency ;
+    dct:title "Comprender el funcionamiento de los diferentes órganos y sistemas del cuerpo humano y la regulación de sus funciones para el mantenimiento de la homeostasis"@en ;
+    guide:competencyCode "CE52"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CE53> rdf:type guide:Competency ;
+    dct:title "Conocer y comprender las modificaciones fisiológicas y morfológicas que los procesos patológicos más relevantes ocasionan en el organismo humano"@en ;
+    guide:competencyCode "CE53"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CE54> rdf:type guide:Competency ;
+    dct:title "Aplicar de manera fundamentada, crítica y argumentada los principios fisiológicos para contribuir al desarrollo tecnológico en el ámbito de la salud"@en ;
+    guide:competencyCode "CE54"^^xsd:string .
+
+<http://guia-mad-bench.es/data/learningResult/RA96> rdf:type guide:LearningResult ;
+    dct:title "Identificar las funciones de los distintos sistemas fisiológicos y los mecanismos biológicos que permiten el mantenimiento de la homeostasis"@en ;
+    guide:learningResultCode "RA96"^^xsd:string .
+
+<http://guia-mad-bench.es/data/learningResult/RA95> rdf:type guide:LearningResult ;
+    dct:title "Conocimientos básicos sobre el funcionamiento e interacción de los diferentes sistemas característicos de la fisiología humana"@en ;
+    guide:learningResultCode "RA95"^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus/GA_09BM_95000317> rdf:type guide:Syllabus ;
+    dct:title "Temario de la asignatura"@en .
+
+<http://guia-mad-bench.es/data/learningResult/RA96> guide:hasLearningResult <http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> ;
+    dct:title "Identificar las funciones de los distintos sistemas fisiológicos y los mecanismos biológicos que permiten el mantenimiento de la homeostasis"@en .
+
+<http://guia-mad-bench.es/data/syllabusItem/Introduccion_a_la_fisiologia> rdf:type guide:SyllabusItem ;
+    dct:title "1. Introducción a la fisiología"^^xsd:string ;
+    guide:syllabusDescription "Relación entre estructura y función, Regulación y homeostasis"@en .
+
+<http://guia-mad-bench.es/data/schedule/GA_09BM_95000317> rdf:type sch:EventSchedule ;
+    dct:title "Cronograma de la asignatura"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> rdf:type guide:EvaluationSystem ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/syllabusItem/Semestre_1> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/evaluationTrial/Eval_Trial_1P> .
+
+<http://guia-mad-bench.es/data/scheduleEvent/Semestre_1_Actividad> rdf:type guide:ScheduleEvent ;
+    dct:title "Introducción/Metabolismo"^^xsd:string ;
+    sch:eventIndex 1^^xsd:integer ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://guia-mad-bench.es/data/activity/LM_Introduccion_Metabolismo> rdf:type guide:Activity ;
+    sch:name "Introducción/Metabolismo"^^xsd:string ;
+    dct:title "Lección Magistral"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://guia-mad-bench.es/data/activity/LM_Introduccion_Metabolismo> guide:hasActivity <http://guia-mad-bench.es/data/scheduleEvent/Semestre_1_Actividad> ;
+    sch:name "Introducción/Metabolismo"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluationTrial/Eval_Trial_1P> rdf:type guide:EvaluationTrial ;
+    dct:title "Examen primer parcial (1P)"^^xsd:string ;
+    guide:trialType "EX: Técnica del tipo Examen Escrito"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluationTrial/Eval_Trial_1P> ;
+    dct:title "Examen primer parcial (1P)"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/resource/Tortora_Principles_of_human_phisiology> rdf:type guide:DidacticResource ;
+    sch:name "Principles of human phisiology"^^xsd:string ;
+    dct:title "Tortora, G.H. & Evans, R.L. (2009). Principles of human phisiology"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasDidacticResource <http://guia-mad-bench.es/data/resource/Tortora_Principles_of_human_phisiology> ;
+    dct:title "Tortora, G.H. & Evans, R.L. (2009). Principles of human phisiology"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasCompetency <http://guia-mad-bench.es/data/competency/CE12> ;
+    dct:title "Saber buscar, obtener e interpretar la información de las principales bases de datos biomédicas y bibliográficos"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasCompetency <http://guia-mad-bench.es/data/competency/CE49> ;
+    dct:title "Conocer los sistemas fisiológicos y órganos humanos tanto a nivel estructural como funcional y sus patologías más relevantes"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasCompetency <http://guia-mad-bench.es/data/competency/CE52> ;
+    dct:title "Comprender el funcionamiento de los diferentes órganos y sistemas del cuerpo humano y la regulación de sus funciones para el mantenimiento de la homeostasis"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasCompetency <http://guia-mad-bench.es/data/competency/CE53> ;
+    dct:title "Conocer y comprender las modificaciones fisiológicas y morfológicas que los procesos patológicos más relevantes ocasionan en el organismo humano"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasCompetency <http://guia-mad-bench.es/data/competency/CE54> ;
+    dct:title "Aplicar de manera fundamentada, crítica y argumentada los principios fisiológicos para contribuir al desarrollo tecnológico en el ámbito de la salud"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasLearningResult <http://guia-mad-bench.es/data/learningResult/RA96> ;
+    dct:title "Identificar las funciones de los distintos sistemas fisiológicos y los mecanismos biológicos que permiten el mantenimiento de la homeostasis"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasLearningResult <http://guia-mad-bench.es/data/learningResult/RA95> ;
+    dct:title "Conocimientos básicos sobre el funcionamiento e interacción de los diferentes sistemas característicos de la fisiología humana"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus/GA_09BM_95000317> ;
+    dct:title "Temario de la asignatura"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> sch:courseSchedule <http://guia-mad-bench.es/data/schedule/GA_09BM_95000317> ;
+    dct:title "Cronograma de la asignatura"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluationTrial/Eval_Trial_Global> rdf:type guide:EvaluationTrial ;
+    sch:name "Examen Global (1P+2P)"^^xsd:string ;
+    guide:trialType "EX: Técnica del tipo Examen Escrito"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluationTrial/Eval_Trial_Global> ;
+    dct:title "Examen Global (1P+2P)"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct:title "Sistema de evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_09BM_95000317> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/Evaluation_System_GA_09BM_95000317> ;
+    dct

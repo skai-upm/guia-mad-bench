@@ -1,0 +1,155 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Information
+:Course_45000246
+    rdf:type guide:Course ;
+    sch:courseCode "45000246"^^xsd:integer ;
+    sch:name "Economía Mundial, Española y Regional" ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Séptimo semestre" ;
+    sch:hasCourseInstance :CourseGuide_45000246 .
+
+:CourseGuide_45000246
+    rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Economía Mundial, Española y Regional" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:numberOfCredits 3.0 ;
+    guide:inLanguage "Castellano" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:instructor :Lecturer_JoseBalibrea ;
+    sch:director :Lecturer_JoseBalibrea ;
+    guide:hasSyllabus :Syllabus_45000246 ;
+    guide:hasCompetency :Comp_30AD_E15, :Comp_30AD_G01 ;
+    guide:hasLearningResult :LR_RA185, :LR_RA184 ;
+    guide:hasEvaluation :EvalSystem_45000246 ;
+    guide:hasDidacticResource :Res_MuñozCidad, :Res_Moodle ;
+    sch:description "La asignatura es una introducción a la Economía Aplicada, proporcionando instrumentos para la medición y la interpretación de la realidad económica." .
+
+# Degree and University Center
+:Degree_04GD
+    rdf:type guide:Degree ;
+    sch:name "04GD - Doble Grado En Ingenieria Civil Y Territorial Y En Ade" ;
+    guide:degreeCode "04GD" ;
+    guide:hasCourse :Course_45000246 .
+
+:UnivCenter_ETS
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ing. De Caminos Canales Y P." ;
+    guide:offers :Degree_04GD .
+
+# Lecturers
+:Lecturer_JoseBalibrea
+    rdf:type guide:Lecturer ;
+    sch:name "Jose Balibrea Iniesta" ;
+    sch:email "jose.balibrea@upm.es" ;
+    guide:office "6ª planta" ;
+    guide:tutorshipsSchedule "X - 08:00 - 12:00" .
+
+:Lecturer_AntonioSanchez
+    rdf:type guide:Lecturer ;
+    sch:name "Antonio Sanchez Soliño" ;
+    sch:email "antonio.sanchezso@upm.es" ;
+    guide:office "6ª planta" ;
+    guide:tutorshipsSchedule "X - 16:00 - 20:00, J - 16:00 - 20:00" .
+
+# Competencies
+:Comp_30AD_E15
+    rdf:type guide:Competency ;
+    guide:competencyCode "30AD. E15" ;
+    guide:competencyDescription "Entender el funcionamiento de los mercados financieros nacionales e internacionales." .
+
+:Comp_30AD_G01
+    rdf:type guide:Competency ;
+    guide:competencyCode "30AD. G01" ;
+    guide:competencyDescription "Que los estudiantes sean capaces de comprender, interpretar, sintetizar y evaluar de forma crítica información proveniente de fuentes diversas..." .
+
+# Learning Results
+:LR_RA185
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA185 - RA2" ;
+    guide:learningResultDescription "Entender los fundamentos de los intercambios comerciales y del marco monetario que los condiciona..." .
+
+:LR_RA184
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA184 - RA1" ;
+    guide:learningResultDescription "Entender el funcionamiento de una economía de mercado tanto a nivel microeconómico como macroeconómico." .
+
+# Syllabus
+:Syllabus_45000246
+    rdf:type guide:Syllabus ;
+    guide:hasItem :SyllabusItem_Topic1, :SyllabusItem_Topic2, :SyllabusItem_Topic3 .
+
+:SyllabusItem_Topic1
+    rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Operaciones y agregados económicos" ;
+    guide:itemIndex 1 .
+
+:SyllableItem_Topic2
+    rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Contabilidad Nacional" ;
+    guide:itemIndex 2 .
+
+# Evaluation System and Trials
+:EvalSystem_45000246
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "EVALUACIÓN CONTINUA (EVALUACIÓN PROGRESIVA/DISTRIBUIDA)" ;
+    guide:hasEvaluationTrial :Trial_Asistencia, :Trial_TrabajoIndividual, :Trial_ExamenFinal .
+
+:Trial_Asistencia
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "OT: Otras técnicas evaluativas" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "/ 10" ;
+    guide:trialMode "Presencial" .
+
+:Trial_TrabajoIndividual
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "PI: Técnica del tipo Presentación Individual" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "6 / 10" ;
+    guide:trialMode "Presencial" .
+
+:Trial_ExamenFinal
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "EX: Técnica del tipo Examen Escrito" ;
+    guide:gradePercentage "65%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialMode "Presencial" .
+
+# Schedule and Activities
+:Schedule_45000246
+    rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week9, :Event_Week12 .
+
+:Event_Week9
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "9" ;
+    guide:hasActivity :Activity_Tema1 .
+
+:Activity_Tema1
+    rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1" ;
+    guide:activityDuration 1.25 ;
+    guide:activityFormat "Lección Magistral" .
+
+# Didactic Resources
+:Res_MuñozCidad
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Muñoz Cidad, C., Iraizoz, B., y Rapún, M. (2016): Introducción a la economía aplicada" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_Moodle
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Transparencias y material didáctico en Moodle" ;
+    guide:bibliographyType "Recursos web" .
+
+# Required Knowledge
+:RequiredKnowledge_45000246
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Microeconomía, Ampliación De Macroeconomía, matemáticas, análisis gráfico y manejo de Excel." .

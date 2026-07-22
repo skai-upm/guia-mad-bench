@@ -1,0 +1,241 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+:degree_agroambiental a guide:BachelorDegree ;
+    sch:name "Grado En Ingenieria Agroambiental" ;
+    guide:degreeCode "02IA" .
+
+:etsi_agronomica a guide:UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas" ;
+    guide:offers :degree_agroambiental .
+
+# Course
+:course_ecologia a guide:Course ;
+    sch:name "Ecologia" ;
+    sch:courseCode 25001210 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Segundo semestre" ;
+    sch:hasCourseInstance :guide_ecologia .
+
+# Course Guide
+:guide_ecologia a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Ecologia" ;
+    sch:hasCourseInstance :course_ecologia ;
+    sch:inLanguage "Castellano" ;
+    guide:numberOfCredits 6.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:hasSyllabus :syllabus_ecologia ;
+    guide:hasCompetency :comp_ce14, :comp_ce47, :comp_cg1, :comp_cg12, :comp_cg6, :comp_cg7 ;
+    guide:hasLearningResult :lr_ra80, :lr_ra81, :lr_ra82, :lr_ra83, :lr_ra84, :lr_ra85, :lr_ra86 ;
+    guide:hasEvaluation :eval_system_ecologia ;
+    guide:hasDidacticResource :res_smith_ecology, :res_odum_ecology, :res_begon_ecology, :res_gotelli_ecology, :res_pinol_ecology, :res_molles_ecology, :res_lambers_ecology ;
+    sch:instructor :lecturer_santiago, :lecturer_daniel .
+
+# Lecturers
+:lecturer_santiago a guide:Lecturer ;
+    sch:name "Santiago Moreno Vazquez" ;
+    sch:email "santiago.moreno@upm.es" ;
+    guide:office "Banco Semillas" ;
+    guide:tutorshipsSchedule "Sin horario. Las tutorías se concertarán mediante mensaje de correo-e" .
+
+:lecturer_daniel a guide:Lecturer ;
+    sch:name "Daniel De La Torre Llorente" ;
+    sch:email "daniel.delatorre@upm.es" ;
+    guide:office "Edificio A" ;
+    guide:tutorshipsSchedule "Sin horario. Las tutorías se concertarán mediante mensaje de correo-e." .
+
+# Competencies
+:comp_ce14 a guide:Competency ;
+    guide:competencyCode "CE14" ;
+    guide:competencyDescription "Conocimiento de los conceptos básicos de Ecología, sus objetivos, metodología y modo de<0xC2>cdudar el biotopo, la biocenosis y sus relaciones." .
+
+:comp_ce47 a guide:Competency ;
+    guide:competencyCode "CE47" ;
+    guide:competencyDescription "Capacitar para el análisis y conservación de la biodiversidad y describir los métodos de caracterización de la gestión de recursos biológicos en los agroecosistemas." .
+
+:comp_cg1 a guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de estudio..." .
+
+:comp_cg12 a guide:Competency ;
+    guide:competencyCode "CG12" ;
+    guide:competencyDescription "Liderazgo y toma de decisiones" .
+
+:comp_cg6 a guide:Competency ;
+    guide:competencyCode "CG6" ;
+    guide:competencyDescription "Transmitir con claridad y rigor información, ideas, problemas y soluciones de forma oral y escrita" .
+
+:comp_cg7 a guide:Competency ;
+    guide:competencyCode "CG7" ;
+    guide:competencyDescription "Compromiso ético y profesional y respeto por el medio ambiente y la diversidad" .
+
+# Learning Results
+:lr_ra80 a guide:LearningResult ;
+    guide:learningResultCode "RA80" ;
+    guide:learningResultDescription "Conocimientos sobre el medio físico y los componentes biológicos de los ecosistemas." .
+
+:lr_ra83 a guide:LearningResult ;
+    guide:learningResultCode "RA83" ;
+    guide:learningResultDescription "Utilizar modelos informáticos en estudio de ecosistemas." .
+
+:lr_ra84 a guide:LearningResult ;
+    guide:learningResultCode "RA84" ;
+    guide:learningResultDescription "Conocimiento teórico y práctico de espacios naturales." .
+
+:lr_ra85 a guide:LearningResult ;
+    guide:learningResultCode "RA85" ;
+    guide:learningResultDescription "Conocimiento y estudio de los biomas terrestres y acuáticos." .
+
+:lr_ra86 a guide:LearningResult ;
+    guide:learningResultCode "RA86" ;
+    guide:learningResultDescription "Repercusión de la actuación humana en los ecosistemas naturales." .
+
+:lr_ra81 a guide:LearningResult ;
+    guide:learningResultCode "RA81" ;
+    guide:learningResultDescription "Estudiar de modo teórico y práctico la evolución de poblaciones." .
+
+:lr_ra82 a guide:LearningResult ;
+    guide:learningResultCode "RA82" ;
+    guide:learningResultDescription "Estudiar de modo teórico y práctico la evolución de comunidades." .
+
+# Syllabus
+:syllabus_ecologia a guide:Syllabus ;
+    guide:hasItem :item_topic1, :item_topic2, :item_topic3, :item_topic4, :item_topic5, :item_topic6, :item_topic7, :item_topic8, :item_topic9, :item_topic10, :item_topic11, :item_topic12, :item_topic13, :item_topic14, :item_topic15, :item_topic16 .
+
+:item_topic1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a la Ecología. Definición. Datos históricos. Conceptos básicos utilizados en Ecología." .
+
+:item_topic2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Los organismos y el medio. Recursos y condiciones del medio físico. Hábitat. Factores ambientales. Clima. Suelo. Homeostasis. Biomas de la Tierra." .
+
+:item_topic3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Población: propiedades de las poblaciones. Densidad, abundancia, estructura por edades, espacial, pirámides, curvas de supervivencia, ritmos y dispersión." .
+
+:item_topic4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Población: dinámica de poblaciones. Crecimiento exponencial y logístico. Metapoblaciones." .
+
+:item_topic5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Población: genética de poblaciones. Evolución, tipos de poblaciones, migraciones, mutaciones, selección natural y especiación." .
+
+:item_topic6 a guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Comunidad: aspectos generales. Definición, estratificación, zonación, interacciones interespecíficas." .
+
+:item_topic7 a guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Comunidad: competencia. Modelo Lotka-Volterra. Exclusión competitiva." .
+
+:item_topic8 a guide:SyllabusItem ;
+    guide:itemIndex 8 ;
+    guide:syllabusDescription "Comunidad: mutualismo. Facultativo, obligatorio, simbiosis, tipos (defensivo, trófico, dispersivo)." .
+
+:item_topic9 a guide:SyllabusItem ;
+    guide:itemIndex 9 ;
+    guide:syllabusDescription "Comunidad: depredación. Relación depredador-presa, mimetismo, aposematismo, modelos Lotka-Volterra." .
+
+:item_topic10 a guide:SyllabusItem ;
+    guide:itemIndex 10 ;
+    guide:syllabusDescription "Comunidad: estructura. Formas biológicas (Raunkier), índices de biodiversidad (Shannon, Simpson, etc.)." .
+
+:item_topic11 a guide:SyllabusItem ;
+    guide:itemIndex 11 ;
+    guide:syllabusDescription "Ecosistemas: aspectos generales. Biotopo y biocenosis. Relaciones tróficas. Pirámides ecológicas." .
+
+:item_topic12 a guide:SyllabusItem ;
+    guide:itemIndex 12 ;
+    guide:syllabusDescription "Ecosistemas: Sucesión ecológica. Primaria, secundaria, clímax, principios de facilitación, tolerancia e inhibición." .
+
+:item_topic13 a guide:SyllabusItem ;
+    guide:imIndex 13 ;
+    guide:syllabusDescription "Ecosistemas: productividad. Tipos, medición, flujo de energía y tasas de renovación." .
+
+:item_topic14 a guide:SyllabusItem ;
+    guide:itemIndex 14 ;
+    guide:syllabusDescription "Ecosistema: ciclo de materiales. Carbono, nitrógeno, fósforo." .
+
+:item_topic15 a guide:SyllabusItem ;
+    guide:itemIndex 15 ;
+    guide:syllabusDescription "Impacto del hombre en el medio: la agricultura. Impactos ambientales y actuaciones agroambientales." .
+
+:item_topic16 a guide:SyllabusItem ;
+    guide:itemIndex 16 ;
+    guide:syllabusDescription "Mantenimiento de la biodiversidad. Especies amenazadas, extinción, conservación in situ y ex situ, parques nacionales." .
+
+# Evaluation System
+:eval_system_ecologia a guide:EvaluationSystem ;
+    guide:evaluationDescription "La calificación será la media ponderada de informes de prácticas, presentación de trabajos cooperativos, examen escrito de contenidos de prácticas y exámenes escritos de contenidos teóricos." ;
+    guide:hasEvaluationTrial :trial_p01, :trial_exam_prog, :trial_exam_global .
+
+:trial_p01 a guide:EvaluationTrial ;
+    guide:trialType "Informe práctica" ;
+    guide:trialMode "No Presencial" ;
+    guide:gradePercentage "4%" ;
+    guide:minimumScore "5/10" .
+
+:trial_exam_prog a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "32.5%" ;
+    guide:minimumScore "5/10" .
+
+:trial_exam_global a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "65%" ;
+    guide:minimumScore "5/10" .
+
+# Didactic Resources
+:res_smith_ecology a guide:DidacticResource ;
+    guide:bibliographyTitle "Ecología" ;
+    guide:bibliographyDescription "Autor: R.L. Smith y T.M. Smith. Editorial: Addison Wesley. Sexta Edición." ;
+    guide:bibliographyType "Libro de texto general" .
+
+:res_odum_ecology a guide:DidacticResource ;
+    guide:bibliographyTitle "Fundamentos de Ecología" ;
+    guide:bibliographyDescription "Autor: E. P. Odum y G. W. Warret. Editorial Thomson 2006." ;
+    guide:bibliographyType "Libro de texto general" .
+
+:res_begon_ecology a guide:DidacticResource ;
+    guide:bibliographyTitle "Ecología. Individuos, Poblaciones y Comunidades" ;
+    guide:bibliographyDescription "Autor: M. Begon, J.L. Harper y C.R. Townsend. Editorial Omega 1999." ;
+    guide:bibliographyType "Libro de texto general" .
+
+:res_gotelli_ecology a guide:DidacticResource ;
+    guide:bibliographyTitle "A Primer of Ecology" ;
+    guide:bibliographyDescription "Autor: N.J. Gotelli. Cuarta Edición. Editorial: Sinauer Associates." ;
+    guide:bibliographyType "Libro de texto recomendado" .
+
+:res_pinol_ecology a guide:DidacticResource ;
+    guide:bibliographyTitle "Ecología con números" ;
+    guide:bibliographyDescription "Autor: J. Piñol y J. Martínez-Vilalta. Editorial: Lynx 2006." ;
+    guide:bibliographyType "Libro de ejercicios y problemas" .
+
+:res_molles_ecology a guide:DidacticResource ;
+    guide:bibliographyTitle "Ecology. Concepts and applications." ;
+    guide:bibliographyDescription "Autor: M.C. Molles Jr. y A.A. Sher. Editorial: Mc Graw-Hill 2019." ;
+    guide:bibliographyType "Libro de texto general" .
+
+:res_lambers_ecology a guide:DidacticResource ;
+    guide:bibliographyTitle "Plant physiological ecology" ;
+    guide:bibliographyDescription "Autor: H.Lambers y R. S. Oliveira. Tercera Edición. Editorial: Springer 2019." ;
+    guide:bibliographyType "Texto de fisiología vegetal" .
+
+# Required Knowledge
+:req_knowledge_ecologia a guide:RequiredKnowledge ;
+    guide:previousCourses "Calculo De Varias Variables, Calculo Diferencial E Integral, Edafologia, Biologia, Climatologia, Algebra Lineal Y Aplicaciones" .

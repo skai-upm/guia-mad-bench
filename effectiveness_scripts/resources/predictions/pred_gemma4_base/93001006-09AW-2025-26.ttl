@@ -1,0 +1,186 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Degree and University Center
+:master_ciberseguridad rdf:type guide:MasterDegree ;
+    sch:name "09AW - Master Universitario en Ciberseguridad" ;
+    guide:degreeCode "09AW" .
+
+:ets_telecomunicacion rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros De Telecomunicacion" .
+
+:ets_telecomunicacion guide:offers :master_ciberseguridad .
+
+# Course
+:servicios_seguridad_red rdf:type guide:Course ;
+    sch:name "93001006 - Servicios de Seguridad en Red" ;
+    sch:courseCode 93001006 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Primer semestre" ;
+    sch:numberOfCredits 3.0 .
+
+# Course Guide
+:guia_servicios_seguridad_red rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Servicios De Seguridad En Red" ;
+    sch:hasCourseInstance :servicios_seguridad_red ;
+    sch:instructor :diego_rivera_pinto ;
+    guide:hasSyllabus :syllabus_servicios_seguridad_red ;
+    guide:hasEvaluation :eval_system_servicios_seguridad_red ;
+    guide:hasCompetency :ce04, :ce05, :cg03 ;
+    guide:hasLearningResult :ra10 ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2:\ 2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:numberOfCredits 3.0 ;
+    guide:totalHours "78.0" ; # Based on 26-27 hours per ECTS provided in text
+    sch:activitiesWorkload "Estimación de 26-27 horas por crédito ECTS" .
+
+# Faculty
+:diego_rivera_pinto rdf:type guide:Lecturer ;
+    sch:name "Diego Rivera Pinto" ;
+    sch:email "diego.rivera@upm.es" ;
+    guide:office "C-216" ;
+    guide:tutorshipsSchedule "Sin horario. Concertar cita por correo electrónico." .
+
+:maria_socorro_bernardos rdf:type guide:Lecturer ;
+    sch:name "María Del Socorro Bernardos Galindo" ;
+    sch:email "sbernardos@fi.upm.es" .
+
+:hugo_parada_gelvez rdf:type guide:Lecturer ;
+    sch:name "Hugo Alexer Parada Gelvez" ;
+    sch:email "hugoalexer.parada@upm.es" .
+
+# Competencies
+:ce04 rdf:type guide:Competency ;
+    guide:competencyCode "CE04" ;
+    guide:competencyDescription "Capacidad para establecer una categorización de servicios de ciberseguridad para proteger a las infraestructuras conectadas en red." .
+
+:ce05 rdf:type guide:Competency ;
+    guide:competencyCode "CE05" ;
+    guide:competencyDescription "Capacidad de analizar y diseñar servicios de seguridad de control de acceso, protección de la información en tránsito y protección perimetral" .
+
+:cg03 rdf:type guide:Competency ;
+    guide:competencyCode "CG03" ;
+    guide:competencyDescription "Dotar al alumno de la capacidad de diseñar e implantar procedimientos de protección de la información asociados con los sistemas de información, las redes y comunicaciones telemáticas y los servicios de Internet, así como en la protección contra el fraude utilizando estos sistemas" .
+
+# Learning Results
+:ra10 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA10" ;
+    guide:learningResultDescription "Analizar y seleccionar los mecanismos adecuados para proteger las comunicaciones" .
+
+# Syllabus
+:syllabus_servicios_seguridad_red rdf:type guide:Syllabus ;
+    guide:hasItem :item_tema1, :item_tema2, :item_tema3, :item_tema4, :item_tema5, :item_tema6 .
+
+:item_tema1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Protección de redes telemáticas y sistemas. Infraestructuras de seguridad." .
+
+:item_tema2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Redes Privadas Virtuales (VPN)" .
+
+:item_tema3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Seguridad en nivel de enlace, redes móviles y WiFi" .
+
+:item_tema4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Seguridad en nivel de red: IPSEC" .
+
+:item_tema5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Seguridad en nivel de transporte: SSL/TLS" .
+
+:item_tema6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Seguridad en nivel de aplicación: SRTP, S/MIME, PGP" .
+
+# Schedule and Activities
+:schedule_servicios_seguridad_red rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week2, :event_week3, :event_week4 .
+
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    sch:hasActivity :act_leccion_tema1, :act_leccion_tema2, :act_practicas_lab, :act_leccion_tema3 .
+
+:event_week2 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semenda 2" ;
+    guide:eventIndex 2 ;
+    sch:hasActivity :act_leccion_tema3_v2, :act_leccion_tema4, :act_leccion_tema5, :act_practicas_lab_v2 .
+
+:event_week3 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 3" ;
+    guide:eventIndex 3 ;
+    sch:hasActivity :act_practicas_lab_v3, :act_leccion_tema6 .
+
+:event_week4 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 4" ;
+    guide:eventIndex 4 ;
+    sch:hasActivity :act_eval_teoria, :act_eval_memorias, :act_eval_examen_practicas .
+
+# Activities
+:act_leccion_tema1 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Presencial" .
+
+:act_practicas_lab rdf:type guide:Activity ;
+    guide:activityDescription "Prácticas de Laboratorio" ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:activityDuration 3.0 ;
+    guide:attendanceType "Presencial" .
+
+:act_eval_teoria rdf:type guide:Activity ;
+    guide:activityDescription "Evaluación (examen teoría)" ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "Presencial" .
+
+# Evaluation System
+:eval_system_servicios_seguridad_red rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación progresiva y global." ;
+    guide:hasEvaluationTrial :trial_examen_teoria, :trial_memorias, :trial_examen_practicas .
+
+:trial_examen_teoria rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen" ;
+    guide:trialDescription "Evaluación (examen teoría)" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "60%" ;
+    guide:minimumScore "3.5 / 10" ;
+    guide:trialWeek "Semana 4" ;
+    involvesCompetency :cg03, :ce04, :ce05 .
+
+:trial_memorias rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo en Grupo" ;
+    guide:trialDescription "Evaluación de prácticas (memorias)" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "3.5 / 10" ;
+    guide:trialWeek "Semana 4" ;
+    involvesCompetency :cg03, :ce04, :ce05 .
+
+:trial_examen_practicas rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:trialDescription "Evaluación de prácticas (examen)" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "3.5 / 10" ;
+    guide:trialWeek "Semana 4" ;
+    involvesCompetency :cg03, :ce04, :ce05 .
+
+# Didactic Resources
+:recursos_moodle rdf:type guide:DidacticResource ;
+    sch:name "Presentaciones de los temas, enunciados de prácticas, software y material complementario" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Disponibles en la página Moodle de la asignatura." .
+
+:guia_servicios_seguridad_red guide:hasDidacticResource :recursos_moodle .

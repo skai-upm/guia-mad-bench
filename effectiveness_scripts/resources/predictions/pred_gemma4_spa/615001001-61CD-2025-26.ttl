@@ -1,0 +1,153 @@
+@prefix data: <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Information
+data:Course_615001001 a guide:Course ;
+    sch:name "álgebra Lineal" ;
+    sch:courseCode 615001001 ;
+    guide:courseType "Básica" ;
+    sch:numberOfCredits 6.0 ;
+    guide:semester "Primer semestre" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    sch:inLanguage "Castellano" .
+
+data:Degree_61CD a guide:Degree ;
+    sch:name "Grado En Ciencia De Datos E Inteligencia Artificial" ;
+    guide:degreeCode "61CD" ;
+    guide:hasCourse data:Course_615001001 .
+
+data:UniversityCenter_ETS a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ing. de Sistemas Informáticos" ;
+    guide:offers data:Degree_61CD .
+
+# Course Guide Instance
+data:CourseGuide_615001001 a guide:CourseGuide ;
+    sch:hasCourseInstance data:Course_615001001 ;
+    sch:instructor data:Lecturer_AnaIsabelLiasQuintero ;
+    sch:director data:Lecturer_Ana_Isabel_Lias_Quintero ;
+    guide:numberOfCredits 6.0 ;
+    guide:hasSyllabus data:Syllabus_AlgebraLineal ;
+    guide:hasCompetency data:Competency_CB01, data:Competency_CE01, data:Competency_CG06 ;
+    guide:hasLearningResult data:LearningResult_RA28_9, data:LearningResult_RA10_8, data:LearningResult_RA40 ;
+    guide:hasEvaluation data:EvaluationSystem_Progressive, data:EvaluationSystem_Global ;
+    guide:hasDidacticResource data:Resource_Lay, data:Resource_Strang, data:Resource_Moodle ;
+    sch:description "Contenido de Álgebra Lineal orientado al uso con destreza de conceptos y métodos matemáticos para ciencia de datos e IA." .
+
+# Lecturer Information
+data:Lecturer_AnaIsabelLiasQuintero a guide:Lecturer ;
+    sch:name "Ana Isabel Lias Quintero" ;
+    sch:email "anaisabel.lias@upm.es" ;
+    guide:office "200<0xC2>6" ;
+    guide:tutorshipsSchedule "Sin horario. Se publicarán en el Moodle de la asignatura y en la web de la Escuela" .
+
+# Competencies
+data:Competency_CB01 a guide:Competency ;
+    guide:competencyCode "CB01" ;
+    guide:competencyDescription "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de estudio..." .
+
+data:Competency_CE01 a guide:Competency ;
+    guide:competencyCode "CE01" ;
+    guide:competencyDescription "Capacidad para utilizar con destreza los conceptos y métodos matemáticos que subyacen a los problemas de la ciencia de datos..." .
+
+data:Competency_CG06 a guide:Competency ;
+    guide:competencyCode "CG06" ;
+    guide:competencyDescription "Identificar y utilizar las tecnologías de la información y las comunicaciones más adecuadas en el ámbito de la ingeniería." .
+
+# Learning Results
+data:LearningResult_RA28_9 a guide:LearningResult ;
+    guide:learningResultCode "RA28-9" ;
+    guide:learningResultDescription "Resolver problemas con ayuda de software matemático" .
+
+data:LearningResult_RA10_8 a guide:LearningResult ;
+    guide:learningResultCode "RA10-8" ;
+    guide:learningResultDescription "Modelizar matemáticamente problemas reales y conocer técnicas para resolverlos." .
+
+data:LearningResult_RA40 a guide:LearningResult ;
+    guide:learningResultCode "RA40" ;
+    guide:learningResultDescription "Conocer y manejar ecuaciones lineales, matrices, geometría del plano y del espacio y espacios vectoriales." .
+
+# Syllabus
+data:Syllabus_AlgebraLineal a guide:Syllabus ;
+    guide:hasItem data:SyllabusItem_Unit1, data:SyllabusItem_Unit2, data:SyllabusItem_Unit4, data:SyllabusItem_Unit5, data:SyllabusItem_Unit7 .
+
+data:SyllabusItem_Unit1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Álgebra matricial. Sistemas de ecuaciones lineales." .
+
+data:SylabusItem_Unit2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Espacios vectoriales" .
+
+# Evaluation Systems and Trials
+data:EvaluationSystem_Progressive a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación continua o progresiva mediante actividades del estudiante y exámenes parciales." ;
+    guide:hasEvaluationTrial data:Trial_Exam1, data:Trial_Exam2, data:Trial_Exam3 .
+
+data:Trial_Exam1 a guide:EvaluationTrial ;
+    guide:evaluationType "Examen" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialWeek "7" ;
+    guide:trialDescription "Examen primer parcial. Temas 1 y 2." .
+
+data:Trial_Exam2 a guide:EvaluationTrial ;
+    guide:evaluationType "Examen" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialWeek "10" ;
+    guide:trialDescription "Examen Segundo Parcial. Temas 3 y 4." .
+
+data:Trial_Exam3 a guide:EvaluationTrial ;
+    guide:evaluationType "Examen" ;
+    guide:gradePercentage "45%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialWeek "17" ;
+    guide:trialDescription "Examen Tercer parcial. Temas 5, 6 y 7." .
+
+data:EvaluationSystem_Global a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación mediante examen único relativo al programa de la asignatura." ;
+    guide:hasEvaluationTrial data:Trial_GlobalExam .
+
+data:Trial_GlobalExam a guide:EvaluationTrial ;
+    guide:evaluationType "Examen" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:trialDescription "Examen de evaluación global." .
+
+# Activities (from Schedule)
+data:Activity_Week1_Presentation a guide:Activity ;
+    guide:activityDescription "Presentación de la asignatura" ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "No presencial" ;
+    guide:activityFormat "OT: Otras actividades formativas / Evaluación" .
+
+data:Activity_Week2_GroupWork a guide:Activity ;
+    guide:activityDescription "ENTREGA Primer Trabajo en equipo" ;
+    guide:activityDuration 0.0 ;
+    guide:attendanceType "No presencial" ;
+    guide:activityFormat "TG: Trabajo en Grupo" .
+
+# Didactic Resources
+data:Resource_Lay a guide:DidacticResource ;
+    guide:bibliographyTitle "Linear Algebra and its Applications" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Básica." .
+
+data:Resource_Strang a guide:DidacticResource ;
+    guide:bibliographyTitle "Álgebra lineal y sus aplicaciones" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Básica." .
+
+data:Resource_Moodle a guide:DidacticResource ;
+    guide:bibliographyTitle "Espacio Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Sitio con Información, material de apoyo y test de autoevaluación." .
+
+# Required Knowledge
+data:RequiredKnowledge_Math a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Entender una demostración matemática sencilla, Calcular raíces de polinomios de grados 2 y 3 (Rufini), operar con matrices (suma, producto), cálculo de determinantes y resolución de sistemas de ecuaciones lineales" .

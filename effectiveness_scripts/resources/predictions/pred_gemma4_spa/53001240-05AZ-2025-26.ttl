@@ -1,0 +1,215 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+:ETS_Industriales rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Industriales" .
+
+:Master_Industrial_Engineering rdf:type guide:Degree ;
+    sch:name "Master Universitario En Ingenieria Industrial" ;
+    guide:degreeCode "05AZ" .
+
+:ETS_Industriales guide:offers :Master_Industrial_Engineering .
+
+# Course
+:Microelectronica rdf:type guide:Course ;
+    sch:name "Microelectronica" ;
+    sch:courseCode 53001240 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Tercer semestre" .
+
+:Master_Industrial_Engineering guide:hasCourse :Microelectronica .
+
+# Course Guide
+:Microelectronica_Guide rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Microelectronica" ;
+    sch:hasCourseInstance :Microelectronica ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:numberOfCredits 3.0 ;
+    sch:inLanguage "Inglés/Castellano" ;
+    guide:hasSyllabus :Syllabus_Microelectronica ;
+    guide:hasEvaluation :EvalSystem_Microelectronica ;
+    guide:hasDidacticResource :Res_CMOS_VLSI, :Res_Digital_IC, :Res_Reconfigurable_Sys, :Res_Dynamic_Reconfig, :Res_FPGA_Gokhale ;
+    sch:instructor :Alfonso_Rodriguez_Medina .
+
+# Lecturers
+:Alfonso_Rodr_Medina rdf:type guide:Lecturer ;
+    sch:name "Alfonso Rodriguez Medina" ;
+    sch:email "alfonso.rodriguezm@upm.es" ;
+    guide:office "UD Electrónica" .
+
+:Jose_Andres_Otero_Marnotes rdf:type guide:Lecturer ;
+    sch:name "Jose Andres Otero Marnotes" ;
+    sch:email "joseandres.otero@upm.es" ;
+    guide:office "UD Electrónica" .
+
+:Daniel_Vazquez_Iglesias rdf:type guide:Lecturer ;
+    sch:name "Daniel Vazquez Iglesias" ;
+    sch:email "daniel.vazquez@upm.es" ;
+    guide:office "UD Electrónica" .
+
+:Luis_Donatien_Waucquez_Jimenez rdf:type guide:Lecturer ;
+    sch:name "Luis Donatien Waucquez Jiménez" ;
+    sch:email "luis.waucquez.jimenez@upm.es" .
+
+# Competencies
+:Comp_A rdf:type guide:Competency ;
+    guide:competencyCode "(a)" ;
+    guide:competencyDescription "APLICA. Habilidad para aplicar conocimientos científicos, matemáticos y tecnológicos en sistemas relacionados con la práctica de la ingeniería." .
+
+:Comp_B rdf:type guide:Competency ;
+    guide:competencyCode "(b)" ;
+    guide:competencyDescription "EXPERIMENTA. Habilidad para diseñar y realizar experimentos así como analizar e interpretar datos." .
+
+:Comp_C rdf:type guide:Competency ;
+    guide:competencyCode "(c)" :
+    guide:competencyDescription "DISEÑA. Habilidad para diseñar un sistema, componente o proceso que alcance los requisitos deseados..." .
+
+:Comp_D rdf:type guide:Competency ;
+    guide:competencyCode "(d)" ;
+    guide:competencyDescription "TRABAJA EN EQUIPO. Habilidad para trabajar en equipos multidisciplinares." .
+
+:Comp_E rdf:type guide:Competency ;
+    guide:competencyCode "(e)" ;
+    guide:competencyDescription "RESUELVE. Habilidad para identificar, formular y resolver problemas de ingeniería." .
+
+:Comp_G rdf:type guide:Competency ;
+    guide:competencyCode "(g)" ;
+    guide:competencyDescription "COMUNICA. Habilidad para comunicar eficazmente." .
+
+:Comp_K rdf:type guide:Competency ;
+    guide:competencyCode "(k)" ;
+    guide:competencyDescription "USA HERRAMIENTAS. Habilidad para usar las técnicas, destrezas y herramientas ingenieriles modernas..." .
+
+:Comp_N rdf:type guide:Competency ;
+    guide:competencyCode "(n)" ;
+    guide:competencyDescription "IDEA. Creatividad" .
+
+# Learning Results
+:RA121 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA121" ;
+    guide:learningResultDescription "Organiza la información." .
+
+:RA123 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA123" ;
+    guide:learningResultDescription "Utiliza los recursos gráficos y los medios necesarios para comunicar de forma efectiva la información." .
+
+:RA77 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA77" ;
+    guide:learningResultDescription "Desarrollo de múltiples soluciones a un problema" .
+
+:RA125 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA125" ;
+    guide:learningResultDescription "Utiliza correctamente técnicas de comunicación oral." .
+
+:RA24 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA24" ;
+    guide:learningResultDescription "Capacidad de analizar y diseñar filtros digitales" .
+
+# Syllabus
+:Syllabus_Microelectronica rdf:type guide:Syllabus ;
+    guide:hasItem :Topic_1, :Topic_2 .
+
+:Topic_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Microelectronics: CMOS technology, advanced digital subsystems, VLSI design concepts, and IC testing." .
+
+:Topic_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Reconfigurable Computing: FPGA architectures, reconfiguration techniques, and run-time management." .
+
+# Evaluation System
+:EvalSystem_Microelectronica rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "The evaluation of the subject will consist of 20% from a homework project on CMOS technology, 20% from a homework project on Advanced digital modules, and 60% from the final written exam." ;
+    guide:hasEvaluationTrial :Trial_HW1, :Trial_HW2, :Trial_Exam .
+
+:Trial_HW1 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Homework" ;
+    guide:trialWeek "3" ;
+    guide:gradePercentage "20%" ;
+    guide:evaluationDuration "10:00" ;
+    guide:trialMode "No Presencial" ;
+    guide:involvesCompetency :Comp_A, :Comp_B, :Comp_C, :Comp_D, :Comp_E, :Comp_G, :Comp_K, :Comp_N .
+
+:Trial_HW2 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Homework" ;
+    guide:trialWeek "5" ;
+    guide:gradePercentage "20%" ;
+    guide:evaluationDuration "10:00" ;
+    guide:trialMode "No Presencial" ;
+    guide:involvesCompetency :Comp_A, :Comp_B, :Comp_C, :Comp_D, :Comp_E, :Comp_G, :Comp_K, :Comp_N .
+
+:Trial_Exam rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialWeek "17" ;
+    guide:gradePercentage "60%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :Comp_E, :Comp_G, :Comp_N .
+
+# Schedule and Activities
+:Schedule_Microelectronica rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_W1, :Event_W3, :Event_W5, :Event_W12, :Event_W17 .
+
+:Event_W1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :Act_Intro_Microelec .
+
+:Act_Intro_Microelec rdf:type guide:Activity ;
+    guide:activityDescription "Introduction to microelectronics" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 1.0 .
+
+:Event_W3 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "3" ;
+    guide:eventIndex 3 ;
+    guide:hasActivity :Act_Lab_CMOS .
+
+:Act_Lab_CMOS rdf:type guide:Activity ;
+    guide:activityDescription "LAB: CMOS technology - Physical layout" ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Presencial" .
+
+:Event_W17 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "17" ;
+    guide:eventIndex 17 ;
+    guide:hasActivity :Act_Final_Exam .
+
+:Act_Final_Exam rdf:type guide:Activity ;
+    guide:activityDescription "Final written exam" ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:Res_CMOS_VLSI rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "CMOS VLSI Design - A Circuits and Systems Perspective (4th Edition)" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_Digital_IC rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Digital Integrated Circuits - A Design Perspective (2nd Edition)" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_Reconfigurable_Sys rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Reconfigurable System Design and Verification" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_Dynamic_Reconfig rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Dynamically Reconfigurable Systems - Architectures, Design Methods and Applications" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_FPGA_Gokhale rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Accelerating Computation with Field Programmable Gate Arrays" ;
+    guide:bibliographyType "Bibliografía" .
+
+# Previous Knowledge
+:PrevKnowledge_Microelec rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Digital building blocks and architectures, Digital electronics, Microprocessors" .

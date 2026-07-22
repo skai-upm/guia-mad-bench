@@ -1,0 +1,139 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:course_guide_205000060 a guide:CourseGuide ;
+    sch:name "Diseño Y Gestión De Explotaciones Ganaderas" ;
+    sch:courseCode 205000060 ;
+    guide:numberOfCredits 5.0 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Séptimo semestre" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:totalHours "135" ; # Calculated based on 27h per ECTS (5 * 27)
+    guide:hasCompetency :comp_CB02, :comp_CE17, :comp_CG07, :comp_CT03 ;
+    guide:hasLearningResult :lr_RA318, :lr_RA163, :lr_RA171, :lr_RA166, :lr_RA161, :lr_RA336, :lr_RA169 ;
+    guide:hasSyllabus :syllabus_205000060 ;
+    guide:hasEvaluation :eval_system_205000060 ;
+    guide:hasDidacticResource :res_callejo_2009, :res_callejo_2015, :res_magrama, :res_youtube_porcino_es, :res_youtube_porcino_en ;
+    sch:instructor :lecturer_antonio, :lecturer_ismael ;
+    guide:otherInformation "Asignatura Punto Control. Se verificará la formación y evaluación de la competencia transversal asignada." .
+
+# Degree and University Center
+:degree_20BI a guide:Degree ;
+    sch:name "Grado En Ciencias Agrarias Y Bioeconomia" ;
+    guide:degreeCode "20BI" ;
+    guide:hasCourse :course_instance_205000060 .
+
+:course_instance_205000060 a guide:Course ;
+    sch:courseCode 205000060 ;
+    guide:courseYear 2025 ;
+    sch:numberOfCredits 5.0 .
+
+:center_etsiaab a guide:UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas" ;
+    guide:offers :degree_20BI .
+
+# Lecturers
+:lecturer_antonio a guide:Lecturer ;
+    sch:name "Antonio Callejo Ramos" ;
+    sch:email "antonio.callejo@upm.es" ;
+    guide:office "No especificado" .
+
+:lecturer_ismael a guide:Lecturer ;
+    sch:name "Ismael Ovejero Rubio" ;
+    sch:email "ismael.ovejero.rubio@upm.es" .
+
+# Competencies
+:comp_CB02 a guide:Competency ;
+    guide:competencyCode "CB02" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional..." .
+
+:comp_CE17 a guide:Competency ;
+    guide:competencyCode "CE17" ;
+    guide:competencyDescription "Conocer y gestionar los principales sistemas de producción de materias primas de origen animal." .
+
+:comp_CG07 a guide:Competency ;
+    guide:competencyCode "CG07" ;
+    guide:competencyDescription "Adquirir la formación profesional necesaria para desarrollar estrategias sostenibles..." .
+
+:comp_CT03 a guide:Competency ;
+    guide:competencyCode "CT03" ;
+    guide:competencyDescription "Tener compromiso ético y profesional y respeto por el medio ambiente." .
+
+# Learning Results
+:lr_RA318 a guide:LearningResult ;
+    guide:learningResultCode "RA318" ;
+    guide:learningResultDescription "Conocer y aplicar el análisis de la estructura de costes a la explotación del ganado vacuno, ovino y caprino..." .
+
+:lr_RA163 a guide:LearningResult ;
+    guide:learningResultCode "RA163" ;
+    guide:learningResultDescription "Aplicar el análisis de la de la estructura de costes a las explotaciones de monogástricos..." .
+
+# Syllabus
+:syllabus_205000060 a guide:Syllabus ;
+    guide:hasItem :item_tema1, :item_tema2, :item_tema3, :item_tema4, :item_tema5, :item_tema6, :item_tema7, :item_tema8 .
+
+:item_tema1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Instalaciones para avicultura de carne" .
+
+:item_tema2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Instalaciones para avicultura de puesta" .
+
+# Evaluation System and Trials
+:eval_system_205000060 a guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de EVALUACIÓN DISTRIBUIDA O PROGRESIVA (EP)." ;
+    guide:hasEvaluationTrial :trial_cuestionario_1, :trial_examen_final .
+
+:trial_cuestionario_1 a guide:EvaluationTrial ;
+    guide:trialType "Cuestionario de Autoelectuación" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "1%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "No presencial" ;
+    guide:evaluationDuration "00:30" .
+
+:trial_examen_final a guide:EvaluationTrial ;
+    guide:trialType "Examen Final" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+# Activities (from Schedule)
+:activity_leccion_magistral a guide:Activity ;
+    guide:activityDescription "Lección Magistral" ;
+    guide:activityFormat "LM" ;
+    guide:attendanceType "Presencial" .
+
+:activity_clase_problemas a guide:Activity ;
+    guide:activityDescription "Clase de Problemas" ;
+    guide:activityFormat "PR" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_callejo_2009 a guide:DidacticResource ;
+    guide:bibliographyTitle "Cow confort. El bienestar de la vaca lechera." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_callejo_2015 a guide:DidacticResource ;
+    guide:bibliographyTitle "Bioseguridad en las granjas de vacuno de leche." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_magrama a guide:DidacticResource ;
+    guide:bibliographyTitle "http://www.magrama.gob.es/" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_youtube_porcino_es a guide:DidacticResource ;
+    guide:bibliographyTitle "Laboratorio de Bienestar Porcino (vídeo en español)" ;
+    guide:bibliographyType "Recursos web" .
+
+# Required Knowledge
+:req_knowledge_205000060 a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Sistemas De Producción Animal: Rumiantes, Monogástricos; Comportamiento Y Bienestar Animal." .

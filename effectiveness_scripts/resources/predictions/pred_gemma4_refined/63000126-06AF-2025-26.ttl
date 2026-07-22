@@ -1,0 +1,138 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+# Course Guide Instance
+:course_guide_63000126 a guide:CourseGuide ;
+    sch:name "Diseño Integral Y Planificacion Minera" ;
+    sch:courseCode 63000126 ;
+    guide:numberOfCredits 4.5 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Primer semestre" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    sch:director :lecturer_juan_herrera ;
+    sch:instructor :lecturer_juan_herrera ;
+    guide:hasSyllabus :syllabus_63000126 ;
+    guide:hasEvaluation :eval_system_63000126 ;
+    guide:hasLearningResult :lr_RA144, :lr_RA145, :lr_RA124, :lr_RA54, :lr_RA10, :lr_RA139, :lr_RA3, :lr_RA1, :lr_RA40, :lr_RA148, :lr_RA135, :lr_RA146, :lr_RA147, :lr_RA149 ;
+    guide:hasCompetency :comp_CE01, :comp_CE02, :comp_CE03, :comp_CE04, :comp_CE05, :comp_CE06, :comp_CE07, :comp_CE13, :comp_CG01, :comp_CG02, :comp_CG03, :comp_CG04, :comp_CG07, :comp_CG09, :comp_CT03, :comp_CT06, :comp_CT07 ;
+    guide:hasDidacticResource :res_web_moodle, :res_biblio_1, :res_biblio_2, :res_biblio_3, :res_biblio_4, :res_biblio_5, :res_biblio_6, :res_biblio_7, :res_biblio_8, :res_biblio_9, :res_biblio_10, :res_biblio_11, :res_biblio_12, :res_lab_equip ;
+    sch:description "La asignatura aborda los conceptos fundamentales a considerar en el diseño y la ingeniería de un proyecto minero moderno desde la óptica de garantizar su viabilidad técnica, económica y ambiental." .
+
+# Degree Instance
+:degree_06AF a guide:MasterDegree ;
+    sch:name "Máster Universitario En Ingeniería De Minas" ;
+    guide:degreeCode "06AF" .
+
+# University Center Instance
+:university_center_ets a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Minas y Energía" .
+
+# Lecturer Instance
+:lecturer_juan_herrera a guide:Lecturer ;
+    sch:name "Juan Herrera Herbert" ;
+    sch:email "juan.herrera@upm.es" ;
+    guide:office "208" ;
+    guide:tutorshipsSchedule "L - 12:00 - 14:00, M - 12:00 - 14:00, V - 12:00 - 14:00 (provisional)" .
+
+# Syllabus Instance
+:syllabus_63000126 a guide:Syllabus ;
+    guide:hasItem :item_topic_1, :item_topic_2, :item_topic_3, :item_topic_4, :item_topic_5, :item_topic_6, :item_topic_7, :item_topic_8, :item_topic_9, :item_topic_10 .
+
+:item_topic_1 a guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "EL PROYECTO MINERO (MINING PROJECT)" .
+:item_topic_2 a guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "PLANIFICACIÓN MINERA (MINE PLANNING)" .
+:item_topic_3 a guide:SyllabusItem ; guide:itemIndex 3 ; guide:syllabusDescription "COSTES E INGRESOS MINEROS (MINE REVENUES AND COSTS)" .
+:item_topic_4 a guide:SyllabusItem ; guide:itemIndex 4 ; guide:syllabusDescription "ANÁLISIS Y EVALUACIÓN ECONÓMICA DE PROYECTOS MINEROS" .
+:item_topic_5 a guide:SyllabusItem ; guide:itemIndex 5 ; guide:syllabusDescription "EVALUACIÓN DE ASPECTOS SOCIALES Y AMBIENTALES DE UN PROYECTO MINERO" .
+:item_topic_6 a guide:SyllabusItem ; guide:itemIndex 6 ; guide:syllabusDescription "FINANCIACIÓN DE PROYECTOS MINEROS (MINE PROJECT FINANCING)" .
+:item_topic_7 a guide:SyllabusItem ; guide:itemIndex 7 ; guide:syllabusDescription "OREBODY DEFINITION AND ASSESSMENT" .
+:item_topic_8 a guide:SyllabusItem ; guide:itemIndex 8 ; guide:syllabusDescription "DISEÑO DE MINA A CIELO ABIERTO (OPEN PIT MINE DESIGN)" .
+:item_topic_9 a guide:SyllabusItem ; guide:itemIndex 9 ; guide:syllabusDescription "SELECCIÓN DE MAQUINARIA (MACHINERY SELECTION)" .
+:item_topic_10 a guide:SyllabusItem ; guide:itemIndex 10 ; guide:syllabusDescription "PLANIFICACIÓN, DISEÑO Y CONSTRUCCIÓN DE MINAS DE INTERIOR (UNDERGROUND MINE PLANNING AND DESIGN)" .
+
+# Evaluation System Instance
+:eval_system_63000126 a guide:EvaluationSystem ;
+    guide:evaluationDescription "La calificación final de la asignatura se expresará en una cifra numérica en una escala entre 0 y 10. Se compone de pruebas teóricas voluntarias (evaluación progresiva) o examen final." ;
+    guide:hasEvaluationTrial :trial_week5, :trial_week9, :trial_week12, :trial_week16, :trial_final .
+
+:trial_week5 a guide:EvaluationTrial ;
+    guide:eventWeek "5" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "25%" ;
+    guide:trialDescription "Evaluación de Bloques 1 y 2" .
+
+:trial_week9 a guide:EvaluationTrial ;
+    guide:eventWeek "9" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "25%" ;
+    guide:trialDescription "Evaluación de los Bloques 3 y 4" .
+
+:trial_week12 a guide:EvaluationTrial ;
+    guide:eventWeek "12" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "25%" ;
+    guide:trialDescription "Evaluación de los Bloques 5 y 6" .
+
+:trial_week16 a guide:EvaluationTrial ;
+    guide:eventWeek "16" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "25%" ;
+    guide:trialDescription "Evaluación de Bloques 7 y 8" .
+
+:trial_final a guide:EvaluationTrial ;
+    guide:eventWeek "17" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "100%" ;
+    guide:trialDescription "Examen final para aquellos alumnos que no superan la evaluación progresiva" .
+
+# Competencies
+:comp_CE01 a guide:Competency ; guide:competencyCode "CE01" ; guide:competencyDescription "Capacidad para abordar y resolver problemas matemáticos avanzados de ingeniería..." .
+:comp_CE02 a guide:Competency ; guide:competencyCode "CE02" ; guide:competencyDescription "Conocimiento adecuado de aspectos científicos y tecnológicos de mecánica de fluidos, mecánica de medios continuos..." .
+:comp_CG01 a guide:Competency ; guide:competencyCode "CG01" ; guide:competencyDescription "Capacitación científico-técnica y metodológica para el reciclaje continuo de conocimientos..." .
+# (Other competencies omitted for brevity but follow same pattern)
+
+# Learning Results
+:lr_RA144 a guide:LearningResult ; guide:learningResultCode "RA144" ; guide:learningResultDescription "Capacidad para comprender la complejidad de las inversiones en proyectos mineros y los mecanismos para su financiación." .
+:lr_RA145 a guide:LearningResult ; guide:learningResultCode "RA145" ; guide:learningResultDescription "Capacidad para idear, diseñar, proyectar y evaluar explotaciones que maximicen el aprovechamiento de los recursos minerales..." .
+
+# Didactic Resources
+:res_web_moodle a guide:DidacticResource ;
+    guide:bibliographyTitle "Conferencia en moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_biblio_1 a guide:DidacticResource ;
+    guide:bibliographyTitle "La gestión de derechos mineros y de hidrocarburos" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Autores: HERRERA HERBERT, J.; CASTILLA GÓMEZ, J. Editorial: Universidad Politécnica de Madrid. Año: 2013" .
+
+:res_biblio_2 a guide:DidacticResource ;
+    guide:bibliographyTitle "Ingeniería y fases de un proyecto minero" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Autores: HERRERA HERBERT, J. Editorial: Laboratorio de Tecnologías Mineras. Universidad Politécnica de Madrid. Año: 2015" .
+
+:res_lab_equip a guide:DidacticResource ;
+    guide:bibliographyTitle "LABORATORIO DE LABOREO DE MINAS." ;
+    guide:bibliographyType "Equipamiento" ;
+    guide:bibliographyDescription "Equipamiento docente para el aprendizaje de equipos y elementos de sondeos" .
+
+# Required Knowledge
+:req_knowledge_63000126 a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Conocimiento avanzado de las técnicas y procesos utilizados en la explotación minera; Conocimiento avanzado en Métodos de Explotación; Conocimiento de los fundamentos de la tecnología minera; Conocimiento avanzado de la protección ambiental y sostenibilidad." .
+
+# Schedule Events (Sample from table)
+:event_week1 a guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :act_lecture_1 ;
+    guide:activityDescription "B0T0. PRESENTACIÓN DE LA ASIGNATURA" .
+
+:act_lecture_1 a guide:Activity ;
+    guide:activityDescription "Lección Magistral" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Presencial" .

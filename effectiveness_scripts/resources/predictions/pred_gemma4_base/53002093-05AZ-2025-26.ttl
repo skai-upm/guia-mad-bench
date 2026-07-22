@@ -1,0 +1,189 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://w3id.org/def/guia#> .
+
+:course_53002093 a guide:Course ;
+    sch:name "53002093 - Procesado De Señales En La Ingeniería" ;
+    guide:courseYear 2 ;
+    guide:courseType "Optativa" ;
+    sch:hasCourseInstance :guide_53002093_2025_26 .
+
+:degree_05AZ a guide:MasterDegree ;
+    sch:name "05AZ - Master Universitario En Ingenieria Industrial" ;
+    guide:degreeCode "05AZ" ;
+    guide:hasCourse :course_53002093 .
+
+:university_center_ets a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Industriales" ;
+    guide:offers :degree_05AZ .
+
+:guide_53002093_2025_26 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Procesado De Señales En La Ingeniería" ;
+    sch:description "En esta asignatura se imparten contenidos teórico-prácticos sobre métodos numéricos de utilidad para los alumnos en su futuro profesional."@en ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:numberOfCredits 3.0 ;
+    sch:inLanguage "Inglés/Castellano" ;
+    sch:instructor :lecturer_m_elena_dominguez ;
+    sch:courseSchedule :schedule_53002093 ;
+    guide:hasSyllabus :syllabus_53002093 ;
+    guide:hasEvaluation :eval_system_53002093 ;
+    guide:hasLearningResult :lr_ra445, :lr_ra393 ;
+    guide:hasCompetency :comp_cg01, :comp_cg11 ;
+    guide:hasDidacticResource :res_moodle, :res_matlab, :res_book_wavelets, :res_book_strang, :res_book_folland, :res_book_oppenheim ;
+    sch:activitiesWorkload "26-27 horas de trabajo presencial y no presencial por cada crédito ECTS" ;
+    guide:otherInformation "El curso 23/24 fue el primero en que se impartió esta asignatura, y desde el curso 24/25 se imparte en inglés."@en .
+
+:lecturer_m_elena_dominguez a guide:Lecturer ;
+    sch:name "M. Elena Dominguez Jimenez" ;
+    sch:email "elena.dominguez@upm.es" ;
+    guide:office "Despacho 4" ;
+    guide:tutorshipsSchedule "Sin horario. Contactar cita previa via email" .
+
+:syllabus_53002093 a guide:Syllabus ;
+    guide:hasItem :item_1, :item_2, :item_3, :item_4, :item_5 .
+
+:item_1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Series de Fourier" .
+
+:item_2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Transformada de Fourier" .
+
+:item_3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Transformada Discreta de Fourier (DFT)" .
+
+:item_4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Transformada wavelet" .
+
+:item_5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Aplicaciones en Ingeniería" .
+
+:comp_cg01 a guide:Competency ;
+    guide:competencyCode "CG01" ;
+    guide:competencyDescription "Tener conocimientos adecuados de los aspectos científicos y tecnológicos de: métodos matemáticos, analíticos y numéricos..."@en .
+
+:comp_cg11 a guide:Competency ;
+    guide:competencyCode "CG11" ;
+    guide:competencyDescription "Poseer las habilidades de aprendizaje que permitan continuar estudiando de un modo autodirigido o autónomo."@en .
+
+:lr_ra445 a guide:LearningResult ;
+    guide:learningResultCode "RA445" ;
+    guide:learningResultDescription "Conocimiento de la transformada wavelet y sus aplicaciones"@en .
+
+:lr_ra393 a guide:LearningResult ;
+    guide:learningResultCode "RA3．393" ;
+    guide:learningResultDescription "Capacidad de interpretación en los dominios del tiempo y la frecuencia"@en .
+
+:eval_system_53002093 a guide:EvaluationSystem ;
+    guide:evaluationDescription "La Evaluación Progresiva (EP) consta de un trabajo práctico de ordenador y un trabajo al final de la asignatura. La Prueba de Evaluación Global (PEG) es para alumnos que no aprueban por EP."@en ;
+    guide:hasEvaluationTrial :trial_ep_1, :trial_ep_2, :trial_peg .
+
+:trial_ep_1 a guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:trialDescription "Práctica de ordenador" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialMode "Presencial" .
+
+:trial_ep_2 a guide:EvaluationTrial ;
+    guide:trialType "Otras técnicas evaluativas" ;
+    guide:trialDescription "Trabajo sobre aplicación de transformadas en Ingeniería" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialMode "Presencial" .
+
+:trial_peg a guide:EvaluationTrial ;
+    guide:trialType "Trabajo Individual" ;
+    guide:trialDescription "Prueba de evaluación global (PEG)" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+:schedule_53002093 a guide:Schedule ;
+    sch:eventSchedule :event_week_1, :event_week_2, :event_week_3, :event_week_4, :event_week_5, :event_week_6, :event_week_7, :event_week_8, :event_week_9, :event_week_10, :event_week_11, :event_week_12, :event_week_13, :event_week_14, :event_week_17 .
+
+:event_week_1 a guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :act_lm_fourier_1 .
+
+:act_lm_fourier_1 a guide:Activity ;
+    guide:activityDescription "Series de Fourier" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:event_week_8 a guide:ScheduleEvent ;
+    guide:eventWeek "8" ;
+    guide:hasActivity :act_pr_fourier_8 .
+
+:act_pr_fourier_8 a guide:Activity ;
+    guide:activityDescription "Aplicaciones de la transformada discreta de Fourier" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Clase de Problemas" ;
+    guide:attendanceType "Presencial" .
+
+:event_week_14 a guide:ScheduleEvent ;
+    guide:eventWeek "14" ;
+    guide:hasActivity :act_ot_engineering_14 .
+
+:act_ot_engineering_14 a guide:Activity ;
+    guide:activityDescription "Aplicaciones en Ingeniería" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Otras técnicas evaluativas" ;
+    guide:attendanceType "Presencial" .
+
+:event_week_17 a guide:ScheduleEvent ;
+    guide:eventWeek "17" ;
+    guide:hasActivity :act_ti_peg_17 .
+
+:act_ti_peg_17 a guide:Activity ;
+    guide:activityDescription "Prueba de evaluación global (PEG)" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "Trabajo Individual" ;
+    guide:attendanceType "Presencial" .
+
+:res_moodle a guide:DidacticResource ;
+    guide:bibliographyTitle "Página de Moodle" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "http://moodle.upm.es/titulaciones/oficiales" .
+
+:res_matlab a guide:DidacticResource ;
+    guide:bibliographyTitle "Software MATLAB" ;
+    guide:bibliographyType "Equipamiento" .
+
+:res_book_wavelets a guide:DidacticResource ;
+    guide:bibliographyTitle "Teoría básica de wavelets para ingenieros" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "M. E. Domínguez Jiménez y G. Sansigre Vidal, 2006." .
+
+:res_book_strang a guide:DidacticResource ;
+    guide:bibliographyTitle "Wavelets and filter Banks" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "G. Strang, T. Nguyen, SIAM, 1996." .
+
+:res_book_folland a guide:DidacticResource ;
+    guide:bibliographyTitle "Fourier Analysis and its applications" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "G.B. Folland, AMS, 1992." .
+
+:res_book_oppenheim a guide:DidacticResource ;
+    guide:bibliographyTitle "Tratamiento de señales en tiempo discreto" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "A. V. Oppenheim, R. W. Schafer, Prentice-Hall, 2009." .
+
+:schedule_53002093 a guide:Schedule .

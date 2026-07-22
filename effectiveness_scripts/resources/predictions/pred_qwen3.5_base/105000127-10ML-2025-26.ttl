@@ -1,0 +1,171 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Instance Data Extraction from Document (Sistemas Operativos)
+#################################################################
+
+###  Course Guide Instance
+<http://w3id.org/def/guia#GA_10ML_105000127> rdf:type :CourseGuide ;
+                                               dct:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en ;
+                                               sch:courseCode 105000127 ;
+                                               guide:numberOfCredits "6.0"^^xsd:decimal ;
+                                               guide:teachingPeriodMonths "Febrero-Junio"@en ;
+                                               guide:inLanguage "Castellano"@en ;
+                                               dct:description "Guía de Aprendizaje para la asignatura Sistemas Operativos en el Grado En Matematicas E Informática, Curso Académico 2025/26."@en .
+
+###  Degree Instance (Bachelor)
+<http://w3id.org/def/guia#10ML> rdf:type :Degree ;
+                                 guide:degreeCode "10ML"@en ;
+                                 sch:name "Grado En Matematicas E Informática" ;
+                                 rdfs:subClassOf :BachelorDegree .
+
+###  University Center Instance
+<http://w3id.org/def/guia#ETS_Informaticos> rdf:type :UniversityCenter ;
+                                              sch:description "E.T.S. De Ingenieros Informáticos"@en ;
+                                              dct:title "10 - E.T.S. De Ingenieros Informáticos" .
+
+###  Link Center to Degree (via offers)
+<http://w3id.org/def/guia#ETS_Informaticos> sch:offers <http://w3id.org/def/guia#10ML> ;
+                                              guide:numberOfCredits "6.0"^^xsd:decimal .
+
+###  Link Course Guide to Degree (via hasCourse) - Note: Ontology defines `guide:hasCourse` as Degree -> Course, but we link via Schedule/Guide context here for completeness of the offering structure. We will use standard Schema.org links where appropriate or ontology specific ones defined in `[ONTOLOGY]`.
+<http://w3id.org/def/guia#GA_10ML_105000127> sch:hasCourseInstance <http://w3id.org/def/guia#10ML> .
+
+###  Syllabus Instance
+<http://w3id.org/def/guia#Syllabus_Sistemas_Operativos> rdf:type :Syllabus ;
+                                                          dct:title "Temario de Sistemas Operativos"@en ;
+                                                          sch:courseSchedule <http://w3id.org/def/guia#Schedule_10ML>.
+
+###  Link Course Guide to Syllabus
+<http://w3id.org/def/guia#GA_10ML_105000127> guide:hasSyllabus <http://w3id.org/def/guia#Syllabus_Sistemas_Operativos>.
+
+###  Competencies and Learning Results Instances
+<http://w3id.org/def/guia#C1> rdf:type :Competency ;
+                              guide:competencyCode "C1"@en ;
+                              sch:description "Capacidad de resolución de problemas aplicando conocimientos de matemáticas, ciencias e ingeniería."@en .
+
+<http://w3id.org/def/guia#K4> rdf:type :LearningResult ;
+                               guide:learningResultCode "K4"@en ;
+                               sch:description "Entender el soporte físico (hardware) de los ordenadores desde el punto del software, por ejemplo, el uso del procesador."@en .
+
+<http://w3id.org/def/guia#S19> rdf:type :LearningResult ;
+                                guide:learningResultCode "S19"@en ;
+                                sch:description "Capacidad de aplicar sus conocimientos e intuición para diseñar el hardware/software que cumple unos requisitos especificados."@en .
+
+<http://w3id.org/def/guia#S21> rdf:type :LearningResult ;
+                               guide:learningResultCode "S21"@en ;
+                               sch:description "Concebir y diseñar la arquitectura de un sistema software."@en .
+
+###  Link Course Guide to Competencies/Learning Results
+<http://w3id.org/def/guia#GA_10ML_105000127> guide:hasCompetency <http://w3id.org/def/guia#C1>, <http://w3id.org/def/guia#K4>, <http://w3id.org/def/guia#S19>, <http://w3id.org/def/guia#S21> ;
+                                               guide:hasLearningResult <http://w3id.org/def/guia#C1>.
+
+###  Lecturers Instances (Section 2.1)
+<http://w3id.org/def/guia#Lecturer_Rosales_Garcia> rdf:type :Lecturer ;
+                                                       sch:name "Fco Javier Rosales Garcia" ;
+                                                       guide:office "4204"@en ;
+                                                       sch:email <mailto:francisco.rosales@upm.es> .
+
+<http://w3id.org/def/guia#Lecturer_Toharia_Rabasco> rdf:type :Lecturer ;
+                                                      sch:name "Pablo Toharia Rabasco" ;
+                                                      guide:office "4102"@en ;
+                                                      sch:email <mailto:pablo.toharia@upm.es>.
+
+<http://w3id.org/def/guia#Lecturer_Perez_Hernandez> rdf:type :Lecturer ;
+                                                     sch:name "Maria De Los Santos Perez Hernandez" ;
+                                                     guide:office "4203"@en ;
+                                                     sch:email <mailto:maria.s.perez@upm.es>.
+
+<http://w3id.org/def/guia#Lecturer_Latorre_Fuente> rdf:type :Lecturer ;
+                                                    sch:name "Antonio Latorre De La Fuente" ;
+                                                    guide:office "4201"@en ;
+                                                    sch:email <mailto:a.latorre@upm.es>.
+
+<http://w3id.org/def/guia#Lecturer_Perez_Costoya> rdf:type :Lecturer ;
+                                                   sch:name "Fernando Perez Costoya" ;
+                                                   guide:office "4201"@en ;
+                                                   sch:email <mailto:fernando.perez@upm.es>.
+
+###  Link Course Guide to Lecturers (Director/Instructor)
+<http://w3id.org/def/guia#GA_10ML_105000127> sch:director <http://w3id.org/def/guia#Lecturer_Rosales_Garcia>, <http://w3id.org/def/guia#Lecturer_Toharia_Rabasco>.
+
+###  Syllabus Items Instances (Section 5)
+<http://w3id.org/def/guia#Item_01> rdf:type :SyllabusItem ;
+                                  guide:itemIndex "1"^^xsd:integer ;
+                                  sch:description "Introducción al SSOO. Conceptos hardware, ejecución de instrucciones."@en .
+
+<http://w3id.org/def/guia#Item_02> rdf:type :SyllabusItem ;
+                                   guide:itemIndex "2"^^xsd:integer ;
+                                   sch:description "Memoria virtual y Qué es el sistema operativo"@en .
+
+<http://w3id.org/def/guia#Item_03> rdf:type :SyllabusItem ;
+                                  guide:itemIndex "3"^^xsd:integer ;
+                                  sch:description "Procesos, secuencia de ejecución, concurrencia."@en .
+
+###  Link Syllabus to Items
+<http://w3id.org/def/guia#Syllabus_Sistemas_Operativos> guide:hasItem <http://w3id.org/def/guia#Item_01>, <http://w3id.org/def/guia#Item_02>.
+
+###  Schedule Instance
+<http://w3id.org/def/guia#Schedule_10ML> rdf:type :Schedule ;
+                                          sch:courseCode "GA_10ML_105000127"^^xsd:string .
+
+###  Link Course Guide to Schedule
+<http://w3id.org/def/guia#GA_10ML_105000127> sch:eventSchedule <http://w3id.org/def/guia#Schedule_10ML>.
+
+###  Schedule Events Instances (Section 6) - Sample extraction for Weeks/Semesters
+<http://w3id.org/def/guia#Event_Semana_01> rdf:type :ScheduleEvent ;
+                                            sch:eventIndex "1"^^xsd:integer ;
+                                            guide:scheduleWeek "Semana 1"@en .
+
+###  Link Schedule to Events (Sample)
+<http://w3id.org/def/guia#Schedule_10ML> sch:eventSchedule <http://w3id.org/def/guia#Event_Semana_01>.
+
+###  Evaluation System Instance
+<http://w3id.org/def/guia#Eval_System_Operativos> rdf:type :EvaluationSystem ;
+                                                    guide:evaluationDescription "Evaluación progresiva por parciales y evaluación global final."@en .
+
+###  Link Course Guide to Evaluation System
+<http://w3id.org/def/guia#GA_10ML_105000127> guide:hasEvaluation <http://w3id.org/def/guia#Eval_System_Operativos>.
+
+###  Evaluation Trial Instances (Section 7.1) - Sample
+<http://w3id.org/def/guia#Trial_Final_Examen> rdf:type :EvaluationTrial ;
+                                              sch:name "Examen Final del Semestre" ;
+                                              guide:trialType "EX"@en ; # Examen Escrito
+                                              guide:gradePercentage "50.0"^^xsd:string .
+
+<http://w3id.org/def/guia#Trial_Parcial_1> rdf:type :EvaluationTrial ;
+                                           sch:name "Prueba de Nivel" ;
+                                           guide:trialType "EX"@en ; # Examen Escrito
+                                           guide:gradePercentage "0.5"^^xsd:string .
+
+###  Link Evaluation System to Trials (Sample)
+<http://w3id.org/def/guia#Eval_System_Operativos> guide:hasEvaluationTrial <http://w3id.org/def/guia#Trial_Final_Examen>, <http://w3id.org/def/guia#Trial_Parcial_1>.
+
+###  Link Evaluation Trial to Schedule Event (Sample)
+<http://w3id.org/def/guia#Eval_System_Operativos> guide:hasScheduleEvent <http://w3id.org/def/guia#Event_Semana_01>. # Simplified link for example.
+
+###  Didactic Resources Instances (Section 8)
+<http://w3id.org/def/guia#Resource_Moodle> rdf:type :DidacticResource ;
+                                            sch:name "Moodle de la Asignatura" ;
+                                            guide:bibliographyType "Recursos web"@en .
+
+<http://w3id.org/def/guia#Resource_Book1> rdf:type :DidacticResource ;
+                                           sch:name "Sistemas Operativos, Una visión Aplicada 2ª ed." ;
+                                           guide:bibliographyTitle "J. Carretero et al., McGraw-Hill" ;
+                                           guide:activityFormat "Biblioteca"@en .
+
+###  Link Course Guide to Resources (Sample)
+<http://w3id.org/def/guia#GA_10ML_105000127> guide:hasDidacticResource <http://w3id.org/def/guia#Resource_Moodle>, <http://w3id.org/def/guia#Resource_Book1>.
+
+###  Required Knowledge Instances (Section 3)
+<http://w3id.org/def/guia#Req_Know_Estructura> rdf:type :RequiredKnowledge ;
+                                                 sch:description "Estructura De Computadores"@en .
+
+<http://w3id.org/def/guia#GA_10ML_105000127> guide:previousCourses <http://w3id.org/def/guia#Req_Know_Estructura>.

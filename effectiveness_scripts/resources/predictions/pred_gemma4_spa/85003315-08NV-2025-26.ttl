@@ -1,0 +1,158 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+:degree_08NV rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Arquitectura Naval" ;
+    guide:degreeCode "0ASNV" ; # Derived from context 08NV
+    guide:hasCourse :course_85003315 .
+
+:center_etsin rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Navales" ;
+    guide:offers :degree_08NV .
+
+# Course
+:course_85003315 rdf:type guide:Course ;
+    sch:name "Termodinámica" ;
+    sch:courseCode 85003315 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Tercer semestre" ;
+    guide:numberOfCredits 6.0 ;
+    sch:hasCourseInstance :guide_term_2526 .
+
+# Course Guide
+:guide_term_2526 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Termodinámica" ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:instructor :lecturer_rafael, :lecturer_teresa, :lecturer_vladimir ;
+    sch:director :lecturer_teresa ;
+    guide:hasCompetency :comp_CB1, :comp_CB5, :comp_CE14, :comp_CG3 ;
+    guide:hasLearningResult :lr_RA192, :lr_RA193, :lr_RA190, :lr_RA198, :lr_RA189, :lr_RA188, :lr_RA191 ;
+    guide:hasEvaluation :eval_system_term ;
+    guide:hasDidacticResource :res_wark, :res_moran, :res_cengel, :res_perez_notario ;
+    guide:hasSyllabus :syllabus_term .
+
+# Lecturers
+:lecturer_rafael rdf:type guide:Lecturer ;
+    sch:name "Rafael Federico D'amore Domenech" ;
+    sch:email "r.damore@upm.es" ;
+    guide:office "Despacho" ;
+    guide:tutorshipsSchedule "Sin horario. Las indicadas en la página web de la ETSIN" .
+
+:lecturer_teresa rdf:type guide:Lecturer ;
+    sch:name "Teresa De Jesus Leo Mena" ;
+    sch:email "teresa.leo.mena@upm.es" ;
+    guide:office "Despacho" ;
+    guide:tutorshipsSchedule "Sin horario. Las indicadas en la página web de la ETSIN" .
+
+:lecturer_vladimir rdf:type guide:Lecturer ;
+    sch:name "Vladimir Luis Meca Lopez" ;
+    sch:email "vl.meca@upm.es" ;
+    guide:office "Despacho" ;
+    guide:tutorshipsSchedule "Sin horario. Las indicadas en la página web de la ETSIN" .
+
+# Competencies
+:comp_CB1 rdf:type guide:Competency ;
+    guide:competencyCode "CB1" ;
+    guide:competencyDescription "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de estudio que parte de la base de la educación secundaria general..." .
+
+:comp_CB5 rdf:type guide:Competency ;
+    guide:competencyCode "CB5" ;
+    guide:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía" .
+
+:comp_CE14 rdf:type guide:Competency ;
+    guide:competencyCode "CE 14" ;
+    guide:competencyDescription "Conocimiento de la termodinámica aplicada y de la transmisión del<0xC2>of calor" .
+
+:comp_CG3 rdf:type guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Capacidad para el aprendizaje de nuevos métodos y teorías, y en la versatilidad para adaptarse a nuevas situaciones..." .
+
+# Learning Results
+:lr_RA192 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA192" ;
+    guide:learningResultDescription "Conocer los ciclos termodinámicos" .
+
+:lr_RA193 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA193" ;
+    guide:learningResultDescription "Comprender y aplicar el concepto de rendimiento de los dispositivos" .
+
+:lr_RA190 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA190" ;
+    guide:learningResultDescription "Conocer la formulación de los Principios Primero y Segundo de la Termodinámica en sistemas abiertos y cerrados" .
+
+:lr_RA189 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA189" ;
+    guide:learningResultDescription "Conocer y comprender el comportamiento termodinámico de las sustancias puras" .
+
+:lr_RA188 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA188" ;
+    guide:learningResultDescription "Conocer la composición del aire húmedo y el diagrama psicrométrico" .
+
+:lr_RA191 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA191" ;
+    guide:learningResultDescription "Conocer los distintos mecanismos de transferencia de calor" .
+
+# Evaluation System and Trials
+:eval_system_term rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y prueba global." ;
+    guide:hasEvaluationTrial :trial_teoria1, :trial_problema1, :trial_lab1, :trial_final .
+
+:trial_teoria1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "15%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:involvesCompetency :comp_CB1, :comp_CB5, :comp_CG3, :comp_CE14 .
+
+:trial_problema1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "31%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:involvesCompetency :comp_CB1, :comp_CB5, :comp_CG3, :comp_CE14 .
+
+:trial_lab1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "0.75%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:involvesCompetency :comp_CE14 .
+
+:trial_final rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "95%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:involvesCompetency :comp_CB1, :comp_CB5, :comp_CG3, :comp_CE14 .
+
+# Syllabus
+:syllabus_term rdf:type guide:Syllabus ;
+    guide:hasItem :item_tema1, :item_tema2, :item_tema3, :item_tema4, :item_tema5, :item_tema6, :item_tema7, :item_tema8, :item_tema9, :item_tema10, :item_tema11 .
+
+:item_tema1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Tema 1. Conceptos básicos y definiciones" .
+
+:item_tema2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Tema 2. Primer Principio de la Termodinámica. Energía" .
+
+# Didactic Resources
+:res_wark rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "'Thermodynamics', K. Wark, 6th Ed." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_moran rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "'Fundamentals of Engineering Thermodynamics', M.J. Bonan et al." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_cengel rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Termodinámica, Çengel, Y.A., Boles, M.A. y Kanoglu, M." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_perez_notario rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "'Termodinámica: estructura y aplicaciones. Parte I', P. Pérez del Notario" ;
+    guide:bibliographyType "Recursos web" .

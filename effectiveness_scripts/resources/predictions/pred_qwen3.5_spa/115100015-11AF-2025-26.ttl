@@ -1,0 +1,62 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_11AF_115100015> rdf:type :CourseGuide ;
+    dct:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en ;
+    sch:name "Biomecánica De La Afyd" ;
+    guide:numberOfCredits 6^^xsd:decimal ;
+    guide:teachingPeriodMonths "Febrero-Junio"@en .
+
+<http://guia-mad-bench.es/data/degree/Bachelor-11AF> rdf:type :BachelorDegree ;
+    sch:name "Grado En Ciencias De la Actividad Física Y Del Deporte"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course/115100015> rdf:type :Course ;
+    dct:title "Biomecánica De La Afyd"@en ;
+    sch:courseCode 115100015^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_11AF_115100015> guide:hasCourse <http://guia-mad-bench.es/data/course/115100015> ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/115100015>.
+
+<http://guia-mad-bench.es/data/syllabus/GA_11AF_115100015> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabusItem/Tema-Introduccion>,
+                 <http://guia-mad-bench.es/data/syllabusItem/Analisis-Cinematico-Lineal>,
+                 <http://guia-mad-bench.es/data/syllabusItem/Dinamica-Centro-Masas>.
+
+<http://guia-mad-bench.es/data/courseGuide/GA_11AF_115100015> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus/GA_11AF_115100015>.
+
+<http://guia-mad-bench.es/data/competency/CE08> rdf:type :Competency ;
+    guide:competencyCode "CE08"^^xsd:string ;
+    guide:competencyDescription "Aplicar de manera fundamentada y argumentada los principios fisiológicos, biomecánicos, comportamentales y sociales, durante la dirección del entrenamiento deportivo. Nivel 3." .
+
+<http://guia-mad-bench.es/data/learningResult/RA9> rdf:type :LearningResult ;
+    guide:learningResultCode "RA9"^^xsd:string ;
+    guide:learningResultDescription "Capacidad de trabajar en equipo"@en .
+
+<http://guia-mad-bench.es/data/schedule/GA_11AF_115100015> rdf:type :Schedule ;
+    sch:eventIndex 1,2,3,4,5,6^^xsd:integer .
+
+<http://guia-mad-bench.es/data/lecturer/enrique-navarro> rdf:type :Lecturer ;
+    dct:title "Enrique Navarro Cabello"@en ;
+    guide:office "204"^^xsd:string ;
+    sch:email <mailto:enrique.navarro@upm.es>.
+
+<http://guia-mad-bench.es/data/lecturer/enrique-navarro> sch:director <http://guia-mad-bench.es/data/courseGuide/GA_11AF_115100015>.
+<http://guia-mad-bench.es/data/lecturer/archit-navandar> rdf:type :Lecturer ;
+    dct:title "Archit Navandar"@en ;
+    sch:email <mailto:archit.navandar@upm.es>.
+
+<http://guia-mad-bench.es/data/syllabusItem/Tema-Introduccion> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "Introducción al estudio de la biomecánica"@en .
+
+<http://guia-mad-bench.es/data/evaluationTrial/examen-parcial-1> rdf:type :EvaluationTrial ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_11AF_115100015>.
+
+<http://guia-mad-bench.es/data/resource/barlett-book> rdf:type :DidacticResource ;
+    guide:bibliographyTitle "Introduction to sports biomechanics"@en .

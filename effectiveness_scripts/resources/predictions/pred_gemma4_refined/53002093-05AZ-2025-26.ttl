@@ -1,0 +1,208 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:course_guide_53002093
+    rdf:type guide:CourseGuide ;
+    sch:name "Procesado De Señales En La Ingeniería" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:numberOfCredits 3.0 ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Inglés/Castellano" ;
+    guide:hasSyllabus :syllabus_53002093 ;
+    guide:hasCompetency :comp_CG01, :comp_CG11 ;
+    guide:hasLearningResult :lr_RA445, :lr_RA393 ;
+    guide:hasEvaluation :eval_system_53002093 ;
+    sch:instructor :lecturer_elena ;
+    sch:courseSchedule :schedule_53002093 ;
+    guide:hasDidacticResource :res_matlab, :res_book_wavelets, :res_book_strang, :res_book_folland, :res_book_oppenheim ;
+    sch:description "En esta asignatura se imparten contenidos teórico-prácticos sobre métodos numéricos de utilidad para los alumnos en su futuro profesional." .
+
+# Course Instance
+:course_53002093
+    rdf:type guide:Course ;
+    sch:name "53002093 - Procesado De Señales En La Ingeniería" ;
+    guide:courseYear 2025 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Tercer semestre" .
+
+# Degree Instance
+:degree_05AZ
+    rdf:type guide:MasterDegree ;
+    sch:name "Master Universitario En Ingenieria Industrial" ;
+    guide:degreeCode "05AZ" ;
+    guide:hasCourse :course_53002093 .
+
+# University Center Instance
+:center_etsii
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Industriales" ;
+    guide:offers :degree_05AZ .
+
+# Lecturer Instance
+:lecturer_elena
+    rdf:type guide:Lecturer ;
+    sch:name "M. Elena Dominguez Jimenez" ;
+    sch:email "elena.dominguez@upm.es" ;
+    guide:office "Despacho 4" ;
+    guide:tutorshipsSchedule "Sin horario. Contactar cita previa via email" .
+
+# Competencies
+:comp_CG01
+    rdf:type guide:Competency ;
+    guide:competencyCode "CG01" ;
+    guide:competencyDescription "Tener conocimientos adecuados de los aspectos científicos y tecnológicos..." .
+
+:comp_CG11
+    rdf:type guide:Competency ;
+    guide:competencyCode "CG11" ;
+    guide:competencyDescription "Poseer las habilidades de aprendizaje que permitan continuar estudiando de un modo autodirigido o autónomo." .
+
+# Learning Results
+:lr_RA445
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA445" ;
+    guide:learningResultDescription "Conocimiento de la transformada wavelet y sus aplicaciones" .
+
+:lr_RA393
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA393" ;
+    guide:learningResultDescription "Capacidad de interpretación en los dominios del tiempo y la frecuencia" .
+
+# Syllabus
+:syllabus_53002093
+    rdf:type guide:Syllabus ;
+    guide:hasItem :item_fourier, :item_fourier_transform, :item_dft, :item_wavelet .
+
+:item_fourier
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Series de Fourier" .
+
+:item_fourier_transform
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Transformada de Fourier" .
+
+:item_dft
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Transformada Discreta de Fourier (DFT)" .
+
+:item_wavelet
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Transformada wavelet" .
+
+# Evaluation System
+:eval_system_53002093
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La Evaluación Progresiva (EP) consta de un trabajo práctico y un trabajo al final. La Prueba de Evaluación Global (PEG) es para quienes no aprueban por EP." ;
+    guide:hasEvaluationTrial :trial_exam_practica, :trial_trabajo, :trial_peg .
+
+:trial_exam_practica
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:hasScheduleEvent :event_week8 .
+
+:trial_trabajo
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Otras técnicas evaluativas" ;
+    guide:evaluationType "Evaluación Pro</strong> 40%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:hasScheduleEvent :event_week14 .
+
+:trial_peg
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo Individual" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:hasScheduleEvent :event_week17 .
+
+# Schedule and Events
+:schedule_53002093
+    rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week8, :event_week14, :event_week17 .
+
+:event_week8
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "8" ;
+    guide:hasActivity :activity_practica_ordenador .
+
+:activity_practica_ordenador
+    rdf:type guide:Activity ;
+    guide:activityDescription "Práctica de ordenador" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "EP: Técnica del tipo Examen de Prácticas" ;
+    guide:attendanceType "Presencial" .
+
+:event_week14
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "14" ;
+    guide:hasActivity :activity_trabajo_ingenieria .
+
+:activity_trabajo_ingenier<0xC2>io
+    rdf:type guide:Activity ;
+    guide:activityDescription "Trabajo sobre aplicación de transformadas en Ingeniería" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "OT: Otras técnicas evaluativas" ;
+    guide:attendanceType "Presencial" .
+
+:event_week17
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "17" ;
+    guide:hasActivity :activity_peg .
+
+:activity_peg
+    rdf:type guide:Activity ;
+    guide:activityDescription "Prueba de evaluación global (PEG)" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "TI: Técnica del tipo Trabajo Individual" ;
+    guide:attendanceType "Presencial" .
+
+# Required Knowledge
+:req_knowledge_53002093
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Series de Fourier, Integración de funciones elementales, Números complejos, Matrices, Conocimientos básicos de programación." .
+
+# Didactic Resources
+:res_matlab
+    rdf:type guide:DidacticResource ;
+    sch:name "Software MATLAB" ;
+    guide:bibliographyType "Equipamiento" ;
+    guide:bibliographyDescription "Disponible para los alumnos con licencia de Campus UPM" .
+
+:res_book_wavelets
+    rdf:type guide:DidacticResource ;
+    sch:name "Teoría básica de wavelets para ingenieros" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "M. E. Domínguez Jiménez y G. Sansigre Vidal, 2006." .
+
+:res_book_strang
+    rdf:type guide:DidacticResource ;
+    sch:name "Wavelets and filter Banks" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "G. Strang, T. Nguyen, SIAM, 1996." .
+
+:res_book_folland
+    rdf:type guide:DidacticResource ;
+    sch:name "Fourier Analysis and its applications" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "G.B. Folland, AMS, 1992." .
+
+:res_book_oppenheim
+    rdf:type guide:DidacticResource ;
+    sch:name "Tratamiento de señales en tiempo discreto" ;
+    guide:bibliographyType "Bibliogafía" ;
+    guide:bibliographyDescription "A. V. Oppenheim, R. W. Schafer, Prentice-Hall, 2009." .

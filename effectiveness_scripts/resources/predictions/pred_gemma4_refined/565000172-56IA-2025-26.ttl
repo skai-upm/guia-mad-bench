@@ -1,0 +1,203 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+# Course Guide Instance
+guide:course_565000172 rdf:type guide:CourseGuide ;
+    sch:name "Sistemas Electronicos Digitales" ;
+    guide:numberOfCredits 7.5 ;
+    guide:teachingPeriod "2:2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus guide:syllabus_565000172 ;
+    guide:hasCompetency guide:comp_CE24, guide:comp_CE25, guide:comp_CG1, guide:comp_CG10, guide:comp_CG3, guide:comp_CG4, guide:comp_CG6, guide:comp_CG7 ;
+    guide:hasLearningResult guide:lr_RA58, guide:lr_RA59, guide:lr_RA238, guide:lr_RA239, guide:lr_RA241, guide:lr_RA242, guide:lr_RA236, guide:lr_RA237, guide:lr_RA234, guide:lr_RA240, guide:lr_RA243 ;
+    guide:hasEvaluation guide:eval_sys_565000172 ;
+    guide:hasDidacticResource guide:res_pedroni, guide:res_noviello, guide:res_davila, guide:res_yiu, guide:res_pardo, guide:res_artigas, guide:res_maxfield, guide:res_harris, guide:res_deschamps, guide:res_moodle, guide:res_git, guide:res_st, guide:res_amd ;
+    sch:instructor guide:lecturer_rebeca, guide:lecturer_pedro, guide:lecturer_alberto, guide:lecturer_ruben, guide:lecturer_giuseppe ;
+    sch:director guide:lecturer_alberto ;
+    guide:otherInformation "La asignatura es de carácter optativo. Cuarto curso." .
+
+# Degree and University Center
+guide:degree_56IA rdf:type guide:Degree ;
+    sch:name "56IA - Grado En Ingenieria Electronica Industrial Y Automatica" ;
+    guide:hasCourse guide:course_565000172 ;
+    guide:degreeCode "56IA" .
+
+guide:center_ETS rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingeniería y Diseño Industrial" ;
+    guide:offers guide:degree_56IA .
+
+# Lecturers
+guide:lecturer_rebeca rdf:type guide:Lecturer ;
+    sch:name "Rebeca Herrero Martin" ;
+    sch:email "repcera.herrero@upm.es" ;
+    guide:office "C-108" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:lecturer_pedro rdf:type guide:Lecturer ;
+    sch:name "Pedro Luis Castedo Cepeda" ;
+    sch:email "pedroluis.castedo@upm.es" ;
+    guide:office "C-204" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:lecturer_alberto rdf:type guide:Lecturer ;
+    sch:name "Alberto Brunete Gonzalez" ;
+    sch:email "alberto.brunete@upm.es" ;
+    guide:office "C-107" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:lecturer_ruben rdf:type guide:Lecturer ;
+    sch:name "Ruben Nuñez Judez" ;
+    sch:email "ruben.nunez@upm.es" ;
+    guide:office "C-108" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:lecturer_giuseppe rdf:type guide:Lecturer ;
+    sch:name "Giuseppe Conti" ;
+    sch:email "g.conti@upm.es" ;
+    guide:office "C-106" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+# Competencies
+guide:comp_CE24 rdf:type guide:Competency ;
+    guide:competencyCode "CE 24" ;
+    guide:competencyDescription "Capacidad para diseñar sistemas electrónicos analógicos, digitales y de potencia." .
+
+guide:comp_CE25 rdf:type guide:Competency ;
+    guide:competencyCode "CE 25" ;
+    guide:competencyDescription "Conocimiento y capacidad para el modelado y simulación de sistemas." .
+
+guide:comp_CG1 rdf:type guide:Competency ;
+    guide:competencyCode "CG 1" ;
+    guide:competencyDescription "Conocer y aplicar los conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Industrial" .
+
+guide:comp_CG10 rdf:type guide:Competency ;
+    guide:competencyCode "CG 10" ;
+    guide:competencyDescription "Creatividad." .
+
+guide:comp_CG3 rdf:type guide:Competency ;
+    guide:competencyCode "CG 3" ;
+    guide:competencyDescription "Aplicar los conocimientos adquiridos para identificar, formular y resolver problemas en contextos amplios..." .
+
+guide:comp_CG4 rdf:type guide:Competency ;
+    guide:competencyCode "CG 4" ;
+    guide:competencyDescription "Comprender el impacto de la ingeniería en el medio ambiente, el desarrollo sostenible de la sociedad..." .
+
+guide:comp_CG6 rdf:type guide:Competency ;
+    guide:competencyCode "CG 6" ;
+    guide:competencyDescription "Poseer las habilidades de aprendizaje que permitan continuar estudiando a lo largo de toda la vida..." .
+
+guide:comp_CG7 rdf:type guide:Competency ;
+    guide:competencyCode "CG 7" ;
+    guide:competencyDescription "Incorporar las TIC y las tecnologías y herramientas de la Ingeniería Industrial en sus actividades profesionales" .
+
+# Learning Results
+guide:lr_RA58 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA58" ;
+    guide:learningResultDescription "Conocimiento y capacidad para el modelado y simulación de sistemas electrónicos digitales." .
+
+guide:lr_RA59 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA59" ;
+    guide:learningResultDescription "Capacidad para el diseño de sistemas electrónicos digitales." .
+
+guide:lr_RA238 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA238" ;
+    guide:learningResultDescription "Realizar descripciones de circuitos mediante VHDL." .
+
+# Syllabus
+guide:syllabus_565000172 rdf:type guide:Syllabus ;
+    guide:hasItem guide:item_1, guide:item_2, guide:item_3, guide:item_4 .
+
+guide:item_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción" .
+
+guide:item_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Diseño mediante Lenguajes de Descripción Hardware" .
+
+guide:item_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Diseño y test con Lógica Programable" .
+
+guide:item_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Microcontroladores" .
+
+# Evaluation System and Trials
+guide:eval_sys_565000172 rdf:type guide:EvaluationSystem ;
+    guide:hasEvaluationTrial guide:trial_parcial, guide:trial_global, guide:trial_trabajo, guide:trial_extraordinario .
+
+guide:trial_parcial rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:trialDescription "Examen parcial en la semana decimoprimera." .
+
+guide:trial_global rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:trialDescription "Examen global en aula." .
+
+guide:trial_trabajo rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Presentación" ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:trialDescription "Trabajo de la asignatura." .
+
+# Schedule and Events
+guide:schedule_565000172 rdf:type guide:Schedule ;
+    sch:eventSchedule guide:event_week1, guide:event_week5, guide:event_week11, guide:event_week13, guide:event_week17 .
+
+guide:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity guide:act_leccion_magistral_1 .
+
+guide:act_leccion_magistral_1 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1 y Tema 4" ;
+    guide:activityDuration 5.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+guide:event_week11 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 11" ;
+    guide:hasActivity guide:act_examen_parcial .
+
+guide:act_examen_parcial rdf:type guide:Activity ;
+    guide:activityDescription "Primer examen parcial" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Examen Escrito" .
+
+# Didactic Resources
+guide:res_pedroni rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Circuit Design with VHDL, V. A. Pedroni 2010" ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:res_noviello rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Mastering STM32. Carmine Noviello." ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:res_moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:res_git rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Repositorios git" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:res_st rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Material proporcionado por ST sobre los microcontroladores STM32F4" ;
+    guide:bibliographyType "Recursos web" .
+
+# Required Knowledge
+guide:req_knowledge_565000172 rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Electronica Digital Y Microprocesadores, Informatica, Informatica Industrial Y Comunicaciones" .

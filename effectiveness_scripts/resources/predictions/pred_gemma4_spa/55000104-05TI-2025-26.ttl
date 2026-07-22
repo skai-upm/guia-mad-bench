@@ -1,0 +1,200 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Information
+:course_55000104 rdf:type guide:CourseGuide ;
+    sch:name "Electronica Digital" ;
+    sch:courseCode 55000104 ;
+    guide:numberOfCredits 3.0 ;
+    guide:courseType "Optativa" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:semester "Séptimo semestre" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellamente" ;
+    guide:hasCompetency :comp_CE21A, :comp_CE24A, :comp_CG1, :comp_CG10, :comp_CG2, :comp_CG3, :comp_CG5, :comp_CG6, :comp_CG7, :comp_CG9 ;
+    guide:hasLearningResult :lr_RA8, :lr_RA9 ;
+    guide:hasSyllabus :syllabus_electronica_digital ;
+    guide:hasEvaluation :eval_system_main ;
+    sch:courseSchedule :schedule_electronica_digital ;
+    guide:hasDidacticResource :res_transparencias, :res_fpga, :res_weblab, :res_videotutoriales .
+
+:degree_05TI rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Ingeniería En Tecnally Industriales" ;
+    guide:degreeCode "05TI" .
+
+:uni_center_ets rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Industriales" ;
+    guide:offers :degree_05TI .
+
+# Faculty/Lecturers
+:lecturer_otero rdf:type guide:Lecturer ;
+    sch:name "Jose Andres Otero Marnotes" ;
+    sch:email "joseandres.otero@upm.es" ;
+    guide:tutorshipsSchedule "L - 08:00 - 08:15" .
+
+:lecturer_portilla rdf:type guide:Lecturer ;
+    sch:name "Jorge Portilla Berrueco" ;
+    sch:email "jorge.portilla@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:course_55000104 sch:instructor :lecturer_otero, :lecturer_portilla .
+:course_5500_coord sch:director :lecturer_otero .
+
+# Competencies
+:comp_CE21A rdf:type guide:Competency ;
+    guide:competencyCode "CE21A" ;
+    guide:competencyDescription "Conocimiento de los fundamentos y aplicaciones de la electrónica digital y microprocesadores." .
+
+:comp_CE24A rdf:type guide:Competency ;
+    guide:competencyCode "CE24A" ;
+    guide:competencyDescription "Capacidad para diseñar sistemas electrónicos analógicos, digitales y de potencia." .
+
+:comp_CG1 rdf:type guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Industrial." .
+
+:comp_CG10 rdf:type guide:Competency ;
+    guide:competencyCode "CG10" ;
+    guide:competencyDescription "Capacidad para generar nuevas ideas (Creatividad)." .
+
+:comp_CG2 rdf:type guide:Competency ;
+    guide:competencyCode "CG2" ;
+    guide:competencyDescription "Poseer capacidad para diseñar, desarrollar, implementar, gestionar y mejorar productos, sistemas y procesos en los distintos ámbitos industriales..." .
+
+:comp_CG3 rdf:type guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Aplicar los conocimientos adquiridos para identificar, formular y resolver problemas dentro de contextos amplios y multidisciplinarios..." .
+
+:comp_CG5 rdf:type guide:Competency ;
+    guide:competencyCode "CG5" ;
+    guide:competencyDescription "Saber comunicar los conocimientos y conclusiones, de forma oral, escrita y gráfica..." .
+
+:comp_CG6 rdf:type guide:Competency ;
+    guide:competencyCode "CG6" ;
+    guide:competencyDescription "Poseer habilidades de aprendizaje que permitan continuar estudiando a lo largo de la vida..." .
+
+:comp_CG7 rdf:type guide:Competency ;
+    guide:competencyCode "CG7" ;
+    guide:competencyDescription "Incorporar nuevas tecnologías y herramientas de la Ingeniería Industrial en sus actividades profesionales." .
+
+:comp_CG9 rdf:type guide:Competency ;
+    guide:competencyCode "CG9" ;
+    guide:competencyDescription "Organización y planificación en el ámbito de la empresa, y otras instituciones y organizaciones de proyectos y equipos humanos." .
+
+# Learning Results
+:lr_RA8 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA8" ;
+    guide:learningResultDescription "Capacidad y habilidades para diseñar circuitos digitales de complejidad intermedia, a partir de bloques funcionales conocidos, combinados con máquinas de estados." .
+
+:lr_RA9 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA9" ;
+    guide:learningResultDescription "Adquirir criterios para seleccionar las diferentes posibilidades tecnológicas de implementación de circuitos." .
+
+# Syllabus
+:syllabus_electronica_digital rdf:type guide:Syllabus ;
+    guide:hasItem :item_1, :item_2, :item_3, :item_4, :item_5, :item_6, :item_7 .
+
+:item_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a los Sistemas Digitales" .
+
+:item_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Diseño Digital con Lenguajes de descripción Hardware (VHDL)" .
+
+:item_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Diseño de Circuitos Combinacionales" .
+
+:item_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Diseño de Circuitos Secuenciales Síncronos" .
+
+:item_5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Síntesis de Circuitos Secuenciales Síncronos" .
+
+:item_6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Implementación física" .
+
+:item_7 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Arquitectura de sistemas digitales" .
+
+# Evaluation System
+:eval_system_main rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global." ;
+    guide:hasEvaluationTrial :trial_ev_prac1, :trial_ev_prac2, :trial_ev_prac3, :trial_ev_prac4, :trial_exam_vhd, :trial_work_review, :trial_final_exam .
+
+:trial_ev_prac1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen de Prácticas" ;
+    guide:gradePercentage "2.5%" ;
+    guide:trialMode "Presencial" ;
+    guide:eventIndex 2 .
+
+:trial_exam_vhd rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "20%" ;
+    guide:trialMode "Presencial" ;
+    guide:eventIndex 6 .
+
+:trial_work_review rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Trabajo en Grupo" ;
+    guide:gradePercentage "30%" ;
+    guide:trialMode "Presencial" ;
+    guide:eventIndex 13 .
+
+:trial_final_exam rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:eventIndex 17 .
+
+# Schedule and Activities
+:schedule_electronica_digital rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week2, :event_week3, :event_week4, :event_week5, :event_week6 .
+
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_leccion_magistral_1 .
+
+:act_leccion_magistral_1 rdf:type guide:Activity ;
+    guide:activityDescription "Introducción a los Sistemas Digitales / Lenguajes de descripción Hardware (I)" ;
+    guide:activityDuration 2.5 ;
+    guide:activityFormat "Lección Magistral" .
+
+:event_week2 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 2 ;
+    guide:eventWeek "Semana 2" ;
+    guide:hasActivity :act_practica_1 .
+
+:act_practica_1 rdf:type guide:Activity ;
+    guide:activityDescription "Práctica 1. Introducción a Vivado" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_transparencias rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Transparencias de clase" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_fpga rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Placas y SW de diseño con FPGAs" ;
+    guide:bibliographyType "Equipamiento" .
+
+:res_weblab rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Weblab" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_videotutoriales rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Videotutoriales de prácticas" ;
+    guide:bibliographyType "Otros" .

@@ -1,0 +1,186 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course/GA_11AF_115100015> rdf:type :CourseGuide ;
+    sch:name "Biomecánica De La Afyd"@en ;
+    guide:courseYear 2026 ; # Derived from academic year context (2025-26) or specific course code if applicable. Using integer for Year as per schema range in ontology? No, `guide:courseYear` is xsd:integer on Course class. I will use it here to denote the offering period roughly or just omit if not strictly required by domain constraints (CourseGuide doesn't have this prop).
+    guide:numberOfCredits "6"^^xsd:decimal ; # 6 ECTS from Section 1 table
+    sch:description "Aplica las leyes de la mecánica a los movimientos del cuerpo humano teniendo en cuenta sus características anatómicas y biológicas."@en ;
+    dct:title "Guía de Aprendizaje - Biomecánica De La Afyd"@es ;
+    guide:teachingPeriodMonths "Febrero-Junio"^^xsd:string ; # Section 1 table
+    sch:inLanguage "Castellano"^^rdf:langString ;
+    guide:syllabusDescription "Introducción al estudio de la biomecánica, análisis cinemático y dinámico, energía mecánica."@en .
+
+<http://guia-mad-bench.es/data/degree/BachelorDegree_11AF> rdf:type :BachelorDegree ;
+    sch:name "Grado En Ciencias De La Actividad Física Y Del Deporte"@es ;
+    guide:degreeCode "11AF"^^xsd:string ; # Section 1 table. Note: `guide:degreeCode` domain is Degree class in ontology? Yes, defined as xsd:string on Domain Guide:Degree.
+
+<http://guia-mad-bench.es/data/syllabus/SYLLABUS_BIOMECHANICS> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/ssi/item/Tema_1_Introduccion>,
+                 <http://guia-mad-bench.es/data/ssi/item/Tema_2_Analisis_Cinematico_Lineal>,
+                 <http://guia-mad-bench.es/data/ssi/item/Tema_3_Analisis_Cinematico_Angular> ; # Simplified list based on Section 5.2 structure
+
+<http://guia-mad-bench.es/data/schedule/SCHEDULE_GA_11AF_115100015> rdf:type :Schedule ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/course/GA_11AF_115100015> .
+
+<http://guia-mad-bench.es/data/ssi/item/Tema_1_Introduccion> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ; # Section 5.2 structure implies order, though exact numbers not explicit in text for all items. I will use inferred indices based on list position or leave generic if strict index required? `guide:itemIndex` is xsd:integer. I'll assign sequential integers to represent the thematic units listed (1-7).
+    guide:syllabusDescription "Introducción al estudio de la biomecánica, ciencias del deporte y definición."@en .
+
+<http://guia-mad-bench.es/data/ssi/item/Tema_2_Analisis_Cinematico_Lineal> rdf:type :SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer ;
+    guide:syllabusDescription "Análisis cinemático lineal, centro de masas y velocidad."@en .
+
+<http://guia-mad-bench.es/data/ssi/item/Tema_3_Analisis_Cinematico_Angular> rdf:type :SyllabusItem ;
+    guide:itemIndex 3^^xsd:integer ;
+    guide:syllabusDescription "Análisis cinemático angular, movimiento circular y rotación."@en .
+
+<http://guia-mad-bench.es/data/ssi/item/Tema_4_Dinamica_Centro_Masas> rdf:type :SyllabusItem ;
+    guide:itemIndex 4^^xsd:integer ;
+    guide:syllabusDescription "Dinámica del centro de masas, fuerzas y leyes de Newton."@en .
+
+<http://guia-mad-bench.es/data/ssi/item/Tema_5_Dinamica_Cuerpo_Humano> rdf:type :SyllabusItem ;
+    guide:itemIndex 5^^xsd:integer ;
+    guide:syllabusDescription "Dinámica del cuerpo humano, modelo sólido rígido."@en .
+
+<http://guia-mad-bench.es/data/ssi/item/Tema_6_Equilibrio_Mecanico> rdf:type :SyllabusItem ;
+    guide:itemIndex 6^^xsd:integer ;
+    guide:syllabusDescription "Equilibrio mecánico del cuerpo humano, estabilidad y postura."@en .
+
+<http://guia-mad-bench.es/data/ssi/item/Tema_7_Energia_Mecanica> rdf:type :SyllabusItem ;
+    guide:itemIndex 7^^xsd:integer ;
+    guide:syllabusDescription "Energía mecánica, trabajo y potencia."@en .
+
+<http://guia-mad-bench.es/data/ssi/item/Tema_8_Metodos_Analisis> rdf:type :SyllabusItem ;
+    guide:itemIndex 8^^xsd:integer ;
+    guide:syllabusDescription "Métodos de análisis biomecánico, fotogrametría y electromiografía."@en .
+
+<http://guia-mad-bench.es/data/competency/CE08> rdf:type :Competency ;
+    guide:competencyCode "CE08"^^xsd:string ; # Section 4.1 table/list
+    guide:competencyDescription "Aplicar de manera fundamentada y argumentada los principios fisiológicos, biomecánicos..."@en .
+
+<http://guia-mad-bench.es/data/competency/CE09> rdf:type :Competency ;
+    guide:competencyCode "CE09"^^xsd:string ; # Section 4.1 table/list
+    guide:competencyDescription "Identificar y prevenir los riesgos que se derivan para la salud de los deportistas..."@en .
+
+<http://guia-mad-bench.es/data/learningResult/RA84> rdf:type :LearningResult ;
+    guide:learningResultCode "RA84"^^xsd:string ; # Section 4.2 table/list
+    guide:learningResultDescription "Seleccionar y utilizar el material y el equipamiento deportivo adecuado en cada caso."@en .
+
+<http://guia-mad-bench.es/data/learningResult/RA14> rdf:type :LearningResult ;
+    guide:learningResultCode "RA14"^^xsd:string ; # Section 4.2 table/list
+    guide:learningResultDescription "Saber aplicar los principios del entrenamiento y así como los fundamentos fisiológicos..."@en .
+
+<http://guia-mad-bench.es/data/lecturer/L_Enrique_Navarro> rdf:type :Lecturer ;
+    sch:name "Enrique Navarro Cabello"@es ; # Section 2 table/list (Coordinator)
+    guide:office "204"^^xsd:string ; # Section 2 table
+    sch:email <mailto:enrique.navarro@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer/L_Archit_Navandar> rdf:type :Lecturer ;
+    sch:name "Archit Navandar"@es ; # Section 2 table/list
+    guide:tutorshipsSchedule "L - 08:00 - 12:00, M - 08:00 - 10:00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer/L_Javier_Rueda> rdf:type :Lecturer ;
+    sch:name "Javier Rueda Ojeda"@es ; # Section 2 table/list (Instructor)
+    guide:office "104"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluation/EVAL_SYSTEM> rdf:type :EvaluationSystem ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus/SYLLABUS_BIOMECHANICS> ; # Linking Guide to Syllabus via hasItem? No, `guide:hasSyllabus` is on CourseGuide. I will link the System here if possible or just describe it.
+    guide:evaluationDescription "Evaluación progresiva y global basada en exámenes parciales y prácticas."@en ; # Section 7 text
+
+<http://guia-mad-bench.es/data/eval_trial/Trial_Examen_Parcial_1> rdf:type :EvaluationTrial ;
+    sch:name "Examen Parcial 1"@es ; # Section 7 table
+    guide:trialType "Prueba Telemática"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial/Trial_Examen_Parcial_2> rdf:type :EvaluationTrial ;
+    sch:name "Examen Parcial 2"@es ; # Section 7 table
+    guide:trialType "Presentación Individual"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial/Trial_Examen_Final> rdf:type :EvaluationTrial ;
+    sch:name "Examen Final"@es ; # Section 7 table (Semester 17)
+    guide:trialType "Prueba Telemática"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial/Trial_Practicas_Lab_1> rdf:type :EvaluationTrial ;
+    sch:name "Prácticas Laboratorio Semestre 7"@es ; # Section 7 table (Semester 7)
+    guide:trialType "Prueba Telemática"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial/Trial_Practicas_Lab_2> rdf:type :EvaluationTrial ;
+    sch:name "Prácticas Laboratorio Semestre 11"@es ; # Section 7 table (Semester 11)
+    guide:trialType "Prueba Telemática"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial/Trial_Practicas_Lab_3> rdf:type :EvaluationTrial ;
+    sch:name "Prácticas Laboratorio Semestre 15"@es ; # Section 7 table (Semester 15)
+    guide:trialType "Prueba Telemática"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial/Trial_Practicas_Lab_4> rdf:type :EvaluationTrial ;
+    sch:name "Prácticas Laboratorio Semestre 7 (2)"@es ; # Section 7 table (Semester 15) - Note: Table lists multiple entries. I will consolidate or create specific ones based on rows. The text has a row for Lab Practics in sem 7 and another in sem 15 with different weights?
+    guide:trialType "Prueba Telemática"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial/Trial_Examen_Final> rdf:type :EvaluationTrial ; # Reusing URI for Final Exam as it's the main one.
+    sch:name "Examen Final"@es ;
+    guide:trialType "Prueba Telemática"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial/Trial_Exam_Parcial_1> rdf:type :EvaluationTrial ; # Reusing URI for Partial 1.
+    sch:name "Examen Parcial 1"@es ;
+    guide:trialType "Prueba Telemática"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial/Trial_Exam_Parcial_2> rdf:type :EvaluationTrial ; # Reusing URI for Partial 2.
+    sch:name "Examen Parcial 2"@es ;
+    guide:trialType "Presentación Individual"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial/Trial_Exam_Final> rdf:type :EvaluationTrial ; # Reusing URI for Final Exam.
+    sch:name "Examen Final"@es ;
+    guide:trialType "Prueba Telemática"^^xsd:string .
+
+# Linking Evaluation Trials to Schedule Events (Section 6 & 7) and System
+<http://guia-mad-bench.es/data/eval_trial/Trial_Exam_Parcial_1> :hasScheduleEvent <http://guia-mad-bench.es/data/schedule/event/Semester_7_Event_1>, # Section 7 table (Sem 7, Exam)
+    <http://guia-mad-bench.es/data/schedule/event/Exam_Final_Sem_17> ; # Final exam is Sem 17.
+
+<http://guia-mad-bench.es/data/course/GA_11AF_115100015> sch:courseSchedule <http://guia-mad-bench.es/data/schedule/SCHEDULE_GA_11AF_115100015> ;
+    guide:syllabusDescription "Introducción al estudio de la biomecánica, análisis cinemático y dinámico..."@en .
+
+<http://guia-mad-bench.es/data/eval_trial/Trial_Exam_Parcial_2> :hasScheduleEvent <http://guia-mad-bench.es/data/schedule/event/Semester_15_Event_1>, # Section 7 table (Sem 15, Exam)
+    <http://guia-mad-bench.es/data/schedule/event/Exam_Final_Sem_17> ;
+
+<http://guia-mad-bench.es/data/course/GA_11AF_115100015> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus/SYLLABUS_BIOMECHANICS> .
+# Note: `guide:hasEvaluation` links CourseGuide to EvaluationSystem. I will add this link explicitly if possible, but the ontology definition says Domain is Guide:CourseGuide and Range is Guide:EvaluationSystem. So yes, it exists!
+
+<http://guia-mad-bench.es/data/course/GA_11AF_115100015> guide:hasEvaluation <http://guia-mad-bench.es/data/eval_system/EVAL_SYSTEM> .
+# Note: `guide:hasSyllabus` links CourseGuide to Syllabus.
+
+<http://guia-mad-bench.es/data/course/GA_11AF_115100015> guide:hasLearningResult <http://guia-mad-bench.es/data/learning_result/RA84>,
+    <http://guia-mad-bench.es/data/learning_result/RA9>, # RA9 is listed in Section 4.2 but no code provided, I will use generic or infer from text "Capacidad de trabajar en equipo". Let's assume a URI exists for it based on pattern.
+
+<http://guia-mad-bench.es/data/course/GA_11AF_115100015> guide:hasCompetency <http://guia-mad-bench.es/data/competency/CE08>,
+    <http://guia-mad-bench.es/data/competency/CE09>.
+
+<http://guia-mad-bench.es/data/course/GA_11AF_115100015> guide:hasDidacticResource <http://guia-mad-bench.es/data/resource/Moodle>,
+    <http://guia-mad-bench.es/data/resource/Barlett_Biomechanics>.
+
+<http://guia-mad-bench.es/data/course/GA_11AF_115100015> guide:hasCourseInstance <http://guia-mad-bench.es/data/course/Course_Instance_GA_11AF_2S_26> . # Linking to Course Instance (Degree -> Course)
+
+<http://guia-mad-bench.es/data/degree/BachelorDegree_11AF> guide:hasCourse <http://guia-mad-bench.es/data/course/Course_Instance_GA_11AF_2S_26>. # Degree has Course.
+# Note: `guide:hasCourse` domain is Guide:Degree, range is Guide:Course.
+
+<http://guia-mad-bench.es/data/degree/BachelorDegree_11AF> sch:name "Grado En Ciencias De La Actividad Física Y Del Deporte"@es ; # Section 1 table
+    guide:degreeCode "11AF"^^xsd:string .
+
+# Schedule Events (Section 6) - Simplified representation of the table data into events.
+<http://guia-mad-bench.es/data/schedule/event/Semester_7_Event_1> rdf:type :ScheduleEvent ; # Section 6 Table Sem 7, Exam Parcial 1
+    sch:eventIndex 7^^xsd:integer .
+
+# Evaluation System Properties (Section 7) - Linking to Guide via `guide:hasEvaluation` is done above. Now linking Trial details.
+<http://guia-mad-bench.es/data/eval_trial/Trial_Exam_Parcial_1> guide:gradePercentage "45%"^^xsd:string ; # Section 7 table (Sem 7)
+    guide:minimumScore "5 / 10"^^xsd:string .
+
+# Resources (Section 8) - Linking Guide to DidacticResource.
+<http://guia-mad-bench.es/data/resource/Barlett_Biomechanics> rdf:type :DidacticResource ; # Section 8 table list
+    guide:bibliographyTitle "Introduction to sports biomechanics"^^xsd:string .
+
+# Note: `guide:numberOfCredits` is on CourseGuide. I used it above.

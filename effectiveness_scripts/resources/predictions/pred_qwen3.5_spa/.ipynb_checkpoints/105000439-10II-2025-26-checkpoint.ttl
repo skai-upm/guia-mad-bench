@@ -1,0 +1,135 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> rdf:type owl:Object ;
+    :hasSyllabus <http://guia-mad-bench.es/data/syllabus-el-arte-de-programar> ,
+        sch:courseSchedule <http://guia-mad-bench.es/data/course-schedule-anx-pr-cl-001-01> .
+
+<http://w3id.org/def/guia#CourseGuide> rdf:type owl:Object ;
+    dc:title "GUIA ontology"@en ,
+        "ANX-PR/CL/001-01 - Guía de Aprendizaje"@es ;
+    dct:creator <http://guia-mad-bench.es/data/santiago-tapia-fernandez> .
+
+<http://w3id.org/def/guia#Degree> rdf:type owl:Object ;
+    sch:name "Grado En Ingenieria Informatica"@en ,
+        "10II - Grado en Ingeniería Informática"@es .
+
+<http://guia-mad-bench.es/data/syllabus-el-arte-de-programar> rdf:type :Syllabus ;
+    rdfs:subClassOf sch:Syllabus ;
+    dct:title "Temario El Arte De Programar"@en ,
+        "5. Descripción de la asignatura y temario"@es .
+
+<http://guia-mad-bench.es/data/syllabus-el-arte-de-programar> :hasItem <http://guia-mad-bench.es/data/item-introduccion>,
+    <http://guia-mad-bench.es/data/eficiencia-complejidad>,
+    <http://guia-mad-bench.es/data/técnicas-basicas>,
+    <http://guia-mad-bench.es/data/diseño-algoritmos> .
+
+<http://guia-mad-bench.es/data/item-introduccion> rdf:type :SyllabusItem ;
+    rdfs:label "Introducción"@en ,
+        "1. Introducción"@es ;
+    sch:name "Presentación de la asignatura, Programación competitiva." .
+
+<http://guia-mad-bench.es/data/eficiencia-complejidad> rdf:type :SyllabusItem ;
+    rdfs:label "Eficiencia y complejidad"@en ,
+        "2. Eficiencia y complejidad de algoritmos"@es .
+
+<http://guia-mad-bench.es/data/técnicas-basicas> rdf:type :SyllabusItem ;
+    rdfs:label "Técnicas básicas"@en ,
+        "3. Técnicas básicas"@es .
+
+<http://guia-mad-bench.es/data/diseño-algoritmos> rdf:type :SyllabusItem ;
+    rdfs:label "Diseño de algoritmos"@en ,
+        "4. Técnicas de diseño de algoritmos"@es .
+
+<http://w3id.org/def/guia#CourseGuide> sch:name "El Arte De Programar"@en ,
+    <http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> ;
+    :numberOfCredits 6.0 .
+
+<http://w3id.org/def/guia#Degree> rdf:type owl:Object ;
+    sch:name "Grado En Ingenieria Informatica"@en ,
+        <http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> .
+
+<http://guia-mad-bench.es/data/santiago-tapia-fernandez> rdf:type :Lecturer ;
+    sch:name "Santiago Tapia Fernandez"@en ,
+        <http://w3id.org/def/guia#CourseGuide> ;
+    dct:creator "Coordinador/a" .
+
+<http://guia-mad-bench.es/data/syllabus-el-arte-de-programar> :hasItemIndex 1,2,3,4 .
+
+<http://guia-mad-bench.es/data/course-schedule-anx-pr-cl-001-01> rdf:type sch:Schedule ;
+    rdfs:subClassOf <http://w3id.org/def/guia#CourseGuide> ,
+        :hasSyllabus .
+
+<http://guia-mad-bench.es/data/course-schedule-anx-pr-cl-001-01> sch:eventSchedule <http://guia-mad-bench.es/data/evento-semestre-6>,
+    <http://guia-mad-bench.es/data/evaluacion-progresiva>.
+
+<http://w3id.org/def/guia#EvaluationSystem> rdf:type owl:Object ;
+    dct:title "Sistema de Evaluación El Arte De Programar"@en .
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> :hasEvaluationTrial <http://guia-mad-bench.es/data/evaluacion-progresiva>,
+    <http://guia-mad-bench.es/data/recuperacion-concursos>.
+
+<http://w3id.org/def/guia#Competency> rdf:type owl:Object ;
+    sch:name "CG-1/21"@en ,
+        "Capacidad de resolución de problemas aplicando conocimientos..."@es .
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> :hasCompetency <http://w3id.org/def/guia#CG-121>,
+    <http://w3id.org/def/guia#CG-2CE45>.
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> :hasLearningResult <http://w3id.org/def/guia#RA278>,
+    "Ce 19/20"@en .
+
+<http://w3id.org/def/guia#Activity> rdf:type owl:Object ;
+    sch:name "Clase de Teoría"@es ,
+        <http://guia-mad-bench.es/data/activity-theory>.
+
+<http://guia-mad-bench.es/data/course-schedule-anx-pr-cl-001-01> :hasActivity <http://w3id.org/def/guia#activity-theory>,
+    "Clase de Resolución de Problemas"@es .
+
+<http://guia-mad-bench.es/data/activity-theory> rdf:type :ScheduleEvent ;
+    sch:courseCode 105000439 ,
+        <http://w3id.org/def/guia#CourseGuide>.
+
+<http://guia-mad-bench.es/data/evento-semestre-6> rdf:type :ScheduleEvent ;
+    sch:eventIndex 6,7 .
+
+<http://guia-mad-bench.es/data/activity-theory> :activityDurationUnit om:Hour ,
+        <http://w3id.org/def/guia#CourseGuide>.
+
+<http://guia-mad-bench.es/data/course-schedule-anx-pr-cl-001-01> sch:eventSchedule <http://guia-mad-bench.es/data/evento-semestre-6>,
+    "Clase de Resolución de Problemas"@es .
+
+<http://w3id.org/def/guia#EvaluationTrial> rdf:type owl:Object ;
+    dct:title "Concursos de Programación"@en ,
+        <http://guia-mad-bench.es/data/concurso-programacion>.
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> :hasEvaluationTrial <http://w3id.org/def/guia#concurso-programacion>,
+    "Fase Local Ada Byron"@es .
+
+<http://w3id.org/def/guia#EvaluationSystem> sch:courseSchedule <http://guia-mad-bench.es/data/course-schedule-anx-pr-cl-001-01>.
+
+<http://guia-mad-bench.es/data/concurso-programacion> rdf:type :EvaluationTrial ;
+    dct:title "Concursos de Programación"@en ,
+        <http://w3id.org/def/guia#CourseGuide>,
+        sch:courseCode 105000439 .
+
+<http://guia-mad-bench.es/data/concurso-programacion> :trialType "TG"@es,
+    "Trabajo en Grupo"@en ;
+    :gradePercentage 7.0 ,
+        <http://w3id.org/def/guia#CourseGuide>.
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> sch:director <http://guia-mad-bench.es/data/santiago-tapia-fernandez>,
+    "Santiago Tapia Fernandez"@es .
+
+<http://w3id.org/def/guia#DidacticResource> rdf:type owl:Object ;
+    dct:title "The Algorithm Design Manual"@en ,
+        <http://guia-mad-bench.es/data/resource-algorithm-design>.
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> :hasDidacticResource <http://w3id.org/def/guia#resource-algorithm-design>,
+    "The Algorithm Design Manual"@es .

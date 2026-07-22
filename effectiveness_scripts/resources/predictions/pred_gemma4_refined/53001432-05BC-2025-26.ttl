@@ -1,0 +1,178 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+
+# Course Guide Instance
+guide:GA_05BC_53001432_1S_2025-26 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje: Integración De Procesos Químicos" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:numberOfCredits 4.5 ;
+    guide:inpersonHours "Not specified" ;
+    guide:remoteHours "Not specified" ;
+    sch:inLanguage "Castellano" ;
+    sch:description "El objetivo fundamental de la asignatura es aprender los fundamentos matemáticos y tecnológicos para mejorar la eficiencia energética y másica de procesos químicos industriales." ;
+    guide:hasSyllabus guide:Syllabus_Integracion ;
+    guide:hasCompetency guide:CE1, guide:CE2, guide:CE3, guide:CG2, guide:CG5 ;
+    guide:hasLearningResult guide:RA69, guide:RA67 ;
+    guide:hasEvaluation guide:EvalSystem_Integracion ;
+    guide:hasDidacticResource guide:Res_Kemp, guide:Res_Smith ;
+    sch:instructor guide:Manuel_Rodriguez_Hernandez, guide:Francisco_Ismael_Diaz_Moreno ;
+    sch:director guide:Francisco_Ismael_Diaz_Moreno ;
+    sch:courseSchedule guide:Schedule_Integracion .
+
+# Course Instance
+guide:Course_530014_Integracion rdf:type guide:Course ;
+    sch:name "53001432 - Integración De Procesos Químicos" ;
+    sch:courseCode 53001432 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Tercer semestre" ;
+    sch:hasCourseInstance guide:GA_05BC_53001432_1S_2025-26 .
+
+# Degree Instance
+guide:Degree_05BC rdf:type guide:MasterDegree ;
+    sch:name "05BC - Master Universitario En Ingenieria Quimica" ;
+    guide:degreeCode "05BC" ;
+    guide:hasCourse guide:Course_530014_Integracion .
+
+# University Center Instance
+guide:ETS_Industriales rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Industriales" ;
+    guide:offers guide:Degree_05BC .
+
+# Lecturer Instances
+guide:Manuel_Rodriguez_Hernandez rdf:type guide:Lecturer ;
+    sch:name "Manuel Rodriguez Hernandez" ;
+    sch:email "manuel.rodriguezh@upm.es" ;
+    guide:office "201" ;
+    guide:tutorshipsSchedule "M - 14:30 - 15:30" .
+
+guide:Francisco_Ismael_Diaz_Moreno rdf:type guide:Lecturer ;
+    sch:name "Francisco Ismael Diaz Moreno" ;
+    sch:email "ismael.diaz@upm.es" ;
+    guide:office "207" ;
+    guide:tutorshipsSchedule "M - 14:30 - 15:30" .
+
+# Competency Instances
+guide:CE1 rdf:type guide:Competency ;
+    guide:competencyCode "CE1" ;
+    guide:competencyDescription "Aplicar conocimientos de matemáticas, física, química, biología y otras ciencias naturales, obtenidos mediante estudio, experiencia, y práctica, con razonamiento crítico para establecer soluciones viables económicamente a problemas técnicos." .
+
+guide:CE2 rdf:type guide:Competency ;
+    guide:competencyCode "CE2" ;
+    guide:competencyDescription "Diseñar productos, procesos, sistemas y servicios de la industria química, así como la optimización de otros ya desarrollados..." .
+
+guide:CE3 rdf:type guide:Competency ;
+    guide:competencyCode "CE3" ;
+    guide:competencyDescription "Conceptualizar modelos de ingeniería, aplicar métodos innovadores en la resolución de problemas y aplicaciones informáticas adecuadas..." .
+
+guide:CG2 rdf:type guide:Competency ;
+    guide:competencyCode "CG2" ;
+    guide:competencyDescription "Concebir, proyectar, calcular, y diseñar procesos, equipos, instalaciones industriales y servicios..." .
+
+guide:CG5 rdf:type guide:Competency ;
+    guide:competencyCode "CG5" ;
+    guide:competencyDescription "Saber establecer modelos matemáticos y desarrollarlos mediante la informática apropiada..." .
+
+# Learning Result Instances
+guide:RA69 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA69" ;
+    guide:learningResultDescription "Ser capaz de realizar la evaluación económica básica de un proceso químico" .
+
+guide:RA67 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA67" ;
+    guide:learningResultDescription "Ser capaz de realizar la integración energética de un proceso químico" .
+
+# Syllabus Instance
+guide:Syllabus_Integracion rdf:type guide:Syllabus ;
+    guide:hasItem guide:SyllabusItem_1, guide:SyllabusItem_2, guide:SyllabusItem_3 .
+
+guide:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Fundamentos (Integración de procesos, Integración energética)" .
+
+guide:SyllabusItem_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Integración energética (Programación matemática, Análisis Pinch, Síntesis de redes)" .
+
+guide:SyllabusItem_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Integración másica (Análisis de procesos, Síntesis de sistemas de separación y suministro)" .
+
+# Evaluation System Instance
+guide:EvalSystem_Integracion rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Para aprobar la asignatura es necesario obtener una calificación global igual o superior a 5 como suma ponderada de los elementos de evaluación." ;
+    guide:hasEvaluationTrial guide:Trial_Tareas_Energetica, guide:Trial_Prueba_Integracion, guide:Trial_Entregas_Masica .
+
+# Evaluation Trial Instances
+guide:Trial_Tareas_Energetica rdf:type guide:EvaluationTrial ;
+    sch:name "Tareas integración energética" ;
+    guide:evaluationType "Evaluación Progresiva y Global" ;
+    guide:gradePercentage "15%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency guide:CG5, guide:CE1, guide:CE3, guide:CG2 .
+
+guide:Trial_Prueba_Integracion rdf:type guide:EvaluationTrial ;
+    sch:name "Prueba integración energética" ;
+    guide:evaluationType "Evaluación Progresiva y Global" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency guide:CG2, guide:CG5, guide:CE1, guide:CE2, guide:CE3 .
+
+guide:Trial_Entregas_Masica rdf:type guide:EvaluationTrial ;
+    sch:name "Entregas integración másica" ;
+    guide:evaluationType "Evaluación Progresiva y Global" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "No presencial" ;
+    guide:involvesCompetency guide:CG2, guide:CG5, guide:CE1, guide:CE2, guide:CE3 .
+
+# Schedule Instance
+guide:Schedule_Integracion rdf:type guide:Schedule ;
+    sch:eventSchedule guide:Event_Week1, guide:Event_Week2, guide:Event_Week3, guide:Event_Week4, guide:Event_Week5, guide:Event_Week6, guide:Event_Week7, guide:Event_Week8, guide:Event_Week9, guide:Event_Week10, guide:Event_Week12, guide:Event_Week13, guide:Event_Week14, guide:Event_Week17 .
+
+guide:Event_Week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity guide:Act_Clase_Teorica .
+
+guide:Act_Clase_Teorica rdf:type guide:Activity ;
+    sch:name "Clase teórica. Fundamentos" ;
+    guide:activityDescription "Lección Magistral" ;
+    guide:activityDuration 3.0 .
+
+guide:Event_Week2 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 2 ;
+    guide:eventWeek "Semana 2" ;
+    guide:hasActivity guide:Act_Metodos_Integracion, guide:Act_Trabajo_Caso_Pratico_W2 .
+
+guide:Act_Metodos_Integracion rdf:type guide:Activity ;
+    sch:name "Métodos para integración energética" ;
+    guide:activityDescription "Lección Magistral" ;
+    guide:activityDuration 1.0 .
+
+guide:Act_Trabajo_Caso_Pratico_W2 rdf:type guide:Activity ;
+    sch:name "Trabajo sobre caso práctico" ;
+    guide:activityDescription "Clase de Problemas" ;
+    guide:activityDuration 2.0 .
+
+# Didactic Resources
+guide:Res_Kemp rdf:type guide:DidacticResource ;
+    sch:name "Kemp, I. C. (2007). Pinch Analysis and Process Integration (Second Edition). Oxford: Butterworth-Heinemann." ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:Res_Smith rdf:type guide:DidacticResource ;
+    sch:name "Smith, R. (2005), Chemical Process Design and Integration. Ed. John Willey and Sons." ;
+    guide:bibliographyType "Bibliografía" .
+
+# Required Knowledge
+guide:ReqKnow_Previas rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Process Design Project II, OptimizaciÓn De Procesos, IngenierÍa De Procesos Y Productos, Process Design Project I" ;
+    guide:previousKnowledge "Organización y coordinación del trabajo en equipo, Elaboración de informes, Conocimiento de lenguajes de modelización algebraica, Planificación y ejecución personal del trabajo" .

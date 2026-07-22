@@ -1,0 +1,192 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://w3id.org/def/guia#> .
+
+# Course Instance (Course Guide)
+:GA_13AM_133000050 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje: Actividades Deportivas Acuáticas en la Naturaleza" ;
+    sch:description "Contenidos teóricos y prácticos alineados con la agenda 2030 sobre el Desarrollo Sostenible de la ONU." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:numberOfCredits 3.0 ;
+    guide:inpersonHours "Not specified" ;
+    guide:remoteHours "Not specified" ;
+    guide:totalHours "Not specified" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Jun	Junio" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :Vicente_Felipe_Gomez_Encinas ;
+    sch:director :Vicente_Felipe_Gomez_Encinas ;
+    guide:hasSyllabus :Syllabus_Actividades_Deportivas ;
+    guide:hasCompetency :CB7, :CE1, :CG3, :CT6 ;
+    guide:hasLearningResult :RA57 ;
+    guide:hasEvaluation :EvalSystem_Actividades_Deportivas ;
+    sch:courseSchedule :Schedule_Actividades_Deportivas ;
+    guide:hasDidacticResource :Resource_Moodle, :Resource_Equipamiento ;
+    guide:otherInformation "Las prácticas se desarrollarán en mayo. El estudiante debe costear alimentación y desplazamiento." .
+
+# Course
+:Actividades_Deportivas_Acuaticas_En_La_Naturaleza rdf:type guide:Course ;
+    sch:courseCode 133000050 ;
+    sch:name "Actividades Deportivas Acuáticas en la Naturaleza" ;
+    guide:courseType "Optativa" ;
+    guide:semester "Segundo semestre" ;
+    sch:hasCourseInstance :GA_13_AM_133000050 .
+
+# Degree
+:Master_Agua_Medio_Natural rdf:type guide:MasterDegree ;
+    sch:name "Master Universitario El Agua En El Medio Natural. Usos Y Gestion." ;
+    guide:degreeCode "13AM" .
+
+# University Center
+:ETSI_Montes_Forestal_Medio_Natur rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S.I. Montes, Forestal Y Medio Natur." ;
+    guide:offers :Master_Agua_Medio_Natural .
+
+# Lecturers
+:Vicente_Felipe_Gomez_Encinas rdf:type guide:Lecturer ;
+    sch:name "Vicente Felipe Gomez Encinas" ;
+    sch:email "v.gencinas@upm.es" ;
+    guide:office "702" ;
+    guide:tutorshipsSchedule "M - 14:00 - 17:00, J - 14:00 - 17:00" .
+
+:Lazaro_Mediavilla_Salodaña rdf:type guide:Lecturer ;
+    sch:name "Lazaro Mediavilla Saldaña" ;
+    sch:email "lazaro.mediavilla@upm.es" ;
+    guide:office "503" ;
+    guide:tutorshipsSchedule "J - 12:00 - 15:00, V - 10:00 - 13:00" .
+
+# Competencies
+:CB7 rdf:type guide:Competency ;
+    guide:competencyCode "CB7" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos." .
+
+:CE1 rdf:type guide:Competency ;
+    guide:competencyCode "CE1" ;
+    guide:competencyDescription "Conocer los fundamentos de la Limnología" .
+
+:CG3 rdf:type guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Capacidad para participar en proyectos de investigación, desarrollo e innovación vinculados con el uso sostenible de los recursos hídricos" .
+
+:CT6 rdf:type guide:Competency ;
+    guide:competencyCode "CT6" ;
+    guide:competencyDescription "Liderar equipos de trabajo de diversa índole, con actitud proactiva y motivadora." .
+
+# Learning Result
+:RA57 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA57" ;
+    guide:learningResultDescription "Desarrollo de un trabajo original en el ámbito del uso y gestión del agua en el medio natural." .
+
+# Syllabus
+:Syllabus_Actividades_Deportivas rdf:type guide:Syllabus ;
+    guide:hasItem :Tema_1, :Tema_2, :Tema_3, :Tema_4, :Tema_5, :Tema_6, :Tema_7 .
+
+:Tema_1 rdf:type guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "Conceptos y fundamentos del Ocio, Tiempo Libre y la Recreación Deportiva" .
+:Tema_2 rdf:type guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "Demanda de actividades físicas y deportivas en el tiempo libre y de ocio" .
+:Tema_3 rdf:type guide:SyllabusItem ; guide:itemIndex 3 ; guide:syllabusDescription "Dimensiones y manifestaciones actuales del ocio" .
+:Tema_4 rdf:type guide:SyllabusItem ; guide:itemIndex 4 ; guide:syllabusDescription "Actividades deportivas y recreativas fluviales. Clasificación." .
+:Tema_5 rdf:type guide:SyllabusItem ; guide:itemIndex 5 ; guide:syllabusDescription "Diseño de programas de actividades acuáticas en la naturaleza" .
+:Tema_6 rdf:type guide:SyllabusItem ; guide:itemIndex 6 ; guide:syllabusDescription "Experiencia práctica de piragüismo. Maniobras básicas de paleo para el descenso de aguas bravas" .
+:Tema_7 rdf:type guide:SyllabusItem ; guide:itemIndex 7 ; guide:syllabusDescription "Gestión del riesgo en actividades fluviales y barrancos" .
+
+# Schedule and Events
+:Schedule_Actividades_Deportivas rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week_1, :Event_Week_2, :Event_Week_3, :Event_Week_4, :Event_Week_5, :Event_Week_6, :Event_Week_7, :Event_Week_17 .
+
+:Event_Week_1 rdf:type guide:ScheduleEvent ; guide:eventWeek "1" ; guide:hasActivity :Act_LM_Tema1, :Act_AC_Tema1 .
+:Event_Week_2 rdf:type guide:ScheduleEvent ; guide:eventWeek "2" ; guide:hasActivity :Act_LM_Tema2, :Act_PR_Tema2 .
+:Event_Week_3 rdf:type guide:ScheduleEvent ; guide:eventWeek "3" ; guide:hasActivity :Act_LM_Tema3, :Act_AC_Tema3 .
+:Event_Week_4 rdf:type guide:ScheduleEvent ; guide:eventWeek "4" ; guide:hasActivity :Act_LM_Tema4, :Act_AC_Tema4 .
+:Event_Week_5 rdf:type guide:ScheduleEvent ; guide:eventWeek "5" ; guide:hasActivity :Act_LM_Tema5, :Act_PR_Tema5 .
+:Event_Week_6 rdf:type guide:ScheduleEvent ; guide:eventWeek "6" ; guide:hasActivity :Act_AC_Tema6, :Act_PR_Tema6 .
+:Event_Week_7 rdf:type guide:ScheduleEvent ; guide:eventWeek "7" ; guide:hasActivity :Act_VP_Tema6, :Act_LM_Tema7 .
+:Event_Week_17 rdf:type guide:ScheduleEvent ; guide:eventWeek "17" ; guide:hasActivity :Act_EX_Escrito, :Act_OT_Presentacion .
+
+# Activities
+:Act_LM_Tema1 rdf:type guide:Activity ; guide:activityDescription "Lección Magistral Tema 1" ; guide:activityDuration 2.0 ; guide:attendanceType "Presencial" .
+:Act_AC_Tema1 rdf:type guide:Activity ; guide:activityDescription "Acciones Cooperativas Tema 1" ; guide:activityDuration 2.0 ; guide:attendanceType "Presencial" .
+:Act_LM_Tema2 rdf:type guide:Activity ; guide:activityDescription "Lección Magistral Tema 2" ; guide:activityDuration 2.0 ; guide:attendanceType "Presencial" .
+:Act_PR_Tema2 rdf:type guide:Activity ; guide:activityDescription "Clase de Problemas Tema 2" ; guide:activityDuration 2.0 ; guide:attendanceType "Presencial" .
+:Act_LM_Tema3 rdf:type guide:Activity ; guide:activityDescription "Lección Magistral Tema 3" ; guide:activityDuration 2.0 ; guide:attendanceType "Presencial" .
+:Act_AC_Tema3 rdf:type guide:Activity ; guide:activityDescription "Acciones Cooperativas Tema 3" ; guide:activityDuration 2.0 ; guide:attendanceType "Presencial" .
+:Act_LM_Tema4 rdf:type guide:Activity ; guide:activityDescription "Lección Magistral Tema 4" ; guide:activityDuration 2.0 ; guide:attendanceType "Presencial" .
+:Act_AC_Tema4 rdf:type guide:Activity ; guide:activityDescription "Acciones Cooperativas Tema 4" ; guide:activityDuration 2.0 ; guide:attendanceType "Presencial" .
+:Act_LM_Tema5 rdf:type guide:Activity ; guide:activityDescription "Lección Magistral Tema 5" ; guide:activityDuration 2.0 ; guide:attendanceType "Presencial" .
+:Act_PR_Tema5 rdf:type guide:Activity ; guide:activityDescription "Clase de Problemas Tema 5" ; guide:activityDuration 2.0 ; guide:attendanceType "Presencial" .
+:Act_AC_Tema6 rdf:type guide:Activity ; guide:activityDescription "Acciones Cooperativas Tema 6" ; guide:activityDuration 2.0 ; guide:attendanceType "Presencial" .
+:Act_PR_Tema6 rdf:type guide:Activity ; guide:activityDescription "Clase de Problemas Tema 6" ; guide:activityDuration 2.0 ; guide:attendanceType "Presencial" .
+:Act_VP_Tema6 rdf:type guide:Activity ; guide:activityDescription "Viaje de prácticas" ; guide:activityDuration 10.0 ; guide:attendanceType "Presencial" .
+:Act_LM_Tema7 rdf:type guide:Activity ; guide:activityDescription "Lección Magistral Tema 7" ; guide:activityDuration 1.0 ; guide:attendanceType "Presencial" .
+:Act_EX_Escrito rdf:type guide:Activity ; guide:activityDescription "Examen escrito" ; guide:activityDuration 2.0 ; guide:attendanceType "Presencial" .
+:Act_OT_Presentacion rdf:type guide:Activity ; guide:activityDescription "Presentación Diseño de Intervención" ; guide:activityDuration 4.0 ; guide:attendanceType "Presencial" .
+
+# Evaluation System
+:EvalSystem_Actividades_Deportivas rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema compuesto por evaluación progresiva, global y extraordinaria." ;
+    guide:hasEvaluationTrial :Trial_Trabajo_Ficha_3, :Trial_Trabajo_Ficha_5, :Trial_Diseño_Intervencion_6, :Trial_Examen_Escrito_17, :Trial_Examen_Practico_7, :Trial_Presentacion_17, :Trial_Defensa_Extraordinaria .
+
+:Trial_Trabajo_Ficha_3 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo Individual" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "5/10" ;
+    guide:involvesCompetency :CB7, :CG3, :CT6, :CE1 .
+
+:Trial_Trabajo_Ficha_5 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo Individual" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "5/10" ;
+    guide:involvesCompetency :CB7, :CG3, :CT6, :CE1 .
+
+:Trial_Diseño_Intervencion_6 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Presentación en Grupo" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5/10" ;
+    guide:involvesCompetency :CB7, :CG3, :CT6, :CE1 .
+
+:Trial_Examen_Escrito_17 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5/10" ;
+    guide:involvesCompetency :CB7, :CG3, :CT6, :CE1 .
+
+:Trial_Examen_Practico_7 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Otras técnicas evaluativas" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "5/10" ;
+    guide:involvesCompetency :CB7, :CG3, :CT6, :CE1 .
+
+:Trial_Presentacion_17 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Otras técnicas evaluativas" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "60%" ;
+    guide:minimumScore "5/10" ;
+    guide:involvesCompetency :CB7, :CG3, :CT6, :CE1 .
+
+:Trial_Defensa_Extraordinaria rdf:type guide:EvaluationTrial ;
+    guide:trialType "Presentación Individual" ;
+    guide:evaluationType "Extraordinaria" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5/10" ;
+    guide:involvesCompetency :CB7, :CG3, :CT6, :CE1 .
+
+# Didactic Resources
+:Resource_Moodle rdf:type guide:DidacticResource ;
+    sch:name "Documentación Moodle" ;
+    guide:bibliographyType "Otros" ;
+    guide:bibliographyDescription "La documentación se facilitará a través de la plataforma Moodle." .
+
+:Resource_Equipamiento rdf:type guide:DidacticResource ;
+    sch:name "Material para las prácticas" ;
+    guide:bibliographyType "Equipamiento" .

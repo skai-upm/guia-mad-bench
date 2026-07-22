@@ -1,0 +1,513 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> rdf:type guide:CourseGuide ;
+    rdfs:subClassOf sch:CourseInstance ;
+    dc:title "Inglés"@en ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer-SlavkaMadarova> ;
+    guide:numberOfCredits 6 .
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> sch:name "45001203 - Inglés"@en ;
+    guide:teachingPeriodMonths "September-January"^^xsd:string ;
+    guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en .
+
+<http://guia-mad-bench.es/data/degree-04GC> rdf:type guide:BachelorDegree ;
+    rdfs:subClassOf guide:Degree ;
+    sch:name "Grado En Ingenieria Civil Y Territorial"@es ;
+    guide:degreeCode "04GC"^^xsd:string .
+
+<http://guia-mad-bench.es/data/university-center-Etscampos> rdf:type guide:UniversityCenter ;
+    rdfs:subClassOf sch:Organization ;
+    sch:name "E.T.S. de Ing. de Caminos Canales y P."@es ;
+    guide:offers <http://guia-mad-bench.es/data/degree-04GC> .
+
+<http://guia-mad-bench.es/data/course-Inglés-45001203> rdf:type guide:Course ;
+    rdfs:subClassOf sch:Course ;
+    sch:name "Inglés"@en ;
+    guide:courseYear 2026 .
+
+<http://guia-mad-bench.es/data/course-Inglés-45001203> sch:hasCourseInstance <http://guia-mad-bench.es/data/course-guide-ANXPRCL001> ;
+    guide:courseYear 2026 .
+
+<http://guia-mad-bench.es/data/lecturer-SlavkaMadarova> rdf:type guide:Lecturer ;
+    rdfs:subClassOf sch:Person ;
+    sch:name "Slavka Madarova"@en ;
+    sch:email <mailto:s.madarova@upm.es>^^xsd:string ;
+    guide:office 476 .
+
+<http://guia-mad-bench.es/data/competency-CT4> rdf:type guide:Competency ;
+    guide:competencyCode "CT4"^^xsd:string ;
+    guide:competencyDescription "Capacidad de preparar y presentar con efectividad comunicaciones orales, escritas y gráficas."@es .
+
+<http://guia-mad-bench.es/data/competency-CT5> rdf:type guide:Competency ;
+    guide:competencyCode "CT5"^^xsd:string ;
+    guide:competencyDescription "Polivalencia y capacidad de aprendizaje autónomo."@es .
+
+<http://guia-mad-bench.es/data/competency-CT7> rdf:type guide:Competency ;
+    guide:competencyCode "CT7"^^xsd:string ;
+    guide:competencyDescription "Comprensión y capacidad de utilización de los servicios de información y comunicación que ofrece INTERNET."@es .
+
+<http://guia-mad-bench.es/data/competency-CT8> rdf:type guide:Competency ;
+    guide:competencyCode "CT8"^^xsd:string ;
+    guide:competencyDescription "Capacidad de comunicación técnica oral y escrita en lengua inglesa, con acreditación previa del nivel B2."@es .
+
+<http://guia-mad-bench.es/data/learning-result-RA243> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA243"^^xsd:string ;
+    guide:learningResultDescription "Interactúa correctamente en registros formales utilizando el inglés especializado"@es .
+
+<http://guia-mad-bench.es/data/learning-result-RA53> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA53"^^xsd:string ;
+    guide:learningResultDescription "Se comunica de forma oral y escrita en lengua inglesa, empleando fluidamente la terminología profesional"@es .
+
+<http://guia-mad-bench.es/data/learning-result-RA219> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA219"^^xsd:string ;
+    guide:learningResultDescription "Elabora y redacta correctamente informes y resúmenes sobre contenidos de ingeniería civil en inglés"@es .
+
+<http://guia-mad-bench.es/data/learning-result-RA36> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA36"^^xsd:string ;
+    guide:learningResultDescription "Prepara y presenta exposiciones orales y escritas"@es .
+
+<http://guia-mad-bench.es/data/learning-result-RA220> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA220"^^xsd:string ;
+    guide:learningResultDescription "Elabora y redacta correctamente cartas de solicitud de empleo y CVs"@es .
+
+<http://guia-mad-bench.es/data/syllabus-ANXPRCL001> rdf:type guide:Syllabus ;
+    rdfs:subClassOf sch:Syllabus ;
+    guide:syllabusDescription "Reading skills, Writing skills, Listening skills, Speaking skills, Translation skills in academic and professional English for civil engineering"@en .
+
+<http://guia-mad-bench.es/data/schedule-INGLÉS-2025> rdf:type guide:Schedule ;
+    rdfs:subClassOf sch:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-event-Week1>, <http://guia-mad-bench.es/data/schedule-event-Week4>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:hasCourseInstance <http://guia-mad-bench.es/data/degree-04GC> ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation and technical terminology in civil engineering context."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-INGLÉS-2025>.
+
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001> guide:syllabusDescription "9 main themes integrating reading, writing, listening, speaking, translation

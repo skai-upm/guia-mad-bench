@@ -1,0 +1,89 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide-anxprcl001> rdf:type :CourseGuide ;
+    dc:title "GUÍA DE APRENDIZAJE"@en ,
+        "ANX-PR/CL/001-01"^^xsd:string ;
+    dct:creator <http://guia-mad-bench.es/data/person-coordinator-francisco-arques> ,
+                <http://guia-mad-bench.es/data/person-vicente-gonzalez-posadas> ;
+    sch:name "Electronica Analogica"^^xsd:string ;
+    guide:courseYear 2025-26 ;
+    guide:numberOfCredits "6.0"^^xsd:decimal ;
+    guide:teachingPeriodMonths "Febrero-Junio"^^xsd:string ;
+    guide:inLanguage "Castellano"^^xsd:string .
+
+<http://guia-mad-bench.es/data/degree-59TL> rdf:type :BachelorDegree , owl:Class ;
+    sch:name "Grado En Ingenieria Telematica"^^xsd:string ;
+    guide:degreeCode "59TL"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course-595024322> rdf:type :Course , owl:Class ;
+    sch:name "Electronica Analogica"^^xsd:string ;
+    guide:syllabusDescription "Se parte desde el estudio de elementos pasivos y los semiconductores, para posteriormente analizar y diseñar circuitos..."^^xsd:string .
+
+<http://guia-mad-bench.es/data/course-guide-anxprcl001> sch:hasCourseInstance <http://guia-mad-bench.es/data/course-595024322> ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus-electronica-analogica> .
+
+<http://guia-mad-bench.es/data/lecturer-francisco-arques> rdf:type :Lecturer , sch:Person ;
+    sch:name "Francisco Jose Arques Orobon"^^xsd:string ;
+    guide:office "D8418"^^xsd:string ;
+    sch:email <mailto:jose.arques@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer-francisco-arques> rdf:type :Lecturer , owl:Class ;
+    guide:tutorshipsSchedule "Sin horario."^^xsd:string .
+
+<http://guia-mad-bench.es/data/course-guide-anxprcl001> sch:director <http://guia-mad-bench.es/data/lecturer-francisco-arques> .
+
+<http://guia-mad-bench.es/data/syllabus-electronica-analogica> rdf:type :Syllabus , owl:Class ;
+    guide:syllabusDescription "Introducción a los componentes electrónicos. Técnicas de Polarización..."^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency-ceb1> rdf:type :Competency , owl:Class ;
+    guide:competencyCode "CE B1"^^xsd:string ;
+    sch:description "Capacidad para la resolución de los problemas matemáticos que puedan plantearse en la ingeniería."^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency-ceb2> rdf:type :Competency , owl:Class ;
+    guide:competencyCode "CE B2"^^xsd:string ;
+    sch:description "Conocimientos básicos sobre el uso y programación de los ordenadores..."^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency-ceb4> rdf:type :Competency , owl:Class ;
+    guide:competencyCode "CE B4"^^xsd:string ;
+    sch:description "Comprensión y dominio de los conceptos básicos de sistemas lineales..."^^xsd:string .
+
+<http://guia-mad-bench.es/data/learning-result-ra232> rdf:type :LearningResult , owl:Class ;
+    guide:learningResultCode "RA232"^^xsd:string ;
+    sch:description "Se concretarán para cada asignatura optativa o para la realización de prácticas en empresas."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-electronica-analogica> rdf:type :Schedule , owl:Class ;
+    guide:eventIndex 1..17 ;
+    sch:name "Cronograma"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval-system-59TL_2025> rdf:type :EvaluationSystem , owl:Class ;
+    guide:evaluationDescription "Es necesario obtener 5 o más puntos en teoría para que haga media con el laboratorio."^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial-exam-1> rdf:type :EvaluationTrial , owl:Class ;
+    sch:name "Examen Parcial Temas 1 y 2"^^xsd:string ;
+    guide:trialType "EX: Técnica del tipo Examen Escrito"^^xsd:string ;
+    guide:gradePercentage "25%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial-exam-3> rdf:type :EvaluationTrial , owl:Class ;
+    sch:name "Examen Parcial Temas 1 y 2"^^xsd:string ;
+    guide:trialType "EX: Técnica del tipo Examen Escrito"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial-practica> rdf:type :EvaluationTrial , owl:Class ;
+    sch:name "Prácticas: 11 sesiones obligatorias..."^^xsd:string ;
+    guide:trialType "PI: Técnica del tipo Presentación Individual"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course-guide-anxprcl001> guide:hasEvaluation <http://guia-mad-bench.es/data/eval-system-59TL_2025> ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-electronica-analogica> .
+
+<http://guia-mad-bench.es/data/resource-hambley> rdf:type :DidacticResource , owl:Class ;
+    guide:bibliographyTitle "Electrónica"^^xsd:string ;
+    sch:name "ALLAN R. HAMBLEY, PEARSON EDUCACION, 2001."^^xsd:string .
+
+<http://guia-mad-bench.es/data/course-guide-anxprcl001> guide:hasDidacticResource <http://guia-mad-bench.es/data/resource-hambley> ;
+    sch:name "Electrónica"^^xsd:string .

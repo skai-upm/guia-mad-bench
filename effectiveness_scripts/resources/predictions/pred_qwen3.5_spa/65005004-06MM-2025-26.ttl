@@ -1,0 +1,105 @@
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide/anx-pr-cl-001-01> rdf:type guide:CourseGuide ;
+    dct:title "Laboreo De Minas"@en ;
+    sch:name "65005004 - Laboreo De Minas" ;
+    guide:numberOfCredits 4.5^^xsd:decimal ;
+    guide:syllabusDescription "Introducción al conjunto de la industria minera actual, sus funciones, procesos y tecnologías."@en ;
+    sch:description "La asignatura está planteada como una introducción a la minería moderna..."@es ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer/juan-herrera-herbert> ,
+                <http://guia-mad-bench.es/data/lecturer/carlos-lopez-jimeno> ,
+                <http://guia-mad-bench.es/data/lecturer/jesus-caceres-jimeno> ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus/anx-pr-cl-001> ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/anx-pr-cl-001-schedule> .
+
+<http://w3id.org/def/guia#Sylabus> rdf:type owl:Class .
+
+<http://guia-mad-bench.es/data/course-guide/anx-pr-cl-001-01> guide:hasCourse <http://guia-mad-bench.es/data/course/65005004> ;
+    sch:courseCode 65005004^^xsd:integer .
+
+<http://w3id.org/def/guia#Degree> rdf:type owl:Class .
+<http://guia-mad-bench.es/data/degree/06mm> rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Ingeniería Mineralúrgica Y Metalúrgica De Las Materias Primas" ;
+    dct:title "06MM - Grado En Ingeniería Mineralúrgica Y Metalúrgica De Las Materias Primas"@en .
+
+<http://guia-mad-bench.es/data/course/65005004> rdf:type guide:Course ;
+    sch:name "Laboreo De Minas" ;
+    guide:courseYear 3^^xsd:integer ;
+    sch:hasCourseInstance <http://guia-mad-bench.es/data/course-guide/anx-pr-cl-001-01> .
+
+<http://w3id.org/def/guia#Lecturer> rdf:type owl:Class .
+<http://guia-mad-bench.es/data/lecturer/juan-herrera-herbert> rdf:type guide:Lecturer ;
+    sch:name "Juan Herrera Herbert" ;
+    dct:title "Coordinador/a"@en ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00<br>X - 12:00 - 14:00<br>J - 10:00 - 12:00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer/carlos-lopez-jimeno> rdf:type guide:Lecturer ;
+    sch:name "Carlos Lopez Jimeno"@en ;
+    dct:title ""@en ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00<br>X - 12:00 - 14:00<br>J - 10:00 - 12:00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer/jesus-caceres-jimeno> rdf:type guide:Lecturer ;
+    sch:name "Jesus Caceres Jimeno"@en ;
+    dct:title ""@en ;
+    guide:tutorshipsSchedule "Sin horario.<br>A concertar por correo electrónico"^^xsd:string .
+
+<http://w3id.org/def/guia#Competency> rdf:type owl:Class .
+guide:C1 rdf:type guide:Competency ;
+    guide:competencyCode "C1"@en ;
+    guide:competencyDescription "Comprender y utilizar los principios de la extracción de materias primas de origen mineral."@es .
+
+<http://guia-mad-bench.es/data/competency/c2> rdf:type guide:Competency ;
+    guide:competencyCode "C2"@en ;
+    guide:competencyDescription "Comprender y aplicar el diseño, operación y mantenimiento de plantas de preparación y tratamiento de minerales."@es .
+
+<http://guia-mad-bench.es/data/learning-result/ra17> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA17"@en ;
+    guide:learningResultDescription "Relacionar las propiedades de minerales y rocas con su empleo."@es .
+
+<http://guia-mad-bench.es/data/syllabus/anx-pr-cl-001> rdf:type guide:Sylabus ;
+    sch:name "Laboreo De Minas"@en ;
+    dct:title "ANX-PR/CL/001-01 - GUÍA DE APRENDIZAJE" .
+
+<http://guia-mad-bench.es/data/syllabus-item/b1t1> rdf:type guide:SylabusItem ;
+    sch:name "B1T1. El abastecimiento de materias primas"@en ;
+    guide:syllabusDescription "El abastecimiento de materias primas"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event/sem1-act1> rdf:type sch:Event ;
+    sch:eventIndex 1^^xsd:integer ;
+    activityDescription "Presentación de la asignatura<br>Duración: 01:00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event/sem7-eval> rdf:type guide:EvaluationTrial ;
+    sch:eventIndex 7^^xsd:integer ;
+    guide:trialType "Prueba Telemática"@en ;
+    guide:gradePercentage "25%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event/sem10-eval> rdf:type guide:EvaluationTrial ;
+    sch:eventIndex 10^^xsd:integer ;
+    guide:trialType "Prueba Telemática"@en ;
+    guide:gradePercentage "25%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event/sem13-eval> rdf:type guide:EvaluationTrial ;
+    sch:eventIndex 13^^xsd:integer ;
+    guide:trialType "Prueba Telemática"@en ;
+    guide:gradePercentage "25%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event/sem16-eval> rdf:type guide:EvaluationTrial ;
+    sch:eventIndex 16^^xsd:integer ;
+    guide:trialType "Prueba Telemática"@en ;
+    guide:gradePercentage "25%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event/sem17-eval> rdf:type guide:EvaluationTrial ;
+    sch:eventIndex 17^^xsd:integer ;
+    guide:trialType "Prueba Telemática"@en ;
+    guide:gradePercentage "100%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event/sem16-eval> rdf:type sch:EventSchedule ;
+    sch:eventIndex 7^^xsd:integer ;
+    activityDescription "Evaluación de Bloques 1 y 2"^^xsd:string .

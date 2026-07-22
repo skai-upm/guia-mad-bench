@@ -1,0 +1,665 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Course Guide Instance
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> rdf:type guide:CourseGuide ;
+        sch:name "ANX-PR/CL/001 - Coordinación de Procesos de Aprendizaje"@en ;
+        dct:title "LEARNING GUIDE"@en ;
+        dc:description "Inglés (45001203) for Grado en Ingenieria Civil y Territorial, 2nd Year, Semester 1."@en ;
+        guide:numberOfCredits "6.0"@xsd:decimal ;
+        sch:inLanguage "English" ;
+        dct:creator <http://guia-mad-bench.es/data/lecturer/slavka-madarova> .
+
+#################################################################
+#    Degree Programme
+#################################################################
+
+<http://guia-mad-bench.es/data/degree/grado-en-ing-civil-y-territorial> rdf:type guide:BachelorDegree ;
+        sch:name "Grado en Ingenieria Civil y Territorial"@es ;
+        dct:creator <http://w3id.org/def/guia#> .
+
+#################################################################
+#    Course Instance (Subject)
+#################################################################
+
+<http://guia-mad-bench.es/data/course/iningles-45001203> rdf:type guide:Course ;
+        sch:name "Inglés"@en ;
+        dct:title "45001203 - Inglés"@es ;
+        guide:syllabusDescription "EPAC (English for Academic and Professional Communication) tailored to Civil Engineering."@en .
+
+#################################################################
+#    Lecturer / Coordinator
+#################################################################
+
+<http://guia-mad-bench.es/data/lecturer/slavka-madarova> rdf:type sch:Person ;
+        guide:Lecturer ;
+        sch:name "Slavka Madarova"@es ;
+        dct:title "Subject coordinator"@en ;
+        sch:email <mailto:s.madarova@upm.es> ;
+        guide:tutorshipsSchedule "Tutoring schedule available at the start of the semester; appointments should be requested via email."@en .
+
+#################################################################
+#    Syllabus and Items
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/iningles-2025> rdf:type guide:Syllabus ;
+        sch:name "Syllabus Inglés 45001203"@en .
+
+<http://guia-mad-bench.es/data/syllabus-item/reading-skills> rdf:type guide:SyllabusItem ;
+        guide:hasLearningResult <http://guia-mad-bench.es/data/lr/ra-243> ;
+        sch:description "Reading skills in academic and professional English for civil engineering."@en .
+
+<http://guia-mad-bench.es/data/syllabus-item/writing-skills> rdf:type guide:SyllabusItem ;
+        guide:hasLearningResult <http://guia-mad-bench.es/data/lr/ra-219> ;
+        sch:description "Writing skills in academic and professional English for civil engineering."@en .
+
+<http://guia-mad-bench.es/data/syllabus-item/listening-skills> rdf:type guide:SyllabusItem ;
+        guide:hasLearningResult <http://guia-mad-bench.es/data/lr/ra-53> ;
+        sch:description "Listening skills in academic and professional English for civil engineering."@en .
+
+<http://guia-mad-bench.es/data/syllabus-item/speaking-skills> rdf:type guide:SyllabusItem ;
+        guide:hasLearningResult <http://guia-mad-bench.es/data/lr/ra-36> ;
+        sch:description "Speaking skills in academic and professional English for civil engineering."@en .
+
+<http://guia-mad-bench.es/data/syllabus-item/translation-skills> rdf:type guide:SyllabusItem ;
+        guide:hasLearningResult <http://guia-mad-bench.es/data/lr/ra-219> ;
+        sch:description "Translation skills in academic and professional English for civil engineering."@en .
+
+<http://guia-mad-bench.es/data/syllabus-item/english-terminology> rdf:type guide:SyllabusItem ;
+        guide:hasLearningResult <http://guia-mad-bench.es/data/lr/ra-219> ;
+        sch:description "English terminology in academic and professional English for civil engineering."@en .
+
+#################################################################
+#    Links from Course Guide to Syllabus Items
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus/iningles-2025> ;
+        sch:eventSchedule <http://guia-mad-bench.es/data/schedule/iningles-2025> .
+
+#################################################################
+#    Schedule and Events (Teaching)
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> rdf:type guide:Schedule ;
+        sch:name "Course Schedule Inglés 45001203"@en ;
+        dct:title "September-January"@es .
+
+<http://guia-mad-bench.es/data/week-event/wk-1> rdf:type guide:ScheduleEvent ;
+        om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ;
+        sch:description "Tema 1. Introduction - The Engineering Profession."@en .
+
+<http://guia-mad-bench.es/data/activity/wk-1-activity> rdf:type guide:Activity ;
+        om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> , "04.5"^^xsd:string ;
+        sch:description "Cooperative activities."@en .
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/week-event/wk-1> , <http://guia-mad-bench.es/data/activity/wk-1-activity> .
+
+#################################################################
+#    Assessment Activities (Evaluation Trials)
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/week-event/wk-4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation System and Trials
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/week-event/wk-17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/week-event/wk-june-exam> ;
+        sch:description "Global Evaluation Test (June exam call)"@en .
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/week-event/wk-june-exam-re-sit> ;
+        sch:description "Resit exam session"@en .
+
+#################################################################
+#    Evaluation System Instance
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasEvaluation <http://guia-mad-bench.es/data/eval-system/iningles-progressve> ;
+        sch:description "Progressive assessment by default. Minimum grade 5 in partials."@en .
+
+#################################################################
+#    Evaluation Trials (Assessments)
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation System Instance (Progressive)
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasEvaluation <http://guia-mad-bench.es/data/eval-system/iningles-progressve> ;
+        sch:description "Progressive assessment by default. Minimum grade 5 in partials."@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Learning Results / Competencies
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasCompetency <http://guia-mad-bench.es/data/comp/ct4> ;
+        sch:description "CT4 - Capacidad de preparar y presentar con efectividad comunicaciones orales, escritas y gráficas."@en .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasCompetency <http://guia-mad-bench.es/data/comp/ct5> ;
+        sch:description "CT5 - Polivalencia y capacidad de aprendizaje autónomo."@en .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasCompetency <http://guia-mad-bench.es/data/comp/ct7> ;
+        sch:description "CT7 - Comprensión y capacidad de utilización de los servicios de información y comunicación que ofrece INTERNET."@en .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasCompetency <http://guia-mad-bench.es/data/comp/ct8> ;
+        sch:description "CT8 - Capacidad de comunicación técnica oral y escrita en lengua inglesa."@en .
+
+#################################################################
+#    Learning Results (RA codes)
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasLearningResult <http://guia-mad-bench.es/data/lr/ra243> ;
+        sch:description "Interactúa correctamente en registros formales utilizando el inglés especializado"@es .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasLearningResult <http://guia-mad-bench.es/data/lr/ra53> ;
+        sch:description "Se comunica de forma oral y escrita en lengua inglesa, empleando fluidamente la terminología profesional"@es .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasLearningResult <http://guia-mad-bench.es/data/lr/ra36> ;
+        sch:description "Prepara y presenta exposiciones orales y escritas."@es .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasLearningResult <http://guia-mad-bench.es/data/lr/ra219> ;
+        sch:description "Elabora y redacta correctamente informes y resúmenes sobre contenidos de ingeniería civil en inglés"@es .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasLearningResult <http://guia-mad-bench.es/data/lr/ra220> ;
+        sch:description "Elabora y redacta correctamente cartas de solicitud de empleo y CVs"@es .
+
+#################################################################
+#    Prior Knowledge Required (RequiredKnowledge)
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasCompetency <http://guia-mad-bench.es/data/comp/b2-level-english> ;
+        sch:description "Prior knowledge required to take the subject. B2 level in English certification."@en .
+
+#################################################################
+#    Didactic Resources
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasDidacticResource <http://guia-mad-bench.es/data/res/textbooks-dictionaries> ;
+        sch:description "Textbooks, CDs, Dictionaries"@en .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasDidacticResource <http://guia-mad-bench.es/data/res/videos-specialized-texts> ;
+        sch:description "Videos and Specialised Texts"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Partial Assessments
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-2025> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk17-global-exam> ;
+        sch:description "Global Evaluation Test (January exam call)"@en .
+
+#################################################################
+#    Links from Course Guide to Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasScheduleEvent <http://guia-mad-bench.es/data/eval-trial/wk4-assessment> ;
+        sch:description "Write an abstract/essay"@en .
+
+#################################################################
+#    Evaluation Trials (Assessments) - Global Exam
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/iningles-20

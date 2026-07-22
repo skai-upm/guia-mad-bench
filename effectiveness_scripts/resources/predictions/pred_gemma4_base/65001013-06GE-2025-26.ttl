@@ -1,0 +1,160 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+
+# Degree and University Center
+:degree_geologica rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Ingenieria Geologica" ;
+    guide:degreeCode "06GE" .
+
+:center_minas_energia rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Minas y Energía" ;
+    guide:offers :degree_geologica .
+
+# Course
+:course_electrotecnia rdf:type guide:Course ;
+    sch:name "Electrotecnia" ;
+    sch:courseCode 65001013 ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 2025 ;
+    sch:numberOfCredits 6.0 .
+
+:degree_geologica guide:hasCourse :course_electrotecnia .
+
+# Course Guide
+:guide_electrotecnia rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Electrotecnia" ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    guide:numberOfCredits 6.0 ;
+    guide:totalHours "150" ; # Estimated based on ECTS (6 * 25)
+    guide:inpersonHours "75" ;
+    guide:remoteHours "75" ;
+    sch:hasCourseInstance :course_electrotecnia ;
+    sch:instructor :lecturer_luis, :lecturer_daniel, :lecturer_eduardo ;
+    guide:hasSyllabus :syllabus_electrotecnia ;
+    guide:hasCompetency :comp_CG1, :comp_CG2, :comp_CG3, :comp_CG6, :comp_CG7, :comp_F17 ;
+    guide:hasLearningResult :lr_RA74, :lr_RA75, :lr_RA76, :lr_RA77, :lr_RA78, :lr_RA79 ;
+    guide:hasEvaluation :eval_system_electrotecnia ;
+    guide:hasDidacticResource :res_book_fraile, :res_moodle ;
+    sch:courseSchedule :schedule_electrotecnia .
+
+# Lecturers
+:lecturer_luis rdf:type guide:Lecturer ;
+    sch:name "Luis Javier San Jose Gallego" ;
+    sch:email "luisjavier.sanjose@upm.es" ;
+    guide:office "516" ;
+    guide:tutorshipsSchedule "M - 16:30 - 19:30, V - 13:00 - 16:00" .
+
+:lecturer_daniel rdf:type guide:Lecturer ;
+    sch:name "Daniel Serrano Jimenez" ;
+    sch:email "daniel.serrano.jimenez@upm.es" ;
+    guide:office "501" ;
+    guide:tutorshipsSchedule "M - 08:00 - 10:00, X - 08:00 - 10:00, J - 08:00 - 10:00" .
+
+:lecturer_eduardo rdf:type guide:Lecturer ;
+    sch:name "Eduardo Conde Lazaro" ;
+    sch:email "eduardo.conde@upm.es" ;
+    guide:office "517" ;
+    guide:tutorshipsSchedule "L - 12:00 - 14:00, M - 12:00 - 14:00, J - 12:00 - 14:00" .
+
+# Competencies
+:comp_CG1 rdf:type guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Geológica." .
+
+:comp_CG2 rdf:type guide:Competency ;
+    guide:competencyCode "CG2" ;
+    guide:competencyDescription "Poseer capacidad para diseñar, desarrollar, implementar, gestionar y mejorar productos, sistemas y procesos..." .
+
+:comp_F17 rdf:type guide:Competency ;
+    guide:competencyCode "F17" ;
+    guide:competencyDescription "Conocimientos fundamentales sobre el sistema eléctrico de potencia..." .
+
+# Learning Results
+:lr_RA74 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA74" ;
+    guide:learningResultDescription "Comprender los fundamentos del sistema eléctrico de potencia" .
+
+:lr_RA75 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA75" ;
+    guide:learningResultDescription "Plantear las ecuaciones de los sistemas eléctricos y resolverlas en diversos regímenes de funcionamiento" .
+
+# Syllabus
+:syllabus_electrotecnia rdf:type guide:Syllabus ;
+    guide:hasItem :item_1_1, :item_2_1, :item_3_1, :item_4_1, :item_5_1 .
+
+:item_1_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Componentes de los circuitos: Variables eléctricas fundamentales. Simbología." .
+
+:item_2_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Circuitos en corriente alterna: Ecuaciones en régimen estacionario senoidal." .
+
+:item_3_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Circuitos trifásicos: Conexiones estrella y triángulo." .
+
+# Evaluation System
+:eval_system_electrotecnia rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva (cuestionarios, laboratorio) y evaluación global (test y problema)." ;
+    guide:hasEvaluationTrial :trial_lab, :trial_exam_final .
+
+:trial_lab rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:evaluationDuration "00:3:00" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "0/10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_CG1, :comp_CG2, :comp_CG3, :comp_CG6, :comp_CG7, :comp_F17 .
+
+:trial_exam_final rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationDuration "01:30" ;
+    guide:gradePercentage "45%" ;
+    guide:minimumScore "2/10" ;
+    guide:trialMode "Presencial" .
+
+# Schedule and Activities
+:schedule_electrotecnia rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week5 .
+
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_lecture_1 .
+
+:act_lecture_1 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1.1 y 1.2" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" ;
+    guide:activityDuration 2.0 .
+
+:event_week5 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 5 ;
+    guide:eventWeek "Semana 5" ;
+    guide:hasActivity :act_quiz_1 .
+
+:act_quiz_1 rdf:type guide:Activity ;
+    guide:activityDescription "Cuestionario tema 1 (circuitos continua)" ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:attendanceType "No presencial" ;
+    guide:activityDuration 0.5 .
+
+# Resources
+:res_book_fraile rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "FRAILE MORA, Electrotecnia para ingenieros, IBERGARCETA PUBLICACIONES, 2023." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Plataforma educativa Moodle (UPM)" ;
+    guide:bibliographyType "Recursos web" .

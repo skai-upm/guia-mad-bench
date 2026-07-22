@@ -1,0 +1,130 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course_guide_615001001> a :CourseGuide ;
+    dc:title "álgebra Lineal"@en ,
+        "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"^^xsd:string ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer_anaisabel_lias_quintero> ;
+    :numberOfCredits 6.0^^xsd:decimal ;
+    sch:name "álgebra Lineal"@en ;
+    guide:courseYear 2025 .
+
+<http://guia-mad-bench.es/data/course_guide_615001001> a :CourseGuide ;
+    sch:hasCourseInstance <http://guia-mad-bench.es/data/degree_bachelor_cd> ; # Note: Ontology property is Course -> Guide, but mapping Degree to Guide via this link for context.
+
+<http://guia-mad-bench.es/data/course_guide_615001001> a :CourseGuide ;
+    sch:name "Grado En Ciencia De Datos E Inteligencia Artificial"@en . # Using name property on guide as per ontology schema.org usage in text.
+
+# Degree Instance
+<http://guia-mad-bench.es/data/degree_bachelor_cd> a :BachelorDegree , :Degree ;
+    dct:title "61CD - Grado En Ciencia De Datos E Inteligencia Artificial"@en ;
+    sch:name "Grado en Ciencia de Datos e Inteligencia Artificial"^^xsd:string .
+
+# Lecturer Instance (Coordinator)
+<http://guia-mad-bench.es/data/lecturer_anaisabel_lias_quintero> a :Lecturer , sch:Person ;
+    dct:title "Ana Isabel Lias Quintero"@en ;
+    sch:name "Ana Isabel Lias Quintero"^^xsd:string ;
+    guide:tutorshipsSchedule "Sin horario. Se publicarán en el Moodle de la asignatura y en la web de la Escuela"^^xsd:string .
+
+# Competency Instances (Mapped from text codes)
+<http://guia-mad-bench.es/data/competency_CB01> a :Competency ;
+    guide:competencyCode "CB01"@en ;
+    sch:description "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de estudio que parte de la base de la educación secundaria general"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency_CE01> a :Competency ;
+    guide:competencyCode "CE01"@en ;
+    sch:description "Capacidad para utilizar con destreza los conceptos y métodos matemáticos que subyacen a los problemas de la ciencia de datos"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency_CG06> a :Competency ;
+    guide:competencyCode "CG06"@en ;
+    sch:description "Identificar y utilizar las tecnologías de la información y las comunicaciones más adecuadas en el ámbito de la ingeniería"^^xsd:string .
+
+# Learning Result Instances (Mapped from text codes)
+<http://guia-mad-bench.es/data/learning_result_RA28> a :LearningResult ;
+    guide:learningResultCode "RA28"@en ;
+    sch:description "Resolver problemas con ayuda de software matemático"^^xsd:string .
+
+<http://guia-mad-bench.es/data/learning_result_RA40> a :LearningResult ;
+    guide:learningResultCode "RA40"@en ;
+    sch:description "Conocer y manejar ecuaciones lineales, matrices, geometría del plano y del espacio"^^xsd:string .
+
+# Syllabus Instance (Mapped from Section 5)
+<http://guia-mad-bench.es/data/syllabus_615001001> a :Syllabus ;
+    sch:syllabusDescription "Álgebra matricial. Sistemas de ecuaciones lineales"^^xsd:string .
+
+# Syllabus Items (Mapped from Section 5 topics)
+<http://guia-mad-bench.es/data/syllabus_item_1> a :SyllabusItem ;
+    guide:itemIndex 1 ,
+        sch:syllabusDescription "Álgebra matricial. Sistemas de ecuaciones lineales"^^xsd:string .
+
+# Evaluation System Instance (Mapped from Section 7)
+<http://guia-mad-bench.es/data/evaluation_system_615001001> a :EvaluationSystem ;
+    sch:description "Evaluación continua o progresiva y evaluación global"^^xsd:string .
+
+# Evaluation Trial Instances (EP1, EP2, Final)
+<http://guia-mad-bench.es/data/evaluation_trial_EP1> a :EvaluationTrial , sch:Event ;
+    guide:trialType "Examen Escrito"@en ;
+    guide:gradePercentage 0.2^^xsd:decimal .
+
+# Schedule Event Instances (Mapped from Section 6)
+<http://guia-mad-bench.es/data/schedule_event_week1> a :ScheduleEvent , sch:Event ;
+    guide:eventIndex 1 ,
+        sch:description "Presentación de la asignatura"^^xsd:string .
+
+# Didactic Resource Instance (Bibliography Example)
+<http://guia-mad-bench.es/data/resource_lay_linear_algebra> a :DidacticResource ;
+    guide:bibliographyTitle "Linear Algebra and its Applications"@en ,
+        sch:description "Lay, D.C.; Lay, S.R.: Linear Algebra and its Applications. Fifth Edition"^^xsd:string .
+
+# Relationships (Mapping Guide to Entities)
+<http://guia-mad-bench.es/data/course_guide_615001001> :hasCompetency <http://guia-mad-bench.es/data/competency_CB01> ;
+    a owl:ObjectProperty , rdf:type .
+
+# Note: The ontology defines properties like hasCompetency. I will use them to link the guide instances created above.
+<http://guia-mad-bench.es/data/course_guide_615001001> :hasLearningResult <http://guia-mad-bench.es/data/learning_result_RA28> ;
+    a owl:ObjectProperty , rdf:type .
+
+# Linking Guide to Evaluation System (Ontology Property: hasEvaluation)
+<http://guia-mad-bench.es/data/course_guide_615001001> :hasEvaluation <http://guia-mad-bench.es/data/evaluation_system_615001001> ;
+    a owl:ObjectProperty , rdf:type .
+
+# Linking Evaluation System to Trial (Ontology Property: hasEvaluationTrial)
+<http://guia-mad-bench.es/data/evaluation_system_615001001> :hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation_trial_EP1> ;
+    a owl:ObjectProperty , rdf:type .
+
+# Linking Guide to Syllabus (Ontology Property: hasSyllabus)
+<http://guia-mad-bench.es/data/course_guide_615001001> :hasSyllabus <http://guia-mad-bench.es/data/syllabus_615001001> ;
+    a owl:ObjectProperty , rdf:type .
+
+# Linking Syllabus to Items (Ontology Property: hasItem)
+<http://guia-mad-bench.es/data/syllabus_615001001> :hasItem <http://guia-mad-bench.es/data/syllabus_item_1> ;
+    a owl:ObjectProperty , rdf:type .
+
+# Linking Guide to Lecturer (Ontology Property: director)
+<http://guia-mad-bench.es/data/course_guide_615001001> sch:director <http://guia-mad-bench.es/data/lecturer_anaisabel_lias_quintero> ;
+    a owl:ObjectProperty , rdf:type .
+
+# Linking Guide to Resources (Ontology Property: hasDidacticResource)
+<http://guia-mad-bench.es/data/course_guide_615001001> :hasDidacticResource <http://guia-mad-bench.es/data/resource_lay_linear_algebra> ;
+    a owl:ObjectProperty , rdf:type .
+
+# Linking Guide to Schedule (Ontology Property: courseSchedule)
+<http://guia-mad-bench.es/data/course_guide_615001001> sch:courseSchedule <http://guia-mad-bench.es/data/schedule_weeks_2025> ;
+    a owl:ObjectProperty , rdf:type .
+
+# Schedule Instance (Generic for the course)
+<http://guia-mad-bench.es/data/schedule_weeks_2025> a :Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule_event_week1> ;
+    a owl:ObjectProperty , rdf:type .
+
+# Linking Schedule to Event (Ontology Property: eventSchedule)
+<http://guia-mad-bench.es/data/course_guide_615001001> sch:eventSchedule <http://guia-mad-bench.es/data/schedule_event_week1> ;
+    a owl:ObjectProperty , rdf:type .
+
+# Linking Lecturer to Guide (Ontology Property: director) - Already done above.

@@ -1,0 +1,182 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3id.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://w3id.org/def/guia#> rdf:type owl:Ontology ;
+                             dc:title "GUIA ontology"@en ;
+                             dct:creator "Andrea Cimmino Arriaga" ,
+                                         "Covadonga Arias" ,
+                                         "Joaquín Gayoso Cabada" ,
+                                         "Juan Cano de Benito" ,
+                                         "Paola Espinoza Arias" ;
+                             dct:license <http://purl.org/NET/rdflicense/cc-by4.0> .
+
+#################################################################
+#    Instance Data Extraction
+#################################################################
+
+###  Degree Entity (D.M.U.)
+<http://guia-mad-bench.es/data/dm-05di> rdf:type guide:BachelorDegree ;
+                                           sch:name "D.M.U. En Ingeniería Industrial Y En Automática y Robótica"@en ;
+                                           guide:degreeCode "05DI"^^xsd:string .
+
+###  Course Guide Entity (Sistemas De Control Y Automatización)
+<http://guia-mad-bench.es/data/course-53001736> rdf:type guide:CourseGuide , sch:CourseInstance ;
+                                                  dc:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en ;
+                                                  dct:publisher <http://guia-mad-bench.es/data/dm-05di> ;
+                                                  guide:numberOfCredits 3^^xsd:decimal ;
+                                                  sch:name "Sistemas De Control Y Automatización" ,
+                                                           "53001736"@en ;
+                                                  guide:syllabusDescription "Programación de autómatas industriales, Modelo de estado..."@en .
+
+###  Lecturer Entity (Jose Maria Sebastian Zuñiga)
+<http://guia-mad-bench.es/data/lecturer-jose-sebastian> rdf:type guide:Lecturer , sch:Person ;
+                                                          sch:name "Jose Maria Sebastian Zuñiga"@en ;
+                                                          sch:email "jose.sebastian@upm.es"^^xsd:string .
+
+###  University Center Entity (E.T.S. de Ingenieros Industriales)
+<http://guia-mad-bench.es/data/center-05di> rdf:type guide:UniversityCenter , sch:Organization ;
+                                              sch:name "E.T.S. De Ingenieros Industriales"@en .
+
+###  Competency Instances (MUAR.CB06, etc.)
+<http://guia-mad-bench.es/data/comp-MUAR-CB06> rdf:type guide:Competency ;
+                                                   guide:competencyCode "MUAR.CB06"^^xsd:string ;
+                                                   sch:description "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales..."@en .
+
+<http://guia-mad-bench.es/data/comp-MUAR-CG01> rdf:type guide:Competency ;
+                                                  guide:competencyCode "MUAR.CG01"^^xsd:string ;
+                                                  sch:description "Tener conocimientos adecuados de los aspectos científicos y tecnológicos..."@en .
+
+<http://guia-mad-bench.es/data/comp-MUII-CB06> rdf:type guide:Competency ;
+                                                 guide:competencyCode "MUII.CB06"^^xsd:string ;
+                                                 sch:description "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales..."@en .
+
+###  Learning Result Instances (RA101, RA102)
+<http://guia-mad-bench.es/data/ra-RA101> rdf:type guide:LearningResult ;
+                                          guide:learningResultCode "RA101"^^xsd:string ;
+                                          sch:description "Realización de trabajos prácticos sobre simulación de sistemas"@en .
+
+<http://guia-mad-bench.es/data/ra-RA102> rdf:type guide:LearningResult ;
+                                           guide:learningResultCode "RA102"^^xsd:string ;
+                                           sch:description "Modelado y simulación de sistemas de eventos discretos"@en .
+
+###  Syllabus Entity & Items (Section 5.2)
+<http://guia-mad-bench.es/data/syllabus-53001736> rdf:type guide:Syllabus ;
+                                                      sch:name "Temario Sistemas De Control Y Automatización"^^xsd:string .
+
+### Syllabus Item Instances
+<http://guia-mad-bench.es/data/item-programacion-automatas> rdf:type guide:SyllabusItem , sch:CourseInstance ;
+                                                               guide:itemIndex 1^^xsd:integer ;
+                                                               guide:syllabusDescription "Programación de autómatas industriales"@en .
+
+<http://guia-mad-bench.es/data/item-modelo-estado> rdf:type guide:SyllabusItem ;
+                                                      guide:itemIndex 2^^xsd:integer ;
+                                                      guide:syllabusDescription "Modelo de estado"@en .
+
+### Schedule & Events (Section 6)
+<http://guia-mad-bench.es/data/schedule-53001736> rdf:type guide:Schedule , sch:CourseInstance ;
+                                                       sch:eventSchedule <http://guia-mad-bench.es/data/event-week-1>,
+                                                                   <http://guia-mad-bench.es/data/event-week-2>,
+                                                                   ... .
+
+### Schedule Event Instances (Weeks 5, 17 etc.)
+<http://guia-mad-bench.es/data/event-tarea-1> rdf:type guide:ScheduleEvent ;
+                                                sch:eventIndex 5^^xsd:integer , "Semestre 1"^^xsd:string ;
+                                                guide:eventWeek "Primer semestre"@en .
+
+### Evaluation System & Trials (Section 7)
+<http://guia-mad-bench.es/data/eval-system-ordinaria> rdf:type guide:EvaluationSystem ;
+                                                        sch:name "Evaluación Progresiva y Global"^^xsd:string ;
+                                                        guide:evaluationDescription "Tareas distribuidas + Examen Final"@en .
+
+### Evaluation Trial Instances (Ordinary)
+<http://guia-mad-bench.es/data/trial-tarea-1> rdf:type guide:EvaluationTrial , sch:Event ;
+                                                guide:trialType "Trabajo Individual"^^xsd:string ;
+                                                guide:gradePercentage 30^^xsd:decimal .
+
+### Resources (Section 8)
+<http://guia-mad-bench.es/data/res-moodle> rdf:type guide:DidacticResource ;
+                                           sch:name "Página web en Moodle"@en , "Moodle"^^xsd:string .
+
+#################################################################
+    # Triples and Links
+#################################################################
+
+### Degree to Course Guide Link (via hasCourse) - Note: Ontology defines `guide:hasCourse` from Degree -> Course. I will create a generic Course instance for the offering or link directly if possible, but strict ontology requires intermediate Class instances. Let's assume the course guide represents an instance of the degree curriculum.
+<http://guia-mad-bench.es/data/course-53001736> rdf:type sch:CourseInstance ;
+                                                   sch:name "Sistemas De Control Y Automatización"^^xsd:string .
+
+### Course Guide to Degree Link (via hasCourse) - Note: Ontology defines `guide:hasCourse` from Degree -> Range guide:Course. I will link the specific course instance here if possible, or just use properties available on CourseGuide directly for attributes like credits/teaching period.
+<http://guia-mad-bench.es/data/course-53001736> rdf:type sch:CourseInstance ;
+                                                   guide:numberOfCredits 3^^xsd:decimal .
+
+### Lecturer to Course Guide Link (via director/instructor) - Ontology has `sch:director` and `sch:instructor`. I will use both or one. Let's use `guide:sch:director` if available? No, ontology defines `sch:director` from guide:CourseGuide -> guide:Lecturer.
+<http://guia-mad-bench.es/data/course-53001736> sch:director <http://guia-mad-bench.es/data/lecturer-jose-sebastian> .
+
+### Course Guide to Syllabus Link (via hasSyllabus) - Ontology defines `guide:hasSyllabus` from guide:CourseGuide -> guide:Syllabus.
+<http://guia-mad-bench.es/data/course-53001736> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus-53001736> .
+
+### Syllabus to Items Link (via hasItem) - Ontology defines `guide:hasItem` from guide:Syllabus -> guide:SyllabusItem.
+<http://guia-mad-bench.es/data/syllabus-53001736> guide:hasItem <http://guia-mad-bench.es/data/item-programacion-automatas>,
+                                                          <http://guia-mad-bench.es/data/item-modelo-estado>.
+
+### Course Guide to Competencies Link (via hasCompetency) - Ontology defines `guide:hasCompetency` from guide:CourseGuide -> guide:Competency.
+<http://guia-mad-bench.es/data/course-53001736> guide:hasCompetency <http://guia-mad-bench.es/data/comp-MUAR-CB06>,
+                                                                      <http://guia-mad-bench.es/data/comp-MUII-CG08>.
+
+### Course Guide to Learning Results Link (via hasLearningResult) - Ontology defines `guide:hasLearningResult` from guide:CourseGuide -> guide:LearningResult.
+<http://guia-mad-bench.es/data/course-53001736> guide:hasLearningResult <http://guia-mad-bench.es/data/ra-RA101>,
+                                                                             <http://guia-mad-bench.es/data/ra-RA102>.
+
+### Course Guide to Evaluation System Link (via hasEvaluation) - Ontology defines `guide:hasEvaluation` from guide:CourseGuide -> guide:EvaluationSystem.
+<http://guia-mad-bench.es/data/course-53001736> guide:hasEvaluation <http://guia-mad-bench.es/data/eval-system-ordinaria>.
+
+### Evaluation System to Trial Link (via hasEvaluationTrial) - Ontology defines `guide:hasEvaluationTrial` from guide:EvaluationSystem -> guide:EvaluationTrial.
+<http://guia-mad-bench.es/data/eval-system-ordinaria> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-tarea-1>.
+
+### Course Guide to Schedule Link (via courseSchedule) - Ontology defines `sch:courseSchedule` from guide:CourseGuide -> guide:Schedule.
+<http://guia-mad-bench.es/data/course-53001736> sch:courseSchedule <http://guia-mad-bench.es/data/schedule-53001736>.
+
+### Schedule to Event Link (via eventSchedule) - Ontology defines `sch:eventSchedule` from guide:Schedule -> guide:ScheduleEvent.
+<http://guia-mad-bench.es/data/schedule-53001736> sch:eventSchedule <http://guia-mad-bench.es/data/event-tarea-1>.
+
+### Course Guide to Didactic Resource Link (via hasDidacticResource) - Ontology defines `guide:hasDidacticResource` from guide:CourseGuide -> guide:DidacticResource.
+<http://guia-mad-bench.es/data/course-53001736> guide:hasDidacticResource <http://guia-mad-bench.es/data/res-moodle>.
+
+### Data Properties (Directly on Instances) - Ontology defines data properties for specific entities. I will apply them where appropriate to ensure strict ontology usage.
+<http://guia-mad-bench.es/data/course-53001736> guide:teachingPeriodMonths "Septiembre-Enero"^^xsd:string ;
+                                                   sch:name "Sistemas De Control Y Automatización"@en .
+
+### Lecturer Data Properties (Office, Tutorship) - Ontology defines `guide:office` and `guide:tutorshipsSchedule`.
+<http://guia-mad-bench.es/data/lecturer-jose-sebastian> guide:office ""^^xsd:string ;
+                                                          guide:tutorshipsSchedule "- -"^^xsd:string .
+
+### Evaluation Trial Data Properties (Duration, Type) - Ontology defines properties like `guide:trialType`, `guide:gradePercentage`. Note some are langString in ontology. I will use them as per definition.
+<http://guia-mad-bench.es/data/trial-tarea-1> guide:trialDescription "Tarea 1. Programación de autómatas"@en ;
+                                               guide:trialMode "No Presencial"^^xsd:string .
+
+### Syllabus Item Data Properties (Index, Description) - Ontology defines `guide:itemIndex`, `guide:syllabusDescription`.
+<http://guia-mad-bench.es/data/item-programacion-automatas> guide:itemIndex 1^^xsd:integer ;
+                                                               guide:syllabusDescription "Programación de autómatas industriales"@en .
+
+### Activity Data Properties (Duration, Format) - Ontology defines `guide:activityDuration`, etc. I will link ScheduleEvent to Activity via `guide:hasActivity`.
+<http://guia-mad-bench.es/data/event-tarea-1> guide:hasActivity <http://guia-mad-bench.es/data/activity-task-1>.
+
+### Course Guide Data Properties (Credits, Year) - Ontology defines `guide:numberOfCredits`, `guide:courseYear`.
+<http://guia-mad-bench.es/data/course-53001736> guide:courseYear 2025^^xsd:integer ;
+                                                   sch:name "Sistemas De Control Y Automatización"^^xsd:string .
+
+### Evaluation Trial Data Properties (Duration, Weight) - Ontology defines `guide:evaluationDuration`, `guide:gradePercentage`. Note ontology uses langString for some. I will use xsd:decimal where appropriate or string as defined in schema if strict adherence to provided types is needed. The prompt says "strictly using the classes and properties of the provided ontology".
+<http://guia-mad-bench.es/data/trial-tarea-1> guide:gradePercentage 30^^xsd:string ; # Ontology defines range rdf:langString for gradePercentage in text block? Let's check. Yes, `guide:gradePercentage` range is `rdf:langString`.
+<http://guia-mad-bench.es/data/trial-tarea-1> guide:trialDescription "Tarea 1"^^xsd:string .
+
+### Schedule Event Data Properties (Week) - Ontology defines `guide:eventWeek`, `guide:eventIndex`.
+<http://guia-mad-bench.es/data/event-tarea-1> guide:eventWeek "Semestre 5"@en ; # Text says Week 5. I will use string as per ontology definition for event week? Yes, range is rdf:langString in text block provided.
+
+### Competency Data Properties (Code) - Ontology defines `guide:competencyCode` xsd:string.
+<http://guia-mad-bench.es/data/comp-MUAR-CB06> guide:competencyCode "MUAR.CB06"^^xsd:string .

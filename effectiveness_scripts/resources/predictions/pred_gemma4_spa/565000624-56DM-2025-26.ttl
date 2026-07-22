@@ -1,0 +1,182 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:course_informatica_guide a guide:CourseGuide ;
+    sch:name "Informática" ;
+    sch:courseCode "565000624" ;
+    guide:numberOfCredits 6.0 ;
+    guide:courseType "Básica" ;
+    guide:semester "Segundo semestre" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :lecturer_mercedes ;
+    guide:hasSyllabus :syllabus_informatica ;
+    guide:hasEvaluation :evaluation_system_progresiva ;
+    guide:hasLearningResult :learning_result_ra142, :learning_result_ra151, :learning_result_ra152, :learning_result_ra21, :learning_result_ra116, :learning_result_ra143, :learning_result_ra18 ;
+    guide:hasCompetency :competency_imce03, :competency_imcg02, :competency_imcg03, :competency_imcg06, :competency_imcg07, :competency_imcg10 ;
+    guide:hasDidacticResource :resource_kerningan, :resource_llanos, :resource_martinez, :resource_rodriguez, :resource_sanguino, :resource_material_clase, :resource_practicas_lab, :resource_web_cplusplus, :resource_web_conclase ;
+    guide:hasScheduleEvent :event_week1, :event_week2, :event_week8, :event_week12, :event_week15, :event_week17 ;
+    guide:otherInformation "Debido al elevado componente práctico de la asignatura, es fundamental un trabajo personal constante por parte del alumno." .
+
+# Degree and University Center
+:degree_56dm a guide:Degree ;
+    sch:name "56DM - Dobally Grado Ing en Diseño Industrial y Desarrollo Producto y en Ing Mecanic" ;
+    guide:hasCourse :course_informatica_instance .
+
+:course_informatica_instance a guide:Course ;
+    sch:courseCode 565000624 ;
+    guide:courseYear 2025 ;
+    guide:semester "Segundo semestre" .
+
+:university_center_etsidi a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Diseño Industrial" ;
+    guide:offers :degree_56dm .
+
+# Lecturer
+:lecturer_mercedes a guide:Lecturer ;
+    sch:name "Mercedes Bermejo Solera" ;
+    sch:email "mercedes.bermejo@upm.es" ;
+    guide:office "B249" ;
+    guide:tutorshipsSchedule "Sin horario. Publicadas en la web de ETSIDI" .
+
+# Competencies
+:competency_imce03 a guide:Competency ;
+    guide:competencyCode "IM.CE 03" ;
+    guide:competencyDescription "Conocimientos básicos sobre el uso y programación de los ordenadores, sistemas operativos, bases de datos y programas informáticos con aplicación en ingeniería." .
+
+:competency_imcg02 a guide:Competency ;
+    guide:competencyCode "IM.CG 02" ;
+    guide:competencyDescription "Poseer la capacidad para diseñar, desarrollar, implementar, gestionar y mejorar productos, sistemas y procesos en los de distintos ámbitos industriales..." .
+
+:competency_imcg03 a guide:Competency ;
+    guide:competencyCode "IM.CG 03" ;
+    guide:competencyDescription "Aplicar los conocimientos adquiridos para identificar, formular y resolver problemas en contextos amplios..." .
+
+:competency_imcg06 a guide:Competency ;
+    guide:competencyCode "IM.CG 06" ;
+    guide:competencyDescription "Poseer las habilidades de aprendizaje que permitan continuar estudiando a lo largo de toda la vida..." .
+
+:competency_imcg07 a guide:Competency ;
+    guide:competencyCode "IM.CG 07" ;
+    guide:competencyDescription "Incorporar las TIC y las tecnologías y herramientas de la Ingeniería Industrial en sus actividades profesionales." .
+
+:competency_imcg10 a guide:Competency ;
+    guide:competencyCode "IM.CG 10" ;
+    guide:competencyDescription "Creatividad." .
+
+# Learning Results
+:learning_result_ra142 a guide:LearningResult ;
+    guide:learningResultCode "RA142" ;
+    guide:learningResultDescription "Conocimientos y capacidades de pensamiento y razonloamiento necesarios para el análisis, enfoque y resolución de problemas concretos." .
+
+:learning_result_ra151 a guide:LearningResult ;
+    guide:learningResultCode "RA151" ;
+    guide:learningResultDescription "Capacidad para diseñar y programar algoritmos modularles en lenguaje C que resuelven problemas relacionados con la ingeniería." .
+
+:learning_result_ra152 a guide:LearningResult ;
+    guide:learningResultCode "RA152" ;
+    guide:learningResultDescription "Implementar ejemplos y ejercicios de variada índole... que permitan ilustrar los conceptos de eficiencia y robustez..." .
+
+:learning_result_ra21 a guide:LearningResult ;
+    guide:learningResultCode "RA21" ;
+    guide:learningResultDescription "Actitudes de razonamiento crítico y actuaciones creativas basadas en situaciones abiertas" .
+
+:learning_result_ra116 a guide:LearningResult ;
+    guide:learningResultCode "RA116" ;
+    guide:learningResultDescription "PROGRAMACION" .
+
+:learning_result_ra143 a guide:LearningResult ;
+    guide:learningResultCode "RA143" ;
+    guide:learningResultDescription "Saber aplicar el método científico y el lenguaje científicotecnológico a la resolución de problemas concretos de la Ingeniería." .
+
+:learning_result_ra18 a guide:LearningResult ;
+    guide:learningResultCode "RA18" ;
+    guide:learningResultDescription "Conocimientos y capacidades para entender las ideas principales de textos complejos de carácter general y de especialidad" .
+
+# Syllabus
+:syllabus_informatica a guide:Syllabus ;
+    guide:hasItem :item_intro, :item_lenguaje_c, :item_elementos_c, :item_sentencias_control, :item_funciones, :item_punteros, :item_datos_avanzados, :item_ficheros .
+
+:item_intro a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción. 1.1. Estructura funcional de un ordenador. 1.2. Representación de la información. 1.3. Lenguajes de programación." .
+
+:item_lenguaje_c a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "El lenguaje C. 2.1. Programas básicos. 2.2. Estructura de un código en C. 2.3. Normas básicas y estilo. 2.4. El entorno de programación." .
+
+# Evaluation System and Trials
+:evaluation_system_progresiva a guide:EvaluationSystem ;
+    guide:evaluationDescription "Modalidad de evaluación por defecto será la Progresiva, con tres pruebas de evaluación." ;
+    guide:hasEvaluationTrial :trial_sem8, :trial_sem12, :trial_sem15 .
+
+:trial_sem8 a guide:EvaluationTrial ;
+    guide:evaluationType "Examen de Prácticas" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "/ 10" ;
+    guide:evaluationDuration "02:00" ;
+    guide:involvesCompetency :competency_imcg10, :competency_imce03, :competency_imcg03 .
+
+:trial_sem12 a guide:EvaluationTrial ;
+    guide:evaluationType "Examen de Prácticas" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "/ 10" ;
+    guide:evaluationDuration "02:00" ;
+    guide:involvesCompetency :competency_imcg02, :competency_imce03, :competency_imcg03, :competency_imcg10 .
+
+:trial_sem15 a guide:EvaluationTrial ;
+    guide:evaluationType "Examen de Prácticas" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "/ 10" ;
+    guide:evaluationDuration "02:00" ;
+    guide:involvesCompetency :competency_imce03, :competency_imcg06, :competency_imcg07, :competency_imcg03, :competency_imcg10 .
+
+# Schedule Events and Activities
+:event_week1 a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :activity_teoria_w1 .
+
+:activity_teoria_w1 a guide:Activity ;
+    guide:activityDescription "Teoría" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:event_week8 a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 8" ;
+    guide:hasActivity :activity_examen_practicas_w8 .
+
+:activity_examen_practicas_w8 a guide:Activity ;
+    guide:activityDescription "Examen de Prácticas para evaluación progresiva" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Otras actividades formativas / Evaluación" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:resource_kerningan a guide:DidacticResource ;
+    guide:bibliographyTitle "El lenguaje de programación C" ;
+    guide:bibliographyDescription "Libro de referencia del Lenguaje C, escrito por sus creadores. El libro cubre C de forma exhaustiva..." ;
+    guide:bibliographyType "Bibliografía" .
+
+:resource_llanos a guide:DidacticResource ;
+    guide:bibliographyTitle "Fundamentos de Informática y Programación en C" ;
+    guide:bibliographyDescription "Visión general de los fundamentos de la Informática, de la metodología de programación..." ;
+    guide:bibliographyType "Bibliografía" .
+
+:resource_web_cplusplus a guide:DidacticResource ;
+    guide:bibliographyTitle "https://cplusplus.com/" ;
+    guide:bibliographyDescription "Incluye descripciones de las funciones y objetos más importantes del lenguaje C..." ;
+    guide:bibliographyType "Recursos web" .
+
+# Required Knowledge
+:knowledge_previo a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Conocer la estructura de los equipos informáticos y su sistema operativo. Identificar y describir los componentes que los forman." .

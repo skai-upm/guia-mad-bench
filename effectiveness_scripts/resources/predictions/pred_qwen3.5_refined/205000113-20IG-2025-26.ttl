@@ -1,0 +1,92 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide-205000113> rdf:type :CourseGuide ;
+    dct:title "Genética Animal"@en ;
+    sch:name "Genética Animal" ;
+    guide:courseYear 4 ;
+    guide:numberOfCredits "4.0"^^xsd:decimal ;
+    guide:syllabusDescription "La mejora genética animal trata de introducir un cambio en las frecuencias de aquellos alelos que condicionan, al menos parcialmente, los caracteres de interés económico."@en ;
+    sch:description "Asignatura del Grado En Ingenieria Agricola. Curso Académico 2025/26 - Primer semestre"@en .
+
+<http://guia-mad-bench.es/data/course-guide-205000113> guide:hasCourse <http://guia-mad-bench.es/data/bachelor-degree-20IG> ;
+    sch:courseCode 205000113 .
+
+<http://guia-mad-bench.es/data/course-guide-205000113> guide:hasDidacticResource <http://guia-mad-bench.es/data/resource-falconer>, <http://guia-mad-bench.es/data/endow-software>.
+    sch:name "Falconer: Introducción a la genética cuantitativa"@en ;
+    guide:bibliographyType "Bibliografía" .
+
+<http://guia-mad-bench.es/data/course-guide-205000113> guide:hasDidacticResource <http://guia-mad-bench.es/data/resource-endow-software>.
+    sch:name "Endow"@en ;
+    guide:bibliographyType "Equipamiento" .
+
+<http://guia-mad-bench.es/data/course-guide-205000113> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluation-system-genetica>.
+
+<http://guia-mad-bench.es/data/bachelor-degree-20IG> rdf:type :BachelorDegree ;
+    sch:name "Grado En Ingenieria Agricola"@en .
+
+<http://guia-mad-bench.es/data/university-center-EtsiAgronomica> rdf:type :UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas"^^xsd:string ;
+    guide:offers <http://guia-mad-bench.es/data/bachelor-degree-20IG>.
+
+<http://guia-mad-bench.es/data/lecturer-NoraFormoso-Rafferty-Castilla> rdf:type :Lecturer ;
+    sch:name "Nora Formoso-Rafferty Castilla"@en ;
+    guide:office "Campos"^^xsd:string ;
+    sch:email <http://guia-mad-bench.es/data/email-nora-formosorafferty@upm-es> .
+
+<http://guia-mad-bench.es/data/competency-CB01> rdf:type :Competency ;
+    guide:competencyCode "CB01"^^xsd:string ;
+    sch:description "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de estudio que parte de la base de la educación secundaria general"@en .
+
+<http://guia-mad-bench.es/data/learning-result-RA271> rdf:type :LearningResult ;
+    guide:learningResultCode "RA271"^^xsd:string ;
+    sch:description "Aplicar los principios de la genética a los procedimientos relacionados con la conservación, selección y mejora de especies de interés ganadero"@en .
+
+<http://guia-mad-bench.es/data/evaluation-system-genetica> rdf:type :EvaluationSystem ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus-205000113>.
+
+<http://guia-mad-bench.es/data/course-guide-205000113> sch:description "Guía de Aprendizaje para la asignatura Genética Animal. Curso 4, Semestre 7 (Primer semestre). Período Septiembre-Enero"@en .
+    guide:teachingPeriodMonths "Septiembre - Enero"^^xsd:string ;
+    guide:tutorshipsSchedule <http://guia-mad-bench.es/data/tutorship-schedule-nora> .
+
+<http://guia-mad-bench.es/data/evaluation-trial-tarea-1> rdf:type :EvaluationTrial ;
+    sch:name "Tarea Simulación Rebaño lechero"@en ;
+    guide:trialType "Trabajo Individual"^^xsd:string ;
+    guide:gradePercentage "2.5%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluation-trial-prueba-progresiva> rdf:type :EvaluationTrial ;
+    sch:name "Prueba Evaluación Progresiva"@en ;
+    guide:trialType "Prueba Telemática"^^xsd:string ;
+    guide:gradePercentage "40%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluation-trial-global> rdf:type :EvaluationTrial ;
+    sch:name "Prueba evaluación global"@en ;
+    guide:trialType "Examen Escrito"^^xsd:string ;
+    guide:gradePercentage "85%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-tema1> rdf:type :ScheduleEvent ;
+    sch:name "Tema 1: Introducción"@en ;
+    guide:eventWeek "Semestre 7"^^xsd:string ;
+    om:Unit "03.00"^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/schedule-event-tema2> rdf:type :ScheduleEvent ;
+    sch:name "Tema 2: Medidas de diversidad"@en ;
+    guide:eventWeek "Semestre 7"^^xsd:string ;
+    om:Unit "03.00"^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/schedule-event-prueba-progresiva> rdf:type :ScheduleEvent ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    guide:eventWeek "Semestre 7"^^xsd:string ;
+    om:Unit "02.00"^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/syllabus-205000113> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus-item-intro>, <http://guia-mad-bench.es/data/syllabus-item-genetica-poblaciones>.
+
+<http://guia-mad-bench.es/data/competency-CG02> rdf:type :Competency ;
+    guide:competencyCode "CG02"^^xsd:string .

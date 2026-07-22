@@ -1,0 +1,219 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# --- Degree and University Center ---
+
+:Degree_Aeroespacial rdf:type guide:BachelorDegree ;
+    sch:name "14IA - Grado En Ingeniería Aeroespacial" ;
+    guide:degreeCode "14IA" .
+
+:ETSIA_Aeronautica rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S.I. Aeronáutica y del Espacio" ;
+    guide:offers :Degree_Aeroespacial .
+
+# --- Course and Course Guide ---
+
+:Course_Geotecnia rdf:type guide:Course ;
+    sch:name "145005406 - Geotecnia" ;
+    sch:courseCode 145005406 ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 2025 ;
+    guide:semester "Quinto semestre" .
+
+:Guide_Geotecnia rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance :Course_Geotecnia ;
+    sch:name "Guía de Aprendizaje - Geotecnia" ;
+    sch:inLanguage "Castellano" ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:totalHours "Estimación según créditos ECTS (26-27h/crédito)" ;
+    sch:instructor :Antonia_Pacios_Alvarez ;
+    sch:director :Antonia_Pacios_Alvarez ;
+    guide:hasSyllabus :Syllabus_Geotecnia ;
+    guide:hasCompetency :CE59, :CE60, :CG3, :CG5, :CG9 ;
+    guide:hasLearningResult :RA72, :RA300, :RA70, :RA71 ;
+    guide:hasEvaluation :EvalSystem_Geotecnia ;
+    guide:hasDidacticResource :Res_Moodle, :Res_Cedex, :Res_Laboratorio ;
+    sch:courseSchedule :Schedule_Geotecnia .
+
+# --- Lecturers ---
+
+:Antonia_Pacios_Alvarez rdf:type guide:Lecturer ;
+    sch:name "Antonia Pacios Alvarez" ;
+    sch:email "antonia.pacios@upm.es" ;
+    sch:role "Coordinador/a" .
+
+:Angel_Paris_Loreiro rdf:type guide:Lecturer ;
+    sch:name "Angel Paris Loreiro" ;
+    sch:email "angel.paris@upm.es" ;
+    guide:office "L.Aerop. ETSIA" ;
+    guide:tutorshipsSchedule "Sin horario. Ver web Departamento SATAA" .
+
+:Manuel_Agustin_Tarifa_Crespo rdf:type guide:Lecturer ;
+    sch:name "Manuel Agust_in Tarifa Crespo" ;
+    sch:email "manuel.tarifa@upm.es" ;
+    guide:office "Aerop. Edif. B" ;
+    guide:tutorshipsSchedule "Sin horario. Ver web Departamento SATAA" .
+
+:Jesus_Maria_Rodriguez_Romero rdf:type guide:Lecturer ;
+    sch:name "Jesus Maria Rodriguez Romero" ;
+    sch:email "jesusmaria.rodriguez@upm.es" ;
+    guide:office "L.Aerop. ETSIA" ;
+    guide:tutorshipsSchedule "Sin horario. Ver Web Departamento SATAA" .
+
+# --- Competencies and Learning Results ---
+
+:CE59 rdf:type guide:Competency ;
+    guide:competencyCode "CE59" ;
+    guide:competencyDescription "Conocimiento adecuado y aplicado a la Ingeniería de: Los métodos de cálculo y de desarrollo de las diferentes soluciones de edificación y pavimentación de aeropuertos..." .
+
+:CE60 rdf:type guide:Competency ;
+    guide:competencyCode "CE60" ;
+    guide:competencyDescription "Conocimiento aplicado de: edificación; electricidad; electrotecnia; electrónica; mecánica del。。。" .
+
+:CG3 rdf:type guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Capacidad para identificar y resolver problemas aplicando, con creatividad, los conocimientos adquiridos" .
+
+:CG5 rdf:type guide:Competency ;
+    guide:competencyCode "CG5" ;
+    guide:competencyDescription "Liderazgo de equipos y organizaciones" .
+
+:CG9 rdf:type guide:Competency ;
+    guide:competencyCode "CG9" ;
+    guide:competencyDescription "Razonamiento crítico y capacidad de asociación que posibiliten el aprendizaje continuo" .
+
+:RA72 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA72" ;
+    guide:learningResultDescription "Conocimiento, comprensión, aplicación y análisis de las diferentes tipologías de cimentación calculando las cargas de hundimiento en cimentaciones." .
+
+:RA300 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA300" ;
+    guide:learningResultDescription "Capacidad de análisis y síntesis para saber redactar e interpretar informes técnicos referentes a ensayos geotécnicos" .
+
+:RA70 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA70" ;
+    guide:learningResultDescription "Conocimiento, comprensión, análisis y valoración de los distintos tipos de suelo..." .
+
+:RA71 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA71" ;
+    guide:learningResultDescription "Conocimiento y aplicación de los ensayos tipo a realizar en los suelos para identificarlos y determinar su comportamiento." .
+
+# --- Syllabus ---
+
+:Syllabus_Geotecnia rdf:type guide:Syllabus ;
+    guide:hasItem :Unit_1, :Unit_2, :Unit_3, :Unit_4, :Unit_5, :Unit_6, :Unit_7, :Unit_8 .
+
+:Unit_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "ORIGEN DE LOS SUELOS Y SUS PROPIEDADES FÍSICAS." .
+
+:Unit_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "IDENTIFICACIÓN Y CLASIFICACIÓN DE SUELOS." .
+
+:Unit_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "EL AGUA EN EL TERRENO." .
+
+:Unit_4 rdf:type guide:SyllabusItem ;
+    guide:item	index 4 ;
+    guide:syllabusDescription "COMPRESIBILIDAD E HINCHAMIENTO DE SUELOS." .
+
+:Unit_5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "RESISTENCIA Y ELASTICIDAD" .
+
+:Unit_6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "RECONOCIMIENTOS GEOTÉCNICOS DE CAMPO." .
+
+:Unit_7 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "ESTABILIDAD DE TALUDES" .
+
+:Unit_8 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 8 ;
+    guide:syllabusDescription "CIMENTACIONES." .
+
+# --- Evaluation System ---
+
+:EvalSystem_Geotecnia rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación continua se realizará mediante dos pruebas de evaluación intermedia. La última de las cuales coincidirá con la convocatoria oficial ordinaria..." ;
+    guide:hasEvaluationTrial :Trial_Intermediate, :Trial_Final, :Trial_Extraordinary .
+
+:Trial_Intermediate rdf:type guide:EvaluationTrial ;
+    guide:trialType "Prueba de Evaluación Intermedia" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "8" ;
+    guide:trialMode "Presencial" .
+
+:Trial_Final rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen ordinario" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "80%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:trialMode "Presencial" .
+
+# --- Schedule and Activities ---
+
+:Schedule_Geotecnia rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week8, :Event_Week17 .
+
+:Event_Week8 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 8 ;
+    guide:eventWeek "Semana 8" ;
+    guide:hasActivity :Act_Lecture_Unit4, :Act_Lab_Granulometria .
+
+:Act_Lecture_Unit4 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 4: Compresbilidad e hinchamiento de suelos" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:Act_Lab_Granulometria rdf:type guide:Activity ;
+    guide:activityDescription "Granulometría" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:attendanceType "Presencial" .
+
+# --- Didactic Resources ---
+
+:Res_Moodle rdf:type guide:DidacticResource ;
+    sch:name "Espacio MOODLE de la asignatura" ;
+    guide:bibliographyDescription "http://moodle.upm.es/ - Plataforma para documentos docentes, enlaces, test y ejercicios." ;
+    guide:bibliographyType "Recursos web" .
+
+:Res_Cedex rdf:type guide:DidacticResource ;
+    sch:name "www.cedex.es" ;
+    guide:bibliographyType "Recursos web" .
+
+:Res_Laboratorio rdf:type guide:DidacticResource ;
+    sch:name "Laboratorio de Construcción y Aeropuertos" ;
+    guide:bibliographyDescription "Equipamiento para realizar las prácticas programadas." ;
+    guide:bibliographyType "Equipamiento" .
+
+:Book_Gonzalez rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Ingeniería Geológica (GONZÁLEZ DE VALLEJO, LUIS I., et al.)" ;
+    guide:bibliographyType "Bibliografía" .
+
+# --- Required Knowledge ---
+
+:ReqKnow_Geology rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Geología" .
+
+:ReqKnow_Materials rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Materiales De Construccion, Resistencia De Materiales Y Elasticidad, Quimica, Estructuras" .

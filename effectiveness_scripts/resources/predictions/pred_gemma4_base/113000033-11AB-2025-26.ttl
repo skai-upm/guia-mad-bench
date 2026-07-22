@@ -1,0 +1,210 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.app/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://w3id.org/def/guia#> .
+
+# Degree
+:master_science_sports rdf:type guide:MasterDegree ;
+    sch:name "Master Universitario En Ciencias De La Actividad Fisica Y Del Deporte" ;
+    guide:degreeCode "11AB" .
+
+# University Center
+:facultad_sports rdf:type guide:UniversityCenter ;
+    sch:name "Facultad CC. Actividad Fisica y Deporte" .
+
+# Course
+:course_technical_english rdf:type guide:Course ;
+    sch:name "Redaccion Técnica De Inglés Aplicada A La Actividad Fisica Y El Deporte" ;
+    sch:courseCode 113000033 ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 2025 ;
+    guide:semester "Primer semestre" ;
+    sch:hasCourseInstance :guide_technical_english .
+
+# Course Guide
+:guide_technical_english rdf:type guide:CourseGuide ;
+    sch:description "This module supports students whose first language is not English over a semester of academic study, and helps them to refine their writing through extensive language input, practice and feedback."@en ;
+    sch:inLanguage "Castellano" ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:hasSyllabus :syllabus_technical_english ;
+    guide:hasEvaluation :eval_system_technical_english ;
+    guide:hasLearningResult :lr_ra94, :lr_ra91, :lr_ra96, :lr_ra19, :lr_ra95 ;
+    guide:hasCompetency :comp_cb10, :comp_cg5, :comp_cg6, :comp_t2, :comp_t3, :comp_t6 ;
+    sch:instructor :lecturer_maria_gomez ;
+    sch:courseSchedule :schedule_technical_english ;
+    guide:hasDidacticResource :res_moodle, :res_google_drive, :res_teams, :res_zoom ;
+    guide:otherInformation "Please remember that the subject does NOT start from a low level of English. It is advisable to have an upper intermediate level."@en .
+
+# Lecturer
+:lecturer_maria_gomez rdf:type guide:Lecturer ;
+    sch:name "Maria Jose Gomez Ortiz" ;
+    sch:email "maria.gomez.ortiz@upm.es" ;
+    guide:office "403" ;
+    guide:tutorshipsSchedule "M - 10:00 - 12:00, X - 10:00 - 14:00" .
+
+# Syllabus
+:syllabus_technical_english rdf:type guide:Syllabus ;
+    guide:hasItem :item_structure_article, :item_abstract_writing .
+
+:item_structure_article rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Structure of a Research Article (Introduction, Method, Results, Discussion and Conclusions)."@en .
+
+:item_abstract_writing rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "How to write a good abstract and get published."@en .
+
+# Competencies
+:comp_cb10 rdf:type guide:Competency ;
+    guide:competencyCode "CB10" ;
+    guide:competencyDescription "Habilidades de aprendizaje para estudio autodirigido o autónomo."@en .
+
+:comp_cg5 rdf:type guide:Competency ;
+    guide:competencyCode "CG5" ;
+    guide:competencyDescription "Desarrollo de habilidades humanas para el trabajo en equipo y compromiso científico."@en .
+
+:comp_cg6 rdf:type guide:Competency ;
+    guide:competencyCode "CG6" ;
+    guide:competencyDescription "Capacidad para comunicarse y relacionarse en un ámbito científico en la lengua inglesa."@en .
+
+:comp_t2 rdf:type guide:Competency ;
+    guide:competencyCode "T2" ;
+    guide:competencyDescription "Capacidad para el aprendizaje autónomo y la actualización de conocimientos."@en .
+
+:comp_t3 rdf:type guide:Competency ;
+    guide:competencyCode "T3" ;
+    guide:competencyDescription "Capacidad para trabajar dentro de un equipo, organizado, planificado y resolviendo conflictos."@en .
+
+:comp_t6 rdf:type guide:Competency ;
+    guide:competencyCode "T6" ;
+    guide:competencyDescription "Capacidad para usar las tecnologías de la información y la comunicación."@en .
+
+# Learning Results
+:lr_ra94 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA94" ;
+    guide:learningResultDescription "Mejorar la calidad de la escritura técnica en inglés beneficiándose de herramientas digitales."@en .
+
+:lr_ra91 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA91" ;
+    guide:learningResultDescription "Write a Research Article in English"@en .
+
+:lr_ra96 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA96" ;
+    guide:learningResultDescription "Redactar en inglés con claridad, precisión y cohesión cuidando la gramática."@en .
+
+:lr_ra19 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA19" ;
+    guide:learningResultDescription "Dotar al estudiante de herramientas para la redacción de artículos de investigación en inglés."@mente .
+
+:lr_ra95 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA95" ;
+    guide:learningResultDescription "Expandir el vocabulario académico y la terminología específica en inglés."@en .
+
+# Evaluation System
+:eval_system_technical_english rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Progressive assessment and compulsory attendance in a 75%."@en ;
+    guide:hasEvaluationTrial :trial_vocab_exercise, :trial_writing_exercise, :trial_writing_test, :trial_abstract_write, :trial_global_exam .
+
+:trial_vocab_exercise rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Progresiva" ;
+    guide:trialType "Trabajo Individual" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5/10" ;
+    guide:evaluationDuration "02:00" ;
+    guide:trialWeek "Semana 4" .
+
+:trial_writing_exercise rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Progresiva" ;
+    guide:trialType "Trabio en Grupo" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5/10" ;
+    guide:evaluationDuration "02:00" ;
+    guide:trialWeek "Semana 8" .
+
+:trial_writing_test rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Progresiva" ;
+    guide:trialType "Trabajo Individual" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5/10" ;
+    guide:evaluationDuration "02:00" ;
+    guide:trialWeek "Semana 13" .
+
+:trial_abstract_write rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Progresiva" ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5/10" ;
+    guide:evaluationDuration "04:00" ;
+    guide:trialWeek "Semana 15" .
+
+:trial_global_exam rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Global" ;
+    guide:trialType "Examen Escrito" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5/10" ;
+    guide:evaluationDuration "03:00" ;
+    guide:trialWeek "Semana 17" .
+
+# Schedule
+:schedule_technical_english rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week4, :event_week8, :event_week13, :event_week15, :event_week17 .
+
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_intro .
+
+:act_intro rdf:type guide:Activity ;
+    guide:activityDescription "General Introduction. Academic vocabulary."@en ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Acciones Cooperativas" ;
+    guide:attendanceType "Presencial" .
+
+:event_week4 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 4 ;
+    guide:eventWeek "Semana 4" ;
+    guide:hasActivity :act_vocab_exercise .
+
+:act_vocab_exercise rdf:type guide:Activity ;
+    guide:activityDescription "Academic Vocabulary Exercise."@en ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Trabajo Individual" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Moodle" ;
+    guide:bibliographyType "Recurso web" .
+
+:res_google_drive rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Google Drive" ;
+    guide:bibliographyType "Recurso web" .
+
+:res_teams rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Teams" ;
+    guide:bibliographyType "Recurso web" .
+
+:res_zoom rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Zoom" ;
+    guide:bibliographyType "Recurso web" .
+
+# Relationships
+:course_technical_english guide:hasCourseInstance :guide_technical_english ;
+    sch:hasCourseInstance :guide_technical_english ;
+    guide:hasSyllabus :syllabus_technical_english ;
+    guide:hasEvaluation :eval_system_technical_english ;
+    guide:hasLearningResult :lr_ra94, :lr_ra91, :lr_ra96, :lr_ra19, :lr_ra95 ;
+    guide:hasCompetency :comp_cb10, :comp_cg5, :comp_cg6, :comp_t2, :comp_t3, :comp_t6 .
+
+:master_science_sports guide:hasCourse :course_technical_english .
+
+:facultad_sports guide:offers :master_science_sports .

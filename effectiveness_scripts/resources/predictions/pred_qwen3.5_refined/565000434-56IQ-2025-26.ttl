@@ -1,0 +1,904 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/elements/1.1/> .
+@prefix sch: <https://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guia_56iq_565000434> rdf:type :CourseGuide ;
+    sch:name "Resistencia De Materiales"@en ;
+    dct:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@es ;
+    guide:courseYear 2025 .
+
+<http://guia-mad-bench.es/data/guia_56iq_565000434> sch:hasCourseInstance <http://guia-mad-bench.es/data/course-56iq> ;
+    dct:creator "Andrea Cimmino Arriaga" ,
+               "Covadonga Arias" .
+
+<http://guia-mad-bench.es/data/degree_56iq> rdf:type :BachelorDegree ;
+    sch:name "Grado En Ingeniería Química"@es ;
+    guide:numberOfCredits 4.5 .
+
+<http://guia-mad-bench.es/data/course-56iq> rdf:type :Course ;
+    dct:title "Resistencia De Materiales" ;
+    sch:courseCode 565000434 ;
+    guide:syllabusDescription "Cálculo de las tensiones y deformaciones que se producen en sólidos elásticos sometidos a diferentes solicitaciones"@en .
+
+<http://guia-mad-bench.es/data/lecturer_cascon> rdf:type :Lecturer ;
+    sch:name "Rafael Cascon Porres" ;
+    guide:office "A124-D5"@es ;
+    sch:email <mailto:rafael.cascon@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer_gomez> rdf:type :Lecturer ;
+    sch:name "Rafael Gomez Rodriguez" ;
+    guide:office "A124-D6"@es ;
+    sch:email <mailto:rafael.gomezr@upm.es> .
+
+<http://guia-mad-bench.es/data/competency_ce_14> rdf:type :Competency ;
+    dct:title "CE 14" ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/lr_ra59> .
+
+<http://guia-mad-bench.es/data/learning_result_ra59> rdf:type :LearningResult ;
+    sch:name "RA59"@en ;
+    dct:description "Conocimiento y utilización de los principios de la resistencia de materiales."@es .
+
+<http://guia-mad-bench.es/data/syllabus_1> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/ssi_intro>,
+                  <http://guia-mad-bench.es/data/ssi_axil>,
+                  <http://guia-mad-bench.es/data/ssi_flexion>,
+                  <http://guia-mad-bench.es/data/ssi_pandeo>,
+                  <http://guia-mad-bench.es/data/ssi_torsion> .
+
+<http://guia-mad-bench.es/data/syllabus_1> guide:hasSyllabusItem <http://guia-mad-bench.es/data/ssi_intro> ;
+    rdf:type :CourseGuide ;
+    sch:name "Resistencia De Materiales" .
+
+<http://guia-mad-bench.es/data/ssi_intro> rdf:type :SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "INTRODUCCIÓN A LA RESISTENCIA DE MATERIALES"@es .
+
+<http://guia-mad-bench.es/data/event_sem_1_tema1> rdf:type :ScheduleEvent ;
+    sch:eventWeek "Semestre 3" ;
+    om:activityDurationUnit <om:hour> ,
+                  xsd:"03.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/event_sem_6_control12> rdf:type :ScheduleEvent ;
+    sch:eventWeek "Semestre 6" ;
+    om:activityDurationUnit <om:hour> ,
+                  xsd:"01.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_control_12> rdf:type :EvaluationTrial ;
+    sch:name "Control de los temas 3 y 4"@es ;
+    guide:trialType "Examen Escrito"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"01.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final> rdf:type :EvaluationTrial ;
+    sch:name "Examen final de la asignatura"@es ;
+    guide:trialType "Examen Escrito"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"03.10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_practices> rdf:type :EvaluationTrial ;
+    sch:name "Memorias de las 5 prácticas"@es ;
+    guide:trialType "Presentación en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"05.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> rdf:type :EvaluationTrial ;
+    sch:name "Examen final convocatoria extraordinaria"@es ;
+    guide:trialType "Examen Escrito"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"03.10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Memorias de las 5 prácticas (Extraordinaria)"@es ;
+    guide:trialType "Presentación en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Prácticas de laboratorio (Extraordinaria)"@es ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    om:activityDurationUnit <om:hour> ,
+                          xsd:"00.00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_final_extraordinary> sch:name "Práct

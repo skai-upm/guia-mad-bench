@@ -1,0 +1,681 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guia/CalculoI_85003112> rdf:type :CourseGuide ;
+    sch:name "Cálculo I"@es ;
+    dct:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en ;
+    guide:teachingPeriodMonths "Septiembre-Enero"^^xsd:string ;
+    guide:numberOfCredits 6.0^^xsd:decimal ;
+    sch:inLanguage "Castellano"@es .
+
+<http://guia-mad-bench.es/data/guia/GradoArqNaval> rdf:type :BachelorDegree ;
+    dct:title "08NV - Grado En Arquitectura Naval"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia/Curso_CalculoI_2025-26> rdf:type :Course, sch:CourseInstance ;
+    guide:syllabusDescription "Esta asignatura tiene dos partes diferenciadas. La primera parte es una introducción a los números complejos..."@es .
+
+<http://guia-mad-bench.es/data/guia/CalculoI_85003112> sch:hasCourseInstance <http://guia-mad-bench.es/data/guia/Curso_CalculoI_2025-26> ;
+    guide:courseYear 2025^^xsd:integer .
+
+<http://guia-mad-bench.es/data/guia/GradoArqNaval> :hasCourse <http://guia-mad-bench.es/data/guia/Curso_CalculoI_2025-26> ;
+    guide:degreeCode "08NV"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia/Lector_Meroño> rdf:type :Lecturer, sch:Person ;
+    sch:name "Cristobal Jacobo Meroño Moreno"@es ;
+    guide:office "P1.02"^^xsd:string ;
+    sch:email <mailto:cj.merono@upm.es> .
+
+<http://guia-mad-bench.es/data/guia/Lector_Canton> rdf:type :Lecturer, sch:Person ;
+    sch:name "Alicia Canton Pire"@es ;
+    guide:tutorshipsSchedule "Sin horario. Por determinar."^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia/CalculoI_85003112> :hasSyllabus <http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> ;
+    sch:director <http://guia-mad-bench.es/data/guia/Lector_Meroño> .
+
+<http://guia-mad-bench.es/data/guia/Curso_CalculoI_2025-26> :hasCourseInstance <http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> ;
+    sch:courseCode 85003112^^xsd:integer .
+
+<http://guia-mad-bench.es/data/guia/Curso_CalculoI_2025-26> :hasLearningResult <http://guia-mad-bench.es/data/guia/LR_RA22>,
+    <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/LR_RA20> ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> rdf:type :Syllabus .
+
+<http://guia-mad-bench.es/data/guia/LR_RA20> rdf:type :LearningResult ;
+    guide:learningResultCode "RA20"^^xsd:string ;
+    sch:description "Resolver límites de funciones. Analizar la continuidad y derivabilidad."@es .
+
+<http://guia-mad-bench.es/data/guia/Comp_CB1> rdf:type :Competency ;
+    guide:competencyDescription "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de estudio..."^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> sch:syllabus <http://w3id.org/def/guia#Syllabus>.
+    guide:hasItem <http://guia-mad-bench.es/data/guia/SI_1>,
+        <http://guia-mad-bench.es/data/guia/SI_2>,
+        <http://guia-mad-bench.es/data/guia/SI_3> .
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/SE_Tema1>,
+    <http://guia-mad-bench.es/data/guia/SE_Tema2>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/SE_Integracion>,
+    <http://guia-mad-bench.es/data/guia/SE_Sucesiones>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA21>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA23>,
+    <http://guia-mad-bench.es/data/guia/Comp_CE1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA24>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB1>.
+
+<http://guia-mad-bench.es/data/guia/Syllabus_CalculoI> guide:hasItem <http://guia-mad-bench.es/data/guia/LR_RA20>,
+    <http://guia-mad-bench.es/data/guia/Comp_CB5>.
+
+<http://guia-mad-bench.es/data/guia

@@ -1,0 +1,107 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://guia-mad-bench.es/data/#ANX_PR_CL_001_01> a guide:CourseGuide ;
+    sch:name "Economía Mundial, Española Y Regional"@en ;
+    guide:numberOfCredits 3^^xsd:decimal ;
+    guide:teachingPeriod "2025/26 - Primer semestre" ;
+    sch:inLanguage "Castellano"@es ;
+    dct:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en ;
+    rdfs:comment "La asignatura es una introducción a la Economía Aplicada, proporcionando instrumentos para la medición y la interpretación de la realidad económica."@es .
+
+<http://guia-mad-bench.es/data/#45000246> a guide:Course ;
+    sch:name "Economía Mundial, Española Y Regional"@en ;
+    guide:numberOfCredits 3^^xsd:decimal ;
+    guide:courseYear 2025 .
+
+<http://guia-mad-bench.es/data/#04GD> a guide:Degree ;
+    guide:hasCourse <http://guia-mad-bench.es/data/#45000246> ;
+    sch:name "Doble Grado En Ingenieria Civil Y Territorial Y En Ade"@en .
+
+<http://guia-mad-bench.es/data/#ETS_Canales_P> a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ing. de Caminos Canales y P."@es .
+
+guide:CourseGuide <http://guia-mad-bench.es/data/#ANX_PR_CL_001_01> 
+    guide:hasCompetency <http://guia-mad-bench.es/data/#30AD_E15>,
+                        <http://guia-mad-bench.es/data/#30AD_E16>,
+                        <http://guia-mad-bench.es/data/#30AD_E17>,
+                        <http://guia-mad-bench.es/data/#30AD_E18>,
+                        <http://guia-mad-bench.es/data/#30AD_E19>,
+                        <http://guia-mad-bench.es/data/#30AD_E20> ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#RA185>,
+                            <http://guia-mad-bench.es/data/#RA186>,
+                            <http://guia-mad-bench.es/data/#RA189>,
+                            <http://guia-mad-bench.es/data/#RA184>,
+                            <http://guia-mad-bench.es/data/#RA188>,
+                            <http://guia-mad-bench.es/data/#RA187> ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/#Temario_45000246>.
+
+<http://guia-mad-bench.es/data/#30AD_E15> a guide:Competency ;
+    guide:competencyCode "30AD. E15"^^xsd:string ;
+    guide:competencyDescription "Entender el funcionamiento de los mercados financieros nacionales e internacionales."@en .
+
+<http://guia-mad-bench.es/data/#RA185> a guide:LearningResult ;
+    guide:learningResultCode "RA185"^^xsd:string ;
+    guide:learningResultDescription "Entender los fundamentos de los intercambios comerciales y del marco monetario que los condiciona, así como las implicaciones para la adopción de políticas comerciales y macroeconómicas."@en .
+
+<http://guia-mad-bench.es/data/#Temario_45000246> a guide:Syllabus ;
+    sch:name "Economía Mundial, Española Y Regional"@en ;
+    rdfs:comment "La asignatura es una introducción a la Economía Aplicada..."@es .
+
+<http://guia-mad-bench.es/data/#Tema_1> a guide:SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "Operaciones y agregados económicos"@en .
+
+<http://guia-mad-bench.es/data/#Tema_2> a guide:SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer ;
+    guide:syllabusDescription "Contabilidad Nacional"@en .
+
+<http://guia-mad-bench.es/data/#Cronograma_45000246> a guide:Schedule ;
+    sch:name "Economía Mundial, Española Y Regional"@en ;
+    rdfs:comment "Temporal organization of course-related events..."@es .
+
+guide:Syllabus <http://guia-mad-bench.es/data/#Temario_45000246> 
+    guide:hasItem <http://guia-mad-bench.es/data/#Tema_1>,
+                 <http://guia-mad-bench.es/data/#Tema_2>.
+
+<http://guia-mad-bench.es/data/#Sistema_Evaluacion_45000246> a guide:EvaluationSystem ;
+    sch:name "Economía Mundial, Española Y Regional"@en ;
+    guide:evaluationDescription "EVALUACIÓN CONTINUA (EVALUACIÓN PROGRESIVA/DISTRIBUIDA)"@es .
+
+<http://guia-mad-bench.es/data/#Examen_Final> a guide:EvaluationTrial ;
+    sch:name "Economía Mundial, Española Y Regional"@en ;
+    guide:trialDescription "Examen final"^^xsd:string ;
+    guide:evaluationType "Evaluación Global"^^rdf:langString ;
+    guide:gradePercentage 65^^xsd:string .
+
+<http://guia-mad-bench.es/data/#Jose_Balibrea> a guide:Lecturer ;
+    sch:name "Jose Balibrea Iniesta"@en ;
+    guide:office "6ª planta"^^rdf:langString ;
+    sch:email "jose.balibrea@upm.es" .
+
+<http://guia-mad-bench.es/data/#Antonio_SanchezSolino> a guide:Lecturer ;
+    sch:name "Antonio Sanchez Soliño"@en ;
+    guide:office "6ª planta"^^rdf:langString ;
+    sch:email "antonio.sanchezso@upm.es" .
+
+guide:CourseGuide <http://guia-mad-bench.es/data/#ANX_PR_CL_001_01> 
+    sch:director <http://guia-mad-bench.es/data/#Jose_Balibrea>,
+                <http://guia-mad-bench.es/data/#Antonio_SanchezSolino>.
+
+<http://guia-mad-bench.es/data/#Microeconomia> a guide:RequiredKnowledge ;
+    sch:name "Microeconomía"@en .
+
+guide:Lecturer <http://guia-mad-bench.es/data/#Jose_Balibrea>,
+               <http://guia-mad-bench.es/data/#Antonio_SanchezSolino> 
+    guide:tutorshipsSchedule "X - 08:00 - 12:00"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/#Muñoz_Cidad> a guide:DidacticResource ;
+    sch:name "Introducción a la economía aplicada, 5ª ed."@en ;
+    guide:bibliographyType "Bibliografía"@es .
+
+guide:EvaluationSystem <http://guia-mad-bench.es/data/#Sistema_Evaluacion_45000246> 
+    sch:courseSchedule <http://guia-mad-bench.es/data/#Cronograma_45000246>.

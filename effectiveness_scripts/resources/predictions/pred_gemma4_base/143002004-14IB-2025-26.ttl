@@ -1,0 +1,169 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:course_guide_143002004_2S_2025_26
+    rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje: Desarrollo De Infraestructuras Aeronáuticas" ;
+    sch:description "Conocimiento del ámbito de las infraestructuras aeroportuarias, desde el punto de vista de su relación con las operaciones de las aeronaves, la organización del sector, la terminología, reglamentación y normativas, y planificación, diseño, construcción y operación de las mismas." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:numberOfCredits 6.0 ;
+    guide:totalHours "156-162" ; # Estimated based on ECTS (6 * 26/27)
+    guide:hasSyllabus :syllabus_143002004 ;
+    guide:hasEvaluation :eval_system_143002004 ;
+    sch:courseSchedule :schedule_143002004 ;
+    sch:instructor :lecturer_angel_paris ;
+    sch:instructor :lecturer_diego_garcia ;
+    sch:instructor :lecturer_alvaro_rodriguez ;
+    sch:instructor :lecturer_santiago_pindado ;
+    sch:instructor :lecturer_daniel_corcuera ;
+    guide:hasDidacticResource :res_moodle, :res_book_garcia_cruzado, :res_reglamento_eu139 ;
+    guide:hasLearningResult :lr_ra49, :lr_ra51, :lr_ra50, :lr_ra109, :lr_ra46, :lr_ra65, :lr_ra44, :lr_ra107, :lr_ra126, :lr_ra52, :lr_ra43, :lr_ra108, :lr_ra45, :lr_ra66, :lr_ra58, :lr_ra47, :lr_ra48 ;
+    guide:hasCompetency :comp_ce_ia_1, :comp_ce_ia_2, :comp_ce_ia_4, :comp_ce_ia_5, :comp_ce_ia_6, :comp_cg1, :comp_cg10, :comp_cg11, :comp_cg12, :comp_cg13, :comp_cg14, :comp_cg15, :comp_cg16, :comp_ct1, :comp_ct2, :comp_ct3, :comp_ct4, :comp_ct5, :comp_ct6, :comp_ct7 .
+
+# Course and Degree
+:course_143002004
+    rdf:type guide:Course ;
+    sch:name "Desarrollo de Infraestructuras Aeronáuticas" ;
+    sch:courseCode 143002004 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Segundo semestre" ;
+    sch:hasCourseInstance :course_guide_143002004_2S_2025_26 .
+
+:degree_14ib
+    rdf:type guide:MasterDegree ;
+    sch:name "Master Universitario En Ingenieria Aeronautica" ;
+    guide:degreeCode "14IB" ;
+    guide:hasCourse :course_143002004 .
+
+:center_etsi
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S.I. Aeronáutica Y Del Espacio" ;
+    guide:offers :degree_14ib .
+
+# Lecturers
+:lecturer_diego_garcia
+    rdf:type guide:Lecturer ;
+    sch:name "Nicolas Diego Garcia Ortiz De Villajos" ;
+    sch:email "die:diego.garcia.ortizdevillajos@upm.es" .
+
+:lecturer_alvaro_rodriguez
+    rdf:type guide:Lecturer ;
+    sch:name "Alvaro Rodriguez Sanz" ;
+    sch:email "alvaro.rodriguez.sanz@upm.es" .
+
+:lecturer_santiago_pindado
+    rdf:type guide:Lecturer ;
+    sch:name "Santiago Pindado Carrion" ;
+    sch:email "santiago.pindado@upm.es" .
+
+:lecturer_daniel_corcuera
+    rdf:type guide:Lecturer ;
+    sch:name "Daniel Alfonso Corcuera" ;
+    sch:email "daniel.alfonso.corcuera@upm.es" ;
+    guide:office "L - 08:00 - 08:15" .
+
+:lecturer_angel_paris
+    rdf:type guide:Lecturer ;
+    sch:name "Angel Paris Loreiro" ;
+    sch:email "angel.paris@upm.es" .
+
+# Competencies
+:comp_ce_ia_1 rdf:type guide:Competency ; guide:competencyCode "CE-IA-1" ; guide:competencyDescription "Aptitud para realizar los Planes Directores de aeropuertos y los proyectos y la dirección de construcción de las infraestructuras, edificaciones e instalaciones aeroportuarias." .
+:comp_ce_ia_2 rdf:type guide:Competency ; guide:competencyCode "CE-IA-2" ; guide:competencyDescription "Capacidad para la Planificación, Diseño, Construcción y Gestión de Aeropuertos, y capacidad para el proyecto de sus Instalaciones Eléctricas." .
+:comp_cg1 rdf:type guide:Competency ; guide:competencyCode "CG1" ; guide:competencyDescription "Capacidad para proyectar, construir, inspeccionar, certificar y mantener todo tipo de aeronaves y vehículos espaciales..." .
+
+# Learning Results
+:lr_ra49 rdf:type guide:LearningResult ; guide:learningResultCode "RA49" ; guide:learningResultDescription "Identifica las unidades estratégicas de análisis del negocio de explotación aeroportuaria" .
+:lr_ra51 rdf:type guide:LearningResult ; guide:learning_resultCode "RA51" ; guide:learningResultDescription "Analiza internamente el aeropuerto e identifica las ventajas competitivas y las debilidades significativas" .
+
+# Syllabus
+:syllabus_143002004
+    rdf:type guide:Syllabus ;
+    guide:hasItem :item_tema1, :item_tema2, :item_tema3, :item_tema4, :item_tema5, :item_tema6, :item_tema7, :item_tema8, :item_tema9, :item_tema10, :item_tema11, :item_tema12, :item_tema13, :item_tema14, :item_tema15, :item_tema16, :item_tema17, :item_tema18, :item_tema19 .
+
+:item_tema1 rdf:type guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "Tema 1. CARACTERÍSTICAS FÍSICAS." .
+:item_tema2 rdf:type guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "Tema 2. ORDENACIÓN Y REGULACIÓN DEL SISTEMA AEROPORTUARIO." .
+# ... (Other items follow same pattern)
+
+# Schedule and Activities
+:schedule_143002004
+    rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week2, :event_week3, :event_week4, :event_week5, :event_week6, :event_week7, :event_week8, :event_week9, :event_week10, :event_week11, :event_week12, :event_week13, :event_week14, :event_week15, :event_week17 .
+
+:event_week1
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :act_tema1_lm .
+
+:act_tema1_lm
+    rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1. Características físicas" ;
+    guide:activityDuration 4.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:event_week17
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "17" ;
+    guide:hasActivity :act_exam_final .
+
+:act_exam_final
+    rdf:type guide:Activity ;
+    guide:activityDescription "Examen escrito" ;
+    guide:activityDuration 4.0 ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:attendanceType "Presencial" .
+
+# Evaluation System
+:eval_system_143002004
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La asignatura consta de cuatro partes: planificación, diseño, seguridad operacional e ingeniería eléctrica. El peso de cada parte es del 25%." ;
+    guide:hasEvaluationTrial :trial_exam_ordinario, :trial_trabajo_grupo .
+
+:trial_exam_ordinario
+    rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen" ;
+    guide:evaluationDuration "04:00" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialMode "Presencial" ;
+    guide:trialType "Examen Escrito" ;
+    guide:involvesCompetency :comp_ce_ia_1, :comp_ce_ia_2, :comp_cg1 .
+
+:trial_trabajo_grupo
+    rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Trabajo" ;
+    guide:evaluationDuration "17:00" ;
+    guide:gradePercentage "10%" ;
+    guide:trialMode "No presencial" ;
+    guide:trialType "Trabajo en Grupo" ;
+    guide:involvesCompetency :comp_cg13 .
+
+# Didactic Resources
+:res_moodle
+    rdf:type guide:DidacticResource ;
+    sch:name "Espacio MOODLE de la asignatura" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "http://moodle.upm.es/" .
+
+:res_book_garcia_cruzado
+    rdf:type guide:DidacticResource ;
+    sch:name "M. GARCÍA CRUZADO. 'Ingeniería Aeroportuaria'" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_reglamento_eu139
+    rdf:type guide:DidacticResource ;
+    sch:name "Reglamento EU 139/2014" ;
+    guide:bibliographyType "Bibliografía" .

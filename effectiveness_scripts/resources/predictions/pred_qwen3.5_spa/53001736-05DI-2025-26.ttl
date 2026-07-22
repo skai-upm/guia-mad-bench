@@ -1,0 +1,78 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-prcl001> rdf:type :CourseGuide ;
+    dc:title "Guía de Aprendizaje"@en ;
+    dct:creator "Jose Maria Sebastian Zuñiga" ;
+    sch:name "Sistemas De Control Y Automatización"@en ;
+    guide:numberOfCredits 3^^xsd:decimal ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/syllabus/anx-prcl001> ;
+    guide:hasEvaluation :eval-system-53001736 ;
+    sch:description "Los objetivos centrales de la asignatura son implementar algoritmos de control..."@en .
+
+<http://guia-mad-bench.es/data/degree/dmu-industrial> rdf:type :Degree ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course/sistemas-control-automatizacion> ;
+    sch:name "D.M.U. En Ingeniería Industrial Y En Automática y Robótica"@en .
+
+<http://guia-mad-bench.es/data/center/upm-industrial> rdf:type :UniversityCenter ;
+    dct:title "E.T.S. de Ingenieros Industriales"@es .
+
+<http://guia-mad-bench.es/data/course/sistemas-control-automatizacion> rdf:type :Course ;
+    sch:courseCode 53001736^^xsd:integer ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/syllabus/anx-prcl001> .
+
+<http://guia-mad-bench.es/data/lecturer/jose-sebastian-zuniga> rdf:type :Lecturer ;
+    sch:name "Jose Maria Sebastian Zuñiga"@en ;
+    sch:email <mailto:jose.sebastian@upm.es> ;
+    guide:tutorshipsSchedule "- -" .
+
+<http://guia-mad-bench.es/data/syllabus/anx-prcl001> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/item/temario-1>,
+                 <http://guia-mad-bench.es/data/item/temario-2>,
+                 <http://guia-mad-bench.es/data/item/temario-3> ;
+    guide:hasItem <http://guia-mad-bench.es/data/item/temario-4>,
+                  <http://guia-mad-bench.es/data/item/temario-5>,
+                  <http://guia-mad-bench.es/data/item/temario-6> ;
+    guide:hasItem <http://guia-mad-bench.es/data/item/temario-7>,
+                  <http://guia-mad-bench.es/data/item/temario-8>,
+                  <http://guia-mad-bench.es/data/item/temario-9> .
+
+<http://guia-mad-bench.es/data/schedule/anx-prcl001> rdf:type :Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event/semana-1>,
+                      <http://guia-mad-bench.es/data/event/examen-final> .
+
+<http://guia-mad-bench.es/data/item/temario-1> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    sch:name "Programación de autómatas industriales"@en .
+
+<http://guia-mad-bench.es/data/event/semana-1> rdf:type :ScheduleEvent ;
+    guide:eventWeek "Semestre 1"@es ;
+    sch:description "Actividad del tipo Lección Magistral"@en .
+
+<http://guia-mad-bench.es/data/eval-system-53001736> rdf:type :EvaluationSystem ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial/tarea-1>,
+                             <http://guia-mad-bench.es/data/trial/examen-final> .
+
+<http://guia-mad-bench.es/data/trial/tarea-1> rdf:type :EvaluationTrial ;
+    guide:trialType "Tarea 1. Programación de autómatas"@en ;
+    sch:name "Programación de autómatas"@es ;
+    guide:gradePercentage "30%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial/examen-final> rdf:type :EvaluationTrial ;
+    guide:trialType "Examen final con parte escrita y práctica"@en ;
+    sch:name "Examen Final"@es ;
+    guide:gradePercentage "50%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/muar-cb06> rdf:type :Competency ;
+    guide:competencyCode "MUAR.CB06"@en ;
+    sch:description "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales..."@es .
+
+<http://guia-mad-bench.es/data/learning-result-ra101> rdf:type :LearningResult ;
+    guide:learningResultCode "RA101"@en ;
+    sch:description "Realización de trabajos prácticos sobre simulación de sistemas"^^xsd:string .

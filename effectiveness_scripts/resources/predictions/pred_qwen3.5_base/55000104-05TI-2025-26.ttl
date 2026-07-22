@@ -1,0 +1,107 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://w3id.org/def/guia#GA_55000104> rdf:type :CourseGuide ;
+    dc:title "Electronica Digital"@en ;
+    sch:name "Electronica Digital" ;
+    guide:numberOfCredits 3.0^^xsd:decimal ;
+    guide:syllabusDescription "La asignatura cubre los aspectos principales del diseño de sistemas digitales empleando para ello un Lenguaje de Descripción Hardware (VHDL). Se estudiarán tanto el diseño de circuitos combinacionales como el de circuitos secuenciales síncronos."@es ;
+    sch:teachingPeriodMonths "Septiembre-Enero"@en ;
+    guide:syllabus <http://w3id.org/def/guia#Syllabus_55000104> .
+
+<http://w3id.org/def/guia#Degree_05TI> rdf:type :BachelorDegree ;
+    sch:name "Grado en Ingeniería en Tecnologías Industriales" ;
+    guide:degreeCode "05TI"@en ;
+    sch:courseInstance <http://w3id.org/def/guia#GA_55000104> .
+
+<http://w3id.org/def/guia#Syllabus_55000104> rdf:type :Syllabus ;
+    guide:syllabusDescription "Temario de la asignatura: 1. Introducción a los Sistemas Digitales, 2. Diseño Digital con Lenguajes de descripción Hardware (VHDL), 3. Diseño de Circuitos Combinacionales, 4. Diseño de Circuitos Secuenciales Síncronos, 5. Síntesis de Circuitos Secuenciales Síncronos, 6. Implementación física, 7. Arquitectura de sistemas digitales."@es ;
+    guide:hasItem <http://w3id.org/def/guia#SyllabusItem_1> .
+
+<http://w3id.org/def/guia#SyllabusItem_1> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "Introducción a los Sistemas Digitales"@es .
+
+<http://w3id.org/def/guia#Lecturer_Otero_Marnotes> rdf:type :Lecturer ;
+    sch:name "Jose Andres Otero Marnotes" ;
+    sch:email <mailto:joseandres.otero@upm.es> ;
+    guide:tutorshipsSchedule "L - 08:00 - 08:15"@en .
+
+<http://w3id.org/def/guia#Lecturer_Portilla_Berrueco> rdf:type :Lecturer ;
+    sch:name "Jorge Portilla Berrueco" ;
+    sch:email <mailto:jorge.portilla@upm.es> .
+
+<http://w3id.org/def/guia#Competency_CG1> rdf:type :Competency ;
+    guide:competencyCode "CG1"@en ;
+    guide:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Industrial."@es .
+
+<http://w3id.org/def/guia#LearningResult_RA8> rdf:type :LearningResult ;
+    guide:learningResultCode "RA8"@en ;
+    guide:learningResultDescription "Capacidad y habilidades para diseñar circuitos digitales de complejidad intermedia, a partir de bloques funcionales conocidos, combinados con máquinas de estados."@es .
+
+<http://w3id.org/def/guia#Schedule_55000104> rdf:type :Schedule ;
+    sch:eventSchedule <http://w3id.org/def/guia#Event_Semana_1>,
+                    <http://w3id.org/def/guia#Event_Semana_2>.
+
+<http://w3id.org/def/guia#Event_Semana_1> rdf:type :ScheduleEvent ;
+    guide:eventIndex 1^^xsd:integer ;
+    sch:name "Introducción a los Sistemas Digitales" ;
+    guide:activityDurationUnit om:Hour .
+
+<http://w3id.org/def/guia#Activity_LM_Semana_1> rdf:type :Activity ;
+    guide:hasScheduleEvent <http://w3id.org/def/guia#Event_Semana_1> ;
+    sch:name "Lección Magistral" .
+
+<http://w3id.org/def/guia#EvaluationSystem_55000104> rdf:type :EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global. Incluye prácticas, examen de VHDL (PEC), trabajo en grupo y examen final."@es .
+
+<http://w3id.org/def/guia#Trial_Practica_1> rdf:type :EvaluationTrial ;
+    sch:name "Evaluación Práctica 1" ;
+    guide:trialType "Examen de Prácticas"@en ;
+    guide:gradePercentage "2.5%"^^xsd:string ;
+    guide:minScore "/ 10"^^xsd:string .
+
+<http://w3id.org/def/guia#Trial_Exam_VHDL> rdf:type :EvaluationTrial ;
+    sch:name "Examen de VHDL" ;
+    guide:trialType "Examen Escrito"@en ;
+    guide:gradePercentage "20%"^^xsd:string .
+
+<http://w3id.org/def/guia#Course_55000104> rdf:type :Course ;
+    sch:name "Electronica Digital" ;
+    sch:courseCode 55000104^^xsd:integer ;
+    guide:numberOfCredits 3.0^^xsd:decimal .
+
+<http://w3id.org/def/guia#GA_55000104> rdf:type :CourseGuide ;
+    sch:name "Electronica Digital" ;
+    guide:syllabus <http://w3id.org/def/guia#Syllabus_55000104> .
+
+<http://w3id.org/def/guia#GA_55000104> sch:director :Lecturer_Otero_Marnotes ;
+    guide:sch:name "Electronica Digital" ;
+    guide:numberOfCredits 3.0^^xsd:decimal .
+
+<http://w3id.org/def/guia#GA_55000104> sch:description "Guía de Aprendizaje para la asignatura Electronica Digital en el Grado en Ingeniería en Tecnologías Industriales, curso académico 2025-26."@es ;
+    guide:teachingPeriodMonths "Septiembre-Enero"@en .
+
+<http://w3id.org/def/guia#GA_55000104> sch:inLanguage <https://schema.org/es> ;
+    guide:syllabusDescription "La asignatura cubre los aspectos principales del diseño de sistemas digitales empleando para ello un Lenguaje de Descripción Hardware (VHDL). Se estudiarán tanto el diseño de circuitos combinacionales como el de circuitos secuenciales síncronos."@es .
+
+<http://w3id.org/def/guia#GA_55000104> guide:hasCourse <http://w3id.org/def/guia#Course_55000104> ;
+    sch:name "Electronica Digital" ;
+    guide:numberOfCredits 3.0^^xsd:decimal .
+
+<http://w3id.org/def/guia#GA_55000104> guide:syllabus <http://w3id.org/def/guia#Syllabus_55000104> ;
+    sch:name "Electronica Digital" .
+
+<http://w3id.org/def/guia#GA_55000104> guide:hasCompetency <http://w3id.org/def/guia#Competency_CG1>,
+                    <http://w3id.org/def/guia#LearningResult_RA8>.
+
+<http://w3id.org/def/guia#GA_55000104> guide:hasEvaluationSystem <http://w3id.org/def/guia#EvaluationSystem_55000104> ;
+    sch:name "Electronica Digital" .
+
+<http://w3id.org/def/guia#GA_55000104> guide:hasLearningResult <http://w3id.org/def/guia#LearningResult_RA8>.

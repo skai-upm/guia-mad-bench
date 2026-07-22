@@ -1,0 +1,263 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dct:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dct:license rdf:type owl:AnnotationProperty .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://w3id.org/def/guia#hasSyllabus
+guide:hasSyllabus rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:Syllabus ;
+                  rdfs:range guide:SyllabusItem .
+
+
+###  https://schema.org/courseSchedule
+sch:courseSchedule rdf:type owl:ObjectProperty ;
+                   rdfs:domain guide:CourseGuide ;
+                   rdfs:range guide:ScheduleEvent .
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://w3id.org/def/guia#teachingPeriodMonths
+guide:teachingPeriodMonths rdf:type owl:DatatypeProperty ;
+                           rdfs:domain guide:SyllabusItem ;
+                           rdfs:range xsd:string .
+
+
+###  https://schema.org/name
+sch:name rdf:type owl:DatatypeProperty ;
+         rdfs:range rdf:langString .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://w3id.org/def/guia#Activity
+guide:Activity rdf:type owl:Class ;
+               rdfs:comment "A teaching or learning activity carried out as part of the course, such as lectures, labs, seminars, tutorials, or independent work."@en .
+
+
+#################################################################
+#    Instances
+#################################################################
+
+###  Degree Instance (09BM)
+<http://guia-mad-bench.es/data/grado_09bm> rdf:type guide:BachelorDegree ;
+                                              sch:name "Grado En Ingenieria Biomedica"@es ;
+                                              dct:creator <http://w3id.org/def/guia#Andrea_Cimmino_Arriaga> .
+
+
+###  Course Instance (Física)
+<http://guia-mad-bench.es/data/curso_Fisica_95000301> rdf:type guide:Course ;
+                                                          sch:name "Física"@es ;
+                                                          dct:title "95000301 - Física" .
+
+
+###  Course Guide Instance (ANX-PR/CL/001-01)
+<http://guia-mad-bench.es/data/guia_ANX_PR_CL_001_01> rdf:type guide:CourseGuide ;
+                                                          sch:name "Guía de Aprendizaje Física"@es ;
+                                                          dct:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE" .
+
+
+###  Syllabus Instance (Temario)
+<http://guia-mad-bench.es/data/syllabus_Fisica_95000301> rdf:type guide:Syllabus ;
+                                                             sch:courseSchedule <http://guia-mad-bench.es/data/guia_ANX_PR_CL_001_01> .
+
+
+###  Syllabus Item Instances (Temario)
+
+# Mecánica Block
+<http://guia-mad-bench.es/data/syllabi_item_Mecanica_95000301> rdf:type guide:SyllabusItem ;
+                                                                   sch:name "Mecánica"@es ;
+                                                                   dct:hasSyllabus <http://guia-mad-bench.es/data/syllabus_Fisica_95000301> .
+
+# Elasticidad Block
+<http://guia-mad-bench.es/data/syllabi_item_Elasticidad_95000301> rdf:type guide:SyllabusItem ;
+                                                                      sch:name "Elasticidad"@es ;
+                                                                      dct:hasSyllabus <http://guia-mad-bench.es/data/syllabus_Fisica_95000301> .
+
+# Fluidos Block
+<http://guia-mad-bench.es/data/syllabi_item_Fluidos_95000301> rdf:type guide:SyllabusItem ;
+                                                                  sch:name "Fluidos"@es ;
+                                                                  dct:hasSyllabus <http://guia-mad-bench.es/data/syllabus_Fisica_95000301> .
+
+# Termodinámica Block
+<http://guia-mad-bench.es/data/syllabi_item_Termodinamica_95000301> rdf:type guide:SyllabusItem ;
+                                                                         sch:name "Termodinámica"@es ;
+                                                                         dct:hasSyllabus <http://guia-mad-bench.es/data/syllabus_Fisica_95000301> .
+
+
+###  Lecturer Instances
+
+# Elisa Antolin Fernandez (Coordinator)
+<http://guia-mad-bench.es/data/elisa_antolin_01> rdf:type guide:Lecturer ;
+                                                    sch:name "Elisa Antolin Fernandez"@es ;
+                                                    dct:email <mailto:elisa.antolin@upm.es> .
+
+# Simon Aurel Svatek
+<http://guia-mad-bench.es/data/simon_svatek_01> rdf:type guide:Lecturer ;
+                                                   sch:name "Simon Aurel Svatek"@es ;
+                                                   dct:email <mailto:simon.svatek@upm.es> .
+
+# Miguel Montes Bajo
+<http://guia-mad-bench.es/data/miguel_montes_01> rdf:type guide:Lecturer ;
+                                                    sch:name "Miguel Montes Bajo"@es ;
+                                                    dct:email <mailto:miguel.montes@upm.es> .
+
+# Daniel Fernandez Muñoz
+<http://guia-mad-bench.es/data/daniel_fernandez_01> rdf:type guide:Lecturer ;
+                                                       sch:name "Daniel Fernandez Muñoz"@es ;
+                                                       dct:email <mailto:daniel.fernandezm@upm.es> .
+
+
+###  Competency Instances (CE Codes)
+
+<http://guia-mad-bench.es/data/competencia_CE06> rdf:type guide:Competency ;
+                                                    sch:name "Comprender y saber calcular el equilibrio..."@es ;
+                                                    dct:title "CE06"@en .
+
+<http://guia-mad-bench.es/data/competencia_CE10> rdf:type guide:Competency ;
+                                                   sch:name "Interrelación sistemas mecánicos, hidráulicos..."@es ;
+                                                   dct:title "CE10"@en .
+
+
+###  Learning Result Instances (RA Codes)
+
+<http://guia-mad-bench.es/data/learning_result_RA31> rdf:type guide:LearningResult ;
+                                                       sch:name "Conocer y dominar conceptos de Dinámica..."@es ;
+                                                       dct:title "RA31"@en .
+
+
+###  Evaluation System Instance (Sistema)
+
+<http://guia-mad-bench.es/data/sistema_evaluacion_Fisica> rdf:type guide:EvaluationSystem ;
+                                                             sch:name "Evaluación Progresiva y Global"@es ;
+                                                             dct:title "Sistema de Evaluación Física"@en .
+
+
+###  Evaluation Trial Instances (Pruebas)
+
+# Prueba 1 Control
+<http://guia-mad-bench.es/data/evaluacion_PruebaControl_01> rdf:type guide:EvaluationTrial ;
+                                                              sch:name "Primera prueba de control"@es ;
+                                                              dct:title "Evaluación Progresiva"@en .
+
+
+###  Schedule Event Instances (Cronograma)
+
+# Week 4 - Prueba Control 1
+<http://guia-mad-bench.es/data/evento_PruebaControl_01> rdf:type guide:ScheduleEvent ;
+                                                           sch:name "Primera prueba de control"@es ;
+                                                           dct:title "Semana 4"@en .
+
+
+###  Didactic Resource Instances (Recursos)
+
+# Tipler Book
+<http://guia-mad-bench.es/data/recurso_Tipler> rdf:type guide:DidacticResource ;
+                                                 sch:name "Física"@es ;
+                                                 dct:title "Tipler, P.A., Mosca, G. 'Física'" .
+
+
+###  Course Guide Properties
+
+<http://guia-mad-bench.es/data/guia_ANX_PR_CL_001_01> rdf:type guide:CourseGuide ;
+                                                          sch:name "Guía de Aprendizaje Física"@es ;
+                                                          dct:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE" .
+
+
+###  Course Guide - Degree Link
+
+<http://guia-mad-bench.es/data/guia_ANX_PR_CL_001_01> guide:hasCourse <http://guia-mad-bench.es/data/curso_Fisica_95000301> .
+
+
+###  Course Guide - Syllabus Link
+
+<http://guia-mad-bench.es/data/guia_ANX_PR_CL_001_01> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_Fisica_95000301> .
+
+
+###  Course Guide - Evaluation Link
+
+<http://guia-mad-bench.es/data/guia_ANX_PR_CL_001_01> guide:hasEvaluation <http://guia-mad-bench.es/data/sistema_evaluacion_Fisica> .
+
+
+###  Syllabus Item Properties (Index & Description)
+# Note: Using xsd:string for description as per ontology definition `guide:syllabusDescription` range is rdf:langString.
+
+<http://guia-mad-bench.es/data/syllabi_item_Mecanica_95000301> guide:itemIndex "1"^^xsd:integer ;
+                                                                   guide:syllabusDescription "Mecánica clásica, elasticidad, dinámica de fluidos y termodinámica."@es .
+
+
+###  Evaluation Trial - System Link
+
+<http://guia-mad-bench.es/data/sistema_evaluacion_Fisica> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluacion_PruebaControl_01> ;
+                                                             sch:name "Prueba de control"@es .
+
+
+###  Evaluation Trial - Schedule Event Link
+
+<http://guia-mad-bench.es/data/sistema_evaluacion_Fisica> guide:hasScheduleEvent <http://guia-mad-bench.es/data/evento_PruebaControl_01> ;
+                                                             sch:name "Semana 4"@en .
+
+
+###  Evaluation Trial - Properties
+
+<http://guia-mad-bench.es/data/evaluacion_PruebaControl_01> guide:trialType "Examen Escrito"^^xsd:string ;
+                                                               guide:gradePercentage "5%"^^xsd:string ;
+                                                               sch:name "Primera prueba de control"@es .
+
+
+###  Course Guide - Credits
+
+<http://guia-mad-bench.es/data/guia_ANX_PR_CL_001_01> guide:numberOfCredits "6"^^xsd:decimal .
+
+
+###  Lecturer - Director Link
+# Elisa Antolin is the Coordinator/Director of the course.
+<http://guia-mad-bench.es/data/elisa_antolin_01> sch:director <http://guia-mad-bench.es/data/guia_ANX_PR_CL_001_01> .
+
+
+###  Lecturer - Instructor Link (Others)
+
+<http://guia-mad-bench.es/data/simon_svatek_01> sch:instructor <http://guia-mad-bench.es/data/curso_Fisica_95000301> ;
+                                                   guide:sch:director <http://guia-mad-bench.es/data/guia_ANX_PR_CL_001_01> .
+
+
+###  Course - Degree Link
+
+<http://guia-mad-bench.es/data/curso_Fisica_95000301> guide:hasCourse <http://guia-mad-bench.es/data/grado_09bm> ;
+                                                          sch:name "Física"@es .
+
+
+###  Syllabus - Guide Link
+
+<http://guia-mad-bench.es/data/syllabi_item_Mecanica_95000301> guide:hasItem <http://guia-mad-bench.es/data/curso_Fisica_95000301> .
+
+
+###  Evaluation Trial - Competency Link
+
+<http://guia-mad-bench.es/data/sistema_evaluacion_Fisica> involvesCompetency <http://guia-mad-bench.es/data/competencia_CE06> ;
+                                                             sch:name "CE06"@en .

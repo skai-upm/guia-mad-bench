@@ -1,0 +1,148 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide
+:course_guide_115100015 a guide:CourseGuide ;
+    sch:name "Biomecánica de la Afyd" ;
+    sch:courseCode "115100015" ;
+    guide:numberOfCredits 6.0 ;
+    guide:courseType "Básica" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCompetency :competency_CE08, :competency_CE09 ;
+    guide:hasLearningResult :learningResult_RA9, :learningResult_RA84, :learningResult_RA14, :learningResult_RA189 ;
+    guide:hasEvaluation :evaluation_system_biomecanica ;
+    sch:instructor :lecturer_enrique, :lecturer_archit, :lecturer_javier ;
+    sch:director :lecturer_enrique ;
+    guide:hasSyllabus :syllabus_biomecanica ;
+    guide:hasDidacticResource :resource_moodle, :resource_lab_biomecanica ;
+    sch:description "Aplica las leyes de la $\text{mecánica}$ a los movimientos del cuerpo humano teniendo en cuenta sus características anatómicas y biológicas." .
+
+# Degree and University Center
+:degree_11AF a guide:Degree ;
+    sch:name "Grado En Ciencias De La Actividad Física Y Del Deporte" ;
+    guide:degreeCode "11AF" ;
+    guide:hasCourse :course_115100015 .
+
+:university_center_facultad a guide:UniversityCenter ;
+    sch:name "Facultad Cc. Actividad Fisica Y Deporte" ;
+    guide:offers :degree_11AF .
+
+# Lecturers
+:lecturer_enrique a guide:Lecturer ;
+    sch:name "Enrique Navarro Cabello" ;
+    sch:email "enrique.navarro@upm.es" ;
+    guide:office "204" ;
+    guide:tutorshipsSchedule "L - 12:00 - 14:00, M - 12:00 - 14:00, X - 12:00 - 14:00" .
+
+:lecturer_archit a guide:Lecturer ;
+    sch:name "Archit Navandar" ;
+    sch:email "archit.navandar@upm.es" ;
+    guide:tutorshipsSchedule "L - 08:00 - 12:00, M - 08:00 - 10:00" .
+
+:lecturer_javier a guide:Lecturer ;
+    sch:name "Javier Rueda Ojeda" ;
+    sch:email "javier.ruedao@upm.es" ;
+    guide:tutorshipsSchedule "L - 08:00 - 12:00" .
+
+# Competencies
+:competency_CE08 a guide:Competency ;
+    guide:competencyCode "CE08" ;
+    guide:competencyDescription "Aplicar de manera fundamentada y argumentada los principios fisiológicos, biomecánicos, comportamentales y sociales, durante la dirección del entrenamiento deportivo. Nivel 3." .
+
+:competency_CE09 a guide:Competency ;
+    guide:competencyCode "CE09" ;
+    guide:competencyDescription "Identificar y prevenir los riesgos que se derivan para la salud de los deportistas por la práctica de actividades físicas inadecuadas, en el contexto del entrenamiento deportivo. Nivel 2." .
+
+# Learning Results
+:learningResult_RA9 a guide:LearningResult ;
+    guide:learningResultCode "RA9" ;
+    guide:learningResultDescription "Capacidad de trabajar en equipo" .
+
+:learningResult_RA84 a guide:LearningResult ;
+    guide:learningResultCode "RA84" ;
+    guide:learningResultDescription "Seleccionar y utilizar el material y el equipamiento deportivo adecuado en cada caso" .
+
+:learningResult_RA14 a guide:LearningResult ;
+    guide:learningResultCode "RA14" ;
+    guide:learningResultDescription "Saber aplicar los principios del entrenamiento y así como los fundamentos fisiológicos y biomecánicos a los programas de entrenamiento" .
+
+:learningResult_RA189 a guide:LearningResult ;
+    guide:learningResultCode "RA189" ;
+    guide:learningResultDescription "Saber realizar el análisis mecánico de cualquier ejercicio físico, entendiendo las características articulares y musculares de cualquier movimiento humano." .
+
+# Evaluation System and Trials
+:evaluation_system_biomecanica a guide:EvaluationSystem ;
+    guide:hasEvaluationTrial :trial_examen_parcial_1, :trial_examen_parcial_2, :trial_examen_final .
+
+:trial_examen_parcial_1 a guide:EvaluationTrial ;
+    sch:name "Examen Parcial 1" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "45%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+:trial_examen_parcial_2 a guide:EvaluationTrial ;
+    sch:name "Examen Parcial 2" ;
+    guide:evaluationType "Presentación Individual" ;
+    guide:gradePercentage "45%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+:trial_examen_final a guide:EvaluationTrial ;
+    sch:name "Examen Final" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+# Syllabus
+:syllabus_biomecanica a guide:Syllabus ;
+    guide:hasItem :syllabus_item_1, :syllabus_item_2 .
+
+:syllabus_item_1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción al estudio de la biomecánica" .
+
+:syllabus_item_2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Análisis cinemático Lineal" .
+
+# Schedule and Activities
+:schedule_biomecanica a guide:Schedule ;
+    sch:eventSchedule :event_week_1, :event_week_7 .
+
+:event_week_1 a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :activity_leccion_magistral_1 .
+
+:activity_leccion_magistral_1 a guide:Activity ;
+    sch:name "Lección Magistral Tema 1,2" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "LM" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:resource_moodle a guide:DidacticResource ;
+    sch:name "Plataforma Moodle" ;
+    guide:bibliographyType "Recursos web" .
+
+:resource_lab_biomecanica a guide:DidacticResource ;
+    sch:name "laboratorio biomecanica" ;
+    guide:bibliographyDescription "Sistema Captura 3D, Plataformas de Fuerza, Electromiografía de Superficie" ;
+    guide:bibliographyType "Equipamiento" .
+
+:resource_book_barlett a guide:DidacticResource ;
+    guide:bibliographyTitle "Introduction to sports biomechanics" ;
+    guide:bibliographyDescription "Barlett, R. (1997). London: E & FN Spon." ;
+    guide:bibliographyType "Libro" .
+
+# Required Knowledge
+:knowledge_previo a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Conocimientos básicos de Mecánica y Matemáticas" ;
+    guide:previousCourses "Anatomía Funcional Del Aparato Locomotor" .

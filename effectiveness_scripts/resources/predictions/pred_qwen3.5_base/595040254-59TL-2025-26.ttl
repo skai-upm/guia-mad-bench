@@ -1,0 +1,205 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guide-ANXPRCL001> rdf:type :CourseGuide ;
+    dct:title "Guía de Aprendizaje"@en ;
+    sch:name "595040254 - Tic Emergentes Para La Sostenibilidad" ;
+    guide:courseYear 3 ;
+    guide:numberOfCredits "4.5"^^xsd:decimal ;
+    guide:teachingPeriodMonths "Febrero-Junio"@en ;
+    sch:inLanguage "Castellano"@en ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer-aurelio-berges> ,
+                <http://guia-mad-bench.es/data/lecturer-valero-duboy> ;
+    guide:syllabusDescription "Sociedad de la Información, sociedad del ruido y brechas digitales; TIC emergentes y retos sociales..."@en .
+
+<http://w3id.org/def/guia#CourseGuide> rdf:type owl:Class ;
+    rdfs:subClassOf sch:CourseInstance .
+
+
+#################################################################
+#  Degree Entity
+#################################################################
+
+<http://guia-mad-bench.es/data/degree-59TL> rdf:type :BachelorDegree ,
+                                               <https://schema.org/Organization> ; # Using Organization as per schema context for degree structure if needed, but strictly ontology says BachelorDegree is subclass of Degree. I will use the class defined in snippet: guide:BachelorDegree which subclasses guide:Degree.
+    sch:name "59TL - Grado En Ingenieria Telematica" ;
+    guide:degreeCode "59TL"@en .
+
+#################################################################
+#  Course Entity (Linking Guide to Degree)
+#################################################################
+
+<http://guia-mad-bench.es/data/course-595040254> rdf:type :Course , <https://schema.org/CourseInstance> ;
+    sch:name "Tic Emergentes Para La Sostenibilidad" ;
+    guide:courseYear 3 ;
+    guide:numberOfCredits "4.5"^^xsd:decimal .
+
+#################################################################
+#  Lecturers Entities
+#################################################################
+
+<http://guia-mad-bench.es/data/lecturer-aurelio-berges> rdf:type :Lecturer , <https://schema.org/Person> ;
+    sch:name "Aurelio Berges Garcia" ;
+    guide:office "A4423"@en ;
+    sch:email "aurelio.berges@upm.es" .
+
+<http://guia-mad-bench.es/data/lecturer-valero-duboy> rdf:type :Lecturer , <https://schema.org/Person> ;
+    sch:name "Miguel Angel Valero Duboy" ;
+    guide:office "A4422"@en ;
+    sch:email "miguelangel.valero@upm.es" .
+
+<http://guia-mad-bench.es/data/lecturer-fernandez> rdf:type :Lecturer , <https://schema.org/Person> ;
+    sch:name "Celia Fernández Aller" ;
+    guide:office "" ; # Not specified in text, but entity exists. I will leave blank or omit if not required by schema constraints on properties used. The ontology defines guide:Lecturer with office property domain/range.
+    sch:email "mariacelia.fernandez@upm.es" .
+
+<http://guia-mad-bench.es/data/lecturer-dantonio> rdf:type :Lecturer , <https://schema.org/Person> ;
+    sch:name "Sergio Dantonio Maceiras" ;
+    guide:office "" ;
+    sch:email "sergio.dantonio@upm.es" .
+
+#################################################################
+#  Syllabus and Items Entities
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus-59TL> rdf:type :Syllabus , <https://schema.org/Syllabus> ;
+    guide:hasItem [ a :SyllabusItem ;
+                   guide:itemIndex 1 ;
+                   guide:syllabusDescription "Sociedad de la Información, sociedad del ruido y brechas digitales" ] .
+
+<http://guia-mad-bench.es/data/syllabus-59TL> rdf:type :Syllabus , <https://schema.org/Syllabus> ;
+    guide:hasItem [ a :SyllabusItem ;
+                   guide:itemIndex 2 ;
+                   guide:syllabusDescription "TIC emergentes y retos sociales" ] .
+
+<http://guia-mad-bench.es/data/syllabus-59TL> rdf:type :Syllabus , <https://schema.org/Syllabus> ;
+    guide:hasItem [ a :SyllabusItem ;
+                   guide:itemIndex 3 ;
+                   guide:syllabusDescription "Solucionismo, convivencialidad y tecnología apropiada" ] .
+
+<http://guia-mad-bench.es/data/syllabus-59TL> rdf:type :Syllabus , <https://schema.org/Syllabus> ;
+    guide:hasItem [ a :SyllabusItem ;
+                   guide:itemIndex 4 ;
+                   guide:syllabusDescription "E-accesibilidad y diseño para todas las personas" ] .
+
+<http://guia-mad-bench.es/data/syllabus-59TL> rdf:type :Syllabus , <https://schema.org/Syllabus> ;
+    guide:hasItem [ a :SyllabusItem ;
+                   guide:itemIndex 5 ;
+                   guide:syllabusDescription "Ética y legislación en robótica, IA, y Big Data" ] .
+
+<http://guia-mad-bench.es/data/syllabus-59TL> rdf:type :Syllabus , <https://schema.org/Syllabus> ;
+    guide:hasItem [ a :SyllabusItem ;
+                   guide:itemIndex 6 ;
+                   guide:syllabusDescription "Transformación digital en integración, salud, y aprendizaje" ] .
+
+<http://guia-mad-bench.es/data/syllabus-59TL> rdf:type :Syllabus , <https://schema.org/Syllabus> ;
+    guide:hasItem [ a :SyllabusItem ;
+                   guide:itemIndex 7 ;
+                   guide:syllabusDescription "Innovación y emprendimiento social" ] .
+
+#################################################################
+#  Evaluation System and Trials Entities
+#################################################################
+
+<http://guia-mad-bench.es/data/eval-system-59TL> rdf:type :EvaluationSystem , <https://schema.org/EvaluationSystem> ;
+    guide:hasSyllabus [ a :CourseGuide ] . # Link to the Guide instance. Actually ontology says hasSyllabus domain is CourseGuide, range Syllabus. So I should link Guide -> Syllabus directly via hasSyllabus property defined in Object Properties section? Yes `guide:hasSyllabus` exists.
+    guide:hasEvaluationTrial [ a :EvaluationTrial ;
+                              sch:name "Evaluación Progresiva" ;
+                              guide:trialType "Progresiva"@en ;
+                              guide:gradePercentage "60%"^^xsd:string ;
+                              guide:minScore "4 / 10"^^xsd:string ] .
+
+<http://guia-mad-bench.es/data/eval-system-59TL> rdf:type :EvaluationSystem , <https://schema.org/EvaluationSystem> ;
+    guide:hasEvaluationTrial [ a :EvaluationTrial ;
+                              sch:name "Examen Final (Ordinaria)" ;
+                              guide:trialType "Global"@en ; # Using 'type' property from ontology `guide:evaluationType` or trial type? Ontology has both. I will use specific properties available in snippet like `guide:gradePercentage`.
+                              guide:gradePercentage "100%"^^xsd:string ;
+                              guide:minScore "5 / 10"^^xsd:string ] .
+
+<http://guia-mad-bench.es/data/eval-system-59TL> rdf:type :EvaluationSystem , <https://schema.org/EvaluationSystem> ;
+    guide:hasEvaluationTrial [ a :EvaluationTrial ;
+                              sch:name "Convocatoria Extraordinaria" ;
+                              guide:trialType "Extraordinaria"@en ;
+                              guide:gradePercentage "100%"^^xsd:string ;
+                              guide:minScore "5 / 10"^^xsd:string ] .
+
+#################################################################
+#  Schedule and Events Entities
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-59TL> rdf:type :Schedule , <https://schema.org/Schedule> ;
+    sch:eventSchedule [ a :ScheduleEvent ;
+                       guide:activityDurationUnit "01:00"^^xsd:string ; # Using string for duration as per data property `guide:activityDuration` (decimal) but table says 01:00. I will use the specific properties available in ontology like `guide:eventWeek`. The snippet has `om:Unit` range for activityDurationUnit, and `guide:activityDuration` is decimal.
+                       guide:itemIndex "Semana 1"^^xsd:string ; # Using string as per data property `guide:eventIndex` (integer) but table uses Sem. I will map to integer index if possible or use description. The snippet has `guide:eventWeek`.
+    ] .
+
+#################################################################
+#  Linking Entities via Ontology Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/guide-ANXPRCL001> rdf:type :CourseGuide ;
+    sch:hasCourseInstance <http://guia-mad-bench.es/data/course-595040254> . # Ontology Property `sch:hasCourseInstance` domain Course, range Guide.
+
+<http://w3id.org/def/guia#Degree> rdf:type owl:Class ;
+    rdfs:subClassOf <https://schema.org/Organization> .
+
+#################################################################
+#  Specific Data Properties Usage (Mapping Document to Ontology)
+#################################################################
+
+<http://guia-mad-bench.es/data/course-595040254> rdf:type :Course ;
+    guide:courseYear "3"^^xsd:string ; # Doc says Tercero curso.
+    sch:numberOfCredits "4.5"^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/guide-ANXPRCL001> rdf:type :CourseGuide ;
+    guide:syllabusDescription "Temario de la asignatura con 7 temas principales."@en ; # Using `guide:syllabusDescription` property on Guide? No, domain is SyllabusItem. I will use it where applicable or standard properties if not strictly forbidden but instruction says "strictly using the classes and properties".
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-59TL> .
+
+#################################################################
+#  Schedule Events (Mapping Table Rows)
+#################################################################
+
+<http://guia-mad-bench.es/data/evt-sem1> rdf:type :ScheduleEvent ;
+    guide:eventWeek "Semana 1"^^xsd:string ; # Using string as per data property `guide:eventIndex` range is integer, but table uses Sem. I will use the available properties like `om:Unit`. The snippet has `guide:activityDurationUnit` (range om:Unit).
+    sch:name "Presentación de la asignatura" .
+
+<http://guia-mad-bench.es/data/evt-sem2> rdf:type :ScheduleEvent ;
+    guide:eventWeek "Semana 2"^^xsd:string ; # Using string for index as per data property `guide:itemIndex` range is integer. I will use the available properties like `om:Unit`. The snippet has `guide:activityDurationUnit` (range om:Unit).
+    sch:name "Comienzan las presentaciones de los alumnos" .
+
+<http://guia-mad-bench.es/data/evt-sem13> rdf:type :ScheduleEvent ;
+    guide:eventWeek "Semana 12"^^xsd:string ; # Doc says SEMANA 12.
+    sch:name "Examen escrito sobre la asignatura" ;
+    om:Unit [ a om:Unit ] .
+
+#################################################################
+#  Evaluation Trials (Mapping Section 7)
+#################################################################
+
+<http://guia-mad-bench.es/data/trial-progresiva> rdf:type :EvaluationTrial , <https://schema.org/EvaluationActivity> ;
+    guide:trialDescription "Los alumnos presentan de manera individual o en parejas un tema propuesto por el profesor."@en ;
+    sch:name "Evaluación Progresiva" .
+
+<http://guia-mad-bench.es/data/trial-global> rdf:type :EvaluationTrial , <https://schema.org/EvaluationActivity> ;
+    guide:trialDescription "Examen final, convocatoria ordinaria. Sirve para subir nota a los alumnos aprobados por evaluación progresiva."@en ;
+    sch:name "Evaluación Global" .
+
+<http://guia-mad-bench.es/data/trial-extraordinaria> rdf:type :EvaluationTrial , <https://schema.org/EvaluationActivity> ;
+    guide:trialDescription "Examen convocatoria extraordinaria. Obligatorio para los alumnos que no han alcanzado la nota mínima."@en ;
+    sch:name "Convocatoria Extraordinaria" .
+
+#################################################################
+#  Linking Guide to Evaluation System and Trials
+#################################################################
+
+<http://guia-mad-bench.es/data/guide-ANXPRCL001> rdf:type :CourseGuide ;
+    guide:hasEvaluation <http://guia-mad-bench.es/data/eval-system-59TL> . # Ontology Property `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://w3id.org/def/guia#EvaluationTrial> rdf:type owl:Class ;
+    rdfs:subClassOf <https://schema.org/EvaluationActivity> .

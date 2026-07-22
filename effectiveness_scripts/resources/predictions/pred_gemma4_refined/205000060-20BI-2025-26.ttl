@@ -1,0 +1,112 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# Degree and University Center
+:degree_20BI rdf:type guide:Degree ;
+    sch:name "Grado En Ciencias Agrarias Y Bioeconomia" ;
+    guide:degreeCode "20BI" .
+
+:center_etsiaab rdf:type guide:UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas" ;
+    guide:offers :degree_20BI .
+
+# Course
+:course_205000060 rdf:type guide:Course ;
+    sch:name "Diseño y Gestión de Explotaciones Ganaderas" ;
+    sch:courseCode 205000060 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Séptimo semestre" .
+
+:degree_20BI guide:hasCourse :course_205000060 .
+
+# Course Guide
+:guide_205000060 rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance :course_205000060 ;
+    sch:name "Guía de Aprendizaje - Diseño y Gestión de Explotaciones Ganaderas" ;
+    guide:teachingPeriod "2025-26" ;
+    sch:inLanguage "Castellano" .
+
+# Lecturer
+:lecturer_antonio rdf:type guide:Lecturer ;
+    sch:name "Antonio Callejo Ramos" ;
+    sch:email "antonio.callejo@upm.es" .
+
+:guide_205000060 sch:instructor :lecturer_antonio .
+
+# Competencies
+:comp_CB02 rdf:type guide:Competency ;
+    guide:competencyCode "CB02" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional y posean las competencias que suelen demostrarse por medio de la elaboración y defensa de argumentos y la resolución de problemas dentro de su área de estudio" .
+
+:comp_CE17 rdf:type guide:Competency ;
+    guide:competencyCode "CE17" ;
+    guide:competencyDescription "Conocer y gestionar los principales sistemas de producción de materias primas de origen animal." .
+
+:guide_205000060 guide:hasCompetency :comp_CB02 ;
+    guide_205000060 guide:hasCompetency :comp_CE17 .
+
+# Learning Results
+:lr_RA318 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA318" ;
+    guide:learningResultDescription "Conocer y aplicar el análisis de la estructura de costes a la explotación del ganado vacuno, ovino y caprino para identificar los principales caracteres que determinan la rentabilidad de una explotación ganadera y que son susceptibles de mejorar." .
+
+:lr_RA163 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA163" ;
+    guide:learningResultDescription "Aplicar el análisis de la estructura de costes a las explotaciones de monogástricos e identificar los principales factores que determinan su rentabilidad" .
+
+:guide_205000060 guide:hasLearningResult :lr_RA318 ;
+    guide_205000060 guide:hasLearningResult :lr_RA163 .
+
+# Evaluation System
+:eval_sys_1 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "EVALUACIÓN DISTRIBUIDDA O PROGRESIVA (EP)" .
+
+:guide_205000060 guide:hasEvaluation :eval_sys_1 .
+
+:trial_pep_1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "23%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialType "Examen Escrito" .
+
+:eval_sys_1 guide:hasEvaluationTrial :trial_pep_1 .
+
+# Syllabus
+:syllabus_205000060 rdf:type guide:Syllabus .
+
+:syllabus_item_1 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Instalaciones para avicultura de carne" ;
+    guide:itemIndex 1 .
+
+:syllabus_item_2 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Instalaciones para porcino intensivo" ;
+    guide:itemIndex 3 .
+
+:syllabus_205000060 guide:hasItem :syllabus_item_1 ;
+    guide:hasItem :syllabus_item_2 .
+
+:guide_205000060 guide:hasSyllabus :syllabus_205000060 .
+
+# Didactic Resources
+:res_book_callejo rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Cow confort. El bienestar de la vaca lechera." ;
+    guide:bibliographyDescription "Ed. Servet, Zaragoza" ;
+    guide:bibliographyType "Bibliografía" .
+
+:guide_205000060 guide:hasDidacticResource :res_book_callejo .
+
+# Activities
+:act_cuestionario_1 rdf:type guide:Activity ;
+    guide:activityDescription "Cuestionario de Autoevaluación" ;
+    guide:activityFormat "Prueba Telemática" ;
+    guide:attendanceType "No presencial" ;
+    guide:activityDuration 0.5 .
+
+:act_ejercicio_1 rdf:type guide:Activity ;
+    guide:activityDescription "Ejercicio práctico" ;
+    guide:activityFormat "Trabajo Individual" ;
+    guide:attendanceType "No presencial" ;
+    guide:activityDuration 0.5 .

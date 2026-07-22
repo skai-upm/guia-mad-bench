@@ -1,0 +1,162 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseGuide_PR_CL_001> rdf:type :CourseGuide ;
+    dct:title "PR/CL/001 - COORDINATION PROCESS OF LEARNING ACTIVITIES"@en ;
+    sch:name "Introduction To Technology Watch And Competitive I" ;
+    guide:numberOfCredits 1^^xsd:decimal ;
+    guide:sch:teachingPeriodMonths "February-June"@en ;
+    guide:sch:tutorshipsSchedule <http://guia-mad-bench.es/data/lecturer_alberto_tejero> .
+
+<http://guia-mad-bench.es/data/courseGuide_PR_CL_001> sch:courseCode 103000843^^xsd:string ;
+    guide:sch:hasCourse <http://guia-mad-bench.es/data/degree_10AZ> .
+
+<http://guia-mad-bench.es/data/courseGuide_PR_CL_001> sch:description "To provide students with some conceptual and practical tools to understand the possible evolution of technologies for specific purposes."@en ;
+    guide:sch:hasSyllabus <http://guia-mad-bench.es/data/syllabus_PR_CL_001> .
+
+<http://guia-mad-bench.es/data/degree_10AZ> rdf:type :MasterDegree, sch:CourseInstance ;
+    dct:title "Master Universitario En Innovación Digital"@en ;
+    guide:sch:numberOfCredits 26^^xsd:decimal ;
+    guide:sch:courseYear 2025 .
+
+<http://guia-mad-bench.es/data/lecturer_alberto_tejero> rdf:type :Lecturer, sch:Person ;
+    dct:title "Alberto Tejero Lopez"@en ;
+    sch:name "Alberto Tejero Lopez" ;
+    guide:sch:office "Office D5215"@en ;
+    sch:email <mailto:alberto.tejero@upm.es> .
+
+<http://guia-mad-bench.es/data/syllabus_PR_CL_001> rdf:type :Syllabus, sch:Syllabus ;
+    guide:sch:hasItem <http://guia-mad-bench.es/data/syllabus_item_1>,
+                      <http://guia-mad-bench.es/data/syllabus_item_2>,
+                      <http://guia-mad-bench.es/data/syllabus_item_3>,
+                      <http://guia-mad-bench.es/data/syllabus_item_4>,
+                      <http://guia-mad-bench.es/data/syllabus_item_5> .
+
+<http://guia-mad-bench.es/data/syllabus_item_1> rdf:type :SyllabusItem ;
+    guide:sch:itemIndex 1^^xsd:integer ;
+    sch:name "Welcome session" ;
+    guide:sch:syllabusDescription "Contents, grading processes and groups creation"@en .
+
+<http://guia-mad-bench.es/data/syllabus_item_2> rdf:type :SyllabusItem ;
+    guide:sch:itemIndex 2^^xsd:integer ;
+    sch:name "Technology watch basics" ;
+    guide:sch:syllabusDescription "Technology watch basic concepts, procedure and tools"@en .
+
+<http://guia-mad-bench.es/data/syllabus_item_3> rdf:type :SyllabusItem ;
+    guide:sch:itemIndex 3^^xsd:integer ;
+    sch:name "Definition of the technology watch purpose" ;
+    guide:sch:syllabusDescription "Definition of the purpose and identification of application points"@en .
+
+<http://guia-mad-bench.es/data/syllabus_item_4> rdf:type :SyllabusItem ;
+    guide:sch:itemIndex 4^^xsd:integer ;
+    sch:name "TW Report - Critical watch factors" ;
+    guide:sch:syllabusDescription "Introduction to the technology watch report and identification of critical watch factors"@en .
+
+<http://guia-mad-bench.es/data/syllabus_item_5> rdf:type :SyllabusItem ;
+    guide:sch:itemIndex 5^^xsd:integer ;
+    sch:name "TW Report - Market and industry information" ;
+    guide:sch:syllabusDescription "Identification and analysis of market and industrial sources of information"@en .
+
+<http://guia-mad-bench.es/data/schedule_PR_CL_001> rdf:type :Schedule, sch:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event_schedule_week_5>,
+                      <http://guia-mad-bench.es/data/event_schedule_week_6>.
+
+<http://guia-mad-bench.es/data/schedule_PR_CL_001> guide:sch:courseYear 2025^^xsd:string ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event_schedule_week_1>,
+                      <http://guia-mad-bench.es/data/event_schedule_week_2>.
+
+<http://guia-mad-bench.es/data/schedule_PR_CL_001> guide:sch:courseYear 2025^^xsd:string ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event_schedule_week_3>,
+                      <http://guia-mad-bench.es/data/event_schedule_week_4>.
+
+<http://guia-mad-bench.es/data/schedule_PR_CL_001> guide:sch:courseYear 2025^^xsd:string ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event_schedule_week_6>,
+                      <http://guia-mad-bench.es/data/event_schedule_week_7>.
+
+<http://guia-mad-bench.es/data/schedule_PR_CL_001> guide:sch:courseYear 2025^^xsd:string ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/global_assessment_test>,
+                      <http://guia-mad-bench.es/data/extraordinary_assessment>.
+
+<http://guia-mad-bench.es/data/event_schedule_week_1> rdf:type :ScheduleEvent, sch:Event ;
+    guide:sch:eventIndex 1^^xsd:integer ;
+    guide:sch:eventWeek "Semester 2"@en .
+
+<http://guia-mad-bench.es/data/event_schedule_week_5> rdf:type :ScheduleEvent, sch:Event ;
+    guide:sch:eventIndex 5^^xsd:integer ;
+    guide:sch:eventWeek "June"@en ;
+    sch:name "Individual exam" ;
+    guide:sch:activityDurationUnit om:Hour .
+
+<http://guia-mad-bench.es/data/event_schedule_week_6> rdf:type :ScheduleEvent, sch:Event ;
+    guide:sch:eventIndex 6^^xsd:integer ;
+    guide:sch:eventWeek "June"@en ;
+    sch:name "Group presentations" ;
+    guide:sch:activityDurationUnit om:Hour .
+
+<http://guia-mad-bench.es/data/global_assessment_test> rdf:type :EvaluationTrial, sch:Event ;
+    dct:title "Global assessment test and Technology Watch Report (individual)"@en ;
+    guide:sch:trialType "Other"@en ;
+    guide:sch:gradePercentage 70^^xsd:string .
+
+<http://guia-mad-bench.es/data/extraordinary_assessment> rdf:type :EvaluationTrial, sch:Event ;
+    dct:title "Extraordinary assessment test"@en ;
+    guide:sch:trialType "Other"@en ;
+    guide:sch:gradePercentage 70^^xsd:string .
+
+<http://guia-mad-bench.es/data/required_knowledge_PR_CL_001> rdf:type :RequiredKnowledge, sch:CourseInstance ;
+    dct:title "Introduction To Innovation And Entrepreneurship Ma"@en ;
+    guide:sch:previousCourses <https://schema.org/courseCode> .
+
+<http://guia-mad-bench.es/data/competency_CB07> rdf:type :Competency ;
+    sch:name "CB07"@en ;
+    guide:sch:learningResultDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos..."@es .
+
+<http://guia-mad-bench.es/data/competency_CB08> rdf:type :Competency ;
+    sch:name "CB08"@en ;
+    guide:sch:learningResultDescription "Que los estudiantes sean capaces de integrar conocimientos y enfrentarse a la complejidad..."@es .
+
+<http://guia-mad-bench.es/data/competency_CE-EIT03> rdf:type :Competency ;
+    sch:name "CE-EIT03"@en ;
+    guide:sch:learningResultDescription "Capacidad para identificar el nivel de madurez de una tecnología..."@es .
+
+<http://guia-mad-bench.es/data/competency_CG01> rdf:type :Competency ;
+    sch:name "CG01"@en ;
+    guide:sch:learningResultDescription "Que los estudiantes sean capaces de predecir y controlar la evolución..."@es .
+
+<http://guia-mad-bench.es/data/courseGuide_PR_CL_001> guide:sch:hasCompetency <http://guia-mad-bench.es/data/competency_CB07>,
+                                              <http://guia-mad-bench.es/data/competency_CB08>,
+                                              <http://guia-mad-bench.es/data/competency_CE-EIT03>,
+                                              <http://guia-mad-bench.es/data/competency_CG01> .
+
+<http://guia-mad-bench.es/data/courseGuide_PR_CL_001> guide:sch:hasLearningResult <http://guia-mad-bench.es/data/learning_result_RA104>.
+
+<http://guia-mad-bench.es/data/resource_bibliography_1> rdf:type :DidacticResource, sch:BibliographicWork ;
+    dct:title "COTEC (1999). Pautas Metodológicas en Gestión de la Tecnología y de la Innovación para Empresas TEMAGUIDE"@en ;
+    guide:sch:bibliographyType "Bibliography" .
+
+<http://guia-mad-bench.es/data/resource_bibliography_2> rdf:type :DidacticResource, sch:BibliographicWork ;
+    dct:title "Georghiou et al. (2008). The Handbook of technology foresight"@en ;
+    guide:sch:bibliographyType "Bibliography" .
+
+<http://guia-mad-bench.es/data/resource_bibliography_3> rdf:type :DidacticResource, sch:BibliographicWork ;
+    dct:title "Gestión de la I+D+i: Sistema de vigilancia tecnológica e inteligencia competitiva. UNE 166006:2011"@en ;
+    guide:sch:bibliographyType "Bibliography" .
+
+<http://guia-mad-bench.es/data/resource_bibliography_4> rdf:type :DidacticResource, sch:BibliographicWork ;
+    dct:title "Miles et al. (2013). Technology roadmapping for strategy and innovation"@en ;
+    guide:sch:bibliographyType "Bibliography" .
+
+<http://guia-mad-bench.es/data/resource_bibliography_5> rdf:type :DidacticResource, sch:BibliographicWork ;
+    dct:title "Ramona-Mihaela MATEI et al. (2017). Conceptual Relationship between Information and Communication Technologies..."@en ;
+    guide:sch:bibliographyType "Bibliography" .
+
+<http://guia-mad-bench.es/data/courseGuide_PR_CL_001> guide:sch:hasDidacticResource <http://guia-mad-bench.es/data/resource_bibliography_1>,
+                                              <http://guia-mad-bench.es/data/resource_bibliography_2>.
+
+<http://guia-mad-bench.es/data/courseGuide_PR_CL_001> guide:sch:hasEvaluationSystem <http://guia-mad-bench.es/data/evaluation_system_PR_CL_001>.

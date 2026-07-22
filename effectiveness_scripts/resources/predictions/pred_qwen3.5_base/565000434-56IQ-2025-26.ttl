@@ -1,0 +1,206 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Classes and Properties Definitions (Subset used in extraction)
+#################################################################
+
+###  http://w3id.org/def/guia#CourseGuide
+guide:CourseGuide rdf:type owl:Class ;
+                  rdfs:subClassOf sch:CourseInstance ;
+                  rdfs:comment "A structured academic document that describes a course, including objectives, contents, methodology, resources, schedule, and evaluation."@en .
+
+###  http://w3id.org/def/guia#BachelorDegree
+guide:BachelorDegree rdf:type owl:Class ;
+                     rdfs:subClassOf guide:Degree ;
+                     rdfs:comment "An undergraduate degree programme that provides foundational higher education in a given field of study."@en .
+
+###  http://w3id.org/def/guia#Lecturer
+guide:Lecturer rdf:type owl:Class ;
+               rdfs:subClassOf sch:Person ;
+               rdfs:comment "A teaching person responsible for delivering, coordinating, or supporting a course within an academic programme."@en .
+
+###  http://w3id.org/def/guia#SyllabusItem
+guide:SyllabusItem rdf:type owl:Class ;
+                   rdfs:subClassOf sch:SyllabusItem ; # Assuming Schema org inheritance if available in context, otherwise generic. Using provided ontology classes where possible. Note: Ontology defines SyllabusItem as Class but no subClassOf shown explicitly for it other than implied structure. I will use the class defined.
+                   rdfs:comment "A single element of a syllabus."@en .
+
+###  http://w3id.org/def/guia#EvaluationTrial
+guide:EvaluationTrial rdf:type owl:Class ;
+                      rdfs:comment "A specific assessment instance or examination opportunity within the evaluation system, such as an ordinary or extraordinary attempt."@en .
+
+#################################################################
+#    Instances - Course Guide and Degree
+#################################################################
+
+<http://w3id.org/def/guia#ANX-PRCL001> rdf:type guide:CourseGuide ;
+                                         sch:name "Resistencia De Materiales" ,
+                                           dc:title "565000434 - Resistencia De Materiales"@en ;
+                                         dct:publisher <http://w3id.org/def/guia#EtsIdi> ; # Center responsible
+                                         guide:numberOfCredits 4.5 ;
+                                         sch:courseCode 565000434 ;
+                                         guide:syllabusDescription "Cálculo de tensiones y deformaciones en sólidos elásticos."@en ;
+                                         guide:teachingPeriodMonths "Septiembre-Enero"@en ;
+                                         guide:periodStartingMonth "Septiembre" ,
+                                           guide:periodEndingMonth "Enero" .
+
+<http://w3id.org/def/guia#56IQ> rdf:type guide:BachelorDegree ;
+                                 sch:name "Grado en Ingeniería Química" ;
+                                 guide:degreeCode "56IQ"@en ;
+                                 dct:title "Plan de Estudios 56IQ"@en .
+
+#################################################################
+#    Instances - University Center and Lecturers
+#################################################################
+
+<http://w3id.org/def/guia#EtsIdi> rdf:type sch:Organization , guide:UniversityCenter ;
+                                   sch:name "E.T.S. de Ingeniería y Diseño Industrial" ;
+                                   dct:title "Centro responsable de la titulación"@en .
+
+###  Rafael Cascon Porres (Coordinator)
+<http://w3id.org/def/guia#RafaelCasconPorres> rdf:type guide:Lecturer , sch:Person ;
+                                                 sch:name "Rafael Cascon Porres" ;
+                                                 dct:title "(Coordinador/a)"@en ;
+                                                 guide:office "A124-D5"@en ;
+                                                 sch:email <mailto:rafael.cascon@upm.es> .
+
+###  Rafael Gomez Rodriguez
+<http://w3id.org/def/guia#RafaelGomezRodriguez> rdf:type guide:Lecturer , sch:Person ;
+                                                   sch:name "Rafael Gomez Rodriguez" ;
+                                                 guide:office "A124-D6"@en ;
+                                                 sch:email <mailto:rafael.gomezr@upm.es> .
+
+#################################################################
+#    Instances - Competencies and Learning Results
+#################################################################
+
+###  RA59 (Learning Result)
+<http://w3id.org/def/guia#RA59> rdf:type guide:LearningResult ;
+                                sch:name "Conocimiento y utilización de los principios de la resistencia de materiales" ,
+                                  guide:learningResultCode "RA59"@en .
+
+###  Competencies (CGs and CE)
+<http://w3id.org/def/guia#CE14> rdf:type guide:Competency ;
+                               sch:name "Conocimiento y utilización de los principios de la resistencia de materiales" ,
+                                 guide:competencyCode "CE 14"@en .
+
+#################################################################
+#    Instances - Syllabus and Items
+#################################################################
+
+<http://w3id.org/def/guia#Syllabus_56IQ> rdf:type guide:Syllabus ;
+                                          sch:name "Temario de la asignatura" ,
+                                            dct:title "Resistencia De Materiales"@en .
+
+###  Syllabus Item: Intro (1)
+<http://w3id.org/def/guia#Item_Intro> rdf:type guide:SyllabusItem ;
+                                      guide:itemIndex 1 ;
+                                      sch:name "Introducción a la Resistencia de Materiales" ,
+                                        guide:syllabusDescription "Concepto, objetivos, sólidos rígido/elástico/prisma mecánico."@en .
+
+###  Syllabus Item: Axial (2)
+<http://w3id.org/def/guia#Item_Axial> rdf:type guide:SyllabusItem ;
+                                      guide:itemIndex 2 ;
+                                      sch:name "Cálculo y diseño de elementos axiales" ,
+                                        guide:syllabusDescription "Tracción-compresión, diagramas de esfuerzos."@en .
+
+###  Syllabus Item: Bending (3)
+<http://w3id.org/def/guia#Item_Bending> rdf:type guide:SyllabusItem ;
+                                      guide:itemIndex 3 ;
+                                      sch:name "Cálculo y diseño de elementos flexión" ,
+                                        guide:syllabusDescription "Flexión pura, diagramas momentos flectores."@en .
+
+###  Syllabus Item: Buckling (4)
+<http://w3id.org/def/guia#Item_Buckling> rdf:type guide:SyllabusItem ;
+                                      guide:itemIndex 4 ;
+                                      sch:name "Pandeo" ,
+                                        guide:syllabusDescription "Estabilidad, fórmula de Euler."@en .
+
+###  Syllabus Item: Torsion (5)
+<http://w3id.org/def/guia#Item_Torsion> rdf:type guide:SyllabusItem ;
+                                      guide:itemIndex 5 ;
+                                      sch:name "Cálculo y diseño torsión" ,
+                                        guide:syllabusDescription "Secciones circulares, diagramas momentos torsores."@en .
+
+#################################################################
+#    Instances - Schedule and Activities
+#################################################################
+
+<http://w3id.org/def/guia#Schedule_56IQ> rdf:type sch:Schedule ;
+                                         sch:name "Cronograma 2025-26" ,
+                                           guide:syllabusDescription "Planificación de la asignatura"@en .
+
+###  Schedule Event (Weeks) - Example Week 1
+<http://w3id.org/def/guia#Event_Week1> rdf:type sch:Event ; # Using Schema Class as base for event structure if available, or generic. Ontology has guide:ScheduleEvent subClassOf sch:Event. I will use the provided ontology class `guide:ScheduleEvent`.
+                                        rdf:type guide:ScheduleEvent , sch:Event ;
+                                        guide:eventIndex 1 ;
+                                        guide:eventWeek "Semestre 2025-26"@en ; # Using langString as per some props or specific prop if available. Ontology has eventWeek range rdf:langString.
+                                        sch:description "Explicación teórica tema 1" .
+
+###  Activity linked to Event (LM)
+<http://w3id.org/def/guia#Activity_LeccionMagistral> rdf:type guide:Activity ;
+                                                      sch:name "Explicación Teórica Tema 1" ,
+                                                        guide:activityDescription "Teoría de Resistencia"@en .
+
+#################################################################
+#    Instances - Evaluation System and Trials
+#################################################################
+
+<http://w3id.org/def/guia#EvalSystem_56IQ> rdf:type guide:EvaluationSystem ;
+                                             sch:name "Evaluación Progresiva y Global" ,
+                                               guide:evaluationDescription "Control de temas + Examen Final"@en .
+
+###  Evaluation Trial (Final Exam)
+<http://w3id.org/def/guia#Trial_FinalExam> rdf:type guide:EvaluationTrial ;
+                                            sch:name "Examen final de la asignatura" ,
+                                              guide:trialType "EX: Técnica del tipo Examen Escrito"@en .
+
+###  Evaluation Trial (Control)
+<http://w3id.org/def/guia#Trial_Control1> rdf:type guide:EvaluationTrial ;
+                                           sch:name "Control temas 1 y 2" ,
+                                             guide:trialType "EX: Técnica del tipo Examen Escrito"@en .
+
+#################################################################
+#    Data Properties - Course Guide Details
+#################################################################
+
+<http://w3id.org/def/guia#ANX-PRCL001> sch:description "Guía de Aprendizaje para Resistencia De Materiales" ;
+                                         guide:inLanguage <https://schema.org/es> , # Assuming Spanish based on document content. Ontology has inLanguage range rdf:langString. I will use the property if available, but `sch:inLanguage` is defined with range `rdf:langString`. The ontology defines it as such.
+                                         guide:syllabusDescription "Temario completo"@en ; # Reusing prop for description context or specific one. Ontology has syllabusDescription on SyllabusItem. I'll use sch:description here if available, but stick to ontology props where possible. `sch:description` is defined with range rdf:langString and domain guide:CourseGuide.
+                                         dct:publisher <http://w3id.org/def/guia#EtsIdi> .
+
+#################################################################
+#    Data Properties - Evaluation Trials Details (Weights, Scores)
+#################################################################
+
+<http://w3id.org/def/guia#Trial_FinalExam> guide:gradePercentage "60%" ; # Ontology range rdf:langString. Document says 60%.
+                                             guide:minimumScore "4 / 10" ,
+                                               sch:description "Examen final"@en .
+
+<http://w3id.org/def/guia#Trial_Control1> guide:gradePercentage "10%" ; # Ontology range rdf:langString. Document says 10%.
+                                           guide:minimumScore "/ 10" ,
+                                             sch:name "Control temas 1 y 2"@en .
+
+#################################################################
+#    Data Properties - Activities (Duration, Format)
+#################################################################
+
+<http://w3id.org/def/guia#Activity_LeccionMagistral> guide:activityDescription "Explicación teórica" ; # Ontology range rdf:langString. Document says LM.
+                                                       guide:attendanceType "Presencial"@en . # Using langString as per ontology definition for attendanceType (range is rdf:langString).
+
+<http://w3id.org/def/guia#Activity_LeccionMagistral> guide:activityDuration 180 ; # Ontology range xsd:decimal. Document says "Duración: 03:00". I'll use minutes as decimal value (assuming hours*60).
+                                                       sch:name "Explicación Teórica Tema 1"@en .
+
+#################################################################
+#    Data Properties - Resources
+#################################################################
+
+<http://w3id.org/def/guia#Resource_Biblio> rdf:type guide:DidacticResource ;
+                                             sch:name "Resistencia de Materiales" Vazquez, M. ,
+                                               guide:bibliographyType "Bibliografía"@en .

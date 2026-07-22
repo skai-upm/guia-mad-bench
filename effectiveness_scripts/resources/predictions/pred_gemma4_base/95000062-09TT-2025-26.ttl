@@ -1,0 +1,210 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+### Course Instance
+:course_95000062 rdf:type guide:Course ;
+    sch:name "95000062 - Fabricacion De Equipos Electronicos" ;
+    sch:courseCode 95000062 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Séptimo semestre" ;
+    sch:hasCourseInstance :guide_95000062_2025_26 .
+
+### Course Guide Instance
+:guide_95000062_2025_26 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje: Fabricación de Equipos Electrónicos" ;
+    sch:description "El curso se centra en el diseño orientado a la fabricación de equipos electrónicos. Se estudian cuestiones relacionadas con el diseño físico de los sistemas electrónicos así como las diferentes tecnologías que se pueden utilizar para su fabricación."@en ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:numberOfCredits 4.5 ;
+    guide:inpersonHours "No especificado" ;
+    guide:remoteHours "No especificado" ;
+    sch:instructor :lecturer_jorge_pedros ;
+    sch:director :lecturer_alvaro_araujo ;
+    guide:hasSyllabus :syllabus_95000062 ;
+    guide:hasEvaluation :eval_system_95000062 ;
+    guide:hasLearningResult :lr_ra732, :lr_ra733, :lr_ra76, :lr_ra734, :lr_ra71, :lr_ra70, :lr_ra74 ;
+    guide:hasCompetency :comp_ce_se1, :comp_ce_se3, :comp_ce_se5, :comp_ce_se9, :comp_cg12, :comp_cg13, :comp_cg7, :comp_cg9 ;
+    sch:courseSchedule :schedule_95000062 ;
+    guide:hasDidacticResource :res_moodle, :res_coombs, :res_altium, :res_horno .
+
+### Degree Instance
+:degree_09TT rdf:type guide:BachelorDegree ;
+    sch:name "09TT - Grado En Ingenieria De Tecnologias Y Servicios De Telecomunicacion" ;
+    guide:degreeCode "09TT" ;
+    guide:hasCourse :course_95000062 .
+
+### University Center Instance
+:center_ets_telecom rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros De Telecomunicacion" ;
+    guide:offers :degree_09TT .
+
+### Lecturer Instances
+:lecturer_jorge_pedros rdf:type guide:Lecturer ;
+    sch:name "Jorge Pedros Ayala" ;
+    sch:email "j.pedros@upm.es" ;
+    guide:office "B-308" ;
+    guide:tutorshipsSchedule "J - 16:00 - 18:00 (Consultar por correo)" .
+
+:lecturer_alvaro_araujo rdf:type guide:Lecturer ;
+    sch:name "Alvaro Araujo Pinto" ;
+    sch:email "alvaro.araujo@upm.es" ;
+    guide:office "B-104.B" ;
+    guide:tutorshipsSchedule "M - 16:00 - 18:00 (Concertar cita)" .
+
+### Competency Instances
+:comp_ce_se1 rdf:type guide:Competency ;
+    guide:competencyCode "CE-SE1" ;
+    guide:competencyDescription "Capacidad de construir, explotar y gestionar sistemas de captación, transporte, representación, procesado, almacenamiento, gestión y presentación de información multimedia..."@en .
+
+:comp_ce_se3 rdf:type guide:Competency ;
+    guide:competencyCode "CE-SE3" ;
+    guide:competencyDescription "Capacidad de realizar la especificación, implementación, documentación y puesta a punto de equipos y sistemas electrónicos..."@en .
+
+:comp_ce_se5 rdf:type guide:Competency ;
+    guide:competencyCode "CE-SE5" ;
+    guide:competencyDescription "Capacidad de diseñar circuitos de electrónica analógica y digital, de conversión analógico-digital y digital analógica..."@en .
+
+:comp_ce_se9 rdf:type guide:Competency ;
+    guide:competencyCode "CE-SE9" ;
+    guide:competencyDescription "Capacidad de analizar y solucionar los problemas de interferencias y compatibilidad electromagnética"@en .
+
+:comp_cg12 rdf:type guide:Competency ;
+    guide:competencyCode "CG12" ;
+    guide:competencyDescription "Organización y planificación"@en .
+
+:comp_cg13 rdf:type guide:Competency ;
+    guide:competencyCode "CG13" ;
+    guide:competencyDescription "Respeto medioambiental"@en .
+
+:comp_cg7 rdf:type guide:Competency ;
+    guide:competencyCode "CG7" ;
+    guide:competencyDescription "Trabajo en equipo"@en .
+
+:comp_cg9 rdf:type guide:Competency ;
+    guide:competencyCode "CG9" ;
+    guide:competencyDescription "Uso de Tecnologías de la Información y de las Comunicaciones"@en .
+
+### Learning Result Instances
+:lr_ra732 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA732" ;
+    guide:learningResultDescription "Diseñar una placa de circuito impreso orientada a fabricación"@en .
+
+:lr_ra733 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA733" ;
+    guide:learningResultDescription "Distinguir las distintas fases del desarrollo de producto"@en .
+
+:lr_ra76 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA76" ;
+    guide:learningResultDescription "Conocimientos de las normativas reguladoras aplicables a los equipos electrónicos"@en .
+
+:lr_ra734 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA734" ;
+    guide:learningResultDescription "Conocimientos básicos de técnicas de soldadura de sistemas electrónicos"@en .
+
+:lr_ra71 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA71" ;
+    guide:learningResultDescription "Conocimiento de las técnicas de diseño de circuitos electrónicos"@en .
+
+:lr_ra70 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA70" ;
+    guide:learningResultDescription "Conocimientos de dispositivos, circuitos, equipos y sistemas electrónicos"@en .
+
+:lr_ra74 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA74" ;
+    guide:learningResultDescription "Conocimientos de interferencias y compatibilidad electromagnética"@en .
+
+### Syllabus Instances
+:syllabus_95000062 rdf:type guide:Syllabus ;
+    guide:hasItem :item_intro, :item_materiales, :item_diseno, :item_fabricacion, :item_pruebas .
+
+:item_intro rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a la fabricación (Ciclo de desarrollo, Escenario general, Normativas)"@en .
+
+:item_materiales rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Materiales (Componentes base, Propiedades, Encapsulados)"@en .
+
+:item_diseno rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Diseño orientado a fabricación (Características físicas, Herramientas, Proceso de diseño, Layout, etc.)"@en .
+
+:item_fabricacion rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Aspectos prácticos de fabricación (Drill, Inspección, Acabados, Ensamblado)"@en .
+
+:item_pruebas rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Pruebas y fiabilidad (Inspección, Diseño para pruebas, Análisis de fallos, Mantenimiento)"@<0xC2>pty .
+
+### Evaluation System Instances
+:eval_system_95000062 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación comprobará si los estudiantes han adquirido las competencias de la asignatura."@en ;
+    guide:hasEvaluationTrial :trial_prog_4, :trial_prog_8, :trial_prog_9, :trial_prog_10, :trial_prog_12, :trial_prog_14, :trial_prog_17, :trial_global_9, :trial_global_10, :trial_global_17, :trial_extraordinary .
+
+:trial_prog_4 rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Análisis de componentes y normativa caso práctico" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "10%" ;
+    guide:trialWeek "Semana 4" ;
+    guide:involvesCompetency :comp_cg7, :comp_ce_se3 .
+
+:trial_prog_8 rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Creación de librerías del proyecto" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "10%" ;
+    guide:trialWeek "Semana 8" ;
+    guide:involvesCompetency :comp_cg7, :comp_ce_se1, :comp_ce_se3, :comp_ce_se5 .
+
+:trial_global_17 rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Examen evaluación global" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4/10" ;
+    guide:trialWeek "Semana 17" ;
+    guide:involvesCompetency :comp_ce_se3, :comp_cg12, :comp_ce_se1, :comp_ce_se5, :comp_ce_se9 .
+
+### Schedule Instances
+:schedule_95000062 rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week4, :event_week8, :event_week9, :event_week10, :event_week12, :event_week14, :event_week17 .
+
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_leccion_magistral_intro .
+
+:act_leccion_magistral_intro rdf:type guide:Activity ;
+    guide:activityDescription "Introducción a la fabricación (1.1, 1.2, 1.3)" ;
+    guide:activityDuration 2.5 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+### Didactic Resource Instances
+:res_moodle rdf:type guide:DidacticResource ;
+    sch:name "Sitio Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:publishedAt <https://moodle.upm.es/titulaciones/oficiales/> .
+
+:res_coombs rdf:type guide:DidacticResource ;
+    sch:name "Coombs, C.F. Printed Circuits Handbook. 7th ed." ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Libro de referencia de la asignatura"@en .
+
+:res_altium rdf:type guide:DidacticResource ;
+    sch:name "Altium Designer" ;
+    guide:bibliographyType "Software/Herramientas" ;
+    guide:bibliographyDescription "Herramientas de diseño electrónico"@en .
+
+:res_horno rdf:type guide:DidacticResource ;
+    sch:name "Horno de soldadura" ;
+    guide:bibliographyType "Equipamiento" ;
+    guide:bibliographyDescription "Horno de soldadura por calor"@en .

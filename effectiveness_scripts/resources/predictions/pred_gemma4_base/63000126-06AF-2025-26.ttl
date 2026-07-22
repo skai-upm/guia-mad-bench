@@ -1,0 +1,141 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://w3id.org/def/guia#> .
+
+<http://guia-mad-bench.es/data/course_63000126> rdf:type guide:Course ;
+    sch:name "Diseño Integral Y Planificacion Minera"@en ;
+    sch:courseCode 63000126 ;
+    guide:courseType "Obligatoria"@en ;
+    guide:courseYear 2025 ;
+    guide:semester "Primer semestre"@en .
+
+<http://guia-mad-bench.es/data/course_63000126_guide> rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Diseño Integral Y Planificacion Minera"@en ;
+    sch:description "La asignatura aborda los conceptos fundamentales a considerar en el diseño y la ingeniería de un proyecto minero moderno desde la óptica de garantizar su viabilidad técnica, económica y ambiental."@en ;
+    sch:inLanguage "Castellano"@en ;
+    guide:teachingPeriod "2025-26"@en ;
+    guide:teachingPeriodMonths "Septiembre-Enero"@en ;
+    guide:numberOfCredits 4.5 ;
+    guide:totalHours "135"@en ; # Calculated based on 4.5 ECTS * ~30 hours/ECTS
+    guide:inpersonHours "72"@en ; # Estimated from syllabus structure
+    guide:remoteHours "63"@en ;
+    sch:instructor <http://guia-mad-bench.ps/data/lecturer_juan_herrera> ;
+    sch:director <http://guia-mad-bench.es/data/lecturer_juan_herrera> ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule_63000126> ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_63000126> ;
+    guide:hasEvaluation <http://guia-mad-bench.es/data/eval_system_63000126> ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/comp_CE01>, <http://guia-mad-bench.es/data/comp_CE02>, <http://guia-mad-bench.es/data/comp_CE03>, <http://guia-mad-bench.es/data/comp_CE04>, <http://guia-mad-bench.es/data/comp_CE05>, <http://guia-mad-bench.es/data/comp_CE06>, <http://guia-mad-bench.es/data/comp_CE07>, <http://guia-mad-bench.es/data/comp_CG01>, <http://guia-mad-bench.es/data/comp_CG02>, <http://guia-mad-bench.es/data/comp_CT03> ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/lr_RA144>, <http://guia-mad-annot.es/data/lr_RA145>, <http://guia-mad-bench.es/data/lr_RA10> ;
+    guide:hasDidacticResource <http://guia-mad-bench.es/data/res_moodle>, <http://guia-mad-bench.es/data/res_book_1>, <http://guia-mad-bench.es/data/res_lab_equip> ;
+    sch:activitiesWorkload "Distribución de clases presenciales, resolución de cuestionarios y casos prácticos"@en .
+
+<http://guia-mad-bench.es/data/degree_06AF> rdf:type guide:MasterDegree ;
+    sch:name "Máster Universitario En Ingeniería De Minas"@en ;
+    guide:degreeCode "06AF"@en ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course_63000126> .
+
+<http://guia-mad-bench.es/data/center_ets_minas> rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Minas y Energía"@en ;
+    guide:offers <http://guia-mad-bench.es/data/degree_06AF> .
+
+<http://guia-mad-bench.es/data/lecturer_juan_herrera> rdf:type guide:Lecturer ;
+    sch:name "Juan Herrera Herbert"@en ;
+    sch:email "juan.herrera@upm.es"@en ;
+    guide:office "208"@en ;
+    guide:tutorshipsSchedule "L - 12:00 - 14:00, M - 12:00 - 14:00, V - 12:00 - 14:00"@en .
+
+<http://guia-mad-bench.es/data/syllabus_63000126> rdf:type guide:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/item_unit1>, <http://guia-mad-bench.es/data/item_unit2>, <http://guia-mad-bench.es/data/item_unit3>, <http://guia-mad-bench.es/data/item_unit8>, <http://guia-mad-bench.es/data/item_unit10> .
+
+<http://guia-mad-bench.es/data/item_unit1> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "EL PROYECTO MINERO (MINING PROJECT)"@en .
+
+<http://guia-mad-bench.es/data/item_unit2> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "PLANIFICACIÓN MINERA (MINE PLANNING)"@en .
+
+<http://guia-mad-bench.es/data/item_unit3> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "COSTES E INGRESOS MINEROS (MINE REVENUES AND COSTS)"@en .
+
+<http://guia-mad-bench.es/data/item_unit8> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 8 ;
+    guide:syllabusDescription "DISEÑO DE MINA A CIELO ABIERTO (OPEN PIT MINE DESIGN)"@en .
+
+<http://guia-mad-bench.es/annot.es/data/item_unit10> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 10 ;
+    guide:syllabusDescription "PLANIFICACIÓN, DISEÑO Y CONSTRUCCIÓN DE MINAS DE INTERIOR (UNDERGROUND MINE PLANNING AND DESIGN)"@en .
+
+<http://guia-mad-bench.es/data/eval_system_63000126> rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La calificación final se obtiene mediante la superación de pruebas telemáticas progresivas o examen final."@en ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial_eval_blocks_1_2>, <http://guia-mad-bench.es/data/trial_eval_blocks_3_4>, <http://guia-mad-bench.es/data/trial_final_exam> .
+
+<http://guia-mad-annot.es/data/trial_eval_blocks_1_2> rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Evaluación de Bloques 1 y 2"@en ;
+    guide:evaluationType "progresiva"@en ;
+    guide:gradePercentage "25%"@en ;
+    guide:minimumScore "5/10"@en ;
+    guide:trialWeek "Semana 5"@en ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/event_eval_1_2> .
+
+<http://guia-mad-bench.es/data/trial_final_exam> rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Examen final para alumnos que no superan la evaluación progresiva"@en ;
+    guide:evaluationType "final"@en ;
+    guide:gradePercentage "100%"@en ;
+    guide:minimumScore "5/10"@en ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/event_exam_final> .
+
+<http://guia-mad-bench.es/data/schedule_63000_schedule> rdf:type guide:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event_week1_b0t0>, <http://guia-mad-bench.es/data/event_eval_1_2> .
+
+<http://guia-mad-bench.es/data/event_week1_b0t0> rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1"@en ;
+    guide:hasActivity <http://guia-mad-bench.es/data/act_lecture_b0t0> .
+
+<http://guia-mad-bench.es/data/act_lecture_b0t0> rdf:type guide:Activity ;
+    guide:activityDescription "B0T0. PRESENTACIÓN DE LA ASIGNATURA"@en ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral"@en ;
+    guide:attendanceType "Presencial"@en .
+
+<http://gu:mad-bench.es/data/comp_CE01> rdf:type guide:Competency ;
+    guide:competencyCode "CE01"@en ;
+    guide:competencyDescription "Capacidad para abordar y resolver problemas matemáticos avanzados de ingeniería..."@en .
+
+<http://guia-mad-bench.es/data/lr_RA144> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA144"@en ;
+    guide:learningResultDescription "Capacidad para comprender la complejidad de las inversiones en proyectos mineros..."@en .
+
+<http://guia-mad-bench.es/data/res_moodle> rdf:type guide:DidacticResource ;
+    sch:name "Conferencia en moodle de la asignatura"@en ;
+    guide:bibliographyType "Recursos web"@en .
+
+<http://guia-mad-bench.es/data/res_book_1> rdf:type guide:DidacticResource ;
+    sch:name "La gestión de derechos mineros y de hidrocarburos"@en ;
+    guide:bibliographyDescription "Autores: HERRERA HERBERT, J.; CASTILLA GÓMEZ, J. Año: 2013"@en ;
+    guide:bibliographyType "Bibliografía"@en .
+
+<http://guia-mad-bench.es/data/res_lab_equip> rdf:type guide:DidacticResource ;
+    sch:name "LABORATORIO DE LABOREO DE MINAS"@en ;
+    guide:bibliographyType "Equipamiento"@en ;
+    guide:bibliographyDescription "Equipamiento docente para el aprendizaje de equipos y elementos de sondeos"@en .
+
+<http://guia-mad-bench.es/data/req_knowledge_mining> rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Conocimiento avanzado de las técnicas y procesos utilizados en la explotación minera; Métodos de Explotación; Tecnología minera; Protección ambiental"@en .
+
+<http://guia-mad-bench.es/data/event_eval_1_2> rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 5 ;
+    guide:eventWeek "Semana 5"@en .
+
+<http://guia-mad-bench.ps/data/event_exam_final> rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 17 ;
+    guide:eventWeek "Semana 17"@en .

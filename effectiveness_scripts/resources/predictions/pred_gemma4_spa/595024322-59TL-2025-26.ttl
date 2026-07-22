@@ -1,0 +1,123 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:CourseGuide_ElectronicaAnalogica rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Electrónica Analógica" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    guide:numberOfCredits 6.0 ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCourse :Course_ElectronicaAnalogica ;
+    guide:hasSyllabus :Syllabus_ElectronicaAnalogica ;
+    guide:hasEvaluation :EvalSystem_ElectronicaAnalogica ;
+    guide:hasDidacticResource :Res_Hambley, :Res_Rashid, :Res_Amos, :Res_Thompson, :Res_RuizRobredo ;
+    guide:hasCompetency :Comp_CE_B1, :Comp_CE_B2, :Comp_CE_B4, :Comp_CE_EC04, :Comp_CE_EC05, :Comp_CE_EC08, :Comp_CE_SC03, :Comp_CG_02, :Comp_CG_04, :Comp_CG_11 ;
+    guide:hasLearningResult :LR_RA232 ;
+    sch:instructor :Lecturer_Arques, :Lecturer_Gonzalez ;
+    sch:director :Lecturer_Arques ;
+    guide:otherInformation "Es imprescindible aprobar de forma individual el laboratorio y la teoría (Nota laboratorio >5. Nota teoría >5)." .
+
+# Course Instance
+:Course_ElectronicaAnalogica rdf:type guide:Course ;
+    sch:name "595024322 - Electronica Analogica" ;
+    sch:courseCode 595024322 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Sexto semestre" .
+
+# Degree Instance
+:Degree_59TL rdf:type guide:Degree ;
+    sch:name "59TL - Grado en Ingenieria Telematica" ;
+    guide:degreeCode "59TL" ;
+    guide:hasCourse :Course_ElectronicaAnalogica .
+
+# University Center Instance
+:UniversityCenter_ETS rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Sist. De Telecom." ;
+    guide:offers :Degree_59TL .
+
+# Lecturer Instances
+:Lecturer_Arques rdf:type guide:Lecturing ;
+    sch:name "Francisco Jose Arques Orobon" ;
+    sch:email "jose.arques@upm.es" ;
+    guide:office "D8418" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:Lecturer_Gonzalez rdf:type guide:Lecturer ;
+    sch:name "Vicente Gonzalez Posadas" ;
+    sch:email "vicente.gonzalez@upm.es" ;
+    guide:office "D8201A" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+# Competency Instances (Samples)
+:Comp_CE_B1 rdf:type guide:Competency ;
+    guide:competencyCode "CE B1" ;
+    guide:competencyDescription "Capacidad para la resolución de los problemas matemáticos que puedan plantearse en la ingeniería." .
+
+:Comp_CE_EC05 rdf:type guide:Competency ;
+    guide:competencyCode "CE EC05" ;
+    guide:competencyDescription "Capacidad de diseñar circuitos de electrónica analógica y digital, de conversión analógico-digital y digital-analógica, de radiofrecuencia, de alimentación y conversión de energía eléctrica para aplicaciones de telecomunicación y computación." .
+
+# Learning Result Instance
+:LR_RA232 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA232" ;
+    guide:learningResultDescription "Se concretarán para cada asignatura optativa o para la realización de prácticas en empresas." .
+
+# Syllabus and Items
+:Syllabus_ElectronicaAnalogica rdf:type guide:Sylabus ;
+    guide:hasItem :SyllabusItem_Intro, :SyllabusItem_Polarizacion, :SyllabusItem_Modelos, :SyllabusItem_Amplificadores, :SyllabusItem_Frecuencia .
+
+:SyllabusItem_Intro rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a los componentes electrónicos (Resistores, Condensadores, Inductores, Semiconductores, Unión PN)." .
+
+# Evaluation System and Trials
+:EvalSystem_ElectronicaAnalogica rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La nota final será N=(0.85*Nota Teoría)+(0.15*Nota de Laboratorio), y deberá ser mayor o igual a 5 puntos." ;
+    guide:hasEvaluationTrial :Trial_Examen_Parcial_1_2, :Trial_Praticas .
+
+:Trial_Examen_Parcial_1_2 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialWeek "3" ;
+    guide:trialMode "Presencial" .
+
+:Trial_Praticas rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Presentación Individual" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "11" ;
+    guide:trialMode "Presencial" .
+
+# Didactic Resources
+:Res_Hambley rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Electrónica" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "ALLAN R. HAMBLEY, PEARSON EDUCACION, 2001." .
+
+:Res_Rashid rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "ELECTRONICA DE POTENCIA: CIRCUITOS, DISPOSITIVOS Y APLICACIONES" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "MUHAMMAD H. RASHID, PRENTICE HALL MEXICO, 2005" .
+
+# Required Knowledge
+:RequiredKnowledge_Electr_Analg rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Analisis De Circuitos Ii, Electronica I, Analisis De Circuitos I" ;
+    guide:previousKnowledge "Haber cursado alguna asignatura con laboratorio e instrumentación" .
+
+# Schedule Events (from Cronograma)
+:Event_Clase_T1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :Activity_LeccionMagistral_T1 .
+
+:Activity_LeccionMagistral_T1 rdf:type guide:Activity ;
+    guide:activityDescription "Clase T1" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .

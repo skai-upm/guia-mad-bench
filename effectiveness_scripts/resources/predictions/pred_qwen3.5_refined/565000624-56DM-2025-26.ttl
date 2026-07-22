@@ -1,0 +1,428 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guide#ANX_PRCL001> rdf:type :CourseGuide ;
+    dct:title "Informática"@en ;
+    sch:name "Informática" ;
+    guide:numberOfCredits 6.0 ;
+    dc:creator <http://guia-mad-bench.es/data/guide#mercedes_bermejo_solera> .
+
+<http://guia-mad-bench.es/data/guide#ANX_PRCL001> sch:description "Es una asignatura que desarrolla los elementos básicos de la programación estructurada, para lo que utiliza el lenguaje C como herramienta de programación."@en ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/guide#syllabus_56DM_01> .
+
+<http://guia-mad-bench.es/data/guide#ANX_PRCL001> sch:eventSchedule <http://guia-mad-bench.es/data/guide#schedule_2025S2> ;
+    guide:hasEvaluation <http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> .
+
+<http://guia-mad-bench.es/data/guide#ANX_PRCL001> sch:director <http://guia-mad-bench.es/data/guide#mercedes_bermejo_solera> ;
+    guide:syllabusDescription "Informática"@en .
+
+<http://guia-mad-bench.es/data/guide#mercedes_bermejo_solera> rdf:type :Lecturer , sch:Person ;
+    dct:title "Mercedes Bermejo Solera" ;
+    sch:name "Mercedes Bermejo Solera" ;
+    sch:email "mercedes.bermejo@upm.es" .
+
+<http://guia-mad-bench.es/data/guide#syllabus_56DM_01> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/guide#item_intro>, <http://guia-mad-bench.es/data/guide#item_c_language>.
+
+<http://guia-mad-bench.es/data/guide#syllabus_56DM_01> guide:hasItemIndex 1 ;
+    sch:description "Temario de la asignatura"@en .
+
+<http://guia-mad-bench.es/data/guide#item_intro> rdf:type :SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción. Estructura funcional de un ordenador."@es .
+
+<http://guia-mad-bench.es/data/guide#item_c_language> rdf:type :SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "El lenguaje C. Programas básicos, estructura de código en C"@en .
+
+<http://guia-mad-bench.es/data/guide#schedule_2025S2> rdf:type :Schedule , sch:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/guide#event_sem1>, <http://guia-mad-bench.es/data/guide#event_exam_progressiva>.
+
+<http://guia-mad-bench.es/data/guide#schedule_2025S2> guide:hasActivityUnit om:Hour ;
+    sch:description "Cronograma de la asignatura"@en .
+
+<http://guia-mad-bench.es/data/guide#event_sem1> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 1 ;
+    guide:activityDurationUnit om:Hour ;
+    guide:hasActivity <http://guia-mad-bench.es/data/guide#act_theory>.
+
+<http://guia-mad-bench.es/data/guide#event_exam_progressiva> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8 ;
+    guide:activityDurationUnit om:Hour .
+
+<http://guia-mad-bench.es/data/guide#act_theory> rdf:type :Activity ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/guide#comp_ce03>, <http://guia-mad-bench.es/data/guide#comp_cg10>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> rdf:type :EvaluationSystem ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>, <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progressiva_8>,
+    <http://guia-mad-bench.es/data/guide#trial_global_15>.
+
+<http://guia-mad-bench.es/data/guide#evaluation_system_anx_prcl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#trial_progress

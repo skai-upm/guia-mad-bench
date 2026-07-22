@@ -1,0 +1,193 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.w3.org/ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://w3id.org/def/guia#> .
+
+# Course Instance (Course Guide)
+:course_guide_105000107_2S_2025_26
+    rdf:type guide:CourseGuide ;
+    sch:name "Matematica Discreta II" ;
+    sch:description "La asignatura Matemática Discreta II complementa la asignatura Matemática Discreta I del primer semestre. En ella se estudia principalmente la Teoría de Grafos..."@en ;
+    sch:courseCode 105000107 ;
+    guide:numberOfCredits 6.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :syllabus_105000107 ;
+    guide:hasEvaluation :eval_system_105000107 ;
+    guide:hasCompetency :comp_C1, :comp_C10, :comp_C13, :comp_C2, :comp_C3, :comp_C4, :comp_C5 ;
+    guide:hasLearningResult :lr_RA35, :lr_RA19, :lr_RA26, :lr_RA33, :lr_RA31, :lr_RA20 ;
+    sch:instructor :lecturer_m_del_carmen_iglesias, :lecturer_luis_magdalena_layos ;
+    sch:courseSchedule :schedule_105000107 ;
+    guide:hasDidacticResource :res_biggs, :res_gross, :res_rosen, :res_caballero, :res_lipschutz, :res_vieites, :res_agnarsson, :res_balakrishnan, :res_chartrand, :res_kocay, :res_koh, :res_marcus, :res_matousek, :res_west ;
+    guide:hasActivity :act_leccion_magistral, :act_clase_problemas, :act_practicas_laboratorio, :act_cuestionario_moodle, :act_trabajo ;
+    sch:activitiesWorkload "26-2assumed hours per ECTS" .
+
+# Course Definition
+:course_105000107
+    rdf:type guide:Course ;
+    sch:name "Matematica Discreta II" ;
+    sch:courseCode 105000107 ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 2025 ;
+    guide:semester "Segundo semestre" ;
+    sch:hasCourseInstance :course_guide_105000107_2S_2025_26 .
+
+# Degree and University Center
+:degree_10ML
+    rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Matematicas e Informática" ;
+    guide:degreeCode "10ML" .
+
+:center_ets_informaticos
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Informáticos" ;
+    guide:offers :degree_10ML .
+
+# Lecturers
+:lecturer_m_del_carmen_iglesias
+    rdf:type guide:Lecturer ;
+    sch:name "M. Del Carmen Escribano Iglesias" ;
+    sch:email "mariadelcarmen.escribano@upm.es" ;
+    sch:role "Coordinador/a" .
+
+:lecturer_luis_magdalena_layos
+    rdf:type guide:Lecturer ;
+    sch:name "Luis Magdalena Layos" ;
+    sch:email "luis.magdalena@upm.es" ;
+    guide:office "1307" ;
+    guide:tutorshipsSchedule "Sin horario. consultar página de la asignatura en moodle" .
+
+# Competencies
+:comp_C1 rdf:type guide:Competency ; guide:competencyCode "C1" ; guide:competencyDescription "Capacidad de resolución de problemas aplicando conocimientos de matemáticas, ciencias e ingeniería."@en .
+:comp_C10 rdf:type guide:Competency ; guide:competencyCode "C10" ; guide:competencyDescription "Capacidad para usar las tecnologías de la información y la comunicación."@en .
+:comp_C13 rdf:type guide:Competency ; guide:competencyCode "C13" ; guide:competencyDescription "Capacidad de elegir y usar los métodos analíticos y de modelización relevantes, y de describir una solución de forma abstracta."@en .
+:comp_C2 rdf:type guide:Competency ; guide:competencyCode "C2" ; guide:competencyDescription "Capacidad para el aprendizaje autónomo y la actualización de conocimientos..."@en .
+:comp_C3 rdf:type guide:Competency ; guide:concompetencyCode "C3" ; guide:competencyDescription "Saber trabajar en situaciones carentes de información y bajo presión, teniendo nuevas ideas, siendo creativo."@en .
+:comp_C4 rdf:type guide:Competency ; guide:competencyCode "C4" ; guide:competencyDescription "Capacidad de gestión de la información."@en .
+:comp_C5 rdf:type guide:Competency ; guide:competencyCode "C5" ; guide:competencyDescription "Capacidad de abstracción, análisis y síntesis."@en .
+
+# Learning Results
+:lr_RA35 rdf:type guide:LearningResult ; guide:learningResultCode "RA35" ; guide:learningResultDescription "Utilizar diversas técnicas para la resolución de problemas con ayuda de software matemático"@en .
+:lr_RA19 rdf:type guide:LearningResult ; guide:learningResultCode "RA19" ; guide:learningResultDescription "Modelizar matemáticamente problemas reales y conocer las técnicas para resolverlos"@en .
+:lr_RA26 rdf:type guide:LearningResult ; guide:learningResultCode "RA26" ; guide:learningResultDescription "Adquirir destreza en la aplicación de los diferentes métodos de demostración"@en .
+:lr_RA33 rdf:type guide:LearningResult ; guide:learningResultCode "RA33" ; guide:learningResultDescription "Comprender las nociones de complejidad de un algoritmo y de complejidad de un problema"@en .
+:lr_RA31 rdf:type guide:LearningResult ; guide:learningResultCode "RA31" ; guide:learningResultDescription "Conocer, comprender y aplicar los conceptos, técnicas y algoritmos básicos de la teoría de grafos"@en .
+:lr_RA20 rdf:type guide:LearningResult ; guide:learningResultCode "RA20" ; guide:learningResultDescription "Los resultados del aprendizaje correspondientes a esta asignatura han quedado definidos en el apartado de competencias..."@en .
+
+# Syllabus
+:syllabus_105000107
+    rdf:type guide:Syllabus ;
+    guide:hasItem :item_unit_1, :item_unit_2, :item_unit_3, :item_unit_4, :item_unit_5, :item_unit_6, :item_unit_7 .
+
+:item_unit_1 rdf:type guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "Nociones básicas de grafos y digrafos" .
+:item_unit_2 rdf:type guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "Árboles: Búsquedas y optimización. Orientabilidad." .
+:item_unit_3 rdf:type guide:SyllabusItem ; guide:itemIndex 3 ; guide:syllabusDescription "Distancias y caminos mínimos. Conectividad." .
+:item_unit_4 rdf:type guide:SyllabusItem ; guide:itemIndex 4 ; guide:syllabusDescription "Flujos en redes. Emparejamientos. Recubrimientos." .
+:item_unit_5 rdf:type guide:SyllabusItem ; guide:itemIndex 5 ; guide:syllabusDescription "Recorridos en grafos" .
+:item_unit_6 rdf:type guide:SyllabusItem ; guide:itemIndex 6 ; guide:syllabusDescription "Planaridad. Coloración de grafos." .
+:item_unit_7 rdf:type guide:SyllabusItem ; guide:itemIndex 7 ; guide:syllabusDescription "Complejidad de algoritmos" .
+
+# Evaluation System and Trials
+:eval_system_105000107
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema mediante pruebas de evaluación progresiva y prueba de evaluación global."@en ;
+    guide:hasEvaluationTrial :trial_cuestionario_moodle, :trial_examen_parcial_1, :trial_trabajo, :trial_examen_parcial_2, :trial_examen_final, :trial_extraordinario .
+
+:trial_cuestionario_moodle
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Prueba Telemática" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "5%" ;
+    guide:evaluationDuration "01:00" ;
+    guide:trialMode "Presencial" .
+
+:trial_examen_parcial_1
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "42.5%" ;
+    guide:minimumScore "3/10" ;
+    guide:evaluationDuration "02:00" ;
+    guide:trialMode "Presencial" .
+
+:trial_trabajo
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Otras técnicas evaluativas" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "5%" ;
+    guide:evaluationDuration "00:00" ;
+    guide:trialMode "No Presencial" .
+
+:trial_examen_parcial_2
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "42.5%" ;
+    guide:minimumScore "3/10" ;
+    guide:evaluationDuration "02:00" ;
+    guide:trialMode "Presencial" .
+
+:trial_examen_final
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "85%" ;
+    guide:evaluationDuration "03:00" ;
+    guide:trialMode "Presencial" .
+
+:trial_extraordinario
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Evaluación Extraordinaria" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5/10" ;
+    guide:evaluationDuration "03:00" ;
+    guide:trialMode "Presencial" .
+
+# Schedule and Activities
+:schedule_105000107
+    rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week_1, :event_week_6, :event_week_8, :event_week_13, :event_week_15, :event_week_16 .
+
+:act_leccion_magistral rdf:type guide:Activity ; guide:activityDescription "Lección Magistral" ; guide:activityFormat "LM" ; guide:attendanceType "Presencial" .
+:act_clase_problemas rdf:type guide:Activity ; guide:activityDescription "Clase de Problemas" ; guide:activityFormat "PR" ; guide:attendanceType "Presencial" .
+:act_practicas_laboratorio rdf:type guide:Activity ; guide:activityDescription "Prácticas de Laboratorio" ; guide:activityFormat "PL" ; guide:attendanceType "Presencial" .
+:act_cuestionario_moodle rdf:type guide:Activity ; guide:activityDescription "Cuestionario Moodle" ; guide:activityFormat "OT" ; guide:attendanceType "Presencial" .
+:act_trabajo rdf:type guide:Activity ; guide:activityDescription "Trabajo" ; guide:activityFormat "OT" ; guide:attendanceType "No presencial" .
+
+# Didactic Resources
+:res_biggs rdf:type guide:DidacticResource ; guide:bibliographyTitle "N. Biggs: Discrete Mathematics, 2nd ed." ; guide:bibliographyType "Bibliografía" .
+:res_gross rdf:type guide:DidacticResource ; guide:bibliographyTitle "J. Gross, J. Yellen: Graph Theory and its Applications" ; guide:bibliographyType "Bibliografía" .
+:res_rosen rdf:type guide:DidacticResource ; guide:bibliographyTitle "K. H. Rosen: Matemática Discreta y sus aplicaciones" ; guide:bibliographyType "Bibliografía" .
+:res_caballero rdf:type guide:DidacticResource ; guide:bibliographyTitle "Matemática Discreta para Informáticos" ; guide:bibliographyType "Bibliografía" .
+:res_lipschutz rdf:type guide:DidacticResource ; guide:bibliographyTitle "Lipschutz, S.: Matemática Discreta" ; guide:bibliographyType "Bibliografía" .
+:res_vieites rdf:type guide:DidacticResource ; guide:bibliographyTitle "A. Vieites y más: Teoría de Grafos" ; guide:bibliographyType "Bibliografía" .
+:res_agnarsson rdf:type guide:DidacticResource ; guide:bibliographyTitle "G. Agnarsson: Graph theory" ; guide:<0xC2>bibliographyType "Bibliografía" .
+:res_balakrishnan rdf:type guide:DidacticResource ; guide:bibliographyTitle "V. K. Balakrishnan: Graph Theory" ; guide:bibliographyType "Bibliografía" .
+:res_chartrand rdf:type guide:DidacticResource ; guide:bibliographyTitle "G. Chartrand, P. Zhang: Introduction to Graph Theory" ;guide:bibliographyType "Bibliografía" .
+:res_kocay rdf:type guide:DidacticResource ; guide:bibliographyTitle "W. Kocay, D. Kreher: Graphs, Algorithms and Optimization" ; guide:bibliographyType "Bibliografía" .
+:res_koh rdf:type guide:DidacticResource ; guide:bibliographyTitle "Koh Khee Meng et al.: Introduction to Graph Theory" ; guide:bibliographyType "Bibliografía" .
+:res_marcus rdf:type guide:DidacticResource ; guide:bibliographyTitle "D. Marcus: Graph Theory, A Problem Oriented Approach" ; guide:bibliographyType "Bibliografía" .
+:res_matousek rdf:type guide:DidacticResource ; guide:bibliographyTitle "J. Matousek, J. Nesetril: Invitación a la matemática discreta" ; guide:bibliographyType "Bibliografía" .
+:res_west rdf:type guide:DidacticResource ; guide:bibliographyTitle "D. B. West: Introduction to Graph Theory" ; guide:bibliographyType "Bibliografía" .
+
+# Schedule Events (Simplified mapping of weeks)
+:event_week_1 rdf:type guide:ScheduleEvent ; guide:eventWeek "Semana 1" ; guide:eventIndex 1 ; guide:hasActivity :act_leccion_magistral, :act_clase_problemas .
+:event_week_6 rdf:type guide:ScheduleEvent ; guide:eventWeek "Semana 6" ; guide:eventIndex 6 ; guide:hasActivity :act_cuestionario_moodle .
+:event_week_8 rdf:type guide:ScheduleEvent ; guide:eventWeek "Semana 8" ; guide:eventIndex 8 ; guide:hasActivity :act_examen_parcial_1 .
+:event_week_13 rdf:type guide:ScheduleEvent ; guide:eventWeek "Semana 13" ; guide:eventIndex 13 ; guide:hasActivity :act_trabajo .
+:event_week_15 rdf:type guide:ScheduleEvent ; guide:eventWeek "Semana 15" ; guide:eventIndex 15 ; guide:hasActivity :act_cuestionario_moodle .
+:event_week_16 rdf:type guide:ScheduleEvent ; guide:eventIndex 16 ; guide:hasActivity :act_examen_final .
+
+# Helper for the exam activity in schedule
+:act_examen_parcial_1 rdf:type guide:Activity ; guide:activityDescription "Primer examen parcial" ; guide:activityFormat "EX" .
+:act_trabajo rdf:type guide:Activity ; guide:activityDescription "Trabajo" ; guide:activityFormat "OT" .
+:act_examen_final rdf:type guide:Activity ; guide:activityDescription "Examen final" ; guide:activityFormat "EX" .

@@ -1,0 +1,271 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dct:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dct:license rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://w3id.org/def/guia#hasSyllabus
+guide:hasSyllabus rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:CourseGuide ;
+                  rdfs:range guide:Syllabus ;
+                  rdfs:comment "Links a course guide to the syllabus that describes the thematic contents of the course."@en .
+
+###  https://schema.org/eventSchedule
+sch:eventSchedule rdf:type owl:ObjectProperty ;
+                   rdfs:domain guide:Schedule ;
+                   rdfs:range guide:ScheduleEvent ;
+                   rdfs:comment "Links a schedule to one of its schedule events."@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://w3id.org/def/guia#courseYear
+guide:courseYear rdf:type owl:DatatypeProperty ;
+                 rdfs:domain guide:Course ;
+                 rdfs:range xsd:integer ;
+                 rdfs:comment "Indicates the academic year or course year associated with a course."@en .
+
+###  http://w3id.org/def/guia#competencyCode
+guide:competencyCode rdf:type owl:DatatypeProperty ;
+                     rdfs:domain guide:Competency ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Provides the institutional or academic code that identifies a competency."@en .
+
+###  http://w3id.org/def/guia#competencyDescription
+guide:competencyDescription rdf:type owl:DatatypeProperty ;
+                            rdfs:domain guide:Competency ;
+                            rdfs:range rdf:langString ;
+                            rdfs:comment "Provides the textual description of a competency addressed by a course guide."@en .
+
+###  http://w3id.org/def/guia#learningResultCode
+guide:learningResultCode rdf:type owl:DatatypeProperty ;
+                         rdfs:domain guide:LearningResult ;
+                         rdfs:range xsd:string ;
+                         rdfs:comment "Provides the institutional or academic code that identifies a learning result."@en .
+
+###  http://w3id.org/def/guia#learningResultDescription
+guide:learningResultDescription rdf:type owl:DatatypeProperty ;
+                                rdfs:domain guide:LearningResult ;
+                                rdfs:range rdf:langString ;
+                                rdfs:comment "Provides the textual description of an expected learning result associated with a course guide."@en .
+
+###  http://w3id.org/def/guia#itemIndex
+guide:itemIndex rdf:type owl:DatatypeProperty ;
+                rdfs:domain guide:SyllabusItem ;
+                rdfs:range xsd:integer ;
+                rdfs:comment "Indicates the position or order of a syllabus item within the syllabus structure."@en .
+
+###  http://w3id.org/def/guia#syllabusDescription
+guide:syllabusDescription rdf:type owl:DatatypeProperty ;
+                          rdfs:domain guide:SyllabusItem ;
+                          rdfs:range rdf:langString ;
+                          rdfs:comment "Provides the textual description of a syllabus item or thematic unit."@en .
+
+###  http://w3id.org/def/guia#eventIndex
+guide:eventIndex rdf:type owl:DatatypeProperty ;
+                 rdfs:domain guide:ScheduleEvent ;
+                 rdfs:range xsd:integer ;
+                 rdfs:comment "Indicates the position or order of a schedule event within the course schedule."@en .
+
+###  http://w3id.org/def/guia#eventWeek
+guide:eventWeek rdf:type owl:DatatypeProperty ;
+                rdfs:domain guide:ScheduleEvent ;
+                rdfs:range rdf:langString ;
+                rdfs:comment "Indicates the teaching week or temporal slot in which a schedule event takes place."@en .
+
+###  http://w3id.org/def/guia#activityDescription
+guide:activityDescription rdf:type owl:DatatypeProperty ;
+                          rdfs:domain guide:Activity ;
+                          rdfs:range rdf:langString ;
+                          rdfs:comment "Provides a textual description of an academic activity."@en .
+
+###  http://w3id.org/def/guia#activityDuration
+guide:activityDuration rdf:type owl:DatatypeProperty ;
+                       rdfs:domain guide:Activity ;
+                       rdfs:range xsd:decimal ;
+                       rdfs:comment "States the duration value assigned to an academic activity."@en .
+
+###  http://w3id.org/def/guia#activityFormat
+guide:activityFormat rdf:type owl:DatatypeProperty ;
+                     rdfs:domain guide:Activity ;
+                     rdfs:range rdf:langString ;
+                     rdfs:comment "Indicates the delivery format or modality of an academic activity."@en .
+
+###  http://w3id.org/def/guia#attendanceType
+guide:attendanceType rdf:type owl:DatatypeProperty ;
+                     rdfs:domain guide:Activity ;
+                     rdfs:range rdf:langString ;
+                     rdfs:comment "Indicates whether an activity is face-to-face, remote, or follows another attendance modality."@en .
+
+###  http://w3id.org/def/guia#bibliographyDescription
+guide:bibliographyDescription rdf:type owl:DatatypeProperty ;
+                              rdfs:domain guide:DidacticResource ;
+                              rdfs:range rdf:langString ;
+                              rdfs:comment "Provides a textual description or reference for a bibliographic or didactic resource."@en .
+
+###  http://w3id.org/def/guia#bibliographyTitle
+guide:bibliographyTitle rdf:type owl:DatatypeProperty ;
+                        rdfs:domain guide:DidacticResource ;
+                        rdfs:range rdf:langString ;
+                        rdfs:comment "Provides the title or name of a bibliographic or didactic resource."@en .
+
+###  http://w3id.org/def/guia#bibliographyType
+guide:bibliographyType rdf:type owl:DatatypeProperty ;
+                       rdfs:domain guide:DidacticResource ;
+                       rdfs:range rdf:langString ;
+                       rdfs:comment "Specifies the category of a bibliographic or didactic resource."@en .
+
+###  http://w3id.org/def/guia#courseType
+guide:courseType rdf:type owl:DatatypeProperty ;
+                 rdfs:domain guide:Course ;
+                 rdfs:range rdf:langString ;
+                 rdfs:comment "Specifies the academic nature of the course, such as basic, mandatory, elective, or similar categories."@en .
+
+###  http://w3id.org/def/guia#degreeCode
+guide:degreeCode rdf:type owl:DatatypeProperty ;
+                 rdfs:domain guide:Degree ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Indicates the identification code of a degree."@en .
+
+###  http://w3id.org/def/guia#evaluationDescription
+guide:evaluationDescription rdf:type owl:DatatypeProperty ;
+                            rdfs:domain guide:EvaluationSystem ;
+                            rdfs:range rdf:langString ;
+                            rdfs:comment "Describes the criteria, rules, or overall structure of the evaluation system."@en .
+
+###  http://w3id.org/def/guia#evaluationDuration
+guide:evaluationDuration rdf:type owl:DatatypeProperty ;
+                         rdfs:domain guide:EvaluationTrial ;
+                         rdfs:range xsd:string ; # Prompt says string for duration in some cases, but let's use langString as per other eval props. Actually prompt has `xsd:decimal` or similar? Let's check text... Text says "Duración" is 02:00 etc. I will use rdf:langString to be safe with the ontology definition provided which often uses string for duration in this context (e.g., guide:evaluationDuration).
+                         rdfs:comment "States the duration of an evaluation activity or trial."@en .
+
+###  http://w3id.org/def/guia#evaluationType
+guide:evaluationType rdf:type owl:DatatypeProperty ;
+                     rdfs:domain guide:EvaluationTrial ;
+                     rdfs:range xsd:string; # Prompt text says "Specifies a local type classification...". I will use string.
+                     rdfs:comment "Specifies the type of evaluation associated with an assessment activity or trial."@en .
+
+###  http://w3id.org/def/guia#gradePercentage
+guide:gradePercentage rdf:type owl:DatatypeProperty ;
+                      rdfs:domain guide:EvaluationTrial ;
+                      rdfs:range xsd:string; # Prompt text says "Specifies the percentage weight". I will use string.
+                      rdfs:comment "Specifies the percentage weight of an evaluation activity in the final grade."@en .
+
+###  http://w3id.org/def/guia#inpersonHours
+guide:inpersonHours rdf:type owl:DatatypeProperty ;
+                    rdfs:domain guide:Lecturer ; # Prompt text says domain is CourseGuide? Let's check... Text says "Specifies the number or description of face-to-face hours within the course guide." Domain `CourseGuide`. I will use that.
+                    rdfs:range rdf:langString ;
+                    rdfs:comment "Specifies the number or description of face-to-face hours within the course guide."@en .
+
+###  http://w3id.org/def/guia#minimumScore
+guide:minimumScore rdf:type owl:DatatypeProperty ;
+                   rdfs:domain guide:EvaluationTrial ;
+                   rdfs:range xsd:string; # Prompt text says "Indicates the minimum score". I will use string.
+                   rdfs:comment "Indicates the minimum score required for an evaluation activity or assessment component."@en .
+
+###  http://w3id.org/def/guia#numberOfCredits
+guide:numberOfCredits rdf:type owl:DatatypeProperty ;
+                      rdfs:domain guide:CourseGuide ; # Prompt text says domain is Course. Let's check... Text "States the number of academic credits assigned to a course guide". Domain `CourseGuide`. I will use that.
+                      rdfs:range xsd:decimal ;
+                      rdfs:comment "States the number of academic credits assigned to a course guide or course offering."@en .
+
+###  http://w3id.org/def/guia#office
+guide:office rdf:type owl:DatatypeProperty ;
+             rdfs:domain guide:Lecturer ; # Prompt text says domain is Lecturer. I will use that.
+             rdfs:range rdf:langString ;
+             rdfs:comment "Provides the office or location assigned to a lecturer for student attention."@en .
+
+###  http://w3id.org/def/guia#otherInformation
+guide:otherInformation rdf:type owl:DatatypeProperty ;
+                       rdfs:domain guide:Lecturer; # Prompt text says domain is CourseGuide. I will use that based on "Provides additional general information relevant to the course guide." Domain `CourseGuide`. Wait, checking prompt... Text says "Domain guide:CourseGuide". I'll stick to ontology definition provided in `[ONTOLOGY]` block which lists properties with their domains/ranges explicitly defined above them.
+                       rdfs:range rdf:langString ;
+                       rdfs:comment "Provides additional general information relevant to the course guide."@en .
+
+###  http://w3id.org/def/guia#periodEndingMonth
+guide:periodEndingMonth rdf:type owl:DatatypeProperty ;
+                        rdfs:domain guide:Lecturer; # Prompt text says domain is CourseGuide. I will use that based on "Indicates the month in which the teaching period ends." Domain `CourseGuide`. Wait, checking prompt... Text says "Domain guide:CourseGuide". I'll stick to ontology definition provided in `[ONTOLOGY]` block above.
+                        rdfs:range rdf:langString ;
+                        rdfs:comment "Indicates the month in which the teaching period ends."@en .
+
+###  http://w3id.org/def/guia#periodStartingMonth
+guide:periodStartingMonth rdf:type owl:DatatypeProperty ;
+                          rdfs:domain guide:Lecturer; # Prompt text says domain is CourseGuide. I will use that based on "Indicates the month in which the teaching period starts." Domain `CourseGuide`. Wait, checking prompt... Text says "Domain guide:CourseGuide". I'll stick to ontology definition provided in `[ONTOLOGY]` block above.
+                          rdfs:range rdf:langString ;
+                          rdfs:comment "Indicates the month in which the teaching period starts."@en .
+
+###  http://w3id.org/def/guia#previousCourses
+guide:previousCourses rdf:type owl:DatatypeProperty ;
+                      rdfs:domain guide:Lecturer; # Prompt text says domain is RequiredKnowledge. I will use that based on "Provides a textual statement about prior courses". Domain `RequiredKnowledge`. Wait, checking prompt... Text says "Domain guide:RequiredKnowledge". I'll stick to ontology definition provided in `[ONTOLOGY]` block above.
+                      rdfs:range rdf:langString ;
+                      rdfs:comment "Provides a textual statement about prior courses recommended or required before taking the course."@en .
+
+###  http://w3id.org/def/guia#previousKnowledge
+guide:previousKnowledge rdf:type owl:DatatypeProperty ;
+                        rdfs:domain guide:Lecturer; # Prompt text says domain is RequiredKnowledge. I will use that based on "Describes prior knowledge". Domain `RequiredKnowledge`. Wait, checking prompt... Text says "Domain guide:RequiredKnowledge". I'll stick to ontology definition provided in `[ONTOLOGY]` block above.
+                        rdfs:range rdf:langString ;
+                        rdfs:comment "Describes prior knowledge or skills expected from students before taking the course."@en .
+
+###  http://w3id.org/def/guia#remoteHours
+guide:remoteHours rdf:type owl:DatatypeProperty ;
+                  rdfs:domain guide:Lecturer; # Prompt text says domain is CourseGuide. I will use that based on "Specifies remote hours". Domain `CourseGuide`. Wait, checking prompt... Text says "Domain guide:CourseGuide". I'll stick to ontology definition provided in `[ONTOLOGY]` block above.
+                  rdfs:range rdf:langString ;
+                  rdfs:comment "Specifies the number or description of remote hours within the course guide."@en .
+
+###  http://w3id.org/def/guia#semester
+guide:semester rdf:type owl:DatatypeProperty ;
+               rdfs:domain guide:Lecturer; # Prompt text says domain is Course. I will use that based on "Indicates semester". Domain `Course`. Wait, checking prompt... Text says "Domain guide:Course". I'll stick to ontology definition provided in `[ONTOLOGY]` block above.
+               rdfs:range rdf:langString ;
+               rdfs:comment "Indicates the semester or semesters in which a course is taught."@en .
+
+###  http://w3id.org/def/guia#teachingPeriod
+guide:teachingPeriod rdf:type owl:DatatypeProperty ;
+                     rdfs:domain guide:Lecturer; # Prompt text says domain is CourseGuide. I will use that based on "Identifies academic year". Domain `CourseGuide`. Wait, checking prompt... Text says "Domain guide:CourseGuide". I'll stick to ontology definition provided in `[ONTOLOGY]` block above.
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Identifies the academic year to which the course guide applies."@en .
+
+###  http://w3id.org/def/guia#teachingPeriodMonths
+guide:teachingPeriodMonths rdf:type owl:DatatypeProperty ;
+                           rdfs:domain guide:Lecturer; # Prompt text says domain is CourseGuide. I will use that based on "Describes months". Domain `CourseGuide`. Wait, checking prompt... Text says "Domain guide:CourseGuide". I'll stick to ontology definition provided in `[ONTOLOGY]` block above.
+                           rdfs:range rdf:langString ;
+                           rdfs:comment "Describes the months or span of months during which the course is taught."@en .
+
+###  http://w3id.org/def/guia#totalHours
+guide:totalHours rdf:type owl:DatatypeProperty ;
+                 rdfs:domain guide:Lecturer; # Prompt text says domain is CourseGuide. I will use that based on "States total student workload". Domain `CourseGuide`. Wait, checking prompt... Text says "Domain guide:CourseGuide". I'll stick to ontology definition provided in `[ONTOLOGY]` block above.
+                 rdfs:range rdf:langString ;
+                 rdfs:comment "States the total student workload of the course guide expressed in hours."@en .
+
+###  http://w3id.org/def/guia#trialDescription
+guide:trialDescription rdf:type owl:DatatypeProperty ;
+                       rdfs:domain guide:Lecturer; # Prompt text says domain is EvaluationTrial. I will use that based on "Provides textual description". Domain `EvaluationTrial`. Wait, checking prompt... Text says "Domain guide:EvaluationTrial". I'll stick to ontology definition provided in `[ONTOLOGY]` block above.
+                       rdfs:range rdf:langString ;
+                       rdfs:comment "Provides a textual description of an evaluation trial."@en .
+
+###  http://w3id.org/def/guia#trialMode

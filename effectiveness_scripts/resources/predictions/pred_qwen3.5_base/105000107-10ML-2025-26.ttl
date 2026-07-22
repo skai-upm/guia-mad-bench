@@ -1,0 +1,523 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Instance Data Extraction
+#################################################################
+
+###  Course Guide Instance (Matematica Discreta II)
+<http://w3id.org/def/guia#GA_10ML_105000107> rdf:type :CourseGuide ;
+                                               sch:name "Matematica Discreta Ii"@en ,
+                                                       "105000107 - Matematica Discreta II"@es ;
+                                               dct:creator "M. Del Carmen Escribano Iglesias" ,
+                                                           "Luis Magdalena Layos" ;
+                                               guide:numberOfCredits 6^^xsd:decimal ;
+                                               sch:description "La asignatura Matemática Discreta II complementa la asignatura Matemática Discreta I del primer semestre."@es .
+
+###  Degree Instance (Grado En Matematicas E Informática)
+<http://w3id.org/def/guia#10ML> rdf:type :BachelorDegree ;
+                                 sch:courseCode "10ML"^^xsd:string ;
+                                 guide:syllabusDescription "Plan de Estudios Grado en Matematicas e Informáticas"@es .
+
+###  Course Instance (Matematica Discreta II)
+<http://w3id.org/def/guia#C_105000107> rdf:type :Course ;
+                                        sch:courseCode "105000107"^^xsd:string ;
+                                        guide:syllabusDescription "Matematica Discreta Ii"@es .
+
+###  Lecturer Instances (M. Del Carmen Escribano Iglesias & Luis Magdalena Layos)
+<http://w3id.org/def/guia#L_1> rdf:type :Lecturer ;
+                               sch:name "M. Del Carmen Escribano Iglesias" ,
+                                       "Coordinador/a"@es ;
+                               guide:office ""^^xsd:string ;
+                               sch:email <mailto:mariadelcarmen.escribano@upm.es> .
+
+<http://w3id.org/def/guia#L_2> rdf:type :Lecturer ;
+                               sch:name "Luis Magdalena Layos" ,
+                                       ""^^xsd:string ;
+                               guide:office "1307"@es ;
+                               sch:email <mailto:luis.magdalena@upm.es> .
+
+###  Syllabus Instance (Temario)
+<http://w3id.org/def/guia#Syll_105000107> rdf:type :Syllabus ;
+                                              guide:syllabusDescription "Nociones básicas de grafos y digrafos, Árboles: Búsquedas y optimización. Orientabilidad., Distancias y caminos mínimos. Conectividad., Flujos en redes. Emparejamientos. Recubrimientos., Recorridos en grafos., Planaridad. Coloración de grafos."@es .
+
+###  Syllabus Items (Temario)
+<http://w3id.org/def/guia#Item_1> rdf:type :SyllabusItem ;
+                                 guide:itemIndex "1"^^xsd:integer ;
+                                 sch:description "Nociones básicas de grafos y digrafos"@es .
+
+<http://w3id.org/def/guia#Item_2> rdf:type :SyllabusItem ;
+                               guide:itemIndex "2"^^xsd:integer ;
+                               sch:description "Árboles: Búsquedas y optimización. Orientabilidad."@es .
+
+<http://w3id.org/def/guia#Item_3> rdf:type :SyllabusItem ;
+                                 guide:itemIndex "3"^^xsd:integer ;
+                                 sch:description "Distancias y caminos mínimos. Conectividad."@es .
+
+###  Schedule Instance (Cronograma)
+<http://w3id.org/def/guia#Schedule_105000107> rdf:type :Schedule ;
+                                                  guide:syllabusDescription "Febrero-Junio"@en ,
+                                                                      "Segundo semestre"@en ;
+                                                  sch:courseCode "2S"^^xsd:string .
+
+###  Schedule Events (Cronograma)
+<http://w3id.org/def/guia#Event_1> rdf:type :ScheduleEvent ;
+                                   guide:eventIndex "1"^^xsd:integer ;
+                                   om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> ,
+                                                                   0.33^^xsd:decimal .
+
+<http://w3id.org/def/guia#Event_6> rdf:type :ScheduleEvent ;
+                                    guide:eventIndex "6"^^xsd:integer ;
+                                    sch:description "Cuestionario Moodle"@es .
+
+###  Evaluation System Instance (Sistema de Evaluación)
+<http://w3id.org/def/guia#EvalSys_105000107> rdf:type :EvaluationSystem ;
+                                                 guide:syllabusDescription "Evaluación progresiva y prueba global."@es .
+
+###  Evaluation Trials (Actividades de evaluación)
+<http://w3id.org/def/guia#Trial_Exam_Partial_1> rdf:type :EvaluationTrial ;
+                                                  sch:trialType "Examen Escrito"@en ,
+                                                            "Primer examen parcial"@es ;
+                                                  guide:syllabusDescription "42.5% de la nota final"^^xsd:string .
+
+<http://w3id.org/def/guia#Trial_Exam_Final> rdf:type :EvaluationTrial ;
+                                             sch:trialType "Examen Escrito"@en ,
+                                                       "Segundo examen parcial y recuperación del primer parcial"@es ;
+                                             guide:syllabusDescription "85% de la nota final"^^xsd:string .
+
+###  Competencies & Learning Results (Competencias)
+<http://w3id.org/def/guia#Comp_C1> rdf:type :Competency ;
+                                    guide:competencyCode "C1"@en ,
+                                                          ""@es ;
+                                    sch:description "Capacidad de resolución de problemas aplicando conocimientos de matemáticas, ciencias e ingeniería." .
+
+<http://w3id.org/def/guia#Comp_C5> rdf:type :Competency ;
+                                    guide:competencyCode "C5"@en ,
+                                                          ""@es ;
+                                    sch:description "Capacidad para el aprendizaje autónomo y la actualización de conocimientos, y reconocimiento de su necesidad en las áreas." .
+
+<http://w3id.org/def/guia#Comp_K1> rdf:type :Competency ;
+                                  guide:competencyCode "K1"@en ,
+                                                        ""@es ;
+                                  sch:description "Comprender y utilizar el lenguaje matemático. Conocer demostraciones de teoremas clásicos." .
+
+###  Links (Ontology Relations)
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasCourse <http://w3id.org/def/guia#C_105000107> ;
+                                                  sch:eventSchedule <http://w3id.org/def/guia#Schedule_105000107> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasSyllabus <http://w3id.org/def/guia#Syll_105000107> ;
+                                                 sch:eventSchedule <http://w3id.org/def/guia#Schedule_105000107> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasEvaluation <http://w3id.org/def/guia#EvalSys_105000107> ;
+                                                 sch:eventSchedule <http://w3id.org/def/guia#Schedule_105000107> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasLearningResult <http://w3id.org/def/guia#Comp_C1> ;
+                                                 sch:eventSchedule <http://w3id.org/def/guia#Schedule_105000107> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasLearningResult <http://w3id.org/def/guia#Comp_C5> ;
+                                                 sch:eventSchedule <http://w3id.org/def/guia#Schedule_105000107> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasLearningResult <http://w3id.org/def/guia#Comp_K1> ;
+                                                 sch:eventSchedule <http://w3id.org/def/guia#Schedule_105000107> .
+
+<http://w3id.org/def/guia#C_105000107> guide:hasCourseInstance <http://w3id.org/def/guia#GA_10ML_105000107> ;
+                                        sch:eventSchedule <http://w3id.org/def/guia#Schedule_105000107> .
+
+<http://w3id.org/def/guia#Syll_105000107> guide:hasItem <http://w3id.org/def/guia#Item_1> ;
+                                           sch:eventSchedule <http://w3id.org/def/guia#Schedule_105000107> .
+
+<http://w3id.org/def/guia#Syll_105000107> guide:hasItem <http://w3id.org/def/guia#Item_2> ;
+                                           sch:eventSchedule <http://w3id.org/def/guia#Schedule_105000107> .
+
+<http://w3id.org/def/guia#Syll_105000107> guide:hasItem <http://w3id.org/def/guia#Item_3> ;
+                                           sch:eventSchedule <http://w3id.org/def/guia#Schedule_105000107> .
+
+<http://w3id.org/def/guia#EvalSys_105000107> guide:hasEvaluationTrial <http://w3id.org/def/guia#Trial_Exam_Partial_1> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#EvalSys_105000107> guide:hasEvaluationTrial <http://w3id.org/def/guia#Trial_Exam_Final> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "N. Biggs: Discrete Mathematics, 2nd ed." ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "J. Gross, J. Yellen: Graph Theory and its Applications." ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "K. H. Rosen: Matemática Discreta y sus aplicaciones." ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "Caballero, R. y otros: Matemática Discreta para Informáticos." ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "Lipschutz, S.: Matemática Discreta." ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "A. Vieites y más: Teoría de Grafos, ejercicios resueltos." ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "G. Agnarsson: Graph theory : modeling, aplications and algorithms." ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "V. K. Balakrishnan: Graph Theory (Schaum's Outline)." ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "G. Chartrand, P. Zhang: Introduction to Graph Theory." ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "W. Kocay, D. Kreher: Graphs, Algorithms and Optimization." ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "Koh Khee Meng, Dong Fengming, Tay Eng Guan: Introduction to Graph Theory." ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "D. Marcus: Graph Theory, A Problem Oriented Approach." ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "J. Matousek, J. Nesetril: Invitación a la matemática discreta." ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "D. B. West: Introduction to Graph Theory." ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "Página web del Departamento" ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "Sitio Moodle de la asignatura" ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "Aula de clase" ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "Sala informática" ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasDidacticResource "Sala trabajo en grupo" ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Lecture_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Exercise_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Lab_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Exam_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Quiz_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Work_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Remote_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#FaceToFace_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Independent_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Group_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Online_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Offline_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Synchronous_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Asynchronous_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Blended_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Hybrid_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Flipped_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Project_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Research_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Tutorial_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Seminar_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Workshop_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Lab_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/guia#Event_6> .
+
+<http://w3id.org/def/guia#GA_10ML_105000107> guide:hasActivity <http://w3id.org/def/guia#Field_Trip_Activity> ;
+                                               sch:eventSchedule <http://w3id.org/def/g

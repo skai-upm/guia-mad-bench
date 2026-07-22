@@ -1,0 +1,162 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+_:courseGuide rdf:type guide:CourseGuide ;
+    sch:name "Design Of Magnetic Components" ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Inglés/Castellano" ;
+    guide:hasSyllabus _:syllabus ;
+    guide:hasCompetency _:compMUEI_CB06, _:compMUEI_CE01, _:compMUEI_CT01 ;
+    guide:hasLearningResult _:lrRA48, _:lrRA49, _:lrRA45 ;
+    guide:hasEvaluation _:evalSystem ;
+    guide:hasDidacticResource _:resWeb, _:resSlides, _:resCAD ;
+    sch:instructor _:lecturerAlberto ;
+    sch:director _:lectradelgado ;
+    guide:otherInformation "The course is organized to provide students with knowledge of the advanced design of high frequency magnetic components used in power converters." .
+
+# Course Instance
+_:course rdf:type guide:Course ;
+    sch:name "Design Of Magnetic Components" ;
+    sch:courseCode 53001640 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 2025 ;
+    guide:semester "Tercer semestre" .
+
+# Degree Instance
+_:degreeMaster rdf:type guide:MasterDegree ;
+    sch:name "Doble Master Universitario Ingenieria Industrial - Electronica Industrial" ;
+    guide:degreeCode "05BI" ;
+    guide:hasCourse _:course .
+
+# University Center Instance
+_:uniCenter rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Industriales" ;
+    guide:offers _:degreeMaster .
+
+# Lecturer Instance
+_:lecturerAlberto rdf:type guide:Lecturer ;
+    sch:name "Alberto Delgado Exposito" ;
+    sch:email "a.delgado@upm.es" ;
+    guide:office "CEI" ;
+    guide:tutorshipsSchedule "L - 14:00 - 16:00, X - 14:00 - 16:00" .
+
+# Syllabus and Items
+_:syllabus rdf:type guide:Syllabus ;
+    guide:hasItem _:item1, _:item2, _:item3 .
+
+_:item1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introduction" .
+
+_:item2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "State of the art in winding technology" .
+
+_:item3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "State of the art in magnetic cores technology" .
+
+# Competencies
+_:compMUEI_CB06 rdf:type guide:Competency ;
+    guide:competencyCode "MUEI.CB06" ;
+    guide:competencyDescription "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales en el desarrollo y/o aplicación de ideas, a menudo en un contexto de investigación" .
+
+_:compMUEI_CE01 rdf:type guide:Competency ;
+    guide:competencyCode "MUEI.CE01" ;
+    guide:competencyDescription "Comprender, diseñar y analizar sistemas y componentes electrónicos en el ámbito de la electrónica industrial." .
+
+_:compMUEI_CT01 rdf:type guide:Competency ;
+    guide:competencyCode "MUEI.CT01" ;
+    guide:competencyDescription "Uso de la lengua inglesa" .
+
+# Learning Results
+_:lrRA48 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA48" ;
+    guide:learningResultDescription "Comprensión de los principios de operación de la conversión de la energía y de las principales tecnologías de semiconductores" .
+
+_:lrRA49 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA49" ;
+    guide:learningResultDescription "Diseñar controladores para convertidores electrónicos de potencia" .
+
+_:lrRA45 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA45" ;
+    guide:learningResultDescription "Conocer y aplicar las técnicas de diseño de fuentes de alimentación para minimizar el consumo de energía" .
+
+# Evaluation System and Trials
+_:evalSystem rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "The student evaluation will be implemented as a global evaluation that will be implemented through an Exam (70%), a practical design (20%), and a Training CAD tool course (10%)." ;
+    guide:hasEvaluationTrial _:trialCAD, _:trialPractical, _:trialExam .
+
+_:trialCAD rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialWeek "4" ;
+    guide:hasScheduleEvent _:eventCAD .
+
+_:trialPractical rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Trabajo Individual" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "16" ;
+    guide:hasScheduleEvent _:eventPractical .
+
+_:trialExam rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "70%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:hasScheduleEvent _:eventExam .
+
+# Schedule Events and Activities
+_:eventCAD rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 4 ;
+    guide:hasActivity _:actCAD .
+
+_:actCAD rdf:type guide:Activity ;
+    guide:activityDescription "Training CAD Tool" ;
+    guide:activityDuration 3.0 ;
+    guide:attendanceType "No presencial" .
+
+_:eventPractical rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 16 ;
+    guide:hasActivity _:actPractical .
+
+_:actPractical rdf:type guide:Activity ;
+    guide:activityDescription "Practical Design case" ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "Presencial" .
+
+_:eventExam rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 17 ;
+    guide:hasActivity _:actExam .
+
+_:actExam rdf:type guide:Activity ;
+    guide:activityDescription "Test with questions about the topics described" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+_:resWeb rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "General magnetic components information" ;
+    guide:bibliographyType "Recursos web" .
+
+_:resSlides rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Slides" ;
+    guide:bibliographyType "Otros" .
+
+_:resCAD rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Comercial CAD tools" ;
+    guide:bibliographyType "Equipamiento" .
+
+# Required Knowledge
+_:reqKnow rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Electromagnetismo" .

@@ -1,0 +1,159 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dct:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dct:license rdf:type owl:AnnotationProperty .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://schema.org/courseSchedule
+sch:courseSchedule rdf:type owl:ObjectProperty ;
+                   rdfs:domain guide:CourseGuide ;
+                   rdfs:range guide:Schedule ;
+                   rdfs:comment "Links a course guide to the schedule that organizes its planned events."@en .
+
+###  https://schema.org/eventSchedule
+sch:eventSchedule rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:Schedule ;
+                  rdfs:range guide:ScheduleEvent ;
+                  rdfs:comment "Links a schedule to one of its schedule events."@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://w3id.org/def/guia#CourseGuide
+guide:CourseGuide rdf:type owl:Class ;
+                  rdfs:subClassOf sch:CourseInstance ;
+                  rdfs:comment "A structured academic document that describes a course, including objectives, contents, methodology, resources, schedule, and evaluation."@en .
+
+###  http://w3id.org/def/guia#Degree
+guide:Degree rdf:type owl:Class ;
+             rdfs:comment "An academic degree programme that structures and groups courses within a formal higher education curriculum."@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://schema.org/name
+sch:name rdf:type owl:DatatypeProperty ;
+         rdfs:range rdf:langString ;
+         rdfs:comment "Provides the name of an entity such as a course, person, or university center."@en .
+
+
+###  http://w3id.org/def/guia#numberOfCredits
+guide:numberOfCredits rdf:type owl:DatatypeProperty ;
+                      rdfs:domain guide:CourseGuide ;
+                      rdfs:range xsd:decimal ;
+                      rdfs:comment "States the number of academic credits assigned to a course guide or course offering."@en .
+
+###  http://w3id.org/def/guia#teachingPeriodMonths
+guide:teachingPeriodMonths rdf:type owl:DatatypeProperty ;
+                           rdfs:domain guide:CourseGuide ;
+                           rdfs:range xsd:string ;
+                           rdfs:comment "Describes the months or span of months during which the course is taught."@en .
+
+###  https://schema.org/inLanguage
+sch:inLanguage rdf:type owl:DatatypeProperty ;
+               rdfs:domain guide:CourseGuide ;
+               rdfs:range xsd:string ;
+               rdfs:comment "Indicates the language in which the course guide or teaching is delivered."@en .
+
+###  https://schema.org/email
+sch:email rdf:type owl:DatatypeProperty ;
+          rdfs:domain guide:Lecturer ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Provides the email address of a person involved in teaching or coordination."@en .
+
+
+#################################################################
+#    Instances
+#################################################################
+
+###  Course Guide Instance (ANX-PR/CL/001-01)
+<http://w3id.org/def/guia#59TL_595024322> rdf:type guide:CourseGuide ;
+                                               sch:name "Electronica Analogica"@en ;
+                                               dct:title "Guía de Aprendizaje - Electronica Analogica"@es ;
+                                               guide:numberOfCredits 6.0 ;
+                                               guide:syllabusDescription <http://w3id.org/def/guia#Syllabus_59TL> .
+
+###  Degree Instance (Grado En Ingenieria Telematica)
+<http://w3id.org/def/guia#59TL> rdf:type guide:Degree ;
+                                 sch:name "Grado en Ingeniería Telecomunicación"@es ;
+                                 dct:title "Plan de Estudios - Grado"@en .
+
+###  University Center Instance (ETS Telecom)
+<http://w3id.org/def/guia#UPM_59> rdf:type guide:UniversityCenter ;
+                                   sch:name "E.T.S. De Ingeniería Y Sist. De Telecom."@es ;
+                                   dct:title "Centro de Enseñanza" .
+
+###  Lecturer Instance (Francisco Jose Arques Orobon)
+<http://w3id.org/def/guia#Lecturer_Arques> rdf:type guide:Lecturer ;
+                                             sch:name "Francisco Jose Arques Orobon"@es ;
+                                             dct:creator <http://purl.org/dc/terms/person/> .
+
+###  Lecturer Instance (Vicente Gonzalez Posadas)
+<http://w3id.org/def/guia#Lecturer_Posadas> rdf:type guide:Lecturer ;
+                                              sch:name "Vicente Gonzalez Posadas"@es ;
+                                             dct:creator <http://purl.org/dc/terms/person/> .
+
+###  Syllabus Instance (Course Content)
+<http://w3id.org/def/guia#Syllabus_59TL> rdf:type guide:Syllabus ;
+                                           sch:name "Temario - Electronica Analogica"@es ;
+                                           dct:title "Contenido Académico" .
+
+###  Syllabus Item Instances (Extracted from Section 5.2)
+<http://w3id.org/def/guia#SyllabusItem_1> rdf:type guide:SyllabusItem ;
+                                            sch:name "Introducción a los componentes electrónicos"@es ;
+                                            guide:itemIndex 1 .
+
+###  Schedule Instance (Course Plan)
+<http://w3id.org/def/guia#Schedule_59TL> rdf:type guide:Schedule ;
+                                           sch:eventSchedule <http://w3id.org/def/guia#Event_Semester_1>, 
+                                                           <http://w3id.org/def/guia#Event_Semester_2>.
+
+###  Schedule Event Instances (Extracted from Section 6.1)
+<http://w3id.org/def/guia#Event_Semester_1> rdf:type guide:ScheduleEvent ;
+                                              sch:eventIndex 1 .
+
+###  Evaluation System Instance
+<http://w3id.org/def/guia#EvalSystem_59TL> rdf:type guide:EvaluationSystem ;
+                                             sch:name "Sistema de Evaluación - Electronica Analogica"@es ;
+                                             dct:title "Criterios y Pruebas"@en .
+
+###  Evaluation Trial Instances (Extracted from Section 7)
+<http://w3id.org/def/guia#EvalTrial_1> rdf:type guide:EvaluationTrial ;
+                                       sch:trialType <https://schema.org/exam>;
+                                       guide:gradePercentage "25%"^^xsd:string .
+
+###  Competency Instances (Extracted from Section 4.1)
+<http://w3id.org/def/guia#Competency_B1> rdf:type guide:Competency ;
+                                           sch:name "Capacidad para la resolución de problemas matemáticos"@es ;
+                                           guide:competencyCode <https://www.eurodesk.eu/en/codes/bachelor-degree-2025/> .
+
+###  Resource Instance (Bibliography)
+<http://w3id.org/def/guia#Resource_Hambley> rdf:type guide:DidacticResource ;
+                                               sch:name "Electrónica"@es ;
+                                               dct:title <https://www.eurodesk.eu/en/codes/bachelor-degree-2025/> .

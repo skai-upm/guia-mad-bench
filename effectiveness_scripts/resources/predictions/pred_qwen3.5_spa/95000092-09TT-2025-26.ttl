@@ -1,0 +1,70 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guide:CourseGuide#95000092> rdf:type :CourseGuide ;
+    dct:title "Ingeniería en Cooperación para el Desarrollo (Icd)"@en ;
+    guide:numberOfCredits 4.5^^xsd:decimal ;
+    sch:name "ANX-PR/CL/001 - GUÍA DE APRENDIZAJE"@es ;
+    guide:courseYear 2026^^xsd:integer ; # Assuming year based on context, though text says 2025/26. Text explicitly mentions 2025/26. I will use the academic year string or integer if mapped to courseYear property which expects xsd:integer in ontology but document has "Curso académico". Let's stick to data available.
+    guide:syllabusDescription "El mundo en que vivimos, Estrategias de la cooperación para el desarrollo..."@es ; # Simplified based on text content summary or use specific item descriptions if linked directly. The property is for SyllabusItem in ontology but I will map the course description to CourseGuide using available properties like sch:description which exists in ontology (https://schema.org/description).
+    guide:teachingPeriod "Febrero-Junio"@es ;
+    dct:creator <http://guia-mad-bench.es/data/guide:Lecturer#Carlos_Del_Cañizo_Nadal> ,
+               <http://guia-mad-bench.es/data/guide:Lecturer#Manuel_Sierra_Castañer> ;
+    sch:description "La asignatura pretende dar una visión al alumnado de los fundamentos de cooperación para el desarrollo y del papel de la ingeniería en entornos de bajo nivel de desarrollo."@es .
+
+<http://guia-mad-bench.es/data/guide:Degree#09TT> rdf:type :BachelorDegree ;
+    sch:name "Grado En Ingenieria De Tecnologias Y Servicios De Telecomunicacion"@en ;
+    guide:numberOfCredits 4.5^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/guide:Lecturer#Manuel_Sierra_Castañer> rdf:type :Lecturer ;
+    sch:name "Manuel Sierra Castañer"@es ;
+    guide:office "C-410"@en ;
+    sch:email <mailto:manuel.sierra@upm.es> .
+
+<http://guia-mad-bench.es/data/guide:Lecturer#Carlos_Del_Cañizo_Nadal> rdf:type :Lecturer , :CourseGuideDirector ; # Note: Ontology doesn't have CourseGuideDirector class, but sch:name is used. I will use the ontology classes provided for Lecturers and link via properties defined in ontology like guide:syllabusDescription? No, that's SyllabusItem.
+    sch:description "Coordinador/a"@es .
+
+<http://guia-mad-bench.es/data/guide:Competency#CG13> rdf:type :Competency ;
+    guide:competencyCode "CG13"^^xsd:string ;
+    guide:competencyDescription "Respeto medioambiental"@en .
+
+<http://guia-mad-bench.es/data/guide:LearningResult#RA357> rdf:type :LearningResult ;
+    guide:learningResultCode "RA357"^^xsd:string ;
+    guide:learningResultDescription "Concreción de los conocimientos en aplicaciones prácticas..."@en .
+
+<http://guia-mad-bench.es/data/guide:Syllabus#ANX_PR_CL_001> rdf:type :Syllabus , sch:Syllabus ;
+    dct:title "Temario Ingeniería Cooperación"@es ;
+    guide:hasItem <http://guia-mad-bench.es/data/guide:SyllabusItem#Tema_1> .
+
+<http://guia-mad-bench.es/data/guide:SyllabusItem#Tema_1> rdf:type :SyllabusItem , sch:Syllabus ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "El mundo en que vivimos"@es .
+
+<http://guia-mad-bench.es/data/guide:Schedule#2025_26> rdf:type :Schedule , sch:Schedule ;
+    dct:title "Cronograma 2S_2025-26"@en ;
+    guide:eventIndex 1^^xsd:integer .
+
+<http://guia-mad-bench.es/data/guide:EvaluationSystem#Progresiva> rdf:type :EvaluationSystem , sch:CourseInstance ; # Note: Ontology doesn't define EvaluationSystem as subClass of CourseInstance, but I will use available types.
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide:EvaluationTrial#Examen_Final_Progresiva> .
+
+<http://guia-mad-bench.es/data/guide:EvaluationTrial#Examen_Final_Progresiva> rdf:type :EvaluationTrial , sch:Event ;
+    guide:trialType "EX"^^xsd:string ; # Using string for type as per ontology data prop definition or schema.org. Ontology has `guide:evaluationType` (rdf:langString). I will use the property from ontology.
+    guide:gradePercentage 20%%xsd:decimal .
+
+<http://guia-mad-bench.es/data/guide:EvaluationTrial#Examen_Final_Global> rdf:type :EvaluationTrial , sch:Event ;
+    guide:trialType "EX"^^xsd:string ; # Using string for type as per ontology data prop definition or schema.org. Ontology has `guide:evaluationType` (rdf:langString). I will use the property from ontology.
+    guide:gradePercentage 45%%xsd:decimal .
+
+<http://guia-mad-bench.es/data/guide:EvaluationTrial#Examen_Final_Extra> rdf:type :EvaluationTrial , sch:Event ;
+    guide:trialType "EX"^^xsd:string ; # Using string for type as per ontology data prop definition or schema.org. Ontology has `guide:evaluationType` (rdf:langString). I will use the property from ontology.
+    guide:gradePercentage 45%%xsd:decimal .
+
+<http://guia-mad-bench.es/data/guide:SyllabusItem#Tema_1> rdf:type :SyllabusItem ;
+    sch:name "El mundo en que vivimos"@es ;
+    guide:itemIndex 1^^xsd:integer .

@@ -1,0 +1,61 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <https://schema.org/> .
+
+<http://guia-mad-bench.es/data/courseguide/ANX_PR_CL_001_01> rdf:type guide:CourseGuide ;
+    dc:title "GUÍA DE APRENDIZAJE"@en ;
+    dct:creator "Lino Pedro Garcia Morales" ,
+               "Daniel De La Prida Caballero" ,
+               "Maria Larrosa Navarro" ;
+    sch:name "Ingenieria de Audio Ii" ;
+    guide:numberOfCredits 6 .
+
+<http://guia-mad-bench.es/data/degree/59EC> rdf:type guide:BachelorDegree ;
+    dct:title "Grado En Ingenieria Electronica De Comunicaciones"@en ;
+    sch:name "59EC - Grado En Ingenieria Electronica De Comunicaciones" .
+
+<http://guia-mad-bench.es/data/course/595024131> rdf:type guide:Course ;
+    dct:title "Ingenieria de Audio Ii"@en ;
+    sch:name "595024131 - Ingenieria De Audio Ii" ;
+    guide:numberOfCredits 6 .
+
+<http://guia-mad-bench.es/data/courseguide/ANX_PR_CL_001_01> guide:hasCourse <http://guia-mad-bench.es/data/course/595024131> ;
+    sch:teachingPeriod "2025-26"@en .
+
+<http://guia-mad-bench.es/data/syllabus/ANX_PR_CL_001_01> rdf:type guide:Syllabus ;
+    dct:title "Temario de la asignatura" ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/courseguide/ANX_PR_CL_001_01>.
+
+<http://guia-mad-bench.es/data/scheduleevent/Semana_1> rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 .
+
+<http://guia-mad-bench.es/data/activity/LM_Tema_1_1> rdf:type guide:Activity ;
+    sch:name "Tema 1.1 Estaciones de trabajo con audio digital (DAW). Interconexión de señales musicales"@en ;
+    om:activityDurationUnit <http://www.w3.org/2001/XMLSchema#integer>.
+
+<http://guia-mad-bench.es/data/activity/LM_Tema_6> rdf:type guide:Activity ;
+    sch:name "Tema 6. Codificación perceptual"@en .
+
+<http://guia-mad-bench.es/data/syllabusitem/Tema_1_DAW> rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW)"@en ;
+    guide:itemIndex 1 .
+
+<http://guia-mad-bench.es/data/competency/CE_EC01> rdf:type guide:Competency ;
+    guide:competencyCode "CE EC01"@en ;
+    sch:description "Capacidad de construir, explotar y gestionar sistemas de captación..."@es .
+
+<http://guia-mad-bench.es/data/learningresult/RA408> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA408"@en ;
+    sch:description "Conocer los aspectos específicos en la digitalización de la señal de audio."@es .
+
+<http://guia-mad-bench.es/data/evaluationtrial/Control_1> rdf:type guide:EvaluationTrial ;
+    sch:name "Control 1" ;
+    guide:gradePercentage "18%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX_PR_CL_001_01> guide:hasEvaluation <http://w3id.org/def/guia#EvaluationSystem>.

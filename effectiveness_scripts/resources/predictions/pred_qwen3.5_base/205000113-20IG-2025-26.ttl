@@ -1,0 +1,176 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Classes (Selected for this instance generation)
+#################################################################
+
+###  http://w3id.org/def/guia#CourseGuide
+guide:CourseGuide rdf:type owl:Class ;
+                  rdfs:subClassOf sch:CourseInstance ;
+                  rdfs:comment "A structured academic document that describes a course, including objectives, contents, methodology, resources, schedule, and evaluation."@en .
+
+###  http://w3id.org/def/guia#Lecturer
+guide:Lecturer rdf:type owl:Class ;
+               rdfs:subClassOf sch:Person ;
+               rdfs:comment "A teaching person responsible for delivering, coordinating, or supporting a course within an academic programme."@en .
+
+###  http://w3id.org/def/guia#Competency
+guide:Competency rdf:type owl:Class ;
+                 rdfs:comment "A capability, skill, or integrated learning outcome that students are expected to develop through the course."@en .
+
+###  http://w3id.org/def/guia#LearningResult
+guide:LearningResult rdf:type owl:Class ;
+                     rdfs:comment "A specific and assessable statement of what a student is expected to know, understand, or be able to do after completing the course."@en .
+
+#################################################################
+#    Object Properties (Selected for this instance generation)
+#################################################################
+
+###  http://w3id.org/def/guia#hasCompetency
+guide:hasCompetency rdf:type owl:ObjectProperty ;
+                    rdfs:domain guide:CourseGuide ;
+                    rdfs:range guide:Competency .
+
+###  https://schema.org/eventSchedule
+sch:eventSchedule rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:Schedule ;
+                  rdfs:range guide:ScheduleEvent .
+
+#################################################################
+#    Data Properties (Selected for this instance generation)
+#################################################################
+
+###  http://w3id.org/def/guia#numberOfCredits
+guide:numberOfCredits rdf:type owl:DatatypeProperty ;
+                      rdfs:domain guide:CourseGuide ;
+                      rdfs:range xsd:decimal .
+
+###  https://schema.org/name
+sch:name rdf:type owl:DatatypeProperty ;
+         rdfs:range rdf:langString .
+
+#################################################################
+#    Instances (Data Extraction)
+#################################################################
+
+<http://guia-mad-bench.es/data/courseGuide/GA_20IG_205000113> a guide:CourseGuide, sch:CourseInstance ;
+     dc:title "Genética Animal"@en ,
+         "ANX-PR/CL/001-01 GUÍA DE APRENDIZJE"@es ;
+     dct:creator <http://guia-mad-bench.es/data/person/Nora_Formoso_Rafferty_Castilla> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_20IG_205000113> guide:numberOfCredits "4"^^xsd:decimal ;
+     sch:description "La mejora genética animal trata de introducir un cambio en las frecuencias de aquellos alelos que condicionan, al menos parcialmente, los caracteres de interés económico."@es .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_20IG_205000113> sch:courseCode "205000113"^^xsd:string ;
+     guide:syllabusDescription "Introducción a la genética animal, Genética de poblaciones, Mejora."@es .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_20IG_205000113> sch:teachingPeriodMonths "Septiembre-Enero" ;
+     guide:syllabusDescription "Tema 1: Introducción a la genética animal, Tema 2: Genética de poblaciones..."@es .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_20IG_205000113> sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GENETICA_ANIMAL_SCH> ;
+     guide:hasLearningResult <http://guia-mad-bench.es/data/learningResult/RA271>, <http://guia-mad-bench.es/data/learningResult/RA82>.
+
+<http://guia-mad-bench.es/data/courseGuide/GA_20IG_205000113> guide:hasCompetency <http://guia-mad-bench.es/data/competency/CB01>, <http://guia-mad-bench.es/data/competency/CB03>.
+
+<http://guia-mad-bench.es/data/courseGuide/GA_20IG_205000113> sch:director <http://guia-mad-bench.es/data/person/Nora_Formoso_Rafferty_Castilla> .
+    
+#################################################################
+#    Degree Instance
+#################################################################
+
+<http://guia-mad-bench.es/data/degree/GRADE_20IG> a guide:BachelorDegree, guide:Degree ;
+     sch:name "Grado En Ingenieria Agricola"@es ;
+     dct:title "20IG - Grado en Ingeniería Agrícola" .
+
+#################################################################
+#    Lecturer Instance
+#################################################################
+
+<http://guia-mad-bench.es/data/person/Nora_Formoso_Rafferty_Castilla> a guide:Lecturer, sch:Person ;
+     sch:name "Nora Formoso-Rafferty Castilla"@es ;
+     sch:email <mailto:nora.formosorafferty@upm.es> .
+
+#################################################################
+#    Competency Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/competency/CB01> a guide:Competency ;
+     dct:title "CB01"@en ;
+     sch:description "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de estudio que parte de la base de la educación secundaria general."@es .
+
+<http://guia-mad-bench.es/data/competency/CB03> a guide:Competency ;
+     dct:title "CB03"@en ;
+     sch:description "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes para emitir juicios que incluyan una reflexión sobre temas relevantes."@es .
+
+#################################################################
+#    Learning Result Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/learningResult/RA271> a guide:LearningResult ;
+     dct:title "RA271"@en ;
+     sch:description "Aplicar los principios de la genética a los procedimientos relacionados con la conservación, selección y mejora de especies de interés ganadero."@es .
+
+#################################################################
+#    Schedule Instance
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/GENETICA_ANIMAL_SCH> a guide:Schedule ;
+     sch:eventSchedule <http://guia-mad-bench.es/data/event/Sem_1_Tema_1>, <http://guia-mad-bench.es/data/event/Tarea_Simulacion>.
+
+#################################################################
+#    Schedule Event Instances (Extraction from Section 6)
+#################################################################
+
+<http://guia-mad-bench.es/data/event/Sem_1_Tema_1> a guide:ScheduleEvent ;
+     sch:eventIndex "1"^^xsd:integer ;
+     rdf:type sch:Event .
+
+<http://guia-mad-bench.es/data/event/Tarea_Simulacion> a guide:ScheduleEvent ;
+     sch:eventIndex "3"^^xsd:integer ;
+     rdf:type sch:Event, guide:EvaluationTrial. # Note: Table 7 links Tarea to Evaluation Trial properties
+    
+#################################################################
+#    Schedule Event Instances (Evaluation Trials) - Section 6 & 7 Mapping
+#################################################################
+
+<http://guia-mad-bench.es/data/event/Tarea_Simulacion> a guide:ScheduleEvent ;
+     sch:eventIndex "3"^^xsd:integer ;
+     rdf:type sch:Event, guide:EvaluationTrial . # Mapped from Section 6/7
+    
+    <http://guia-mad-bench.es/data/event/Sem_1_Tema_2> a guide:ScheduleEvent ;
+     sch:eventIndex "4"^^xsd:integer ;
+     rdf:type sch:Event.
+
+#################################################################
+#    Evaluation Trial Instances (Section 7)
+#################################################################
+
+<http://guia-mad-bench.es/data/evaluationTrial/TAREA_SIMULACION_LECHERO> a guide:EvaluationTrial, guide:SyllabusItem . # Note: Syllabus Item is separate but linked in context. I'll link via properties if needed or just use Trial type for eval data.
+    <http://guia-mad-bench.es/data/evaluationTrial/TAREA_SIMULACION_LECHERO> sch:name "Tarea Simulación Rebaño lechero"@es ;
+     guide:trialType "Trabajo Individual" .
+
+<http://guia-mad-bench.es/data/evaluationTrial/PRUEBA_PROGRESIVA_1> a guide:EvaluationTrial, guide:SyllabusItem ; # Mapped from Section 7 table.
+    sch:name "Prueba Evaluación Progresiva"@es ;
+     guide:trialType "Prueba Telemática" .
+
+<http://guia-mad-bench.es/data/evaluationTrial/PRUEBA_GLOBAL> a guide:EvaluationTrial, guide:SyllabusItem ; # Mapped from Section 7 table.
+    sch:name "Prueba evaluación global"@es ;
+     guide:trialType "Examen Escrito" .
+
+#################################################################
+#    Syllabus Item Instances (Section 5)
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabusItem/Tema_1> a guide:SyllabusItem, sch:Event ; # Mapped from Section 6/7 context.
+     rdf:type guide:ScheduleEvent .
+
+<http://guia-mad-bench.es/data/syllabusItem/Tema_2> a guide:SyllabusItem ;
+     itemIndex "1"^^xsd:integer ;
+     sch:description "Genética de poblaciones, Parentesco y consanguinidad."@es.

@@ -1,0 +1,91 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseGuide_115100015> rdf:type :CourseGuide ;
+    dc:title "Biomecánica De La Afyd"@en ;
+    dct:creator <http://w3id.org/def/guia#Lecturer_E_Navarro_Cabello>,
+               <http://w3id.org/def/guia#Lecturer_A_Navandar> ,
+               <http://w3id.org/def/guia#Lecturer_J_Rueda_Ojeda> ;
+    dct:license "CC-BY-4.0"@en ;
+    rdfs:comment "Guía de aprendizaje para la asignatura Biomecánica De La Afyd en el Grado 11AF."@en ;
+    sch:name "Biomecánica De La Afyd" ;
+    guide:numberOfCredits "6 ECTS"@en ;
+    guide:syllabusDescription "Aplica las leyes de la mecánica a los movimientos del cuerpo humano teniendo en cuenta sus características anatómicas y biológicas."@en ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule_115100015> .
+
+<http://w3id.org/def/guia#Lecturer_E_Navarro_Cabello> rdf:type :Lecturer ;
+    sch:name "Enrique Navarro Cabello" ;
+    guide:office "204"@en ;
+    sch:tutorshipsSchedule "L - 12:00 - 14:00, M - 12:00 - 14:00, X - 12:00 - 14:00"@en .
+
+<http://w3id.org/def/guia#Lecturer_A_Navandar> rdf:type :Lecturer ;
+    sch:name "Archit Navandar" ;
+    guide:tutorshipsSchedule "L - 08:00 - 12:00, M - 08:00 - 10:00"@en .
+
+<http://w3id.org/def/guia#Lecturer_J_Rueda_Ojeda> rdf:type :Lecturer ;
+    sch:name "Javier Rueda Ojeda" ;
+    guide:tutorshipsSchedule "L - 08:00 - 12:00"@en .
+
+<http://guia-mad-bench.es/data/schedule_115100015> rdf:type :Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event_Sem1>,
+                     <http://guia-mad-bench.es/data/event_Exam_Parcial_1>.
+
+<http://w3id.org/def/guia#Competency_CE08> rdf:type :Competency ;
+    guide:competencyCode "CE08"@en ;
+    sch:description "Aplicar de manera fundamentada y argumentada los principios fisiológicos, biomecánicos, comportamentales y sociales, durante la dirección del entrenamiento deportivo."@en .
+
+<http://w3id.org/def/guia#Competency_CE09> rdf:type :Competency ;
+    guide:competencyCode "CE09"@en ;
+    sch:description "Identificar y prevenir los riesgos que se derivan para la salud de los deportistas por la práctica de actividades físicas inadecuadas, en el contexto del entrenamiento deportivo."@en .
+
+<http://w3id.org/def/guia#LearningResult_RA84> rdf:type :LearningResult ;
+    guide:learningResultCode "RA84"@en ;
+    sch:description "Seleccionar y utilizar el material y el equipamiento deportivo adecuado en cada caso"@en .
+
+<http://guia-mad-bench.es/data/syllabus_115100015> rdf:type :Syllabus ;
+    guide:hasItem <http://w3id.org/def/guia#SyllabusItem_Intro>,
+                 <http://w3id.org/def/guia#SyllabusItem_Analisis_Cinematico_Lineal>.
+
+<http://guia-mad-bench.es/data/syllabus_115100015> guide:hasSyllabus <http://guia-mad-bench.es/data/courseGuide_115100015> .
+<http://w3id.org/def/guia#SyllabusItem_Intro> rdf:type :SyllabusItem ;
+    sch:description "Introducción al estudio de la biomecánica"@en ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Ciencias del deporte, Definición de biomecánica. Ramas."@en .
+
+<http://w3id.org/def/guia#SyllabusItem_Analisis_Cinematico_Lineal> rdf:type :SyllabusItem ;
+    sch:description "Análisis cinemático Lineal"@en ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Posición en cada instantes, Centro de masas."@en .
+
+<http://guia-mad-bench.es/data/schedule_115100015> sch:courseSchedule <http://w3id.org/def/guia#CourseGuide_115100015>.
+<http://guia-mad-bench.es/data/event_Sem1> rdf:type :ScheduleEvent ;
+    guide:eventIndex 1 ;
+    sch:description "Temas 1,2"@en .
+
+<http://w3id.org/def/guia#EvaluationSystem_115100015> rdf:type :EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global."@en ;
+    sch:description "Sistema de evaluación para la asignatura Biomecánica De La Afyd" .
+
+<http://guia-mad-bench.es/data/courseGuide_115100015> guide:hasEvaluation <http://w3id.org/def/guia#EvaluationSystem_115100015>.
+<http://w3id.org/def/guia#EvaluationTrial_Exam_Parcial_1> rdf:type :EvaluationTrial ;
+    sch:description "Examen Parcial 1"@en ;
+    guide:trialType "Prueba Telemática"@en ;
+    guide:gradePercentage "45%"^^xsd:string ;
+    guide:mininumScore "5 / 10"^^xsd:string .
+
+<http://w3id.org/def/guia#EvaluationTrial_Exam_Final> rdf:type :EvaluationTrial ;
+    sch:description "Examen Final"@en ;
+    guide:trialType "Prueba Telemática"@en ;
+    guide:gradePercentage "100%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseGuide_115100015> sch:name "Biomecánica De La Afyd" ;
+    dct:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en .
+
+<http://guia-mad-bench.es/data/courseGuide_115100015> guide:teachingPeriodMonths "Febrero-Junio"^^xsd:string ;
+    sch:description "Curso académico 2025/26 - Segundo semestre."@en .

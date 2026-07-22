@@ -1,0 +1,202 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Structure
+guide:course_43000554 a guide:Course ;
+    sch:name "Experimental Structural Analysis" ;
+    guide:courseType "Optional/elective" ;
+    sch:hasCourseInstance guide:course_guide_43000554 .
+
+guide:degree_04AI a guide:MasterDegree ;
+    sch:name "04AI - Doble Master Universitario En Iccp Y En Sistemas De Ingenieria Civil" ;
+    guide:hasCourse guide:course_43000554 .
+
+guide:center_ets_caminos a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ing. de Caminos Canales y P." ;
+    guide:offers guide:degree_04AI .
+
+# Course Guide Instance
+guide:course_guide_43000554 a guide:CourseGuide ;
+    sch:name "Experimental Structural Analysis Learning Guide" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:numberOfCredits 4.5 ;
+    sch:inLanguage "English" ;
+    guide:hasSyllabus guide:syllabus_43000554 ;
+    guide:hasCompetency guide:comp_MICCPCE38, guide:comp_MICCPCGP11, guide:comp_MICCPCT01, guide:comp_MICCPCT03, guide:comp_MICCPCT08 ;
+    guide:hasLearningResult guide:lr_RA121, guide:lr_RA122 ;
+    guide:hasEvaluation guide:eval_system_43000554 ;
+    sch:instructor guide:lecturer_carlos_martin, guide:lecturer_antonio_madrid, guide:lecturer_ivan_munoz, guide:lecturer_carlos_zanuy, guide:lecturer_jose_soria, guide:lecturer_gonzalo_sanz ;
+    guide:hasDidacticResource guide:res_moodle, guide:res_book_instrumentacion, guide:res_book_modal, guide:res_book_analisis_experimental, guide:res_lab_structures .
+
+# Faculty Members
+guide:lecturer_carlos_martin a guide:Lecturer ;
+    sch:name "Carlos Martin De La Concha Renedo" ;
+    sch:email "carlos.martindelaconcha@upm.es" ;
+    guide:office "Lab. Structures" ;
+    guide:tutorshipsSchedule "Tu - 11:00 - 12:00, Th - 11:00 - 12:00" .
+
+guide:lecturer_antonio_madrid a guide:Lecturer ;
+    sch:name "Antonio Jose Madrid Ramos" ;
+    sch:email "antoniojose.madrid@upm.es" ;
+    guide:office "Lab. Structures" ;
+    guide:tutorshipsSchedule "Th - 10:30 - 13:30, F - 16:00 - 19:00" .
+
+guide:lecturer_ivan_munoz a guide:Lecturer ;
+    sch:name "Ivan Muñoz Diaz" ;
+    sch:email "ivan.munoz@upm.es" ;
+    guide:office "Lab. Structures" ;
+    guide:tutorshipsSchedule "W - 11:00 - 14:00, Th - 11:00 - 14:00" .
+
+guide:lecturer_carlos_zanuy a guide:Lecturer ;
+    sch:name "Carlos Zanuy Sanchez" ;
+    sch:email "carlos.zanuy@upm.es" ;
+    guide:office "Lab. Structures" ;
+    guide:tutorshipsSchedule "Th - 11:00 - 14:00, F - 11:00 - 14:00" .
+
+guide:lecturer_jose_soria a guide:Lecturer ;
+    sch:name "Jose Manuel Soria Herrera" ;
+    sch:email "jm.soria@upm.es" ;
+    guide:office "9th Floor" ;
+    guide:tutorshipsSchedule "Tu - 12:00 - 14:00, W - 12:00 - 14:00, Th - 12:00 - 14:00" .
+
+guide:lecturer_gonzalo_sanz a guide:Lectraguer ;
+    sch:name "Gonzalo Sanz-Diez De Ulzurrun Casals" ;
+    sch:email "g.ulzurrun@upm.es" ;
+    guide:office "Lab. Structures" ;
+    guide:tutorshipsSchedule "Th - 11:00 - 16:00" .
+
+# Competencies
+guide:comp_MICCPCE38 a guide:Competency ;
+    guide:competencyCode "MICCPCE38" ;
+    guide:competencyDescription "Capacidad para integrar y aplicar los conocimientos técnicos en asesoría, análisis, diseño y modelización físico-matemática en ingeniería estructural." .
+
+guide:comp_MICCPCGP11 a guide:Competency ;
+    guide:competencyCode "MICCPCGP11" ;
+    guide:competencyDescription "Capacidad para el proyecto, ejecución e inspección de estructuras (puentes, edificaciones, etc.), de obras de cimentación y de obras subterráneas de uso civil (túneles, aparcamientos), y el diagnóstico sobre su integridad." .
+
+guide:comp_MICCPCT01 a guide:Competency ;
+    guide:competencyCode "MICCPCT01" ;
+    guide:competencyDescription "Capacidad de preparar y presentar comunicaciones orales, escritas y gráficas, estructurada y argumentadamente." .
+
+guide:comp_MICCPCT03 a guide:Competency ;
+    guide:competencyCode "MICCPCT03" ;
+    guide:competencyDescription "Capacidad de comunicación técnica oral y escrita en lengua inglesa." .
+
+guide:comp_MICCPCT08 a guide:Competency ;
+    guide:competencyCode "MICPCCT08" ;
+    guide:competencyDescription "Capacidad de diseñar, analizar e interpretar experimentos relevantes en ingeniería civil." .
+
+# Learning Results
+guide:lr_RA121 a guide:LearningResult ;
+    guide:learningResultCode "RA121 - SO1" ;
+    guide:learningResultDescription "The student knows the fundamentals and applications of the most relevant transducers for instrumentation of structures." .
+
+guide:lr_RA122 a guide:LearningResult ;
+    guide:learningResultCode "RA122" ;
+    guide:learningResultDescription "The student acquires the fundamentals of static and dynamic experimental techniques in structural engineering, and understands the structural implications of taken measurements." .
+
+# Syllabus
+guide:syllabus_43000554 a guide:Syllabus ;
+    guide:hasItem guide:item_intro, guide:item_signal, guide:item_strain, guide:item_load, guide:item_displacement, guide:item_acceleration, guide:item_bridges, guide:item_buildings, guide:item_frequency, guide:item_equipment, guide:item_monitoring, guide:item_modal .
+
+guide:item_intro a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introduction to instrumentation" .
+
+guide:item_signal a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Signal conditioning" .
+
+guide:item_strain a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Strain measurement" .
+
+guide:item_load a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Load measurement" .
+
+guide:item_displacement a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Displacement measurement" .
+
+guide:item_acceleration a guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Acceleration measurement" .
+
+guide:item_bridges a guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Load tests in bridges" .
+
+guide:item_buildings a guide:SyllableItem ;
+    guide:itemIndex 8 ;
+    guide:syllabusDescription "Load tests in buildings" .
+
+# Schedule and Activities
+guide:schedule_43000554 a guide:Schedule ;
+    sch:eventSchedule guide:event_week1, guide:event_week2, guide:event_week4, guide:event_week17 .
+
+guide:event_week1 a guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity guide:act_unit1_lecture .
+
+guide:act_unit1_lecture a guide:Activity ;
+    guide:activityDescription "Unit 1 Lecture" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "Lecture" .
+
+guide:event_week2 a guide:ScheduleEvent ;
+    guide:eventWeek "2" ;
+    guide:hasActivity guide:act_unit2_lecture, guide:act_unit2_problem .
+
+guide:act_unit2_lecture a guide:Activity ;
+    guide:activityDescription "Unit 2 Lecture" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lecture" .
+
+guide:act_unit2_problem a guide:Activity ;
+    guide:activityDescription "Unit 2 Problem-solving class" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Problem-solving class" .
+
+# Evaluation System
+guide:eval_system_43000554 a guide:EvaluationSystem ;
+    guide:evaluationDescription "Continuous assessment and final exam." ;
+    guide:hasEvaluationTrial guide:trial_tasks, guide:trial_final_exam .
+
+guide:trial_tasks a guide:EvaluationTrial ;
+    guide:trialType "Assignment" ;
+    guide:evaluationType "Progressive assessment" ;
+    guide:gradePercentage "5.7%" ;
+    guide:trialMode "Not Presential" ;
+    guide:evaluationDescription "Resolution and submission of assigned tasks (exercises and case-studies)." .
+
+guide:trial_final_exam a guide:EvaluationTrial ;
+    guide:trialType "Written test" ;
+    guide:evaluationType "Final exam" ;
+    guide:gradePercentage "60.1%" ;
+    guide:trialMode "Face-to-face" ;
+    guide:evaluationDescription "Final examination consisting of applied theory and practical exercises." .
+
+# Didactic Resources
+guide:res_moodle a guide:DidacticResource ;
+    sch:name "Moodle platform" ;
+    guide:bibliographyType "Web resource" .
+
+guide:res_book_instrumentacion a guide:DidacticResource ;
+    guide:bibliographyTitle "Instrumentación aplicada a la ingeniería" ;
+    guide:bibliographyType "Bibliography" .
+
+guide:res_book_modal a guide:DidacticResource ;
+    guide:bibliographyTitle "Modal Testing: theory, practice and Application" ;
+    guide:bibliographyType "Bibliography" .
+
+guide:res_book_analisis_experimental a guide:DidacticResource ;
+    guide:bibliographyTitle "Análisis experimental de estructuras" ;
+    guide:bibliographyType "Bibliography" .
+
+guide:res_lab_structures a guide:DidacticResource ;
+    sch:name "Laboratory of Structures" ;
+    guide:bibliographyType "Equipment" .

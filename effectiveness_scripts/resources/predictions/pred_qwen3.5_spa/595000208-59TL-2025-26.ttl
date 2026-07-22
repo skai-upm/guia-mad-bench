@@ -1,0 +1,116 @@
+@prefix data: <http://guia-mad-bench.es/data/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+data:BachelorDegree rdf:type data:BachelorDegree ;
+    rdfs:label "Grado En Ingenieria Telematica"@en ;
+    data:numberOfCredits 6^^xsd:decimal ;
+    data:courseCode 59TL^^xsd:string .
+
+data:ElectronicaI rdf:type data:Course ;
+    rdfs:subClassOf data:BachelorDegree ;
+    rdfs:label "Electronica I"@en ;
+    data:numberOfCredits 6^^xsd:decimal ;
+    data:courseCode 595000208^^xsd:string .
+
+data:ANX_PR_CL_001_01 rdf:type data:CourseGuide ;
+    rdfs:label "Guía de Aprendizaje - Electronica I"@en ;
+    dc:title "Electronica I" ;
+    dct:creator "Pedro Cobos Arribas", "Rita Hogan Teves De Almeida" ;
+    guide:numberOfCredits 6^^xsd:decimal ;
+    sch:name "595000208 - Electronica I"@en .
+
+data:BachelorDegree rdf:type data:BachelorDegree ;
+    rdfs:subClassOf owl:Thing ;
+    dct:title "Grado En Ingenieria Telematica" ;
+    guide:hasCourseInstance data:ElectronicaI .
+
+# Lecturers
+data:Lecturer_PedroCobos rdf:type data:Lecturer ;
+    sch:name "Pedro Cobos Arribas"@en ;
+    guide:office "A4210"@en ;
+    sch:email <mailto:pedro.cobos@upm.es> .
+
+data:Lecturer_AgustinRodriguez rdf:type data:Lecturer ;
+    sch:name "Agustin Rodriguez Herrero"@en ;
+    guide:office "A4214"@en ;
+    sch:email <mailto:agustin.rodriguez@upm.es> .
+
+data:Lecturer_RitaHogan rdf:type data:Lecturer ;
+    rdfs:subClassOf data:Lecturer_PedroCobos ; # Coordinator role implied by text context (Coordinador/a)
+    sch:name "Rita Hogan Teves De Almeida"@en ;
+    guide:office "A4202"@en ;
+    sch:email <mailto:rita.hogan@upm.es> .
+
+data:Lecturer_FranciscoMartinez rdf:type data:Lecturer ;
+    sch:name "Francisco Martinez Moreno"@en ;
+    guide:office "A4210"@en ;
+    sch:email <mailto:francisco.martinezm@upm.e>s> .
+
+# Competencies
+data:Competency_CE_B4 rdf:type data:Competency ;
+    rdfs:label "CE B4 - Comprensión y dominio de los conceptos básicos..."@en ;
+    guide:competencyCode "CE B4"^^xsd:string ;
+    sch:description "Comprensión y dominio de los conceptos básicos de sistemas lineales y las funciones y transformadas relacionadas, teoría de circuitos eléctricos, circuitos electrónicos, principio físico de los semiconductores y familias lógicas, dispositivos electrónicos y fotónicos, tecnología de materiales y su aplicación para la resolución de problemas propios de la ingeniería." .
+
+data:Competency_CE_TEL12 rdf:type data:Competency ;
+    guide:competencyCode "CE TEL12"^^xsd:string ;
+    sch:description "Capacidad de utilizar distintas fuentes de energía y en especial la solar fotovoltaica y térmica, así como los fundamentos de la electrotecnia y de la electrónica de potencia." .
+
+data:Competency_CG_02 rdf:type data:Competency ;
+    guide:competencyCode "CG 02"^^xsd:string ;
+    sch:description "Capacidad de búsqueda y selección de información, de razonamiento crítico y de elaboración y defensa de argumentos dentro del área." .
+
+# Learning Results
+data:LearningResult_RA68 rdf:type data:LearningResult ;
+    guide:learningResultCode "RA68"^^xsd:string ;
+    sch:description "Entender el diagrama de bloques de sistemas electrónicos sencillos aplicados en el sector de las telecomunicaciones" .
+
+data:LearningResult_RA70 rdf:type data:LearningResult ;
+    guide:learningResultCode "RA70"^^xsd:string ;
+    sch:description "Entender el modelo y las propiedades básicas de los amplificadores y su implementación con amplificadores operacionales ideales." .
+
+# Syllabus Items (Simplified)
+data:SyllabusItem_1 rdf:type data:SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    sch:description "Introducción a los sistemas electrónicos" .
+
+data:SyllabusItem_2 rdf:type data:SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer ;
+    sch:description "Componentes y dispositivos electrónicos" .
+
+# Schedule Events (Sample)
+data:ScheduleEvent_Sem1 rdf:type data:ScheduleEvent ;
+    rdfs:subClassOf owl:Thing ;
+    guide:eventWeek "Semestre 1"@en ;
+    sch:name "Presentación de la asignatura - Señales" ;
+    guide:activityDurationUnit om:Hour .
+
+data:EvaluationSystem_ElectronicaI rdf:type data:EvaluationSystem ;
+    rdfs:label "Sistema de Evaluación Electronica I"@en ;
+    guide:evaluationDescription "Evaluación progresiva con examen global y extraordinario."@en .
+
+# Evaluation Trials (Sample)
+data:Trial_ExamenGlobalTeoria rdf:type data:EvaluationTrial ;
+    sch:name "Examen Global de Teoría" ;
+    guide:trialType "EX"@en ; # Examen Escrito
+    guide:gradePercentage 60^^xsd:string ; # Weight from formula NCO=...+0.6*NExGT
+    rdfs:comment "Actividad obligatoria y recuperable en convocatoria extraordinaria."@en .
+
+data:Trial_ExamenParcial1 rdf:type data:EvaluationTrial ;
+    sch:name "Examen Parcial 1" ;
+    guide:trialType "EX"@en ; # Examen Escrito
+    guide:gradePercentage 20^^xsd:string ;
+    rdfs:comment "Actividad no obligatoria y recuperable."@en .
+
+# Links to Course Guide
+data:ElectronicaI rdf:type data:CourseGuide ;
+    sch:name "Electronica I" ;
+    dct:title "595000208 - Electronica I"@en ;
+    guide:numberOfCredits 6^^xsd:decimal ;
+    rdfs:subClassOf owl:Thing .
+
+data:ElectronicaI rdf:type data:Syllabus ; # Simplified mapping for content structure
+    sch:description "Temario de la asignatura" ;
+    guide:syllabusDescription "Señales, Componentes, Subsistemas integrados."@en .

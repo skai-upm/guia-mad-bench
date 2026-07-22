@@ -1,0 +1,164 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+:Master_Ingenieria_Diseno_Industrial rdf:type guide:MasterDegree ;
+    sch:name "Master Universitario En Ingenieria En Diseño Industrial" ;
+    guide:degreeCode "56AC" .
+
+:ETS_Ingenieria_Diseno_Industrial rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Diseño Industrial" ;
+    guide:offers :Master_Ingenieria_Diseno_Industrial .
+
+# Course
+:Prototipado rdf:type guide:Course ;
+    sch:name "Prototipado" ;
+    sch:courseCode 563000066 ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 2025 ;
+    guide:semester "Segundo semestre" .
+
+# Course Guide
+:Prototipado_Guide rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance :Prototipado ;
+    sch:name "Guía de Aprendizaje - Prototipado" ;
+    sch:instructor :Roberto_Damato, :Manuel_Enrique_Islan_Marcos, :Fernando_Blaya_Haro, :Jaime_Solleiro_Rodriguez ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :Prototipado_Syllabus ;
+    guide:hasLearningResult :RA45, :RA47, :RA44, :RA46, :RA48, :RA49 ;
+    guide:hasCompetency :CE1, :CE4, :CE5, :CE8, :CG1, :CG2, :CG3, :CG4, :CG5, :CG7, :CT2, :CT3, :CT5, :CT7 ;
+    guide:hasEvaluation :Prototipado_EvalSystem ;
+    sch:courseSchedule :Prototipado_Schedule ;
+    guide:hasDidacticResource :Printer3D_FDM, :Tools_Assembly, :Printer_Ultimaker_5S ;
+    guide:otherInformation "La asignatura se relaciona con los ODS1, ODS3, ODS8, ODS9 Y ODS17. Las tutorías individuales se podrán realizar por vía telemática." .
+
+# Lecturers
+:Roberto_Damato rdf:type guide:Lecturer ;
+    sch:name "Roberto D'amato" ;
+    sch:email "r.damato@upm.es" ;
+    guide:office "A-309" ;
+    guide:tutorshipsSchedule "Sin horario. Ver tablón tutorías" .
+
+:Manuel_Enrique_Islan_Marcos rdf:type guide:Lecturer ;
+    sch:name "Manuel Enrique Islam Marcos" ;
+    sch:email "manuel.islan.marcos@upm.es" ;
+    guide:office "A-309" ;
+    guide:tutorshipsSchedule "Sin horario. Ver tablón tutorías" .
+
+:Fernando_Blaya_Haro rdf:type guide:Lecturer ;
+    sch:name "Fernando Blaya Haro" ;
+    sch:email "fernando.blaya@upm.es" ;
+    guide:office "A-309" ;
+    guide:tutorshipsSchedule "Sin horario. Ver tablón tutorías" .
+
+:Jaime_Solleiro_Rodriguez rdf:type guide:Lecturer ;
+    sch:name "Jaime Solleiro Rodriguez" ;
+    sch:email "j.solleiro@upm.es" ;
+    guide:office "A-309" ;
+    guide:tutorshipsSchedule "Sin horario. Ver tablón tutorías" .
+
+# Competencies
+:CE1 rdf:type guide:Competency ; guide:competencyCode "CE1" ; guide:competencyDescription "Capacidad de diseñar, innovar y gestionar nuevos productos teniendo en cuenta criterios de calidad y medioambientales" .
+:CE4 rdf:type guide:Competency ; guide:competencyCode "CE4" ; guide:competencyDescription "Capacidad de manejar e integrar las herramientas de representación, simulación y cálculo CAD-CAM-CAE para una correcta definición del producto diseñado" .
+:CE5 rdf:type guide:Competency ; guide:competencyCode "CE5" ; guide:competencyDescription "Capacidad para seleccionar los materiales adecuados para un correcto diseño de producto" .
+:CE8 rdf:type guide:Competency ; guide:competencyCode "CE8" ; guide:competencyDescription "Capacidad para aplicar herramientas de visualización y generación virtual de productos" .
+:CG1 rdf:type guide:Competency ; guide:competencyCode "CG1" ; guide:competencyDescription "Capacidad para fomentar, en contextos académicos y profesionales, el avance tecnológico, social o cultural dentro de una sociedad basada en el conocimiento" .
+:CG2 rdf:type guide:Competency ; guide:competencyCode "CG2" ; guide:competencyDescription "Capacidad para integrar aspectos estéticos en los productos de diseño sin perder la funcionalidad" .
+:CG3 rdf:type guide:Competency ; guide:competencyCode "CG3" ; guide:competencyDescription "Conocimiento de las herramientas de visualización y generación de productos de<0xC2>modelo" .
+:CG4 rdf:type guide:Competency ; guide:competencyCode "CG4" ; guide:competencyDescription "Conocimiento de los procesos industriales para ser capaz de decidir sobre los criterios adecuados en la fabricación de productos" .
+:CG5 rdf:type guide:Competency ; guide:competencyCode "CG5" ; guide:competencyDescription "Capacidad de integrar herramientas de representación en los procesos de fabricación" .
+:CG7 rdf:type guide:Competency ; guide:competencyCode "CG7" ; guide:competencyDescription "Capacidad de integrar metodologías, tecnologías, procesos y herramientas en el campo de la ingeniería y el diseño industrial" .
+:CT2 rdf:type guide:Competency ; guide:competencyCode "CT2" ; guide:competencyDescription "Ser capaz de negociar y trabajar en equipo así como de manera autónoma en un contexto internacional, multidisciplinar y multicultura" .
+:CT3 rdf:type guide:Competency ; guide:competencyCode "CT3" ; guide:competencyDescription "Ser capaz de organizar y planificar el tiempo de trabajo propio o de un equipo de trabajo" .
+:CT5 rdf:type guide:Competency ; guide:competencyCode "CT5" ; guide:competencyDescription "Capacidad para desarrollar y ejercitar la creatividad" .
+:CT7 rdf:type guide:Competency ; guide:competencyCode "CT7"	; guide:competencyDescription "Capacidad para comunicarse en lengua inglesa en un entorno profesional" .
+
+# Learning Results
+:RA45 rdf:type guide:LearningResult ; guide:learningResultCode "RA45" ; guide:learningResultDescription "Gestionar y procesar la información generada desde diferentes herramientas para realizar proyectos de prototipado rápido." .
+:RA47 rdf:type guide:LearningResult ; guide:learningResultCode "RA47" ; guide:learningResultDescription "Realizar series cortas mediante técnicas de fabricación rápida." .
+:RA44 rdf:type guide:LearningResult ; guide:learningResultCode "RA44" ; guide:learningResultDescription "Conocer los distintos tipos y técnicas de prototipado rápido, sus características, requisitos técnicos, ventajas y limitaciones." .
+:RA46 rdf:type guide:LearningResult ; guide:learningResultCode "RA46" ; guide:learningResultDescription "Materializar formas y conceptos obtenidos a partir de modelos virtuales." .
+:RA48 rdf:type guide:LearningResult ; guide:learningResultCode "RA48" ; guide:learningResultDescription "Motivar la búsqueda y producción de soluciones, tanto formales como técnicas, basadas en la experiencia proporcionada por el diseño rápido de prototipos." .
+:RA49 rdf:type guide:LearningResult ; guide:learningResultCode "RA49" ; guide:learningResultDescription "Conocer las distintas técnicas para el tratamiento final o acabado de un prototipo." .
+
+# Syllabus
+:Prototipado_Syllabus rdf:type guide:Syllabus ;
+    guide:hasItem :Topic1, :Topic2, :Topic3, :Topic4, :Topic5 .
+
+:Topic1 rdf:type guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "Introducción" .
+:Topic2 rdf:type guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "Técnicas de Prototipado Rápido (Fundamentos, Corte/Laminado, SLA, UV, FDM, SLS, etc.)" .
+:Topic3 rdf:type guide:SyllabusItem ; guide:itemIndex 3 ; guide:syllabusDescription "Selección de tecnologías de prototipado rápido. Materiales" .
+:Topic4 rdf:type guide:SyllabusItem ; guide:itemIndex 4 ; guide:syllabusDescription "Proceso de Prototipado Rápido (CAD, Optimización topológica)" .
+:Topic5 rdf:type guide:SyllabusItem ; guide:itemIndex 5 ; guide:syllabusDescription "Proceso de Slicing y Prototipado (Software, Parámetros, STL, Postproceso)" .
+
+# Schedule and Activities
+:Prototipado_Schedule rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week1, :Event_Week2, :Event_Week3, :Event_Week4, :Event_Week5, :Event_Week6, :Event_Week7, :Event_Week8, :Event_Week9, :Event_Week10, :Event_Week11, :Event_Week12, :Event_Week13 .
+
+:Event_Week1 rdf:type guide:ScheduleEvent ; guide:eventWeek "1" ; guide:hasActivity :Act_LM_Topic1 .
+:Act_LM_Topic1 rdf:type guide:Activity ; guide:activityDescription "Tema 1" ; guide:activityDuration 3.0 ; guide:activityFormat "Lección Magistral" ; guide:attendanceType "Presencial" .
+
+:Event_Week2 rdf:type guide:ScheduleEvent ; guide:eventWeek "2" ; guide:hasActivity :Act_LM_Topic2, :Act_PL_Topic2 .
+:Act_LM_Topic2 rdf:type guide:Activity ; guide:activityDescription "Tema 2" ; guide:activityDuration 1.5 ; guide:activityFormat "Lección Magistral" ; guide:attendanceType "Presencial" .
+:Act_PL_Topic2 rdf:type guide:Activity ; guide:activityDescription "Tema 2" ; guide:activityDuration 1.5 ; guide:activityFormat "Prácticas de Laboratorio" ; guide:attendanceType "Presencial" .
+
+:Event_Week3 rdf:type guide:ScheduleEvent ; guide:eventWeek "3" ; guide:hasActivity :Act_PL_Topic2_B .
+:Act_PL_Topic2_B rdf:type guide:Activity ; guide:activityDescription "Tema 2" ; guide:activityDuration 3.0 ; guide:activityFormat "Prácticas de Laboratorio" ; guide:attendanceType "Presencial" .
+
+:Event_Week4 rdf:type guide:ScheduleEvent ; guide:eventWeek "4" ; guide:hasActivity :Act_LM_Topic3 .
+:Act_LM_Topic3 rdf:type guide:Activity ; guide:activityDescription "Tema 3" ; guide:activityDuration 3.0 ; guide:activityFormat "Lección Magistral" ; guide:attendanceType "Presencial" .
+
+:Event_Week5 rdf:type guide:ScheduleEvent ; guide:eventWeek "5" ; guide:hasActivity :Act_PL_Topic3_Opt .
+:Act_PL_Topic3_Opt rdf:type guide:Activity ; guide:activityDescription "Tema 3: Optimización topológica" ; guide:activityDuration 3.0 ; guide:activityFormat "Prácticas de Laboratorio" ; guide:attendanceType "Presencial" .
+
+# Evaluation System
+:Prototipado_EvalSystem rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y prueba global." ;
+    guide:hasEvaluationTrial :Trial_Assignment, :Trial_Global .
+
+:Trial_Assignment rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "12" ;
+    guide:trialDescription "Presentación y Entrega de Trabajos Personal o de Grupo" ;
+    guide:involvesCompetency :CG1, :CG3, :CG7, :CG2, :CG4, :CG5, :CT2, :CT3, :CT5, :CT7, :CE1, :CE4, :CE8, :CE5 .
+
+:Trial_Global rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo Individual" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "13" ;
+    guide:trialDescription "Prueba global" ;
+    guide:involvesCompetency :CG1, :CG3, :CG7, :CG2, :CG4, :CG5, :CT2, :CT3, :CT5, :CT7, :CE1, :CE4, :CE8, :CE5 .
+
+# Didactic Resources
+:Printer3D_FDM rdf:type guide:DidacticResource ;
+    sch:name "Impresora 3D FDM, DLP" ;
+    guide:bibliographyType "Equipamiento" .
+
+:Tools_Assembly rdf:type guide:DidacticResource ;
+    sch:name "Herramientas" ;
+    guide:bibliographyDescription "Herramientas de montaje y ajuste de prototipos" ;
+    guide:bibliographyType "Equipamiento" .
+
+:Printer_Ultimaker_5S rdf:type guide:DidacticResource ;
+    sch:name "Impresora Ultimaker 5S" ;
+    guide:bibliographyDescription "impresora FFF doble material" ;
+    guide:bibliographyType "Equipamiento" .

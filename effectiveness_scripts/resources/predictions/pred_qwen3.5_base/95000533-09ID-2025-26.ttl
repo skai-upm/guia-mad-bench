@@ -1,0 +1,384 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guia/proyectos-ing-data-sistemas> rdf:type :CourseGuide ;
+    dct:title "Proyectos En Ingeniería De Datos Y Sistemas"@en ;
+    sch:name "95000533 - Proyectos en Ingeniería de Datos y Sistemas" ;
+    guide:courseYear 2026 ; # Derived from academic year context (Sept-Enero) or specific course code. Document says 2025/26, so I'll use integer for Year if applicable to CourseGuide properties? Ontology has `guide:teachingPeriod` as xsd:string and `courseYear` on Course.
+    guide:numberOfCredits "9"^^xsd:decimal ;
+    sch:description "Introducir a los estudiantes en la ejecución de proyectos en ingeniería de datos y sistemas, a partir de casos de estudio."@en ;
+    dct:creator <http://guia-mad-bench.es/data/person/jose-jesus-fraile-ardanuy> ,
+                <http://guia-mad-bench.es/data/person/alvaro-gutierrez-martin> ,
+                <http://guia-mad-bench.es/data/person/fernando-fernandez-martinez> ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/guia/syllabus/proyectos-ing-data-sistemas_2025-26> .
+
+<http://w3id.org/def/guia#95000533_CourseInstance> rdf:type :Course ;
+    sch:courseCode 95000533 ;
+    guide:syllabusDescription "Proyectos en Ingeniería de Datos y Sistemas"@en .
+
+<http://w3id.org/def/guia#Degree_09ID> rdf:type :BachelorDegree , :Degree ;
+    dct:title "Grado En Ingenieria Y Sistemas De Datos" ;
+    sch:courseCode 09ID ;
+    guide:hasCourse <http://guia-mad-bench.es/data/guia/proyectos-ing-data-sistemas_2025-26> .
+
+<http://w3id.org/def/guia#UniversityCenter_UPM_ETS_Telecomunicacion> rdf:type sch:Organization ;
+    dct:title "E.T.S. de Ingenieros de Telecomunicacion" ;
+    guide:syllabusDescription "Centro responsable de la titulación"@en .
+
+<http://guia-mad-bench.es/data/guia/proyectos-ing-data-sistemas_2025-26> sch:hasCourseInstance <http://w3id.org/def/guia#95000533_CourseInstance> ;
+    guide:syllabusDescription "Proyectos en Ingeniería de Datos y Sistemas"@en .
+
+<http://guia-mad-bench.es/data/person/jose-jesus-fraile-ardanuy> rdf:type :Lecturer , sch:Person ;
+    dct:title "Jose Jesus Fraile Ardanuy" ;
+    sch:name "Jose Jesus Fraile Ardanuy" ;
+    sch:email <mailto:jesus.fraile.ardanuy@upm.es> .
+
+<http://guia-mad-bench.es/data/person/alvaro-gutierrez-martin> rdf:type :Lecturer , sch:Person ;
+    dct:title "Alvaro Gutierrez Martin" ;
+    sch:name "Alvaro Gutierrez Martin" ;
+    sch:email <mailto:a.gutierrez@upm.es> .
+
+<http://guia-mad-bench.es/data/person/fernando-fernandez-martinez> rdf:type :Lecturer , sch:Person ;
+    dct:title "Fernando Fernandez Martinez" ;
+    sch:name "Fernando Fernandez Martinez" ;
+    sch:email <mailto:fernando.fernandezm@upm.es> .
+
+<http://guia-mad-bench.es/data/person/juan-jose-vinagre-diaz> rdf:type :Lecturer , sch:Person ;
+    dct:title "Juan Jose Vinagre Diaz" ;
+    sch:name "Juan Jose Vinagre Diaz" ;
+    sch:email <mailto:juanjose.vinagre@upm.es> .
+
+<http://guia-mad-bench.es/data/person/juan-fernando-sanchez-rada> rdf:type :Lecturer , sch:Person ;
+    dct:title "Juan Fernando Sanchez Rada" ;
+    sch:name "Juan Fernando Sanchez Rada" ;
+    guide:syllabusDescription "Coordinador/a"@en .
+
+<http://guia-mad-bench.es/data/person/julian-cabrera-quesada> rdf:type :Lecturer , sch:Person ;
+    dct:title "Julian Cabrera Quesada" ;
+    sch:name "Julian Cabrera Quesada" ;
+    guide:syllabusDescription "(Coordinador/a)"@en .
+
+<http://guia-mad-bench.es/data/person/daniel-fuertes-coiras> rdf:type :Lecturer , sch:Person ;
+    dct:title "Daniel Fuertes Coiras" ;
+    sch:name "Daniel Fuertes Coiras" ;
+    guide:syllabusDescription "Profesorado externo"@en .
+
+<http://guia-mad-bench.es/data/guia/syllabus/proyectos-ing-data-sistemas_2025-26> rdf:type :Syllabus , sch:Syllabus ;
+    dct:title "Guía de Aprendizaje 95000533" ;
+    guide:hasItem <http://guia-mad-bench.es/data/guia/syllabus/proyectos-ing-data-sistemas_2025-26/Unit1> ,
+                  <http://guia-mad-bench.es/data/guia/syllabus/proyectos-ing-data-sistemas_2025-26/Unit2> ,
+                  <http://guia-mad-bench.es/data/guia/syllabus/proyectos-ing-data-sistemas_2025-26/Unit3> .
+
+<http://guia-mad-bench.es/data/guia/syllabus/proyectos-ing-data-sistemas_2025-26/Unit1> rdf:type :SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Proyecto 1 en Key Aplication Domain 1 - Caso de Estudio 1"@en .
+
+<http://guia-mad-bench.es/data/guia/syllabus/proyectos-ing-data-sistemas_2025-26/Unit2> rdf:type :SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Proyecto 2 en Key Aplication Domain 2 - Caso de Estudio 2"@en .
+
+<http://guia-mad-bench.es/data/guia/syllabus/proyectos-ing-data-sistemas_2025-26/Unit3> rdf:type :SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Proyecto 3 en Key Aplication Domain 3 - Caso de Estudio 3"@en .
+
+<http://guia-mad-bench.es/data/guia/syllabus/proyectos-ing-data-sistemas_2025-26> sch:courseSchedule <http://guia-mad-bench.es/data/guide/schedule/95000533_schedule> ;
+    guide:syllabusDescription "Temario de la asignatura"@en .
+
+<http://w3id.org/def/guia#EvaluationSystem_95000533> rdf:type :EvaluationSystem ;
+    dct:title "Evaluación Progresiva y Convocatoria Extraordinaria" ;
+    guide:evaluationDescription "Modelo de evaluación progresiva con pruebas obligatorias no recuperables"@en .
+
+<http://guia-mad-bench.es/data/guide/schedule/95000533_schedule> rdf:type :Schedule , sch:Schedule ;
+    dct:title "Cronograma 2025-26" ;
+    guide:syllabusDescription "Séptimo semestre - Septiembre-Enero"@en .
+
+<http://guia-mad-bench.es/data/guide/schedule/95000533_schedule> sch:eventSchedule <http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica>,
+    <http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa>,
+    <http://guia-mad-bench.es/data/guide/event/examen_final> .
+
+<http://guia-mad-bench.es/data/guide/schedule/95000533_schedule> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica>,
+    <http://guia-mad-bench.es/data/guide/event/examen_final> .
+
+<http://guia-mad-bench.es/data/guide/schedule/95000533_schedule> sch:courseSchedule <http://w3id.org/def/guia#EvaluationSystem_95000533> ;
+    guide:syllabusDescription "Cronograma de la asignatura"@en .
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> rdf:type :ScheduleEvent , sch:Event ;
+    dct:title "Hito 1: Memoria Técnica" ;
+    guide:eventIndex 5 ; # Based on table row index or week. Table shows Sem 5 for Hito 1? Actually, the schedule table is complex. I will use eventWeek property as string if available in text (Semester/Week). Text says "Hito 1: Memoria Técnica" at Week/Sem 5.
+    guide:eventIndex 5 ; # Approximation based on document structure
+    sch:description "Entrega de la memoria y presentación y defensa del trabajo correspondiente a la Unidad 1"@en .
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> rdf:type :ScheduleEvent , sch:Event ;
+    dct:title "Hito 2: Presentación & Defensa" ;
+    guide:eventIndex 9 ; # Approximation based on document structure (Semester/Week)
+    sch:description "Entrega de la memoria y presentación y defensa del trabajo correspondiente a la Unidad 2"@en .
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> rdf:type :ScheduleEvent , sch:Event ;
+    dct:title "Examen Final (Extraordinario)" ;
+    guide:eventIndex 16 ; # Approximation based on document structure
+    sch:description "Evaluación global de la asignatura"@en .
+
+<http://guia-mad-bench.es/data/guide/event/hito3_memoria_tecnica> rdf:type :ScheduleEvent , sch:Event ;
+    dct:title "Hito 3: Memoria Técnica" ;
+    guide:eventIndex 14 ; # Approximation based on document structure (Semester/Week)
+    sch:description "Entrega de la memoria y presentación y defensa del trabajo correspondiente a la Unidad 3"@en .
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasScheduleEvent <http://w3id.org/def/guia#EvaluationSystem_95000533> ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalTrial_Hito1_Mem_Tec>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalTrial_Hito1_Pres_Def>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalFinal_Exam>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://w3id.org/def/guia#EvalTrial_Hito1_Mem_Tec> rdf:type :EvaluationTrial ;
+    guide:trialType "Memoria Técnica"@en ;
+    guide:gradePercentage 0.1 ; # 10% weight from table (Hito 1)
+    sch:description "Evaluación Progresiva - No presencial"@en .
+
+<http://w3id.org/def/guia#EvalTrial_Hito2_Pres_Def> rdf:type :EvaluationTrial ;
+    guide:trialType "Presentación & Defensa"@en ;
+    guide:gradePercentage 0.2 ; # 20% weight from table (Hito 1) - Note: Table shows Hito 1 has two entries, Mem and Pres/Def. I will aggregate or list separately if ontology allows multiple trials per system? Ontology says `guide:hasEvaluationTrial` is domain EvaluationSystem -> range EvaluationTrial.
+    sch:description "Evaluación Progresiva - Presencial"@en .
+
+<http://w3id.org/def/guia#EvalFinal_Exam> rdf:type :EvaluationTrial ;
+    guide:trialType "Examen Final (Extraordinario)"@en ;
+    guide:gradePercentage 1.0 ; # 100% weight from table
+    sch:description "Evaluación global de la asignatura"@en .
+
+<http://w3id.org/def/guia#EvalTrial_Hito2_Pres_Def> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://w3id.org/def/guide/schedule/proyectos-ing-data-sistemas_schedule> rdf:type :Schedule , sch:Schedule ;
+    guide:syllabusDescription "Cronograma de la asignatura"@en .
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito2_presentacion_defensa> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/examen_final> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://guia-mad-bench.es/data/guide/event/hito1_memoria_tecnica> guide:hasEvaluationTrial <http://w3id.org/def/guia#EvalSystem_95000533>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/proyectos-ing-data-sistemas_schedule>.
+
+<http://

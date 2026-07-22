@@ -1,0 +1,169 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:course_guide_565000566
+    a guide:CourseGuide ;
+    sch:name "Ampliacion De Expresion Grafica" ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :syllabus_565000566 ;
+    guide:hasCompetency :comp_CE5, :comp_CG1, :comp_CG10, :comp_CG2, :comp_CG3, :comp_CG5, :comp_CG6, :comp_CG7, :comp_CG9, :comp_H13, :comp_H15, :comp_H18, :comp_H20, :comp_H22, :comp_H23, :comp_H5, :comp_H6, :comp_H7, :comp_H9 ;
+    guide:hasLearningResult :lr_RA36, :lr_RA37 ;
+    sch:instructor :lecturer_lucia, :lecturer_pedro ;
+    guide:hasEvaluation :eval_system_565000566 ;
+    guide:hasDidacticResource :res_geometria, :res_splines, :res_moodle, :res_laboratorios ;
+    sch:description "La asignatura de Ampliación de Expresión Gráfica aborda el estudio de las curvas y las superficies de mayor relevancia en el ámbito de la ingeniería y el diseño industrial." .
+
+# Course Instance
+:course_565000566
+    a guide:Course ;
+    sch:courseCode 565000566 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Sexto semestre" ;
+    sch:hasCourseInstance :course_guide_565000566 .
+
+# Degree Instance
+:degree_56DD
+    a guide:Degree ;
+    sch:name "Grado Ingenieria En Diseño Industrial Y Desarrollo De Producto" ;
+    guide:degreeCode "56DD" ;
+    guide:hasCourse :course_5CO00566 .
+
+# University Center Instance
+:center_56
+    a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Diseño Industrial" ;
+    guide:offers :degree_56DD .
+
+# Lecturers
+:lecturer_lucia
+    a guide:Lecturer ;
+    sch:name "Lucia Garijo Alonso" ;
+    sch:email "lucia.garijo@upm.es" ;
+    sch:role "Coordinador/a" .
+
+:lecturer_pedro
+    a guide:Lecturer ;
+    sch:name "Pedro Jose Lorca Hernando" ;
+    sch:email "pedrojose.lorca@upm.es" .
+
+# Competencies
+:comp_CE5 a guide:Competency ; guide:competencyCode "CE5" ; guide:competencyDescription "Capacidad de visión espacial y conocimiento de las técnicas de representación gráfica..." .
+:comp_CG1 a guide:Competency ; guide:competencyCode "CG1" ; guide:competencyDescription "Conocer y aplicar los conocimientos de ciencias y tecnologías básicas." .
+:comp_CG10 a guide:Competency ; guide:competencyCode "CG10" ; guide:competencyDescription "Creatividad." .
+:comp_CG2 a guide:Competency ; guide:competencyCode "CG2" ; guide:competencyDescription "Poseer la capacidad para diseñar, desarrollar, implementar, gestionar y mejorar productos..." .
+:comp_CG3 a guide:Competency ; guide:competencyCode "CG3" ; guide:competencyDescription "Aplicar los conocimientos adquiridos para identificar, formular y resolver problemas..." .
+:comp_CG5 a guide:Competency ; guide:competencyCode "CG5" ; guide:competencyDescription "Comunicar conocimientos y conclusiones, de forma oral, escrita y gráfica..." .
+:comp_CG6 a guide:Competency ; guide:competencyCode "CG6" ; guide:competencyDescription "Poseer las habilidades de aprendizaje que permitan continuar estudiando..." .
+:comp_CG7 a guide:Competency ; guide:competencyCode "CG7" ; guide:competencyDescription "Incorporar las TIC y las tecnologías y herramientas de la Ingeniería..." .
+:comp_CG9 a guide:Competency ; guide:comptencyCode "CG9" ; guide:competencyDescription "Organización y planificación de proyectos y equipos humanos." .
+:comp_H13 a guide:Competency ; guide:competencyCode "H.13" ; guide:competencyDescription "Práctica con técnicas aplicables y métodos para resolver problemas complejos..." .
+:comp_H15 a guide:Competency ; guide:competencyCode "H.15" ; guide:competencyDescription "Aplicar normas de la práctica de la ingeniería de su especialidad." .
+:comp_H18 a guide:Competency ; guide:competencyCode "H.18" ; guide:competencyDescription "Recoger e interpretar datos y manejar conceptos complejos..." .
+:comp_H20 a guide:Competency ; guide:competencyCode "H.20" ; guide:competencyDescription "Comunicar eficazmente información, ideas, problemas y soluciones..." .
+:comp_H22 a guide:Competency ; guide:competencyCode "H.22" ; guide:competencyDescription "Reconocer la necesidad de la formación continua propia..." .
+:comp_H23 a guide:Competency ; guide:competencyCode "H.23" ; guide:competencyDescription "Adquirir conocimientos ulteriores de forma autónoma." .
+:comp_H5 a guide:Competency ; guide:competencyCode "H.5" ; guide:competencyDescription "Uso práctico para problemas ingenieriles y de diseño de los principios y técnicas gráficas..." .
+:comp_H6 a guide:Competency ; guide:competencyCode "H.6" ; guide:competencyDescription "Técnicas que permitan adquirir otros resultados de aprendizaje..." .
+:comp_H7 a guide:Competency ; guide:competencyCode "H.7" ; guide:competencyDescription "Analizar productos, procesos y sistemas complejos en su campo de estudio..." .
+:comp_H9 a guide:Competency ; guide:competencyCode "H.9" ; guide:competencyDescription "Proyectar, diseñar y desarrollar productos complejos..." .
+
+# Learning Results
+:lr_RA36 a guide:LearningResult ;
+    guide:learningResultCode "RA36" ;
+    guide:learningResultDescription "Comprender y aplicar las propiedades de las curvas técnicas y de las superficies a la resolución de problemas..." .
+:lr_RA37 a guide:LearningResult ;
+    guide:learningResultCode "RA37" ;
+    guide:learningResultDescription "Ser capaz de elaborar e interpretar información gráfica, posibilitando el trabajo y la comunicación entre técnicos." .
+
+# Syllabus
+:syllabus_565000566 a guide:Syllabus ;
+    guide:hasItem :item_1, :item_2, :item_3, :item_4, :item_5, :item_6, :item_7, :item_8, :item_9, :item_10 .
+
+:item_1 a guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "Curvas planas y alabeadas" .
+:item_2 a guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "Estudio proyectivo de las cónicas" .
+:item_3 a guide:SyllabusItem ; guide:itemIndex 3 ; guide:syllabusDescription "Hélices" .
+:item_4 a guide:SyllabusItem ; guide:itemIndex 4 ; guide:syllabusDescription "Superficies" .
+:item_5 a guide:SyllabusItem ; guide:itemIndex 5 ; guide:syllabusDescription "Superficies regladas desarrollables" .
+:item_6 a guide:SyllabusItem ; guide:itemIndex 6 ; guide:syllabusDescription "Superficies regladas alabeadas" .
+:item_7 a guide:SyllabusItem ; guide:itemIndex 7 ; guide:ssyllabusDescription "Principales superficies alabeadas" .
+:item_8 a guide:SyllabusItem ; guide:itemIndex 8 ; guide:syllabusDescription "Helicoides alabeados" .
+:item_9 a guide:SyllabusItem ; guide:itemIndex 9 ; guide:syllabusDescription "Cuádricas elípticas e hiperbólicas" .
+:item_10 a guide:SyllabusItem ; guide:itemIndex 10 ; guide:syllabusDescription "Superficies de revolución" .
+
+# Evaluation System
+:eval_system_565000566
+    a guide:EvaluationSystem ;
+    guide:evaluationDescription "La prueba de evaluación progresiva tendrá un peso del 30% y la prueba global un 70%." ;
+    guide:hasEvaluationTrial :trial_prog, :trial_glob, :trial_extraord .
+
+:trial_prog
+    a guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialWeek "8" ;
+    guide:trialMode "Presencial" .
+
+:trial_glob
+    a guide:EvaluationTrial ;
+    guide:trialType "Examen de Prural" ;
+    guide:evaluationType "global" ;
+    guide:gradePercentage "70%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialWeek "17" ;
+    guide:trialMode "Presencial" .
+
+:trial_extraord
+    a guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:evaluationType "extraordinaria" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialMode "Presencial" .
+
+# Didactic Resources
+:res_geometria a guide:DidacticResource ;
+    guide:bibliographyTitle "Geometría de Curvas y Superficies" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Vicario López, José. Madrid, 2012" .
+
+:res_splines a guide:DidacticResource ;
+    guide:bibliographyTitle "Splines" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Vicario López, José. Madrid, 2012" .
+
+:res_moodle a guide:DidacticResource ;
+    guide:bibliographyTitle "Moodle" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_laboratorios a guide:DidacticResource ;
+    guide:bibliographyTitle "Laboratorios de Expresión Gráfica" ;
+    guide:bibliographyType "Equipamiento" .
+
+# Schedule Events (from Cronograma)
+:event_week_1
+    a guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_leccion_magistral_1, :act_practicas_1 .
+
+:act_leccion_magistral_1
+    a guide:Activity ;
+    guide:activityDescription "Lección Magistral Temas 1 y 2" ;
+    guide:activityDuration 1.5 ;
+    guide:activityFormat "LM" .
+
+:act_practicas_1
+    a guide:Activity ;
+    guide:activityDescription "Prácticas" ;
+    guide:activityDuration 1.5 ;
+    guide:activityFormat "PL" .

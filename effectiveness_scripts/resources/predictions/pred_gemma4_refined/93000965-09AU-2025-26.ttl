@@ -1,0 +1,135 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+_:courseGuide rdf:type guide:CourseGuide ;
+    sch:name "Modelado De Sistemas Biomédicos" ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Inglés/Castellano" ;
+    guide:hasSyllabus _:syllabus ;
+    guide:hasCompetency _:compCB06, _:compCB07, _:compCB08, _:compCB09, _:compCB10, _:compCE_MIB11, _:compCG_MIB01, _:compCG_MIB02, _:compCG_MIB03, _:compCG_MIB04, _:compCG_MIB05, _:compCG_MIB06, _:compCG_MIB07 ;
+    guide:hasLearningResult _:lrRA15, _:lrRA13, _:lrRA14 ;
+    guide:hasEvaluation _:evalSystem ;
+    guide:hasDidacticResource _:resMATLAB, _:resCobelli ;
+    sch:instructor _:lecturerGema, _:lecturerMaria ;
+    sch:director _:lecturerMaria ;
+    guide:otherInformation "This subject contributes to the Sustainable Development Goals (SDG 3 and SDG 9)." .
+
+_:courseInstance rdf:type guide:Course ;
+    sch:name "93000965 - Modelado De Sistemas Biomédicos" ;
+    guide:courseYear 2025 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Primer semestre" ;
+    sch:hasCourseInstance _:courseGuide .
+
+_:degree rdf:type guide:MasterDegree ;
+    sch:name "09AU - Master Universitario En Ingenieria Biomedica" ;
+    guide:degreeCode "09AU" .
+
+_:univCenter rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" ;
+    guide:offers _:degree .
+
+_:lecturerGema rdf:type guide:Lecturer ;
+    sch:name "Gema Garcia Saez" ;
+    sch:email "gema.garcia.saez@upm.es" ;
+    guide:office "B-317" ;
+    guide:tutorshipsSchedule "Sin horario. Tutoring appointments can be scheduled by email" .
+
+_:lecturerMaria rdf:type guide:Lecturer ;
+    sch:name "Maria Elena Hernando Perez" ;
+    sch:email "mariaelena.hernando@upm.es" ;
+    guide:office "B-316" .
+
+_:lecturerExternal rdf:type guide:Lecturer ;
+    sch:name "Jose Tapia Galisteo" ;
+    sch:email "jose.tapia.galisteo@upm.es" .
+
+_:compCB06 rdf:type guide:Competency ;
+    guide:competencyCode "CB06" ;
+    guide:competencyDescription "Poseer y comprender conocimientos que aportament una base u oportunidad de ser originales..." .
+
+_:compCB07 rdf:type guide:Competency ;
+    guide:competencyCode "CB07" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos..." .
+
+_:compCE_MIB11 rdf:type guide:Competency ;
+    guide:competencyCode "CE-MIB11" ;
+    guide:competencyDescription "Seleccionar y aplicar métodos avanzados de modelado para el diseño y simulación de sistemas biomédicos." .
+
+_:lrRA15 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA15" ;
+    guide:learningResultDescription "Aplicar los fundamentos del modelado matemático de sistemas fisiológicos..." .
+
+_:syllabus rdf:type guide:Syllabus ;
+    guide:hasItem _:item1, _:item2, _:item_matlab_topic .
+
+_:item1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introduction to the modelling of physiological systems" .
+
+_:item2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Model construction" .
+
+_:evalSystem rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y evaluación global." ;
+    guide:hasEvaluationTrial _:trialExam, _:trialPracticalResults, _:trialHomework .
+
+_:trialExam rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:evaluationDuration "02:00" ;
+    guide:trialMode "Presencial" ;
+    guide:hasScheduleEvent _:eventWeek17 .
+
+_:trialPracticalResults rdf:type guide:EvaluationTrial ;
+    guide:trialType "Otras técnicas evaluativas" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:evaluationDuration "00:30" ;
+    guide:hasScheduleEvent _:eventWeek17_2 .
+
+_:trialHomework rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo Individual" ;
+    guide:gradePercentage "18%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:evaluationDuration "00:00" ;
+    guide:hasScheduleEvent _:eventWeek6 .
+
+_:eventWeek17 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "17" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity _:actExam .
+
+_:actExam rdf:type guide:Activity ;
+    guide:activityDescription "Exam" ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:attendanceType "Presencial" .
+
+_:eventWeek6 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "6" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity _:actHomework .
+
+_:actHomework rdf:type guide:Activity ;
+    guide:activityDescription "Practical homework" ;
+    guide:activityFormat "Trabajo Individual" ;
+    guide:attendanceType "No presencial" .
+
+_:resMATLAB rdf:type guide:DidacticResource ;
+    sch:name "MATLAB" ;
+    guide:bibliographyType "Otros" ;
+    guide:bibliographyDescription "License available for UPM students." .
+
+_:resCobelli rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Introduction to Modeling in Physiology and Medicine. C Cobelli, ER Carson. Elsevier 2008" ;
+    guide:bibliographyType "Bibliografía" .

@@ -1,0 +1,102 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course_guide_93000855> rdf:type :CourseGuide ;
+    dc:title "ANX-PR/CL/001-01 Guía de Aprendizje"@en ;
+    sch:name "Analisis Del Negocio Tic" ;
+    guide:courseYear 2026^^xsd:integer ;
+    guide:numberOfCredits "3.0"^^xsd:decimal ;
+    guide:syllabusDescription "Metodología híbrida del curso, análisis de empresas relevantes en mercados digitales (Yoigo, MasMovil, Telefónica...). Objetivo formar a estudiantes en el análisis de casos empresariales donde las TIC son impulsores clave."@en ;
+    sch:inLanguage "Castellano"@en ;
+    guide:teachingPeriodMonths "Febrero-Junio"^^xsd:string ;
+    guide:schedule <http://guia-mad-bench.es/data/schedule_93000855> .
+
+<http://guia-mad-bench.es/data/degree_09AQ> rdf:type :MasterDegree ;
+    sch:name "Master Universitario En Ingenieria De Telecomunicacion" ;
+    guide:degreeCode "09AQ"^^xsd:string ;
+    sch:hasCourseInstance <http://guia-mad-bench.es/data/course_guide_93000855> .
+
+<http://guia-mad-bench.es/data/center_09> rdf:type :UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros De Telecomunicacion" ;
+    guide:offers <http://guia-mad-bench.es/data/degree_09AQ> .
+
+<http://guia-mad-bench.es/data/schedule_93000855> rdf:type :Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event_week1>, 
+                    <http://guia-mad-bench.es/data/event_week2>, 
+                    <http://guia-mad-bench.es/data/event_final_exam> .
+
+<http://guia-mad-bench.es/data/lecturer_fernando_h_g> rdf:type :Lecturer ;
+    sch:name "Fernando Herrera Gonzalez" ;
+    sch:email "fernando.herrera@upm.es"^^xsd:string ;
+    guide:office "C-425"^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer_luis_c_m> rdf:type :Lecturer ;
+    sch:name "Luis Castejon Martin" ;
+    sch:email "luis.castejon@upm.es"^^xsd:string ;
+    guide:office "C-426"^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer_zoraida_f_b> rdf:type :Lecturer ;
+    sch:name "Zoraida Frias Barroso" ;
+    sch:email "zoraida.frias@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course_guide_93000855> guide:sch:director <http://guia-mad-bench.es/data/lecturer_luis_c_m> ;
+    sch:instructor <http://guia-mad-bench.es/data/lecturer_fernando_h_g>, 
+                  <http://guia-mad-bench.es/data/lecturer_zoraida_f_b> .
+
+<http://guia-mad-bench.es/data/syllabus_93000855> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/item_tema1>, 
+                  <http://guia-mad-bench.es/data/item_tema2>.
+
+<http://guia-mad-bench.es/data/course_guide_93000855> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_93000855> .
+
+<http://guia-mad-bench.es/data/item_tema1> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "Tema 1. Valoración de proyectos de inversión (Engineering economics, NPV, IRR)."@en .
+
+<http://guia-mad-bench.es/data/item_tema2> rdf:type :SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer ;
+    guide:syllabusDescription "Tema 2. Valoración de empresas (Plan de negocio, valoración en mercado)."@en .
+
+<http://guia-mad-bench.es/data/competency_ce7> rdf:type :Competency ;
+    guide:competencyCode "CE7"^^xsd:string ;
+    guide:competencyDescription "Capacidad para realizar la planificación, toma de decisiones y empaquetamiento de redes..."@en .
+
+<http://guia-mad-bench.es/data/learning_result_ra172> rdf:type :LearningResult ;
+    guide:learningResultCode "RA172"^^xsd:string ;
+    guide:learningResultDescription "Analizar las finanzas de un operador de telecom, comparativamente con las de una OTT..."@en .
+
+<http://guia-mad-bench.es/data/evaluation_system_93000855> rdf:type :EvaluationSystem ;
+    sch:name "Evaluación del curso Analisis Del Negocio Tic" ;
+    guide:hasEvaluation <http://guia-mad-bench.es/data/trial_final_exam>, 
+                        <http://guia-mad-bench.es/data/trial_progressive>.
+
+<http://guia-mad-bench.es/data/course_guide_93000855> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluation_system_93000855> .
+
+<http://guia-mad-bench.es/data/trial_final_exam> rdf:type :EvaluationTrial ;
+    sch:name "Examen final ordinario" ;
+    guide:trialType "EX: Técnica del tipo Examen Escrito"@en ;
+    guide:gradePercentage "50.0"^^xsd:string ;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial_progressive> rdf:type :EvaluationTrial ;
+    sch:name "Evaluación progresiva (Casos de estudio)" ;
+    guide:trialType "Progresiva"@en ;
+    guide:gradePercentage "50.0"^^xsd:string .
+
+<http://guia-mad-bench.es/data/resource_excel> rdf:type :DidacticResource ;
+    sch:name "Excel - Tool for valuation of investment projects" ;
+    guide:bibliographyType "Equipamiento"@en ;
+    guide:hasItem <http://guia-mad-bench.es/data/item_tool>.
+
+<http://guia-mad-bench.es/data/resource_park> rdf:type :DidacticResource ;
+    sch:name "Fundamentals of Engineering Economics" ;
+    guide:bibliographyType "Biblioteca"@en .
+
+<http://guia-mad-bench.es/data/course_guide_93000855> guide:hasDidacticResource <http://guia-mad-bench.es/data/resource_excel>, 
+                                                        <http://guia-mad-bench.es/data/resource_park>.

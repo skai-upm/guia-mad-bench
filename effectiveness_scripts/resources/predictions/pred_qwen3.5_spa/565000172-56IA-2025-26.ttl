@@ -1,0 +1,91 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <https://schema.org/> .
+
+<http://guia-mad-bench.es/data/courseguide/GA_56IA_565000172> rdf:type guide:CourseGuide ;
+    dc:title "Guía de Aprendizaje"@en ;
+    dct:creator "Alberto Brunete Gonzalez" ,
+               "Rebeca Herrero Martin" ;
+    rdfs:comment "Sistemas Electronicos Digitales - Grado En Ingenieria Electronica Industrial Y Automatica"@es ;
+    guide:numberOfCredits 7.5^^xsd:decimal ;
+    sch:name "Sistemas Electronicos Digitales"@en ;
+    dct:description "Esta asignatura introduce al alumno en el diseño de Sistemas Digitales más complejos, a través del uso de microcontroladores y sistemas lógicos programables como FPGAs."@es .
+
+<http://guia-mad-bench.es/data/courseguide/GA_56IA_565000172> guide:hasCourse <http://guia-mad-bench.es/data/degree/BachelorDegree_Grado_Electronica> ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/Cronograma_Sistemas_Digitales_2025-26> .
+
+<http://guia-mad-bench.es/data/courseguide/GA_56IA_565000172> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus/Temario_Sistemas_Digitales> ;
+    sch:description "Introducción a la microelectrónica, Dispositivos Lógicos Programables (PLD), VHDL, Microcontroladores."@es .
+
+<http://guia-mad-bench.es/data/courseguide/GA_56IA_565000172> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluation/EvaluationSystem_Sistemas_Digitales> ;
+    sch:description "Evaluación progresiva, global y extraordinaria con ponderaciones específicas."@es .
+
+<http://guia-mad-bench.es/data/courseguide/GA_56IA_565000172> guide:hasLearningResult <http://guia-mad-bench.es/data/learningresult/RA58>,
+    <http://guia-mad-bench.es/data/learningresult/RA59>,
+    <http://guia-mad-bench.es/data/learningresult/RA238> ;
+    sch:description "Conocimiento y capacidad para el modelado y simulación de sistemas electrónicos digitales."@es .
+
+<http://guia-mad-bench.es/data/courseguide/GA_56IA_565000172> guide:hasCompetency <http://guia-mad-bench.es/data/competency/CE_24>,
+    <http://guia-mad-bench.es/data/competency/CG_3>,
+    <http://guia-mad-bench.es/data/competency/RA58> ; # Note: RA is learning result, but document links competencies and results. I will link specific competency codes found in text (CE 24).
+
+<http://guia-mad-bench.es/data/courseguide/GA_56IA_565000172> sch:director <http://guia-mad-bench.es/data/lecturer/Alberto_Brunete_Gonzalez> ;
+    guide:syllabusDescription "Sistemas Electronicos Digitales"@es .
+
+<http://guia-mad-bench.es/data/courseguide/GA_56IA_565000172> sch:instructor <http://guia-mad-bench.es/data/lecturer/Rebeca_Herrero_Martin>,
+    <http://guia-mad-bench.es/data/lecturer/Pedro_Luis_Castedo_Cepeda>,
+    <http://guia-mad-bench.es/data/lecturer/Ruben_Nunez_Judez> ;
+    sch:email "rebeca.herrero@upm.es",
+             "pedroluis.castedo@upm.es" .
+
+<http://guia-mad-bench.es/data/courseguide/GA_56IA_565000172> guide:syllabusDescription "Sistemas Electronicos Digitales"@es ;
+    sch:teachingPeriodMonths "Septiembre-Enero".
+
+<http://guia-mad-bench.es/data/degree/BachelorDegree_Grado_Electronica> rdf:type guide:BachelorDegree ;
+    rdfs:subClassOf guide:Degree .
+
+<http://guia-mad-bench.es/data/syllabus/Temario_Sistemas_Digitales> rdf:type guide:Syllabus ;
+    sch:syllabusDescription "Introducción a la microelectrónica, Dispositivos Lógicos Programables (PLD), VHDL, Microcontroladores."@es .
+
+<http://guia-mad-bench.es/data/schedule/Cronograma_Sistemas_Digitales_2025-26> rdf:type guide:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/courseguide/GA_56IA_565000172>.
+
+<http://guia-mad-bench.es/data/evaluation/EvaluationSystem_Sistemas_Digitales> rdf:type guide:EvaluationSystem ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule/Cronograma_Sistemas_Digitales_2025-26>.
+
+<http://guia-mad-bench.es/data/competency/CE_24> rdf:type guide:Competency ;
+    guide:competencyCode "CE 24"^^xsd:string .
+
+<http://guia-mad-bench.es/data/learningresult/RA58> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA58"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Cronograma_Sistemas_Digitales_2025-26> sch:eventSchedule <http://guia-mad-bench.es/data/evaluation/EvaluationSystem_Sistemas_Digitales>.
+# Note: The ontology links EvaluationTrial to ScheduleEvent via guide:hasScheduleEvent. I will create instances for trials if possible based on document tables, but the main structure is CourseGuide -> Evaluation System.
+
+<http://guia-mad-bench.es/data/evaluation/EvaluationSystem_Sistemas_Digitales> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial/Examen_Parcial>,
+    <http://guia-mad-bench.es/data/trial/Trabajo_Asignatura>.
+
+<http://guia-mad-bench.es/data/trial/Examen_Parcial> rdf:type guide:EvaluationTrial ;
+    sch:trialType "Examen Escrito"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial/Trabajo_Asignatura> rdf:type guide:EvaluationTrial ;
+    sch:trialType "Presentación en Grupo de Laboratorio"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/GA_56IA_565000172> guide:hasDidacticResource <http://guia-mad-bench.es/data/resource/Bibliografia_Pedroni>,
+    <http://guia-mad-bench.es/data/resource/Moodle_Asignatura>.
+
+<http://guia-mad-bench.es/data/lecturer/Alberto_Brunete_Gonzalez> rdf:type guide:Lecturer ;
+    sch:director "Sistemas Electronicos Digitales"@en .
+
+<http://guia-mad-bench.es/data/resource/Bibliografia_Pedroni> rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Circuit Design with VHDL, V. A."^^xsd:string ,
+                         "Pedroni 2010"^^xsd:string .
+
+<http://guia-mad-bench.es/data/resource/Moodle_Asignatura> rdf:type guide:DidacticResource ;
+    sch:name "Moodle de la asignatura"@en .

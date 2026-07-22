@@ -1,0 +1,224 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:course_guide_595000018 a guide:CourseGuide ;
+    sch:name "Ciencia, Tecnologia y Sociedad" ;
+    sch:courseCode 595000018 ;
+    guide:numberOfCredits 3.0 ;
+    guide:courseType "Obligatoria" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCompetency :comp_CE_TEL16, :comp_CG_02, :comp_CG_03, :comp_CG_05, :comp_CG_06, :comp_CG_09, :comp_CG_11, :comp_CG_14 ;
+    guide:hasLearningResult :lr_RA195, :lr_RA197, :lr_RA194, :lr_RA196, :lr_RA192, :lr_RA193 ;
+    guide:hasEvaluation :eval_system_progresiva, :eval_system_global, :eval_system_extraordinaria ;
+    guide:hasDidacticResource :res_kuhn, :res_apuntes, :res_ieee_ethics ;
+    sch:instructor :lecturer_ivan, :lecturer_miguel ;
+    sch:courseSchedule :schedule_595000018 .
+
+# Degree and University Center
+:degree_59EC a guide:Degree ;
+    sch:name "Grado En Ingenieria Electronica De Comunicaciones" ;
+    guide:degreeCode "59EC" ;
+    guide:hasCourse :course_595000018 .
+
+:univ_center_telecom a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingeniería y Sist. de Telecom." ;
+    guide:offers :degree_59EC .
+
+# Lecturers
+:lecturer_ivan a guide:Lecturer ;
+    sch:name "Ivan Pau De La Cruz" ;
+    sch:email "ivan.pau@upm.es" ;
+    guide:tutorshipsSchedule "-" .
+
+:lecturer_miguel a guide:Lecturer ;
+    sch:name "Miguel Angel Valero Duboy" ;
+    sch:email "miguelangel.valero@upm.es" ;
+    guide:office "A4422" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+# Competencies
+:comp_CE_TEL16 a guide:Competency ;
+    guide:competencyCode "CE TEL16" ;
+    guide:competencyDescription "Conocimiento de la normativa y la regulación de las telecomunicaciones en los ámbitos nacional, europeo e internacional." .
+
+:comp_CG_02 a guide:Competency ;
+    guide:competencyCode "CG 02" ;
+    guide:competencyDescription "Capacidad de búsqueda y selección de información, de razonamiento crítico y de elaboración y defensa de argumentos dentro del área." .
+
+:comp_CG_03 a guide:Competency ;
+    guide:competencyCode "CG 03" ;
+    guide:competencyDescription "Capacidad para expresarse correctamente de forma oral y escrita y transmitir información mediante documentos y exposiciones en público." .
+
+:comp_CG_05 a guide:Competency ;
+    guide:competencyCode "CG 05" ;
+    guide:competencyDescription "Capacidad de trabajo en equipo y en entornos multidisciplinares." .
+
+:comp_CG_06 a guide:Competency ;
+    guide:competencyCode "CG 06" ;
+    guide:competencyDescription "Capacidad de adaptación, negociación, resolución de conflictos y de liderazgo." .
+
+:comp_CG_09 a guide:Competency ;
+    guide:competencyCode "CG 09" ;
+    guide:competencyDescription "Capacidad de analizar y valorar el impacto social y medioambiental de las soluciones técnicas." .
+
+:comp_CG_11 a guide:Competency ;
+    guide:competencyCode "CG 11" ;
+    guide:competencyDescription "Habilidades para la utilización de las Tecnologías de la Información y las Comunicaciones." .
+
+:comp_CG_14 a guide:Competency ;
+    guide:competencyCode "CG 14" ;
+    guide:competencyDescription "Actitudes de ética y responsabilidad profesional, respeto a los Derechos Humanos y a la diversidad cultural." .
+
+# Learning Results
+:lr_RA195 a guide:LearningResult ;
+    guide:learningResultCode "RA195" ;
+    guide:learningResultDescription "Podrá contrastar las ideas aportadas por diferentes fuentes" .
+
+:lr_RA197 a guide:LearningResult ;
+    guide:learningResultCode "RA197" ;
+    guide:learningResultDescription "Podrá relacionar los aspectos científico-tecnológicos con un entorno social de creciente complejidad: aspectos sociales, económicos, políticos, jurídicos, éticos y medioambientales." .
+
+:lr_RA194 a guide:LearningResult ;
+    guide:learningResultCode "RA194" ;
+    guide:learningResultDescription "Podrá procesar la información de diferentes fuentes y sintetizarla adecuadamente" .
+
+:lr_RA196 a guide:LearningResult ;
+    guide:learningResultCode "RA196" ;
+    guide:learningResultDescription "Podrá hacer una valoración sobre el rigor de la fuente de procedencia de la información" .
+
+:lr_RA192 a guide:LearningResult ;
+    guide:learningResultCode "RA192" ;
+    guide:learningResultDescription "Podrá localizar con acierto la información requerida" .
+
+:lr_RA193 a guide:LearningResult ;
+    guide:learningResultCode "RA193" ;
+    guide:learningResultDescription "Podrá analizar la información encontrada y descartar la irrelevante." .
+
+# Evaluation Systems and Trials
+:eval_system_progresiva a guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación progresiva libera cada tema a partir de una nota de 3 sobre 10. Se aprueba la asignatura por evaluación progresiva si se tiene más de un 3 en los tres temas y la media ponderada de todas las notas da un 5 o más." ;
+    guide:hasEvaluationTrial :trial_tema1, :trial_tema2, :trial_tema3, :trial_trabajo_fin .
+
+:eval_system_global a guide:EvaluationSystem ;
+    guide:evaluationDescription "Prueba evaluación global" ;
+    guide:hasEvaluationTrial :trial_examen_final .
+
+:eval_system_extraordinaria a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación convocatoria extraordinaria" ;
+    guide:hasEvaluationTrial :trial_extraordinario .
+
+:trial_tema1 a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialWeek "4" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_CE_TEL16, :comp_CG_02, :comp_CG_03, :comp_CG_09 .
+
+:trial_tema2 a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialWeek "9" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_CG_02, :comp_CG_14 .
+
+:trial_tema3 a guide:EvaluationTrial ;
+    guide:trialType "Presentación en Grupo" ;
+    guide:trialWeek "13" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_CG_02, :comp_CG_03, :comp_CG_05, :comp_CG_06, :comp_CG_09, :comp_CG_11, :comp_CG_14 .
+
+:trial_trabajo_fin a guide:EvaluationTrial ;
+    guide:trialType "Trabajo en Grupo" ;
+    guide:trialWeek "14" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_CG_02, :comp_CG_03, :comp_CG_05, :comp_CE_TEL16, :comp_CG_06, :comp_CG_09, :comp_CG_11, :comp_CG_14 .
+
+:trial_examen_final a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialWeek "17" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_CG_02, :comp_CG_03, :comp_CG_05, :comp_CE_TEL16, :comp_CG_06, :comp_CG_09, :comp_CG_11, :comp_CG_14 .
+
+:trial_extraordinario a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:involvesCompetency :comp_CG_02, :comp_CG_03, :comp_CG_05, :comp_CE_TEL16, :comp_CG_06, :comp_CG_09, :comp_CG_11, :comp_CG_14 .
+
+# Schedule and Activities
+:schedule_595000018 a guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week4, :event_week9, :event_week13, :event_week14, :event_week17 .
+
+:event_week1 a guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :act_intro_sociedad .
+
+:act_intro_sociedad a guide:Activity ;
+    guide:activityDescription "Introducción a la asignatura - Sostenibilidad ecológica y social" ;
+    guide:activityDuration 3.5 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:event_week4 a guide:ScheduleEvent ;
+    guide:eventIndex 4 ;
+    guide:eventWeek "4" ;
+    guide:hasActivity :act_tema1_sociedad .
+
+:act_tema1_sociedad a guide:Activity ;
+    guide:activityDescription "Sostenibilidad ecológica y social" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_kuhn a guide:DidacticResource ;
+    guide:bibliographyTitle "La estructura de las revoluciones científicas. T. Kuhn" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Clásico libro de Thomas Kuhn sobre las revoluciones científicas" .
+
+:res_apuntes a guide:DidacticResource ;
+    guide:bibliographyTitle "Apuntes de clase" ;
+    guide:bibliographyType "Otros" ;
+    guide:bibliographyDescription "Descargables de MOODLE" .
+
+:res_ieee_ethics a guide:DidacticResource ;
+    guide:bibliographyTitle "IEEE Ethics and Member Conduct" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "El código de conducta del IEEE" .
+
+# Syllabus
+:syllabus_595000018 a guide:Syllabus ;
+    guide:hasItem :item_tema1, :item_tema2, :item_tema3, :item_tema4 .
+
+:item_tema1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Sostenibilidad ecológica y social" .
+
+:item_tema2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Las revoluciones tecnológicas" .
+
+:item_tema3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "TIC, ética y derechos humanos" .
+
+:item_tema4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Casos de uso de tecnología social" .

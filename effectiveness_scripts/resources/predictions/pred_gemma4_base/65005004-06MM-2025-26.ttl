@@ -1,0 +1,201 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://w3id.org/def/guia#> .
+
+# Degree and University Center
+:degree_06MM rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Ingeniería Mineralúrgica Y Metalúrgica De Las Materias Primas" ;
+    guide:degreeCode "06MM" .
+
+:ets_minas_energia rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros De Minas Y Energía" ;
+    guide:offers :degree_06MM .
+
+# Course
+:course_laboreo_minas rdf:type guide:Course ;
+    sch:name "Laboreo de Minas" ;
+    sch:courseCode 65005004 ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 2025 ;
+    guide:semester "Quinto semestre" .
+
+# Course Guide (Instance for the specific academic period)
+:guide_laboreo_2526 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Laboreo de Minas 2025-26" ;
+    sch:hasCourseInstance :course_laboreo_minas ;
+    sch:instructor :lecturer_juan_herrera ;
+    guide:numberOfCredits 4.5 ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:hasSyllabus :syllabus_laboreo_minas ;
+    guide:hasCompetency :comp_C1, :comp_C14, :comp_C15, :comp_C2, :comp_CON13, :comp_HAB10;
+    guide:hasLearningResult :lr_RA17, :lr_RA49, :lr_RA19;
+    guide:hasEvaluation :eval_system_laboreo ;
+    guide:hasDidacticResource :res_herrera_2006_1, :res_herregate_2020_1 ;
+    sch:description "La asignatura está planteada como una introducción al conjunto de la industria minera actual, sus funciones, procesos, tecnologías, etapas y procesos." .
+
+# Lecturers
+:lecturer_juan_herrera rdf:type guide:Lecturer ;
+    sch:name "Juan Herrera Herbert" ;
+    sch:email "juan.herrera@upm.es" ;
+    guide:office "208 y/o 218" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 12:00 - 14:00, J - 10:00 - 12:00" .
+
+:lecturer_carlos_lopez rdf:type guide:Lecturer ;
+    sch:name "Carlos Lopez Jimeno" ;
+    sch:email "carlos.lopezj@upm.es" ;
+    guide:office "211" .
+
+:lecturer_jesus_caceres rdf:type guide:Lecturer ;
+    sch:name "Jesus Caceres Jimeno" ;
+    sch:email "jesus.caceres@upm.es" ;
+    guide:office "217" .
+
+# Competencies
+:comp_C1 rdf:type guide:Competency ;
+    sch:name "C1" ;
+    guide:competencyCode "C1" ;
+    guide:competencyDescription "Comprender y utilizar los principios de la extracción de materias primas de origen mineral." .
+
+:comp_C14 rdf:type guide:Competency ;
+    sch:name "C14" ;
+    guide:competencyCode "C14" ;
+    guide:competencyDescription "Capacidad de trabajar en un entorno bilingüe (inglés-castellano)." .
+
+:comp_C15 rdf:type guide:Competency ;
+    sch:name "C15" ;
+    guide:competencyCode "C15" ;
+    guide:competencyDescription "Capacidad para organizar y planificar en el ámbito de la empresa, y otras instituciones y organizaciones de proyectos y equipos humanos." .
+
+:comp_C2 rdf:type guide:Competency ;
+    sch:name "C2" ;
+    guide:competencyCode "C2" ;
+    guide:competencyDescription "Comprender y aplicar el diseño, operación y mantenimiento de plantas de preparación y tratamiento de minerales, rolocas industriales, rocas ornamentales y residuos." .
+
+:comp_CON13 rdf:type guide:Competency ;
+    sch:name "CON13" ;
+    guide:competencyCode "CON13" ;
+    guide:competencyDescription "Conocer y comprender la metodología, gestión y organización de proyectos." .
+
+:comp_HAB10 rdf:type guide:Competency ;
+    sch:name "HAB10" ;
+    guide:competencyCode "HAB10" ;
+    guide:competencyDescription "Poseer habilidades de aprendizaje que permitan continuar estudiando a lo largo de la vida para su adecuado desarrollo profesional." .
+
+# Learning Results
+:lr_RA17 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA17" ;
+    guide:learningResultDescription "Relacionar las propiedades de minerales y rocas con su empleo." .
+
+:lr_RA49 rdf:type guide:LearningResult ;
+    guide:learningAT_code "RA49" ;
+    guide:learningResultDescription "Conocer, comprender y utilizar las técnicas de extracción, de transformación y elaboración de la piedra natural." .
+
+:lr_RA19 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA19" ;
+    guide:learningResultDescription "Aplicar los datos teóricos de composición y estructura, en casos concretos, a la posibilidad de explotación de estos materiales." .
+
+# Syllabus
+:syllabus_laboreo_minas rdf:type guide:Syllabus ;
+    guide:hasItem :item_block1, :item_block2, :item_block3, :item_block4, :item_block5, :item_block6 .
+
+:item_block1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "BLOQUE 1: LA INDUSTRENCIA MINERA. CONCEPTOS BÁSICOS, CARACTERÍSTICAS Y SINGULARIDAD" .
+
+:item_block2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "BLOQUE 2: INTRODUCCIÓN A LAS TÉCNICAS DE ARRANQUE DE ROCAS" .
+
+:item_block3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "BLOQUE 3: MÉTODOS DE MINERÍA A CIELO ABIERTO" .
+
+:item_block4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "BLOQUE 4: MÉTODOS DE MINERÍA SUBTERRÁNEA" .
+
+:item_block5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "BLOQUE 5: MÉTODOS DE MINERÍA POR SONDEOS" .
+
+:item_block6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "BLOQUE 6: MÉTODOS ESPECIALES" .
+
+# Evaluation System
+:eval_system_laboreo rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La calificación final de la asignatura se expresará en una cifra numérica en una escala entre 0 y 10. Se compone de pruebas progresivas y examen final." ;
+    guide:hasEvaluationTrial :trial_prog_7, :trial_prog_10, :trial_prog_13, :trial_prog_16, :trial_final .
+
+:trial_prog_7 rdf:type guide:EvaluationTrial ;
+    sch:name "Evaluación de Bloques 1 y 2" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialWeek "Semana 7" ;
+    guide:trialMode "Presencial" .
+
+:trial_prog_10 rdf:type guide:EvaluationTrial ;
+    sch:name "Evaluación del Bloque 3" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialWeek "Semana 10" ;
+    guide:trialMode "Presencial" .
+
+:trial_prog_13 rdf:type guide:EvaluationTrial ;
+    sch:name "Evaluación del Bloque 4" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialWeek "Semana 13" ;
+    guide:trialMode "Presencial" .
+
+:trial_prog_16 rdf:type guide:EvaluationTrial ;
+    sch:name "Evaluación de Bloques 5 y 6" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialWeek "Semana 16" ;
+    guide:trialMode "Presencial" .
+
+:trial_final rdf:type guide:EvaluationTrial ;
+    sch:name "Evaluación Final" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialWeek "Semana 17" ;
+    guide:trialMode "Presencial" .
+
+# Didactic Resources
+:res_herrera_2006_1 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Introducción a los Fundamentos de la Tecnología Minera" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "HERRERA HERBERT, J. (200  6). Fundación Gómez Pardo." .
+
+:res_herrera_2020_1 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Ingeniería de la perforación de pozos de petróleo y gas. Vol. I" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Universidad Politécnica de Madrid, 2020." .
+
+# Schedule Events (Examples from the table)
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_presentation .
+
+:act_presentation rdf:type guide:Activity ;
+    sch:name "Presentación de la asignatura" ;
+    guide:activityDescription "Lección Magistral" ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "Presencial" .

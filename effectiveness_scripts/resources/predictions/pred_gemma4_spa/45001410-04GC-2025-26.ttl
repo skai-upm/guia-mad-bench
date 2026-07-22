@@ -1,0 +1,192 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# University Center
+guide:ETSICCP rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ing. De Caminos Canales Y P." .
+
+# Degree
+guide:Grado_Ingenieria_Civil_y_Territorial rdf:type guide:BachelorDegree ;
+    sch:name "04GC - Grado en Ingenieria Civil y Territorial" ;
+    guide:degreeCode "04GC" .
+
+# Relationship between Center and Degree
+guide:ETSICCP guide:offers guide:Grado_Ingenieria_Civil_y_Territorial .
+
+# Course
+guide:Curso_Servicios_Proteccion rdf:type guide:Course ;
+    sch:name "45001410 - Servicios, Proteccion Del Medio Urbano Y Gestion D" ;
+    guide:courseYear 4 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Séptimo semestre" ;
+    sch:hasCourseInstance guide:Guia_Servicios_Proteccion .
+
+# Relationship between Degree and Course
+guide:Grado_Ingenieria_Civil_y_Territorial guide:hasCourse guide:Curso_Servicios_Proteccion .
+
+# Course Guide
+guide:Guia_Servicios_Proteccion rdf:type guide:CourseGuide ;
+    sch:name "45001410 - Servicios, Proteccion Del Medio Urbano Y Gestion D" ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:otherInformation "La asignatura se relaciona con el ODS3, ODS7, ODS9, ODS11, ODS12 y ODS13." ;
+    guide:hasSyllabus guide:Syllabus_Servicios_Proteccion ;
+    guide:hasCompetency guide:CM37_4, guide:CM38_1, guide:CM38_2, guide:CM39_1, guide:CM44, guide:CM45, guide:CT3, guide:CT6 ;
+    guide:hasLearningResult guide:RA95, guide:RA99, guide:RA92 ;
+    guide:hasEvaluation guide:EvalSystem_Servicios_Proteccion ;
+    guide:hasDidacticResource guide:Recurso_Moodle ;
+    sch:director guide:Sandra_Paola_Bianucci .
+
+# Lecturers
+guide:Sandra_Paola_Bianucci rdf:type guide:Lecturer ;
+    sch:name "Sandra Paola Bianucci" ;
+    sch:email "paola.bianally@upm.es" ;
+    guide:office "Lab. Sanitaria" ;
+    guide:tutorshipsSchedule "L - 11:30 - 13:00, J - 15:30 - 17:00" .
+
+guide:Eva_Maria_Garcia_Del_Toro rdf:type guide:Lecturer ;
+    sch:name "Eva Maria Garcia Del Toro" ;
+    sch:email "evamaria.garcia@upm.es" ;
+    guide:office "Lab. Sanitaria" ;
+    guide:tutorshipsSchedule "J - 10:00 - 12:00, J - 15:30 - 17:30" .
+
+guide:Ana_Garcia_Martinez rdf:type guide:Lecturer ;
+    sch:name "Ana Garcia Martinez" ;
+    sch:email "ana.garcia@upm.es" ;
+    guide:office "Lab. Sanitaria" ;
+    guide:tutorshipsSchedule "J - 15:30 - 17:30" .
+
+# Competencies
+guide:CM37_4 rdf:type guide:Competency ;
+    guide:competencyCode "CM37.4" ;
+    guide:competencyDescription "Comprensión del fundamento y de losES sistemas de utilización de las energías renovables." .
+
+guide:CM38_1 rdf:type guide:Competency ;
+    guide:competencyCode "CM38.1" ;
+    guide:competencyDescription "Conocimiento y comprensión del funcionamiento de los ecosistemas y de los factores ambientales." .
+
+guide:CM38_2 rdf:type guide:Competency ;
+    guide:competencyCode "CM38.2" ;
+    guide:competencyDescription "Comprensión y capacidad de aplicación de metodologías de restauración ambiental." .
+
+guide:CM39_1 rdf:type guide:Competency ;
+    guide:competencyCode "CM39.1" ;
+    guide:competencyDescription "Conocimiento de los proyectos de servicios urbanos relacionados con la distribución de agua y el saneamiento" .
+
+guide:CM44 rdf:type guide:Competency ;
+    guide:competencyCode "CM44" ;
+    guide:competencyDescription "Valoración de los efectos histórico, social, económico, ambiental, cultural, político y globalizador de las realizaciones de la ingeniería civil." .
+
+guide:CM45 rdf:type guide:Competency ;
+    guide:competencyCode "CM45" ;
+    guide:competencyDescription "Comprensión y asunción de los principios de incertidumbre, riesgo y oportunidad en la aplicación de los métodos y modelos de la ingeniería civil." .
+
+guide:CT3 rdf:type guide:Competency ;
+    guide:competencyCode "CT3" ;
+    guide:competencyDescription "Capacidad de actuar con efectividad como miembro de equipos interdisciplinares." .
+
+guide:CT6 rdf:type guide:Competency ;
+    guide:competencyCode "CT6" ;
+    guide:competencyDescription "Compromiso y capacidad de aplicación de los estándares de deontología profesional." .
+
+# Learning Results
+guide:RA95 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA95" ;
+    guide:learningResultDescription "Explica el fundamento y los sistemas de utilización de las energías renovables." .
+
+guide:RA99 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA99" ;
+    guide:learningResultDescription "Valora los efectos social, económico, ambiental, político y globalizador de las infraestructuras hidráulicas y energéticas." .
+
+guide:RA92 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA92" ;
+    guide:learningResultDescription "Proyecta y dimensiona sistemas energéticos." .
+
+# Syllabus
+guide:Syllabus_Servicios_Proteccion rdf:type guide:Syllabus ;
+    guide:hasItem guide:SyllabusItem_1, guide:SyllabusItem_2, guide:SyllabusItem_3, guide:SyllabusItem_4 .
+
+guide:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "SUELOS CONTAMINADOS." .
+
+guide:SyllabusItem_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "CONTAMINACIÓN ACÚSTICA Y ATMOSFÉRICA." .
+
+guide:SyllabusItem_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "GESTIÓN DE RESIDUOS." .
+
+guide:SyllabusItem_4 rdf:type guide:Syllabus*.
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "ENERGÍAS RENOVABLES." .
+
+# Evaluation System
+guide:EvalSystem_Servicios_Proteccion rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "El sistema de evaluación continua se valorara de acuerdo a las siguientes pruebas, ponderadas por el porcentaje especificado." ;
+    guide:hasEvaluationTrial guide:Trial_PrimerParcial, guide:Trial_SegundoParcial, guide:Trial_Global .
+
+# Evaluation Trials
+guide:Trial_PrimerParcial rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:eventWeek "8" ;
+    guide:involvesCompetency guide:CM39_1, guide:CM44, guide:CM45, guide:CM38_1, guide:CM38_2 .
+
+guide:Trial_SegundoParcial rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:eventWeek "16" ;
+    guide:involvesCompetency guide:CM39_1, guide:CM45, guide:CT3, guide:CM37_4 .
+
+guide:Trial_Global rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:eventWeek "17" ;
+    guide:involvesCompetency guide:CM39_1, guide:CM44, guide:CM45, guide:CT3, guide:CM37_4, guide:CT6, guide:CM38_1, guide:CM38_2 .
+
+# Didactic Resources
+guide:Recurso_Moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Área virtual de la ETSICCP (MOODLE)" ;
+    guide:bibliographyType "Recursos web" .
+
+# Required Knowledge
+guide:Knowledge_Previo_Quimica rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Química" .
+
+guide:Knowledge_Previo_Fisica rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Física de ondas" .
+
+guide:Knowledge_Previo_Sanitaria rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Ingenieria Sanitaria y de Medio Ambiente" .
+
+# Schedule Events and Activities
+guide:Event_Semana3 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "3" ;
+    guide:hasActivity guide:Actividad_Participacion_3 .
+
+guide:Actividad_Participacion_3 rdf:type guide:Activity ;
+    guide:activityDescription "Participación en clase y trabajos individuales" ;
+    guide:activityFormat "OT: Otras técnicas evaluativas" ;
+    guide:attendanceType "No Presencial" ;
+    guide:activityDuration 0.0 .
+
+guide:Event_Semana8 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "8" ;
+    guide:hasActivity guide:Actividad_Examen_Parcial_1 .
+
+guide:Actividad_Examen_Parcial_1 rdf:type guide:Activity ;
+    guide:activityDescription "PRIMER PARCIAL (TEMAS 1 y 2)" ;
+    guide:activityFormat "EX: Técnica del tipo Examen Escrito" ;
+    guide:attendanceType "Presencial" ;
+    guide:activityDuration 1.0 .

@@ -1,0 +1,162 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+:Master_Ingenieria_Caminos rdf:type guide:MasterDegree ;
+    sch:name "Master Universitario En Ingenieria De Caminos, Canales Y Puertos" ;
+    guide:degreeCode "04AG" .
+
+:ETS_Caminos_Canales_Puertos rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ing. de Caminos Canales y P." .
+
+# Course
+:Gestion_Circulacion_Viaria_Course rdf:type guide:Course ;
+    sch:name "43000416 - Gestion De La Circulacion Viaria" ;
+    sch:courseCode 43000416 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Cuarto semestre" ;
+    guide:courseYear 2025 ;
+    sch:hasCourseInstance :Gestion_Circulacion_Viaria_Guide .
+
+# Course Guide
+:Gestion_Circulacion_Viaria_Guide rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Gestion De La Circulacion Viaria" ;
+    sch:description "La asignatura pretende formar al alumno en gestión de la circulación viaria" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    guide:numberOfCredits 4.5 ;
+    guide:inpersonHours "Not specified" ;
+    guide:remoteHours "Not specified" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :Begoña_Guera_Abad ;
+    sch:director :Begoña_Guera_Abad ;
+    guide:hasSyllabus :Syllabus_Gestion_Circulacion ;
+    guide:hasCompetency :CE30, :CE33, :CE41, :CGP03, :CGP07, :CT1 ;
+    guide:hasLearningResult :RA1, :RA97, :RA98, :RA90, :RA83, :RA89, :RA96 ;
+    guide:hasEvaluation :EvalSystem_Gestion_Circulacion ;
+    guide:hasDidacticResource :Biblio_1, :Biblio_2, :Biblio_3, :Moodle_Resource ;
+    sch:courseSchedule :Schedule_Gestion_Circulacion .
+
+# Lecturers
+:David_Del_Villar_Juez rdf:type guide:Lecturer ;
+    sch:name "David Del Villar Juez" ;
+    guide:office "Lab. Caminos" ;
+    sch:email "david.delvillar@upm.es" .
+
+:Begoña_Guirao_Abad rdf:type guide:Lecturer ;
+    sch:name "Begoña Guirao Abad" ;
+    guide:office "Lab. Caminos 3" ;
+    sch:email "begona.guirao@upm.es" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 12:00 - 13:00" .
+
+:Maria_Castro_Malpica rdf:type guide:Lecturer ;
+    sch:name "Maria Castro Malpica" ;
+    guide:office "Lab. Caminos 1" ;
+    sch:email "maria.castro@upm.es" ;
+    guide:tutorshipsSchedule "J - 10:30 - 13:30, V - 10:30 - 13:30" .
+
+:Rafael_Enriquez_Rodriguez rdf:type guide:Lecturer ;
+    sch:name "Rafael Enriquez Rodriguez" ;
+    guide:office "1.8-P1" ;
+    sch:email "rafa:enriquez@upm.es" .
+
+# Competencies
+:CE30 rdf:type guide:Competency ;
+    guide:competencyCode "CE30" ;
+    guide:competencyDescription "Capacidad de planificación, gestión y explotación de infraestructuras relacionadas con la ingeniería civil." .
+
+:CE33 rdf:type guide:Competency ;
+    guide:competencyCode "CE33" ;
+    guide:competencyDescription "Capacidad para aplicar los conocimientos técnicos en actividades de I+D+i dentro del ámbito de la ingeniería civil." .
+
+:CE41 rdf:type guide:Competency ;
+    guide:competencyCode "CE41" ;
+    guide:competencyDescription "Capacidad para aplicar los conocimientos técnicos en la evaluación de infraestructuras y sistemas de transporte" .
+
+:CGP03 rdf:type guide:Competency ;
+    guide:competencyCode "CGP03" ;
+    guide:competencyDescription "Conocimiento, comprensión y capacidad para aplicar la legislación necesaria en el ejercicio de la profesión de Ingeniero de Caminos, Canales y Puertos." .
+
+:CGP07 rdf:type guide:Competency ;
+    guide:competencyCode "CGP07" ;
+    guide:competencyDescription "Capacidad para planificar, proyectar, inspeccionar y dirigir obras de infraestructuras de transportes terrestres o marítimos." .
+
+:CT1 rdf:type guide:Competency ;
+    guide:competencyCode "CT1" ;
+    guide:competencyDescription "Capacidad de preparar y presentar comunicaciones orales, escritas y gráficas, estructurada y argumentadamente." .
+
+# Learning Results
+:RA1 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA1" ;
+    guide:learningResultDescription "Formula y resuelve problemas matemáticos y numéricos avanzados de ingeniería civil..." .
+
+:RA97 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA97" ;
+    guide:learning．learningResultDescription "Es capaz de diseñar la gestión del tráfico de una red viaria urbana." .
+
+:RA98 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA98" ;
+    guide:learningResultDescription "Conoce los fundamentos de la gestión de la seguridad de la circulación viaria." .
+
+# Syllabus
+:Syllabus_Gestion_Circulacion rdf:type guide:Syllabus ;
+    guide:hasItem :Tema1, :Tema2, :Tema3, :Tema4, :Tema5 .
+
+:Tema1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Caracterización de la circulación viaria" .
+
+:Tema2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "El accidente de tráfico" .
+
+# Evaluation System
+:EvalSystem_Gestion_Circulacion rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación continua y prueba evaluación global." ;
+    guide:hasEvaluationTrial :Trial_Examen_Continuo, :Trial_Proyecto_Seguridad, :Trial_Examen_Global .
+
+:Trial_Examen_Continuo rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+:Trial_Proyecto_Seguridad rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito (Proyecto)" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialMode "Presencial" .
+
+# Schedule and Activities
+:Schedule_Gestion_Circulacion rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week2, :Event_Week8, :Event_Week17 .
+
+:Event_Week2 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 2 ;
+    guide:eventWeek "Semana 2" ;
+    guide:hasActivity :Act_Leccion_Magistral_Tema1 .
+
+:Act_Leccion_Magistral_Tema1 rdf:type guide:Activity ;
+    guide:activityDescription "Lección Magistral Tema 1" ;
+    guide:activityDuration 2.16 ;
+    guide:activityFormat "LM" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:Biblio_1 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Bibliografía 1" ;
+    guide:bibliographyDescription "ASCE (2009). U.S. Traffic Calming Manual; Edwards, J.D. (ed.) (1999); Elvik et al. (2009)." .
+
+:Moodle_Resource rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "moodle" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Área virtual de la ETSICCP (MOODLE)." .
+
+# Relationships
+:Master_Ingenieria_Caminos guide:hasCourse :Gestion_Circulacion_Viaria_Course .
+:ETS_Caminos_Canales_Puertos offers :Master_Ingenieria_Caminos .

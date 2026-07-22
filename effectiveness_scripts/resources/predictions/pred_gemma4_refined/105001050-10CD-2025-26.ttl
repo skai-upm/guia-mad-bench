@@ -1,0 +1,152 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide
+:CourseGuide_105001050 a guide:CourseGuide ;
+    sch:name "Ecuaciones Diferenciales y Modelización de Fenómen" ;
+    sch:description "Estudio de fenómenos de la vida real mediante ecuaciones diferenciales ordinarias y sistemas de ecuaciones diferenciales." ;
+    guide:numberOfCredits 6.0 ;
+    guide:courseType "Optativa" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:inLanguage "Castellano" ;
+    sch:instructor :Lecturer_JavierLopez, :Lecturer_PauloNicanor ;
+    guide:hasCompetency :Competency_CB04, :Competency_CE01, :Competency_CG02, :Competency_CG03, :Competency_CG06 ;
+    guide:hasLearningResult :LearningResult_RA133, :LearningResult_RA136, :LearningResult_RA134, :LearningResult_RA135, :LearningResult_RA138 ;
+    guide:hasSyllabus :Syllabus_105001050 ;
+    guide:hasEvaluation :EvaluationSystem_105001050 ;
+    guide:hasDidacticResource :Resource_Zill, :Resource_Hirsch, :Resource_Edwards, :Resource_Robinson, :Resource_Simmons, :Resource_Viana, :Resource_GomezCorral, :Resource_Moodle .
+
+# Course
+:Course_105001050 a guide:Course ;
+    sch:name "Ecuines Diferenciales y Modelización de Fenómen" ;
+    sch:courseCode 105001050 ;
+    guide:courseYear 2025 ;
+    guide:semester "Séptimo semestre" ;
+    guide:courseType "Optativa" .
+
+# Degree
+:Degree_10CD a guide:Degree ;
+    sch:name "Grado En Ciencia De Datos E Inteligencia Artificial" ;
+    guide:degreeCode "10CD" .
+
+# University Center
+:UniversityCenter_ETS a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Informáticos" ;
+    guide:offers :Degree_10CD .
+
+# Lecturers
+:Lecturer_JavierLopez a guide:Lecturer ;
+    sch:name "Javier Lopez De La Cruz" ;
+    sch:email "javier.lopez.delacruz@upm.es" ;
+    guide:office "1312" ;
+    guide:tutorshipsSchedule "Sin horario. Contactar con el profesor por correo electrónico." .
+
+:Lecturer_PauloNicanor a guide:Lecturer ;
+    sch:name "Paulo Nicanor Seminario Huertas" ;
+    sch:email "paulo.seminario.huertas@upm.es" ;
+    guide:office "1312" ;
+    guide:tutorshipsSchedule "Sin horario. Contactar con el profesor por correo electrónico." .
+
+# Competencies
+:Competency_CB04 a guide:Competency ;
+    guide:competencyCode "CB04" ;
+    guide:competencyDescription "Que los estudiantes puedan transmitir información, ideas, problemas y soluciones a un público tanto especializado como no especializado" .
+
+:Competency_CE01 a guide:Competency ;
+    guide:competencyCode "CE01" ;
+    guide:competencyDescription "Capacidad para utilizar con destreza los conceptos y métodos matemáticos que subyacen a los problemas de la ciencia de datos y la inteligencia artificial para su modelización y resolución." .
+
+:Competency_CG02 a guide:Competency ;
+    guide:competencyCode "CG02" ;
+    guide:competencyDescription "Capacidad para organizar y planificar tareas y proyectos, identificando objetivos, prioridades, plazos, recursos y riesgos, and controlando los procesos establecidos." .
+
+:Competency_CG03 a guide:Competency ;
+    guide:competencyCode "CG03" ;
+    guide:competencyDescription "Capacidad de emprendimiento y de liderazgo para dirigir y gestionar equipos y proyectos, generando confianza y compromiso en el grupo de colaboradores." .
+
+:Competency_CG06 a guide:Competency ;
+    guide:competencyCode "CG06" ;
+    guide:competencyDescription "Identificar y utilizar las tecnologías de la información y las comunicaciones más adecuadas en el ámbito de la ingeniería." .
+
+# Learning Results
+:LearningResult_RA133 a guide:LearningResult ;
+    guide:learningResultCode "RA133" ;
+    guide:learningResultDescription "Entender la importancia de las ecuaciones diferenciales y su utilidad para modelar fenómenos de la vida real." .
+
+:LearningResult_RA136 a guide:LearningResult ;
+    guide:learningResultCode "RA13</sub>RA136" ;
+    guide:learningResultDescription "Saber realizar un estudio cualitativo de sistemas diferenciales no lineales." .
+
+:LearningResult_RA134 a guide:LearningResult ;
+    guide:learningResultCode "RA134" ;
+    guide:learningResultDescription "Modelar matemáticamente problemas reales mediante ecuaciones diferenciales o sistemas diferenciales" .
+
+:LearningResult_RA135 a guide:LearningResult ;
+    guide:learningResultCode "RA135" ;
+    guide:learningResultDescription "Conocer técnicas para resolver algunos tipos de ecuaciones diferenciales y sistemas diferenciales lineales." .
+
+:LearningResult_RA138 a guide:LearningResult ;
+    guide:learningResultCode "RA138" ;
+    guide:learningResultDescription "Dominar diferentes métodos numéricos de diferencias finitas y su programación para estudiar problemas de la vida real descritos mediante ecuaciones o sistemas diferenciales." .
+
+# Syllabus
+:Syllabus_105001050 a guide:Syllabus ;
+    guide:hasItem :SyllabusItem_Topic1, :SyllabusItem_Topic2, :SyllabusItem_Topic3, :SyllabusItem_Topic4 .
+
+:SyllabusItem_Topic1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Ecuaciones diferenciales de primer orden." .
+
+:SyllabusItem_Topic2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Ecuaciones diferenciales de orden superior." .
+
+:SyllabusItem_Topic3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Sistemas diferenciales lineales de primer orden." .
+
+:SyllabusItem_Topic4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Sistemas diferenciales no lineales autónomos de primer orden." .
+
+# Evaluation System
+:EvaluationSystem_105001050 a guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación consistirá en la entrega de trabajos (progresiva y global) con una nota mínima de 3.5/10 por cada trabajo y una calificación final mayor o igual a 5/10." ;
+    guide:hasEvaluationTrial :EvaluationTrial_Work1, :EvaluationTrial_Work2, :Evaluation．EvaluationTrial_Work3, :EvaluationTrial_Work4 .
+
+:EvaluationTrial_Work1 a guide:EvaluationTrial ;
+    guide:trialDescription "Trabajo sobre ecuaciones diferenciales de primer orden, modelización de fenómenos reales y su simulación numérica." ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "3.5 / 10" ;
+    guide:trialMode "No Presencial" ;
+    guide:involvesCompetency :Competency_CB04, :Competency_CE01 .
+
+# Activities and Schedule
+:Activity_Lecture a guide:Activity ;
+    guide:activityDescription "Explicación de contenidos teóricos y prácticos." ;
+    guide:activityDuration 4.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:Resource_Zill a guide:DidacticResource ;
+    guide:bibliographyTitle "D. G. Zill, Ecuaciones diferenciales con aplicación al modelado, 9a edición, Cengage Learning (2009)." ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Este libro contiene teoría básica sobre ecuaciones y sistemas diferenciales." .
+
+:Resource_Moodle a guide:DidacticResource ;
+    guide:bibliographyTitle "Moodle" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Plataforma donde se ofrecerá material para el desarrollo de la asignatura." .
+
+# Required Knowledge
+:RequiredKnowledge_Pre1 a guide:RequiredKnowledge ;
+    guide:previousCourses "CÁlculo I, CÁlculo II" .

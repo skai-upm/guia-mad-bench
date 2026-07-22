@@ -1,0 +1,135 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+guide:CG_595024322 rdf:type guide:CourseGuide ;
+    sch:name "Electronica Analogica" ;
+    guide:numberOfCredits 6.0 ;
+    guide:courseType "Optativa" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCourse guide:Course_595024322 ;
+    guide:hasEvaluation guide:EvalSystem_595024322 ;
+    guide:hasSyllabus guide:Syllabus_595024322 ;
+    sch:instructor guide:Lecturer_Arques, guide:Lecturer_Gonzalez ;
+    guide:hasLearningResult guide:LR_RA232 ;
+    guide:hasCompetency guide:Comp_CE_B1, guide:Comp_CE_B2, guide:Comp_CE_B4, guide:Comp_CE_EC04, guide:Comp_CE_EC05, guide:Comp_CE_EC08, guide:Comp_CE_SC03, guide:Comp_CG_02, guide:Comp_CG_04, guide:Comp_CG_11 ;
+    guide:hasDidacticResource guide:Res_Hambley, guide:Res_Rashid, guide:Res_Amos, guide:Res_Thompson, guide:Res_RuizRobredo ;
+    guide:otherInformation "Es imprescindible aprobar de forma individual el laboratorio y la teoría (Nota laboratorio >5. Nota teoría >5)." .
+
+# Course Instance
+guide:Course_595_595024322 rdf:type guide:Course ;
+    sch:name "Electronica Analogica" ;
+    sch:courseCode 595024322 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Sexto semestre" .
+
+# Degree Instance
+guide:Degree_59TL rdf:type guide:Degree ;
+    sch:name "Grado En Ingenieria Telematica" ;
+    guide:degreeCode "59TL" ;
+    guide:hasCourse guide:Course_595024322 .
+
+# University Center Instance
+guide:UC_ETS_Telecom rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Sist. De Telecom." ;
+    guide:offers guide:Degree_59TL .
+
+# Lecturer Instances
+guide:Lecturer_Arques rdf:type guide:Lectually ;
+    sch:name "Francisco Jose Arques Orobon" ;
+    sch:email "jose.arques@upm.es" ;
+    guide:office "D8418" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:Lecturer_Gonzalez rdf:type guide:Lecturer ;
+    sch:name "Vicente Gonzalez Posadas" ;
+    sch:email "vicente.gonzalez@upm.es" ;
+    guide:office "D8201A" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+# Competency Instances (Sample)
+guide:Comp_CE_B1 rdf:type guide:Competency ;
+    guide:competencyCode "CE B1" ;
+    guide:competencyDescription "Capacidad para la resolución de los problemas matemáticos que puedan plantearse en la ingeniería." .
+
+guide:Comp_CE_B2 rdf:type guide:Competency ;
+    guide:competencyCode "CE B2" ;
+    guide:competencyDescription "Conocimientos básicos sobre el uso y programación de los ordenadores, sistemas operativos, bases de datos y programas informáticos con aplicación en ingeniería." .
+
+guide:Comp_CE_EC05 rdf:type guide:Compet competency ;
+    guide:competencyCode "CE EC05" ;
+    guide:competencyDescription "Capacidad de diseñar circuitos de electrónica analógica y digital, de conversión analógico-digital y digital-analógica, de radiofrecuencia, de alimentación y conversión de energía eléctrica para aplicaciones de telecomunicación y computación." .
+
+# Learning Result Instance
+guide:LR_RA232 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA232" ;
+    guide:learningResultDescription "Se concretarán para cada asignatura optativa o para la realización de prácticas en empresas." .
+
+# Syllabus and Items
+guide:Syllabus_595024322 rdf:type guide:Syllabus ;
+    guide:hasItem guide:SyllabusItem_1, guide:SyllabusItem_2 .
+
+guide:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a los componentes electrónicos." .
+
+guide:SyllabusItem_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Técnicas de Polarización" .
+
+# Evaluation System and Trials
+guide:EvalSystem_595024322 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La nota final será N=(0.85*Nota Teoría)+(0.15*Nota de Laboratorio)." ;
+    guide:hasEvaluationTrial guide:Trial_Examen_P1, guide:Trial_Prácticas .
+
+guide:Trial_Examen_P1 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialWeek "3" ;
+    guide:trialMode "Presencial" .
+
+guide:Trial_Prácticas rdf:type guide:EvaluationTrial ;
+    guide:trialType "Presentación Individual" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "11" ;
+    guide:trialMode "Presencial" .
+
+# Didactic Resources
+guide:Res_Hambley rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Electrónica" ;
+    guide:bibliographyDescription "ALLAN R. HAMBLETY, PEARSON EDUCACION, 2001." ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:Res_Rashid rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "ELECTRONICA DE POTENCIA: CIRCUITOS, DISPOSITIVOS Y APLICACIONES" ;
+    guide:bibliographyDescription "MUHAMMAD H. RASHID, PRENTICE HALL MEXICO, 2005" ;
+    guide:bibliographyType "Bibliografía" .
+
+# Required Knowledge
+guide:ReqKnow_Prev rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Analisis De Circuitos Ii, Electronica I, Analisis De Circuitos I" ;
+    guide:previousKnowledge "Haber cursado alguna asignatura con laboratorio e instrumentación" .
+
+# Activities (from Schedule)
+guide:Act_Clase_T1 rdf:type guide:Activity ;
+    guide:activityDescription "Lección Magistral" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "LM" ;
+    guide:attendanceType "Presencial" .
+
+guide:Act_Práctica_1 rdf:type guide:Activity ;
+    guide:activityDescription "Prácticas de Laboratorio" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "PL" ;
+    guide:attendanceType "Presencial" .

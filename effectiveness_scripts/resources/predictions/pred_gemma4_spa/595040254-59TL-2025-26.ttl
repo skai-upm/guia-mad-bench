@@ -1,0 +1,157 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+_:courseGuide a guide:CourseGuide ;
+    sch:name "595040254 - Tic Emergentes para la Sostenibilidad" ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:inpersonHours "No especificado" ;
+    guide:remoteHours "No especificado" ;
+    guide:totalHours "No especificado" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus _:syllabus ;
+    guide:hasCompetency _:comp_ce_tel03, _:comp_ce_tel16, _:comp_cg02, _:comp_cg05, _:comp_cg09 ;
+    guide:hasLearningResult _:lr_ra232 ;
+    guide:hasEvaluation _:evalSystem ;
+    guide:hasDidacticResource _:res_book1, _:res_web1, _:res_web2 ;
+    sch:instructor _:prof_aurelio, _:prof_miguel ;
+    sch:description "En esta asignatura se profundizará en los conceptos y herramientas estudiadas en CIENCIA, TECNOLOGÍA y SOCIEDAD sobre un temario amplio y concreto de temas de actualidad en las TIC." .
+
+_:course a guide:Course ;
+    sch:name "595040254 - Tic Emergentes para la Sostenibilidad" ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 3 ;
+    guide:semester "Sexto semestre" ;
+    sch:hasCourseInstance _:courseGuide .
+
+_:degree a guide:Degree ;
+    sch:name "59TL - Grado en Ingenieria Telematica" ;
+    guide:degreeCode "59TL" ;
+    guide:hasCourse _:course .
+
+_:univCenter a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Sist. De Telecom." ;
+    guide:offers _:degree .
+
+_:prof_aurelio a guide:Lecturer ;
+    sch:name "Aurelio Berges Garcia" ;
+    sch:email "aurelio.berges@upm.es" ;
+    guide:office "A4423" ;
+    guide:tutorshipsSchedule "X - 12:30 - 13:30" .
+
+_:prof_miguel a guide:Lecturer ;
+    sch:name "Miguel Angel Valero Duboy" ;
+    sch:email "miguelangel.valero@upm.es" ;
+    guide:office "A4422" ;
+    guide:tutorshipsSchedule "X - 12:30 - 13:30" .
+
+_:prof_ext1 a guide:Lecturer ;
+    sch:name "Celia Fernández Aller" ;
+    sch:email "mariacelia.fernandez@upm.es" .
+
+_:prof_ext2 a guide:Lecturer ;
+    sch:name "Sergio Dantonio Maceiras" ;
+    sch:email "sergio.dantonio@upm.es" .
+
+_:comp_ce_tel03 a guide:Competency ;
+    guide:competencyCode "CE TEL03" ;
+    guide:competencyDescription "Capacidad para utilizar herramientas informáticas de búsqueda de recursos bibliográficos o de información relacionada con las telecomunicaciones y la electrónica." .
+
+_:comp_ce_tel16 a guide:Competency ;
+    guide:competencyCode "CE TEL16" ;
+    guide:competencyDescription "Conocimiento de la normativa y la regulación de las telecomunicaciones en los ámbitos nacional, europeo e internacional." .
+
+_:comp_cg02 a guide:Competency ;
+    guide:competencyCode "CG 02" ;
+    guide:competencyDescription "Capacidad de búsqueda y selección de información, de razonamiento crítico y de elaboración y defensa de argumentos dentro del área." .
+
+_:comp_cg05 a guide:Competency ;
+    guide:competencyCode "CG 05" ;
+    guide:competencyDescription "Capacidad de trabajo en equipo y en entornos multidisciplinares." .
+
+_:comp_cg09 a guide:Competency ;
+    guide:competencyCode "CG 09" ;
+    guide:competencyDescription "Capacidad de analizar y valorar el impacto social y medioambiental de las soluciones técnicas." .
+
+_:lr_ra232 a guide:LearningResult ;
+    guide:learningResultCode "RA232" ;
+    guide:learningResultDescription "Se concretarán para cada asignatura optativa o para la realización de prácticas en empresas." .
+
+_:syllabus a guide:Syllabus ;
+    guide:hasItem _:item1, _:item2, _:item3, _:item4, _:item5, _:item6, _:item7 .
+
+_:item1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Sociedad de la Información, sociedad del ruido y brecha digital" .
+
+_:item2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "TIC emergentes y retos sociales" .
+
+_:item3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Solucionismo, convivencialidad y tecnología apropiada" .
+
+_:item4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "E-accesibilidad y diseño para todas las personas" .
+
+_:item5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Ética y legislación en robótica, IA, y Big Data" .
+
+_:item6 a guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Transformación digital en integración, salud, y aprendizaje" .
+
+_:item7 a guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Innovación y emprendimiento social" .
+
+_:evalSystem a guide:EvaluationSystem ;
+    guide:evaluationDescription "La asignatura se imparte en modo seminario. La nota se compone de evaluación progresiva y examen final." ;
+    guide:hasEvaluationTrial _:trial_prog, _:trial_glob, _:trial_ext .
+
+_:trial_prog a guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "60%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialWeek "2" ;
+    guide:trialMode "Presencial" .
+
+_:trial_glob a guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialWeek "13" ;
+    guide:trialMode "Presencial" .
+
+_:trial_ext a guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Extraordinaria" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:trialMode "Presencial" .
+
+_:res_book1 a guide:DidacticResource ;
+    sch:name "El desencanto del Progreso" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Andoni Alonso & Iñaki Arzoz (2021)" .
+
+_:res_web1 a guide:DidacticResource ;
+    sch:name "Kahoot" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Para la realización de test instantáneos con el uso del móvil" .
+
+_:res_web2 a guide:DidacticResource ;
+    sch:name "MOODLE" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "B-learning" .
+
+_:prev_knowledge a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Ciencia, Tecnologia Y Sociedad" .

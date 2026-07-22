@@ -1,0 +1,205 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+:Master_Software_Engineering rdf:type guide:MasterDegree ;
+    sch:name "10AM - Master Universitario en Ingenieria del Software" .
+
+:ETS_Informaticos rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Informáticos" .
+
+:ETS_Informaticos guide:offers :Master_Software_Engineering .
+
+# Course
+:EHealth_Course rdf:type guide:Course ;
+    sch:name "103001025 - E-health: Promoting Active And Healthy Ageing" ;
+    sch:courseCode 103001025 ;
+    guide:courseType "Optional/elective" ;
+    guide:courseYear 2025 .
+
+:EHealth_Course sch:hasCourseInstance :EHealth_CourseGuide .
+
+# Course Guide
+:EHealth_CourseGuide rdf:type guide:CourseGuide ;
+    sch:name "Learning Guide: E-health: Promoting Active And Healthy Ageing" ;
+    sch:instructor :Elena_Villalba_Mora ;
+    guide:hasSyllabus :EHealth_Syllabus ;
+    guide:hasEvaluation :EHealth_EvalSystem ;
+    guide:hasLearningResult :RA90, :RA91, :RA92, :RA93 ;
+    guide:hasCompetency :CG1, :CG8, :CG18 ;
+    guide:numberOfCredits 4.0 ;
+    sch:courseSchedule :EHealth_Schedule ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "September" ;
+    guide:periodEndingMonth "January" ;
+    guide:totalHours "26/27 hours of student face-to-face contact and independent study time" .
+
+# Faculty
+:Elena_Villalba_Mora rdf:type guide:Lecturer ;
+    sch:name "Elena Villalba Mora" ;
+    sch:email "elena.villalba@upm.es" ;
+    guide:office "5110" ;
+    guide:tutorshipsSchedule "M - 10:00 - 12:00, W - 10:00 - 12:00, F - 10:00 - 12:00" .
+
+:Cristian_Moral_Martos rdf:type guide:Lecturer ;
+    sch:name "Cristian Moral Martos" ;
+    sch:email "cristian.moral@upm.es" ;
+    guide:office "5110" ;
+    guide:tutorshipsSchedule "W - 10:00 - 14:00, F - 10:00 - 12:00" .
+
+# Competencies
+:CG1 rdf:type guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos dentro de contextos más amplios (o multidisciplinares) relacionados con su área de estudio (RD)" .
+
+:CG8 rdf:type guide:Competency ;
+    guide:competencyCode "CG8" ;
+    guide:competencyDescription "Planteamiento y resolución de problemas también en áreas nuevas y emergentes de su disciplina" .
+
+:CG18 rdf:type guide:Competency ;
+    guide:competencyCode "CG18" ;
+    guide:competencyDescription "Capacidad de trabajar y comunicarse también en contextos internacionales" .
+
+# Learning Results
+:RA90 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA90" ;
+    guide:learningResultDescription "Apply techniques for designing and implementing prototypes of different fidelity levels" .
+
+:RA91 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA91" ;
+    guide:learningResultDescription "Apply techniques for modelling the context of use" .
+
+:RA92 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA92" ;
+    guide:learningResultDescription "Understand how user-centred design methods are used in non-academic environments" .
+
+:RA93 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA93" ;
+    guide:learningResultDescription "Evaluate the usability of prototypes" .
+
+# Syllabus
+:EHealth_Syllabus rdf:type guide:Syllabus ;
+    guide:hasItem :Syll_Unit1, :Syll_Unit2, :Syll_Unit3, :Syll_Unit4, :Syll_Unit5, :Syll_Unit6 .
+
+:Syll_Unit1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Active and Health Ageing (Course introduction, Definition and frameworks)" .
+
+:Syll_Unit2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Clinical perspective. Intrinsic capacity and frailty" .
+
+:Syll_Unit3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Political perspective" .
+
+:Syll_Unit4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Technological perspective" .
+
+:Syll_Unit5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Social and personal perspective" .
+
+:Syll_Unit6 rdf:<0xC2>type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Active and Healthy Ageing Project" .
+
+# Schedule and Activities
+:EHealth_Schedule rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_W1, :Event_W5, :Event_W7, :Event_W10, :Event_W13, :Event_W16 .
+
+:Event_W1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :Act_Lecture_W1 .
+
+:Act_Lecture_W1 rdf:type guide:Activity ;
+    guide:activityDescription "Active and Healthy Ageing: 1.1 Course introduction 1.2. Definitions and frameworks" ;
+    guide:activityFormat "Lecture" ;
+    guide:activityDuration 2.0 .
+
+:Event_W5 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 5 ;
+    guide:eventWeek "5" ;
+    guide:hasActivity :Act_Assignment_W5 .
+
+:Act_Assignment_W5 rdf:type guide:Activity ;
+    guide:activityDescription "Assignment of political and technological perspective" ;
+    guide:activityFormat "Individual work" ;
+    guide:attendanceType "Not Presential" ;
+    guide:activityDuration 6.0 .
+
+:Event_W7 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 7 ;
+    guide:eventWeek "7" ;
+    guide:hasActivity :Act_Assessment_W7 .
+
+:Act_Assessment_W7 rdf:type guide:Activity ;
+    guide:activityDescription "Assessment. AHA Project: Planification of the observation of the context of use" ;
+    guide:activityFormat "Group work" ;
+    guide:attendanceType "Not Presential" ;
+    guide:activityDuration 2.0 .
+
+:Event_W16 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 16 ;
+    guide:eventWeek "16" ;
+    guide:hasActivity :Act_FinalExam_W16 .
+
+:Act_FinalExam_W16 rdf:type guide:Activity ;
+    guide:activityDescription "Final Exam: Assessment: AHA project. Results" ;
+    guide:activityFormat "Group presentation" ;
+    guide:attendanceType "Face-to-face" ;
+    guide:activityDuration 3.0 .
+
+# Evaluation System
+:EHealth_EvalSystem rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Progressive evaluation system (continuous evaluation), which grades the active participation of the student during the iterative development of an interactive project carried out in groups, following the human-centred design process." ;
+    guide:hasEvaluationTrial :Trial_W5, :Trial_W7, :Trial_W10, :Trial_W13, :Trial_W16 .
+
+:Trial_W5 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "progressive" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialType "Assignment" ;
+    guide:evaluationDuration "06:00" ;
+    guide:hasScheduleEvent :Event_W5 .
+
+:Trial_W7 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "progressive" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "/ 10" ;
+    guide:trialType "Assessment" ;
+    guide:evaluationDuration "02:00" ;
+    guide:hasScheduleEvent :Event_W7 .
+
+:Trial_W16 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "final" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "/ 10" ;
+    guide:trialType "Exam" ;
+    guide:evaluationDuration "03:00" ;
+    guide:hasScheduleEvent :Event_W16 .
+
+# Teaching Resources
+:Res_Bousquet rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Operational definition of Active and Healthy Ageing (AHA): A conceptual framework" ;
+    guide:bibliographyType "Bibliography" ;
+    guide:bibliographyDescription "Paper: Bousquet, Jean, et al. (2015). The journal of nutrition, health & aging 19.9: 955-960." .
+
+:Res_Beard rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "The World Report on ageing and health: a policy framework for healthy ageing" ;
+    guide:bibliographyType "Bibliography" ;
+    guide:bibliographyDescription "Beard et al. (2016). Lancet 2016; 387: 2145-54" .
+
+:Res_WHO rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Global age-friendly cities: a guide" ;
+    guide:bibliographyType "Bibliography" ;
+    guide:bibliographyDescription "OMS (2017). http://www.who.int/ageing/publications/age_friendly_cities_guide/en/" .
+
+# Prior Knowledge
+:PriorKnowledge_UCD rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "User Centred Design. User Experience basic knowledge." .

@@ -1,0 +1,105 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide/anx-pr-cl-001-01> rdf:type guide:CourseGuide ;
+    dct:title "Modelización Y Simulación Iii"@en ;
+    sch:name "Modelización y Simulación III" ;
+    dc:description "Guía de aprendizaje para el curso académico 2025/26."@en ;
+    guide:numberOfCredits "6.0"^^xsd:decimal ;
+    guide:teachingPeriodMonths "Febrero-Junio"@en ;
+    sch:inLanguage "Castellano"@en .
+
+<http://guia-mad-bench.es/data/course/modelizacion-simulacion-iii> rdf:type guide:Course ;
+    sch:name "Modelización Y Simulación Iii" ;
+    guide:courseYear 2025/26 ;
+    guide:scholarshipType "Obligatoria"@en .
+
+<http://guia-mad-bench.es/data/course/modelizacion-simulacion-iii> sch:hasCourseInstance <http://guia-mad-bench.es/data/course-guide/anx-pr-cl-001-01> ;
+    guide:courseCode 305000127 .
+
+<http://guia-mad-bench.es/data/degree/bachelor-degree-30gm> rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Matematicas" ;
+    guide:degreeCode "30GM"@en .
+
+<http://guia-mad-bench.es/data/course/modelizacion-simulacion-iii> guide:hasCourse <http://guia-mad-bench.es/data/degree/bachelor-degree-30gm> .
+
+<http://guia-mad-bench.es/data/person/maria-barbero-liñan> rdf:type guide:Lecturer ;
+    sch:name "Maria Barbero Liñan" ;
+    dct:creator "Coordinador/a"@en ;
+    sch:email <mailto:m.barbero@upm.es> ;
+    guide:office "ETSAM"@en .
+
+<http://guia-mad-bench.es/data/course-guide/anx-pr-cl-001-01> sch:director <http://guia-mad-bench.es/data/person/maria-barbero-liñan> .
+
+<http://guia-mad-bench.es/data/competency/cb2> rdf:type guide:Competency ;
+    guide:competencyCode "CB2"@en ;
+    sch:description "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional..."@en .
+
+<http://guia-mad-bench.es/data/course-guide/anx-pr-cl-001-01> guide:hasCompetency <http://guia-mad-bench.es/data/competency/cb2> ;
+    sch:name "CB2"@en .
+
+<http://guia-mad-bench.es/data/learning-result-ra146> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA146"@en ;
+    sch:description "Programar, realizar e interpretar simulaciones de los modelos utilizados"@en .
+
+<http://guia-mad-bench.es/data/course-guide/anx-pr-cl-001-01> guide:hasLearningResult <http://guia-mad-bench.es/data/learning-result-ra146> ;
+    sch:name "RA146"@en .
+
+<http://guia-mad-bench.es/data/syllabus/modelizacion-simulacion-iii> rdf:type guide:Syllabus ;
+    dct:title "Temario Modelización Y Simulación III"@en .
+
+<http://guia-mad-bench.es/data/course-guide/anx-pr-cl-001-01> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus/modelizacion-simulacion-iii> ;
+    sch:name "Temario"@en .
+
+<http://guia-mad-bench.es/data/syllabus-item/tema-1-diseño-cagd> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Diseño geométrico asistido por ordenador"@en .
+
+<http://guia-mad-bench.es/data/syllabus-item/tema-2-superficies-minimas> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Modelización de superficies mínimas"@en .
+
+<http://guia-mad-bench.es/data/syllabus-item/tema-3-robótica> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Métodos geométricos en robótica"@en .
+
+<http://guia-mad-bench.es/data/syllabus/modelizacion-simulacion-iii> guide:hasItem <http://guia-mad-bench.es/data/syllabus-item/tema-1-diseño-cagd> ;
+    sch:name "Tema 1"@en .
+
+<http://guia-mad-bench.es/data/schedule/modelizacion-simulacion-iii> rdf:type guide:Schedule ;
+    dct:title "Cronograma Modelización Y Simulación III"@en .
+
+<http://guia-mad-bench.es/data/course-guide/anx-pr-cl-001-01> sch:eventSchedule <http://guia-mad-bench.es/data/schedule/modelizacion-simulacion-iii> ;
+    guide:courseYear 2025/26 .
+
+<http://guia-mad-bench.es/data/event-week-5-examen-curvas> rdf:type guide:ScheduleEvent ;
+    sch:eventIndex 17 ; # Assuming index based on table row or week number logic, using event description for clarity in data prop if available. Onto has `eventWeek` and `activityDescription`. Let's use properties from ontology.
+    om:Unit "03:00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/modelizacion-simulacion-iii> sch:eventSchedule <http://guia-mad-bench.es/data/event-week-5-examen-curvas> ;
+    guide:syllabusDescription "Control sobre curvas y superficies forma libre"@en .
+
+<http://guia-mad-bench.es/data/evaluation-system/modelizacion-simulacion-iii> rdf:type guide:EvaluationSystem ;
+    sch:name "Sistema de Evaluación Modelización Y Simulación III"@en .
+
+<http://guia-mad-bench.es/data/course-guide/anx-pr-cl-001-01> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluation-system/modelizacion-simulacion-iii> ;
+    sch:name "Evaluación Progresiva y Global"@en .
+
+<http://guia-mad-bench.es/data/trial/examen-curvas-forma-libre> rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito"^^xsd:string ;
+    guide:evaluationDescription "Control sobre curvas y superficies forma libre."@en .
+
+<http://guia-mad-bench.es/data/evaluation-system/modelizacion-simulacion-iii> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial/examen-curvas-forma-libre> ;
+    sch:name "Examen Curvas"@en .
+
+<http://guia-mad-bench.es/data/course-guide/anx-pr-cl-001-01> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial/examen-curvas-forma-libre> ;
+    sch:name "Examen Curvas"@en .
+
+<http://guia-mad-bench.es/data/evaluation-system/modelizacion-simulacion-iii> guide:gradePercentage 10.0^^xsd:decimal ;
+    guide:minimumScore "3"^^xsd:string .

@@ -1,0 +1,170 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course_guide_25001209> rdf:type :CourseGuide ;
+    dct:title "Guía de Aprendizaje"@en ;
+    sch:name "Botanica Agricola Y Flora" ;
+    guide:numberOfCredits 4^^xsd:decimal ;
+    guide:courseYear 2025^^xsd:integer ;
+    guide:teachingPeriodMonths "Febrero-Junio"@en ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer_agustin_garzon_hidalgo> ,
+                <http://guia-mad-bench.es/data/lecturer_pedro_luis_aguado_cortijo> ;
+    guide:syllabusDescription "Temario de la asignatura"@en .
+
+<http://w3id.org/def/guia#CourseGuide> rdf:type owl:Class ;
+    rdfs:subClassOf sch:CourseInstance .
+
+<http://guia-mad-bench.es/data/course_guide_25001209> sch:hasCourseInstance <http://guia-mad-bench.es/data/degree_02IA> .
+
+<http://w3id.org/def/guia#Degree> rdf:type owl:Class ;
+    rdfs:comment "An academic degree programme that structures and groups courses within a formal higher education curriculum."@en .
+
+<http://guia-mad-bench.es/data/degree_02IA> rdf:type :Degree ;
+    sch:name "Grado En Ingenieria Agroambiental" ;
+    guide:courseYear 2025^^xsd:integer .
+
+<http://w3id.org/def/guia#UniversityCenter> rdf:type owl:Class ;
+    rdfs:subClassOf sch:Organization ;
+    rdfs:description "An organizational unit within a university where degree programmes are taught, such as a faculty, school, or institute responsible for academic delivery."@en .
+
+<http://guia-mad-bench.es/data/university_center_Etsi_AAB> rdf:type :UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas" ;
+    guide:offers <http://guia-mad-bench.es/data/degree_02IA> .
+
+<http://w3id.org/def/guia#Lecturer> rdf:type owl:Class ;
+    rdfs:subClassOf sch:Person ;
+    rdfs:comment "A teaching person responsible for delivering, coordinating, or supporting a course within an academic programme."@en .
+
+<http://guia-mad-bench.es/data/lecturer_m_dolores_curt_fernandez> rdf:type :Lecturer ;
+    sch:name "M. Dolores Curt Fernandez De La Mora" ;
+    guide:office "UD Bot.Agricola"@en ;
+    sch:email <mailto:md.curt@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer_pedro_luis_aguado_cortijo> rdf:type :Lecturer ;
+    sch:name "Pedro Luis Aguado Cortijo" ;
+    guide:office "UD Bot.Agricola"@en ;
+    sch:email <mailto:pl.aguado@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer_agustin_garzon_hidalgo> rdf:type :Lecturer ;
+    sch:name "Agustin Garzon Hidalgo" ;
+    guide:office ""^^xsd:string ;
+    dct:title "Coordinador/a"@en .
+
+<http://w3id.org/def/guia#Competency> rdf:type owl:Class ;
+    rdfs:comment "A capability, skill, or integrated learning outcome that students are expected to develop through the course."@en .
+
+<http://guia-mad-bench.es/data/comp_CE15> rdf:type :Competency ;
+    guide:competencyCode "CE15"^^xsd:string ;
+    sch:description "Capacidad para aplicar los principios de la botánica en la identificación y caracterización de especies vegetales, así como conocer las principales especies agrícolas..."@en .
+
+<http://guia-mad-bench.es/data/comp_CG16> rdf:type :Competency ;
+    guide:competencyCode "CG16"^^xsd:string ;
+    sch:description "Aplicar conocimientos adquiridos a la práctica de la ingeniería agraria"@en .
+
+<http://guia-mad-bench.es/data/comp_CE3> rdf:type :Competency ;
+    guide:competencyCode "CE3"^^xsd:string ;
+    sch:description "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes..."@en .
+
+<http://guia-mad-bench.es/data/comp_CG5> rdf:type :Competency ;
+    guide:competencyCode "CG5"^^xsd:string ;
+    sch:description "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía"@en .
+
+<http://guia-mad-bench.es/data/comp_CG7> rdf:type :Competency ;
+    guide:competencyCode "CG7"^^xsd:string ;
+    sch:description "Compromiso ético y profesional y respeto por el medio ambiente y la diversidad"@en .
+
+<http://w3id.org/def/guia#LearningResult> rdf:type owl:Class ;
+    rdfs:comment "A specific and assessable statement of what a student is expected to know, understand, or be able to do after completing the course."@en .
+
+<http://guia-mad-bench.es/data/res_RA47> rdf:type :LearningResult ;
+    guide:learningResultCode "RA47"^^xsd:string ;
+    sch:description "Reconocer y caracterizar las principales especies vegetales de interés en los campos de la agronomía y la flora española"@en .
+
+<http://guia-mad-bench.es/data/res_RA48> rdf:type :LearningResult ;
+    guide:learningResultCode "RA48"^^xsd:string ;
+    sch:description "Relacionar caracteres botánicos con las aplicaciones de las especies vegetales y sus requerimientos de hábitat"@en .
+
+<http://guia-mad-bench.es/data/res_RA50> rdf:type :LearningResult ;
+    guide:learningResultCode "RA50"^^xsd:string ;
+    sch:description "Identificar especies vegetales mediante el uso e interpretación de herramientas apropiadas al caso"@en .
+
+<http://w3id.org/def/guia#Syllabus> rdf:type owl:Class ;
+    rdfs:subClassOf sch:Syllabus ;
+    rdfs:comment "The structured outline of the course content, usually organized into thematic units, topics, or instructional blocks."@en .
+
+<http://guia-mad-bench.es/data/syllabus_25001209> rdf:type :Syllabus ;
+    guide:syllabusDescription "Temario de la asignatura"@en .
+
+<http://w3id.org/def/guia#SyllabusItem> rdf:type owl:Class ;
+    rdfs:comment "A single element of a syllabus, representing a topic, unit, lesson, or other content component within the course structure."@en .
+
+<http://guia-mad-bench.es/data/sy_item_1> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    sch:description "Principios generales"@en .
+
+<http://guia-mad-bench.es/data/sy_item_2> rdf:type :SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer ;
+    sch:description "Terminología"@en .
+
+<http://w3id.org/def/guia#Schedule> rdf:type owl:Class ;
+    rdfs:subClassOf sch:Schedule ;
+    rdfs:comment "A temporal organization of course-related events, activities, or milestones across the academic period."@en .
+
+<http://guia-mad-bench.es/data/schedule_25001209> rdf:type :Schedule ;
+    guide:eventIndex 1^^xsd:integer ;
+    sch:description "Cronograma de la asignatura"@en .
+
+<http://w3id.org/def/guia#ScheduleEvent> rdf:type owl:Class ;
+    rdfs:subClassOf sch:Event ;
+    rdfs:comment "A dated or timed element within a course schedule, such as a class session, deadline, exam, or planned activity."@en .
+
+<http://guia-mad-bench.es/data/schedule_event_1> rdf:type :ScheduleEvent ;
+    guide:eventIndex 1^^xsd:integer ;
+    sch:description "Tema 1"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://guia-mad-bench.es/data/schedule_event_7> rdf:type :ScheduleEvent ;
+    guide:eventIndex 7^^xsd:integer ;
+    sch:description "Prueba de evaluación progresiva 1 a realizar en la semana marcada por Dirección"@en .
+
+<http://w3id.org/def/guia#EvaluationSystem> rdf:type owl:Class ;
+    rdfs:comment "The overall framework that defines how student learning is assessed in a course, including criteria, components, and grading structure."@en .
+
+<http://guia-mad-bench.es/data/eval_system_25001209> rdf:type :EvaluationSystem ;
+    guide:evaluationDescription "Con carácter general, se seguirán las directrices UPM publicadas en B.O.U.P.M. de 7 junio 2022."@en .
+
+<http://w3id.org/def/guia#EvaluationTrial> rdf:type owl:Class ;
+    rdfs:comment "A specific assessment instance or examination opportunity within the evaluation system, such as an ordinary or extraordinary attempt."@en .
+
+<http://guia-mad-bench.es/data/trial_pep_1a> rdf:type :EvaluationTrial ;
+    guide:trialDescription "Prueba de evaluación progresiva 1 a realizar en la semana marcada por Dirección"@en ;
+    sch:name "Evaluación Progresiva 1"^^xsd:string ;
+    guide:evaluationType "Progresiva"@en ;
+    guide:gradePercentage 35^^xsd:decimal ;
+    guide:minimumScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial_global> rdf:type :EvaluationTrial ;
+    guide:trialDescription "Examen Ordinario del temario de la asignatura"@en ;
+    sch:name "Evaluación Global"^^xsd:string ;
+    guide:evaluationType "Global"@en ;
+    guide:gradePercentage 75^^xsd:decimal ;
+    guide:minimumScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial_extra> rdf:type :EvaluationTrial ;
+    guide:trialDescription "Examen final extraordinario del temario de la asignatura"@en ;
+    sch:name "Convocatoria Extraordinaria"^^xsd:string ;
+    guide:evaluationType "Extraordinaria"@en ;
+    guide:gradePercentage 75^^xsd:decimal ;
+    guide:minimumScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course_guide_25001209> sch:hasCourseInstance <http://guia-mad-bench.es/data/degree_02IA> ;
+    guide:syllabusDescription "Temario de la asignatura"@en .
+
+<http://w3id.org/def/guia#Activity> rdf:type owl:Class ;
+    rdfs:comment "A teaching or learning activity carried out as part of the course, such as lectures, labs, seminars, tutorials, or independent work."@en .

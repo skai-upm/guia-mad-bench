@@ -1,0 +1,226 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Entity
+guide:CG_73000039 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Prevencion De Incendios" ;
+    sch:inLanguage "Castellano" ;
+    guide:numberOfCredits 5.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:hasSyllabus guide:Syllabus_73000039 ;
+    guide:hasCompetency guide:CE_1_2, guide:CE_2_1, guide:CG_5, guide:CG_6 ;
+    guide:hasLearningResult guide:RA45, guide:RA43, guide:RA41, guide:RA44, guide:RA42 ;
+    guide:hasEvaluation guide:EvalSystem_73000039 ;
+    guide:hasDidacticResource guide:Res_ArcMap, guide:Res_DocTec, guide:Res_Blog, guide:Res_Youtube, guide:Res_Visor, guide:Res_Stream, guide:Res_Sharepoint, guide:Res_EFFIS ;
+    sch:instructor guide:Lecturer_RubenLaina, guide:Lecturer_CarolinaMartinez, guide:Lecturer_JavierMadrigal, guide:Lecturer_JoseAnastasio ;
+    sch:director guide:Lecturer_RubenLaina .
+
+# Course Entity
+guide:Course_73000039 rdf:type guide:Course ;
+    sch:name "73000039 - Prevencion De Incendios" ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 2025 ;
+    sch:hasCourseInstance guide:CG_73000039 ;
+    guide:semester "Segundo semestre" .
+
+# Degree Entity
+guide:Degree_07AB rdf:type guide:MasterDegree ;
+    sch:name "07AB - Master Universitario En Tecnicas De Lucha Contra Incendios Forestales" ;
+    guide:degreeCode "07AB" .
+
+# University Center Entity
+guide:UC_ETSI rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S.I. Montes, Forestal Y Medio Natur." ;
+    guide:offers guide:Degree_07AB .
+
+# Lecturers
+guide:Lecturer_CarolinaMartinez rdf:type guide:Lecturer ;
+    sch:name "Carolina Martinez Santa-Maria" ;
+    sch:email "carolina.martinez@upm.es" ;
+    guide:office "Hidráulica" ;
+    guide:tutorshipsSchedule "L - 10:00 - 13:00, M - 16:00 - 19:00" .
+
+guide:Lecturer_JavierMadrigal rdf:type guide:Lecturer ;
+    sch:name "Javier Madrigal Olmo" ;
+    sch:email "javier.madrigal@upm.es" ;
+    guide:office "Defensa" ;
+    guide:tutorshipsSchedule "M - 16:00 - 20:00" .
+
+guide:Lecturer_JoseAnastasio rdf:type guide:Lecturer ;
+    sch:name "Jose Anastasio Fernandez Yuste" ;
+    sch:email "tasio.fyuste@upm.es" ;
+    guide:office "Hidráulica" ;
+    guide:tutorshipsSchedule "L - 09:30 - 11:30, J - 16:00 - 19:00" .
+
+guide:Lecturer_RubenLaina rdf:type guide:Lecturer ;
+    sch:name "Ruben Laina Relaño" ;
+    sch:email "ruben.laina@upm.es" ;
+    guide:office "Defensa Monte" ;
+    guide:tutorshipsSchedule "M - 09:30 - 11:30, X - 13:00 - 15:00, J - 17:30 - 19:00" .
+
+# Competencies
+guide:CE_1_2 rdf:type guide:Competency ;
+    guide:competencyCode "CE 1.2" ;
+    guide:competencyDescription "Capacidad para emprender acciones relacionadas con la gestión forestal" .
+
+guide:CE_2_1 rdf:type guide:Competency ;
+    guide:competencyCode "CE 2.1" ;
+    guide:competencyDescription "Capacidad para diseñar, redactar y gestionar planes y políticas de prevención y detección de incendios" .
+
+guide:CG_5 rdf:type guide:Competency ;
+    guide:competencyCode "CG 5" ;
+    guide:competencyDescription "Búsqueda bibliográfica, análisis de documentación y tratamiento de la información procedente de diversas fuentes..." .
+
+guide:CG_6 rdf:type guide:Competency ;
+    guide:competencyCode "CG 6" ;
+    guide:competencyDescription "Perfeccionar el conocimiento oral y escrito de la lengua inglesa" .
+
+# Learning Results
+guide:RA45 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA45" ;
+    guide:learningResultDescription "Que los estudiantes tengan conocimientos para crear e interpretar cartografía temática y aplicarla a la gestión en su campo de trabajo" .
+
+guide:RA43 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA43" ;
+    guide:learningResultDescription "Capacidad para poner en práctica técnicas de selvicultura preventiva y de reducción del combustible en el monte" .
+
+guide:RA41 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA41" ;
+    guide:learningResultDescription "Capacidad para diseñar, dirigir, elaborar, implementar e interpretar proyectos y planes de prevención y gestión territorial de incendios" .
+
+guide:RA44 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA44" ;
+    guide:learningResultDescription "Que los estudiantes tengan conocimientos y capacidades para tomar, gestionar, analizar datos de detección, prevención o lucha contra incendios" .
+
+guide:RA42 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA42" ;
+    guide:learningResultDescription "Conocimientos adecuados para la gestión de trabajos de limpieza del sotobosque y el establecimiento de cortafuegos..." .
+
+# Syllabus
+guide:Syllabus_73000039 rdf:type guide:Syllabus ;
+    guide:hasItem guide:SyllabusItem_1, guide:SyllabusItem_2, guide:SyllabusItem_3, guide:SyllabusItem_4, guide:SyllabusItem_5, guide:SyllabusItem_6, guide:SyllabusItem_7, guide:SyllableItem_8 .
+
+guide:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a la prevención y tendencias" .
+
+guide:SyllabusItem_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Marco normativo (España, Comunidades Autónomas)" .
+
+guide:SyllabusItem_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Causalidad de incendios forestales" .
+
+guide:SyllabusItem_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Prevención activa o social" .
+
+guide:SyllabusItem_5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Prevención pasiva de incendios forestales" .
+
+guide:SyllabusItem_6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Infraestructura de pre-extinción" .
+
+guide:SyllabusItem_7 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Interfaz urbano forestal" .
+
+guide:SyllabusItem_8 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 8 ;
+    guide:syllabusDescription "Planificación de la prevención" .
+
+# Evaluation System and Trials
+guide:EvalSystem_73000039 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global" .
+
+guide:Trial_Tendencias rdf:type guide:EvaluationTrial ;
+    guide:trialType "Prueba Telemática" ;
+    guide:gradePercentage "5%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "01:00" ;
+    guide:trialMode "No presencial" .
+
+guide:Trial_Normativa rdf:type guide:EvaluationTrial ;
+    guide:trialType "Prueba Telemática" ;
+    guide:gradePercentage "5%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:00" .
+
+guide:Trial_Trabajo rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo Individual" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "20:00" .
+
+# Didactic Resources
+guide:Res_ArcMap rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Software ArcMap" ;
+    guide:bibliographyType "Equipamiento" ;
+    guide:bibliographyDescription "SIG" .
+
+guide:Res_DocTec rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Documentos técnicos seleccionados" ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:Res_Blog rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Blog Aprovechamientos forestales e incendios" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:Res_Youtube rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Canal vídeos UPM" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:Res_Visor rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Visor de la Generalitat Valencia" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:Res_Stream rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Canal vídeos Stream (Office)" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:Res_Sharepoint rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Sharepoint en office" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:Res_EFFIS rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "EFFIS Copernicus" ;
+    guide:bibliographyType "Recursos web" .
+
+# Schedule Events and Activities (Sample from table)
+guide:Event_Sem1_Act1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:hasActivity guide:Act_Presentacion .
+
+guide:Act_Presentacion rdf:type guide:Activity ;
+    guide:activityDescription "Presentación" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "No presencial" .
+
+guide:Event_Sem7_Act1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 7 ;
+    guide:hasActivity guide:Act_TrabajoAsignatura .
+
+guide:Act_TrabajoAsignatura rdf:type guide:Activity ;
+    guide:activityDescription "Trabajo de asignatura" ;
+    guide:activityDuration 20.0 ;
+    guide:activityFormat "Trabajo Individual" ;
+    guide:attendanceType "No presencial" .
+
+# Required Knowledge
+guide:ReqKnow_Fire rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Comportamiento Del Fuego. Teledeteccion" .
+
+guide:ReqKnow_Ecology rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Ecologia Del Fuego E Impacto Ambiental De Los Ince" .
+
+guide:ReqKnow_GIS rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Sistemas De Informacion Geografica" .

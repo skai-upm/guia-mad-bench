@@ -1,0 +1,261 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix data: <http://guia-mad-bench.es/data/> .
+
+#################################################################
+#    Classes (Reference)
+#################################################################
+
+###  http://w3id.org/def/guia#Activity
+guide:Activity rdf:type owl:Class ;
+               rdfs:comment "A teaching or learning activity carried out as part of the course, such as lectures, labs, seminars, tutorials, or independent work."@en .
+
+
+#################################################################
+#    Instances (Extraction)
+#################################################################
+
+###  http://w3id.org/def/guia#CourseGuide Instance
+data:course-guide-anx-pr-cl-001-01 rdf:type guide:CourseGuide ;
+                                   sch:name "Guía de Aprendizaje - Botanica Agricola Y Flora"@en ;
+                                   dct:title "ANX-PR/CL/001-01 Guía de Aprendizje"@en ;
+                                   guide:numberOfCredits 4^^xsd:decimal ;
+                                   guide:syllabusDescription "Temario de la asignatura con temáticas botánicas y florísticas"@es .
+
+###  http://w3id.org/def/guia#Degree Instance (Bachelor)
+data:bachelor-degree-02IA rdf:type guide:BachelorDegree, sch:Course ;
+                          dct:title "Grado En Ingenieria Agroambiental"@en ;
+                          guide:numberOfCredits 18^^xsd:decimal .
+
+###  http://w3id.org/def/guia#UniversityCenter Instance
+data:center-upm-ab rdf:type guide:UniversityCenter, sch:Organization ;
+                   dct:title "Etsi Agronómica, Aliment. y Biosistemas"@en .
+
+
+#################################################################
+#    Object Properties (Reference)
+#################################################################
+
+###  http://w3id.org/def/guia#hasCourse
+guide:hasCourse rdf:type owl:ObjectProperty ;
+                rdfs:domain guide:Degree ;
+                rdfs:range guide:Course ;
+                rdfs:comment "Links a degree programme to a course included in its curriculum."@en .
+
+###  http://w3id.org/def/guia#offers
+guide:offers rdf:type owl:ObjectProperty ;
+             rdfs:domain guide:UniversityCenter ;
+             rdfs:range guide:Degree ;
+             rdfs:comment "Links a university center to a degree programme that it offers."@en .
+
+###  https://schema.org/courseSchedule
+sch:courseSchedule rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:CourseGuide ;
+                  rdfs:range guide:Schedule ;
+                  rdfs:comment "Links a course guide to the schedule that organizes its planned events."@en .
+
+###  https://schema.org/director
+sch:director rdf:type owl:ObjectProperty ;
+             rdfs:domain guide:CourseGuide ;
+             rdfs:range guide:Lecturer ;
+             rdfs:comment "Links a course guide to the lecturer acting as course coordinator or academic lead."@en .
+
+###  https://schema.org/instructor
+sch:instructor rdf:type owl:ObjectProperty ;
+               rdfs:domain guide:CourseGuide ;
+               rdfs:range guide:Lecturer ;
+               rdfs:comment "Links a course guide to a lecturer involved in teaching the course."@en .
+
+###  https://schema.org/hasSyllabus (Note: Reference has 'guide:hasSyllabus' on CourseGuide)
+# Using reference property for Syllabus link if applicable, but here we map Schedule/Syllabus structure.
+
+
+#################################################################
+#    Data Properties (Reference & Extraction)
+#################################################################
+
+###  http://w3id.org/def/guia#teachingPeriodMonths
+guide:teachingPeriodMonths rdf:type owl:DatatypeProperty ;
+                           rdfs:domain guide:CourseGuide ;
+                           rdfs:range rdf:langString .
+
+
+###  https://schema.org/name
+sch:name rdf:type owl:ObjectProperty ;
+         rdfs:range rdf:langString .
+
+#################################################################
+#    Instances (Lecturers)
+#################################################################
+
+data:lecturer-pedro-laguado rdf:type guide:Lecturer, sch:Person ;
+                             dct:title "Pedro Luis Aguado Cortijo"@en ;
+                             sch:name "Pedro Luis Aguado Cortijo"@es .
+
+
+###  http://w3id.org/def/guia#hasSyllabus (Linking Guide to Syllabus)
+guide:hasSyllabus rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:CourseGuide ;
+                  rdfs:range guide:Syllabus ;
+                  rdfs:comment "Links a course guide to the syllabus that describes the thematic contents of the course."@en .
+
+###  http://w3id.org/def/guia#hasLearningResult
+guide:hasLearningResult rdf:type owl:ObjectProperty ;
+                        rdfs:domain guide:CourseGuide ;
+                        rdfs:range guide:LearningResult ;
+                        rdfs:comment "Links a course guide to a learning result expected from the course."@en .
+
+###  http://w3id.org/def/guia#hasCompetency
+guide:hasCompetency rdf:type owl:ObjectProperty ;
+                    rdfs:domain guide:CourseGuide ;
+                    rdfs:range guide:Competency ;
+                    rdfs:comment "Links a course guide to a competency developed or addressed in the course."@en .
+
+#################################################################
+#    Instances (Syllabus & Items)
+#################################################################
+
+data:syllabus-botanica-agricola rdf:type guide:Syllabus, sch:Syllabus ;
+                                 dct:title "Temario Botanica Agricola Y Flora"@es .
+
+
+###  http://w3id.org/def/guia#hasItem
+guide:hasItem rdf:type owl:ObjectProperty ;
+              rdfs:domain guide:Syllabus ;
+              rdfs:range guide:SyllabusItem ;
+              rdfs:comment "Links a syllabus to one of its constituent syllabus items."@en .
+
+data:syllabus-item-1 rdf:type guide:SyllabusItem, sch:Event ;
+                     dct:title "Principios generales"@es ;
+                     data:itemIndex 1^^xsd:integer .
+
+
+###  http://w3id.org/def/guia#hasScheduleEvent (Linking Evaluation Trial to Schedule Event)
+guide:hasScheduleEvent rdf:type owl:ObjectProperty ;
+                      rdfs:domain guide:EvaluationTrial ;
+                      rdfs:range guide:ScheduleEvent ;
+                      rdfs:comment "Links an evaluation trial to the schedule event in which it takes place."@en .
+
+#################################################################
+#    Instances (Evaluation System & Trials)
+#################################################################
+
+data:eval-system-botanica-agricola rdf:type guide:EvaluationSystem, sch:Event ;
+                                    dct:title "Sistema de Evaluación Botanica Agricola"@es .
+
+
+###  http://w3id.org/def/guia#hasEvaluationTrial
+guide:hasEvaluationTrial rdf:type owl:ObjectProperty ;
+                        rdfs:domain guide:EvaluationSystem ;
+                        rdfs:range guide:EvaluationTrial ;
+                        rdfs:comment "Links an evaluation system to one of its evaluation trials."@en .
+
+data:trial-pep1 rdf:type guide:EvaluationTrial, sch:Event ;
+                dct:title "Prueba de evaluación progresiva 1"@es ;
+                data:gradePercentage "35%"^^xsd:string ;
+                data:minimumScore "5 / 10"^^xsd:string .
+
+
+###  http://w3id.org/def/guia#hasEvaluationTrial (Final Exam)
+data:trial-final-exam rdf:type guide:EvaluationTrial, sch:Event ;
+                      dct:title "Examen Ordinario del temario"@es ;
+                      data:gradePercentage "75%"^^xsd:string .
+
+
+#################################################################
+#    Instances (Competencies & Learning Results)
+#################################################################
+
+###  http://w3id.org/def/guia#hasLearningResult
+guide:hasLearningResult rdf:type owl:ObjectProperty ;
+                        rdfs:domain guide:CourseGuide ;
+                        rdfs:range guide:LearningResult .
+
+
+data:result-ra47 rdf:type guide:LearningResult, sch:Event ;
+                 dct:title "Reconocer y caracterizar las principales especies vegetales"@es ;
+                 data:learningResultCode "RA47"@xsd:string .
+
+###  http://w3id.org/def/guia#hasCompetency
+guide:hasCompetency rdf:type owl:ObjectProperty ;
+                    rdfs:domain guide:CourseGuide ;
+                    rdfs:range guide:Competency .
+
+
+data:comp-CE15 rdf:type guide:Competency, sch:Event ;
+               dct:title "Capacidad para aplicar los principios de la botánica"@es ;
+               data:competencyCode "CE15"@xsd:string .
+
+#################################################################
+#    Instances (Resources)
+#################################################################
+
+###  http://w3id.org/def/guia#hasDidacticResource
+guide:hasDidacticResource rdf:type owl:ObjectProperty ;
+                          rdfs:domain guide:CourseGuide ;
+                          rdfs:range guide:DidacticResource .
+
+
+data:resource-biblioteca-botanica rdf:type guide:DidacticResource, sch:Event ;
+                                  dct:title "Biblioteca de Botánica"@es ;
+                                  data:bibliographyType "Otros"@xsd:string .
+
+#################################################################
+#    Instances (Schedule & Events)
+#################################################################
+
+###  https://schema.org/courseSchedule
+sch:courseSchedule rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:CourseGuide ;
+                  rdfs:range guide:Schedule .
+
+
+data:schedule-2025-26-botanica-agricola rdf:type guide:Schedule, sch:Schedule ;
+                                          dct:title "Cronograma 2025/26"@es ;
+                                          data:eventWeek "Febrero-Junio"@xsd:string .
+
+###  https://schema.org/eventSchedule
+sch:eventSchedule rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:Schedule ;
+                  rdfs:range guide:ScheduleEvent ;
+                  rdfs:comment "Links a schedule to one of its schedule events."@en .
+
+
+data:schedule-event-15-rd-fabulae rdf:type guide:ScheduleEvent, sch:Event ;
+                                   dct:title "Tema 6 (II)"@es ;
+                                   data:eventWeek "Semana 7"@xsd:string .
+
+#################################################################
+#    Instances (Lecturers - Data)
+#################################################################
+
+data:lecturer-agustin-garzon rdf:type guide:Lecturer, sch:Person ;
+                              dct:title "Agustin Garzon Hidalgo"@es ;
+                              sch:name "Agustin Garzon Hidalgo"@en .
+
+
+###  http://w3id.org/def/guia#hasActivity (Linking Schedule Event to Activity)
+guide:hasActivity rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:ScheduleEvent ;
+                  rdfs:range guide:Activity ;
+                  rdfs:comment "Links a schedule event to an academic activity carried out during that event."@en .
+
+
+data:schedule-event-15-rd-fabulae rdf:type guide:SyllabusItem, sch:Event ;
+                                   dct:title "Tema 6 (II)"@es ;
+                                   data:eventWeek "Semana 7"@xsd:string .
+
+#################################################################
+#    Instances (Resources - Data)
+#################################################################
+
+data:resource-bibliografia-recomendada rdf:type guide:DidacticResource, sch:Event ;
+                                        dct:title "Bibliografía recomendada"@es ;
+                                        data:bibliographyType "Otros"@xsd:string .

@@ -1,0 +1,224 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+guide:course_guide_133000241
+    rdf:type guide:CourseGuide ;
+    sch:name "1330_00241 - Ordenacion De Montes Avanzada"@en ;
+    guide:numberOfCredits 5.0 ;
+    guide:teachingPeriod "2025-26"@en ;
+    guide:periodStartingMonth "Septiembre"@en ;
+    guide:periodEndingMonth "Enero"@en ;
+    sch:inLanguage "Castellano"@en ;
+    guide:hasSyllabus guide:syllabus_133000241 ;
+    guide:hasCompetency guide:comp_CB09, guide:comp_CE28, guide:comp_CE61, guide:comp_CT02, guide:comp_CT06 ;
+    guide:hasLearningResult guide:lr_RA162, guide:lr_RA163, guide:lr_RA132, guide:lr_RA164, guide:lr_RA165, guide:lr_RA134 ;
+    guide:hasEvaluation guide:eval_system_133000241 ;
+    sch:instructor guide:lecturer_fernando, guide:lecturer_luis ;
+    guide:hasDidacticResource guide:res_dubourdieu, guide:res_madrigal, guide:res_gonzalez, guide:res_ministerio, guide:res_davis, guide:res_bettinger, guide:res_buongiorno ;
+    sch:courseSchedule guide:schedule_133000241 .
+
+# Degree Instance
+guide:degree_13AD
+    rdf:type guide:Degree ;
+    sch:name "13AD - Master Universitario En Ingenieria De Montes"@en ;
+    guide:degreeCode "13AD"@en .
+
+# University Center Instance
+guide:center_ETSI
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S.I. Montes, Forestal y Medio Natur."@en ;
+    guide:offers guide:degree_13AD .
+
+# Lecturer Instances
+guide:lecturer_fernando
+    rdf:type guide:Lecturer ;
+    sch:name "Fernando Garcia Robredo"@en ;
+    sch:email "fernandogarciarobredo@upm.es"@en ;
+    guide:office "13U.00.004.0"@en ;
+    guide:tutorshipsSchedule "L - 11:00 - 14:00, M - 11:00 - 14:00"@en .
+
+guide:lecturer_luis
+    rdf:type guide:Lecturer ;
+    sch:name "Luis Augusto Diaz Balteiro"@en ;
+    sch:email "luis.diaz.balteiro@upm.es"@en ;
+    guide:tutorshipsSchedule "M - 08:00 - 11:00, X - 08:00 - 11:00"@en .
+
+# Competency Instances
+guide:comp_CB09
+    rdf:type guide:Competency ;
+    sch:name "CB09"@en ;
+    guide:competencyDescription "Que los estudiantes sepan comunicar sus conclusiones y los conocimientos y razones últimas que las sustentan a públicos especializados y no especializados de un modo claro y sin ambigüedades"@en .
+
+guide:comp_CE28
+    rdf:type guide:Competency ;
+    sch:name "CE 2.8"@en ;
+    guide:competencyDescription "Capacidad para la redacción, dirección y ejecución de Proyectos de Ordenación de Montes"@en .
+
+guide:comp_CE61
+    rdf:type guide:Competency ;
+    sch:name "CE 6.1"@en ;
+    guide:competencyDescription "Capacidad para la gestion de recursos naturales"@en .
+
+guide:comp_CT02
+    rdf:<0xC2>type guide:Competency ;
+    sch:name "CT02"@en ;
+    guide:competencyDescription "Integrar los conocimientos previos (propios de grado) de manera crítica y relacionada..."@en .
+
+guide:comp_CT06
+    rdf:type guide:Competency ;
+    sch:name "CT06"@en ;
+    guide:competencyDescription "Búsqueda bibliográfica, análisis de documentación y tratamiento de la información..."@en .
+
+# Learning Result Instances
+guide:lr_RA162
+    rdf:type guide:LearningResult ;
+    sch:name "RA162"@en ;
+    guide:learningResultDescription "Conocer cómo utilizar la información disponible en la toma de decisiones en gestión forestal."@en .
+
+guide:lr_RA163
+    rdf:type guide:LearningResult ;
+    sch:name "RA163"@en ;
+    guide:learningResultDescription "Conocer las herramientas de investigación operativa que se pueden utilizar para resolver problemas de gestión forestal."@en .
+
+guide:lr_RA132
+    rdf:type guide:LearningResult ;
+    sch:name "RA132"@en ;
+    guide:learningResultDescription "Conocimiento con sentido crítico del amplio contexto multidisciplinar de la ingeniería..."@en .
+
+guide:lr_RA164
+    rdf:type guide:LearningResult ;
+    sch:name "RA164"@en ;
+    guide:learningResultDescription "Elaborar proyectos de Ordenación de Montes, planes dasocráticos y otros instrumentos de gestión forestal."@en .
+
+guide:lr_RA165
+    rdf:type guide:LearningResult ;
+    sch:name "RA165"@en ;
+    guide:learningResultDescription "Analizar y cuantificar la sostenibilidad de la gestión de recursos naturales."@en .
+
+guide:lr_RA134
+    rdf:type guide:LearningResult ;
+    sch:name "RA134"@en ;
+    guide:learningResultDescription "Capacidad para realizar búsquedas bibliográficas, consultar y utilizar con criterio bases de datos..."@en .
+
+# Syllabus Instance
+guide:syllabus_133000241
+    rdf:type guide:Syllabus ;
+    guide:hasItem guide:item_tema1, guide:item_tema2, guide:item_tema3, guide:item_tema4 .
+
+guide:item_tema1
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a la Ordenación de Montes"@en .
+
+guide:item_tema2
+    rdf:type guide:SylabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Métodos de decisión: Programación lineal"@en .
+
+guide:item_tema3
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Introducción a las técnicas de decisión multicriterio"@en .
+
+guide:item_tema4
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Sostenibilidad y uso múltiple"@en .
+
+# Evaluation System Instance
+guide:eval_system_133000241
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global."@en ;
+    guide:hasEvaluationTrial guide:trial_control_1_2, guide:trial_control_3_4, guide:trial_final .
+
+guide:trial_control_1_2
+    rdf:type guide:EvaluationTrial ;
+    sch:name "Control temas 1 y 2"@en ;
+    guide:evaluationType "Progresiva"@en ;
+    guide:gradePercentage "50%"@en ;
+    guide:minimumScore "5 / 10"@en ;
+    guide:trialWeek "8"@en ;
+    guide:hasScheduleEvent guide:event_week8 .
+
+guide:trial_control_3_4
+    rdf:type guide:EvaluationTrial ;
+    sch:name "Control temas 3 y 4"@en ;
+    guide:evaluationType "Progresiva"@en ;
+    guide:gradePercentage "50%"@en ;
+    guide:minimumScore "5 / 10"@en ;
+    guide:trialWeek "16"@en ;
+    guide:hasScheduleEvent guide:event_week16 .
+
+guide:trial_final
+    rdf:type guide:EvaluationTrial ;
+    sch:name "Examen final"@en ;
+    guide:evaluationType "Global"@en ;
+    guide:gradePercentage "100%"@<0xC2>    en ;
+    guide:minimumScore "5 / 10"@en ;
+    guide:trialWeek "17"@en ;
+    guide:hasScheduleEvent guide:event_week17 .
+
+# Schedule Instance
+guide:schedule_133000241
+    rdf:type guide:Schedule ;
+    sch:eventSchedule guide:event_week1, guide:event_week2, guide:event_week3, guide:event_week4, guide:event_week6, guide:event_week7, guide:event_week8, guide:event_week9, guide:event_week10, guide:event_week11, guide:event_week12, guide:event_week13, guide:event_week14, guide:event_week15, guide:event_week16, guide:event_week17 .
+
+guide:event_week1
+    rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "1"@en ;
+    guide:hasActivity guide:act_tema1_1 .
+
+guide:act_tema1_1
+    rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1. Introducción a la Ordenación de Montes. 1.1. Concepto, objeto y fundamentos"@en ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral"@en ;
+    guide:attendanceType "Presencial"@en .
+
+# Didactic Resources Instances
+guide:res_dubourdieu
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Manual de Ordenación de Montes"@en ;
+    guide:bibliographyDescription "DUBOURDIEU, J., PRIETO, A. y LÓPEZ QUERO, M., 1993. Paraninfo, Madrid."@en ;
+    guide:bibliographyType "Bibliografía"@en .
+
+guide:res_madrigal
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Ordenación de montes arbolados"@en ;
+    guide:bibliographyDescription "MADRIGAL, A., et al. 1994. Instituto Nacional para la Conservación de la Naturaleza."@en ;
+    guide:bibliographyType "Bibliografía"@en .
+
+guide:res_gonzalez
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Manual de Ordenación por Rodales"@en ;
+    guide:bibliographyDescription "GONZÁLEZ MOLINA J.M., et al. 2006. Centro Tecnológico Forestal de Cataluña."@en ;
+    guide:bibliographyType "Bibliografía"@en .
+
+guide:res_ministerio
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Instrucciones Generales para la Ordenación de Montes Arbolados"@en ;
+    guide:bibliographyDescription "MINISTERIO DE AGRICULTURA, 1971. Dirección General de Montes, Caza y Pesca Fluvial."@en ;
+    guide:bibliographyType "Bibliografía"@en .
+
+guide:res_davis
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Forest Management to Sustain Ecological, Economic and Social Values"@en ;
+    guide:bibliographyDescription "DAVIS, L.S., et al. 2001. McGraw-Hill, New York."@en ;
+    guide:bibliographyType "Bibliografía"@en .
+
+guide:res_bettinger
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Forest Management and Planning"@en ;
+    guide:bibliographyDescription "BETTINGER, P., et al. 2017. Academic Press, New York."@en ;
+    guide:bibliographyType "Bibliografía"@en .
+
+guide:res_buongiorno
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Decision Methods for Forest Resource Management"@en ;
+    guide:bibliographyDescription "BUONGIORNO, J. Y GILLESS, J.K. 2003. Academic Press, San Diego."@en ;
+    guide:bibliographyType "Bibliografía"@en .

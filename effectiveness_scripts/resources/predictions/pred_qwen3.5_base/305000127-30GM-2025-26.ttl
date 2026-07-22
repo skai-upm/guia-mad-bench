@@ -1,0 +1,46 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3id.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3id.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guia#Lecturer_001> rdf:type :Lecturer ;
+    rdfs:subClassOf sch:Person ;
+    sch:name "Maria Barbero Liñan"@en ;
+    sch:email <mailto:m.barbero@upm.es> .
+
+<http://guia-mad-bench.es/data/guia#CourseGuide_305000127> rdf:type :CourseGuide , sch:CourseInstance ;
+    dc:title "Modelización y Simulación III"@en ;
+    guide:numberOfCredits 6.0 ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/guia#Sylbus_305000127> .
+
+<http://guia-mad-bench.es/data/guia#Degree_30GM> rdf:type :BachelorDegree , sch:Course ;
+    guide:numberOfCredits 6.0 ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/guia#Sylbus_305000127> .
+
+<http://guia-mad-bench.es/data/guia#Schedule_305000127> rdf:type :Schedule , sch:CourseInstance ;
+    guide:eventIndex 1 ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/guia#Sylbus_305000127> .
+
+<http://guia-mad-bench.es/data/guia#EvaluationSystem_305000127> rdf:type :EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global"@en ;
+    sch:name "Modelización Y Simulación III - Evaluación"@en .
+
+<http://guia-mad-bench.es/data/guia#Sylbus_305000127> rdf:type :Syllabus , sch:Sylbus ;
+    guide:hasItem <http://guia-mad-bench.es/data/guia#SylbusItem_1>, <http://guia-mad-bench.es/data/guia#SylbusItem_2>.
+
+<http://guia-mad-bench.es/data/guia#ScheduleEvent_001> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 1 ;
+    guide:activityDescription "Introducción al diseño geométrico asistido por ordenador"@en .
+
+<http://guia-mad-bench.es/data/guia#EvaluationTrial_001> rdf:type :EvaluationTrial ;
+    guide:trialType <https://schema.org/Exam> , sch:Event ;
+    guide:gradePercentage 3.0 ;
+    guide:minScore "3 / 10"@en .
+
+<http://guia-mad-bench.es/data/guia#SylbusItem_1> rdf:type :SylbusItem ;
+    guide:itemIndex 1 ;
+    sch:name "Diseño geométrico asistido por ordenador"@en .

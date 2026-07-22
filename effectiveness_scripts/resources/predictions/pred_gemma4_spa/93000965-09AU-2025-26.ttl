@@ -1,0 +1,136 @@
+@prefix gmb: <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+gmb:CourseGuide_93000965 rdf:type guide:CourseGuide ;
+    sch:name "Modelado De Sistemas Biomédicos" ;
+    sch:description "Introduction to the mathematical modelling of physiological systems. Model construction: modelling the system, modelling from data. Mathematical modelling techniques: Compartmental modelling, data-driven modelling, distributed models." ;
+    guide:numberOfCredits 3.0 ;
+    guide:courseType "Optativa" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Inglés/Castellano" ;
+    guide:hasSyllabus gmb:Syllabus_93000965 ;
+    guide:hasCompetency gmb:Comp_CB06, gmb:Comp_CB07, gmb:Comp_CB08, gmb:Comp_CB09, gmb:Comp_CB10, gmb:Comp_CE_MIB11, gmb:Comp_CG_MIB01, gmb:Comp_CG_MIB02, gmb:Comp_CG_MIB03, gmb:Comp_CG_MIB04, gmb:Comp_CG_MIB05, gmb:Comp_CG_MIB06, gmb:Comp_CG_MIB07 ;
+    guide:hasLearningResult gmb:LR_RA15, gmb:LR_RA13, gmb:LR_RA14 ;
+    guide:hasEvaluation gmb:EvalSystem_Progressive, gmb:EvalSystem_Global, gmb:EvalSystem_Extraordinary ;
+    guide:hasDidacticResource gmb:Res_MATLAB, gmb:Res_Cobelli2008, gmb:Res_IEEE2016, gmb:Res_Refinetti2007 ;
+    sch:instructor gmb:Lecturer_Gema, gmb:Lecturer_MariaElena ;
+    sch:director gmb:Lecturer_MariaElena .
+
+# Degree and University Center
+gmb:Degree_09AU rdf:type guide:MasterDegree ;
+    sch:name "Master Universitario En Ingenieria Biomedica" ;
+    guide:degreeCode "09AU" .
+
+gmb:UnivCenter_ETS rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" .
+
+gmb:Course_93000965 rdf:type guide:Course ;
+    sch:courseCode 93000965 ;
+    guide:courseYear 2025 ;
+    guide:semester "Primer semestre" ;
+    sch:hasCourseInstance gmb:CourseGuide_93000965 .
+
+# Lecturers
+gmb:Lecturer_Gema rdf:type guide:Lecturer ;
+    sch:name "Gema Garcia Saez" ;
+    sch:email "gmb:gema.garcia.saez@upm.es" ;
+    guide:office "B-317" .
+
+gmb:Lecturer_MariaElena rdf:type guide:Lecturer ;
+    sch:name "Maria Elena Hernando Perez" ;
+    sch:email "gmb:mariaelena.hernando@upm.es" ;
+    guide:office "B-316" .
+
+gmb:Lecturer_JoseTapia rdf:type guide:Lecturer ;
+    sch:name "Jose Tapia Galisteo" ;
+    sch:email "gmb:jose.tapia.galisteo@upm.es" .
+
+# Competencies
+gmb:Comp_CB06 rdf:type guide:Competency ; guide:competencyCode "CB06" ; guide:competencyDescription "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales..." .
+gmb:Comp_CB07 rdf:type guide:Compet competencyCode "CB07" ; guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos..." .
+gmb:Comp_CB08 rdf:type guide:Competency ; guide:competencyCode "CB08" ; guide:competencyDescription "Que los estudiantes sean capaces de integrar conocimientos y enfrentarse a la complejidad..." .
+gmb:Comp_CB09 rdf:type guide:Competency ; guide:competencyCode "CB09" ; guide:competencyDescription "Que los estudiantes sepan comunicar sus conclusiones..." .
+gmb:Comp_CB10 rdf:type guide:Competency ; guide:competencyCode "CB10" ; guide:competencyDescription "Que los estudiantes posean las habilidades de aprendizaje..." .
+gmb:Comp_CE_MIB11 rdf:type guide:Competency ; guide:competencyCode "CE-MIB11" ; guide:competencyDescription "Seleccionar y aplicar métodos avanzados de modelado para el diseño y simregulación de sistemas biomédicos." .
+gmb:Comp_CG_MIB01 rdf:type guide:Competency ; guide:competencyCode "CG-MIB01" ; guide:competencyDescription "Resolver problemas e integrar conocimiento en temas nuevos..." .
+gmb:Comp_CG_MIB02 rdf:type guide:Competency ; guide:competencyCode "CG-MIB02" ; guide:competencyDescription "Analizar y aplicar la reglamentación correspondiente a la sensibilidad social y ética..." .
+gmb:Comp_CG_MIB03 rdf:type guide:Competency ; guide:competencyCode "CG-MIB03" ; guide:competencyDescription "Utilizar la filosofía, el método científico y el método experimental..." .
+gmb:Comp_CG_MIB04 rdf:type guide:Competency ; guide:competencyCode "CG-MIB04" ; guide:competencyDescription "Utilizar las tecnologías de la información y la comunicación para la búsqueda de información..." .
+gmb:Comp_CG_MIB05 rdf:type guide:Competency ; guide:competencyCode "CG-MIB05" ; guide:competencyDescription "Utilizar técnicas de expresión oral y escrita para comunicar trabajos..." .
+gmb:Comp_CG_MIB06 rdf:<0xC2>type guide:Competency ; guide:competencyCode "CG-MIB06" ; guide:competencyDescription "Aplicar técnicas de trabajo colaborativo en equipos multidisciplinares internacionales..." .
+gmb:Comp_CG_MIB07 rdf:type guide:Competency ; guide:competencyCode "CG-MIB07" ; guide:competencyDescription "Utilizar la lengua inglesa como herramienta de trabajo" .
+
+# Learning Results
+gmb:LR_RA15 rdf:type guide:LearningResult ; guide:learningResultCode "RA15" ; guide:learningResultDescription "Aplicar los fundamentos del modelado matemático de sistemas fisiológicos..." .
+gmb:LR_RA13 rdf:type guide:LearningResult ; guide:learningResultCode "RA13" ; guide:learningResultDescription "Ser capaz de utilizar técnicas avanzadas de modelado fisiológico y sus aplicaciones en el campo médico" .
+gmb:LR_RA14 rdf:type guide:LearningResult ; guide:learningResultCode "RA14" ; guide:learningResultDescription "Aplicar técnicas avanzadas de modelos, construcción y de validación..." .
+
+# Syllabus
+gmb:Syllabus_93000965 rdf:type guide:Syllabus ;
+    guide:hasItem gmb:SyllabusItem_1, gmb:SyllabusItem_2, gmb:SyllabusItem_3, gmb:SyllabusItem_4, gmb:SyllabusItem_5, gmb:SyllableItem_6 .
+
+gmb:SyllabusItem_1 rdf:type guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "Introduction to the modelling of physiological systems" .
+gmb:SyllabusItem_2 rdf:type guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "Model construction" .
+gmb:SyllabusItem_3 rdf:type guide:SyllabusItem ; guide:itemIndex 3 ; guide:syllabusDescription "Mathematical modelling techniques" .
+gmb:SyllabusItem_4 rdf:type guide:SyllabusItem ; guide:itemIndex 4 ; guide:syllabusDescription "Compartmental modelling" .
+gmb:SyllabusItem_5 rdf:type guide:SyllabusItem ; guide:itemIndex 5 ; guide:syllabusDescription "Chronobiological modelling" .
+gmb:SyllabusItem_6 rdf:type guide:SyllabusItem ; guide:itemIndex 6 ; guide:syllabusDescription "Applications" .
+
+# Evaluation Systems and Trials
+gmb:EvalSystem_Progressive rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva" ;
+    guide:hasEvaluationTrial gmb:Trial_Prog_W2, gmb:Trial_Prog_W3, gmb:Trial_Prog_W4, gmb:Trial_Prog_W6, gmb:Trial_Prog_W7 .
+
+gmb:EvalSystem_Global rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Prueba evaluación global" ;
+    guide:hasEvaluationTrial gmb:Trial_Global_W17_Results, gmb:Trial_Global_W17_Work, gmb:Trial_Global_W17_Exam .
+
+gmb:EvalSystem_Extraordinary rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación convocatoria extraordinaria" ;
+    guide:hasEvaluationTrial gmb:Trial_Extra_W17_Work, gmb:Trial_Extra_W17_Exam, gmb:Trial_Extra_W17_Results .
+
+gmb:Trial_Prog_W2 rdf:type guide:EvaluationTrial ; guide:evaluationType "Evaluación Progresiva" ; guide:gradePercentage "8%" ; guide:trialWeek "Semana 2" ; guide:minimumScore "0 / 10" ; guide:trialMode "No presencial" .
+gmb:Trial_Prog_W3 rdf:type guide:EvaluationTrial ; guide:evaluationType "Evaluación Progresiva" ; guide:gradePercentage "12%" ; guide:trialWeek "Semana 3" ; guide:minimumScore "0 / 10" ; guide:trialMode "No presencial" .
+gmb:Trial_Prog_W4 rdf:type guide:EvaluationTrial ; guide:evaluationType "Evaluación Progresiva" ; guide:gradePercentage "22%" ; guide:trialWeek "Semana 4" ; guide:minimumScore "0 / 10" ; guide:trialMode "No presencial" .
+gmb:Trial_Prog_W6 rdf:type guide:EvaluationTrial ; guide:evaluationType "Evaluación Progresiva" ; guide:gradePercentage "18%" ; guide:trialWeek "Semana 6" ; guide:minimumScore "0 / 10" ; guide:trialMode "No presencial" .
+gmb:Trial_Prog_W7 rdf:type guide:EvaluationTrial ; guide:evaluationType "Evaluación Progresiva" ; guide:gradePercentage "40%" ; guide:trialWeek "Semana 7" ; guide:minimumScore "5 / 10" ; guide:trialMode "Presencial" .
+
+gmb:Trial_Global_W17_Results rdf:type guide:EvaluationTrial ; guide:evaluationType "Evaluación Global" ; guide:gradePercentage "40%" ; guide:trialWeek "Semana 17" ; guide:minimumScore "3 / 10" ; guide:trialMode "Presencial" .
+gmb:Trial_Global_W17_Work rdf:type guide:EvaluationTrial ; guide:evaluationType "Evaluación Global" ; guide:gradePercentage "40%" ; guide:trialWeek "Semana 17" ; guide:minimumScore "5 / 10" ; guide:trialMode "Presencial" .
+gmb:Trial_Global_W17_Exam rdf:type guide:EvaluationTrial ; guide:evaluationType "Evaluación Global" ; guide:gradePercentage "20%" ; guide:trialWeek "Semana 17" ; guide:minimumScore "3 / 10" ; guide:trialMode "Presencial" .
+
+# Didactic Resources
+gmb:Res_MATLAB rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "MATLAB" ;
+    guide:bibliographyType "Otros" ;
+    guide:bibliographyDescription "License available for UPM students." .
+
+gmb:Res_Cobelli2008 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Introduction to Modeling in Physiology and Medicine. C Cobelli, ER Carson. Elsevier 2008" ;
+    guide:bibliographyType "Bibliografía" .
+
+gmb:Res_IEEE2016 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "How Modeling Standards, Software, and Initiatives Support Reproducibility in Systems Biology and Systems Medicine. IEEE TBME OCT. 2016." ;
+    guide:bibliographyType "Bibliografía" .
+
+gmb:Res_Refinetti2007 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Refinetti R, Lissen GC, Halberg F. Procedures for numerical analysis of circadian rhythms. Biological rhythm research. 2007;38(4):275-325." ;
+    guide:bibliographyType "Bibliografía" .
+
+# Activities (Schedule Events)
+gmb:Activity_W1_Intro rdf:type guide:Activity ;
+    guide:activityDescription "Course presentation. Introduction to modelling" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+gmb:Activity_W1_Prac rdf:type guide:Activity ;
+    guide:activityDescription "Practical work" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Prácticas de Laboratorio" .

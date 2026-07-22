@@ -1,0 +1,251 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+# --- University Center ---
+:ETS_Telecomunicacion rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicación" .
+
+# --- Degree ---
+:Grado_Ingenieria_Telecoms rdf:type guide:BachelorDegree ;
+    sch:name "09TT - Grado en Ingeniería de Tecnologías y Servicios de Telecomunicación" ;
+    guide:degreeCode "09TT" .
+
+:ETS_Telecomunicacion guide:offers :Grado_Ingenieria_Telecoms .
+
+# --- Course ---
+:Circuitos_Electronicos rdf:type guide:Course ;
+    sch:name "95000025 - Circuitos Electrónicos" ;
+    sch:courseCode 95000025 ;
+    guide:courseYear 2025 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Quinto semestre" ;
+    sch:hasCourseInstance :Guia_Aprendizaje_Circuitos .
+
+:Grado_Ingenieria_Telecoms guide:hasCourse :Circuitos_Electronicos .
+
+# --- Course Guide ---
+:Guia_Aprendizaje_Circuitos rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Circuitos Electrónicos" ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:numberOfCredits 3.0 ;
+    guide:totalHours "78.0" ; # Based on 3 ECTS * ~26 hours
+    guide:inpersonHours "..." ;
+    guide:remoteHours "..." ;
+    sch:description "Esta es una asignatura que sigue un esquema de aprendizaje basado en proyecto (PBL). El objetivo es aprender la metodología para el diseño de un prototipo consistente en un sistema electrónico analógico-digital." ;
+    guide:hasSyllabus :Syllabus_Circuitos ;
+    guide:hasEvaluation :EvalSystem_Circuitos ;
+    guide:hasCompetency :CE_SE3, :CE_SE5, :CE_SE8, :CG10, :CG12, :CG8 ;
+    guide:hasLearningResult :RA70, :RA210, :RA555, :RA73, :RA556, :RA209, :RA554, :RA553, :RA71, :RA552, :RA75 ;
+    guide:hasDidacticResource :Res_Moodle, :Res_Manual_BASYS, :Res_Franco, :Res_Wakerly, :Res_Ferreiros, :Res_Oppenheim, :Res_Malik ;
+    sch:instructor :Prof_Dharo, :Prof_Sanchez, :Prof_Nieto, :Prof_Alvaro, :Prof_Bosca, :Prof_Lopez ;
+    sch:courseSchedule :Schedule_Circuitos .
+
+# --- Lecturers ---
+:Prof_Dharo rdf:type guide:Lecturer ;
+    sch:name "Luis Fernando D'haro Enriquez" ;
+    sch:email "luisfernando.dharo@upm.es" ;
+    guide:office "B-108" ;
+    guide:tutorshipsSchedule "Sin horario. solicitar por e-mail" .
+
+:Prof_Sanchez rdf:type guide:Lecturer ;
+    sch:name "Miguel Angel Sanchez Garcia" ;
+    sch:email "miguelangel.sanchez@upm.es" ;
+    guide:office "B-107" ;
+    guide:tutorshipsSchedule "Sin horario. solicitar por e-mail" .
+
+:Prof_Nieto rdf:type guide:Lecturer ;
+    sch:name "Octavio Nieto-Taladriz Garcia" ;
+    sch:email "octavio.nieto-taladriz@upm.es" ;
+    guide:office "C-228" ;
+    guide:tutorshipsSchedule "Sin horario. solicitar por e-mail" .
+
+:Prof_Alvaro rdf:type guide:Lecturer ;
+    sch:name "Alvaro De Guzman Fernandez Gonzalez" ;
+    sch:email "alvarodeguzman.fernandez@upm.es" ;
+    guide:office "B-112" ;
+    guide:tutorshipsSchedule "Sin horario. solicitar por e-mail" .
+
+:Prof_Bosca rdf:type guide:Lecturer ;
+    sch:name "Alberto Bosca Mojena" ;
+    sch:email "alberto.bosca@upm.es" ;
+    guide:office "C-206" ;
+    guide:tutorshipsSchedule "Sin horario. solicitar por e-mail" .
+
+:Prof_Lopez rdf:type guide:Lecturer ;
+    sch:name "Samuel Lopez Asuncion" ;
+    sch:email "samuel.lopez.asuncion@upm.es" ;
+    guide:office "C-203" ;
+    guide:tutorshipsSchedule "Sin horario. solicitar por e-mail" .
+
+# --- Competencies ---
+:CE_SE3 rdf:type guide:Competency ;
+    guide:competencyCode "CE-SE3" ;
+    guide:competencyDescription "Capacidad de realizar la especificación, implementación, documentación y puesta a punto de equipos y sistemas..." .
+
+:CE_SE5 rdf:type guide:Competency ;
+    guide:competencyCode "CE-SE5" ;
+    guide:compet competencyDescription "Capacidad de diseñar circuitos de electrónica analógica y digital..." .
+
+:CE_SE8 rdf:type guide:Competency ;
+    guide:competencyCode "CE-SE8" ;
+    guide:competencyDescription "Capacidad para especificar y utilizar instrumentación electrónica y sistemas de medida" .
+
+:CG10 rdf:type guide:Competency ;
+    guide:competencyCode "CG10" ;
+    guide:competencyDescription "Creatividad" .
+
+:CG12 rdf:type guide:Competency ;
+    guide:competencyCode "CG12" ;
+    guide:competencyDescription "Organización y planificación" .
+
+:CG8 rdf:type guide:Competency ;
+    guide:competencyCode "CG8" ;
+    guide:competencyDescription "Comunicación oral y escrita" .
+
+# --- Learning Results ---
+:RA70 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA70" ;
+    guide:learningResultDescription "Conocimientos de dispositivos, circuitos, equipos y sistemas electrónicos." .
+
+:RA210 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA210" ;
+    guide:learningResultDescription "Realizar una documentación técnica completa sobre el diseño realizado..." .
+
+# --- Syllabus ---
+:Syllabus_Circuitos rdf:type guide:Syllabus ;
+    guide:hasItem :Topic_1, :Topic_2, :Topic_3, :Topic_4 .
+
+:Topic_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Descripción del sistema electrónico a diseñar" .
+
+:Topic_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Desarrollo de la parte analógica (Distribución de la alimentación, Reglas generales de montaje, Implementación de los módulos, Búsqueda y solución de problemas)" .
+
+:Topic_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Desarrollo de la parte digital (Familiarización con el entorno de desarrollo, Simulación de circuitos VHDL, Síntesis de la parte digital, Búsqueda y solución de problemas)" .
+
+:Topic_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Elaboración de documentación técnica" .
+
+# --- Evaluation System ---
+:EvalSystem_Circuitos rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación progresiva tendrá en cuenta el seguimiento del desarrollo del proyecto por parte del profesor." ;
+    guide:hasEvaluationTrial :Trial_Presentation, :Trial_Validation, :Trial_Exam .
+
+:Trial_Presentation rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo en Grupo" ;
+    guide:trialMode "No Presencial" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:trialWeek "12" ;
+    guide:hasScheduleEvent :Event_Presentation .
+
+:Trial_Validation rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "30%" ;
+    guide:trialWeek "13" ;
+    guide:hasScheduleEvent :Event_Validation .
+
+:Trial_Exam rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialWeek "17" ;
+    guide:hasScheduleEvent :Event_Exam .
+
+# --- Schedule & Events ---
+:Schedule_Circuitos rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Lab_Week2, :Event_Presentation, :Event_Validation, :Event_Exam .
+
+:Event_Lab_Week2 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 2 ;
+    guide:eventWeek "Semana 2" ;
+    guide:hasActivity :Activity_Lab_Practice .
+
+:Activity_Lab_Practice rdf:type guide:Activity ;
+    guide:activityDescription "Familiarización con los sistemas del laboratorio" ;
+    guide:activityFormat "Prácticos de Laboratorio" ;
+    guide:attendanceType "Presencial" ;
+    guide:activityDuration 2.5 .
+
+:Event_Presentation rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 12 ;
+    guide:eventWeek "Semana 12" ;
+    guide:hasActivity :Activity_Presentation .
+
+:Activity_Presentation rdf:type guide:Activity ;
+    guide:activityDescription "Presentación de la documentación técnica y medidas del circuito completo" ;
+    guide:activityFormat "Trabajo en Grupo" ;
+    guide:attendanceType "No presencial" .
+
+:Event_Validation rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 13 ;
+    guide:eventWeek "Semana 13" ;
+    guide:hasActivity :Activity_Validation .
+
+:Activity_Validation rdf:type guide:Activity ;
+    guide:activityDescription "Prueba de validación del funcionamiento del circuito" ;
+    guide:activityFormat "Examen de Prácticas" ;
+    guide:attendanceType "Presencial" .
+
+:Event_Exam rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 17 ;
+    guide:eventWeek "Semana 17" ;
+    guide:hasActivity :Activity_Written_Exam .
+
+:Activity_Written_Exam rdf:type guide:Activity ;
+    guide:activityDescription "Examen escrito" ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:attendanceType "Presencial" ;
+    guide:activityDuration 1.5 .
+
+# --- Didactic Resources ---
+:Res_Moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Pagina web de Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Contiene el enunciado, ficheros necesarios, manuales..." .
+
+:Res_Manual_BASYS rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Manual de referencia de la tarjeta BASYS-2" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Tutorial de la placa con la FPGA con ejemplos ilustrativos." .
+
+:Res_Franco rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Design with Operational Amplifiers and Analog Integrated Circuits" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Sergio Franco 3ª edición, McGraw-Hill, 2002" .
+
+:Res_Wakerly rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Digital Design" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "J.F. Wakerly 4ª edición, Prentice Hall, 2005" .
+
+:Res_Ferreiros rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Aspectos prácticos de diseño y medida en Laboratorios de Electrónica" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "2ª ed, Autores: J. Ferreiros et al." .
+
+:Res_Oppenheim rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Señales y Sistemas" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Alan V. Oppenheim y Alan S. Willsky, 2ª edición, Prentice-Hall, 1998" .
+
+:Res_Malik rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Circuitos Electrónicos: Análisis, Diseño y Simulación" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Norbert R. Malik, Prentice-Hall, 1996" .

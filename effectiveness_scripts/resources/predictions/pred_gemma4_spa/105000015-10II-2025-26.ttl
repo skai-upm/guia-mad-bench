@@ -1,0 +1,169 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Instance
+guide:Course_105000015 a guide:Course ;
+    sch:name "Programación II" ;
+    sch:courseCode 105000015 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Segundo semestre" .
+
+# Course Guide
+guide:CourseGuide_105000015 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Programación II" ;
+    sch:description "Introducción a la programación orientada a objetos (POO). Su objetivo principal es presentar a los estudiantes los principios de la resolución de problemas en el paradigma POO y el estudio de los modelos de datos básicos en que se basa." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Inglés/Castellano" ;
+    guide:numberOfCredits 6.0 ;
+    guide:totalHours "150" ; # Calculated based on ECTS (approx 25h per credit)
+    guide:hasCourse guide:Course_105000015 ;
+    guide:hasSyllabus guide:Syllabus_ProgII ;
+    guide:hasEvaluation guide:EvalSystem_ProgII ;
+    guide:hasCompetency guide:Comp_CG1, guide:Comp_CG2, guide:Comp_Ce3, guide:Comp_Ce6, guide:Comp_Ce8, guide:Comp_Ce9 ;
+    guide:hasLearningResult guide:LR_RA288, guide:LR_RA2_287, guide:LR_RA2_290, guide:LR_RA2_289 ;
+    guide:hasDidacticResource guide:Res_Moodle, guide:Res_JavaManual, guide:Res_JavaNotes ;
+    sch:instructor guide:Lecturer_SantiagoTapia, guide:Lecturer_JavierGalve .
+
+# Degree
+guide:Degree_10II a guide:Degree ;
+    sch:name "Grado En Ingenieria Informatica" ;
+    guide:degreeCode "10II" ;
+    guide:hasCourse guide:Course_105000015 .
+
+# University Center
+guide:UnivCenter_ETS a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Informáticos" ;
+    guide:offers guide:Degree_10II .
+
+# Lecturers
+guide:Lecturer_SantiagoTapia a guide:Lecturing ;
+    sch:name "Santiago Tapia Fernandez" ;
+    sch:email "santiago.tapia@upm.es" ;
+    guide:office "D-2307" ;
+    guide:tutorshipsSchedule "Sin horario" .
+
+guide:Lecturer_JavierGalve a guide:Lecturer ;
+    sch:name "Javier Galve Frances" ;
+    sch:email "javier.galve@upm.es" ;
+    guide:office "D-2315" ;
+    guide:tutorshipsSchedule "Sin horario" .
+
+guide:Lecturer_LuisEduardo a guide:Lecturer ;
+    sch:name "Luis Eduardo Bueso De Barrio" ;
+    sch:email "luiseduardo.bueso.debarrio@upm.es" ;
+    guide:office "D-2310" ;
+    guide:tutorshipsSchedule "Sin horario" .
+
+# Syllabus
+guide:Syllabus_ProgII a guide:Syllabus ;
+    guide:hasItem guide:SyllabusItem_1, guide:SyllabusItem_2, guide:SyllabusItem_3, guide:SyllabusItem_4, guide:SyllabusItem_5, guide:SyllabusItem_6, guide:SyllabusItem_7 .
+
+guide:SyllabusItem_1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a la programación orientada a objetos (POO)" .
+
+guide:SyllabusItem_2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Modelo de objetos: abstracciones de datos, clases y objetos" .
+
+guide:SyllabusItem_3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Listas" .
+
+guide:SyllabusItem_4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Listas enlazadas" .
+
+guide:SyllabusItem_5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Herencia y Polimorfismo" .
+
+guide:SyllabusItem_6 a guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Pilas y Colas" .
+
+guide:SyllabusItem_7 a guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Excepciones" .
+
+# Competencies
+guide:Comp_CG1 a guide:Competency ;
+    guide:competencyCode "CG-1/21" ;
+    guide:competencyDescription "Capacidad de resolución de problemas aplicando conocimientos de matemáticas, ciencias e ingeniería." .
+
+guide:Comp_CG2 a guide:Competency ;
+    guide:competencyCode "CG-2/CE45" ;
+    guide:competencyDescription "Capacidad para el aprendizaje autónomo y la actualización de conocimientos, y reconocimiento de su necesidad en el área de la informática." .
+
+guide:Comp_Ce3 a guide:Competency ;
+    guide:competencyCode "Ce 3/4" ;
+    guide:competencyDescription "Capacidad de elegir y usar los métodos analíticos y de modelación relevantes, y de describir una solución de forma abstracta." .
+
+guide:Comp_Ce6 a guide:Competency ;
+    guide:competencyCode "Ce 6" ;
+    guide:competencyDescription "Comprender intelectualmente el papel central que tienen los algoritmos y las estructuras de datos, así como una apreciación del mismo." .
+
+# Learning Results
+guide:LR_RA288 a guide:LearningResult ;
+    guide:learningResultCode "RA288" ;
+    guide:learningResultDescription "Programar aplicaciones mediante librerías existentes de TADs, iteradores, etc,." .
+
+guide:LR_RA2_287 a guide:LearningResult ;
+    guide:learningRelatCode "RA287" ;
+    guide:learningResultDescription "Traducir especificaciones de tipos abstractos de datos (TADs) a implementaciones." .
+
+# Evaluation System
+guide:EvalSystem_ProgII a guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación se regirá por la Normativa de Evaluación de la UPM. Consta de dos sistemas: Evaluación progresiva y Evaluación global." ;
+    guide:hasEvaluationTrial guide:Trial_ExamenGlobal, guide:Trial_ExamenExtraordinario .
+
+guide:Trial_ExamenGlobal a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "60%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:evaluationDuration "02:00" .
+
+guide:Trial_ExamenExtraordinario a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" .
+
+# Schedule Events and Activities
+guide:Event_W1 a guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity guide:Act_Presentation .
+
+guide:Act_Presentation a guide:Activity ;
+    guide:activityDescription "Presentación de la asignatura" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+guide:Event_W3 a guide:ScheduleEvent ;
+    guide:eventWeek "3" ;
+    guide:hasActivity guide:Act_Lab .
+
+guide:Act_Lab a guide:Activity ;
+    guide:activityDescription "Laboratorio" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Prácticas de Laboratorio" .
+
+# Didactic Resources
+guide:Res_Moodle a guide:DidacticResource ;
+    guide:bibliographyTitle "Sitio Moodle UPM de la asignatura" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:Res_JavaManual a guide:DidacticResource ;
+    guide:bibliographyTitle "Manual de referencia de Java" ;
+    guide:bibliographyType "Recursos web" .
+
+# Required Knowledge
+guide:ReqKnow_ProgI a guide:RequiredKnowledge ;
+    guide:previousCourses "Programación I" .
+
+guide:ReqKnow_General a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Capacidad de comprensión lectora y hablada en español/castellano. Conocimientos básicos de aritmética, lógica y álgebra." .

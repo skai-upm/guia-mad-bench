@@ -1,0 +1,232 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:course_guide_53001608 rdf:type guide:CourseGuide ;
+    sch:name "Sistemas Integrados De Fabricacion" ;
+    sch:description "La asignatura de Sistemas Integrados de Fabricación tiene como objetivo principal adquirir una visión global de la influencia que los principales aspectos de los $\dots$" ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :lecturer_cpolvorinos, :lecturer_jrios, :lecturer_djuanes ;
+    sch:director :lecturer_jrios ;
+    guide:hasCompetency :comp_muii_c, :comp_muii_e, :comp_muii_g, :comp_muii_cb07, :comp_muii_cb09, :comp_muii_ce02, :comp_muii_cg02, :comp_muii_cg06, :comp_muii_cg08, :comp_muii_cg10 ;
+    guide:hasLearningResult :lr_ra40, :lr_ra110, :lr_ra108, :lr_ra38, :lr_ra39 ;
+    guide:hasEvaluation :eval_system_53001608 ;
+    guide:hasDidacticResource :res_flexsim, :res_kalpakjian, :res_hernandez_vizan, :res_flexsim_help ;
+    sch:courseSchedule :schedule_53001608 .
+
+# Degree and University Center
+:degree_05bi rdf:type guide:MasterDegree ;
+    sch:name "Doble Master Universitario Ingenieria Industrial - Electronica Industrial" ;
+    guide:degreeCode "05BI" ;
+    guide:hasCourse :course_53001608 .
+
+:center_ets_industriales rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Industriales" ;
+    guide:offers :degree_05bi .
+
+# Lecturers
+:lecturer_cpolvorinos rdf:type guide:Lecturer ;
+    sch:name "Carlos Polvorinos Fernandez" ;
+    sch:email "c.polvorinos@upm.es" ;
+    guide:office "Lab Fabricacion" ;
+    guide:tutorshipsSchedule "Sin horario. Solicitar por correo electrónico" .
+
+:lecturer_jrios rdf:type guide:Lecturer ;
+    sch:name "Jose Rios Chueco" ;
+    sch:email "jose.rios@upm.es" ;
+    guide:office "Lab Fabricacion" ;
+    guide:tutorshipsSchedule "Sin horario. Solicitar por correo electrónico." .
+
+:lecturer_djuanes rdf:type guide:Lecturer ;
+    sch:name "Juan De Juanes Marquez Sevill．" ;
+    sch:email "juandejuanes.marquez@upm.es" ;
+    guide:office "Lab Fabricacion" .
+
+:lecturer_jchermandez rdf:type guide:Lecturer ;
+    sch:name "Juan Carlos Hernández Matías" ;
+    sch:email "jc.hernandez@upm.es" .
+
+# Competencies
+:comp_muii_c rdf:type guide:Competency ;
+    guide:competencyCode "MUII. (c)" ;
+    guide:competencyDescription "DISEÑA Habilidad para diseñar un sistema, componente o proceso que alcance los requisitos deseados teniendo en cuenta" .
+
+:comp_muii_e rdf:type guide:Competency ;
+    guide:competencyCode "MUII. (e)" ;
+    guide:competencyDescription "RESUELVE. Habilidad para identificar, formular y resolver problemas de ingeniería." .
+
+:comp_muii_g rdf:type guide:Competency ;
+    guide:competencyCode "MUII. (g)" ;
+    guide:competencyDescription "COMUNICA Habilidad para comunicar eficazmente." .
+
+:comp_muii_cb07 rdf:type guide:Competency ;
+    guide:competencyCode "MUII.CB07" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos dentro de contextos más amplios" .
+
+:comp_muii_cb09 rdf:type guide:Competency ;
+    guide:competencyCode "MUII.CB09" ;
+    guide:competencyDescription "Que los estudiantes sepan comunicar sus conclusiones y los conocimientos y razones últimas que las sustentan a públicos especializados y no especializados de un modo claro y sin ambigüedades" .
+
+:comp_muii_ce02 rdf:type guide:Competency ;
+    guide:competencyCode "MUII.CE02" ;
+    guide:competencyDescription "Conocimiento y capacidad para proyectar, calcular y diseñar sistemas integrados de fabricación." .
+
+:comp_muii_cg02 rdf:type guide:Competency ;
+    guide:competencyCode "MUII.CG02" ;
+    guide:competencyDescription "Proyectar, calcular y diseñar productos, procesos, instalaciones y plantas." .
+
+:comp_muii_cg06 rdf:type guide:Competency ;
+    guide:competencyCode "MUII.CG06" ;
+    guide:competencyDescription "Gestionar técnica y económicamente proyectos, instalaciones, plantas, empresas y centros tecnológicos." .
+
+:comp_muii_cg08 rdf:type guide:Competency ;
+    guide:competencyCode "MUII.CG08" ;
+    guide:competencyDescription "Aplicar los conocimientos adquiridos y resolver problemas en entornos nuevos o poco conocidos dentro de contextos más amplios y multidisciplinares." .
+
+:comp_muii_cg10 rdf:type guide:Competency ;
+    guide:competencyCode "MUII.CG10" ;
+    guide:comptencyDescription "Saber comunicar las conclusiones ¿y los conocimientos y razones últimas que las sustentan¿ a públicos especializados y no especializados de un modo claro y sin ambigüedades." .
+
+# Learning Results
+:lr_ra40 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA40" ;
+    guide:learningResultDescription "Capacidad para analizar la influencia de determinadas variables en la eficiencia de un proceso" .
+
+:lr_ra110 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA110" ;
+    guide:learningResultDescription "Definir actuaciones de mejora y evolución sistemática" .
+
+:lr_ra108 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA108" ;
+    guide:learningResultDescription "Realización de trabajos prácticos sobre simulación de sistemas" .
+
+:lr_ra38 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA38" ;
+    guide:learningResultDescription "Capacidad para modelar un sistema de fabricación" .
+
+:lr_ra39 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA39" ;
+    guide:learningResultDescription "Capacidad para obtener los datos de producción que identifican el funcionamiento de un sistema de fabricación" .
+
+# Evaluation System
+:eval_system_53001608 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La calificación final de la asignatura viene definida por la suma ponderada de las Pruebas de Evaluación Intermedia según: T1 (15%) + T2 (25%) + T3 (60%)." ;
+    guide:hasEvaluationTrial :trial_t1, :trial_t2, :trial_t3, :trial_global .
+
+:trial_t1 rdf:type guide:EvaluationTrial ;
+    sch:name "Evaluación Intermedia 1 (T1)" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "15%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "06:00" ;
+    guide:trialMode "No Presencial" ;
+    guide:involvesCompetency :comp_muii_ce02, :comp_muii_cg02 .
+
+:trial_t2 rdf:type guide:EvaluationTrial ;
+    sch:name "Evaluación Intermedia 2 (T2)" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "10:00" ;
+    guide:trialMode "No Presencial" ;
+    guide:involvesCompetency :comp_muii_ce02, :comp_muii_cg02 .
+
+:trial_t3 rdf:type guide:EvaluationTrial ;
+    sch:name "Evaluación Intermedia 3 (T3)" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "60%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "32:00" ;
+    guide:trialMode "No Presencial" ;
+    guide:involvesCompetency :comp_muii_c, :comp_muii_e, :comp_muii_g, :comp_muii_cb07, :comp_muii_ce02, :comp_muii_cb09, :comp_muii_cg02, :comp_muii_cg06, :comp_muii_cg08, :comp_muii_cg10 .
+
+:trial_global rdf:type guide:EvaluationTrial ;
+    sch:name "Evaluación Global" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:30" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_muii_c, :comp_muii_e, :comp_muii_g, :comp_muii_cb07, :comp_muii_ce02, :comp_muii_cb09, :comp_muii_cg02, :comp_muii_cg06, :comp_muii_cg08, :comp_muii_cg10 .
+
+# Schedule and Activities
+:schedule_53001608 rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week4, :event_week9, :event_week17 .
+
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :act_leccion_magistral_1 .
+
+:act_leccion_magistral_1 rdf:type guide:Activity ;
+    guide:activityDescription "Sistemas de fabricación" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+:event_week4 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "4" ;
+    guide:hasActivity :act_clase_problemas_4 .
+
+:act_clase_problemas_4 rdf:type guide:Activity ;
+    guide:activityDescription "Caso de estudio - Sistema de fabricación" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Clase de Problemas" .
+
+# Didactic Resources
+:res_flexsim rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Programa simulación FlexSim" ;
+    guide:bibliographyType "Equipamiento" ;
+    guide:bibliographyDescription "Programa de simulación comercial FlexSim." .
+
+:res_kalpakjian rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Manufactura, Ingeniería y Tecnología (Kalpakjian & Schmind)" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Libro teórico de referencia" .
+
+:res_hernandez_vizan rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Lean Manufacturing. Conceptos, técnicas e implantación." ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Libro teórico de referencia" .
+
+:res_flexsim_help rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Documentación de ayuda del programa FlexSim" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Sección de ayuda del programa FlexSim." .
+
+# Syllabus
+:syllabus_53001608 rdf:type guide:Syllabus ;
+    guide:hasItem :item_unit1, :item_unit2, :item_unit3, :item_unit4, :item_unit5 .
+
+:item_unit1 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Sistemas de fabricación" ;
+    guide:itemIndex 1 .
+
+:item_unit2 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "La simulación de sistemas de fabricación" ;
+    guide:itemIndex 2 .
+
+:item_unit3 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Análisis de un sistema de fabricación" ;
+    guide:itemIndex 3 .
+
+:item_unit4 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Tiempos de fabricación" ;
+    guide:itemIndex 4 .
+
+:item_unit5 rdf:<0xC2>type guide:SyllabusItem ;
+    guide:syllabusDescription "Estimación de costes de fabricación" ;
+    guide:itemIndex 5 .
+
+# Required Knowledge
+:req_knowledge_53001608 rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Se recomienda tener conocimientos previos de procesos de fabricación." .
+
+# Course Information
+:course_53001608_info rdf:type guide:CourseGuide ;
+    guide:otherInformation "ODS 9: Industria, innovación e infraestructuras. ODS 12: Producción y consumo responsable." .

@@ -1,0 +1,120 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+_:courseGuide rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Ingenieria Procesos Y Productos" ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus _:syllabus ;
+    guide:hasCompetency _:compCE15, _:compCE19, _:compCE20, _:compCE23_ETSII, _:compCG1, _:compCG2, _:compCG3, _:compCG4, _:compCG6 ;
+    guide:hasLearningResult _:lrRA190, _:lrRA193, _:lrRA194, _:lrRA191, _:lrRA192, _:lrRA302, _:lrRA301, _:lrRA303, _:lrRA300, _:lrRA189 ;
+    guide:hasEvaluation _:evalSystem ;
+    sch:instructor _:profMaria, _:profFrancisco ;
+    guide:hasDidacticResource _:resNotes, _:resDimian, _:resCussler, _:resSeider, _:resTowler, _:resSmith .
+
+_:course rdf:type guide:Course ;
+    sch:name "550: 55001039 - Ingenieria Procesos Y Productos" ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 2025 ;
+    guide:semester "Séptimo semestre" ;
+    sch:hasCourseInstance _:courseGuide .
+
+_:degree rdf:type guide:BachelorDegree ;
+    sch:name "05IQ - Grado En Ingeniería Química" ;
+    guide:degreeCode "05IQ" ;
+    guide:hasCourse _:course .
+
+_:uniCenter rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Industriales" ;
+    guide:offers _:degree .
+
+_:profMaria rdf:type guide:Lecturer ;
+    sch:name "Maria Gonzalez Miquel" ;
+    sch:email "maria.gonzalezmiquel@upm.es" .
+
+_:profFrancisco rdf:type guide:Lecturer ;
+    sch:name "Francisco Ismael Diaz Moreno" ;
+    guide:office "Lab Tec Quimica" ;
+    sch:email "ismael.diaz@upm.es" .
+
+_:compCE15 rdf:type guide:Competency ;
+    guide:competencyCode "CE 15" ;
+    guide:competencyDescription "Conocimientos básicos de los sistemas de producción y fabricación industrial" .
+
+_:compCE19 rdf:type guide:Competency ;
+    guide:competencyCode "CE 19" ;
+    guide:competencyDescription "Conocimientos sobre balances de materia y energía, biotecnología, transferencia de …” .
+
+_:compCG1 rdf:type guide:Competency ;
+    guide:competencyCode "CG 1" ;
+    guide:competencyDescription "Conocer y aplicar los conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Industria" .
+
+_:lrRA190 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA190" ;
+    guide:learningResultDescription "El alumno será capaz de escoger los algoritmos apropiados e implementarlos para la simulación de los modelos." .
+
+_:lrRA194 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA194" ;
+    guide:learningResultDescription "El alumno será capaz de realizar un diseño preliminar de un proceso químico" .
+
+_:syllabus rdf:type guide:Syllabus ;
+    guide:hasItem _:item1, _:item2, _:item3, _:item4, _:item5, _:item6 .
+
+_:item1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción. Diagramas de proceso" .
+
+_:item2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Simulación estacionaria" .
+
+_:item3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Diseño de procesos." .
+
+_:evalSystem rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación Progresiva y Global" ;
+    guide:hasEvaluationTrial _:trial1, _:trial2, _:trial 5, _:trial6 .
+
+_:trial1 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Entrega Proyecto Diseño de Procesos (Síntesis del proceso)" ;
+    guide:gradePercentage "15%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "Semana 5" .
+
+_:trial5 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Teórico-Práctico" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "Semana 15" .
+
+_:schedule rdf:type guide:Schedule ;
+    sch:eventSchedule _:event1, _:event2 .
+
+_:event1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity _:act1 .
+
+_:act1 rdf:type guide:Activity ;
+    guide:activityDescription "Introducción. Diagramas de proceso" ;
+    guide:activityDuration 3.25 ;
+    guide:activityFormat "Lección Magistral" .
+
+_:resNotes rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Notas de clase" ;
+    guide:bibliographyType "Recursos web" .
+
+_:resDimian rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Diseño de procesos" ;
+    guide:bibliographyDescription "Dimian, A. C. Integrated design and simulation of chemical processes. 2003." .
+
+_:resCussler rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Diseño de productos" ;
+    guide:bibliographyDescription "Cussler and Moggridge. Chemical Product Design (2nd ed.), 2011." .

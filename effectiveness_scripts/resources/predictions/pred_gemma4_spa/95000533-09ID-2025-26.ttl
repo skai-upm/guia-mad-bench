@@ -1,0 +1,136 @@
+@prefix : <http://guia-mad-emb.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:course_95000533 rdf:type guide:CourseGuide ;
+    sch:name "Proyectos En Ingeniería De Datos Y Sistemas" ;
+    sch:courseCode 95000533 ;
+    guide:numberOfCredits 9.0 ;
+    guide:courseType "Obligatoria" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    sch:description "El objetivo principal de la asignatura es introducir a los estudiantes en la ejecución de proyectos en ingeniería de datos y sistemas, a partir de casos de estudio." ;
+    guide:hasCompetency :comp_CB01, :comp_CB02, :comp_CB05, :comp_CE04, :comp_CE05, :comp_CE18, :comp_CE19, :comp_CE21, :comp_CG01, :comp_CG02, :comp_CG03, :comp_CG04, :comp_CG05, :comp_CG06, :comp_CG07, :comp_CG10, :comp_CG11 ;
+    guide:hasLearningResult :lr_RA112, :lr_RA110, :lr_RA111, :lr_RA113 ;
+    guide:hasEvaluation :eval_system_prog ;
+    guide:hasSyllabus :syllabus_main ;
+    sch:instructor :lecturer_fraile, :lecturer_gutierrez, :lecturer_fernandez, :lecturer_vinagre, :lecturer_sanchez, :lecturer_cabrera ;
+    sch:director :lecturer_cabrera .
+
+# Degree and University Center
+:degree_09ID rdf:type guide:Degree ;
+    sch:name "Grado En Ingenieria Y Sistemas De Datos" ;
+    guide:degreeCode "09ID" ;
+    guide:hasCourse :course_95000533 .
+
+:center_ETS rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" ;
+    guide:offers :degree_09ID .
+
+# Lecturers
+:lecturer_fraile rdf:type guide:Lecturer ;
+    sch:name "Jose Jesus Fraile Ardanuy" ;
+    sch:email "jesus.fraile.ardanuy@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:lecturer_gutierrez rdf:type guide:Lecturer ;
+    sch:name "Alvaro Gutierrez Martin" ;
+    sch:email "a.gutierrez@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:lecturer_fernandez rdf:type guide:Lecturer ;
+    sch:name "Fernando Fernandez Martinez" ;
+    sch:email "fernando.fernandezm@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:lecturer_vinagre rdf:type guide:Lecturer ;
+    sch:name "Juan Jose Vinagre Diaz" ;
+    sch:email "juanjose.vinagre@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:lecturer_sanchez rdf:type guide:Lecturer ;
+    sch:name "Juan Fernando Sanchez Rada" ;
+    sch:email "jf.sanchez@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:lecturer_cabrera rdf:type guide:Lecturer ;
+    sch:name "Julian Cabrera Quesada" ;
+    sch:email "julian.cabrera@upm.es" ;
+    guide:tutorshipsSchedule "-" .
+
+# Competencies
+:comp_CB01 rdf:type guide:Competency ;
+    guide:competencyCode "CB01" ;
+    guide:competencyDescription "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de estudio..." .
+
+:comp_CE04 rdf:type guide:Competency ;
+    guide:competencyCode "CE04" ;
+    guide:competencyDescription "Que los estudiantes sean capaces de aplicar los conceptos y tecnologías del ámbito de la ingeniería de las telecomunicación..." .
+
+:comp_CG01 rdf:type guide:Competency ;
+    guide:competencyCode "CG01" ;
+    guide:competencyDescription "Tener capacidad de trabajar en entornos internacionales y multidisciplinares, haciendo uso de la lengua inglesa..." .
+
+# Learning Results
+:lr_RA112 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA112" ;
+    guide:learningResultDescription "Analizar las tecnologías necesarias para implementar un caso de estudio." .
+
+:lr_RA110 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA110" ;
+    guide:learningResultDescription "Saber identificar y definir los requisitos de un proyecto en ingeniería de datos y sistemas." .
+
+# Evaluation System and Trials
+:eval_system_prog rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva" ;
+    guide:hasEvaluationTrial :trial_h1_memoria, :trial_h1_pres, :trial_h2_memoria, :trial_h2_pres, :trial_h3_memoria, :trial_h3_pres, :trial_exam_proj .
+
+:trial_h1_memoria rdf:type guide:EvaluationTrial ;
+    sch:name "Hito 1: Memoria Técnica" ;
+    guide:gradePercentage "10%" ;
+    guide:trialMode "No presencial" ;
+    guide:trialType "Trabajo en Grupo" .
+
+:trial_h1_pres rdf:type guide:EvaluationTrial ;
+    sch:name "Hito 1: Presentación & Defensa" ;
+    guide:gradePercentage "20%" ;
+    guide:trialMode "Presencial" ;
+    guide:trialType "Presentación en Grupo" .
+
+:trial_exam_proj rdf:type guide:EvaluationTrial ;
+    sch:name "Examen de Proyecto" ;
+    guide:gradePercentage "10%" ;
+    guide:trialMode "Presencial" ;
+    guide:trialType "Examen Escrito" .
+
+# Syllabus
+:syllabus_main rdf:type guide:Syllabus ;
+    guide:hasItem :unit_1, :unit_2, :unit_3 .
+
+:unit_1 rdf:type guide:SyllabusItem ;
+    sch:name "UNIDAD 1. Proyecto 1" ;
+    guide:syllabusDescription "Introducción, Retos Tecnológicos, Solución técnica y Aspectos económicos." .
+
+:unit_2 rdf:type guide:SyllabusItem ;
+    sch:name "UNIDAD 2. Proyecto 2" ;
+    guide:syllabusDescription "Introducción, Retos Tecnológicos, Solución técnica y Aspectos económicos." .
+
+:unit_3 rdf:type guide:SyllabusItem ;
+    sch:name "UNIDAD 3. Proyecto 3" ;
+    guide:syllabusDescription "Introducción, Retos Tecnológicos, Solución técnica y Aspectos económicos." .
+
+# Didactic Resources
+:res_moodle rdf:type guide:DidacticResource ;
+    sch:name "Moodle" ;
+    guide:bibliographyType "Otros" ;
+    guide:bibliographyDescription "Aula virtual - Recurso Web para seguimiento de la asignatura." .
+
+:res_equipamiento rdf:type guide:DidacticResource ;
+    sch:name "Equipamiento" ;
+    guide:bibliographyType "Equipamiento" ;
+    guide:bibliographyDescription "Ordenador, cañón de video y pizarra." .

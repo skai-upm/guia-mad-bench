@@ -1,0 +1,70 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> rdf:type owl:Class ;
+    :hasSyllabus <http://guia-mad-bench.es/data/syllabus/fluidos>;
+    sch:name "Ingeniería de Fluidos"@es;
+    dct:title "Guía de Aprendizaje - Ingeniería de Fluidos"@en;
+    guide:numberOfCredits 4.5 ;
+    guide:courseYear 2026 ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/sylbus/fluidos>;
+    sch:description "Asignatura del Grado en Ingeniería de la Energía"@en;
+    dct:creator "Jorge Dueñas Pamplona" .
+
+<http://guia-mad-bench.es/data/degree/grado-energia> rdf:type owl:Class ;
+    guide:BachelorDegree rdfs:subClassOf <http://w3id.org/def/guia#Degree>;
+    sch:name "Grado en Ingeniería de la Energía"@es;
+    dct:title "06IE - Grado En Ingenieria De La Energia"@en .
+
+<http://guia-mad-bench.es/data/course/fluidos> rdf:type owl:Class ;
+    guide:sch:hasCourseInstance <http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01>;
+    sch:name "65004047 - Ingenieria De Fluidos"@es;
+    guide:numberOfCredits 4.5 ;
+    guide:courseYear 2026 .
+
+<http://guia-mad-bench.es/data/lecturer/jorge-duenas-pamplona> rdf:type owl:Class ;
+    sch:Lecturer rdfs:subClassOf <https://schema.org#Person>;
+    sch:name "Jorge Dueñas Pamplona"@es;
+    guide:office 10 ;
+    sch:email "jorge.duenas.pamplona@upm.es" .
+
+<http://guia-mad-bench.es/data/syllabus/fluidos> rdf:type owl:Class ;
+    :hasSyllabus <http://w3id.org/def/guia#CourseGuide>;
+    sch:name "Temario de Ingeniería de Fluidos"@es;
+    guide:sylbusDescription "Leyes de conservación, Conservación de la masa..."@en .
+
+<http://guia-mad-bench.es/data/syllabusitem/fluidos-1> rdf:type owl:Class ;
+    :hasItem <http://w3id.org/def/guia#Syllabus>;
+    guide:sylbusDescription "Leyes de conservación"@es;
+    guide:itemIndex 1 .
+
+<http://guia-mad-bench.es/data/schedule/fluidos> rdf:type owl:Class ;
+    sch:eventSchedule <https://schema.org/Schedule>;
+    sch:name "Cronograma Ingeniería de Fluidos"@en;
+    guide:sylbusDescription "Semestre 5, Septiembre-Enero"@es .
+
+<http://guia-mad-bench.es/data/competency/ce19> rdf:type owl:Class ;
+    :hasCompetency <https://schema.org#Course>;
+    sch:name "CE19 - Principios de mecánica de fluidos"@en;
+    guide:competencyCode 2019-065047 .
+
+<http://guia-mad-bench.es/data/learningresult/ra324> rdf:type owl:Class ;
+    :hasLearningResult <https://schema.org#Course>;
+    sch:name "RA324 - Capacidad para diseñar productos"@en;
+    guide:learningResultCode 065047-1 .
+
+<http://guia-mad-bench.es/data/evaluationtrial/pep1> rdf:type owl:Class ;
+    :hasEvaluationTrial <https://schema.org#Course>;
+    sch:name "Prueba de evaluación progresiva 1"@es;
+    guide:minimumScore 4.0 .
+
+<http://guia-mad-bench.es/data/evaluationtrial/final> rdf:type owl:Class ;
+    :hasEvaluationTrial <https://schema.org#Course>;
+    sch:name "Examen final"@es;
+    guide:gradePercentage 100 .

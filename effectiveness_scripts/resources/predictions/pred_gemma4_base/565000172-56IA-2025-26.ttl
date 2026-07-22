@@ -1,0 +1,155 @@
+@prefix : <http://guia-mad-boench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+# Degree and University Center
+<http://guia-mad-bench.es/data/degree_56IA> rdf:type guide:BachelorDegree ;
+    sch:name "56IA - Grado en Ingenieria Electronica Industrial y Automatica" ;
+    guide:degreeCode "56IA" .
+
+<http://guia-mad-bench.es/data/center_ETS> rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingeniería y Diseño Industrial" ;
+    guide:offers <http://guia-mad-bench.es/data/degree_56IA> .
+
+# Course
+<http://guia-mad-bench.es/data/course_565000172> rdf:type guide:Course ;
+    sch:name "Sistemas Electronicos Digitales" ;
+    sch:courseCode 565000172 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 2025 ;
+    guide:semester "Séptimo semestre" .
+
+# Course Guide
+<http://guia-mad-bench.es/data/courseGuide_565000172> rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance <http://guia-mad-bench.es/data/course_565000172> ;
+    sch:name "Guía de Aprendizaje - Sistemas Electronicos Digitales" ;
+    guide:numberOfCredits 7.5 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:totalHours "Estimado según créditos ECTS (26-27h/crédito)" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/comp_CE24>, <http://guia-mad-bench.es/data/comp_CG1>, <http://guia-mad-bench.es/data/comp_CG10> ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/lr_RA58>, <http://guia-mad-bench.es/data/lr_RA59> ;
+    guide:hasEvaluation <http://guia-mad-sch/data/evalSystem_565000172> ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_565000172> ;
+    sch:instructor <http://guia-mad-bench.es/data/lecturer_AB>, <http://guia-mad-bench.es/data/lecturer_RH>, <http://guia-mad-bench.es/data/lecturer_PC>, <http://guia-mad-bench.es/data/lecturer_RN>, <http://guia-mad-bench.es/data/lecturer_GC> ;
+    guide:hasDidacticResource <http://guia-mad-bench.es/data/res_pedroni>, <http://guia-mad-bench.es/data/res_moodle>, <http://guia-mad-bench.es/data/res_st> .
+
+# Lecturers
+<http://guia-mad-bench.es/data/lecturer_AB> rdf:type guide:Lecturer ;
+    sch:name "Alberto Brunete Gonzalez" ;
+    sch:email "alberto.brunete@upm.es" ;
+    guide:office "C-107" .
+
+<http://guia-mad-bench.es/data/lecturer_RH> rdf:type guide:Lecturer ;
+    sch:name "Rebeca Herrero Martin" ;
+    sch:email "rebeca.herrero@upm.es" ;
+    guide:office "C-108" .
+
+<http://guia-mad-bench.es/data/lecturer_PC> rdf:type guide:Lecturer ;
+    sch:name "Pedro Luis Castedo Cepeda" ;
+    sch:email "pedroluis.castedo@upm.es" ;
+    guide:office "C-204" .
+
+<http://guia-mad-bench.es/data/lecturer_RN> rdf:type guide:Lecturer ;
+    sch:name "Ruben Nuñez Judez" ;
+    sch:email "ruben.nunez@upm.es" ;
+    guide:office "C-108" .
+
+<http://guia-mad-bench.es/data/lecturer_GC> rdf:type guide:Lecturer ;
+    sch:name "Giuseppe Conti" ;
+    sch:email "g.conti@upm.es" ;
+    guide:office "C-106" .
+
+# Competencies
+<http://guia-mad-bench.es/data/comp_CE24> rdf:type guide:Competency ;
+    guide:competencyCode "CE 24" ;
+    guide:competencyDescription "Capacidad para diseñar sistemas electrónicos analógicos, digitales y de potencia." .
+
+<http://gu:mad-bench.es/data/comp_CG1> rdf:type guide:Competency ;
+    guide:competencyCode "CG 1" ;
+    guide:competencyDescription "Conocer y aplicar los conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Industrial" .
+
+<http://guia-mad-bench.es/data/comp_CG10> rdf:type guide:Competency ;
+    guide:competencyCode "CG 10" ;
+    guide:competencyDescription "Creatividad." .
+
+# Learning Results
+<http://guia-mad-bench.es/data/lr_RA58> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA58" ;
+    guide:learningResultDescription "Conocimiento y capacidad para el modelado y simulación de sistemas electrónicos digitales." .
+
+<http://guia-mad-bench.es/data/lr_RA59> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA59" ;
+    guide:learningResultDescription "Capacidad para el diseño de sistemas electrónicos digitales." .
+
+# Syllabus
+<http://guia-mad-bench.es/data/syllabus_565000172> rdf:type guide:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/item_1>, <http://guia-mad-bench.es/data/item_2>, <http://guia-mad-bench.es/data/item_4> .
+
+<http://guia-mad-bench.es/data/item_1> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a la microelectrónica, breve historia y tendencias actuales; PLD, CPLD y FPGA." .
+
+<http://guia-mad-bench.es/data/item_2> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Diseño mediante Lenguajes de Descripción Hardware (VHDL)." .
+
+<http://guia-mad-bench.es/data/item_4> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Microcontroladores: Arquitecturas ARM CORTEX, GPIO, Interrupciones, DMA, Comunicaciones Serie y Conversores." .
+
+# Evaluation System
+<http://guia-mad-bench.es/data/evalSystem_565000172> rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación consta de un examen parcial (progresiva) y una prueba global (examen global y trabajo)." ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial_parcial>, <http://guia-mad-bench.es/data/trial_global>, <http://guia-mad-bench.es/data/trial_trabajo> .
+
+<http://guia-mad-bench.es/data/trial_parcial> rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialWeek "11" ;
+    guide:trialMode "Presencial" .
+
+<http://guia-mad-bench.es/data/trial_global> rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "global" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialWeek "17" ;
+    guide:trialMode "Presencial" .
+
+<http://guia-mad-bench.es/data/trial_trabajo> rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "global" ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:trialMode "Presencial" .
+
+# Schedule and Activities
+<http://guia-mad-bench.es/data/event_sem1> rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity <http://guia-md-bench.es/data/act_lecture_topic1> .
+
+<http://guia-mad-bench.es/data/act_lecture_topic1> rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+<http://guia-mad-bench.es/data/res_pedroni> rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Circuit Design with VHDL, V. A. Pedroni 2010" ;
+    guide:bibliographyType "Bibliografía" .
+
+<http://guia-mad-bench.es/data/res_moodle> rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" .
+
+<http://guia-mad-bench.es/data/res_st> rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Material proporcionado por ST sobre los microcontroladores STM32F4" ;
+    guide:bibliographyType "Recursos web" .

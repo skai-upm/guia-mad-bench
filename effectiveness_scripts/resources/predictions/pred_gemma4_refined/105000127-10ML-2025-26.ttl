@@ -1,0 +1,137 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+<http://guia-mad-bench.es/data/10ML> rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Matematicas E Informática" ;
+    guide:degreeCode "10ML" ;
+    guide:hasCourse <http://guia-mad-bench.es/data/105000127> .
+
+<http://guia-mad-bench.es/data/ETS_Informaticos> rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Informáticos" ;
+    guide:offers <http://guia-mad-bench.es/data/10ML> .
+
+# Course and Course Guide
+<http://guia-mad-bench.es/data/105000127> rdf:type guide:Course ;
+    sch:name "Sistemas Operativos" ;
+    sch:courseCode 105000127 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Sexto semestre" .
+
+<http://guia-mad-bench.es/data/GA_10ML_105000127> rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Sistemas Operativos" ;
+    sch:hasCourseInstance <http://guia-mad-bench.es/data/105000127> ;
+    guide:numberOfCredits 6.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasEvaluation <http://guia-mad-bench.es/data/EvalSystem_SO> ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/Syllabus_SO> ;
+    guide:hasDidacticResource <http://guia-mad-bench.es/data/Res_Moodle>, <http://guia-mad-bench.es/data/Res_Libro_Carretero> ;
+    sch:instructor <http://guia-mad-bench.es/data/Fco_Javier_Sch_Rosales> .
+
+# Lecturers
+<http://guia-mad-bench.es/data/Pablo_Toharia> rdf:type guide:Lecturer ;
+    sch:name "Pablo Toharia Rabasco" ;
+    sch:email "pablo.toharia@upm.es" ;
+    guide:office "4102" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+<http://guia-mad-bench.es/data/Fco_Javier_Sch_Rosales> rdf:type guide:Lecturer ;
+    sch:name "Fco Javier Rosales Garcia" ;
+    sch:email "francisco.rosales@upm.es" ;
+    guide:office "4204" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+<http://guia-mad-bench.es/data/Maria_Santos_Perez> rdf:type guide:Lecturer ;
+    sch:name "Maria De Los Santos Perez Hernandez" ;
+    sch:email "maria.s.perez@upm.es" ;
+    guide:office "4203" .
+
+# Competencies
+<http://guia-mad-bench.es/data/C1> rdf:type guide:Competency ;
+    guide:competencyCode "C1" ;
+    guide:competencyDescription "Capacidad de resolución de problemas aplicando conocimientos de matemáticas, ciencias e ingeniería." .
+
+<http://guia-mad-bench.es/data/C2> rdf:type guide:Competency ;
+    guide:competencyCode "C2" ;
+    guide:competencyDescription "Capacidad para el aprendizaje autónomo y la actualización de conocimientos." .
+
+<http://guia-mad-bench.es/data/K4> rdf:type guide:Competency ;
+    guide:competencyCode "K4" ;
+    guide:competencyDescription "Entender el soporte físico (hardware) de los ordenadores desde el punto de vista del soporte lógico (software)." .
+
+<http://guia-mad-bench.es/data/S19> rdf:type guide:Competency ;
+    guide:competencyCode "S19" ;
+    guide:competencyDescription "Capacidad de aplicar sus conocimientos e intuición para diseñar el hardware/software que cumple unos requisitos especificados." .
+
+# Learning Results
+<http://guia-mad-bench.es/data/RA20> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA20" ;
+    guide:learningResultDescription "Los resultados del aprendizaje correspondientes a esta asignatura han quedado definidos en el apartado de competencias." .
+
+# Syllabus
+<http://guia-mad-bench.es/data/Syllabus_SO> rdf:type guide:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/Topic_Intro>, <http://guia-mad-bench.es/data/Topic_Files>, <http://guia-mad-bench.es/data/Topic_Process>, <http://guia-mad-bench.es/data/Topic_Memory>, <http://guia-mad-bench.es/data/Topic_Sync> .
+
+<http://guia-mad-bench.es/data/Topic_Intro> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción al SSOO" .
+
+<http://guia-mad-bench.es/data/Topic_Files> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Gestión de Ficheros" .
+
+# Evaluation System and Trials
+<http://guia-mad-bench.es/data/EvalSystem_SO> rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva por parciales y pruebas de evaluación global." ;
+    guide:hasEvaluationTrial <http://guia-md-bench.es/data/Trial_Nivel>, <http://guia-mad-bench.es/data/Trial_Linux>, <http://guia-mad-bench.es/data/Trial_SF_Parcial> .
+
+<http://guia-mad-bench.es/data/Trial_Nivel> rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "0%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialWeek "Semana 1" .
+
+<http://guia-mad-bench.es/data/Trial_Linux> rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo Individual" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "2.5%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialWeek "Semana 1" .
+
+<http://guia-mad-bench.es/data/Trial_SF_Parcial> rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "12.5%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialWeek "Semana 7" .
+
+# Activities (from Schedule)
+<http://guia-mad-bench.es/data/Act_Linux_Module> rdf:type guide:Activity ;
+    guide:activityDescription "Módulo Introducción a Linux" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Trabajo Individual" ;
+    guide:attendanceType "No presencial" .
+
+# Didactic Resources
+<http://guia-mad-bench.es/data/Res_Moodle> rdf:type guide:DidacticResource ;
+    sch:name "Moodle de la Asignatura" ;
+    guide:bibliographyDescription "https://moodle.upm.es/titulaciones/oficiales/" .
+
+<http://guia-mad-bench.es/data/Res_Libro_Carretero> rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Sistemas Operativos, Una visión Aplicada 2ª edición" ;
+    guide:bibliographyType "Bibliografía" .
+
+# Required Knowledge
+<http://guia-mad-bench.es/data/ReqKnow_Unix> rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Manejo como usuario en entorno Unix: Línea de mandatos y Shell." .
+
+<http://guia-mad-bench.es/data/ReqCourse_Comp] rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Estructura De Computadores, Concurrencia, Programacion Para Sistemas" .

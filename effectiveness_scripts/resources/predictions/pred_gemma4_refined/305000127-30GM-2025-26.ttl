@@ -1,0 +1,270 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:course_guide_305000127 a guide:CourseGuide ;
+    sch:name "Modelización Y Simulación III" ;
+    sch:inLanguage "Castellano" ;
+    guide:numberOfCredits 6.0 ;
+    guide:courseType "Obligatoria" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    guide:inpersonHours "Not specified" ;
+    guide:remoteHours "Not specified" ;
+    guide:totalHours "Not specified" ;
+    sch:description "Esta última asignatura de Modelización y Simulación del grado pone el foco en problemas de ingeniería y arquitectura donde la geometría, tanto proyectiva como diferencial, juega un papel importante." ;
+    guide:hasCompetency :comp_CB2, :comp_CE1, :comp_CE3, :comp_CE4, :comp_CE6, :comp_CE7, :comp_CE8, :comp_CE9, :comp_CG2, :comp_CG3, :comp_CG4, :comp_CG5, :comp_CT3 ;
+    guide:hasLearningResult :lr_RA146, :lr_RA193, :lr_RA194, :lr_RA196, :lr_RA187, :lr_RA191, :lr_RA192, :lr_RA198, :lr_RA199, :lr_RA197 ;
+    guide:hasEvaluation :eval_system_progressive, :eval_system_global ;
+    guide:hasDidacticResource :res_leonardo, :res_farin, :res_courant, :res_fomenko, :res_bobenko, :res_pottmann, :res_gray, :res_lynch, :res_murray, :res_selig, :res_grasshopper, :res_matlab ;
+    sch:hasCourseInstance :course_305_instance .
+
+# Course Instance
+:course_305_instance a guide:Course ;
+    sch:courseCode 305000127 ;
+    guide:courseYear 2025 ;
+    guide:semester "Sexto semestre" ;
+    guide:courseType "Obligatoria" .
+
+# Degree Instance
+:degree_30GM a guide:Degree ;
+    sch:name "Grado En Matematicas" ;
+    guide:degreeCode "30GM" ;
+    guide:hasCourse :course_305_instance .
+
+# University Center Instance
+:center_epes a guide:UniversityCenter ;
+    sch:name "Esc. Politéc. Enseñanza Superior (Epes)" ;
+    guide:offers :degree_30GM .
+
+# Lecturer Instance
+:lecturer_mbarbero a guide:Lecturer ;
+    sch:name "Maria Barbero Liñan" ;
+    sch:email "m.barbero@upm.es" ;
+    guide:office "ETSAM" ;
+    guide:tutorshipsSchedule "Sin horario. Concretar por correo electrónico." .
+
+# Competencies
+:comp_CB2 a guide:Competency ;
+    guide:competencyCode "CB2" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional..." .
+
+:comp_CE1 a guide:Competency ;
+    guide:competencyCode "CE1" ;
+    guide:competencyDescription "Comprender y utilizar el lenguaje matemático. Adquirural la capacidad para enunciar propiedades..." .
+
+:comp_CE3 a guide:Competency ;
+    guide:competencyCode "CE3" ;
+    guide:competencyDescription "Asimilar la definición de un nuevo objeto matemático, en términos de otros ya conocidos..." .
+
+:comp_CE4 a guide:Competency ;
+    guide:competencyCode "CE4" ;
+    guide:competencyDescription "Abstraer las propiedades estructurales de objetos matemáticos..." .
+
+:comp_CE6 a guide:Competency ;
+    guide:competencyCode "CE6" ;
+    guide:competencyDescription "Proponer, analizar, validar e interpretar modelos matemáticos de sistemas reales..." .
+
+:comp_CE7 a guide:Competency ;
+    guide:competencyCode "CE7" ;
+    guide:competencyDescription "Resolver problemas de Matemáticas, mediante habilidades de cálculo básico y tecnologías de computación..." .
+
+:comp_CE8 a guide:Competency ;
+    guide:competencyCode "CE8" ;
+    guide:competencyDescription "Utilizar aplicaciones informáticas de análisis estadístico, cálculo numérico y simbólico..." .
+
+:comp_CE9 a guide:Competency ;
+    guide:competencyCode "CE9" ;
+    guide:competencyDescription "Desarrollar programas que ejecuten algoritmos de resolución de modelos matemáticos..." .
+
+:comp_CG2 a guide:Competency ;
+    guide:competencyCode "CG2" ;
+    guide:competencyDescription "Reconocer la presencia de la Matemática subyacente en la Naturaleza, en la Ciencia, en la Tecnología y en el Arte." .
+
+:comp_CG3 a guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Utilizar las capacidades analíticas y de abstracción, la intuición y el pensamiento lógico..." .
+
+:comp_CG4 a guide:Competency ;
+    guide:competencyCode "CG4" ;
+    guide:competencyDescription "Utilizar los conocimientos teóricos y prácticos adquiridos en la definición y planteamiento de problemas..." .
+
+:comp_CG5 a guide:Competency ;
+    guide:competencyCode "CG5" ;
+    guide:competencyDescription "Sintetizar conocimientos y habilidades adquiridas en el campo de la matemática..." .
+
+:comp_CT3 a guide:Competency ;
+    guide:competencyCode "CT3" ;
+    guide:competencyDescription "Asumir el liderazgo para dirigir y gestionar equipos o proyectos..." .
+
+# Learning Results
+:lr_RA146 a guide:LearningResult ;
+    guide:learningResultCode "RA146" ;
+    guide:learningResultDescription "Programar, realizar e interpretar simulaciones de los modelos utilizados" .
+
+:lr_RA193 a guide:LearningResult ;
+    guide:learningResultCode "RA193" ;
+    guide:learningResultDescription "Conocer y explicar los usos de las curvas y superficies NURBS para resolver problemas de la vida real." .
+
+:lr_RA194 a guide:LearningResult ;
+    guide:learningResultCode "RA194" ;
+    guide:learningResultDescription "Identificar superficies mínimas en el espacio tridimensional." .
+
+:lr_RA196 a guide:LearningResult ;
+    guide:learningResultCode "RA196" ;
+    guide:learningResultDescription "Discretizar superficies y analizar las propiedades geométricas asociadas." .
+
+:lr_RA187 a guide:LearningResult ;
+    guide:learningResultCode "RA187" ;
+    guide:learningResultDescription "Aplicar las herramientas del cálculo diferencial al estudio de la geometría de curvas y superficies..." .
+
+:lr_RA191 a guide:Learning<0xC2>4;
+    guide:learningResultCode "RA191" ;
+    guide:learningResultDescription "Adquirir conocimientos básicos sobre curvas y superficies NURBS." .
+
+:lr_RA192 a guide:LearningResult ;
+    guide:learningResultCode "RA192" ;
+    guide:learningResultDescription "Manejar programas de diseño geométrico asistido por ordenador." .
+
+:lr_RA198 a guide:LearningResult ;
+    guide:learningResultCode "RA198" ;
+    guide:learningResultDescription "Aplicar la teoría helicoidal para describir el movimiento de manipuladores robóticos." .
+
+:lr_RA199 a guide:LearningResult ;
+    guide:learningResultCode "RA199" ;
+    guide:learningResultDescription "Modelar y simular problemas robóticos sencillos." .
+
+:lr_RA197 a guide:LearningResult ;
+    guide:learningResultCode "RA197" ;
+    guide:learningResultDescription "Utilizar grupos de Lie y álgebras de Lie para describir la dinámica del sólido rígido." .
+
+# Evaluation Systems and Trials
+:eval_system_progressive a guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación progresiva (EP) constará de pruebas escritas, prácticas y trabajos." ;
+    guide:hasEvaluationTrial :trial_exam_5, :trial_presentation_6, :trial_practice_8, :trial_groupwork_9, :trial_control_13, :trial_presentation_15, :trial_attendance_16 .
+
+:eval_system_global a guide:EvaluationSystem ;
+    guide:evaluationDescription "Prueba global en la convocatoria ordinaria y extraordinaria." ;
+    guide:hasEvaluationTrial :trial_exam_global .
+
+:trial_exam_5 a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialWeek "5" .
+
+:trial_presentation_6 a guide:EvaluationTrial ;
+    guide:evaluationType "Presentación en Grupo" ;
+    guide:gradePercentage "10%" ;
+    guide:trialWeek "6" .
+
+:trial_practice_8 a guide:EvaluationTrial ;
+    guide:evaluationType "Examen de Prácticas" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialWeek "8" .
+
+:trial_groupwork_9 a guide:EvaluationTrial ;
+    guide:evaluationType "Trabajo en Grupo" ;
+    guide:gradePercentage "20%" ;
+    guide:trialWeek "9" .
+
+:trial_control_13 a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialWeek "13" .
+
+:trial_presentation_15 a guide:EvaluationTrial ;
+    guide:evaluationType "Presentación en Grupo" ;
+    guide:gradePercentage "10%" ;
+    guide:trialWeek "15" .
+
+:trial_groupwork_15 a guide:EvaluationTrial ;
+    guide:evaluationType "Trabajo en Grupo" ;
+    guide:gradePercentage "25%" ;
+    guide:trialWeek "15" .
+
+:trial_attendance_16 a guide:EvaluationTrial ;
+    guide:evaluationType "Trabajo Individual" ;
+    guide:gradePercentage "5%" ;
+    guide:trialWeek "16" .
+
+:trial_exam_global a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escritoy Práctico" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" .
+
+# Didactic Resources
+:res_leonardo a guide:DidacticResource ;
+    guide:bibliographyTitle "Leonardo Fernández. Diseño Geométrico Asistido por Ordenador, UPM Press, 2021" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_farin a guide:DidacticResource ;
+    guide:bibliographyTitle "George Farin. Curves and Surfaces for CAGD. A Practical Guide, Morgan Kaufmann, 2002" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_courant a guide:DidacticResource ;
+    guide:bibliographyTitle "Richard Courant. Dirichlet's Principle, Conformal Mapping, and Minimal Surfaces, Dover, 2005" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_fomenko a guide:DidacticResource ;
+    guide:bibliographyTitle "A. T. Fomenko, A. A. Tuzhilin. Elements of the Geometry and Topology of Minimal Surfaces..." ;
+    guide:bibliographyType "Bibli．ografía" .
+
+:res_bobenko a guide:DidacticResource ;
+    guide:bibliographyTitle "Alexander I. Bobenko, Yuri B. Suris. Discrete Differential Geometry..." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_pottmann a guide:DidacticResource ;
+    guide:bibliographyTitle "Helmut Pottmann, Johannes Wallner. Computational Line Geometry, Springer, 2001" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_gray a guide:DidacticResource ;
+    guide:bibliographyTitle "A. Gray, E. Abbena, S. Salomon, Modern differential Geometry of Curves and Surfaces..." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_lynch a guide:DidacticResource ;
+    guide:bibliographyTitle "K. M. Lynch, F. C. Park, Modern Robotics. Mechanics, planning and control, Cambridge University Press, 2017" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_murray a guide:DidacticResource ;
+    guide:bibliographyTitle "R. Murray, Z. Li, A. Sastry: A mathematical introduction to robotic manipulators, CRC Press, 1994" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_selig a guide:DidacticResource ;
+    guide:bibliographyTitle "J. M. Selig, Geometric Fundamentals of Robotics, Springer, 1996" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_grasshopper a guide:DidacticResource ;
+    guide:bibliographyTitle "Grasshopper y GhPython" ;
+    guide:bibliographyType "Software" .
+
+:res_matlab a guide:DidacticResource ;
+    guide:bibliographyTitle "MatLab/Python" ;
+    guide:bibliographyType "Software" .
+
+# Schedule Events (from Cronograma)
+:event_week_1 a guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:activityDescription "Introducción al diseño geométrico asistido por ordenador. Lección Magistral." .
+
+:event_week_2 a guide:ScheduleEvent ;
+    guide:eventWeek "2" ;
+    guide:activityDescription "Curvas de forma libre. Lección Magistral y Prácticas de Laboratorio." .
+
+:event_week_3 a guide:ScheduleEvent ;
+    guide:eventWeek "3" ;
+    guide:activityDescription "Resolución de problemas de curvas de forma libre. Clase de Problemas e Introducción a Grasshopper." .
+
+:event_week_5 a guide:ScheduleEvent ;
+    guide:eventWeek "5" ;
+    guide:activityDescription "Examen teórico de curvas y superficies de forma libre." .
+
+:event_week_13 a guide:ScheduleEvent ;
+    guide:eventWeek "13" ;
+    guide:activityDescription "Control sobre métodos geométricos en robótica. Clase de Problemas." .

@@ -1,0 +1,162 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://guia-mad-bench.es/data/> a <http://www.w3.org/2002/07/owl#> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Extracted Knowledge from E-health Course Guide"@en .
+
+# --- Degree and University Center ---
+
+<http://guia-mad-bench.es/data/Degree_10AM> a guide:MasterDegree ;
+    sch:name "10AM - Master Universitario en Ingenieria del Software" ;
+    guide:hasCourse <http://guia-mod-bench.es/data/Course_103001025> .
+
+<http://guia-mad-bench.es/data/UniversityCenter_ETS> a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Informáticos" ;
+    guide:offers <http://guia-mad-bench.es/data/Degree_10AM> .
+
+# --- Course Guide ---
+
+<http://guia-mad-bench.es/data/CourseGuide_103001025> a guide:CourseGuide ;
+    sch:name "103001025 - E-health: Promoting Active And Healthy Ageing" ;
+    guide:numberOfCredits 4.0 ;
+    guide:courseType "Optional/elective" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:semester "Semester 1" ;
+    sch:inLanguage "English" ;
+    sch:instructor <http://guia-mad-bench.es/data/Lecturer_Elena_Villalba> ;
+    sch:director <http://guia-mad-bench.es/data/Lecturer_Elena_Villalba> ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/Syllabus_Ehealth> ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/Competency_CG1>, 
+                         <http://guia-mad-bench.es/data/Competency_CG18>, 
+                         <http://guia-mad-bench.es/data/Competency_CG8> ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/LearningResult_RA90>,
+                             <http://guia-mad-bench.es/data/LearningResult_RA93>,
+                             <http://guia-mad-bench.es/data/LearningResult_RA91>,
+                             <http://guia-mad-bench.es/data/LearningResult_RA92> ;
+    guide:hasEvaluation <http://guia-mad-bench.es/data/EvaluationSystem_Ehealth> ;
+    guide:hasDidacticResource <http://guia-md-bench.es/data/Res_Bousquet>,
+                               <http://guia-md-bench.es/data/Res_Beard>,
+                               <http://guia-md-bench.es/data/Res_WHO>,
+                               <http://guia-md-bench.es/data/Res_Fiordelli>,
+                               <http://guia-md-bench.es/data/Res_VillalbaMora>,
+                               <http://gu:ia-md-bench.es/data/Res_Nielsen>,
+                               <http://guia-md-bench.es/data/Res_GomezHernandez> .
+
+# --- Faculty ---
+
+<http://guia-mad-bench.es/data/Lecturer_Cristian_Moral> a guide:Lecturer ;
+    sch:name "Cristian Moral Martos" ;
+    sch:email "cristian.moral@upm.es" ;
+    guide:office "5110" ;
+    guide:tutorshipsSchedule "W - 10:00 - 14:00, F - 10:00 - 12:00" .
+
+<http://guia-mad-bench.es/data/Lecturer_Elena_Villalba> a guide:Lecturer ;
+    sch:name "Elena Villalba Mora" ;
+    sch:email "elena.villalba@upm.es" ;
+    guide:office "5110" ;
+    guide:tutorshipsSchedule "M - 10:00 - 12:00, W - 10:00 - 12:00, F - 10:00 - 12:00" .
+
+# --- Competencies ---
+
+<http://guia-mad-bench.es/data/Competency_CG1> a guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquir	adidos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos dentro de contextos más amplios (o multidisciplinares) relacionados con su área de estudio (RD)" .
+
+<http://guia-mad-bench.es/data/Competency_CG18> a guide:Competency ;
+    guide:competencyCode "CG18" ;
+    guide:competencyDescription "Capacidad de trabajar y comunicarse también en contextos internacionales" .
+
+<http://guia-mad-bench.es/data/Competency_CG8> a guide:Competency ;
+    guide:competencyCode "CG8" ;
+    guide:competencyDescription "Planteamiento y resolución de problemas también en áreas nuevas y emergentes de su disciplina" .
+
+# --- Learning Results ---
+
+<http://guia-mad-bench.es/data/LearningResult_RA90> a guide:LearningResult ;
+    guide:learningResultCode "RA90" ;
+    guide:learningResultDescription "Apply techniques for designing and implementing prototypes of different fidelity levels" .
+
+<http://gu:ia-mad-bench.es/data/LearningResult_RA93> a guide:LearningResult ;
+    guide:learningResultCode "RA93" ;
+    guide:learningResultDescription "Evaluate the usability of prototypes" .
+
+# --- Syllabus ---
+
+<http://guia-mad-bench.es/data/Syllabus_Ehealth> a guide:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/SyllabusItem_1>,
+                  <http://guia-mad-bench.es/data/SyllabusItem_2>,
+                  <http://guia-mad-bench.es/data/SyllabusItem_3>,
+                  <http://guia-mad-bench.es/data/SyllabusItem_4>,
+                  <http://guia-mad-bench.es/data/SyllabusItem_5>,
+                  <http://guia-mad-bench.es/data/SyllabusItem_6> .
+
+<http://guia-mad-bench.es/data/SyllabusItem_1> a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Active and Health Ageing: Course introduction, Definitions and frameworks" .
+
+<http://guia-md-bench.es/data/SyllabusItem_2> a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Clinical perspective. Intrinsic capacity and frailty" .
+
+# --- Evaluation System & Trials ---
+
+<http://guia-mad-bench.es/data/EvaluationSystem_Ehealth> a guide:EvaluationSystem ;
+    guide:evaluationDescription "Progressive evaluation system (continuous evaluation) based on iterative development of an interactive project." ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/Trial_Assignment_W5>,
+                              <http://guia-mad-bench.es/data/Trial_Assessment_W7>,
+                              <http://guia-mad-bench.es/data/Trial_Context_W10>,
+                              <http://guia-mad-bench.es/data/Trial_Prototype_W13>,
+                              <http://guia-mad-bench.es/data/Trial_FinalExam_W16> .
+
+<http://guia-mad-bench.es/data/Trial_Assignment_W5> a guide:EvaluationTrial ;
+    guide:trialType "Assignment" ;
+    guide:evaluationType "Progressive assessment" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Not Presential" ;
+    guide:evaluationDuration "06:00" .
+
+<http://guia-mad-bench.es/data/Trial_FinalExam_W16> a guide:EvaluationTrial ;
+    guide:trialType "Final Exam" ;
+    guide:evaluationType "Progressive assessment" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presential" ;
+    guide:evaluationDuration "03:00" .
+
+# --- Schedule & Activities ---
+
+<http://guia-mad-bench.es/data/Schedule_Ehealth> a guide:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/Event_W1>,
+                       <http://guia-mad-bench.es/data/Event_W2>,
+                       <http://guia-mad-bench.es/data/Event_W5> .
+
+<http://guia-mad-bench.es/data/Event_W1> a guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/Activity_Lecture_W1> .
+
+<http://guia-mad-bench.es/data/Activity_Lecture_W1> a guide:Activity ;
+    guide:activityDescription "Active and Healthy Ageing: 1.1 Course introduction 1.2. Definitions and frameworks" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lecture" ;
+    guide:attendanceType "Face-to-face" .
+
+# --- Didactic Resources ---
+
+<http://guia-md-bench.es/data/Res_Bousquet> a guide:DidacticResource ;
+    guide:bibliographyTitle "Operational definition of Active and Healthy Ageing (AHA): A conceptual framework" ;
+    guide:bibliographyType "Bibliography" ;
+    guide:bibliographyDescription "Paper: Bousquet, Jean, et al. (2015)" .
+
+<http://guia-md-bench.es/data/Res_Nielsen> a guide:DidacticResource ;
+    guide:bibliographyTitle "Usability Inspection Methods" ;
+    guide:bibliographyType "Bibliography" ;
+    guide:bibliographyDescription "Edited by Jakob Nielsen and Robert L. Mack, 1994" .
+
+# --- Required Knowledge ---
+
+<http://guia-mad-bench.es/data/RequiredKnowledge_Ehealth> a guide:RequiredKnowledge ;
+    guide:previousKnowledge "User Centred Design. User Experience basic knowledge." .

@@ -1,0 +1,150 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://w3id.org/guia/ecologia_25001210> rdf:type :CourseGuide ;
+    dc:title "Ecología"@en ,
+        "Guía de Aprendizaje Ecología"@es ;
+    dct:creator "Santiago Moreno Vazquez" ,
+                "Daniel De La Torre Llorente" ;
+    sch:name "Ecologia";
+    guide:numberOfCredits 6.0^^xsd:decimal ;
+    guide:courseYear 25001210^^xsd:string ;
+    guide:syllabusDescription "Introducción a la Ecología, Los organismos y el medio, Población, Comunidad, Ecosistemas"@en ;
+    sch:description "El objetivo de la asignatura es que el alumno adquiera conocimiento básico en ecología."@es ;
+    dct:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
+    guide:syllabus <http://w3id.org/guia/ecologia_syllabus_25001210> ;
+    sch:eventSchedule <http://w3id.org/guia/ecologia_schedule_25001210> ;
+    guide:hasEvaluationSystem <http://w3id.org/guia/ecologia_evaluation_system_25001210> ;
+    guide:sch:director "Santiago Moreno Vazquez"@en ,
+                      "Daniel De La Torre Llorente"@en ;
+    sch:instructor "Santiago Moreno Vazquez" ,
+                   "Daniel De La Torre Llorente";
+    dct:creator <http://w3id.org/guia/ecologia_25001210> .
+
+<http://w3id.org/guia/bachelor_degree_02ia> rdf:type :BachelorDegree ;
+    sch:name "Grado En Ingenieria Agroambiental"@es ;
+    guide:degreeCode "02IA"^^xsd:string ;
+    sch:hasCourseInstance <http://w3id.org/guia/ecologia_25001210> .
+
+<http://w3id.org/guia/etsi_agronomica_alimentaria_y_biosistemas> rdf:type :UniversityCenter ;
+    guide:name "Etsi Agronómica, Aliment. Y Biosistemas"@es ;
+    sch:offers <http://w3id.org/guia/bachelor_degree_02ia> .
+
+<http://w3id.org/guia/ecologia_syllabus_25001210> rdf:type :Syllabus ;
+    guide:sch:name "Ecología"@en ;
+    sch:hasCourseInstance <http://w3id.org/guia/ecologia_25001210> .
+
+<http://w3id.org/guia/syllabus_item_tema1> rdf:type :SyllabusItem ;
+    guide:sch:itemIndex 1^^xsd:integer ;
+    sch:name "Introducción a la Ecología"@en ;
+    guide:syllabusDescription "Definición, datos históricos, conceptos básicos utilizados en ecología."@es .
+
+<http://w3id.org/guia/syllabus_item_tema2> rdf:type :SyllabusItem ;
+    guide:sch:itemIndex 2^^xsd:integer ;
+    sch:name "Los organismos y el medio"@en ;
+    guide:sylbusDescription "Recursos, condiciones del medio físico, clima, suelo."@es .
+
+<http://w3id.org/guia/syllabus_item_tema3> rdf:type :SyllabusItem ;
+    guide:sch:itemIndex 3^^xsd:integer ;
+    sch:name "Población"@en ;
+    guide:sylbusDescription "Propiedades, densidad, estructura por edades."@es .
+
+<http://w3id.org/guia/syllabus_item_tema4> rdf:type :SyllabusItem ;
+    guide:sch:itemIndex 4^^xsd:integer ;
+    sch:name "Comunidad"@en ;
+    guide:sylbusDescription "Competencia, mutualismo, depredación."@es .
+
+<http://w3id.org/guia/syllabus_item_tema5> rdf:type :SyllabusItem ;
+    guide:sch:itemIndex 5^^xsd:integer ;
+    sch:name "Ecosistemas"@en ;
+    guide:sylbusDescription "Biotopo, biocenosis, flujos de energía."@es .
+
+<http://w3id.org/guia/ecologia_evaluation_system_25001210> rdf:type :EvaluationSystem ;
+    sch:name "Evaluación Ecología"@en ;
+    guide:evaluationDescription "La calificación será la media ponderada de informes, presentaciones y exámenes."@es .
+
+<http://w3id.org/guia/eval_trial_progresiva_25001210> rdf:type :EvaluationTrial ;
+    sch:name "Evaluación Progresiva"@en ;
+    guide:trialType "Progresiva"^^xsd:string ;
+    guide:evaluationDescription "Examen escrito de contenidos teóricos y prácticos."@es .
+
+<http://w3id.org/guia/eval_trial_global_25001210> rdf:type :EvaluationTrial ;
+    sch:name "Evaluación Global"@en ;
+    guide:trialType "Global"^^xsd:string ;
+    guide:evaluationDescription "Examen escrito de contenidos teóricos y prácticos."@es .
+
+<http://w3id.org/guia/eval_trial_extra_25001210> rdf:type :EvaluationTrial ;
+    sch:name "Convocatoria Extraordinaria"@en ;
+    guide:trialType "Extraordinaria"^^xsd:string ;
+    guide:evaluationDescription "Examen escrito de contenidos teóricos y prácticos."@es .
+
+<http://w3id.org/guia/competency_ce14> rdf:type :Competency ;
+    sch:name "CE14"@en ;
+    guide:competencyCode "CE14"^^xsd:string ;
+    guide:competencyDescription "Conocimiento de los conceptos básicos de Ecología, sus objetivos y metodología."@es .
+
+<http://w3id.org/guia/learning_result_ra80> rdf:type :LearningResult ;
+    sch:name "RA80"@en ;
+    guide:learningResultCode "RA80"^^xsd:string ;
+    guide:learningResultDescription "Conocimientos sobre el medio físico y los componentes biológicos de los ecosistemas."@es .
+
+<http://w3id.org/guia/competency_cg1> rdf:type :Competency ;
+    sch:name "CG1"@en ;
+    guide:competencyCode "CG1"^^xsd:string ;
+    guide:competencyDescription "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de estudio."@es .
+
+<http://w3id.org/guia/learning_result_ra86> rdf:type :LearningResult ;
+    sch:name "RA86"@en ;
+    guide:learningResultCode "RA86"^^xsd:string ;
+    guide:learningResultDescription "Repercusión de la actuación humana en los ecosistemas naturales."@es .
+
+<http://w3id.org/guia/eval_trial_progresiva_25001210> sch:eventSchedule <http://w3id.org/guia/ecologia_schedule_event_sem6> ;
+    guide:hasEvaluationTrial <http://w3id.org/guia/eval_trial_progresiva_25001210> .
+
+<http://w3id.org/guia/schedule_ecologia_25001210> rdf:type :Schedule ;
+    sch:name "Cronograma Ecología"@en ;
+    guide:teachingPeriodMonths "Febrero-Junio"^^xsd:string ;
+    guide:sch:eventSchedule <http://w3id.org/guia/ecologia_schedule_event_sem6> .
+
+<http://w3id.org/guia/schedule_event_sem6_25001210> rdf:type :ScheduleEvent ;
+    sch:name "Semestre 6"@en ;
+    guide:eventWeek "Febrero-Junio"^^xsd:string ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia/activity_tema1_25001210> rdf:type :Activity ;
+    sch:name "Tema 1"@en ;
+    guide:activityDescription "Introducción a la Ecología. Lección Magistral."@es .
+
+<http://w3id.org/guia/activity_tema1_25001210> om:hasActivity <http://w3id.org/guia/schedule_event_sem6_25001210> ;
+    guide:sch:eventSchedule <http://w3id.org/guia/ecologia_schedule_25001210> .
+
+<http://w3id.org/guia/lecturer_santiago_moreno_vazquez> rdf:type :Lecturer ;
+    sch:name "Santiago Moreno Vazquez"@en ;
+    guide:office "Banco Semillas"^^xsd:string ;
+    sch:email <mailto:santiago.moreno@upm.es> .
+
+<http://w3id.org/guia/lecturer_daniel_delatorre_llorente> rdf:type :Lecturer ;
+    sch:name "Daniel De La Torre Llorente"@en ;
+    guide:office "Edificio A"^^xsd:string ;
+    sch:email <mailto:daniel.delatorre@upm.es> .
+
+<http://w3id.org/guia/ecologia_25001210> sch:director <http://w3id.org/guia/lecturer_santiago_moreno_vazquez> ,
+        <http://w3id.org/guia/lecturer_daniel_delatorre_llorente> ;
+    guide:sch:instructor <http://w3id.org/guia/lecturer_santiago_moreno_vazquez> .
+
+<http://w3id.org/guia/ecologia_25001210> sch:name "Ecología"@en ;
+    dct:title "Guía de Aprendizaje Ecología"^^xsd:string ;
+    guide:courseYear 2025-26^^xsd:string .
+
+<http://w3id.org/guia/ecologia_25001210> sch:description "El objetivo es que el alumno adquiera conocimiento básico en ecología."@es ;
+    dct:license <http://purl.org/NET/rdflicense/cc-by4.0> .
+
+<http://w3id.org/guia/ecologia_25001210> guide:numberOfCredits 6^^xsd:decimal ;
+    sch:name "Ecología"^^xsd:string ;
+    dct:title "Guía de Aprendizaje Ecología"@es .

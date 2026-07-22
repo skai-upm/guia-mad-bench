@@ -1,0 +1,178 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@base <http://guia-mad-bench.es/data/> .
+
+# Degree and University Center
+guide:Degree_Aeroespacial rdf:type guide:BachelorDegree ;
+    sch:name "14IA - Grado En Ingeniería Aeroespacial" ;
+    guide:degreeCode "14IA" ;
+    guide:hasCourse guide:Course_Geotecnia .
+
+guide:ETSIA_Center rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S.I. Aeronáutica Y Del Espacio" ;
+    guide:offers guide:Degree_Aeroespacial .
+
+# Course
+guide:Course_Geotecnia rdf:type guide:Course ;
+    sch:name "145005406 - Geotecnia" ;
+    sch:courseCode 145005406 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Quinto semestre" ;
+    sch:hasCourseInstance guide:CourseGuide_Geotecnia_2025_26 .
+
+# Course Guide Instance
+guide:CourseGuide_Geotecnia_2025_26 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Geotecnia" ;
+    sch:description "Introducción a los conceptos básicos de la Geontenia como disciplina de la Geología Aplicada..." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:numberOfCredits 3.0 ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus guide:Syllabus_Geotecnia ;
+    guide:hasCompetency guide:Competency_CE59, guide:Competency_CE60, guide:Competency_CG3, guide:Competency_CG5, guide:Competency_CG9 ;
+    guide:hasLearningResult guide:LearningResult_RA72, guide:LearningResult_RA300, guide:LearningResult_RA70, guide:LearningResult_RA71 ;
+    guide:hasEvaluation guide:EvalSystem_Geotecnia ;
+    guide:hasDidacticResource guide:Resource_Moodle, guide:Resource_CEDEX, guide:Resource_ITGE ;
+    sch:instructor guide:Lecturer_Antonia_Pacios, guide:Lecturing_Angel_Paris, guide:Lecturing_Manuel_Tarifa, guide:Lecturing_Jesus_Rodriguez .
+
+# Lecturers
+guide:Lecturer_Antonia_Pacios rdf:type guide:Lecturer ;
+    sch:name "Antonia Pacios Alvarez" ;
+    sch:description "Coordinador/a" .
+
+guide:Lecturing_Angel_Paris rdf:type guide:Lecturer ;
+    sch:name "Angel Paris Loreiro" ;
+    sch:email "angel.paris@upm.es" ;
+    guide:office "L.Aerop. ETSIA" .
+
+guide:Lecturing_Manuel_Tarifa rdf:type guide:Lecturer ;
+    sch:name "Manuel Agustin Tarifa Crespo" ;
+    sch:email "manuel.tarifa@upm.es" ;
+    guide:office "Aerop. Edif. B" .
+
+guide:Lecturing_Jesus_Rodriguez rdf:type guide:Lecturer ;
+    sch:name "Jesus Maria Rodriguez Romero" ;
+    sch:email "jesusmaria.rodriguez@upm.es" ;
+    guide:office "L.Aerop. ETSIA" .
+
+# Competencies
+guide:Competency_CE59 rdf:type guide:Competency ;
+    guide:competencyCode "CE59" ;
+    guide:competencyDescription "Conocimiento adecuado y aplicado a la Ingeniería de: Los métodos de cálculo y de desarrollo de las diferentes soluciones de edificación y pavimentación de aeropuertos..." .
+
+guide:Competency_CE60 rdf:type guide:Competency ;
+    guide:competencyCode "CE60" ;
+    guide:competencyDescription "Conocimiento aplicado de: edificación; electricidad; electrotecnia; electrónica; mecánica del vuelo; hidráulica; instalaciones aeroportuarias..." .
+
+guide:Competency_CG3 rdf:type guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Capacidad para identificar y resolver problemas aplicando, con creatividad, los conocimientos adquiridos" .
+
+guide:Competency_CG5 rdf:type guide:Competency ;
+    guide:competencyCode "CG5" ;
+    guide:competencyDescription "Liderazgo de equipos y organizaciones" .
+
+guide:Competency_CG9 rdf:type guide:Competency ;
+    guide:competencyCode "CG9" ;
+    guide:competencyDescription "Razonamiento crítico y capacidad de asociación que posibiliten el aprendizaje continuo" .
+
+# Learning Results
+guide:LearningResult_RA72 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA72" ;
+    guide:learningResultDescription "Conocimiento, comprensión, aplicación y análisis de las diferentes tipologías de cimentación calculando las cargas de hundimiento en cimentaciones." .
+
+guide:LearningResult_RA300 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA300" ;
+    guide:learningResultDescription "Capacidad de análisis y síntesis para saber redactar e interpretar informes técnicos referentes a ensayos geotécnicos" .
+
+guide:LearningResult_RA70 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA70" ;
+    guide:learningResultDescription "Conocimiento, comprensión, análisis y valoración de los distintos tipos de suelo identificando su composición..." .
+
+guide:LearningResult_RA71 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA71" ;
+    guide:learningResultDescription "Conocimiento y aplicación de los ensayos tipo a realizar en los suelos para identificarlos y determinar su comportamiento." .
+
+# Syllabus
+guide:Syllabus_Geotecnia rdf:type guide:Syllabus ;
+    guide:hasItem guide:SyllabusItem_1, guide:SyllabusItem_2, guide:SyllabusItem_3, guide:SyllabusItem_4, guide:SyllabusItem_5, guide:SyllabusItem_6, guide:SyllabusItem_7, guide:SyllabusItem_8 .
+
+guide:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "ORIGEN DE LOS SUELOS Y SUS PROPIEDADES FÍSICAS." .
+
+guide:SyllabusItem_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "IDENTIFICACIÓN Y CLASIFICACIÓN DE SUELOS." .
+
+guide:SyllabusItem_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "EL AGUA EN EL TERRENO." .
+
+guide:SyllabusItem_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "COMPRESIBILIDAD E HINCHAMIENTO DE SUELOS" .
+
+guide:SyllabusItem_5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "RESISTENCIA Y ELASTICIDAD" .
+
+guide:SyllabusItem_6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "RECONOCIMIENTOS GEOTÉCNICOS DE CAMPO." .
+
+guide:SyllabusItem_7 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "ESTABILIDAD DE TALUDES" .
+
+guide:SyllabusItem_8 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 8 ;
+    guide:syllabusDescription "CIMENTACIONES." .
+
+# Evaluation System
+guide:EvalSystem_Geotecnia rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación continua se realizará mediante dos pruebas de evaluación intermedia..." ;
+    guide:hasEvaluationTrial guide:Trial_Intermedia, guide:Trial_Global, guide:Trial_Extraordinario .
+
+guide:Trial_Intermedia rdf:type guide:EvaluationTrial ;
+    guide:trialType "Prueba de Evaluación Intermedia" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+guide:Trial_Global rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen ordinario" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "80%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+# Didactic Resources
+guide:Resource_Moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Espacio MOODLE de la asignatura" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "http://moodle.upm.es/" .
+
+guide:Resource_CEDEX rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "www.cedex.es" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:Resource_ITGE rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "www.itge.mma.es" ;
+    guide:bibliographyType "Recursos web" .
+
+# Required Knowledge
+guide:RequiredKnowledge_Geotecnia rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Materiales De Construccion, Resistencia De Materiales Y Elasticidad, Quimica, Estructuras" ;
+    guide:previousKnowledge "Geología" .

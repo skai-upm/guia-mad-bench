@@ -1,0 +1,167 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# --- University Center ---
+:center_ets_informaticos rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Informáticos" ;
+    guide:offers :degree_10AZ .
+
+# --- Degree Programme ---
+:degree_10AZ rdf:type guide:MasterDegree ;
+    sch:name "Master Universitario En Innovación Digital" ;
+    guide:degreeCode "10AZ" ;
+    guide:hasCourse :course_103000877 .
+
+# --- Course ---
+:course_103000877 rdf:type guide:Course ;
+    sch:name "Challenges For Accessible Computing For People Wit" ;
+    sch:courseCode 103000877 ;
+    guide:courseType "Optional/elective" ;
+    guide:numberOfCredits 4.0 ;
+    guide:semester "Semester 1" ;
+    sch:hasCourseInstance :guide_103000877 .
+
+# --- Course Guide (Instance) ---
+:guide_103000877 rdf:type guide:CourseGuide ;
+    sch:name "Learning Guide - Challenges For Accessible Computing For People Wit" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "September-January" ;
+    guide:numberOfCredits 4.0 ;
+    guide:inpersonHours "26/27 hours" ;
+    guide:remoteHours "Not specified" ;
+    guide:totalHours "Not specified" ;
+    sch:instructor :lecturer_jose_luis_fuertes ;
+    sch:director :lecturer_jose_luis_fuertes ;
+    guide:hasSyllabus :syllabus_103000877 ;
+    guide:hasEvaluation :eval_system_103000877 ;
+    guide:hasCompetency :comp_CB08, :comp_CE_DIPO01, :comp_CE_DIPO02, :comp_CE_DIPO03, :comp_CE_DIPO04, :comp_CG02 ;
+    guide:hasLearningResult :lr_RA20, :lr_RA22, :lr_RA7, :lr_RA36 ;
+    guide:hasDidacticResource :res_krug, :res_universal_design, :res_iso_29138, :res_palacios, :res_horton, :res_sidar, :res_en_301549 ;
+    sch:inLanguage "English" .
+
+# --- Faculty / Lecturers ---
+:lecturer_m_carmen rdf:type guide:Lecturer ;
+    sch:name "M. Carmen Suarez De Figueroa Baonza" ;
+    guide:office "D-2201" ;
+    sch:email "mdelcarmen.suarezdefiguero@upm.es" ;
+    guide:tutorshipsSchedule "M - 11:00 - 12:00, Tu - 12:00 - 14:00, Th - 14:00 - 17:00" .
+
+:lecturer_loic rdf:type guide:Lecturer ;
+    sch:name "Loic Antonio Martinez Normand" ;
+    guide:office "D2303" ;
+    sch:email "loic.mnormand@upm.es" ;
+    guide:tutorshipsSchedule "Tu - 13:00 - 15:00, Th - 13:00 - 15:00, F - 13:00 - 15:00" .
+
+:lecturer_jose_luis_fuertes rdf:type guide:Lectument ;
+    sch:name "Jose Luis Fuertes Castro" ;
+    guide:office "D4307" ;
+    sch:email "joseluis.fuertes@upm.es" ;
+    guide:tutorshipsSchedule "Tu - 17:00 - 20:00, W - 12:00 - 15:00" .
+
+# --- Competencies ---
+:comp_CB08 rdf:type guide:Competency ;
+    guide:competencyCode "CB08" ;
+    guide:competencyDescription "Que los estudiantes sean capaces de integrar conocimientos y enfrentarse a la complejidad..." .
+
+:comp_CE_DIPO01 rdf:type guide:Competency ;
+    guide:competencyCode "CE-DIPO01" ;
+    guide:competencyDescription "Capacidad para conceptualizar, diseñar y desarrollar la interacción persona-ordenador..." .
+
+:comp_CE_DIPO02 rdf:type guide:Competency ;
+    guide:competencyCode "CE-DIPO02" ;
+    guide:competencyDescription "Capacidad para evaluar la interacción persona-ordenador de productos y servicios..." .
+
+:comp_CE_DIPO03 rdf:type guide:Competency ;
+    guide:competencyCode "CE-DIPO03" ;
+    guide:competencyDescription "Habilidad para hacer conexiones entre los deseos y necesidades del consumidor..." .
+
+:comp_CE_DIPO04 rdf:type guide:Competency ;
+    guide:competencyCode "CE-DIPO04" ;
+    guide:competencyDescription "Capacidad para analizar las necesidades de información que se plantean en un entorno..." .
+
+:comp_CG02 rdf:type guide:Competency ;
+    guide:competencyCode "CG02" ;
+    guide:competencyDescription "Que los estudiantes desarrollen la autonomía suficiente para participar en proyectos..." .
+
+# --- Learning Results ---
+:lr_RA20 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA20" ;
+    guide:learningResultDescription "Evaluate the usability and accessibility of prototypes" .
+
+:lr_RA22 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA22" ;
+    guide:learningResultDescription "Understand the concept and types of assistive products" .
+
+:lr_RA7 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA7" ;
+    guide:learningResultDescription "Understand how to design an interactive system using a user-centred approach" .
+
+:lr_RA36 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA36" ;
+    guide:learningResultDescription "Understand the diversity of user requirements and the characteristics of accessibility" .
+
+# --- Syllabus ---
+:syllabus_103000877 rdf:type guide:Syllabus ;
+    guide:hasItem :item_1, :item_2, :item_3, :item_4 .
+
+:item_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Functional diversity, accessibility and design for all" .
+
+:item_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "ICT accessibility standards" .
+
+:item_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "State of the art in ICT accessibility" .
+
+:item_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Cognitive Accessibility" .
+
+# --- Evaluation System ---
+:eval_system_103000877 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "The assessment of this module is divided into two parts: theory and practice." ;
+    guide:hasEvaluationTrial :trial_test1, :trial_test2, :trial_exercise1, :trial_exercise2, :trial_exercise3, :trial_exercise4 .
+
+:trial_test1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Written test" ;
+    guide:gradePercentage "10%" ;
+    guide:trialMode "No Presential" ;
+    guide:minimumScore "3/10 (Theory)" .
+
+:trial_test2 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Written test" ;
+    guide:gradePercentage "10%" ;
+    guide:trialMode "No Presential" .
+
+:trial_exercise1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Group work" ;
+    guide:gradePercentage "10%" ;
+    guide:trialMode "No Presential" .
+
+:trial_exercise2 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Group work" ;
+    guide:gradePercentage "20%" ;
+    guide:trialMode "No Presential" .
+
+# --- Didactic Resources ---
+:res_krug rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Don't make me think!: Revisited. A Common Sense Approach to Web Usability" ;
+    guide:bibliographyType "Bibliography" .
+
+:res_universal_design rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "The Principles of Universal Design" ;
+    guide:bibliographyType "Bibliography" .
+
+:res_iso_29138 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "ISO/IEC 29138-1:2018" ;
+    guide:bibliographyType "Bibliography" .
+
+:res_sidar rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "SIDAR" ;
+    guide:bibliographyType "Web resource" .

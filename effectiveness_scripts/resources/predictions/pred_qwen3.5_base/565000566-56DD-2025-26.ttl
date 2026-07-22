@@ -1,0 +1,143 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Course Guide Instance
+#################################################################
+
+<http://w3id.org/def/guia#courseguide_56DD_565000566> rdf:type :CourseGuide ;
+                                                        sch:hasSyllabus <http://w3id.org/def/guia#syllabus_565000566> ,
+                                                                        <https://schema.org/CourseInstance> .
+
+<http://w3id.org/def/guia#courseguide_56DD_565000566> sch:name "Ampliacion De Expresion Grafica"@en ;
+                                                          dc:title "Guía de Aprendizje 565000566 - Ampliacion De Expresion Grafica"@es .
+
+<http://w3id.org/def/guia#courseguide_56DD_565000566> sch:hasCourseInstance <http://w3id.org/def/guia#degree_56DD> ;
+                                                          guide:numberOfCredits "4.5"^^xsd:decimal .
+
+<http://w3id.org/def/guia#courseguide_56DD_565000566> sch:description "La asignatura de Ampliación de Expresión Gráfica aborda el estudio de las curvas y superficies..."@es ;
+                                                          guide:syllabusDescription "Curvas planas, alabeadas, cónicas, hélices, superficies regladas..." .
+
+<http://w3id.org/def/guia#courseguide_56DD_565000566> sch:inLanguage "Castellano"@en ;
+                                                          guide:teachingPeriodMonths "Febrero-Junio"^^xsd:string ,
+                                                                        <https://schema.org/CourseInstance> .
+
+<http://w3id.org/def/guia#courseguide_56DD_565000566> sch:hasCourseInstance <http://w3id.org/def/guia#degree_56DD> ;
+                                                          guide:syllabusDescription "Curvas planas, alabeadas..." .
+
+#################################################################
+#    Degree Instance
+#################################################################
+
+<http://w3id.org/def/guia#degree_56DD> rdf:type :BachelorDegree , sch:CourseInstance ;
+                                       dc:title "Grado Ingenieria En Diseño Industrial Y Desarrollo De Producto"@es ;
+                                       guide:courseYear 2025 .
+
+#################################################################
+#    Lecturers Instances
+#################################################################
+
+<http://w3id.org/def/guia#lecturer_lucia_garijo> rdf:type :Lecturer , sch:Person ;
+                                                    dc:title "Lucia Garijo Alonso"@en ;
+                                                    guide:syllabusDescription "Coordinador/a" .
+
+<http://w3id.org/def/guia#lecturer_pedro_loorca> rdf:type :Lecturer , sch:Person ;
+                                                   dc:title "Pedro Jose Lorca Hernando"@es ;
+                                                   guide:tutorshipsSchedule "- -"^^xsd:string .
+
+#################################################################
+#    Syllabus Instance
+#################################################################
+
+<http://w3id.org/def/guia#syllabus_565000566> rdf:type :Syllabus , sch:Syllabus ;
+                                                  guide:hasItem <http://w3id.org/def/guia#item_curvas_planas>,
+                                                                <http://w3id.org/def/guia#item_cnicas>,
+                                                                <http://w3id.org/def/guia#item_helices> .
+
+#################################################################
+#    Syllabus Items Instances (Extraction from Section 5)
+#################################################################
+
+<http://w3id.org/def/guia#item_curvas_planas> rdf:type :SyllabusItem ;
+                                                guide:itemIndex "1"^^xsd:integer ,
+                                                            <https://schema.org/SyllabusItem> .
+
+<http://w3id.org/def/guia#item_cnicas> rdf:type :SylabusItem ;
+                                        guide:syllabusDescription "Estudio proyectivo de las cónicas, Razón simple..."@es .
+
+#################################################################
+#    Schedule Instance & Events (Extraction from Section 6)
+#################################################################
+
+<http://w3id.org/def/guia#schedule_56DD> rdf:type :Schedule , sch:Schedule ;
+                                          guide:eventIndex "1"^^xsd:integer .
+
+<http://w3id.org/def/guia#event_week8_progressive> rdf:type :ScheduleEvent , sch:Event ;
+                                                     guide:schedule <http://w3id.org/def/guia#schedule_56DD>,
+                                                                   om:Unit,
+                                                                   xsd:string .
+
+#################################################################
+#    Evaluation System & Trials (Extraction from Section 7)
+#################################################################
+
+<http://w3id.org/def/guia#eval_system_progressive> rdf:type :EvaluationSystem ;
+                                                      guide:hasEvaluationTrial <http://w3id.org/def/guia#trial_sem8>,
+                                                                    <https://schema.org/EvaluationSystem>.
+
+<http://w3id.org/def/guia#eval_trial_sem8> rdf:type :EvaluationTrial , sch:Event ;
+                                            guide:scheduleEvent <http://w3id.org/def/guia#event_week8_progressive>,
+                                                          om:Unit,
+                                                          xsd:string .
+
+#################################################################
+#    Competencies Instances (Extraction from Section 4)
+#################################################################
+
+<http://w3id.org/def/guia#comp_CE5> rdf:type :Competency ;
+                                     guide:competencyCode "CE5"^^xsd:string ,
+                                       <https://schema.org/EvaluationSystem>.
+
+<http://w3id.org/def/guia#trial_sem8_progressive> rdf:type :EvaluationTrial, sch:Event ;
+                                                     guide:scheduleEvent <http://w3id.org/def/guia#event_week8_progressive>,
+                                                                   om:Unit,
+                                                                   xsd:string .
+
+#################################################################
+#    Evaluation Trials Instances (Extraction from Section 7)
+#################################################################
+
+<http://w3id.org/def/guia#trial_sem8> rdf:type :EvaluationTrial ;
+                                        guide:scheduleEvent <http://w3id.org/def/guia#event_week8_progressive>,
+                                                      om:Unit,
+                                                      xsd:string .
+
+<http://w3id.org/def/guia#eval_trial_global> rdf:type :EvaluationSystem , sch:Event ;
+                                                guide:hasEvaluationTrial <http://w3id.org/def/guia#trial_sem17>.
+
+#################################################################
+#    Evaluation Trials Instances (Extraction from Section 7)
+#################################################################
+
+<http://w3id.org/def/guia#eval_trial_global> rdf:type :EvaluationSystem ;
+                                               guide:hasEvaluationTrial <http://w3id.org/def/guia#trial_sem17>.
+
+<http://w3id.org/def/guia#trial_sem8_progressive> rdf:type :EvaluationTrial, sch:Event ;
+                                                      guide:scheduleEvent <http://w3id.org/def/guia#event_week8_progressive>,
+                                                                    om:Unit,
+                                                                    xsd:string .
+
+#################################################################
+#    Evaluation Trials Instances (Extraction from Section 7)
+#################################################################
+
+<http://w3id.org/def/guia#trial_sem17> rdf:type :EvaluationTrial ;
+                                        guide:scheduleEvent <http://w3id.org/def/guia#event_week8_progressive>,
+                                                      om:Unit,
+                                                      xsd:string .

@@ -1,0 +1,207 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree
+:Master_Ingenieria_Caminos a guide:MasterDegree ;
+    sch:name "04AG - Master Universitario en Ingenieria de Caminos, Canales y Puertos" ;
+    guide:degreeCode "04AG" ;
+    guide:hasCourse :Course_Gestion_Circulacion .
+
+# Course
+:Course_Gestion_Circulacion a guide:Course ;
+    sch:name "43000416 - Gestion de la Circulacion Viaria" ;
+    sch:courseCode 43000416 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 2025 ;
+    sch:hasCourseInstance :Guide_Gestion_Circulacion .
+
+# Course Guide
+:Guide_Gestion_Circulacion a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Gestion de la Circulacion Viaria" ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:semester "Cuarto semestre" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :Syllabus_Gestion_Circulacion ;
+    guide:hasEvaluation :EvalSystem_Gestion_Circulacion ;
+    guide:hasCompetency :Comp_CE30, :Comp_CE33, :Comp_CE41, :Comp_CGP03, :Comp_CGP07, :Comp_CT1 ;
+    guide:hasLearningResult :LR_RA1, :LR_RA97, :LR_RA98, :LR_RA90, :LR_RA83, :LR_RA89, :LR_RA96 ;
+    guide:hasDidacticResource :Res_Moodle, :Res_Equipamiento_UPM ;
+    sch:instructor :Prof_David_Del_Villar, :Prof_Begoña_Guirao, :Prof_Maria_Castro, :Prof_Rafael_Enriquez ;
+    sch:director :Prof_Begoña_Guirao .
+
+# University Center
+:UnivCenter_ETS_Caminos a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ing. de Cominos Canales y P." ;
+    guide:offers :Master_Ingenieria_Caminos .
+
+# Lecturers
+:Prof_David_Del_Villar a guide:Lecturer ;
+    sch:name "David Del Villar Juez" ;
+    sch:email "david.delvillar@upm.es" ;
+    guide:office "Lab. Caminos" ;
+    guide:tutorshipsSchedule "M - 14:30 - 15:30" .
+
+:Prof_Begoña_Guirao a guide:Lecturer ;
+    sch:name "Begoña Guirao Abad" ;
+    sch:email "begona.guirao@upm.es" ;
+    guide:office "Lab. Caminos 3" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 12:00 - 13:00" .
+
+:Prof_Maria_Castro a guide:Lecturer ;
+    sch:name "Maria Castro Mal</strong>Malpica" ;
+    sch:email "maria.castro@upm.es" ;
+    guide:office "Lab. Caminos 1" ;
+    guide:tutorshipsSchedule "J - 10:30 - 13:30, V - 10:30 - 13:30" .
+
+:Prof_Rafael_Enriquez a guide:Lecturer ;
+    sch:name "Rafael Enriquez Rodriguez" ;
+    sch:email "rafael.enriquez@upm.es" ;
+    guide:office "1.8-P1" .
+
+# Competencies
+:Comp_CE30 a guide:Competency ;
+    guide:competencyCode "CE30" ;
+    guide:competencyDescription "Capacidad de planificación, gestión y explotación de infraestructuras relacionadas con la ingeniería civil." .
+
+:Comp_CE33 a guide:Competency ;
+    guide:competencyCode "CE33" ;
+    guide:competencyDescription "Capacidad para aplicar los conocimientos técnicos en actividades de I+D+i dentro del ámbito de la ingeniería civil." .
+
+:Comp_CE41 a guide:Competency ;
+    guide:competencyCode "CE41" ;
+    guide:competencyDescription "Capacidad para aplicar los conocimientos técnicos en la evaluación de infraestructuras y sistemas de transporte" .
+
+:Comp_CGP03 a guide:Competency ;
+    guide:competencyCode "CGP03" ;
+    guide:competencyDescription "Conocimiento, comprensión y capacidad para aplicar la legislación necesaria en el ejercicio de la profesión de Ingeniero de Caminos, Canales y Puertos." .
+
+:Comp_CGP07 a guide:Competency ;
+    guide:competencyCode "CGP07" ;
+    guide:competencyDescription "Capacidad para planificar, proyectar, inspeccionar y dirigir obras de infraestructuras de transportes terrestres o marítimos." .
+
+:Comp_CT1 a guide:Competency ;
+    guide:competencyCode "CT1" ;
+    guide:competencyDescription "Capacidad de preparar y presentar comunicaciones orales, escrit． escritas y gráficas, estructurada y argumentadamente." .
+
+# Learning Results
+:LR_RA1 a guide:LearningResult ;
+    guide:learningResultCode "RA1" ;
+    guide:learningResultDescription "Formula y resuelve problemas matemáticos y numéricos avanzados de ingeniería civil..." .
+
+:LR_RA97 a guide:LearningResult ;
+    guide:learningResultCode "RA97" ;
+    guide:learningResultDescription "Es capaz de diseñar la gestión del tráfico de una red viaria urbana." .
+
+:LR_RA98 a guide:LearningResult ;
+    guide:learningResultCode "RA98" ;
+    guide:learningResultDescription "Conoce los fundamentos de la gestión de la seguridad de la circulación viaria." .
+
+:LR_RA90 a guide:LearningResult ;
+    guide:learningResultCode "RA90" ;
+    guide:learningResultDescription "Conoce la legislación aplicable a la circulación viaria, y puede evaluar las repercusiones de dicha legislación sobre la gestión de la misma" .
+
+:LR_RA83 a guide:LearningResult ;
+    guide:learningResultCode "RA83" ;
+    guide:learningResultDescription "Sabe analizar y exponer (de forma oral, escrita y gráfica) los conocimientos adquiridos en esta asignatura estructurada y argumentadamente." .
+
+:LR_RA89 a guide:LearningResult ;
+    guide:learningResultCode "RA89" ;
+    guide:learningResultDescription "Conoce, evalúa y aplica modelos avanzados para gestionar la circulación viaria y los problemas derivados de la seguridad vial" .
+
+:LR_RA96 a guide:LearningResult ;
+    guide:learningResultCode "RA96" ;
+    guide:learningResultDescription "Es capaz de diseñar la gestión del tráfico de una red viaria interurbana." .
+
+# Syllabus
+:Syllabus_Gestion_Circulacion a guide:Syllabus ;
+    guide:hasItem :SyllabusItem_1, :SyllabusItem_2, :SyllabusItem_3, :SyllabusItem_4, :SlabylusItem_5 .
+
+:SyllabusItem_1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Caracterización de la circulación viaria" .
+
+:SyllabusItem_2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "El accidente de tráfico" .
+
+:SyllabusItem_3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Registro, tratamiento estadístico y análisis de accidentes de tráfico" .
+
+:SyllabusItem_4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Secuencia de un accidente y herramientas de intervención institucionales" .
+
+:SlabylusItem_5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Los retos de la gestión del tráfico en vías urbanas e interurbanas" .
+
+# Evaluation System
+:EvalSystem_Gestion_Circulacion a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación continua y prueba evaluación global" ;
+    guide:hasEvaluationTrial :Trial_Examen_Continuo, :Trial_Examen_Global, :Trial_Examen_Extraordinario .
+
+:Trial_Examen_Continuo a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "35%" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialDescription "Examen formado por varias preguntas de carácter teórico y práctico." .
+
+:Trial_Examen_Global a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "100%" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "5 / 10" .
+
+:Trial_Examen_Extraordinario a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "100%" ;
+    guide:trialMode "No presencial" ;
+    guide:minimumScore "5 / 10" .
+
+# Didactic Resources
+:Res_Moodle a guide:DidacticResource ;
+    guide:bibliographyTitle "moodle" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Área virtual de la ETSICCP. Área virtual (MOODLE)." .
+
+:Res_Equipamiento_UPM a guide:DidacticResource ;
+    guide:bibliographyTitle "Equipamiento UPM" ;
+    guide:bibliographyType "Equipamiento" ;
+    guide:bibliographyDescription "Biblioteca de la ETSI Caminos, Canales y Puertos" .
+
+# Schedule Events (Examples from Cronograma)
+:Event_Sem2_Examen a guide:ScheduleEvent ;
+    guide:eventIndex 2 ;
+    guide:eventWeek "Semana 2" ;
+    guide:hasActivity :Act_Ejercicios_Moodle .
+
+:Act_Ejercicios_Moodle a guide:Activity ;
+    guide:activityDescription "Ejercicios que se realizan en clase, se acaban en Moodle" ;
+    guide:activityFormat "EX: Examen Escrito" ;
+    guide:attendanceType "Presencial" ;
+    guide:activityDuration 1.08 .
+
+:Event_Sem8_Proyecto a guide:ScheduleEvent ;
+    guide:eventIndex 8 ;
+    guide:eventWeek "Semana 8" ;
+    guide:hasActivity :Act_Proyecto_Seguridad .
+
+:Act_Proyecto_Seguridad a guide:Activity ;
+    guide:activityDescription "Trabajo de proyecto de seguridad vial, que se realiza en grupo." ;
+    guide:activityFormat "EX: Examen Escrito" ;
+    guide:attendanceType "Presencial" ;
+    guide:activityDuration 2.16 .
+
+# Required Knowledge
+:ReqKnow_Previo a guide:RequiredKnowledge ;
+    guide:previousCourses "Planificacion Y Gestion De Carreteras" ;
+    guide:previousKnowledge "Módulo de ampliación de la formación científica" .

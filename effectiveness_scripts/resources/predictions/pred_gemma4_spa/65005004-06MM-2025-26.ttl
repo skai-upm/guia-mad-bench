@@ -1,0 +1,177 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Information
+:LaboreoDeMinas_Course rdf:type guide:Course ;
+    sch:name "65005004 - Laboreo de Minas" ;
+    sch:courseCode 65005004 ;
+    guide:courseType "Obligatoria" ;
+    sch:numberOfCredits 4.5 ;
+    guide:semester "Quinto semestre" ;
+    guide:courseYear 2025 ;
+    sch:inLanguage "Castellano" .
+
+:LaboreoDeMinas_Degree rdf:type guide:Degree ;
+    sch:name "06MM - Grado en Ingeniería Mineralúrgica y Metalúrgica de las Materias Primas" ;
+    guide:degreeCode "06MM" .
+
+:ETS_MinasEnergia rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Minas y Energía" ;
+    guide:offers :LaboreoDeMinas_Degree .
+
+# Course Guide
+:LaboreoDeMinas_Guide rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Laboreo de Minas" ;
+    sch:hasCourseInstance :LaboreoDeMinas_Course ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:numberOfCredits 4.5 ;
+    sch:instructor :JuanHerreraHerbert, :CarlosLopezJimeno, :JesusCaceresJimeno ;
+    guide:hasCompetency :Comp_C1, :Comp_C14, :Comp_C15, :Comp_C2 ;
+    guide:hasLearningResult :LR_RA17_RA197, :LR_RA49, :LR_RA19_RA199 ;
+    guide:hasEvaluation :EvalSystem_Laboreo ;
+    guide:hasDidacticResource :Res_Herrera2006_1, :Res_Herrera2006_2, :Res_GomezJaen2007, :Res_Herrera2007_1, :Res_Herrera2007_2, :Res_Herrera2012, :Res_Bernaola2013, :Res_Herrera2020_1, :Res_Herrera2020_2, :Res_Herrera2019_1, :Res_Herrera2019_2, :Res_Herrera2018_1, :Res_Herrera2018_2, :Res_Herrera2018_3, :Res_Herrera2018_4, :Res_Herrera2017_1, :Res_Herrera2017_2, :Res_Herrera2017_3, :Res_Herrera2017_4, :Res_Herrera2017_5 ;
+    guide:hasSyllabus :Syllabus_Laboreo .
+
+# Lecturers
+:JuanHerreraHerbert rdf:type guide:Lecturer ;
+    sch:name "Juan Herrera Herbert" ;
+    sch:email "juan.herrad@upm.es" ;
+    guide:office "208 y/o 218" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 12:00 - 14:00, J - 10:00 - 12:00" .
+
+:CarlosLopezJimeno rdf:type guide:Lecturer ;
+    sch:name "Carlos Lopez Jimeno" ;
+    sch:email "carlos.lopezj@upm.es" ;
+    guide:office "211" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 12:00 - 14:00, J - 10:00 - 12:00" .
+
+:JesusCaceresJimeno rdf:type guide:Lecturer ;
+    sch:name "Jesus Caceres Jimeno" ;
+    sch:email "jesus.caceres@upm.es" ;
+    guide:office "217" ;
+    guide:tutoriaSchedule "Sin horario. A concertar por correo electrónico" .
+
+# Competencies
+:Comp_C1 rdf:type guide:Competency ;
+    sch:name "C1" ;
+    guide:competencyDescription "Comprender y utilizar los principios de la extracción de materias primas de origen mineral." .
+
+:Comp_C14 rdf:type guide:Competency ;
+    sch:name "C14" ;
+    guide:competencyDescription "Capacidad de trabajar en un entorno bilingüe (inglés-castellano)." .
+
+:Comp_C15 rdf:type guide:Competency ;
+    sch:name "C15" ;
+    guide:competencyDescription "Capacidad para organizar y planificar en el ámbito de la empresa, y otras instituciones y organizaciones de proyectos y equipos humanos." .
+
+:Comp_C2 rdf:type guide:Competency ;
+    sch:name "C2" ;
+    guide:competencyDescription "Comprender y aplicar el diseño, operación y mantenimiento de plantas de preparación y tratamiento de minerales, rocanes industriales, rocas ornamentales y residuos." .
+
+# Learning Results
+:LR_RA17_RA197 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA17 - RA197" ;
+    guide:learningResultDescription "Relacionar las propiedades de minerales y rocas con su empleo." .
+
+:LR_RA49 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA49" ;
+    guide:learningResultDescription "Conocer, comprender y utilizar las técnicas de extracción, de transformación y elaboración de la piedra natural." .
+
+:LR_RA19_RA199 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA19 - RA199" ;
+    guide:learningResultDescription "Aplicar los datos teóricos de composición y estructura, en casos concreticos, a la posibilidad de explotación de estos materiales." .
+
+# Evaluation System
+:EvalSystem_Laboreo rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y examen final" ;
+    guide:hasEvaluationTrial :Trial_Bloque12, :Trial_Bloque3, :Trial_Bloque4, :Trial_Bloques56, :Trial_Final .
+
+:Trial_Bloque12 rdf:type guide:EvaluationTrial ;
+    sch:name "Evaluación de Bloques 1 y 2" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "00:30" .
+
+:Trial_Bloque3 rdf:type guide:EvaluationTrial ;
+    sch:name "Evaluación del Bloque 3" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "00:30" .
+
+:Trial_Bloque4 rdf:type guide:EvaluationTrial ;
+    sch:name "Evaluación del Bloque 4" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "00:30" .
+
+:Trial_Bloques56 rdf:type guide:EvaluationTrial ;
+    sch:name "Evaluación de Bloques 5 y 6" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "00:30" .
+
+:Trial_Final rdf:type guide:EvaluationTrial ;
+    sch:name "Evaluación Final" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" .
+
+# Syllabus
+:Syllabus_Laboreo rdf:type guide:Syllabus ;
+    guide:hasItem :SyllabusItem_B1, :SyllabusItem_B2, :SyllabusItem_B3, :SyllabusItem_B4, :SyllabusItem_B5, :SyllabusItem_B6 .
+
+:SyllabusItem_B1 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "BLOQUE 1: LA INDUSTRIA MINERA. CONCEPTOS BÁSODCOS..." ;
+    guide:itemIndex 1 .
+
+:SyllabusItem_B2 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "BLOQUE 2: INTRODUCCIÓN A LAS TÉCNICAS DE ARRANQUE DE ROCAS" ;
+    guide:itemIndex 2 .
+
+# Required Knowledge
+:RequiredKnowledge_Laboreo rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Física, Matemáticas, Ingles, Química, Informática, Mecánica, Economía" .
+
+# Didactic Resources
+:Res_Herrera2006_1 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Introducción a los Fundamentos de la Tecnología Minera" ;
+    guide:bibliographyDescription "Fundación Gómez Pardo - ETS de Ingenieros de Minas de Madrid. www.minas.upm.es" .
+
+:Res_Herrera2006_2 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Métodos de Minería a Cielo Abierto" ;
+    guide:bibliographyDescription "Fundación Gómez Pardo - ETS de Ingenieros de Minas de Madrid. www.comas.upm.es" .
+
+:Res_GomezJaen2007 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Diseño de Explotaciones e Infraestructuras Mineras Subterráneas" ;
+    guide:bibliographyDescription "E.T.S. de Ingenieros de Minas de Madrid. www.minas.upm.es" .
+
+:Res_Herrera2020_1 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Ingeniería de la perforación de pozos de petróleo y gas. Vol. I" ;
+    guide:bibliographyDescription "Universidad Politécnica de Madrid, Madrid." .
+
+# Schedule Events (Activities)
+:Activity_Week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :Activity_LeccionMagistral_B1T1 ;
+    guide:eventIndex 1 .
+
+:Activity_LeccionMagistral_B1T1 rdf:type guide:Activity ;
+    guide:activityDescription "B1T1. El abastecimiento de materias primas" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "Presencial" .

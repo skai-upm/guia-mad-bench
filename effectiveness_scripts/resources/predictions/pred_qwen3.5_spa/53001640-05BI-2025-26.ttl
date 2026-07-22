@@ -1,0 +1,134 @@
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix d: <http://guia-mad-bench.es/data/> .
+
+<http://w3id.org/def/guia#CourseGuide_53001640> rdf:type guide:CourseGuide ;
+    sch:name "Design Of Magnetic Components" ;
+    dc:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en ;
+    dct:creator <http://w3id.org/def/guia#Alberto_Delgado_Exposito> ,
+             <http://purl.org/dc/terms/> .
+
+<http://guia-mad-bench.es/data/course_guide_53001640> rdf:type guide:CourseGuide ;
+    sch:name "Design Of Magnetic Components" ;
+    dc:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en ;
+    dct:creator <http://w3id.org/def/guia#Alberto_Delgado_Exposito> .
+
+<http://guia-mad-bench.es/data/course_guide_53001640> guide:numberOfCredits "3"^^xsd:decimal ;
+    sch:name "Design Of Magnetic Components"@en ;
+    dct:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en .
+
+<http://guia-mad-bench.es/data/course_guide_53001640> guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:name "Design Of Magnetic Components"@en .
+
+<http://guia-mad-bench.es/data/course_guide_53001640> guide:syllabus <http://w3id.org/def/guia#Syllabus_53001640> ;
+    sch:courseSchedule <http://w3id.org/def/guia#Schedule_53001640> .
+
+<http://guia-mad-bench.es/data/course_guide_53001640> guide:numberOfCredits "3"^^xsd:decimal ;
+    sch:name "Design Of Magnetic Components"@en .
+
+d:course_guide_53001640 rdf:type <http://w3id.org/def/guia#CourseGuide> ;
+    sch:name "Design Of Magnetic Components" ;
+    guide:numberOfCredits 3.0 ;
+    dct:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en .
+
+d:course_guide_53001640 <http://w3id.org/def/guia#hasSyllabus> d:sylbus_53001640 ;
+    sch:eventSchedule d:schedule_53001640.
+
+<http://guia-mad-bench.es/data/syllabus_53001640> rdf:type guide:Syllabus ;
+    <http://w3id.org/def/guia#hasItem> d:si_intro, d:si_winding_tech, d:si_magnetic_cores, d:si_thermal_mgmt, d:si_inductors_guidelines, d:si_transformers_guidelines, d:si_links_guidelines .
+
+<http://guia-mad-bench.es/data/schedule_53001640> rdf:type guide:Schedule ;
+    sch:eventSchedule <http://w3id.org/def/guia#Event_Semester_1>, <http://w3id.org/def/guia#Event_Semester_2>.
+
+<http://guia-mad-bench.es/data/schedule_53001640> sch:eventSchedule d:evt_theory, d:evt_cad_tool, d:evt_practical_design, d:evt_test .
+
+d:sylbus_53001640 <http://w3id.org/def/guia#hasItem> d:si_intro ;
+    guide:itemIndex 1.
+
+<http://guia-mad-bench.es/data/syllabus_item_si_intro> rdf:type guide:SyllabusItem ;
+    sch:name "Introduction" .
+
+d:sylbus_53001640 <http://w3id.org/def/guia#hasItem> d:si_winding_tech ;
+    guide:itemIndex 2.
+
+<http://guia-mad-bench.es/data/syllabus_item_si_winding_tech> rdf:type guide:SyllabusItem ;
+    sch:name "State of the art in winding technology" .
+
+d:sylbus_53001640 <http://w3id.org/def/guia#hasItem> d:si_magnetic_cores ;
+    guide:itemIndex 3.
+
+<http://guia-mad-bench.es/data/syllabus_item_si_magnetic_cores> rdf:type guide:SyllabusItem ;
+    sch:name "State of the art in magnetic cores technology" .
+
+d:sylbus_53001640 <http://w3id.org/def/guia#hasItem> d:si_thermal_mgmt ;
+    guide:itemIndex 4.
+
+<http://guia-mad-bench.es/data/syllabus_item_si_thermal_mgmt> rdf:type guide:SyllabusItem ;
+    sch:name "State of the art in thermal management" .
+
+d:sylbus_53001640 <http://w3id.org/def/guia#hasItem> d:si_inductors_guidelines ;
+    guide:itemIndex 5.
+
+<http://guia-mad-bench.es/data/syllabus_item_si_inductors_guidelines> rdf:type guide:SyllabusItem ;
+    sch:name "Design guidelines for Power Inductors" .
+
+d:sylbus_53001640 <http://w3id.org/def/guia#hasItem> d:si_transformers_guidelines ;
+    guide:itemIndex 6.
+
+<http://guia-mad-bench.es/data/syllabus_item_si_transformers_guidelines> rdf:type guide:SyllabusItem ;
+    sch:name "Design guidelines for Power Transformers" .
+
+d:sylbus_53001640 <http://w3id.org/def/guia#hasItem> d:si_links_guidelines ;
+    guide:itemIndex 7.
+
+<http://guia-mad-bench.es/data/syllabus_item_si_links_guidelines> rdf:type guide:SyllabusItem ;
+    sch:name "Design guidelines for Inductive links" .
+
+d:sylbus_53001640 <http://w3id.org/def/guia#hasSyllabusDescription> d:si_intro, d:si_winding_tech, d:si_magnetic_cores, d:si_thermal_mgmt, d:si_inductors_guidelines, d:si_transformers_guidelines, d:si_links_guidelines .
+
+<http://guia-mad-bench.es/data/schedule_event_evt_theory> rdf:type guide:ScheduleEvent ;
+    sch:eventIndex 1.
+
+d:sylbus_53001640 <http://w3id.org/def/guia#hasSyllabusDescription> d:si_intro, d:si_winding_tech, d:si_magnetic_cores, d:si_thermal_mgmt, d:si_inductors_guidelines, d:si_transformers_guidelines, d:si_links_guidelines .
+
+<http://guia-mad-bench.es/data/schedule_event_evt_cad_tool> rdf:type guide:ScheduleEvent ;
+    sch:eventIndex 2.
+
+d:sylbus_53001640 <http://w3id.org/def/guia#hasSyllabusDescription> d:si_intro, d:si_winding_tech, d:si_magnetic_cores, d:si_thermal_mgmt, d:si_inductors_guidelines, d:si_transformers_guidelines, d:si_links_guidelines .
+
+<http://guia-mad-bench.es/data/schedule_event_evt_practical_design> rdf:type guide:ScheduleEvent ;
+    sch:eventIndex 16.
+
+d:sylbus_53001640 <http://w3id.org/def/guia#hasSyllabusDescription> d:si_intro, d:si_winding_tech, d:si_magnetic_cores, d:si_thermal_mgmt, d:si_inductors_guidelines, d:si_transformers_guidelines, d:si_links_guidelines .
+
+<http://guia-mad-bench.es/data/schedule_event_evt_test> rdf:type guide:ScheduleEvent ;
+    sch:eventIndex 17.
+
+d:sylbus_53001640 <http://w3id.org/def/guia#hasSyllabusDescription> d:si_intro, d:si_winding_tech, d:si_magnetic_cores, d:si_thermal_mgmt, d:si_inductors_guidelines, d:si_transformers_guidelines, d:si_links_guidelines .
+
+<http://guia-mad-bench.es/data/schedule_event_evt_theory> rdf:type guide:ScheduleEvent ;
+    sch:eventIndex 1.
+
+d:sylbus_53001640 <http://w3id.org/def/guia#hasSyllabusDescription> d:si_intro, d:si_winding_tech, d:si_magnetic_cores, d:si_thermal_mgmt, d:si_inductors_guidelines, d:si_transformers_guidelines, d:si_links_guidelines .
+
+<http://guia-mad-bench.es/data/schedule_event_evt_cad_tool> rdf:type guide:ScheduleEvent ;
+    sch:eventIndex 2.
+
+d:sylbus_53001640 <http://w3id.org/def/guia#hasSyllabusDescription> d:si_intro, d:si_winding_tech, d:si_magnetic_cores, d:si_thermal_mgmt, d:si_inductors_guidelines, d:si_transformers_guidelines, d:si_links_guidelines .
+
+<http://guia-mad-bench.es/data/schedule_event_evt_practical_design> rdf:type guide:ScheduleEvent ;
+    sch:eventIndex 16.
+
+d:sylbus_53001640 <http://w3id.org/def/guia#hasSyllabusDescription> d:si_intro, d:si_winding_tech, d:si_magnetic_cores, d:si_thermal_mgmt, d:si_inductors_guidelines, d:si_transformers_guidelines, d:si_links_guidelines .
+
+<http://guia-mad-bench.es/data/schedule_event_evt_test> rdf:type guide:ScheduleEvent ;
+    sch:eventIndex 17.

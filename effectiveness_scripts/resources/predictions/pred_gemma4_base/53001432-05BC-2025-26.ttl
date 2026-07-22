@@ -1,0 +1,194 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://w3id.org/def/guia#> .
+
+# Degree and University Center
+_:universityCenter a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Industriales" .
+
+_:masterDegree a guide:MasterDegree ;
+    sch:name "Master Universitario En Ingenieria Quimica" ;
+    guide:degreeCode "05BC" .
+
+_:universityCenter guide:offers _:masterDegree .
+
+# Course
+_:course a guide:Course ;
+    sch:name "53001432 - Integración de Procesos Químicos" ;
+    guide:courseYear 2025 ;
+    guide:courseType "Optativa" ;
+    sch:hasCourseInstance _:courseGuide .
+
+_:masterDegree guide:hasCourse _:course .
+
+# Course Guide
+_:courseGuide a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Integración De Procesos Químicos" ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:numberOfCredits 4.5 ;
+    guide:totalHours "Not specified" ;
+    guide:inpersonHours "Not specified" ;
+    guide:remoteHours "Not specified" ;
+    sch:instructor _:lecturer1, _:lecturer2 ;
+    sch:director _:lecturer2 ;
+    guide:hasSyllabus _:syllabus ;
+    guide:hasCompetency _:compCE1, _:compCE2, _:compCE 3, _:compCG2, _:compCG5 ;
+    guide:hasLearningResult _:lrRA69, _:lrRA67 ;
+    guide:hasEvaluation _:evalSystem ;
+    guide:hasDidacticResource _:resKemp, _:resSmith ;
+    sch:courseSchedule _:schedule .
+
+# Lecturers
+_:lecturer1 a guide:Lecturer ;
+    sch:name "Manuel Rodriguez Hernandez" ;
+    sch:email "manuel.rodriguezh@upm.es" ;
+    guide:office "201" ;
+    guide:tutorshipsSchedule "M - 14:30 - 15:30" .
+
+_:lecturer2 a guide:Lecturer ;
+    sch:name "Francisco Ismael Diaz Moreno" ;
+    sch:email "ismael.diaz@upm.es" ;
+    guide:office "207" ;
+    guide:tutorshipsSchedule "M - 14:30 - 15:30" .
+
+# Competencies
+_:compCE1 a guide:Competency ;
+    guide:competencyCode "CE1" ;
+    guide:competencyDescription "Aplicar conocimientos de matemáticas, física, química, biología y otras ciencias naturales..."@en .
+
+_:compCE2 a guide:Competency ;
+    guide:competencyCode "CE2" ;
+    guide:competencyDescription "Diseñar productos, procesos, sistemas y servicios de la industria química..."@en .
+
+_:compCE3 a guide:Competency ;
+    guide:competencyCode "CE3" ;
+    guide:competencyDescription "Conceptualizar modelos de ingeniería, aplicar métodos innovadores..."@en .
+
+_:compCG2 a guide:Competency ;
+    guide:competencyCode "CG2" ;
+    guide:competencyDescription "Concebir, proyectar, calcular, y diseñar procesos, equipos, instalaciones industriales..."@en .
+
+_:compCG5 a guide:Competency ;
+    guide:competencyCode "CG5" ;
+    guide:competencyDescription "Saber establecer modelos matemáticos y desarrollarlos mediante la informática apropiada..."@en .
+
+# Learning Results
+_:lrRA69 a guide:LearningResult ;
+    guide:learningResultCode "RA69" ;
+    guide:learningResultDescription "Ser capaz de realizar la evaluación económica básica de un proceso químico"@en .
+
+_:lrRA67 a guide:LearningResult ;
+    guide:learningResultCode "RA67" ;
+    guide:learningResultDescription "Ser capaz de realizar la integración energética de un proceso químico"@en .
+
+# Syllabus
+_:syllabus a guide:Syllabus ;
+    guide:hasItem _:item1, _:item2, _:item3 .
+
+_:item1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Fundamentos (Integración de procesos, Integración energética)"@en .
+
+_:item2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Integración energética (Programación matemática, Análisis Pinch, Síntesis de redes)"@en .
+
+_:item3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Integración másica (Análisis de procesos, Síntesis de sistemas de separación, Síntesis de redes de suministro)"@en .
+
+# Evaluation System and Trials
+_:evalSystem a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global con pesos específicos por bloque."@en ;
+    guide:hasEvaluationTrial _:trial1, _:trial2, _:trial3, _:trial4 .
+
+_:trial1 a guide:EvaluationTrial ;
+    sch:name "Tareas integración energética (EP)" ;
+    guide:evaluationType "Examen de Prácticas" ;
+    guide:gradePercentage "15%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "03:00" ;
+    guide:involvesCompetency _:compCG5, _:compCE1, _:compCE3, _:compCG2 .
+
+_:trial2 a guide:EvaluationTrial ;
+    sch:name "Tareas integración energética (TI)" ;
+    guide:evaluationType "Trabajo Individual" ;
+    guide:gradePercentage "15%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialMode "No Presencial" ;
+    guide:evaluationDuration "00:00" ;
+    guide:involvesCompetency _:compCG5, _:compCE1, _:compCE3 .
+
+_:trial3 a guide:EvaluationTrial ;
+    sch:name "Prueba integración energética (TI)" ;
+    guide:evaluationType "Trabajo Individual" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "03:00" ;
+    guide:involvesCompetency _:compCG2, _:compCG5, _:compCE1, _:compCE2, _:compCE3 .
+
+_:trial4 a guide:EvaluationTrial ;
+    sch:name "Entregas integración másica (OT)" ;
+    guide:evaluationType "Otras técnicas evaluativas" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialMode "No Presencial" ;
+    guide:evaluationDuration "00:00" ;
+    guide:involvesCompetency _:compCG2, _:compCG5, _:compCE1, _:compCE2, _:compCE3 .
+
+# Schedule and Activities
+_:schedule a guide:Schedule ;
+    sch:eventSchedule _:eventWeek1, _:eventWeek2, _:eventWeek3, _:eventWeek4, _:eventWeek5, _:eventWeek6, _:eventWeek7, _:eventWeek8, _:eventWeek9, _:eventWeek10, _:eventWeek12, _:eventWeek13, _:eventPreReq .
+
+_:eventWeek1 a guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity _:act1 .
+
+_:act1 a guide:Activity ;
+    guide:activityDescription "Clase teórica. Fundamentos" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+_:eventWeek2 a guide:ScheduleEvent ;
+    guide:eventWeek "2" ;
+    guide:hasActivity _:act2, _:act3 .
+
+_:act2 a guide:Activity ;
+    guide:activityDescription "Métodos para integración energética" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+_:act3 a guide:Activity ;
+    guide:activityDescription "Trabajo sobre caso práctico" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Clase de Problemas" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+_:resKemp a guide:DidacticResource ;
+    guide:bibliographyTitle "Kemp, I. C. (2007). Pinch Analysis and Process Integration (Second Edition). Oxford: Butterworth-Heinemann." ;
+    guide:bibliographyType "Bibliografía" .
+
+_:resSmith a guide:DidacticResource ;
+    guide:bibliographyTitle "Smith, R. (2005), Chemical Process Design and Integration. Ed. John Willey and Sons." ;
+    guide:bibliographyType "Bibliografía" .
+
+# Required Knowledge
+_:preReqKnowledge a guide:RequiredKnowledge ;
+    guide:previousCourses "Process Design Project II, OptimizaciÓn De Procesos, IngenierÍa De Procesos Y Productos, Process Design Project I" ;
+    guide:previousKnowledge "Organización y coordinación del trabajo en equipo, Elaboración de informes, Conocimiento de lenguajes de modelización algebraica, Planificación y ejecución personal del trabajo" .
+
+_:courseGuide guide:hasRequiredKnowledge _:preReqKnowledge .

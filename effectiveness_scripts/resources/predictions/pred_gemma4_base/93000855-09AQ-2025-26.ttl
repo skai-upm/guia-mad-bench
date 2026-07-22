@@ -1,0 +1,208 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@base <http://guia-mad-bench.es/data/> .
+
+# Course Guide Instance
+guide:course_guide_93000855 rdf:type guide:CourseGuide ;
+    sch:name "Analisis Del Negocio Tic" ;
+    sch:description "El curso Análisis de Negocios TIC y Digitales tiene como objetivo formar a los estudiantes en el análisis de casos empresariales..."@en ;
+    guide:teachingPeriod "2025-26" ;
+    guide:numberOfCredits 3.0 ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:totalHours "Estimado según créditos ECTS (26-27h por crédito)" ;
+    guide:hasSyllabus guide:syllabus_93000855 ;
+    guide:hasEvaluation guide:eval_system_93000855 ;
+    guide:hasLearningResult guide:lr_ra172, guide:lr_ra24, guide:lr_ra33, guide:lr_ra145, guide:lr_ra29, guide:lr_ra25, guide:lr_ra139, guide:lr_ra138, guide:lr_ra23, guide:lr_ra76, guide:lr_ra244, guide:lr_ra245, guide:lr_ra70, guide:lr_ra243, guide:lr_ra246, guide:lr_ra146, guide:lr_ra10, guide:lr_ra148 ;
+    guide:hasCompetency guide:comp_ce7, guide:comp_cg1, guide:comp_cg3, guide:comp_ct3, guide:comp_ct6 ;
+    sch:instructor guide:lecturer_fernando_herrera, guide:lecturer_luis_castejon, guide:lecturer_zoraida_frias ;
+    sch:courseSchedule guide:schedule_93000855 ;
+    guide:hasDidacticResource guide:res_excel_valuation, guide:res_book_park, guide:res_book_newnan, guide:res_book_copeland ;
+    sch:activitiesWorkload "Metodología híbrida (presencial y online)" .
+
+# Course Instance
+guide:course_93000855 rdf:type guide:Course ;
+    sch:name "93000855 - Analisis Del Negocio Tic" ;
+    sch:courseCode 93000855 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 2025 ;
+    guide:semester "Cuarto semestre" ;
+    sch:hasCourseInstance guide:course_guide_93000855 .
+
+# Degree Instance
+guide:degree_09aq rdf:type guide:MasterDegree ;
+    sch:name "09AQ - Master Universitario En Ingenieria De Telecomunicacion" ;
+    guide:degreeCode "09AQ" ;
+    guide:hasCourse guide:course_93000855 .
+
+# University Center Instance
+guide:center_ets_telecom rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" ;
+    guide:offers guide:degree_09aq .
+
+# Lecturers
+guide:lecturer_fernando_herrera rdf:type guide:Lecturer ;
+    sch:name "Fernando Herrera Gonzalez" ;
+    sch:email "fernando.herrera@upm.es" ;
+    guide:office "C-425" ;
+    guide:tutorshipsSchedule "Sin horario. Solicitud de hora con cita previa mediante correo-e." .
+
+guide:lecturer_luis_castejon rdf:type guide:Lecturer ;
+    sch:name "Luis Castejon Martin" ;
+    sch:email "luis.castejon@upm.es" ;
+    guide:office "C-426" ;
+    guide:tutorshipsSchedule "Sin horario. Solicitud de hora con cita previa mediante correo-e." .
+
+guide:lecturer_zoraida_frias rdf:type guide:Lecturer ;
+    sch:name "Zoraida Frias Barroso" ;
+    sch:email "zoraida.frias@upm.es" ;
+    guide:office "C-431" ;
+    guide:tutorshipsSchedule "Sin horario. Solicitud de hora con cita previa mediante correo-e." .
+
+# Competencies
+guide:comp_ce7 rdf:type guide:Competency ;
+    guide:competencyCode "CE7" ;
+    guide:competencyDescription "Capacidad para realizar la planificación, toma de decisiones y empaquetamiento de redes..."@en .
+
+guide:comp_cg1 rdf:type guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales..."@en .
+
+guide:comp_cg3 rdf:type guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Que los estudiantes sean capaces de integrar conocimientos y enfrentarse a la complejidad..."@en .
+
+guide:comp_ct3 rdf:type guide:Competency ;
+    guide:competencyCode "CT3" ;
+    guide:competencyDescription "Capacidad para adoptar soluciones creativas que satisfagan adecuadamente las diferentes necesidades planteadas."@en .
+
+guide:comp_ct6 rdf:type guide:Competency ;
+    guide:competencyCode "CT6" ;
+    guide:competencyDescription "Capacidad para emitir juicios sobre implicaciones económicas, administrativas, sociales, éticas y medioambientales..."@en .
+
+# Learning Results (Sample)
+guide:lr_ra172 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA172" ;
+    guide:learningResultDescription "Analizar las finanzas de un operador de telecom, comparativamente con las de una OTT..."@en .
+
+guide:lr_ra24 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA24" ;
+    guide:learningResultDescription "Adquisición de conocimientos sobre aspectos complementarios para la gestión de un proyecto de ingeniería..."@en .
+
+guide:lr_ra33 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA33" ;
+    guide:learningResultDescription "Capacidad para abordar y desarrollar en grupo casos prácticos de análisis, diseño, dimensionamiento..."@en .
+
+# Syllabus
+guide:syllabus_93000855 rdf:type guide:Syllabus ;
+    guide:hasItem guide:item_tema1, guide:item_tema2, guide:item_tema3 .
+
+guide:item_tema1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Tema 1. Valoración de proyectos de inversión" .
+
+guide:item_tema2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Tema 2. Valoración de empresas" .
+
+guide:item_tema3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Tema 3. El método del Venture Capital para valorar startups" .
+
+# Evaluation System
+guide:eval_system_93000855 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y prueba global."@en ;
+    guide:hasEvaluationTrial guide:trial_exam_final, guide:trial_case1, guide:trial_case2, guide:trial_case3a, guide:trial_case3b, guide:trial_case4 .
+
+guide:trial_exam_final rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5/10" ;
+    guide:evaluationDuration "01:30" ;
+    guide:trialMode "Presencial" .
+
+guide:trial_case1 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo Individual" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "9%" ;
+    guide:minimumScore "5/10" ;
+    guide:evaluationDuration "00:00" ;
+    guide:trialMode "No Presencial" .
+
+# Schedule
+guide:schedule_93000855 rdf:type guide:Schedule ;
+    sch:eventSchedule guide:event_week1, guide:event_week2, guide:event_week3, guide:event_week4, guide:event_week5 .
+
+guide:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity guide:act_presentation ;
+    guide:hasActivity guide:act_chapter1 .
+
+guide:act_presentation rdf:type guide:Activity ;
+    guide:activityDescription "Presentación del curso" ;
+    guide:activityDuration 0.5 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+guide:act_chapter1 rdf:type guide:Activity ;
+    guide:activityDescription "CAPÍTULO 1. Conceptos del valor del dinero en función del tiempo (TVM)" ;
+    guide:activityDuration 1.5 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+guide:event_week2 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 2 ;
+    guide:eventWeek "Semana 2" ;
+    guide:hasActivity guide:act_chapter1_cont, guide:act_participation .
+
+guide:act_chapter1_cont rdf:type guide:Activity ;
+    guide:activityDescription "CAPÍTULO 1. Estudio de caso 1 teoría y explicación" ;
+    guide:activityDuration 1.75 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+guide:act_participation rdf:type guide:Activity ;
+    guide:activityDescription "Participación individual en el aula" ;
+    guide:activityDuration 0.25 ;
+    guide:activityFormat "Otras actividades formativas" ;
+    guide:attendanceType "Presencial" .
+
+# Required Knowledge
+guide:req_knowledge_finance rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Se recomienda a los estudiantes conocimientos de contabilidad financiera (cuenta de resultados, flujos de caja y balance)..."@en .
+
+# Didactic Resources
+guide:res_excel_valuation rdf:type guide:DidacticResource ;
+    sch:name "Excel - Tool for valuation of investment projects" ;
+    guide:bibliographyType "Equipamiento" ;
+    guide:bibliographyDescription "Excel file to model investment projects"@en .
+
+guide:res_book_park rdf:type guide:DidacticResource ;
+    sch:name "Chan S. Park. Fundamentals of Engineering Economics" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "3 edition (February 16, 2012)"@en .
+
+guide:res_book_newnan rdf:type guide:DidacticResource ;
+    sch:name "Donald G. Newnan, Jerome P. Lavelle, Ted G. Eschenbach. Engineering Economic Analysis" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "11 edition (February 3, 2011)"@en .
+
+guide:res_book_copeland rdf:type guide:DidacticResource ;
+    sch:name "Tom Copeland, Vladimir Antikarov. Real Options" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Revised Edition: A Practitioner's Guide 1st Edition (November 3, 2003)"@en .
+
+# Additional Knowledge Items
+guide:req_knowledge_courses rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Redes De Comunicaciones, Arquitecturas De Conmutacion Y Transporte, Direccion Y Administracion De Empresas, Comunicaciones Moviles, Vision Estrategica De La Integracion De Tecnologia, Tecnologias De Acceso Radio"@en .

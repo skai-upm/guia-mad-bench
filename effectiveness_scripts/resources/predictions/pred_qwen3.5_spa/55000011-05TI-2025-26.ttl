@@ -1,0 +1,72 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://guia-mad-bench.es/data/courseGuide_ANX_PR_CL_001_01.ttl> rdf:type guide:CourseGuide ;
+    dc:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en ;
+    sch:name "Guía de Aprendizaje Ecuaciones Diferenciales" ;
+    dct:creator <http://guia-mad-bench.es/data/university_ETSI_Industriales.ttl> .
+
+<http://guia-mad-bench.es/data/degree_05TI.ttl> rdf:type guide:BachelorDegree ;
+    sch:name "Grado en Ingeniería en Tecnologías Industriales" ;
+    dct:creator <http://guia-mad-bench.es/data/university_ETSI_Industriales.ttl> .
+
+<http://guia-mad-bench.es/data/course_Ecuaciones_Diferenciales.ttl> rdf:type guide:Course ;
+    sch:name "55000011 - Ecuaciones Diferenciales" ;
+    rdfs:subClassOf <https://schema.org/Course> .
+
+<http://guia-mad-bench.es/data/course_Ecuaciones_Diferenciales.ttl> guide:hasCourse <http://guia-mad-bench.es/data/degree_05TI.ttl> .
+<http://guia-mad-bench.es/data/courseGuide_ANX_PR_CL_001_01.ttl> sch:hasCourseInstance <http://guia-mad-bench.es/data/course_Ecuaciones_Diferenciales.ttl> ;
+    guide:numberOfCredits "6"^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/lecturer_Victor_Munoz.ttl> rdf:type guide:Lecturer ;
+    sch:name "Victor Muñoz Villarragut" ;
+    sch:email <mailto:victor.munoz@upm.es> .
+
+<http://guia-mad-bench.es/data/courseGuide_ANX_PR_CL_001_01.ttl> sch:director <http://guia-mad-bench.es/data/lecturer_Victor_Munoz.ttl> ;
+    sch:instructor <http://guia-mad-bench.es/data/lecturer_Pablo_Gomez.ttl>, <http://guia-mad-bench.es/data/lecturer_Ana_Soledad.ttl> .
+
+<http://guia-mad-bench.es/data/syllabus_Ecuaciones_Diferenciales.ttl> rdf:type guide:Syllabus ;
+    sch:name "Temario Ecuaciones Diferenciales" ;
+    rdfs:subClassOf <https://schema.org/Syllabus> .
+
+<http://guia-mad-bench.es/data/tema_1_EDO_PRIMERO.ttl> rdf:type guide:SyllabusItem ;
+    sch:name "Ecuaciones diferenciales ordinarias de primer orden" ;
+    rdfs:subClassOf <https://schema.org/SyllabusItem> .
+
+<http://guia-mad-bench.es/data/syllabus_Ecuaciones_Diferenciales.ttl> guide:hasItem <http://guia-mad-bench.es/data/tema_1_EDO_PRIMERO.ttl>,
+    <http://guia-mad-bench.es/data/tema_2_Sistemas_Lineales.ttl>.
+
+<http://guia-mad-bench.es/data/syllabus_Ecuaciones_Diferenciales.ttl> guide:hasSylbusus <http://w3id.org/def/guia#CourseGuide> .
+<http://guia-mad-bench.es/data/courseGuide_ANX_PR_CL_001_01.ttl> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_Ecuaciones_Diferenciales.ttl>.
+
+<http://guia-mad-bench.es/data/eval_system_todos.ttl> rdf:type guide:EvaluationSystem ;
+    sch:name "Evaluación Progresiva y Global" .
+
+<http://guia-mad-bench.es/data/courseGuide_ANX_PR_CL_001_01.ttl> guide:hasEvaluation <http://guia-mad-bench.es/data/eval_system_todos.ttl>.
+<http://guia-mad-bench.es/data/eval_trial_practica_sem5.ttl> rdf:type guide:EvaluationTrial ;
+    sch:name "Práctica de computación científica" ;
+    guide:trialType <https://schema.org/EvaluationActivity> .
+
+<http://guia-mad-bench.es/data/courseGuide_ANX_PR_CL_001_01.ttl> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/eval_trial_practica_sem5.ttl>.
+<http://guia-mad-bench.es/data/eval_system_todos.ttl> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/eval_trial_practica_sem5.ttl>,
+    <http://guia-mad-bench.es/data/eval_trial_examen_global.ttl>.
+
+<http://guia-mad-bench.es/data/courseGuide_ANX_PR_CL_001_01.ttl> guide:hasCompetency <http://guia-mad-bench.es/data/comp_CE1.ttl>,
+    <http://guia-mad-bench.es/data/comp_CG1.ttl>.
+
+<http://guia-mad-bench.es/data/courseGuide_ANX_PR_CL_001_01.ttl> guide:hasLearningResult <http://guia-mad-bench.es/data/res_RA242.ttl>,
+    <http://guia-mad-bench.es/data/res_RA243.ttl>.
+
+<http://guia-mad-bench.es/data/comp_CE1.ttl> rdf:type guide:Competency ;
+    guide:competencyCode "CE1"^^xsd:string .
+
+<http://guia-mad-bench.es/data/comp_CG1.ttl> rdf:type guide:Competency ;
+    guide:competencyCode "CG1"^^xsd:string .
+
+<http://guia-mad-bench.es/data/res_RA242.ttl> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA242"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_examen_global.ttl> rdf:type guide:EvaluationTrial ;
+    sch:name "Prueba escrita global sobre el contenido de toda la asignatura" ;
+    guide:trialType <https://schema.org/EvaluationActivity>.

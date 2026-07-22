@@ -1,0 +1,132 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guide/anx-pr-cl-001-01> rdf:type :CourseGuide ;
+    dct:title "Guía de Aprendizaje"@en ;
+    guide:numberOfCredits 6.0^^xsd:decimal ;
+    sch:name "Sistemas Operativos" ;
+    guide:teachingPeriodMonths "Febrero-Junio"@en .
+
+<http://guia-mad-bench.es/data/guide/anx-pr-cl-001-01> dct:creator <http://w3id.org/def/guia#PabloTohariaRabasco>,
+    <http://w3id.org/def/guia#FcoJavierRosalesGarcia>,
+    <http://w3id.org/def/guia#MariaDeLosSantosPerezHernandez> ;
+    guide:hasCourseInstance :course_105000127 .
+
+<http://guia-mad-bench.es/data/course/course_105000127> rdf:type sch:Course, :Degree ;
+    dct:title "Sistemas Operativos"@en ;
+    guide:numberOfCredits 6.0^^xsd:decimal ;
+    guide:courseYear 2025^^xsd:integer .
+
+<http://guia-mad-bench.es/data/degree/bachelor_10ml> rdf:type :BachelorDegree, sch:CourseInstance ;
+    dct:title "Grado En Matematicas E Informática"@en .
+
+<http://w3id.org/def/guia#PabloTohariaRabasco> rdf:type :Lecturer ;
+    sch:name "Pablo Toharia Rabasco" ;
+    guide:office "4102"@en ;
+    sch:email <mailto:pablo.toharia@upm.es>.
+
+<http://w3id.org/def/guia#FcoJavierRosalesGarcia> rdf:type :Lecturer, :Coordinator ;
+    sch:name "Fco Javier Rosales Garcia" ;
+    guide:office "4204"@en ;
+    sch:email <mailto:francisco.rosales@upm.es>.
+
+<http://w3id.org/def/guia#MariaDeLosSantosPerezHernandez> rdf:type :Lecturer ;
+    sch:name "Maria De Los Santos Perez Hernandez" ;
+    guide:office "4203"@en ;
+    sch:email <mailto:maria.s.perez@upm.es>.
+
+<http://w3id.org/def/guia#AntonioLatorreDeLaFuente> rdf:type :Lecturer ;
+    sch:name "Antonio Latorre De La Fuente" ;
+    guide:office "4201"@en ;
+    sch:email <mailto:a.latorre@upm.es>.
+
+<http://w3id.org/def/guia#FernandoPerezCostoya> rdf:type :Lecturer ;
+    sch:name "Fernando Perez Costoya" ;
+    guide:office "4201"@en ;
+    sch:email <mailto:fernando.perez@upm.es>.
+
+<http://w3id.org/def/guia#C1> rdf:type :Competency ;
+    guide:competencyCode "C1"@en .
+
+<http://w3id.org/def/guia#K4> rdf:type :Competency ;
+    guide:competencyCode "K4"@en .
+
+<http://w3id.org/def/guia#S21> rdf:type :Competency ;
+    guide:competencyCode "S21"@en .
+
+<http://w3id.org/def/guia#S19> rdf:type :Competency ;
+    guide:competencyCode "S19"@en .
+
+<http://w3id.org/def/guia#C7> rdf:type :Competency ;
+    guide:competencyCode "C7"@en .
+
+<http://w3id.org/def/guia#C2> rdf:type :Competency ;
+    guide:competencyCode "C2"@en .
+
+<http://guia-mad-bench.es/data/syllabus/anx-pr-cl-001-01-syllabus> rdf:type sch:Syllabus, :Syllabus ;
+    dct:title "Temario de la asignatura" ;
+    guide:hasItem <http://w3id.org/def/guia#item_1>,
+        <http://w3id.org/def/guia#item_2>.
+
+<http://w3id.org/def/guia#item_1> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    sch:description "Introducción al SSOO"@en .
+
+<http://w3id.org/def/guia#item_2> rdf:type :SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer ;
+    sch:description "Gestión de Ficheros"@en .
+
+<http://guia-mad-bench.es/data/schedule/anx-pr-cl-001-01-schedule> rdf:type sch:Schedule, :Schedule ;
+    dct:title "Cronograma" ;
+    guide:eventIndex 1^^xsd:integer ;
+    guide:syllabusDescription "Presentación de Asignatura y Prácticas"@en .
+
+<http://w3id.org/def/guia#event_1> rdf:type :ScheduleEvent, sch:Event ;
+    guide:itemIndex 1^^xsd:integer ;
+    om:Unit <om:Hour>,
+        "0.5"^^xsd:decimal ;
+    guide:activityDurationUnit om:Hour .
+
+<http://w3id.org/def/guia#event_2> rdf:type :ScheduleEvent, sch:Event ;
+    guide:itemIndex 1^^xsd:integer ;
+    om:Unit <om:Hour>,
+        "0.5"^^xsd:decimal ;
+    guide:activityDurationUnit om:Hour .
+
+<http://guia-mad-bench.es/data/evaluation/anx-pr-cl-001-01-eval> rdf:type :EvaluationSystem, sch:EvaluationSystem ;
+    dct:title "Sistema de Evaluación" ;
+    guide:hasEvaluationTrial <http://w3id.org/def/guia#trial_1>,
+        <http://w3id.org/def/guia#trial_final>.
+
+<http://w3id.org/def/guia#trial_1> rdf:type :EvaluationTrial, sch:EvaluationActivity ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/schedule/anx-pr-cl-001-01-schedule-event-nivel>,
+        om:Unit "60"^^xsd:decimal .
+
+<http://w3id.org/def/guia#trial_final> rdf:type :EvaluationTrial, sch:EvaluationActivity ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/schedule/anx-pr-cl-001-01-schedule-event-final>,
+        om:Unit "120"^^xsd:decimal .
+
+<http://w3id.org/def/guia#trial_1> guide:gradePercentage 4.5^^xsd:decimal ;
+    guide:minimumScore 4.0^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/resource/anx-pr-cl-001-01-resources> rdf:type sch:Syllabus, :DidacticResource ;
+    dct:title "Moodle de la Asignatura" ;
+    guide:bibliographyType "Recursos web"@en .
+
+<http://guia-mad-bench.es/data/resource/anx-pr-cl-001-01-resources> rdf:type sch:Syllabus, :DidacticResource ;
+    dct:title "Sistemas Operativos, Una visión Aplicada 2ª edición" ;
+    guide:bibliographyType "Bibliografía"@en .
+
+<http://guia-mad-bench.es/data/resource/anx-pr-cl-001-01-resources> rdf:type sch:Syllabus, :DidacticResource ;
+    dct:title "Programación Estructurada en C" ;
+    guide:bibliographyType "Bibliografía"@en .
+
+<http://guia-mad-bench.es/data/resource/anx-pr-cl-001-01-resources> rdf:type sch:Syllabus, :DidacticResource ;
+    dct:title "The UNIX programming environment" ;
+    guide:bibliographyType "Bibliografía"@en .

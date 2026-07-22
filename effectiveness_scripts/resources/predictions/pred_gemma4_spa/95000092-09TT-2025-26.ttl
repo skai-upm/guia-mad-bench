@@ -1,0 +1,196 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Information
+:course_95000092 a guide:Course ;
+    sch:name "95000092 - Ingeniería en Cooperación para el Desarrollo (Icd)"@es ;
+    sch:courseCode 95000092 ;
+    guide:courseType "Optativa"@es ;
+    guide:semester "Sexto semestre"@es ;
+    sch:inLanguage "Castellano"@es .
+
+:degree_09TT a guide:Degree ;
+    sch:name "09TT - Grado en Ingenieria de Tecnologias y Servicios de Telecomunicacion"@es ;
+    guide:degreeCode "09TT"@es ;
+    guide:hasCourse :course_95000092 .
+
+:center_ets a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros De Telecomunicacion"@es ;
+    guide:offers :degree_09TT .
+
+# Course Guide Instance
+:guide_95000092 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Ingeniería en Cooperación para el Desarrollo (Icd)"@es ;
+    guide:teachingPeriod "2025-26"@es ;
+    guide:periodStartingMonth "Febrero"@es ;
+    guide:periodEndingMonth "Junio"@es ;
+    guide:numberOfCredits 4.5 ;
+    sch:hasCourseInstance :course_95000092 ;
+    guide:hasSyllabus :syllabus_95000092 ;
+    guide:hasCompetency :comp_cg13, :comp_cg2, :comp_cg3, :comp_cg7 ;
+    guide:hasLearningResult :lr_ra357, :lr_ra354, :lr_ra45, :lr_ra355, :lr_ra356 ;
+    guide:hasEvaluation :eval_system_95000092 ;
+    guide:hasDidacticResource :res_perez_foguet, :res_sachs, :res_gates, :res_acemoglu, :res_duflo, :res_lomborg, :res_manual_logico, :res_evaluacion_proyectos, :res_vvaa ;
+    sch:instructor :lecturer_carlos_canizo, :lecturer_manuel_sierra, :lecturer_santiago_iglesias, :lecturer_maria_jesus, :lecturer_laura_del_rio .
+
+# Faculty/Lecturers
+:lecturer_manuel_sierra a guide:Lecturer ;
+    sch:name "Manuel Sierra Castañs"@es ;
+    sch:email "manuel.sierra@upm.es"@es ;
+    guide:office "C-410"@es ;
+    guide:tutorshipsSchedule "Sin horario. Concertar cita por correo electrónico"@es .
+
+:lecturer_santiago_iglesias a guide:Lecturer ;
+    sch:name "Santiago Iglesias Pradas"@es ;
+    sch:email "s.iglesias@upm.es"@es ;
+    guide:office "A.127"@es ;
+    guide:tutorshipsSchedule "Sin horario. Concertar cita por correo electrónico"@es .
+
+:lecturer_maria_jesus a guide:Lecturer ;
+    sch:name "Maria Jesus Ledesma Carbayo"@es ;
+    sch:email "mj.ledesma@upm.es"@es ;
+    guide:office "C-201"@es ;
+    guide:tutorshipsSchedule "Sin<0xC2>appendage_schedule"@es .
+
+:lecturer_carlos_canizo a guide:Lecturer ;
+    sch:name "Carlos Del Cañizo Nadal"@es ;
+    sch:email "carlos.canizo@upm.es"@es ;
+    guide:office "IES-102"@es ;
+    guide:tutorshipsSchedule "Sin horario. Concertar cita por correo electrónico"@es .
+
+:lecturer_laura_del_rio a guide:Lecturer ;
+    sch:name "Laura Del Rio Carazo"@es ;
+    sch:email "laura.delrio@upm.es"@es ;
+    guide:office "A127"@es ;
+    guide:tutorshipsSchedule "Sin horario. Concertar cita por correo electrónico"@es .
+
+:lecturer_ext_inigo a guide:Lecturer ;
+    sch:name "Iñigo Ramiro González"@es ;
+    sch:email "i.ramiro@upm.es"@es ;
+    sch:affiliation "Instituto de Energía Solar UPM"@es .
+
+# Competencies
+:comp_cg13 a guide:Competency ;
+    guide:competencyCode "CG13"@es ;
+    guide:competencyDescription "Respeto medioambiental"@es .
+
+:comp_cg2 a guide:Competency ;
+    guide:competencyCode "CG2"@es ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional..."@es .
+
+:comp_cg3 a guide:Competency ;
+    guide:competencyCode "CG3"@es ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes..."@es .
+
+:comp_cg7 a guide:Competency ;
+    guide:competencyCode "CG7"@es ;
+    guide:competencyDescription "Trabajo en equipo"@es .
+
+# Learning Results
+:lr_ra357 a guide:LearningResult ;
+    guide:learningResultCode "RA357"@es ;
+    guide:learningResultDescription "Concreción de los conocimientos en aplicaciones prácticas en los ámbitos de las TIC y la electrificación rural"@es .
+
+:lr_ra354 a guide:LearningResult ;
+    guide:learningResultCode "RA354"@es ;
+    guide:learningResultDescription "Adquisión de una visión objetiva y amplia de los actuales desequilibrios sociales y medioambientales"@es .
+
+:lr_ra45 a guide:LearningResult ;
+    guide:learningResultCode "RA45"@es ;
+    guide:learningResultDescription "Conocimientos y habilidades de las temáticas científico tecnológicas desarrolladas en las asignaturas ofertadas"@es .
+
+:lr_ra355 a guide:LearningResult ;
+    guide:learningResultCode "RA355"@es ;
+    guide:learningResultDescription "Conocimiento de la estructura y los instrumentos de la cooperación internacional para el desarrollo"@es .
+
+:lr_ra356 a guide:LearningResult ;
+    guide:learningResultCode "RA356"@es ;
+    guide:learningResultDescription "Conocimiento y aplicación de metodologías de planificación e intervención en proyectos de desarrollo"@es .
+
+# Syllabus
+:syllabus_95000092 a guide:Syllabus ;
+    guide:hasItem :item_tema1, :item_tema2, :item_tema3, :item_tema4, :item_tema5 .
+
+:item_tema1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Tema 1: El mundo en que vivimos"@es .
+
+:item_tema2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Tema 2: Estrategias de la cooperación para el desarrollo"@es .
+
+:item_tema3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Tema 3: Metodología de proyectos en cooperación"@es .
+
+:item_tema4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Tema 4: Aplicaciones TIC para el Desarrollo"@es .
+
+:item_tema5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Tema 5: Aplicaciones de electrificación rural"@es .
+
+# Evaluation System and Trials
+:eval_system_95000092 a guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación progresiva se basa en la participación activa, análisis de libro, proyecto y examen final."@es ;
+    guide:hasEvaluationTrial :trial_examen_final, :trial_analisis_libro, :trial_proyecto_cooperacion .
+
+:trial_examen_final a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito"@es ;
+    guide:trialMode "Presencial"@es ;
+    guide:gradePercentage "25%"@es ;
+    guide:minimumScore "0 / 10"@es ;
+    guide:trialDescription "Examen final tipo test"@es .
+
+:trial_analisis_libro a guide:EvaluationTrial ;
+    guide:evaluationType "Presentación en Grupo"@es ;
+    guide:trialMode "Presencial"@es ;
+    guide:gradePercentage "20%"@es ;
+    guide:trialDescription "Análisis de un libro: Evaluación de trabajo individual con presentación en grupo"@es .
+
+:trial_proyecto_cooperacion a guide:EvaluationTrial ;
+    guide:evaluationType "Presentación en Grupo"@es ;
+    guide:trialMode "Presencial"@es ;
+    guide:gradePercentage "35%"@es ;
+    guide:trialDescription "Proyecto de cooperación: Evaluación de trabajo en grupo"@es .
+
+# Didactic Resources
+:res_perez_foguet a guide:DidacticResource ;
+    guide:bibliographyTitle "Introducción a la cooperación al desarrollo para las ingenierías"@es ;
+    guide:bibliographyType "Bibliografía"@es .
+
+:res_sachs a guide:DidacticResource ;
+    guide:bibliographyTitle "La era del desarrollo sostenible"@es ;
+    guide:bibliographyType "Bibliografía"@es .
+
+:res_gates a guide:DidacticResource ;
+    guide:bibliographyTitle "Cómo evitar un desastre climático"@es ;
+    guide:bibliographyType "Bibliografía"@es .
+
+:res_acemoglu a guide:DidacticResource ;
+    guide:bibliographyTitle "Por qué fracasan los países"@es ;
+    guide:bibliographyType "Bibliografía"@es .
+
+:res_duflo a guide:DidacticResource ;
+    guide:bibliographyTitle "Repensar la pobreza"@es ;
+    guide:bibliographyType "Bibliografía"@es .
+
+:res_lomborg a guide:DidacticResource ;
+    guide:bibliographyTitle "Lo que sí funciona"@es ;
+    guide:bibliographyType "Bibliografía"@es .
+
+:res_manual_logico a guide:DidacticResource ;
+    guide:bibliographyTitle "El enfoque del marco lógico. Manual para la planificación de proyectos..."@es ;
+    guide:bibliographyType "Bibliografía"@es .
+
+:res_evaluacion_proyectos a guide:DidacticResource ;
+    guide:bibliographyTitle "Evaluación de Proyectos de Ayuda al Desarrollo"@es ;
+    guide:bibliographyType "Bibliografía"@es .
+
+:res_vvaa a guide:DidacticResource ;
+    guide:bibliographyTitle "Tecnologías para el desarrollo humano de las comunidades rurales aisladas"@es ;
+    guide:bibliographyType "Bibliografía"@es .

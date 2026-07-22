@@ -1,0 +1,120 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guia_53001726> rdf:type :CourseGuide ;
+    dct:title "Dirección Estratégica Y De La Innovación"@en ;
+    sch:name "Dirección Estratégica Y De La Innovación" ;
+    guide:numberOfCredits 3.0^^xsd:decimal ;
+    guide:teachingPeriodMonths "Febrero-Junio"@en ;
+    guide:syllabusDescription "Taller de innovación, temario sobre estrategias y procesos innovadores"@en .
+
+<http://guia-mad-bench.es/data/degree_05DI> rdf:type :Degree ;
+    sch:name "D.M.U. En Ingeniería Industrial Y En Automática y Robótica" ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course_53001726> .
+
+<http://guia-mad-bench.es/data/course_53001726> rdf:type :Course ;
+    sch:name "53001726 - Dirección Estratégica Y De La Innovación" ;
+    guide:courseYear 2^^xsd:integer .
+
+<http://guia-mad-bench.es/data/lecturer_rafael_ramos> rdf:type :Lecturer ;
+    sch:name "Rafael Ramos Diaz"@en ;
+    sch:email <mailto:rafael.ramos@upm.es> ;
+    guide:office "" .
+
+<http://guia-mad-bench.es/data/lecturer_ebru_susur> rdf:type :Lecturer ;
+    sch:name "Ebru Susur Donerkan"@en ;
+    sch:email <mailto:ebru.susur@upm.es> ;
+    guide:office "UD Economía" .
+
+<http://guia-mad-bench.es/data/guia_53001726> sch:director :lecturer_rafael_ramos ;
+    sch:instructor :lecturer_ebru_susur .
+
+<http://guia-mad-bench.es/data/competency_MUAR_CB06> rdf:type :Competency ;
+    guide:competencyCode "MUAR.CB06"@en ;
+    guide:competencyDescription "Poseer y comprender conocimientos que aportan una base u oportunidad de ser originales en el desarrollo y/o aplicación de ideas, a menudo en un contexto de investigación"@en .
+
+<http://guia-mad-bench.es/data/learning_result_RA87> rdf:type :LearningResult ;
+    guide:learningResultCode "RA87"@en ;
+    guide:learningResultDescription "Aplicar distintas herramientas y metodologías para el diseño y puesta en práctica de estrategias y políticas de innovación en contextos competitivos"@en .
+
+<http://guia-mad-bench.es/data/syllabus_53001726> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/ssi_tema_1>, <http://guia-mad-bench.es/data/ssi_tema_2>.
+
+<http://guia-mad-bench.es/data/si_item_01> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "TALLER DE INNOVACIÓN SESIÓN 1: lanzamiento (kick-off) del proyecto y plan de investigación"@en .
+
+<http://guia-mad-bench.es/data/si_item_02> rdf:type :SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer ;
+    guide:syllabusDescription "TEMA 1 INNOVACIÓN ESTRATÉGICA, INNOVACIÓN ABIERTA"@en .
+
+<http://guia-mad-bench.es/data/si_item_03> rdf:type :SyllabusItem ;
+    guide:itemIndex 3^^xsd:integer ;
+    guide:syllabusDescription "TALLER DE INNOVACIÓN SESIÓN 2: investigación"@en .
+
+<http://guia-mad-bench.es/data/ssi_tema_1> rdf:type :SyllabusItem ;
+    guide:itemIndex 4^^xsd:integer ;
+    guide:syllabusDescription "TEMA 2 INNOVACIÓN EN EL MODELO DE NEGOCIO"@en .
+
+<http://guia-mad-bench.es/data/ssi_tema_1> rdf:type :SyllabusItem ;
+    guide:itemIndex 5^^xsd:integer ;
+    guide:syllabusDescription "TALLER DE INNOVACIÓN SESIÓN 3: síntesis de la investigación"@en .
+
+<http://guia-mad-bench.es/data/ssi_tema_1> rdf:type :SyllabusItem ;
+    guide:itemIndex 6^^xsd:integer ;
+    guide:syllabusDescription "TEMA 3 INNOVACIÓN DISRUPTIVA"@en .
+
+<http://guia-mad-bench.es/data/si_item_07> rdf:type :SyllabusItem ;
+    guide:itemIndex 8^^xsd:integer ;
+    guide:syllabusDescription "TALLER DE INNOVACIÓN SESIÓN 4: ideación"@en .
+
+<http://guia-mad-bench.es/data/si_item_09> rdf:type :SyllabusItem ;
+    guide:itemIndex 10^^xsd:integer ;
+    guide:syllabusDescription "TEMA 5 CICLOS DE VIDA TECNOLÓGICOS"@en .
+
+<http://guia-mad-bench.es/data/ssi_tema_2> rdf:type :SyllabusItem ;
+    guide:itemIndex 13^^xsd:integer ;
+    guide:syllabusDescription "TALLER DE INNOVACIÓN SESIÓN 6: presentación y feedback"@en .
+
+<http://guia-mad-bench.es/data/schedule_53001726> rdf:type :Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/se_evento_01>, <http://guia-mad-bench.es/data/se_evento_final>.
+
+<http://guia-mad-bench.es/data/se_evento_01> rdf:type :ScheduleEvent ;
+    guide:itemIndex 2^^xsd:integer ;
+    sch:eventWeek "Semestre 2"@en .
+
+<http://guia-mad-bench.es/data/se_evento_final> rdf:type :ScheduleEvent ;
+    guide:itemIndex 17^^xsd:integer ;
+    sch:eventWeek "Semestre 17"@en .
+
+<http://guia-mad-bench.es/data/eval_system_53001726> rdf:type :EvaluationSystem ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial_intermedia>, <http://guia-mad-bench.es/data/trial_final>.
+
+<http://guia-mad-bench.es/data/eval_trial_01> rdf:type :EvaluationTrial ;
+    sch:name "Entrega intermedia del Taller de Innovación"@en ;
+    guide:trialType "Trabajo en Grupo"^^xsd:string ;
+    guide:evaluationDescription "Evaluación Progresiva, No presencial"@en .
+
+<http://guia-mad-bench.es/data/eval_trial_02> rdf:type :EvaluationTrial ;
+    sch:name "PRUEBA GLOBAL"@en ;
+    guide:trialType "Examen Escrito"^^xsd:string ;
+    guide:evaluationDescription "Evaluación Global, Presencial"@en .
+
+<http://guia-mad-bench.es/data/eval_trial_02> rdf:type :EvaluationTrial ;
+    sch:name "PRUEBA GLOBAL"@en ;
+    guide:gradePercentage 1.0^^xsd:string ;
+    guide:minimumScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/resource_moodle> rdf:type :DidacticResource ;
+    sch:name "Moodle"@en ;
+    guide:bibliographyType "Recursos web"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_trial_01> rdf:type :EvaluationTrial ;
+    guide:gradePercentage 5.0^^xsd:string ;
+    sch:name "Entrega intermedia del Taller de Innovación"@en .

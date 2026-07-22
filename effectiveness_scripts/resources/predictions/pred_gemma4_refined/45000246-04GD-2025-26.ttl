@@ -1,0 +1,218 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Information
+:course_45000246 rdf:type guide:Course ;
+    sch:name "Economía Mundial, Española y Regional" ;
+    sch:courseCode 45000246 ;
+    guide:courseType "Obligatoria" ;
+    sch:hasCourseInstance :guide_45000246 .
+
+:degree_04GD rdf:type guide:Degree ;
+    sch:name "04GD - Doble Grado En Ingenieramente Civil Y Territorial Y En ADE" ;
+    guide:degreeCode "04GD" ;
+    guide:hasCourse :course_45000246 .
+
+:center_ETS rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ing. de Caminos Canales y P." ;
+    guide:offers :degree_04GD .
+
+# Course Guide Information
+:guide_45000246 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Economía Mundial, Española y Regional" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:numberOfCredits 3.0 ;
+    guide:inpersonHours "Not specified" ;
+    guide:remoteHours "Not specified" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :lecturer_jose, :lecturer_antonio ;
+    sch:director :lecturer_jose ;
+    guide:hasSyllabus :syllabus_45000246 ;
+    guide:hasEvaluation :eval_system_45000246 ;
+    guide:hasLearningResult :lr_RA185, :lr_RA186, :lr_RA189, :lr_RA184, :lr_RA188, :lr_RA187 ;
+    guide:hasCompetency :comp_E15, :comp_E15_alt, :comp_E16, :comp_E17, :comp_E18, :comp_E19, :comp_E20, :comp_G01, :comp_G06, :comp_G07, :comp_G09 ;
+    guide:hasDidacticResource :res_munoz, :res_alonso, :res_krugman, :res_moodle, :res_ine, :res_worldbank ;
+    sch:courseSchedule :schedule_45000246 ;
+    guide:otherInformation "La asignatura es una introducción a la Economía Aplicada..." .
+
+# Lecturers
+:lecturer_jose rdf:type guide:Lecturer ;
+    sch:name "Jose Balibrea Iniesta" ;
+    sch:email "jose.balibrea@upm.es" ;
+    guide:office "6ª planta" ;
+    guide:tutorshipsSchedule "X - 08:00 - 12:00" .
+
+:lecturer_antonio rdf:type guide:Lecturer ;
+    sch:name "Antonio Sanchez Soliño" ;
+    sch:email "antonio.sanchezso@upm.es" ;
+    guide:office "6ª planta" ;
+    guide:tutorshipsSchedule "X - 16:00 - 20:00, J - 16:00 - 20:00" .
+
+# Competencies
+:comp_E15 rdf:type guide:Competency ;
+    guide:competencyCode "30AD. E15" ;
+    guide:competencyDescription "Entender el funcionamiento de los mercados financieros nacionales e internacionales." .
+
+:comp_E16 rdf:type guide:Competency ;
+    guide:competencyCode "30AD. E16" ;
+    guide:competencyDescription "Conocer las principales teorías sobre el comportamiento de la economía tanto a nivel individual como agregado." .
+
+:comp_E17 rdf:type guide:Competency ;
+    guide:competencyCode "30AD. E17" ;
+    guide:competencyDescription "Comprender las bases que configuran la actual estructura de la economía mundial y española." .
+
+:comp_E18 rdf:type guide:Competency ;
+    guide:competencyCode "30AD. E18" ;
+    guide:competencyDescription "Conocer la determinación de los principales indicadores y agregados económicos, así como su impacto sobre las decisiones de la empresa." .
+
+:comp_E19 rdf:type guide:Competency ;
+    guide:competencyCode "30AD. E19" ;
+    guide:competencyDescription "Comprender las variables e indicadores que caracterizan la política macroeconómica de un sector y un entorno geográfico." .
+
+:comp_E20 rdf:type guide:Competency ;
+    guide:competencyCode "30AD. E20" ;
+    guide:competencyDescription "Comprender el contexto económico, regional, nacional e internacional que rodea a la empresa así como interpretar su impacto en la misma." .
+
+:comp_G01 rdf:type guide:Competency ;
+    guide:competencyCode "30AD. G01" ;
+    guide:competencyDescription "Que los estudiantes sean capaces de comprender, interpretar, sintetizar y evaluar de forma crítica información proveniente de fuentes diversas..." .
+
+:comp_G06 rdf:type guide:Competency ;
+    guide:competencyCode "30AD. G06" ;
+    guide:competencyDescription "Que los estudiantes sean capaces de trabajar en equipos multidisciplinares..." .
+
+:comp_G07 rdf:type guide:Competency ;
+    guide:competencyCode "30AD. G07" ;
+    guide:competencyDescription "Que los estudiantes sean capaces de trabajar en entornos diversos..." .
+
+:comp_G09 rdf:type guide:Competency ;
+    guide:competencyCode "30AD. G09" ;
+    guide:competencyDescription "Que los estudiantes sean capaces de trabajar en el ámbito de la administración y dirección de empresas aplicando criterios de calidad y sostenibilidad." .
+
+# Learning Results
+:lr_RA185 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA185 - RA2" ;
+    guide:learningResultDescription "Entender los fundamentos de los intercambios comerciales y del marco monetario que los condiciona..." .
+
+:lr_RA186 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA186 - RA4" ;
+    guide:learningResultDescription "Saber utilizar correctamente los conceptos e instrumentos básicos del análisis para su aplicación a la de la realidad económica." .
+
+:lr_RA189 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA189 - RA3" ;
+    guide:learningResultDescription "Entender el funcionamiento de la economía española en general así como de sus diversos sectores..." .
+
+:lr_RA184 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA184 - RA1" ;
+    guide:learningResultDescription "Entender el funcionamiento de una economía de mercado tanto a nivel microeconómico como macroeconómico." .
+
+:lr_RA188 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA188 - RA6" ;
+    guide:learningResultDescription "Poder exponer y comunicar sus ideas y reflexiones tanto de forma oral como escrita." .
+
+:lr_RA187 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA187 - RA5" ;
+    guide:learningResultDescription "Conocer y gestionar las fuentes de información económica relevante y su contenido..." .
+
+# Syllabus
+:syllabus_45000246 rdf:type guide:Syllabus ;
+    guide:hasItem :item_1, :item_2, :item_3, :item_4, :item_5, :item_6, :item_7, :item_8, :item_9, :item_10, :item_11, :item_12 .
+
+:item_1 rdf:type guide:SyllabusItem ; guide:syllabusDescription "Operaciones y agregados económicos" ; guide:itemIndex 1 .
+:item_2 rdf:type guide:SylabusItem ; guide:syllabusDescription "Contabilidad Nacional" ; guide:itemIndex 2 .
+:item_3 rdf:type guide:SyllabusItem ; guide:syllabusDescription "Marco Input-Output" ; guide:itemIndex 3 .
+:item_4 rdf:type guide:SyllabusItem ; guide:syllabusDescription "Comparaciones intertemporales" ; guide:itemIndex 4 .
+:item_5 rdf:type guide:SyllabusItem ; guide:syllabusDescription "Inflación y tipo de cambio" ; guide:itemIndex 5 .
+:item_6 rdf:type guide:SyllabusItem ; guide:syllabusDescription "Balanza de pagos y sector exterior" ; guide:itemIndex 6 .
+:item_7 rdf:type guide:SyllabusItem ; guide:syllabusDescription "Introducción a la Economía Mundial" ; guide:itemIndex 7 .
+:item_8 rdf:type guide:SyllabusItem ; guide:syllabusDescription "Desarrollo y subdesarrollo" ; guide:itemIndex 8 .
+:item_9 rdf:type guide:SyllabusItem ; guide:syllabusDescription "Demografía" ; guide:itemIndex 9 .
+:item_10 rdf:type guide:SyllabusItem ; guide:syllabusDescription "Productividad y convergencia económica" ; guide:itemIndex 10 .
+:item_11 rdf:type guide:SyllabusItem ; guide:syllabusDescription "Problemas ambientales" ; guide:itemIndex 11 .
+:item_12 rdf:type guide:SyllabusItem ; guide:syllabusDescription "Integración económica" ; guide:itemIndex 12 .
+
+# Evaluation System and Trials
+:eval_system_45000246 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "EVALUACIÓN CONTINUA (EVALUACIÓN PROGRESIVA/DISTRIBUIDA) y EVALUACIÓN SÓLO PRUEBA FINAL" ;
+    guide:hasEvaluationTrial :trial_asistencia, :trial_trabajo_ind, :trial_trabajo_grp, :trial_examen_final .
+
+:trial_asistencia rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Asistencia a clase y participación" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "0/10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_G01, :comp_E15 .
+
+:trial_trabajo_ind rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Trabajo individual" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "6/10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_G01, :comp_E15 .
+
+:trial_trabajo_grp rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Trabajo en grupo" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "15%" ;
+    guide:minimumScore "6/10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_G01, :comp_E15 .
+
+:trial_examen_final rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Examen final" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "65%" ;
+    guide:minimumScore "4/10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_G01, :comp_E15 .
+
+# Schedule and Activities
+:schedule_45000246 rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week9, :event_week12, :event_week14, :event_week16 .
+
+:event_week9 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "9" ;
+    guide:hasActivity :act_leccion_magistral_9 .
+
+:act_leccion_magistral_9 rdf:type guide:Activity ;
+    guide:activityDescription "Lección Magistral Tema 1 y 2" ;
+    guide:activityDuration 1.25 ;
+    guide:activityFormat "LM" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_munoz rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Introducción a la economía aplicada, 5ª ed. Civitas, Pamplona." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_alonso rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Lecciones sobre economía mundial. Introducción al desarrollo y a las relaciones económicas internacionales, 8ª edición. Civitas." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_krugman rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Economía internacional. Teoría y política. Ed. Pearson. 10ª Edición" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Transparencias y material didáctico en Moodle" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_ine rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "www.ine.es" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_worldbank rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "www.data.worldbank.org" ;
+    guide:bibliographyType "Recursos web" .
+
+# Required Knowledge
+:req_knowledge_45000246 rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Microeconomía, Ampliación De Macroeconomía" ;
+    guide:previousKnowledge "conocimientos básicos de matemáticas, análisis gráfico y manejo de Excel" .

@@ -1,0 +1,147 @@
+@prefix data: <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Instance (Course Guide)
+data:course_guide_53001736 rdf:type guide:CourseGuide ;
+    sch:name "53001736 - Sistemas de Control y Automatización" ;
+    sch:courseCode 53001736 ;
+    guide:courseType "Obligatoria" ;
+    guide:numberOfCredits 3.0 ;
+    guide:semester "Primer semestre" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCourse data:course_53001736 ;
+    guide:hasCompetency data:comp_MUAR_CB06, data:comp_MUAR_CB07, data:comp_MUAR_CE02, data:comp_MUII_a ;
+    guide:hasLearningResult data:lr_RA101, data:lr_RA102 ;
+    guide:hasEvaluation data:eval_system_53001736 ;
+    guide:hasSyllabus data:syllabus_53001736 ;
+    guide:hasDidacticResource data:res_moodle, data:res_matlab, data:res_tialportal, data:res_book_control ;
+    sch:description "Los objetivos centrales de la asignatura son implementar algoritmos de control de sistemas continuos y de eventos discretos en automatización." .
+
+# Course
+data:course_53001736 rdf:type guide:Course ;
+    sch:name "Sistemas de Control y Automatización" ;
+    guide:courseYear 2025 ;
+    guide:courseType "Obligatoria" .
+
+# Degree
+data:degree_05DI rdf:type guide:Degree ;
+    sch:name "05DI - D.m.u. en Ingeniería Industrial y en Automática y Robótica" ;
+    guide:degreeCode "05DI" ;
+    guide:hasCourse data:course_53001736 .
+
+# University Center
+data:univ_center_etsii rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Industriales" ;
+    guide:offers data:degree_05DI .
+
+# Lecturer
+data:lecturer_jose_maria rdf:type guide:Lecturer ;
+    sch:name "Jose Maria Sebastian Zuñiga" ;
+    sch:email "jose.sebastian@upm.es" .
+
+# Competencies
+data:comp_MUAR_CB06 rdf:type guide:Competency ;
+    guide:competencyCode "MUAR.CB06" ;
+    rdfs:description "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales en el desarrollo y/o aplicación de ideas, a menudo en un contexto de investigación" .
+
+data:comp_MUAR_CB07 rdf:type guide:Competency ;
+    guide:competencyCode "MUAR.CB07" ;
+    rdfs:description "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos dentro de contextos más amplios (o multidisciplinares) relacionados con su área de estudio" .
+
+data:comp_MUAR_CE02 rdf:type guide:Competency ;
+    guide:competencyCode "MUAR.CE02" ;
+    rdfs:description "Capacidad para aplicar estrategias avanzadas de control" .
+
+data:comp_MUII_a rdf:type guide:Competency ;
+    guide:competencyCode "MUII. (a)" ;
+    rdfs:description "Habilidad para aplicar conocimientos científicos, matemáticos y tecnológicos en sistemas relacionados con la práctica de la</em> ingeniería" .
+
+# Learning Results
+data:lr_RA101 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA101" ;
+    guide:learningResultDescription "Realización de trabajos prácticos sobre simulación de sistemas" .
+
+data:lr_RA102 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA102" ;
+    guide:learningResultDescription "Modelado y simulación de sistemas de eventos discretos" .
+
+# Syllabus
+data:syllabus_53001736 rdf:type guide:Syllabus ;
+    guide:hasItem data:item_1, data:item_2, data:item_3, data:item_4, data:item_5, data:item_6, data:item_7, data:item_8, data:item_9 .
+
+data:item_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Programación de autómatas industriales" .
+
+data:item_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Modelo de estado" .
+
+# Evaluation System
+data:eval_system_53001736 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La asignatura posee una parte en el área de la Automatización y una parte en el área del Control. En la convocatoria ordinaria el alumno debe entregar tres tareas... La evaluación se complementará con un examen presencial." ;
+    guide:hasEvaluationTrial data:trial_tarea1, data:trial_examen_final .
+
+# Evaluation Trials
+data:trial_tarea1 rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Tarea 1. Programación de autómatas" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialMode "No presencial" .
+
+data:trial_examen_final rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Examen final con parte escrita y práctica" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialMode "Presencial" .
+
+# Schedule and Activities
+data:schedule_53001736 rdf:type guide:Schedule ;
+    sch:eventSchedule data:event_week1, data:event_week3, data:event_week5 .
+
+data:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity data:act_leccion_magistral_1 .
+
+data:act_leccion_magistral_1 rdf:type guide:Activity ;
+    guide:activityDescription "Programación de autómatas" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Presencial" .
+
+data:event_week5 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 5" ;
+    guide:eventIndex 5 ;
+    guide:hasActivity data:act_tarea1_eval .
+
+data:act_tarea1_eval rdf:type guide:Activity ;
+    guide:activityDescription "Tarea 1. Programación de autómatas" ;
+    guide:activityFormat "Trabajo Individual" ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "No presencial" .
+
+# Didactic Resources
+data:res_moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Página web en Moodle" ;
+    guide:bibliographyType "Recursos web" .
+
+data:res_matlab rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Programa Matlab y Simulink última ver. R2022" ;
+    guide:bibliographyType "Recursos web" .
+
+data:res_book_control rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Control en el espacio de estados" ;
+    guide:bibliographyDescription "S. Dominguez y otros. 2006 Pearson. Prentice Hall" ;
+    guide:bibliographyType "Bibliografía" .
+
+# Required Knowledge
+data:req_knowledge_53001736 rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Algebra Lineal, Fundamentos de Automatización (GRAFCET), Asignatura básica de Control de Sistemas Lineales" .

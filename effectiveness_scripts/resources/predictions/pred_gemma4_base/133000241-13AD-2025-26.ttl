@@ -1,0 +1,216 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+
+# Degree and University Center
+:Master_13AD rdf:type guide:MasterDegree ;
+    sch:name "13AD - Master Universitario En Ingenieria De Montes" ;
+    guide:degreeCode "13AD" .
+
+:ETSI_Montes rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S.I. Montes, Forestal y Medio Natur." .
+
+# Course and Course Guide
+:Course_133000241 rdf:type guide:Course ;
+    sch:name "133000241 - Ordenacion De Montes Avanzada" ;
+    sch:courseCode 133000241 ;
+    guide:courseType "Obligatoria" ;
+    sch:hasCourseInstance :Guide_133000241 .
+
+:Guide_133000241 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Ordenacion De Montes Avanzada" ;
+    guide:numberOfCredits 5.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :Lecturer_Fernando_Garcia, :Lecturer_Luis_Augusto ;
+    sch:director :Lecturer_Fernando_Garcia ;
+    guide:hasSyllabus :Syllabus_133000241 ;
+    guide:hasEvaluation :EvalSystem_133000241 ;
+    guide:hasLearningResult :LR_RA162, :LR_RA163, :LR_RABB_132, :LR_RA164, :LR_RA165, :LR_RA134 ;
+    guide:hasCompetency :Comp_CB09, :Comp_CE28, :Comp_CE61, :Comp_CT02, :Comp_CT06 ;
+    guide:hasDidacticResource :Res_Moodle ;
+    guide:hasDidacticResource :Res_Dubourdieu, :Res_Madrigal, :Res_Gonzalez, :Res_Ministerio, :Res_Davis, :Res_Bettinger, :Res_Buongiorno ;
+    sch:courseSchedule :Schedule_133000241 .
+
+# Lecturers
+:Lecturer_Fernando_Garcia rdf:type guide:Lecturer ;
+    sch:name "Fernando Garcia Robredo" ;
+    sch:email "fernando.garcia.robredo@upm.es" ;
+    guide:office "13U.00.004.0" ;
+    guide:tutorshipsSchedule "L - 11:00 - 14:00, M - 11:00 - 14:00" .
+
+:Lecturer_Luis_Augusto rdf:type guide:Lecturer ;
+    sch:name "Luis Augusto Diaz Balteiro" ;
+    sch:email "luis.diaz.balteiro@upm.es" ;
+    guide:tutorshipsSchedule "M - 08:00 - 11:00, X - 08:00 - 11:00" .
+
+# Competencies
+:Comp_CB09 rdf:type guide:Competency ;
+    guide:competencyCode "CB09" ;
+    guide:competencyDescription "Que los estudiantes sepan comunicar sus conclusiones y los conocimientos y razones últimas que las sustentan a públicos especializados y no especializados de un modo claro y sin ambigüedades" .
+
+:Comp_CE28 rdf:type guide:Competency ;
+    guide:competencyCode "CE 2.8" ;
+    guide:competencyDescription "Capacidad para la redacción, dirección y ejecución de Proyectos de Ordenación de Montes" .
+
+:Comp_CE61 rdf:type guide:Competency ;
+    guide:competencyCode "CE 6.1" ;
+    guide:competencyDescription "Capacidad para la gestion de recursos naturales" .
+
+:Comp_CT02 rdf:type guide:Competency ;
+    guide:competencyCode "CT02" ;
+    guide:competencyDescription "Integrar los conocimientos previos (propios de grado) de manera crítica y relacionada de forma que se puedan aplicar al estudio de situaciones reales y a la propuesta de alternativas" .
+
+:Comp_CT06 rdf:type guide:Competency ;
+    guide:competencyCode "CT06" ;
+    guide:competencyDescription "Búsqueda bibliográfica, análisis de documentación y tratamiento de la información procedente de diversas fuentes y de su análisis y síntesis aplicándola a la resolución de problemas complejos" .
+
+# Learning Results
+:LR_RA162 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA162" ;
+    guide:learningResultDescription "Conocer cómo utilizar la información disponible en la toma de decisiones en gestión forestal." .
+
+:LR_RA163 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA163" ;
+    guide:learningResultDescription "Conocer las herramientas de investigación operativa que se pueden utilizar para resolver problemas de gestión forestal." .
+
+:LR_RABB_132 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA132" ;
+    guide:learningResultDescription "Conocimiento con sentido crítico del amplio contexto multidisciplinar de la ingeniería y de la interrelación que existe entre los conocimientos de los distintos campos" .
+
+:LR_RA164 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA164" ;
+    guide:learningResultDescription "Elaborar proyectos de Ordenación de Montes, planes dasocráticos y otros instrumentos de gestión forestal." .
+
+:LR_RA165 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA165" ;
+    guide:learningResultDescription "Analizar y cuantificar la sostenibilidad de la gestión de recursos naturales." .
+
+:LR_RA134 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA134" ;
+    guide:learningResultDescription "Capacidad para realizar búsquedas bibliográficas, consultar y utilizar con criterio bases de datos y otras fuentes de información, para llevar a cabo simulaciones con el objetivo de realizar investigaciones sobre temas complejos de su especialidad" .
+
+# Syllabus
+:Syllabus_133000241 rdf:type guide:Syllabus ;
+    guide:hasItem :SyllabusItem_Unit1, :SyllabusItem_Unit2, :SyllabusItem_Unit3, :SyllabusItem_Unit4 .
+
+:SyllabusItem_Unit1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a la Ordenación de Montes" .
+
+:SyllabusItem_Unit2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Métodos de decisión: Programación lineal" .
+
+:SyllabusItem_Unit3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Introducción a las técnicas de decisión multicriterio" .
+
+:SyllabusItem_Unit4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Sostenibilidad y uso múltiple" .
+
+# Evaluation System
+:EvalSystem_133000241 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y evaluación global." ;
+    guide:hasEvaluationTrial :Trial_Control1_2, :Trial_Control3_4, :Trial_FinalExam .
+
+:Trial_Control1_2 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "8" ;
+    guide:hasScheduleEvent :Event_Week8 .
+
+:Trial_Control3_4 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "16" ;
+    guide:hasScheduleEvent :Event_Week16 .
+
+:Trial_FinalExam rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:hasScheduleEvent :Event_Week17 .
+
+# Schedule and Activities
+:Schedule_133000241 rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week1, :Event_Week2, :Event_Week3, :Event_Week4, :Event_Week6, :Event_Week7, :Event_Week8, :Event_Week9, :Event_Week10, :Event_Week11, :Event_Week12, :Event_Week13, :Event_Week14, :Event_Week15, :Event_Week16, :Event_Week17 .
+
+:Event_Week8 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 8 ;
+    guide:eventWeek "Semana 8" ;
+    guide:hasActivity :Activity_Control12 .
+
+:Activity_Control12 rdf:type guide:Activity ;
+    guide:activityDescription "Control temas 1 y 2" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Presencial" .
+
+:Event_Week16 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 16 ;
+    guide:eventWeek "Semana 16" ;
+    guide:hasActivity :Activity_Control34 .
+
+:Activity_Control34 rdf:type guide:Activity ;
+    guide:activityDescription "Control temas 3 y 4" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Presencial" .
+
+:Event_Week17 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 17 ;
+    guide:eventWeek "Semana 17" ;
+    guide:hasActivity :Activity_FinalExam .
+
+:Activity_FinalExam rdf:type guide:Activity ;
+    guide:activityDescription "Examen final" ;
+    guide:activityDuration 4.0 ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:Res_Moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Espacio de la asignatura en Moodle" ;
+    guide:bibliographyType "Recursos web" .
+
+:Res_Dubourdieu rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Manual de Ordenación de Montes (Dubourdieu et al.)" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_Madrigal rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Ordenación de montes arbolados (Madrigal et al.)" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_Gonzalez rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Manual de Ordenación por Rodales (González Molina et al.)" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_Ministerio rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Instrucciones Generales para la Ordenación de Montes Arbolados" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_Davis rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Forest Management to Sustain Ecological, Economic and Social Values" ;
+    guide:bibliographyType "Bibliogafía" .
+
+:Res_Bettinger rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Forest Management and Planning" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_Buongiorno rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Decision Methods for Forest Resource Management" ;
+    guide:bibliographyType "Bibliografía" .

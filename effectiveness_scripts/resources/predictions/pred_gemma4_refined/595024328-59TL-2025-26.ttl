@@ -1,0 +1,146 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+:degree_59TL rdf:type guide:Degree ;
+    sch:name "59TL - Grado En Ingenieria Telematica" ;
+    guide:degreeCode "59TL" ;
+    guide:hasCourse :course_595024328 .
+
+:center_ETS rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingeniería y Sist. de Telecom." ;
+    guide:offers :degree_59TL .
+
+# Course
+:course_595024328 rdf:type guide:Course ;
+    sch:name "Electronica De Comunicaciones I" ;
+    sch:courseCode 595024328 ;
+    guide:courseType "Optativa" ;
+    sch:hasCourseInstance :guide_595024328 .
+
+# Course Guide
+:guide_595024328 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Electronica De Comunicaciones I" ;
+    sch:description "Introducción al alumno en el mundo de la generación de señales de alta frecuencia y elevada estabilidad." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:numberOfCredits 6.0 ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :lecturer_ortega ;
+    sch:instructor :lecturer_pardo ;
+    sch:instructor :lecturer_jimenez ;
+    guide:hasCompetency :comp_SC03, :comp_SC04, :comp_TEL01, :comp_TEL02, :comp_TEL03, :comp_CG02, :comp_SG04, :comp_CG05, :comp_CG09, :comp_CG10, :comp_CG11 ;
+    guide:hasEvaluation :eval_system_main ;
+    guide:hasDidacticResource :res_sierra, :res_gonzalez, :res_rhea, :res_smith, :res_gardner, :res_best, :res_rohde, :res_manassewitsch, :res_chenakin, :res_moodle ;
+    guide:hasSyllabus :syllabus_electronica .
+
+# Lecturers
+:lecturer_pardo rdf:type guide:Lecturer ;
+    sch:name "Jose Manuel Pardo Martin" ;
+    sch:email "josemanuel.pardo@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:lecturer_ortega rdf:type guide:Lecturer ;
+    sch:name "Fco. Javier Ortega Gonzalez" ;
+    sch:email "franciscojavier.ortega@upm.es" ;
+    guide:office "D8412" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:lecturer_jimenez rdf:type guide:Lecturer ;
+    sch:name "Jose Luis Jimenez Martin" ;
+    sch:email "joseluis.jimenez@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+# Competencies
+:comp_SC03 rdf:type guide:Competency ;
+    guide:competencyCode "CE SC03" ;
+    guide:competencyDescription "Capacidad de análisis de componentes y sus especificaciones para sistemas de comunicaciones guiadas y no guiadas." .
+
+:comp_SC04 rdf:type guide:Competency ;
+    guide:competencyCode "CE SC04" ;
+    guide:competencyDescription "Capacidad para la selección de circuitos, subsistemas y sistemas de radiofrecuencia, microondas, radiodifusión, radioenlaces y radiodeterminación." .
+
+:comp_TEL01 rdf:type guide:Competency ;
+    guide:competencyCode "CE TEL01" ;
+    guide:competencyDescription "Capacidad para aprender de manera autónoma nuevos conocimientos y técnicas adecuados para la concepción, el desarrollo o la explotación de sistemas y servicios de telecomunicación." .
+
+# Evaluation System and Trials
+:eval_system_main rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación de la asignatura se divide en dos partes: teoría (70%) y práctica (30%)." ;
+    guide:hasEvaluationTrial :trial_exam1, :trial_exam2, :trial_final .
+
+:trial_exam1 rdf:type guide:EvaluationTrial ;
+    sch:name "1er Examen parcial" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "8" .
+
+:trial_exam2 rdf:type guide:EvaluationTrial ;
+    sch:name "2º Examen Parcial de Teoría" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "14" .
+
+:trial_final rdf:type guide:EvaluationTrial ;
+    sch:name "Examen Final de Teoría" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "16" .
+
+# Syllabus
+:syllabus_electronica rdf:type guide:Syllabus ;
+    guide:hasItem :item_topic1, :item_topic2, :item_topic3, :item_topic4, :item_topic5 .
+
+:item_topic1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción al estudio de los osciladores." .
+
+:item_topic2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Osciladores autocontrolados LC." .
+
+:item_topic3 rdf:<0xC2>type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Osciladores a cristal." .
+
+# Didactic Resources
+:res_sierra rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "M. Sierra Pérez y otros, Electrónica de Comunicaciones, Pearson Education, 2003" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Texto en castellano de carácter general sobre diferentes circuitos y sub-sistemas de electrónica de comunicaciones." .
+
+:res_gonzalez rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "G. González, Foundations of Oscillators Circuit Design, Artech House, 2006" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Plataforma Moodle UPM" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Herramienta de interacción asíncrona." .
+
+# Required Knowledge
+:req_knowledge_electro rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Conocimiento de las técnicas básicas de polarización de transistores bipolares y FET. Resolución de ecuaciones diferenciales ordinarias. Transformación en el dominio de Laplace." .
+
+# Schedule Events (Examples from Cronograma)
+:event_week8_exam rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 8 ;
+    guide:eventWeek "Semana 8" ;
+    guide:hasActivity :act_exam1 .
+
+:act_exam1 rdf:type guide:Activity ;
+    guide:activityDescription "1er Examen parcial" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:attendanceType "Presencial" .

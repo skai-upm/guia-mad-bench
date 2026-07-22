@@ -1,0 +1,112 @@
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guia#courseGuide_13AD> rdf:type guide:CourseGuide ;
+    dct:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en ;
+    sch:name "Ordenacion De Montes Avanzada" ;
+    guide:numberOfCredits 5^^xsd:decimal ;
+    guide:courseYear "2025-26"^^xsd:string ;
+    guide:syllabusDescription "Esta asignatura se impartió por primera vez en el curso 2020/2021 y su objetivo es profundizar..."@en .
+
+<http://guia-mad-bench.es/data/guia#syllabus_13AD> rdf:type guide:Syllabus ;
+    sch:name "Temario de la asignatura" ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/guia#courseGuide_13AD> .
+
+<http://guia-mad-bench.es/data/guia#syllabusItem_1> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "Introducción a la Ordenación de Montes"@en ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/guia#syllabus_13AD> .
+
+<http://guia-mad-bench.es/data/guia#syllabusItem_2> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer ;
+    guide:syllabusDescription "Métodos de decisión: Programación lineal"@en ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/guia#syllabus_13AD> .
+
+<http://guia-mad-bench.es/data/guia#syllabusItem_3> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3^^xsd:integer ;
+    guide:syllabusDescription "Introducción a las técnicas de decisión multicriterio"@en ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/guia#syllabus_13AD> .
+
+<http://guia-mad-bench.es/data/guia#syllabusItem_4> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4^^xsd:integer ;
+    guide:syllabusDescription "Sostenibilidad y uso múltiple"@en ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/guia#syllabus_13AD> .
+
+<http://guia-mad-bench.es/data/guia#degree_13AD> rdf:type guide:BachelorDegree, guide:MasterDegree ;
+    sch:name "Master Universitario En Ingenieria De Montes" ;
+    guide:courseYear "2025-26"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#universityCenter_ETS> rdf:type sch:Organization, guide:UniversityCenter ;
+    sch:name "E.T.S.I Montes, Forestal y Medio Natur." ;
+    dct:title "Centro responsable de la titulación"@en .
+
+<http://guia-mad-bench.es/data/guia#courseGuide_13AD> rdf:type owl:ObjectProperty ;
+    guide:hasCourse <http://guia-mad-bench.es/data/guia#degree_13AD> .
+
+<http://guia-mad-bench.es/data/guia#lecturer_FGR> rdf:type sch:Person, guide:Lecturer ;
+    sch:name "Fernando Garcia Robredo" ;
+    dct:title "(Coordinador/a)"@en ;
+    sch:email "fernando.garcia.robredo@upm.es"@en ;
+    guide:office "13U.00.004.0"@en .
+
+<http://guia-mad-bench.es/data/guia#lecturer_LAB> rdf:type sch:Person, guide:Lecturer ;
+    sch:name "Luis Augusto Diaz Balteiro" ;
+    sch:email "luis.diaz.balteiro@upm.es"@en .
+
+<http://guia-mad-bench.es/data/guia#courseGuide_13AD> rdf:type owl:ObjectProperty ;
+    guide:sch:director <http://guia-mad-bench.es/data/guia#lecturer_FGR> .
+
+<http://guia-mad-bench.es/data/guia#competency_CB09> rdf:type guide:Competency ;
+    guide:competencyCode "CB09"^^xsd:string ;
+    guide:competencyDescription "Que los estudiantes sepan comunicar sus conclusiones..."@en .
+
+<http://guia-mad-bench.es/data/guia#learningResult_RA162> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA162"^^xsd:string ;
+    guide:learningResultDescription "Conocer cómo utilizar la información disponible en la toma de decisiones..."@en .
+
+<http://guia-mad-bench.es/data/guia#courseGuide_13AD> rdf:type owl:ObjectProperty ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/guia#competency_CB09>, <http://guia-mad-bench.es/data/guia#learningResult_RA162>.
+
+<http://guia-mad-bench.es/data/guia#schedule_13AD> rdf:type sch:Schedule, guide:Schedule ;
+    sch:name "Cronograma de la asignatura"@en .
+
+<http://guia-mad-bench.es/data/guia#courseGuide_13AD> rdf:type owl:ObjectProperty ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/guia#schedule_13AD>.
+
+<http://guia-mad-bench.es/data/guia#event_8> rdf:type guide:ScheduleEvent, sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:syllabusDescription "Control temas 1 y 2"@en .
+
+<http://guia-mad-bench.es/data/guia#schedule_13AD> rdf:type owl:ObjectProperty ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/guia#event_8>.
+
+<http://guia-mad-bench.es/data/guia#evaluationSystem_13AD> rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Para la evaluación de la asignatura se podrán seguir las siguientes modalidades..."@en .
+
+<http://guia-mad-bench.es/data/guia#courseGuide_13AD> rdf:type owl:ObjectProperty ;
+    guide:hasEvaluation <http://guia-mad-bench.es/data/guia#evaluationSystem_13AD>.
+
+<http://guia-mad-bench.es/data/guia#trial_Control12> rdf:type guide:EvaluationTrial, sch:Event ;
+    guide:trialDescription "Control temas 1 y 2"@en ;
+    guide:gradePercentage "50%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#evaluationSystem_13AD> rdf:type owl:ObjectProperty ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guia#trial_Control12>.
+
+<http://guia-mad-bench.es/data/guia#event_TrialControl12> rdf:type guide:ScheduleEvent, sch:Event ;
+    guide:eventIndex 8^^xsd:integer .
+
+<http://guia-mad-bench.es/data/guia#schedule_13AD> rdf:type owl:ObjectProperty ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia#event_TrialControl12>.
+
+<http://guia-mad-bench.es/data/guia#resource_Biblio1> rdf:type guide:DidacticResource, sch:Book ;
+    sch:name "Manual de Ordenación de Montes"@en .
+
+<http://guia-mad-bench.es/data/guia#courseGuide_13AD> rdf:type owl:ObjectProperty ;
+    guide:hasDidacticResource <http://guia-mad-bench.es/data/guia#resource_Biblio1>.

@@ -1,0 +1,736 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guia-anx-pr-cl-001-01> rdf:type :CourseGuide ;
+    sch:name "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@es ;
+    dct:title "GUÍA DE APRENDIZAJE - ANX-PR/CL/001-01"@en ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus-sostenibilidad> .
+
+<http://guia-mad-bench.es/data/course-135004815> rdf:type :Course ;
+    sch:name "135004815 - Sostenibilidad 4.0: Integración De Taxonomía, Esg"@es ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/syllabus-sostenibilidad> .
+
+<http://guia-mad-bench.es/data/degree-13ig> rdf:type :BachelorDegree , :Degree ;
+    sch:name "Grado En Ingenieria Forestal"@es ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course-135004815> .
+
+<http://guia-mad-bench.es/data/center-etsi-montes> rdf:type :UniversityCenter , sch:Organization ;
+    sch:name "E.T.S.I. Montes, Forestal Y Medio Natur."@es ;
+    guide:sch:offers <http://guia-mad-bench.es/data/degree-13ig> .
+
+<http://guia-mad-bench.es/data/syllabus-sostenibilidad> rdf:type :Syllabus , sch:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/item-introduccion>,
+                 <http://guia-mad-bench.es/data/item-taxonomia-ue>,
+                 <http://guia-mad-bench.es/data/item-esg-indicadores>,
+                 <http://guia-mad-bench.es/data/item-marcos-reporte>,
+                 <http://guia-mad-bench.es/data/item-evaluacion-sostenibilidad>,
+                 <http://guia-mad-bench.es/data/item-herramientas-digitales>,
+                 <http://guia-mad-bench.es/data/item-analisis-informes> .
+
+<http://guia-mad-bench.es/data/lecturer-carmen-aviles> rdf:type :Lecturer , sch:Person ;
+    sch:name "M. Carmen Aviles Palacios"@es ;
+    guide:sch:director <http://guia-mad-bench.es/data/guia-anx-pr-cl-001-01> .
+
+<http://guia-mad-bench.es/data/competency-cb03> rdf:type :Competency ;
+    guide:competencyCode "CB03"@en ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes... para emitir juicios que incluyan una reflexión sobre temas relevantes de índole social, científica - ética."@es .
+
+<http://guia-mad-bench.es/data/learning-result-ra577> rdf:type :LearningResult ;
+    guide:learningResultCode "RA577"@en ;
+    guide:learningResultDescription "Diseñar un informe ESG adaptado al sector forestal o ambiental."@es .
+
+<http://guia-mad-bench.es/data/schedule-event-1> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 1 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-16> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-14> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 14 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-16-eval> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-trial> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-16-eval-trial> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-16-eval-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-event-8-eval-extraordinary-trial-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 16 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> ;
+    guide:activityDuration "

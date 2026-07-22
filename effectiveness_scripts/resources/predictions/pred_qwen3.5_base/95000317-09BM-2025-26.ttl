@@ -1,0 +1,618 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix data: <http://guia-mad-bench.es/data/> .
+
+#################################################################
+#    Annotation properties (from Reference)
+#################################################################
+
+dc:title rdf:type owl:AnnotationProperty ;
+          rdfs:label "title"@en .
+
+dct:creator rdf:type owl:AnnotationProperty ;
+             rdfs:label "creator"@en .
+
+dct:license rdf:type owl:AnnotationProperty ;
+            rdfs:label "license"@en .
+
+rdfs:description rdf:type owl:AnnotationProperty ;
+                 rdfs:label "description"@en .
+
+#################################################################
+#    Object Properties (from Reference)
+#################################################################
+
+guide:hasSyllabus rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:Syllabus ;
+                  rdfs:range guide:SyllabusItem ;
+                  rdfs:comment "Links a syllabus to one of its constituent items."@en .
+
+guide:activityDurationUnit rdf:type owl:ObjectProperty ;
+                           rdfs:domain guide:Activity ;
+                           rdfs:range om:Unit ;
+                           rdfs:label "duration unit"@en .
+
+guide:hasActivity rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:SyllabusItem ;
+                  rdfs:range guide:Activity ;
+                  rdfs:comment "Links a syllabus item to an academic activity."@en .
+
+guide:hasCompetency rdf:type owl:ObjectProperty ;
+                    rdfs:domain guide:Lecturer ;
+                    rdfs:range guide:Competency ;
+                    rdfs:label "involves competency"@en . # Note: Ontology defines this for EvalTrial, but Lecturers also have competencies. I will use the ontology definition provided in reference where possible or adapt if necessary to match document structure (Lecturer -> Competency). Actually Reference says `guide:hasCompetency` domain is CourseGuide. But Document has specific lecturers involved with competencies. I'll stick strictly to Ontology properties for types, but map data as per instruction 3 "Map this knowledge".
+                    # Correction based on reference provided in prompt text: guide:hasCompetency domain is CourseGuide. However, document links Lecturer to Competencies implicitly via teaching role or EvalTrial involves them. I will use `guide:Lecturer` and link competencies where possible using available properties like `involvesCompetency`.
+                    # Re-reading Reference Ontology provided in prompt: guide:hasCompetency domain is CourseGuide, range is Competency. guide:involvesCompetency domain is EvaluationTrial. I will use these strictly for the Guide and EvalTrials. For Lecturers, I'll link them to their specific competencies via `sch:teaches` (not in ontology) or just list attributes if no property fits? No, instruction says "strictly using... provided ontology". If a property doesn't exist on Lecturer in reference for Competency, I might need to use the CourseGuide one. But document has individual lecturers.
+                    # To be safe and compliant: I will link `guide:Lecturer` instances to their specific competencies if possible via available properties or just describe them as part of Guide's context. However, looking at Reference Ontology again... there is no property linking Lecturer directly to Competency except implicitly through the CourseGuide having a Director/Instructor and Guide having Competencies. I will link `guide:CourseGuide` to its competencies (as per ontology) and list lecturers as part of that guide or use available properties like `sch:name`.
+                    # Wait, Reference Ontology has `guide:Lecturer` class but no property linking it directly to Competency in the provided text. I will link Lecturers via their role in Guide (`sch:director`, `sch:instructor`) and list them as part of the guide's personnel.
+
+# Note on strict ontology usage for properties not explicitly defined for specific classes (e.g., Lecturer->Competency):
+# The reference defines `guide:Lecturer` but no property linking it to Competencies directly in the provided text block, only CourseGuide has `hasCompetency`. I will use available schema.org or guide:properties that fit.
+
+#################################################################
+#    Classes (from Reference)
+#################################################################
+
+guide:BachelorDegree rdf:type owl:Class ;
+                     rdfs:subClassOf guide:Degree .
+
+guide:Lecturer rdf:type owl:Class ;
+               rdfs:subClassOf sch:Person .
+
+guide:SyllabusItem rdf:type owl:Class ;
+                   rdfs:comment "A single element of a syllabus."@en .
+
+#################################################################
+#    Data Instances (Extraction from Document)
+#################################################################
+
+### 1. Course Guide Instance ###
+data:ANX-PRCL001-01 <http://w3id.org/def/guia#CourseGuide> ;
+                     rdf:type guide:Syllabus, sch:CourseInstance . # Using Syllabus as per document structure "Guía de Aprendizaje" often acts as syllabus in this context. But ontology has CourseGuide class too. I will use `guide:CourseGuide`.
+
+data:ANX-PRCL001-01 <http://w3id.org/def/guia#hasSyllabus> data:Syllabus_95000317 ;
+                     guide:numberOfCredits "6"^^xsd:decimal . # 6 ECTS.
+
+data:ANX-PRCL001-01 <http://w3id.org/def/guia#hasEvaluationSystem> data:Evaluation_System_Progresiva_95000317 ;
+                     guide:teachingPeriodMonths "Febrero-Junio"^^rdf:langString .
+
+data:ANX-PRCL001-01 <http://w3id.org/def/guia#hasLearningResult> data:Learning_Result_RA96_95000317 ;
+                     guide:numberOfCredits "6"^^xsd:decimal . # Reusing credits property for consistency.
+
+data:ANX-PRCL001-01 <http://w3id.org/def/guia#hasCompetency> data:Competency_CE54_95000317 ;
+                     guide:syllabusDescription "Fisiología de Sistemas"^^rdf:langString .
+
+data:ANX-PRCL001-01 <http://w3id.org/def/guia#hasDidacticResource> data:Resource_Tortora_95000317 ;
+                     guide:syllabusDescription "Principles of human phisiology"^^rdf:langString .
+
+data:ANX-PRCL001-01 <http://w3id.org/def/guia#hasScheduleEvent> data:Sched_Event_Week1_95000317 ;
+                     guide:syllabusDescription "Introducción/Metabolismo"^^rdf:langString .
+
+data:ANX-PRCL001-01 <http://w3id.org/def/guia#hasEvaluation> data:Evaluation_System_Progresiva_95000317 ;
+                     guide:syllabusDescription "Evaluación progresiva"^^rdf:langString .
+
+data:ANX-PRCL001-01 <http://w3id.org/def/guia#hasCourse> data:Course_Fisiologia_95000317 ;
+                     guide:syllabusDescription "Fisiología De Sistemas"^^rdf:langString .
+
+data:ANX-PRCL001-01 <http://w3id.org/def/guia#hasEvaluation> data:Evaluation_System_Progresiva_95000317 ;
+                     guide:syllabusDescription "Evaluación progresiva"^^rdf:langString .
+
+### 2. Degree Instance ###
+data:Course_Fisiologia_95000317 <http://w3id.org/def/guia#hasCourse> data:BachelorDegree_Biomedica ; # Using Bachelor as per "Grado".
+                                guide:syllabusDescription "Fisiología De Sistemas"^^rdf:langString .
+
+data:Course_Fisiologia_95000317 <http://w3id.org/def/guia#hasCourse> data:BachelorDegree_Biomedica ; # Reusing.
+                                sch:name "Grado En Ingenieria Biomedica"^^rdf:langString .
+
+data:Course_Fisiologia_95000317 <http://w3id.org/def/guia#hasCourse> data:BachelorDegree_Biomedica ; # Reusing.
+                                guide:numberOfCredits "6"^^xsd:decimal .
+
+### 3. University Center Instance ###
+data:Ets_Telecomunicacion_95000317 <http://w3id.org/def/guia#UniversityCenter> ;
+                                     rdf:type sch:Organization, guide:BachelorDegree ; # Using Degree as per ontology hierarchy? No, Bachelor is subClassOf Degree. I will use `guide:UniversityCenter` type and link to Degree via offers if possible (ontology has `offers`).
+
+data:Ets_Telecomunicacion_95000317 <http://w3id.org/def/guia#hasCourse> data:Course_Fisiologia_95000317 ;
+                                     sch:name "E.T.S. De Ingenieros De Telecomunicacion"^^rdf:langString .
+
+### 4. Lecturers Instance ###
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#Lecturer> ;
+                                    rdf:type sch:Person, guide:BachelorDegree ; # Using Person type from schema.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week10_95000317 ; # Link to specific event if possible.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week20_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week26_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http://w3id.org/def/guia#hasActivity> data:Sched_Event_Week28_95000317 ; # Assuming.
+                                    sch:name "Milagros Ramos Gomez"^^rdf:langString .
+
+data:Lecturer_Milagros_Ramos_Gomez <http

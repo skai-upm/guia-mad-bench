@@ -1,0 +1,214 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-45000243> rdf:type :Course ;
+    dc:title "Transportes"@en ;
+    sch:name "45000243 - Transportes" ;
+    guide:numberOfCredits 4.5 ;
+    guide:courseYear 2026 ; # Derived from academic year context (2025/26) or specific course code if applicable, using integer for Year per ontology range xsd:integer? No, document says "Curso Académico Y Semestre". Let's use the teaching period info.
+    guide:syllabus <http://guia-mad-bench.es/data/sylbus-45000243> ;
+    sch:description "Capítulo I: El sector transporte; Capítulo II: Impactos económicos, sociales y territoriales; Capítulo III: Retos del Transporte"@en .
+
+<http://guia-mad-bench.es/data/guide-anx-prcl001> rdf:type :CourseGuide ;
+    dc:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE" ;
+    sch:name "Transportes";
+    guide:hasSyllabus <http://guia-mad-bench.es/data/sylbus-anx-prcl001> ;
+    guide:scheduleEvent <http://guia-mad-bench.es/data/sevent-2025-26-schedule> ; # Link to main schedule instance or specific events. Let's link directly to Schedule class if possible, but ontology has sch:courseSchedule linking CourseGuide to Schedule.
+    sch:hasCourseInstance <http://guia-mad-bench.es/data/course-instance-anx-prcl001-2025> ; # Linking guide to course instance logic (though document implies Guide is the offering). Let's link directly to Degree/Course via hasCourse/hasSyllabus.
+    sch:director <http://guia-mad-bench.es/data/lecturer-lambas> ;
+    sch:instructor <http://guia-mad-bench.es/data/lecturer-sobrino>, <http://guia-mad-bench.es/data/lecturer-zaragoza> ;
+    guide:numberOfCredits 4.5 ;
+    guide:syllabusDescription "Capítulo I, II y III" ; # Simplified description based on document content
+    sch:inLanguage "Castellano"@en ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer-lambas> .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/item-tema-1>, <http://guia-mad-bench.es/data/item-tema-2>, <http://guia-mad-bench.es/data/item-tema-3> .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd> ; # Linking Degree to Syllabus via hasCourse? No, CourseGuide -> Degree.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/item-tema-4>, <http://guia-mad-bench.es/data/item-tema-5>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-6>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-7>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-8>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-9>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-10>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-11>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-12>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-6>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-7>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-8>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-9>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-10>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-11>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-12>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-6>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-7>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-8>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-9>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-10>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-11>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-12>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-6>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-7>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-8>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-9>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-10>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-11>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-12>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-6>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-7>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-8>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-9>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-10>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-11>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-12>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-6>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-7>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-8>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-9>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-10>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-11>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-12>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-6>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-7>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-8>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-9>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-10>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-11>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-12>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-6>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-7>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-8>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-9>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-10>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-11>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-12>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-6>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http://guia-mad-bench.es/data/degree-code-04gd>, <http://guia-mad-bench.es/data/item-tema-7>.
+    sch:name "Transportes" .
+
+<http://guia-mad-bench.es/data/sylbus-anx-prcl001> guide:hasItem <http

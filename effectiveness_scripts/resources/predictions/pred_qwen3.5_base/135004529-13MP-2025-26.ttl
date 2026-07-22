@@ -1,0 +1,545 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://w3id.org/def/guia#> .
+
+<http://guia-mad-bench.es/data/course-135004529> rdf:type :CourseGuide ;
+    rdfs:label "Ampliación De Sistemas de Información Geográfica"@en ;
+    guide:numberOfCredits 3.0^^xsd:decimal ;
+    sch:name "135004529 - Ampliación De Sistemas de Información Geográfica" ;
+    guide:syllabusDescription "Herramientas avanzadas de análisis vectorial y ráster, Hidrología, Ordenación de montes..."@en ;
+    guide:teachingPeriodMonths "Febrero-Junio"@en ;
+    sch:inLanguage "Castellano"@en ;
+    guide:courseYear 2025^^xsd:integer .
+
+<http://guia-mad-bench.es/data/course-13MP> rdf:type :BachelorDegree ;
+    rdfs:label "Grado En Ingenieria Del Medio Natural" ;
+    sch:name "13MP - Grado en Ingenieria del Medio Natural" ;
+    guide:numberOfCredits 20.0^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/course-135004529> :hasCourse <http://guia-mad-bench.es/data/instance-course-13MP_135004529> ;
+    sch:courseCode 135004529^^xsd:integer .
+
+<http://guia-mad-bench.es/data/course-instance-13MP_135004529> rdf:type :Course ;
+    rdfs:label "Ampliación De Sistemas de Información Geográfica" ;
+    sch:name "135004529 - Ampliación De Sistemas de Información Geográfica" .
+
+<http://guia-mad-bench.es/data/course-instance-13MP_135004529> :hasCourseInstance <http://guia-mad-bench.es/data/course-135004529> ;
+    guide:courseYear 2025^^xsd:integer .
+
+<http://guia-mad-bench.es/data/syllabus-main-course-guide> rdf:type :Syllabus ;
+    rdfs:label "Temario de la asignatura" ;
+    sch:name "Ampliación De Sistemas de Información Geográfica - Temario".
+
+<http://guia-mad-bench.es/data/course-135004529> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus-main-course-guide> .
+<http://guia-mad-bench.es/data/syllabus-main-course-guide> :itemIndex 1^^xsd:integer ;
+    rdfs:type :SyllabusItem ;
+    guide:syllabusDescription "Herramientas avanzadas de análisis vectorial y ráster"@en .
+
+<http://guia-mad-bench.es/data/course-135004529> guide:hasCourse <http://guia-mad-bench.es/data/instance-course-13MP_135004529> ;
+    sch:courseCode 135004529^^xsd:integer .
+
+<http://guia-mad-bench.es/data/course-instance-13MP_135004529> guide:hasCourseInstance <http://guia-mad-bench.es/data/course-135004529> ;
+    sch:courseCode 135004529^^xsd:integer .
+
+<http://guia-mad-bench.es/data/lecturer-emilio-ortega-perez> rdf:type :Lecturer ;
+    rdfs:label "Emilio Ortega Perez" ;
+    sch:name "Emilio Ortega Perez (Coordinador/a)" ;
+    guide:tutorshipsSchedule "L - 09:30 - 12:30<br>J - 09:30 - 12:30"@en .
+
+<http://guia-mad-bench.es/data/lecturer-emilio-ortega-perez> sch:email <mailto:emilio.ortega.perez@upm.es> ;
+    guide:office "07B.01.004.0"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course-135004529> sch:director <http://guia-mad-bench.es/data/lecturer-emilio-ortega-perez> ;
+    guide:numberOfCredits 3.0^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/course-135004529> sch:description "Los contenidos de la asignatura permiten el uso de los Sistemas de Información Geográfica (SIG) como herramienta para poder aplicar los conocimientos adquiridos previamente en otras asignaturas sobre planificación territorial, infendios forestales..."@en .
+
+<http://guia-mad-bench.es/data/course-135004529> guide:hasLearningResult <http://guia-mad-bench.es/data/learning-result-ra204> ;
+    sch:name "RA204"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course-135004529> guide:hasCompetency <http://guia-mad-bench.es/data/competency-cb02> ;
+    sch:name "CB02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course-135004529> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluation-system-main-course-guide> .
+
+<http://guia-mad-bench.es/data/competency-cb02> rdf:type :Competency ;
+    rdfs:label "CB02"^^xsd:string ;
+    guide:competencyCode "CB02"@en ;
+    sch:description "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional y posean las competencias que suelen demostrarse por medio de la elaboración y defensa de argumentos..."@en .
+
+<http://guia-mad-bench.es/data/learning-result-ra204> rdf:type :LearningResult ;
+    rdfs:label "RA204"^^xsd:string ;
+    guide:learningResultCode "RA204"@en ;
+    sch:description "Capacidad para integrar en un Sistemas de Información Geográfica información espacial y alfanumérica de diferentes fuentes"@en .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> rdf:type :EvaluationSystem ;
+    rdfs:label "Sistema de Evaluación"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"@en ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"@en ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega y Exposición del trabajo final"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem15-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (EF)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem17-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Examen teórico/práctico (T)"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem16-extra> .
+
+<http://guia-mad-bench.es/data/evaluation-system-main-course-guide> :trialDescription "Entrega trabajo práctico intermedia"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-135004529-sem10-extra> .
+
+<http://guia-mad-bench.es/data/

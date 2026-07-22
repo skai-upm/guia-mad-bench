@@ -1,0 +1,166 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and Course Structure
+guide:Degree_09AQ a guide:MasterDegree ;
+    sch:name "09AQ - Master Universitario En Ingenieria De Telecomunicacion" ;
+    guide:degreeCode "09AQ" ;
+    guide:hasCourse guide:Course_93000798 .
+
+guide:Course_93000798 a guide:Course ;
+    sch:name "93000798 - Aplicaciones Y Servicios" ;
+    sch:courseCode 93000798 ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 2025 ;
+    guide:semester "Primer semestre" ;
+    sch:numberOfCredits 6.0 .
+
+guide:CourseGuide_93000798 a guide:CourseGuide ;
+    sch:hasCourseInstance guide:Course_93000798 ;
+    sch:description "La asignatura tiene como objetivo que el alumno conozca los tipos principales de tecnologías de software y servicios, y su contexto de uso en el ámbito empresarial." ;
+    sch:inLanguage "Inglés/Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:numberOfCredits 6.0 ;
+    guide:totalHours "154" ; # Calculated based on 26h per credit approx
+    sch:instructor guide:Lecturer_JuanCarlosDueñas, guide:Lecturer_FelixCuadrado, guide:Lecturer_DavidRodriguez, guide:Lecturer_JavierAndion, guide:Lecturer_JuanCarlosYelmo, guide:Lecturer_JoseMariaAlamo, guide:Lecturer_YodSamuel ;
+    guide:hasCompetency guide:Comp_CE6, guide:Comp_CE7, guide:Comp_CE8, guide:Comp_CT4, guide:Comp_CT5 ;
+    guide:hasLearningResult guide:LR_RA4, guide:LR_RA3, guide:LR_RA5, guide:LR_RA1, guide:LR_RA2, guide:LR_RA7 ;
+    guide:hasEvaluation guide:EvalSystem_93000798 ;
+    guide:hasDidacticResource guide:Res_Moodle, guide:Res_Libro1, guide:Res_Libro2 .
+
+# University Center
+guide:UniversityCenter_ETSIT a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" ;
+    guide:offers guide:Degree_09AQ .
+
+# Lecturers
+guide:Lecturer_JuanCarlosDueñas a guide:Lecturer ;
+    sch:name "Juan Carlos Dueñas Lopez" ;
+    sch:email "juancursos.duenas@upm.es" ;
+    guide:office "C210" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:Lecturer_FelixCuadrado a guide:Lecturer ;
+    sch:name "Felix Aurelio Cuadrado Latasa" ;
+    sch:email "felix.cuadrado@upm.es" ;
+    guide:office "C218" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:Lecturer_DavidRodriguez a guide:Lecturer ;
+    sch:name "David Rodriguez Torrado" ;
+    sch:email "david.rtorrado@upm.es" ;
+    guide:office "C215" .
+
+guide:Lecturer_JavierAndion a guide:Lecturer ;
+    sch:name "Javier Andion Jimenez" ;
+    sch:email "j.andion@upm.es" ;
+    guide:office "C-210" .
+
+guide:Lecturer_JuanCarlosYelmo a guide:Lecturer ;
+    sch:name "Juan Carlos Yelmo Garcia" ;
+    sch:email "juancarlos.yelmo@upm.es" ;
+    guide:office "C217" .
+
+guide:Lecturer_JoseMariaAlamo a guide:Lecturer ;
+    sch:name "Jose Maria Del Alamo Ramiro" ;
+    sch:email "jm.delalamo@upm.es" ;
+    guide:office "C218" .
+
+guide:Lecturer_YodSamuel a guide:Lecturer ;
+    sch:name "Yod Samuel Martin Garcia" ;
+    sch:email "ys.martin@upm.es" ;
+    guide:office "B204-1" .
+
+# Competencies
+guide:Comp_CE6 a guide:Competency ;
+    guide:competencyCode "CE6" ;
+    guide:competencyDescription "Capacidad para modelar, diseñar, implant
+
+implantar, gestionar, operar, administrar y mantener redes, servicios y contenidos." .
+
+guide:Comp_CE7 a guide:Competency ;
+    guide:competencyCode "CE7" ;
+    guide:competencyDescription "Capacidad para realizar la planificación, toma de decisiones y empaquetamiento de redes, servicios y aplicaciones..." .
+
+guide:Comp_CT4 a guide:Competency ;
+    guide:competencyCode "CT4" ;
+    guide:competencyDescription "Capacidad para trabajar de forma efectiva como individuo, organizando y planificando su propio trabajo..." .
+
+# Learning Results
+guide:LR_RA4 a guide:LearningResult ;
+    guide:learningResultCode "RA4" ;
+    guide:learningResultDescription "Conocer los métodos de ingeniería útiles en el desarrollo y operación de aplicaciones y servicios" .
+
+guide:LR_RA1 a guide:LearningResult ;
+    guide:learningResultCode "RA1" ;
+    guide:learningResultDescription "Conocer estándares y protocolos utilizados en el desarrollo de aplicaciones orientadas a servicios." .
+
+# Evaluation System and Trials
+guide:EvalSystem_93000798 a guide:EvaluationSystem ;
+    guide:evaluationDescription "La calificación se obtiene mediante la media de las calificaciones correspondientes a los dos exámenes parciales, con igual peso." ;
+    guide:hasEvaluationTrial guide:Trial_ExamenParcial1, guide:Trial_ExamenFinal .
+
+guide:Trial_ExamenParcial1 a guide:EvaluationTrial ;
+    sch:name "Examen parcial 1" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4/10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency guide:Comp_CE6, guide:Comp_CT4 .
+
+guide:Trial_ExamenFinal a guide:EvaluationTrial ;
+    sch:name "Examen final parcial 1" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialMode "Presencial" .
+
+# Didactic Resources
+guide:Res_Moodle a guide:DidacticResource ;
+    sch:name "Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "https://moodle.upm.es/titulaciones/oficiales/login/login.php" .
+
+guide:Res_Libro1 a guide:DidacticResource ;
+    sch:name "Engineering software products, I. Sommerville" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Pearson 202<0xC2>    " .
+
+# Required Knowledge
+guide:ReqKnow_Java a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Conocimientos de programación en Java" .
+
+guide:ReqKnow_SoftwareEng a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Conocimientos de Ingeniería del Software y desarrollo de aplicaciones" .
+
+# Syllabus Items (Sample)
+guide:Syllabus_93000798 a guide:Syllabus ;
+    guide:hasItem guide:Topic_1, guide:Topic_5, guide:Topic_13 .
+
+guide:Topic_1 a guide:SyllabusItem ;
+    sch:name "Tema 1. Economía digital" ;
+    guide:itemIndex 1 .
+
+guide:Topic_5 a guide:SyllabusItem ;
+    sch:name "Tema 5. Sistemas de información en la empresa" ;
+    guide:itemIndex 5 .
+
+guide:Topic_13 a guide:SyllabusItem ;
+    sch:name "Tema 13. SCRUM" ;
+    guide:itemIndex 13 .
+
+# Schedule Events (Sample)
+guide:Event_Week8 a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 8" ;
+    guide:eventIndex 8 ;
+    guide:hasActivity guide:Act_ExamenParcial1 .
+
+guide:Act_ExamenParcial1 a guide:Activity ;
+    sch:name "Examen parcial 1" ;
+    guide:activityFormat "Presencial" ;
+    guide:activityDuration 2.0 ;
+    guide:activityDescription "Evaluación Progresiva" .

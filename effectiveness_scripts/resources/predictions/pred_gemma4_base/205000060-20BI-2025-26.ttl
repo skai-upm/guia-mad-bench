@@ -1,0 +1,193 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+# Degree and University Center
+<http://guia-mad-bench.es/data/degree_20BI> rdf:type guide:BachelorDegree ;
+    sch:name "Grado en Ciencias Agrarias y Bioeconomia" ;
+    guide:degreeCode "20BI" .
+
+<http://guia-mad-bench.es/data/center_ETSIAB> rdf:type guide:UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. Y Biosistemas" .
+
+# Course
+<http://guia-mad-bench.es/data/course_205000060> rdf:type guide:Course ;
+    sch:name "Diseño y Gestión de Explotaciones Ganaderas" ;
+    sch:courseCode 205000060 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Séptimo semestre" .
+
+# Course Guide Instance
+<http://guia-mad-bench.es/data/guide_205000060_2025_26> rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance <http://guia-mad-bench.es/data/course_205000060> ;
+    sch:instructor <http://guia-mad-bench.es/data/lecturer_antonio_callejo> ;
+    sch:instructor <http://guia_mad_bench_es/data/lecturer_ismael_ovejero> ;
+    guide:numberOfCredits 5.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:totalHours "130-135" ; # Estimated based on 5 ECTS * 26/27 hours
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_205000060> ;
+    guide:hasEvaluation <http://guia-mad-bench.es/data/eval_system_205000060> ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/comp_CB02>, 
+                         <http://guia-mad-bench.es/data/comp_CE17>, 
+                         <http://guia-mad-bench.es/data/comp_CG07>, 
+                         <http://guia-mad-bench.es/data/comp_CT03> ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/lr_RA318>, 
+                             <http://guia-mad_bench_es/data/lr_RA163>, 
+                             <http://guia-mad_bench_es/data/lr_RA166> ;
+    guide:hasDidacticResource <http://guia-mad-bench.es/data/res_callejo_2009>, 
+                               <http://guia-mad-bench.es/data/res_web_magrama>,
+                               <http://guia-mad-bench.es/data/res_youtube_porcino> ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/comp_CB02>, 
+                         <http://guia-mad-bench.es/data/comp_CE17>, 
+                         <http://guia-mad-bench.es/data/comp_CG07>, 
+                         <http://guia-mad-bench.es/data/comp_CT03> .
+
+# Lecturers
+<http://guia-mad-bench.es/data/lecturer_antonio_callejo> rdf:type guide:Lecturer ;
+    sch:name "Antonio Callejo Ramos" ;
+    sch:email "antoni.callejo@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+<http://guia-mad-bench.es/data/lecturer_ismael_ovejero> rdf:type guide:Lecturer ;
+    sch:name "Ismael Ovejero Rubio" ;
+    sch:email "ismael.ovejero.rubio@upm.es" .
+
+# Competencies
+<http://guia-mad-bench.es/data/comp_CB02> rdf:type guide:Competency ;
+    guide:competencyCode "CB02" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional..." .
+
+<http://guia-mad-bench.es/data/comp_CE17> rdf:type guide:Competency ;
+    guide:competencyCode "CE17" ;
+    guide:competencyDescription "Conocer y gestionar los principales sistemas de producción de materias primas de origen animal." .
+
+<http://guia-mad-bench.es/data/comp_CG07> rdf:type guide:Competency ;
+    guide:competencyCode "CG07" ;
+    guide:competencyDescription "Adquirir la formación profesional necesaria para desarrollar estrategias sostenibles de producción vegetal y animal..." .
+
+<http://guia-mad-bench.es/data/comp_CT03> rdf:type guide:Competency ;
+    guide:competencyCode "CT03" ;
+    guide:competencyDescription "Tener compromiso ético y profesional y respeto por el medio ambiente." .
+
+# Learning Results
+<http://guia-mad-bench.es/data/lr_RA318> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA318" ;
+    guide:learningResultDescription "Conocer y aplicar el análisis de la estructura de costes a la explotación del ganado vacuno, ovino y caprino..." .
+
+<http://guia-mad-bench.es/data/lr_RA163> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA163" ;
+    guide:learningResultDescription "Aplicar el análisis de la estructura de costes a las explotaciones de monogástricos..." .
+
+<http://guia-mad-bench.es/data/lr_RA166> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA166" ;
+    guide:learningResultDescription "Comparar los diferentes sistemas de producción de rumiantes bajo criterios técnicos, económicos, sociales y medioambientales." .
+
+# Syllabus
+<http://guia-mad-bench.es/data/syllabus_205000060> rdf:type guide:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/item_1>, 
+                  <http://guia-mad-bench.es/data/item_2>, 
+                  <http://guia-mad-bench.es/data/item_3>, 
+                  <http://guia-mad-bench.es/data/item_4>, 
+                  <http://guia-mad-bench.es/data/item_5>, 
+                  <http://guia-md_bench_es/data/item_6>, 
+                  <http://guia-mad-bench.es/data/item_7>, 
+                  <http://guia-mad-bench.es/data/item_8> .
+
+<http://guia-mad-bench.es/data/item_1> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Instalaciones para avicultura de carne" .
+
+<http://guia-mad-bench.es/data/item_2> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Instalaciones para avicultura de puesta" .
+
+<http://guia-mad-bench.es/data/item_3> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Instalaciones para porcino intensivo" .
+
+<http://guia-mad-bench.es/data/item_4> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Instalaciones para vacuno de leche" .
+
+<http://guia-mad-bench.es/data/item_5> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Instalaciones para vacuno de carne" .
+
+<http://guia-mad-bench.es/data/item_6> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Instalaciones para pequeños rumiantes" .
+
+<http://guia-mad-bench.es/data/item_7> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Instalaciones complementarias" .
+
+<http://guia-mad_bench_es/data/item_8> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 8 ;
+    guide:syllabusDescription "Gestión de Explotaciones Ganaderas (Ecuaciones, Reposición, Coste)" .
+
+# Evaluation System
+<http://guia-mad-bench.es/data/eval_system_205000060> rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de EVALUACIÓN DISTRIBUIDA O PROGRESIVA (EP)." ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial_quiz_sem1>, 
+                              <http://guia-mad-bench_es/data/trial_exam_final> .
+
+<http://guia-mad-bench.es/data/trial_quiz_sem1> rdf:type guide:EvaluationTrial ;
+    guide:trialType "Cuestionario de Autoevaluación" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "1%" ;
+    guide:evaluationDuration "00:30" ;
+    guide:trialMode "No presencial" .
+
+<http://guia-mad-bench.es/data/trial_exam_final> rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Final" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "50%" ;
+    guide:evaluationDuration "03:30" ;
+    guide:trialMode "Presencial" .
+
+# Schedule and Activities
+<http://guia-mad-bench.es/data/schedule_205000060> rdf:type guide:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event_sem1>, 
+                       <http://guia-mad-bench.es/data/event_sem2>, 
+                       <http://guia-mad-bench.es/data/event_sem8> .
+
+<http://guia-mad-bench.es/data/event_sem1> rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/act_lm_topic4_1>, 
+                       <http://guia-mad-bench.es/data/act_pr_topic4_1> .
+
+<http://guia-mad-bench.es/data/act_lm_topic4_1> rdf:type guide:Activity ;
+    guide:activityDescription "Tema 4.1" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+<http://gu:mad-bench.es/data/act_pr_topic4_1> rdf:type guide:Activity ;
+    guide:activityDescription "Tema 4.1" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Clase de Problemas" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+<http://guia-mad-bench.es/data/res_callejo_2009> rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Cow confort. El bienestar de la vaca lechera." ;
+    guide:bibliographyType "Bibliografía" .
+
+<http://guia-mad-bench.es/data/res_web_magrama> rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "http://www.magrama.gob.es/" ;
+    guide:bibliographyType "Recursos web" .
+
+<http://guia-mad-bench.es/data/res_youtube_porcino> rdf:type guide:DidactricResource ;
+    guide:bibliographyTitle "Laboratorio de Bienestar Porcino (vídeo)" ;
+    guide:bibliographyType "Recursos web" .
+
+# Required Knowledge
+<http://guia-mad-bench.es/data/req_knowledge_205000060> rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Sistemas De Producción Animal: Rumiantes, Monogástricos; Comportamiento Y Bienestar Animal" .

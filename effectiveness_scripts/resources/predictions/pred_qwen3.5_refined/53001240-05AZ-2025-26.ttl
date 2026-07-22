@@ -1,0 +1,165 @@
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sch: https://schema.org/ .
+
+<http://guia-mad-bench.es/data/guia/course_guide_53001240> rdf:type guide:CourseGuide ;
+    dc:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en ;
+    sch:name "Microelectronica" ;
+    guide:numberOfCredits 3^^xsd:decimal ;
+    guide:syllabusDescription "This subject addresses two main topics..."@en ;
+    guide:teachingPeriodMonths "Septiembre-Enero"@en ;
+    guide:periodEndingMonth "Enero"@en ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/guia/schedule_53001240> .
+
+<http://guia-mad-bench.es/data/guide/course/53001240> rdf:type guide:Course ;
+    sch:name "Microelectronica" ;
+    sch:courseCode 53001240^^xsd:integer ;
+    sch:numberOfCredits 3^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/guide/degree_master_industrial> rdf:type guide:BachelorDegree, guide:MasterDegree ;
+    dct:title "Master Universitario En Ingenieria Industrial"@en ;
+    guide:degreeCode "05AZ"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guide/university_center_ets_industrial> rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Industriales" ;
+    dct:title "Centro responsable de la titulación"@en .
+
+guide:BachelorDegree a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/def/guia#> guide:MasterDegree, guide:BachelorDegree .
+
+<http://guia-mad-bench.es/data/guide/course_guide_53001240> sch:hasCourseInstance <http://guia-mad-bench.es/data/guide/course/53001240> ;
+    dct:creator "Alfonso Rodriguez Medina" , "Jose Andres Otero Marnotes" .
+
+<http://guia-mad-bench.es/data/guide/l_alfonso_rodriguez_medina> rdf:type guide:Lecturer, sch:Person ;
+    sch:name "Alfonso Rodriguez Medina"@en ;
+    sch:email <mailto:alfonso.rodriguezm@upm.es> .
+
+<http://guia-mad-bench.es/data/guide/l_jose_andres_otero_marnotes> rdf:type guide:Lecturer, sch:Person ;
+    sch:name "Jose Andres Otero Marnotes"@en ;
+    sch:email <mailto:joseandres.otero@upm.es> .
+
+<http://guia-mad-bench.es/data/guide/l_daniel_vazquez_iglesias> rdf:type guide:Lecturer, sch:Person ;
+    sch:name "Daniel Vazquez Iglesias"@en ;
+    sch:email <mailto:daniel.vazquez@upm.es> .
+
+<http://guia-mad-bench.es/data/guide/l_luis_donatien_waucquez_jimenez> rdf:type guide:Lecturer, sch:Person ;
+    sch:name "Luis Donatien Waucquez Jiménez"@en ;
+    sch:email <mailto:luis.waucquez.jimenez@upm.es> .
+
+<http://guia-mad-bench.es/data/guide/course_guide_53001240> guide:sch:director <http://guia-mad-bench.es/data/guide/l_alfonso_rodriguez_medina> ;
+    sch:instructor <http://guia-mad-bench.es/data/guide/l_daniel_vazquez_iglesias>, <http://guia-mad-bench.es/data/guide/l_jose_andres_otero_marnotes>.
+
+<http://guia-mad-bench.es/data/guide/course_guide_53001240> guide:hasCompetency <http://guia-mad-bench.es/data/guide/comp_aplica>, <http://guia-mad-bench.es/data/guide/comp_experimenta>, <http://guia-mad-bench.es/data/guide/comp_diseña>, <http://guia-mad-bench.es/data/guide/comp_trabaja_en_equipo>, <http://guia-mad-bench.es/data/guide/comp_resuelve>, <http://guia-mad-bench.es/data/guide/comp_comunica>, <http://guia-mad-bench.es/data/guide/comp_usa_herramientas>, <http://guia-mad-bench.es/data/guide/comp_idea> .
+
+<http://guia-mad-bench.es/data/guide/course_guide_53001240> guide:hasLearningResult <http://guia-mad-bench.es/data/guide/lr_ra121>, <http://guia-mad-bench.es/data/guide/lr_ra123>, <http://guia-mad-bench.es/data/guide/lr_ra77>, <http://guia-mad-bench.es/data/guide/lr_ra125>, <http://guia-mad-bench.es/data/guide/lr_ra24> .
+
+<http://guia-mad-bench.es/data/guide/comp_aplica> rdf:type guide:Competency ;
+    sch:name "APLICA"@en ;
+    guide:competencyDescription "Habilidad para aplicar conocimientos científicos, matemáticos y tecnológicos en sistemas relacionados con la práctica de la ingeniería."@es .
+
+<http://guia-mad-bench.es/data/guide/comp_experimenta> rdf:type guide:Competency ;
+    sch:name "EXPERIMENTA"@en ;
+    guide:competencyDescription "Habilidad para diseñar y realizar experimentos así como analizar e interpretar datos."@es .
+
+<http://guia-mad-bench.es/data/guide/comp_diseña> rdf:type guide:Competency ;
+    sch:name "DISEÑA"@en ;
+    guide:competencyDescription "Habilidad para diseñar un sistema, componente o proceso que alcance los requisitos deseados teniendo en cuenta restricciones realistas..."@es .
+
+<http://guia-mad-bench.es/data/guide/comp_trabaja_en_equipo> rdf:type guide:Competency ;
+    sch:name "TRABAJA EN EQUIPO"@en ;
+    guide:competencyDescription "Habilidad para trabajar en equipos multidisciplinares."@es .
+
+<http://guia-mad-bench.es/data/guide/comp_resuelve> rdf:type guide:Competency ;
+    sch:name "RESUELVE"@en ;
+    guide:competencyDescription "Habilidad para identificar, formular y resolver problemas de ingeniería."@es .
+
+<http://guia-mad-bench.es/data/guide/comp_comunica> rdf:type guide:Competency ;
+    sch:name "COMUNICA"@en ;
+    guide:competencyDescription "Habilidad para comunicar eficazmente."@es .
+
+<http://guia-mad-bench.es/data/guide/comp_usa_herramientas> rdf:type guide:Competency ;
+    sch:name "USA HERRAMIENTAS"@en ;
+    guide:competencyDescription "Habilidad para usar las técnicas, destrezas y herramientas ingenieriles modernas necesarias para la práctica de la ingeniería."@es .
+
+<http://guia-mad-bench.es/data/guide/comp_idea> rdf:type guide:Competency ;
+    sch:name "IDEA"@en ;
+    guide:competencyDescription "Creatividad"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guide/lr_ra121> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA121"^^xsd:string ;
+    sch:name "Organiza la información."@en .
+
+<http://guia-mad-bench.es/data/guide/lr_ra123> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA123"^^xsd:string ;
+    sch:name "Utiliza los recursos gráficos y los medios necesarios para comunicar de forma efectiva la información."@en .
+
+<http://guia-mad-bench.es/data/guide/lr_ra77> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA77"^^xsd:string ;
+    sch:name "Desarrollo de múltiples soluciones a un problema"@es .
+
+<http://guia-mad-bench.es/data/guide/lr_ra125> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA125"^^xsd:string ;
+    sch:name "Utiliza correctamente técnicas de comunicación oral."@en .
+
+<http://guia-mad-bench.es/data/guide/lr_ra24> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA24"^^xsd:string ;
+    sch:name "Capacidad de analizar y diseñar filtros digitales"@es .
+
+guide:Syllabus a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/def/guia#> guide:SyllabusItem, guide:Syllabus .
+
+<http://guia-mad-bench.es/data/guide/syllabus_microelectronics> rdf:type guide:Syllabus ;
+    sch:name "Microelectronica"^^xsd:string ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/guide/53001240>.
+
+<http://guia-mad-bench.es/data/guide/syllabus_reconfigurable> rdf:type guide:Syllabus ;
+    sch:name "Reconfigurable Computing"^^xsd:string .
+
+guide:Schedule a owl:Class ;
+    rdfs:subClassOf <https://schema.org/> sch:Event, sch:CourseInstance.
+
+<http://guia-mad-bench.es/data/guide/schedule_53001240> rdf:type guide:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/guide/seventy_one>, <http://guia-mad-bench.es/data/guide/seventy_two>.
+
+<http://guia-mad-bench.es/data/guide/schedule_event_1> rdf:type guide:ScheduleEvent ;
+    sch:eventIndex 1^^xsd:integer ;
+    sch:name "Introduction to microelectronics" .
+
+guide:SyllabusItem a owl:Class ;
+    rdfs:subClassOf <https://schema.org/> sch:Event, sch:CourseInstance.
+
+<http://guia-mad-bench.es/data/guide/sy_item_1> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "Introduction to microelectronics" .
+
+guide:EvaluationSystem a owl:Class ;
+    rdfs:subClassOf <https://schema.org/> sch:Event, sch:CourseInstance.
+
+<http://guia-mad-bench.es/data/guide/eval_system_53001240> rdf:type guide:EvaluationSystem ;
+    sch:name "Evaluación Progresiva y Global" .
+
+guide:EvaluationTrial a owl:Class ;
+    rdfs:subClassOf <https://schema.org/> sch:Event, sch:CourseInstance.
+
+<http://guia-mad-bench.es/data/guide/eval_trial_hw1> rdf:type guide:EvaluationTrial ;
+    guide:trialType "Homework"^^xsd:string ;
+    guide:evaluationDescription "Evaluación Progresiva y Global - No presencial"@en .
+
+guide:ScheduleEvent a owl:Class ;
+    rdfs:subClassOf <https://schema.org/> sch:Event, sch:CourseInstance.
+
+<http://guia-mad-bench.es/data/guide/seventy_one> rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 17^^xsd:integer ;
+    guide:scheduleDescription "Final written exam" .
+
+guide:EvaluationTrial a owl:ObjectProperty, <https://schema.org/> sch:Event.
+
+<http://guia-mad-bench.es/data/guide/eval_trial_hw1> rdf:type guide:EvaluationTrial ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/guide/seventy_one>.
+
+guide:SyllabusItem a owl:ObjectProperty, <https://schema.org/> sch:Event.

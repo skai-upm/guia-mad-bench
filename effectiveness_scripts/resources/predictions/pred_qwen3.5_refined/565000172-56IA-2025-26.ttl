@@ -1,0 +1,522 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dct: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sch: <https://schema.org/> .
+
+<http://guia-mad-bench.es/data/course-guide/GA_56IA_565000172> rdf:type :CourseGuide ;
+    dc:title "Sistemas Electronicos Digitales"@en ;
+    dct:creator "Alberto Brunete Gonzalez" ,
+                "Rebeca Herrero Martin" ;
+    sch:name "565000172 - Sistemas Electronicos Digitales"@en ;
+    guide:numberOfCredits 7.5^^xsd:decimal ;
+    guide:courseYear 2025-26^^xsd:string ; # Using string as per document text, though ontology says integer for course year in some defs but xsd:string is safer given "2025/26" format often used. Actually ontology defines `guide:courseYear` range as `xsd:integer`. I will use 2025-26 if possible or just the code part? Document says "Curso académico Y SEMESTRE ... 2025/26". Let's stick to document text representation for data properties where appropriate.
+    sch:description "Esta asignatura, continuación lógica de Electrónica Digital y Microprocesadores..."@en ;
+    guide:hasCourse <http://guia-mad-bench.es/data/degree/56IA> ;
+    sch:director <http://guia-mad-bench.es/data/person/alberto_brunete_gonzalez> .
+
+<http://guia-mad-bench.es/data/course-guide/GA_56IA_565000172> guide:hasDidacticResource <http://guia-mad-bench.es/data/resource/Circuit_Design_with_VHDL> ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation/examen_parcial> ,
+                            <http://guia-mad-bench.es/data/evaluation/trabajo_asignatura> .
+
+<http://guia-mad-bench.es/data/course-guide/GA_56IA_565000172> guide:hasLearningResult <http://guia-mad-bench.es/data/result/Ra58> ,
+                                    <http://guia-mad-bench.es/data/result/RA59> ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/competence/CE_24> .
+
+<http://guia-mad-bench.es/data/course-guide/GA_56IA_565000172> sch:eventSchedule <http://guia-mad-bench.es/data/schedule/Semestre_1_Sistemas_Electronicos_Digitales> ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4>.
+
+<http://guia-mad-bench.es/data/course-guide/GA_56IA_565000172> sch:name "Guía de Aprendizje - Sistemas Electronicos Digitales"@en ;
+    guide:publishedAt <https://moodle.upm.es/titulaciones/oficiales/login/> .
+
+<http://guia-mad-bench.es/data/degree/56IA> rdf:type :Degree ;
+    sch:name "Grado En Ingenieria Electronica Industrial Y Automatica"@en ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course/GA_56IA_565000172>.
+
+<http://guia-mad-bench.es/data/person/alberto_brunete_gonzalez> rdf:type :Lecturer ;
+    sch:name "Alberto Brunete Gonzalez"@en ;
+    guide:office "C-107" .
+
+<http://guia-mad-bench.es/data/competence/CE_24> rdf:type :Competency ;
+    guide:competencyCode "CE 24"^^xsd:string ;
+    sch:description "Capacidad para diseñar sistemas electrónicos analógicos, digitales y de potencia."@en .
+
+<http://guia-mad-bench.es/data/result/Ra58> rdf:type :LearningResult ;
+    guide:learningResultCode "RA58"^^xsd:string ;
+    sch:description "Conocimiento y capacidad para el modelado y simulación de sistemas electrónicos digitales."@en .
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica> ;
+    sch:description "Introducción a la microelectrónica, breve historia y tendencias actuales."@en .
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl> ;
+    sch:description "Diseño mediante Lenguajes de Descripción Hardware."@en .
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores> ;
+    sch:description "Características de los microprocesadores y microcontroladores."@en .
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d> ;
+    sch:description "Conversores A/D y D/A."@en .
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie> ;
+    sch:description "Comunicaciones Serie: UART, SPI, I2C."@en .
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica> ;
+    sch:description "Introducción a la microelectrónica, breve historia y tendencias actuales."@en .
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl> ;
+    sch:description "Diseño mediante Lenguajes de Descripción Hardware."@en .
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores> ;
+    sch:description "Características de los microprocesadores y microcontroladores."@en .
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d> ;
+    sch:description "Conversores A/D y D/A."@en .
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie> ;
+    sch:description "Comunicaciones Serie: UART, SPI, I2C."@en .
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>,
+                 <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>,
+                 <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>,
+                 <http://guia-mad-bench.es/data/syllabusitem/conversores_ad_d>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/comunicaciones_serie>,
+                 <http://guia-mad-bench.es/data/syllabusitem/intro_microelectrónica>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/diseño_vhdl>,
+                 <http://guia-mad-bench.es/data/syllabusitem/microcontroladores>.
+
+<http://guia-mad-bench.es/data/curriculum/Tema_1_a_Tema_4> guide:hasItem <http://guia-mad-bench.es

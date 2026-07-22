@@ -1,0 +1,104 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sch: <https://schema.org/> .
+
+<http://guia-mad-bench.es/data/course_guide_61AH> rdf:type guide:CourseGuide ;
+    rdfs:subClassOf sch:CourseInstance ;
+    dct:title "Metodología Y Técnicas De Investigación"@en ;
+    guide:numberOfCredits 3^^xsd:decimal ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/syllabus_61AH> .
+
+<http://guia-mad-bench.es/data/master_61AH> rdf:type guide:MasterDegree ;
+    rdfs:subClassOf guide:Degree ;
+    dct:title "Máster Universitario En Aprendizaje Automático Y Datos Masivos"@en ;
+    sch:name "Máster Universitario en Aprendizaje Automático y Datos Masivos" .
+
+<http://guia-mad-bench.es/data/course_613000136> rdf:type guide:Course ;
+    rdfs:subClassOf sch:Course ;
+    dct:title "Metodología Y Técnicas De Investigación"@en ;
+    guide:numberOfCredits 3^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/lecturer_david_camacho> rdf:type guide:Lecturer ;
+    rdfs:subClassOf sch:Person ;
+    dct:title "David Camacho Fernandez" ;
+    sch:name "David Camacho Fernandez"@en ;
+    sch:email <mailto:david.camacho@upm.es> ;
+    guide:office "1215"^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer_jose_naranjo> rdf:type guide:Lecturer ;
+    rdfs:subClassOf sch:Person ;
+    dct:title "Jose Eugenio Naranjo Hernandez"@en ;
+    sch:name "Jose Eugenio Naranjo Hernandez"^^xsd:string ;
+    sch:email <mailto:joseeugenio.naranjo@upm.es> ;
+    guide:office "4120"^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus_61AH> rdf:type guide:Syllabus ;
+    rdfs:subClassOf sch:Syllabus ;
+    dct:title <http://w3id.org/def/guia#ANX-PR/CL/001-01>.
+
+<http://guia-mad-bench.es/data/syllabus_item_1> rdf:type guide:SyllabusItem ;
+    rdfs:subClassOf sch:Event ;
+    dct:title "Bloque I (INVESTIGACIÓN)"^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus_item_2> rdf:type guide:SyllabusItem ;
+    rdfs:subClassOf sch:Event ;
+    dct:title "Bloque II (PROYECTOS)"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency_CB6> rdf:type guide:Competency ;
+    guide:competencyCode "CB6"^^xsd:string ;
+    rdfs:comment "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales en el desarrollo y/o aplicación de ideas"@en .
+
+<http://guia-mad-bench.es/data/learning_result_S01> rdf:type guide:LearningResult ;
+    guide:learningResultCode "S01"^^xsd:string ;
+    rdfs:comment "El alumno elabora artículos e informes científicos que demuestran una o varias hipótesis mediante los resultados obtenidos a partir de experimentos"@en .
+
+<http://guia-mad-bench.es/data/evaluation_system_61AH> rdf:type guide:EvaluationSystem ;
+    rdfs:subClassOf sch:Event ;
+    dct:title "Evaluación Progresiva y Global"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule_event_sem3_eval_progressive> rdf:type guide:ScheduleEvent ;
+    rdfs:subClassOf sch:Event ;
+    guide:eventIndex 10^^xsd:integer ;
+    dct:title "Presentación de un trabajo de investigación"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule_event_sem5_eval_global> rdf:type guide:ScheduleEvent ;
+    rdfs:subClassOf sch:Event ;
+    guide:eventIndex 12^^xsd:integer ;
+    dct:title "Exposición de un proyecto de investigación"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluation_trial_progressive> rdf:type guide:EvaluationTrial ;
+    rdfs:subClassOf sch:Event ;
+    guide:trialType "Presentación en Grupo"@en ;
+    guide:gradePercentage 50.0^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluation_trial_global> rdf:type guide:EvaluationTrial ;
+    rdfs:subClassOf sch:Event ;
+    guide:trialType "Exposición de un proyecto"@en ;
+    guide:gradePercentage 50.0^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluation_trial_extraordinary> rdf:type guide:EvaluationTrial ;
+    rdfs:subClassOf sch:Event ;
+    guide:trialType "Presentación Individual"@en ;
+    guide:minimumScore 5 / 10^^xsd:string .
+
+<http://guia-mad-bench.es/data/resource_hopf_2019> rdf:type guide:DidacticResource ;
+    rdfs:subClassOf sch:Event ;
+    dct:title "Fake science and the knowledge crisis"^^xsd:string ;
+    guide:bibliographyType "Bibliografía"@en .
+
+<http://guia-mad-bench.es/data/resource_jones_2015> rdf:type guide:DidacticResource ;
+    rdfs:subClassOf sch:Event ;
+    dct:title "Writing a research proposal"^^xsd:string ;
+    guide:bibliographyType "Bibliografía"@en .
+
+<http://guia-mad-bench.es/data/course_guide_61AH> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_61AH> ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule_event_sem3_eval_progressive>,<http://guia-mad-bench.es/data/schedule_event_sem5_eval_global>.
+
+<http://guia-mad-bench.es/data/course_guide_61AH> guide:hasCompetency <http://guia-mad-bench.es/data/competency_CB6> ;
+    sch:name "Metodología Y Técnicas De Investigación" .

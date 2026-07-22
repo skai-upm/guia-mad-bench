@@ -1,0 +1,123 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide_595024328> rdf:type :CourseGuide ;
+    dc:title "Electronica De Comunicaciones I"@en ;
+    sch:name "Electronica De Comunicaciones I" ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_595024328> ;
+    guide:numberOfCredits 6.0^^xsd:decimal ;
+    guide:sch:courseYear "2025/26"^^xsd:string ; # Using string as per document context, though ontology suggests integer for course year on Course class. I will use the specific property available in data properties section if applicable or schema.org equivalents where appropriate based on extraction. The prompt says strictly using classes and properties of provided ontology. `guide:courseYear` range is xsd:integer. Document has "2025/26". I'll map to integer 2025 for the year part or keep as string if it fits better in context, but strict adherence suggests mapping data types correctly. Let's use a derived value or just store text where ontology allows (e.g., `guide:teachingPeriod`).
+    guide:courseYear "2026"^^xsd:integer ; # Extracted from 2025/26 academic year, focusing on the active period start/end context. Actually document says 2025-26. I will use xsd:string for `guide:teachingPeriod` as per ontology definition (xsd:string).
+    guide:teachingPeriod "Septiembre-Enero"^^xsd:string ;
+    sch:inLanguage "Castellano"@en ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer_jose_pardo> ,
+              <http://guia-mad-bench.es/data/lecturer_fco_ortega> ,
+              <http://guia-mad-bench.es/data/lecturer_joseluis_jimenez> ;
+    sch:director <http://guia-mad-bench.es/data/lecturer_fco_ortega> .
+
+<http://guia-mad-bench.es/data/syllabus_595024328> rdf:type :Syllabus ;
+    guide:sch:description "Introducción al estudio de los osciladores... generación de señales de alta frecuencia..."^^xsd:string ; # Extracted from Section 5.1 description text summary.
+
+<http://guia-mad-bench.es/data/syllabus_item_oscillators> rdf:type :SyllabusItem ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/learning_result_ra232> . # RA232 mentioned in section 4.2
+
+<http://guia-mad-bench.es/data/syllabus_item_oscillators> rdf:type :SyllabusItem ;
+    guide:itemIndex "1"^^xsd:integer ;
+    sch:description "Introducción al estudio de los osciladores." . # From Section 5.2
+
+<http://guia-mad-bench.es/data/syllabus_item_lc_oscillators> rdf:type :SyllabusItem ;
+    guide:itemIndex "2"^^xsd:integer ;
+    sch:description "Osciladores autocontrolados LC." . # From Section 5.2
+
+<http://guia-mad-bench.es/data/syllabus_item_crystal_oscillators> rdf:type :SyllabusItem ;
+    guide:itemIndex "3"^^xsd:integer ;
+    sch:description "Osciladores a cristal." . # From Section 5.2
+
+<http://guia-mad-bench.es/data/degree_59tl> rdf:type :guide:BachelorDegree ,
+                                              owl:Thing ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course_595024328> . # Linking Degree to Course
+
+<http://guia-mad-bench.es/data/degree_59tl> rdf:type :Degree ,
+                                              owl:Thing ;
+    guide:numberOfCredits 6.0^^xsd:decimal ;
+    sch:name "Grado En Ingenieria Telematica" . # From Section 1
+
+<http://guia-mad-bench.es/data/course_595024328> rdf:type :Course ,
+                                              owl:Thing ;
+    guide:sch:courseCode 595024328^^xsd:string ; # Document code is string, ontology property range xsd:integer. I will use the value as provided in document context or map to integer if possible (e.g., numeric ID). Let's stick to document text for safety unless strict type mapping required. Ontology `sch:courseCode` says xsd:integer.
+    sch:numberOfCredits 6.0^^xsd:decimal ; # From Section 1 table
+
+<http://guia-mad-bench.es/data/course_595024328> rdf:type :Course ,
+                                              owl:Thing ;
+    guide:sch:courseYear "2025"^^xsd:string . # Mapping academic year to integer or string based on ontology `guide:courseYear` (xsdt:integer). I will use 2026 as the active year.
+
+<http://guia-mad-bench.es/data/lecturer_jose_pardo> rdf:type :Lecturer ,
+                                              sch:Person ;
+    sch:name "Jose Manuel Pardo Martin" . # From Section 2 table
+    guide:sch:email <mailto:josemanuel.pardo@upm.es>^^xsd:string ;
+    guide:tutorshipsSchedule "Sin horario."^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer_fco_ortega> rdf:type :Lecturer ,
+                                              sch:Person ;
+    sch:name "Fco. Javier Ortega Gonzalez" ; # From Section 2 table (Coordinador)
+    guide:sch:email <mailto:franciscojavier.ortega@upm.es>^^xsd:string ;
+    guide:tutorshipsSchedule "Sin horario."^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer_joseluis_jimenez> rdf:type :Lecturer ,
+                                              sch:Person ;
+    sch:name "Jose Luis Jimenez Martin" . # From Section 2 table
+    guide:sch:email <mailto:joseluis.jimenez@upm.es>^^xsd:string ;
+    guide:tutorshipsSchedule "Sin horario."^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluation_system_595024328> rdf:type :EvaluationSystem ,
+                                              owl:Thing ;
+    sch:description "La evaluación se divide en dos partes: teoría (70%) y práctica (30%)."^^xsd:string . # From Section 7.2
+
+<http://guia-mad-bench.es/data/evaluation_trial_1> rdf:type :EvaluationTrial ,
+                                              owl:Thing ;
+    guide:sch:description "1er Examen parcial" ;
+    sch:name "1er Examen parcial" ;
+    guide:trialType "Examen Escrito"^^xsd:string . # From Section 7.1 table (EX)
+    guide:gradePercentage "50%"^^xsd:string ; # From Section 7.1 table
+    guide:minScore "5 / 10"^^xsd:string ; # From Section 7.1 table
+
+<http://guia-mad-bench.es/data/evaluation_trial_2> rdf:type :EvaluationTrial ,
+                                              owl:Thing ;
+    sch:name "Examen Final de Teoría" . # From Section 7.1 (Global) and 6.1 Schedule
+    guide:sch:description "Examen Final de Teoría" ;
+    guide:trialType "Examen Escrito"^^xsd:string ;
+    guide:gradePercentage "100%"^^xsd:string ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule_event_final> .
+
+<http://guia-mad-bench.es/data/evaluation_trial_3> rdf:type :EvaluationTrial ,
+                                              owl:Thing ; # Extraordinary trial mentioned in 7.1.3
+    guide:sch:description "Prueba final de Teoría y Laboratorio" ;
+    sch:name "Examen Convocatoria Ordinaria" .
+
+<http://guia-mad-bench.es/data/competency_ce_sc03> rdf:type :Competency ,
+                                              owl:Thing ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/learning_result_ra232> ; # Linking competencies to results if applicable, though ontology has `guide:hasCompetency` on CourseGuide.
+
+<http://guia-mad-bench.es/data/course_guide_595024328> rdf:type :CourseGuide ,
+                                              owl:Thing ;
+    guide:sch:name "Electronica De Comunicaciones I" . # From Section 1 table
+    sch:description "Servir de introducción al alumno en el mundo de la generación de señales..."^^xsd:string . # From Section 5.1
+
+<http://guia-mad-bench.es/data/learning_result_ra232> rdf:type :LearningResult ,
+                                              owl:Thing ;
+    guide:sch:description "Se concretarán para cada asignatura optativa o para la realización de prácticas en empresas."^^xsd:string . # From Section 4.2
+
+<http://guia-mad-bench.es/data/schedule_event_1> rdf:type :ScheduleEvent ,
+                                              sch:Event ;
+    guide:sch:eventIndex "8"^^xsd:integer ; # Based on table in section 6 (Semester 8)
+    sch:description "Tema 5 - Duración: 03:00 LM".
+
+<http://guia-mad-bench.es/data/schedule_event_2> rdf:type :ScheduleEvent ,
+                                              sch:Event ;
+    guide:sch:eventIndex "14"^^xsd:integer . # Based on table in section 6 (Semester 14)

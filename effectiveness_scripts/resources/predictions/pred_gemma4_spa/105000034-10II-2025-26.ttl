@@ -1,0 +1,155 @@
+@prefix : <http://guia-mad-emb.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+:degree_10II a guide:Degree ;
+    sch:name "Grado En Ingenieria Informatica" ;
+    guide:degreeCode "10II" ;
+    guide:hasCourse :course_105000034 .
+
+:university_center_ets a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Informáticos" ;
+    guide:offers :degree_10II .
+
+# Course and Course Guide
+:course_105000034 a guide:Course ;
+    sch:name "Proyecto De Instalacion Informatica" ;
+    sch:courseCode 105000034X ; # Adjusted to integer-compatible if possible, or string
+    guide:courseType "Obligatoria" ;
+    sch:hasCourseInstance :course_guide_105000034 .
+
+:course_guide_105000034 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Proyecto De Instalacion Informatica" ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCompetency :comp_cg1_21, :comp_cg2_ce45, :comp_ce32, :comp_ce36 ;
+    guide:hasLearningResult :lr_ra564, :lr_ra562, :lr_ra563 ;
+    guide:hasEvaluation :eval_system_progressive ;
+    sch:instructor :lecturer_juan_carlos ;
+    sch:director :lecturer_juan_carlos ;
+    guide:hasSyllabus :syllabus_105000034 ;
+    guide:hasDidacticResource :res_moodle, :res_book_inst ;
+    sch:courseSchedule :schedule_105000034 .
+
+# Lecturers
+:lecturer_antonio a guide:Lecturer ;
+    sch:name "Antonio Latorre De La	La Fuente" ;
+    sch:email "a.latorre@upm.es" ;
+    guide:office "4202" ;
+    guide:tutorshipsSchedule "Sin horario. Previa petición de cita" .
+
+:lecturer_juan_carlos a guide:Lecturer ;
+    sch:name "Juan Carlos Crespo Zaragoza" ;
+    sch:email "crespo.pii.upm@gmail.com" ;
+    guide:office "4102" ;
+    guide:tutorshipsSchedule "Sin horario. Previa petición de cita. Contactar a través de mail" .
+
+:lecturer_jorge_antonio a guide:Lecturer ;
+    sch:name "Jorge Antonio Ruiz Mayor" ;
+    sch:email "antonio.ruiz.mayor@upm.es" ;
+    guide:office "4103" ;
+    guide:tutorshipsSchedule "Sin horario. Previa petición de cita" .
+
+:lecturer_pablo a guide:Lecturer ;
+    sch:name "Pablo Toharia Rabasco" ;
+    sch:email "pablo.toharia@upm.es" ;
+    guide:office "4102" ;
+    guide:tutorshipsSchedule "Sin horario. Previa petición de cita" .
+
+# Competencies
+:comp_cg1_21 a guide:Competency ;
+    guide:competencyCode "CG-1/21" ;
+    guide:competencyDescription "Capacidad de resolución de problemas aplicando conocimientos de matemáticas, ciencias e ingeniería." .
+
+:comp_cg2_ce45 a guide:Competency ;
+    guide:competencyCode "CG-2/CE45" ;
+    guide:competencyDescription "Capacidad para el aprendizaje autónomo y la actualización de conocimientos, y reconocimiento de su necesidad en el área de la informática." .
+
+:comp_ce32 a guide:Competency ;
+    guide:competencyCode "Ce 32" ;
+    guide:competencyDescription "Comprender el concepto de ciclo de vida, que abarca el significado de sus fases (planificación, desarrollo, instalación y evolución)..." .
+
+:comp_ce36 a guide:Competency ;
+    guide:competencyCode "Ce 36" ;
+    guide:competencyDescription "Capacidad para diseñar, planificar, documentar y presupuestar la instalación de un sistema hardware y de puestos de trabajo en un espacio físico." .
+
+# Learning Results
+:lr_ra564 a guide:LearningResult ;
+    guide:learningResultCode "RA564" ;
+    guide:learningResultDescription "Comprender y aplicar los principios de diseño y gestión integrada de la infraestructura de una instalación informática" .
+
+:lr_ra562 a guide:LearningResult ;
+    guide:learningResultCode "RA562" ;
+    guide:learningResultDescription "Seleccionar y definir las especificaciones de funcionamiento de equipos informáticos." .
+
+:lr_ra563 a guide:LearningResult ;
+    guide:learningResultCode "RA56 $\text{63}$" ;
+    guide:learningResultDescription "Comprender y aplicar los principios tecnológicos involucrados en una instalación informática (eléctricos, electro-magnéticos, térmicos y mecánicos)." .
+
+# Syllabus
+:syllabus_105000034 a guide:Syllabus ;
+    guide:hasItem :item_intro, :item_refrigeracion, :item_instalacion, :item_seguridad, :item_alimentacion, :item_cableado, :item_emc, :item_multicomputador .
+
+:item_intro a guide:SyllabusItem ;
+    guide:syllabusDescription "Introducción: Tipos de instalaciones, Especificaciones, Ciclo de vida, Criterios generales." .
+
+:item_refrigeracion a guide:SyllabusItem ;
+    guide:syllabusDescription "Refrigeración: El agua, Sicrometría, Transferencia del calor, Sistemas de refrigeración." .
+
+# Evaluation System
+:eval_system_progressive a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva mediante entregables y examen global." ;
+    guide:hasEvaluationTrial :trial_propuesta, :trial_tabla, :trial_infra, :trial_electrotecnia, :trial_termotecnia, :trial_cableado, :trial_memoria_final, :trial_examen_global .
+
+:trial_propuesta a guide:EvaluationTrial ;
+    guide:trialType "TG" ;
+    guide:gradePercentage "5%" ;
+    guide:minimumScore "5/10" ;
+    guide:involvesCompetency :comp_cg1_21, :comp_ce32 .
+
+:trial_examen_global a guide:EvaluationTrial ;
+    guide:trialType "OT" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5/1 $\text{10}$" ;
+    guide:eventSchedule :event_week16 .
+
+# Schedule and Events
+:schedule_105000034 a guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week2, :event_week6, :event_week15, :event_week16 .
+
+:event_week1 a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_leccion_magistral_1 .
+
+:act_leccion_magistral_1 a guide:Activity ;
+    guide:activityDescription "Introducción a la Asignatura e Infraestructura del CPD" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:event_week16 a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 16" ;
+    guide:hasActivity :act_examen_global .
+
+:act_examen_global a guide:Activity ;
+    guide:activityDescription "Examen Global: Desarrollo de un proyecto" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "OT" ;
+    guide:attendanceType "Presante" .
+
+# Resources
+:res_moodle a guide:DidacticResource ;
+    guide:bibliographyTitle "Moodle" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Sitio Moodle de la asignatura" .
+
+:res_book_inst a guide:DidacticResource ;
+    guide:bibliographyTitle "Instalaciones informáticas" ;
+    guide:bibliographyDescription "Pedro de Miguel Anasagasti, Felipe Fernández Hernández, Juan Carlos Crespo Zaragoza" ;
+    guide:bibliographyType "Libro" .

@@ -1,0 +1,80 @@
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide/GA_02IA_25001404> rdf:type guide:CourseGuide ;
+    sch:name "Analisis De Ecosistemas"@en ;
+    dc:title "ANX-PR/CL/001-01 Guía de Aprendizje"@es ;
+    dct:creator <http://guia-mad-bench.es/data/person/SANTIAGO_MORENO_VAZQUEZ> ,
+                <http://guia-mad-bench.es/data/person/ELENA_CARRIO_GONZALEZ> ;
+    guide:numberOfCredits "4"^^xsd:decimal ;
+    sch:description "La asignatura se compone de cuatro partes..."@es .
+
+<http://guia-mad-bench.es/data/degree/GRADE_02IA> rdf:type guide:BachelorDegree ;
+    dct:title "Grado En Ingenieria Agroambiental"@en ;
+    guide:courseYear "2025-26"^^xsd:string .
+
+<http://guia-mad-bench.es/data/person/SANTIAGO_MORENO_VAZQUEZ> rdf:type sch:Person, guide:Lecturer ;
+    sch:name "Santiago Moreno Vazquez"@en ;
+    sch:email <mailto:santiago.moreno@upm.es> ;
+    guide:office "Banco Semillas"^^xsd:string .
+
+<http://guia-mad-bench.es/data/person/ELENA_CARRIO_GONZALEZ> rdf:type sch:Person, guide:Lecturer ;
+    sch:name "Elena Carrio Gonzalez"@en ;
+    sch:email <mailto/elena.carrio@upm.es> .
+
+<http://guia-mad-bench.es/data/courseguide/GA_02IA_25001404> guide:syllabusDescription "Sección 1. Muestreo en campo sobre la abundancia de especies biológicas..."^^xsd:string ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule/SEMESTRE_2025-26>.
+
+<http://guia-mad-bench.es/data/courseguide/GA_02IA_25001404> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationsystem/EVALUACION_PROGRESIVA>.
+<http://guia-mad-bench.es/data/evaluationsystem/EVALUACION_PROGRESIVA> rdf:type guide:EvaluationSystem ;
+    sch:description "Evaluación progresiva en la que la evaluación continua aporta el 50% de la nota..."^^xsd:string .
+
+### Competencies and Learning Results
+<http://guia-mad-bench.es/data/competency/CE14> rdf:type guide:Competency ;
+    guide:competencyCode "CE14"^^xsd:string ;
+    sch:description "Conocimiento de los conceptos básicos de Ecología..."@en .
+
+<http://guia-mad-bench.es/data/courseguide/GA_02IA_25001404> guide:hasCompetency <http://guia-mad-bench.es/data/competency/CE14>,
+    <http://guia-mad-bench.es/data/competency/CE15>.
+
+<http://guia-mad-bench.es/data/courseguide/GA_02IA_25001404> guide:hasLearningResult <http://guia-mad-bench.es/data/result/RA519>,
+    <http://guia-mad-bench.es/data/result/RA228>.
+
+<http://guia-mad-bench.es/data/result/RA519> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA519"^^xsd:string .
+
+### Schedule and Events
+<http://guia-mad-bench.es/data/schedule/SEMESTRE_2025-26> rdf:type sch:EventSchedule, guide:Schedule ;
+    dct:title "Cronograma 2025-26"@en .
+
+<http://guia-mad-bench.es/data/event/PRACTICA_P01> rdf:type guide:Activity, guide:ScheduleEvent ;
+    sch:name "Práctica 1 (Aula Informática): cartografía ambiental..."@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://guia-mad-bench.es/data/event/PRACTICA_P03> rdf:type guide:Activity, guide:ScheduleEvent ;
+    sch:name "Práctica 3 (Viaje S Martín de la Vega)..."@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://guia-mad-bench.es/data/schedule/SEMESTRE_2025-26> sch:eventSchedule <http://guia-mad-bench.es/data/event/PRACTICA_P01>,
+    <http://guia-mad-bench.es/data/event/PRACTICA_P03>.
+
+### Evaluation Trials
+<http://guia-mad-bench.es/data/evaluationsystem/EVALUACION_PROGRESIVA> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial/TI_TRAJE_2>,
+    <http://guia-mad-bench.es/data/trial/P03>.
+
+<http://guia-mad-bench.es/data/trial/TI_TRAJE_2> rdf:type guide:EvaluationTrial ;
+    sch:name "Evaluación de asistencia y participación en P02"@es ;
+    guide:trialType "OT"^^xsd:string .
+
+### Didactic Resources
+<http://guia-mad-bench.es/data/courseguide/GA_02IA_25001404> guide:hasDidacticResource <http://guia-mad-bench.es/data/resource/VEGETACION_1>,
+    <http://guia-mad-bench.es/data/resource/FACTORES_AMBIENTALES>.
+
+<http://guia-mad-bench.es/data/resource/VEGETACION_1> rdf:type guide:DidacticResource ;
+    sch:name "Vegetación 1"@en .

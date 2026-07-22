@@ -1,0 +1,197 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+
+# --- Degree and University Center ---
+
+guide:Master_20AT a guide:MasterDegree ;
+    sch:name "Master Universitario en Ingenieria Alimentaria Aplicada a la Salud" ;
+    guide:degreeCode "20AT" .
+
+guide:ETSI_Agronomica a guide:UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas" ;
+    guide:offers guide:Master_20AT .
+
+# --- Course ---
+
+guide:Course_203000157 a guide:Course ;
+    sch:name "203000157 - Nuevas Tecnologías De Envasado De Alimentos" ;
+    sch:courseCode 203000157 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 2025 ;
+    sch:hasCourseInstance guide:Guide_203000157_2025_26 .
+
+# --- Course Guide ---
+
+guide:Guide_203000157_2025_26 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Nuevas Tecnologías De Envasado De Alimentos" ;
+    sch:description "En la asignatura se presentan y desarrollan las nuevas tecnologías de envasado de alimentos y los avances en ingeniería correspondentes, y su relación con la salud del consumidor."@en ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:numberOfCredits 4.0 ;
+    guide:totalHours "104" ; # Calculated based on 26h per credit approx
+    sch:instructor guide:Prof_Fernando_Calderon, guide:Prof_Eva_Navascues, guide:Prof_Felipe_Palomero ;
+    sch:director guide:Prof_Fernando_Calderon ;
+    guide:hasSyllabus guide:Syllabus_203000157 ;
+    guide:hasCompetency guide:Comp_CB8, guide:Comp_CG1, guide:Comp_CG3, guide:Comp_CG8 ;
+    guide:hasLearningResult guide:LR_RA7_RA16, guide:LR_RA50, guide:LR_RA51, guide:LR_RA53, guide:LR_RA52, guide:LR_RA49 ;
+    guide:hasEvaluation guide:EvalSystem_203000157 ;
+    guide:hasDidacticResource guide:Res_Baaghan_2022, guide:Res_Barros_2020, guide:Res_BRC_IoP, guide:Res_Coles_2009, guide:Res_Crosby_2024 ;
+    sch:activitiesWorkload "Estimación de 26-27 horas por crédito ECTS" .
+
+# --- Lecturers ---
+
+guide:Prof_Fernando_Calderon a guide:Lecturer ;
+    sch:name "Fernando Calderon Fernandez" ;
+    sch:email "fernando.calderon@upm.es" ;
+    guide:office "02A.01.021" ;
+    guide:tutorshipsSchedule "M - 10:30 - 12:30, X - 10:30 - 12:30" .
+
+guide:Prof_Eva_Navascues a guide:Lecturer ;
+    sch:name "Eva Navascues Lopez-Cordon" ;
+    sch:email "eva.navascues@upm.es" ;
+    guide:office "02A-01.021" ;
+    guide:tutorshipsSchedule "M - 10:30 - 12:00, J - 12:30 - 14:00" .
+
+guide:Prof_Felipe_Palomero a guide:Lecturer ;
+    sch:name "Felipe Palomero Rodriguez" ;
+    sch:email "felipe.palomero@upm.es" ;
+    guide:office "02.01.039.1" ;
+    guide:tutorshipsSchedule "M - 10:30 - 12:30, X - 10:30 - 12:30" .
+
+# --- Competencies ---
+
+guide:Comp_CB8 a guide:Competency ;
+    guide:competencyCode "CB8" ;
+    guide:competencyDescription "Que los estudiantes sean capaces de integrar conocimientos y enfrentarse a la complejidad de formular juicios..."@en .
+
+guide:Comp_CG1 a guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Capacidad de observación, generación de $\text{hipótesis}$ y planteamiento de problemas experimentales en el ámbito de la alimentación y la salud."@en .
+
+guide:Comp_CG3 a guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Capacidad para evaluar los sistemas de control de la cadena alimentaria y promover la seguridad en el consumo como estrategia competitiva."@en .
+
+guide:Comp_CG8 a guide:Competency ;
+    guide:competencyCode "CG8" ;
+    guide:competencyDescription "Resolver con eficacia y eficiencia problemas relacionados con la alimentación salvaguardando y mejorando la salud de la sociedad..."@en .
+
+# --- Learning Results ---
+
+guide:LR_RA7_RA16 a guide:LearningResult ;
+    guide:learningResultCode "RA7 - RA16" ;
+    guide:learningResultDescription "Evaluar resultados analíticos y su repercusión en el contexto alimentación/salud"@en .
+
+guide:LR_RA50 a guide:LearningResult ;
+    guide:learningResultCode "RA50" ;
+    guide:learningResultDescription "Conocer los avances en materiales tradicionales de envasado"@en .
+
+guide:LR_RA51 a guide:LearningResult ;
+    guide:learningResultCode "RA51" ;
+    guide:learningResultDescription "Conocer los avances en nuevos materiales y técnicas de envasado"@en .
+
+# --- Syllabus ---
+
+guide:Syllabus_203000157 a guide:Syllabus ;
+    guide:hasItem guide:SyllabusItem_Theme1, guide:SyllabusItem_Theme2, guide:SyllabusItem_Theme3, guide:SyllabusItem_Theme4, guide:SyllabusItem_Theme5, guide:Syll．abusItem_Theme6 .
+
+guide:SyllabusItem_Theme1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción: Nuevas funciones del envase de alimentos; Legislación y normativa. Avances; Envasado de alimentos y salud."@en .
+
+guide:SyllabusItem_Theme2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Avances en materiales de envasado tradicionales (Metálicos, Vidrio, Cerámica, Papel/Cartón, Tejidos, Polímeros)."@en .
+
+guide:SyllabusItem_Theme3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Nuevos materiales de envasado (Polímeros última generación, Biopolímeros, Compuestos, Nanocompuestos, Multicapas)."@en .
+
+# --- Evaluation System ---
+
+guide:EvalSystem_203000157 a guide:EvaluationSystem ;
+    guide:evaluationDescription "Dos pruebas de seguimiento escritas (70%) y Trabajo en grupo en tutorías específicas (30%)."@en ;
+    guide:hasEvaluationTrial guide:Trial_Exam_Week7, guide:Trial_Presentation_Week13, guide:Trial_Exam_Week15, guide:Trial_Global_Week17 .
+
+guide:Trial_Exam_Week7 a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialWeek "Semana 7" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "4/10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency guide:Comp_CG1, guide:Comp_CG3, guide:Comp_CG8, guide:Comp_CB8 .
+
+guide:Trial_Presentation_Week13 a guide:EvaluationTrial ;
+    guide:trialType "Presentación en Grupo" ;
+    guide:trialWeek "Semana 13" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "4/10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency guide:Comp_CG1, guide:Comp_CG8, guide:Comp_CB8 .
+
+guide:Trial_Global_Week17 a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialWeek "Semana 17" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency guide:Comp_CG1, guide:Comp_CG3, guide:Comp_CG8, guide:Comp_CB8 .
+
+# --- Schedule and Activities ---
+
+guide:Schedule_203000157 a guide:Schedule ;
+    sch:eventSchedule guide:Event_Week1, guide:Event_Week2, guide:Event_Week3, guide:Event_Week7, guide:Event_Week8 .
+
+guide:Event_Week1 a guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity guide:Act_Lecture_Theme1 .
+
+guide:Act_Lecture_Theme1 a guide:Activity ;
+    guide:activityDescription "Tema 1 - Lección Magistral" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+guide:Event_Week8 a guide:ScheduleEvent ;
+    guide:eventIndex 8 ;
+    guide:eventWeek "Semana 8" ;
+    guide:hasActivity guide:Act_TechnicalVisit .
+
+guide:Act_TechnicalVisit a guide:Activity ;
+    guide:activityDescription "Visita técnica Control de envasado AENOR" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Viaje de prácticas" ;
+    guide:attendanceType "Presencial" .
+
+# --- Didactic Resources ---
+
+guide:Res_Baaghan_2022 a guide:DidacticResource ;
+    guide:bibliographyTitle "Food Packaging Law in the United States" ;
+    guide:bibliographyDescription "Baaghan, J.S. and D. Attwood, 2022. Wiley-VCH."@en ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:Res_Barros_2020 a guide:DidacticResource ;
+    guide:bibliographyTitle "Antimicrobial Food Packaging; 4th Edition - 2020" ;
+    guide:bibliographyDescription "Barros, J. (Ed.)"@en ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:Res_BRC_IoP a guide:DidacticResource ;
+    guide:bibliographyTitle "BRC/IoP Packaging, IFS Pac Secure o FSSC 22000" ;
+    guide:bibliographyType "Bibliografía" .
+
+# --- Required Knowledge ---
+
+guide:ReqKnow_Packaging a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Tecnología del envasado de alimentos"@en .

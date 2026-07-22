@@ -1,0 +1,180 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide
+guide:guide_95000589 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Laboratorio de Aplicaciones en Salud Digital" ;
+    guide:numberOfCredits 4.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCourse guide:course_95000589 ;
+    guide:hasCompetency guide:comp_CB05, guide:comp_CE10, guide:comp_CE17, guide:comp_CG03, guide:comp_CG04 ;
+    guide:hasLearningResult guide:lr_RA196, guide:lr_RA063, guide:lr_RA062, guide:lr_RA061, guide:lr_RA157 ;
+    guide:hasSyllabus guide:syllabus_95000589 ;
+    guide:hasEvaluation guide:eval_system_95000589 ;
+    guide:hasDidacticResource guide:res_enunciados, guide:res_ficheros, guide:res_tutoriales ;
+    sch:instructor guide:lecturer_gema, guide:lecturer_maria, guide:lect_external_jose .
+
+# Course
+guide:course_95000589 rdf:type guide:Course ;
+    sch:name "Laboratorio de Aplicaciones en Salud Digital" ;
+    sch:courseCode 95000589 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 4 ;
+    guide:semester "Octavo semestre" ;
+    sch:hasCourseInstance guide:guide_95000589 .
+
+# Degree
+guide:degree_09ID rdf:type guide:Degree ;
+    sch:name "Grado en Ingenieria y Sistemas de Datos" ;
+    guide:degreeCode "09ID" .
+
+# University Center
+guide:center_ets rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros De Telecomunicacion" .
+
+# Lecturers
+guide:lecturer_gema rdf:type guide:Lecturer ;
+    sch:name "Gema Garcia Saez" ;
+    sch:email "gema.garcia.saez@upm.es" ;
+    guide:office "B-302.2" ;
+    guide:tutorshipsSchedule "X - 12:00 - 13:00 (Concertar cita)" .
+
+guide:lecturer_maria rdf:type guide:Lecturer ;
+    sch:name "Maria Elena Hernando Perez" ;
+    sch:email "mariaelena.hernando@upm.es" ;
+    guide:office "B-316" ;
+    guide:tutorshipsSchedule "Sin horario (Concertar cita)" .
+
+guide:lect_external_jose rdf:type guide:Lecturer ;
+    sch:name "Jose Tapia Galisteo" ;
+    sch:email "jose.tapia.galisteo@upm.es" .
+
+# Competencies
+guide:comp_CB05 rdf:type guide:Competency ;
+    guide:competencyCode "CB05" ;
+    guide:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía" .
+
+guide:comp_CE10 rdf:type guide:Competency ;
+    guide:competencyCode "CE10" ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de construir sistemas, aplicaciones y servicios telemáticos, interconectados y multiplataforma a partir de su comprensión de la arquitectura web" .
+
+guide:comp_CE17 rdf:type guide:Competency ;
+    guide:competencyCode "CE17" ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de utilizar los fundamentos de la programación, sistemas operativos, bases de datos, tecnología web y las redes y servicios de telecomunicación en proyectos de ingeniería de datos y sistemas" .
+
+guide:comp_CG03 rdf:type guide:Competency ;
+    guide:competencyCode "CG03" ;
+    guide:competencyDescription "Ser capaz de explicar de forma oral o escrita las soluciones planteadas para la resolución de un problema" .
+
+guide:comp_CG04 rdf:type guide:Competency ;
+    guide:competencyCode "CG04" ;
+    guide:competencyDescription "Saber identificar y utilizar las herramientas de las Tecnologías de la Información y de las Comunicaciones más adecuadas para plantear y construir soluciones a problemas" .
+
+# Learning Results
+guide:lr_RA196 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA196 - RA76" ;
+    guide:learningResultDescription "Conocimientos teóricos y habilidades prácticas en tecnologías necesarias para el desarrollo e integración de servicios de telemedicina" .
+
+guide:lr_RA063 rdf:type guide:LearningResult ;
+    guide:learning<0xC2> مداDescription "Saber diseñar páginas web estáticas y dinámicas usando HTML, CSS y JavaScript" .
+
+guide:lr_RA062 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA062" ;
+    guide:learningResultDescription "Comprender la web y el protocolo HTTP" .
+
+guide:lr_RA061 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA061" ;
+    guide:learningResultDescription "Diseñar e implementar una solución completa a un caso de uso" .
+
+guide:lr_RA157 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA157" ;
+    guide:learningResultDescription "Conocer y aprender el desarrollo de aplicaciones web para terminales móviles y de escritorio usando tecnologías web" .
+
+# Syllabus
+guide:syllabus_95000589 rdf:type guide:Syllabus ;
+    guide:hasItem guide:syllabus_item_1, guide:syllabus_item_2, guide:syllabus_item_3, guide:syllabus_item_4, guide:syllabus_item_5, guide:syllabus_item_6 .
+
+guide:syllabus_item_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción al diseño de interfaces: Usabilidad" .
+
+guide:syllabus_item_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Gestión de bases de datos relacionales" .
+
+guide:syllabus_item_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Introducción al entorno de desarrollo Web" .
+
+guide:syllabus_item_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Aplicación Web de gestión de usuarios" .
+
+guide:syllabus_item_5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Aplicación Web para profesionales" .
+
+guide:syllabus_item_6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Aplicación Web para pacientes" .
+
+# Evaluation System
+guide:eval_system_95000589 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación Progresiva, Global y Extraordinaria" ;
+    guide:hasEvaluationTrial guide:trial_entrega_memoria_1, guide:trial_examen_global .
+
+guide:trial_entrega_memoria_1 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Entrega de memoria de práctica 1" ;
+    guide:gradePercentage "10%" ;
+    guide:evaluationDuration "00:00" ;
+    guide:trialMode "No Presencial" .
+
+guide:trial_examen_global rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen GLOBAL" ;
+    guide:gradePercentage "40%" ;
+    guide:evaluationDuration "02:00" ;
+    guide:trialMode "Presencial" .
+
+# Didactic Resources
+guide:res_enunciados rdf:type guide:DidacticResource ;
+    sch:name "Enunciados de las prácticas" ;
+    guide:bibliographyType "Otros" ;
+    guide:bibliographyDescription "Enunciados donde se describen las tareas que debe realizar el alumno y la memoria que se debe entregar como resultado del trabajo" .
+
+guide:res_ficheros rdf:type guide:DidacticResource ;
+    sch:name "Ficheros y otros recursos proporcionados durante la realización de las prácticas" ;
+    guide:bibliographyType "Otros" .
+
+guide:res_tutoriales rdf:type guide:DidacticResource ;
+    sch:name "Tutoriales" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Tutoriales de las herramientas de desarrollo utilizadas durante la realización de las prácticas" .
+
+# Schedule Events (Examples from Cronograma)
+guide:event_week1_intro rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity guide:act_leccion_magistral .
+
+guide:act_leccion_magistral rdf:type guide:Activity ;
+    guide:activityDescription "Introducción a la asignatura" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+guide:event_week4_entrega rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 4" ;
+    guide:eventIndex 4 ;
+    guide:hasActivity guide:act_entrega_memoria_1 .
+
+guide:act_entrega_memoria_1 rdf:type guide:Activity ;
+    guide:activityDescription "Entrega de memoria de práctica 1" ;
+    guide:activityDuration 0.0 ;
+    guide:activityFormat "Trabajo Individual" ;
+    guide:attendanceType "No presencial" .

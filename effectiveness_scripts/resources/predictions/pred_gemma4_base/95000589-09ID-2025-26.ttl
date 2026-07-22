@@ -1,0 +1,195 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+### Degree and University Center ###
+
+:degree_09ID rdf:type guide:Degree ;
+    sch:name "09ID - Grado en Ingeniería y Sistemas de Datos" ;
+    guide:degreeCode "09ID" .
+
+:center_ets_telecom rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicación" ;
+    guide:offers :degree_09ID .
+
+### Course and Course Guide ###
+
+:course_95000589 rdf:type guide:Course ;
+    sch:name "95000589 - Laboratorio de Aplicaciones en Salud Digital" ;
+    sch:courseCode 95000589 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Octavo semestre" ;
+    sch:numberOfCredits 4.0 .
+
+:guide_95000589_2025_26 rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance :course_95000589 ;
+    sch:instructor :lecturer_gema_garcia ;
+    sch:description "El laboratorio proporciona al alumno un conjunto de métodos y recursos para su formación en el diseño, desarrollo y evaluación de aplicaciones de salud digital." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:numberOfCredits 4.0 ;
+    guide:totalHours "104" ; # Calculated based on 26h per credit approx
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :syllabus_95000589 ;
+    guide:hasCompetency :comp_CB05, :comp_CE10, :comp_CE17, :comp_CG03, :comp_CG04 ;
+    guide:hasLearningResult :lr_RA196, :lr_RA063, :lr_RA062, :lr_RA061, :lr_RA157 ;
+    guide:hasEvaluation :eval_system_95000589 ;
+    sch:courseSchedule :schedule_95000589 ;
+    guide:hasDidacticResource :res_enunciados, :res_ficheros, :res_tutoriales .
+
+### Professors ###
+
+:lecturer_gema_garcia rdf:type guide:Lecturer ;
+    sch:name "Gema Garcia Saez" ;
+    sch:email "gema.gar	arcia.saez@upm.es" ;
+    guide:office "B-302.2" ;
+    guide:tutorshipsSchedule "X - 12:00 - 13:00 (con cita previa)" .
+
+:lecturer_maria_elena rdf:type guide:Lecturer ;
+    sch:name "Maria Elena Hernando Perez" ;
+    sch:email "mariaelena.hernando@upm.es" ;
+    guide:office "B-316" ;
+    guide:tutorshipsSchedule "Sin horario (con cita previa)" .
+
+:lecturer_jose_tapia rdf:type guide:Lecturer ;
+    sch:name "Jose Tapia Galisteo" ;
+    sch:email "jose.tapia.galisteo@upm.es" ;
+    sch:description "Profesor externo de la UPM" .
+
+### Competencies ###
+
+:comp_CB05 rdf:type guide:Competency ;
+    guide:competencyCode "CB05" ;
+    guide:competencyDescription "Habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía." .
+
+:comp_CE10 rdf:type guide:Competency ;
+    guide:competencyCode "CE10" ;
+    guide:competencyDescription "Capacidad de construir sistemas, aplicaciones y servicios telemáticos, interconectados y multiplataforma a partir de su comprensión de la arquitectura web." .
+
+:comp_CE17 rdf:type guide:Competency ;
+    guide:competencyCode "CE17" ;
+    guide:competencyDescription "Capacidad de utilizar los fundamentos de la programación, sistemas operativos, bases de datos, tecnología web y las redes y servicios de telecomunicación en proyectos de ingeniería de datos y sistemas." .
+
+:comp_CG03 rdf:type guide:Competency ;
+    guide:competencyCode "CG03" ;
+    guide:competencyDescription "Ser capaz de explicar de forma oral o escrita las soluciones planteadas para la resolución de un problema." .
+
+:comp_CG04 rdf:type guide:Competency ;
+    guide:competencyCode "CG04" ;
+    guide:competencyDescription "Saber identificar y utilizar las herramientas de las Tecnologías de la Información y de las Comunicaciones más adecuadas para plantear y construir soluciones a problemas." .
+
+### Learning Results ###
+
+:lr_RA196 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA196-RA76" ;
+    guide:learningResultDescription "Conocimientos teóricos y habilidades prácticas en tecnologías necesarias para el desarrollo e integración de servicios de telemedicina." .
+
+:lr_RA063 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA063" ;
+    guide:learningResultDescription "Saber diseñar páginas web estáticas y dinámicas usando HTML, CSS y JavaScript." .
+
+:lr_RA062 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA062" ;
+    guide:learningResultDescription "Comprender la web y el protocolo HTTP." .
+
+:lr_RA061 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA061" ;
+    guide:learningResultDescription "Diseñar e implementar una solución completa a un caso de uso." .
+
+:lr_RA157 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA157" ;
+    guide:learningResultDescription "Conocer y aprender el desarrollo de aplicaciones web para terminales móviles y de escritorio usando tecnologías web." .
+
+### Syllabus ###
+
+:syllabus_95000589 rdf:type guide:Syllabus ;
+    guide:hasItem :item_1, :item_2, :item_3, :item_4, :item_5, :item_6 .
+
+:item_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción al diseño de interfaces: Usabilidad" .
+
+:item_2 rdf:type guide:SylabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Gestión de bases de datos relacionales" .
+
+:item_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Introducción al entorno de desarrollo Web" .
+
+:item_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Aplicación Web de gestión de usuarios" .
+
+:item_5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Aplicación Web para profesionales" .
+
+:item_6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Aplicación Web para pacientes" .
+
+### Evaluation System ###
+
+:eval_system_95000589 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La calificación se obtiene mediante evaluación progresiva y una prueba de evaluación global." ;
+    guide:hasEvaluationTrial :trial_memoria_1, :trial_memoria_2, :trial_cuestionario_3, :trial_practica_4, :trial_memoria_5, :trial_memoria_6, :trial_presentacion_456, :trial_examen_global, :trial_entrega_global .
+
+:trial_memoria_1 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo Individual" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "10%" ;
+    guide:trialMode "No presencial" ;
+    guide:minimumScore "0/10" .
+
+:trial_examen_global rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "40%" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "5/10" .
+
+### Schedule ###
+
+:schedule_95000589 rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week_1, :event_week_2, :event_week_4, :event_week_17 .
+
+:event_week_1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :act_leccion_magistral, :act_practica_lab .
+
+:act_leccion_magistral rdf:type guide:Activity ;
+    guide:activityDescription "Introducción a la asignatura" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:act_practica_lab rdf:type guide:Activity ;
+    guide:activityDescription "Introducción práctica" ;
+    guide:activityDuration 1.5 ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:attendanceType "Presencial" .
+
+### Prerequisites ###
+
+:req_knowledge_95000589 rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Bases De Datos Relacionales Y Datos Estructurados" .
+
+### Resources ###
+
+:res_enunciados rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Enunciados de las prácticas" ;
+    guide:bibliographyType "Otros" .
+
+:res_tutoriales rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Tutoriales" ;
+    guide:bibliographyType "Recursos web" .

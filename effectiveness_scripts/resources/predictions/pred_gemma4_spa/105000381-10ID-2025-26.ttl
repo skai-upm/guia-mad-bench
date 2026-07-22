@@ -1,0 +1,135 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Structure
+:degree_10ID a guide:Degree ;
+    sch:name "10ID - Doble Grado En Ingenieria Informatica Y En Ade" ;
+    guide:degreeCode "10ID" ;
+    guide:hasCourse :course_105000381 .
+
+:course_105000381 a guide:Course ;
+    sch:name "Estructura De Computadores" ;
+    sch:courseCode 105000381 ;
+    guide:courseType "Obligatoria" ;
+    sch:hasCourseInstance :course_guide_105000381 .
+
+:course_guide_105000381 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Estructura De Computadores" ;
+    guide:numberOfCredits 6.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :syllabus_105000381 ;
+    guide:hasCompetency :comp_10II_CE05, :comp_10II_CE07, :comp_10II_CE22, :comp_10II_CG01_21, :comp_10II_CG05, :comp_10II_CG06 ;
+    guide:hasLearningResult :lr_RA103, :lr_RA104 ;
+    guide:hasEvaluation :eval_system_progresiva, :eval_system_global, :eval_system_extraordinaria ;
+    guide:hasDidacticResource :res_libro_miguel, :res_libro_stallings, :res_web_asignatura .
+
+# University Center
+:university_center_ets a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Informáticos" ;
+    guide:offers :degree_10ID .
+
+# Lecturers
+:lecturer_rafael a guide:Lecturer ;
+    sch:name "Rafael Sautua Ruiz" ;
+    sch:email "rafael.sautua@upm.es" ;
+    guide:office "4107" ;
+    guide:tutorshipsSchedule "Sin horario. Se debe concertar cita por correo electrónico" .
+
+:lecturer_santiago a guide:Lecturer ;
+    sch:name "Santiago Rodriguez De La Fuente" ;
+    sch:email "santiago.rodriguez@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. Se debe concertar cita por correo electrónico" .
+
+# Competencies
+:comp_10II_CE05 a guide:Competency ;
+    guide:competencyCode "10II-CE05" ;
+    guide:competencyDescription "Capacidad de diseñar y realizar experimentos apropiados, interpretar los datos y extraer conclusiones." .
+
+:comp_10II_CE07 a guide:Competency ;
+    guide:competencyCode "10II-CE07" ;
+    guide:competencyDescription "Entender el soporte físico (hardware) de los ordenadores desde el punto de vista del soporte lógico (software)." .
+
+:comp_10II_CG01_21 a guide:Competency ;
+    guide:competencyCode "10II-CG01/21" ;
+    guide:competencyDescription "Capacidad de resolución de problemas aplicando conocimientos de matemáticas, ciencias e ingeniería." .
+
+# Learning Results
+:lr_RA103 a guide:LearningResult ;
+    guide:learningResultCode "RA103" ;
+    guide:learningResultDescription "Utilizar eficientemente los los recursos básicos del computador mediante el lenguaje nativo del mismo." .
+
+:lr_RA104 a guide:LearningResult ;
+    guide:learningResultCode "RA104" ;
+    guide:learningResultDescription "Analizar y evaluar la estructura interna del computador: modos de direccionamiento, sistemas de representación, rutas de datos, sistema de entrada/salida, periféricos y lenguaje ensamblador." .
+
+# Syllabus
+:syllabus_105000381 a guide:Syllabus ;
+    guide:hasItem :item_tema1, :item_tema2, :item_tema3, :item_tema4, :item_tema5 .
+
+:item_tema1 a guide:SyllabusItem ;
+    guide:syllabusDescription "Introducción a los computadores" ;
+    guide:itemIndex 1 .
+
+:item_tema2 a guide:SylabusItem ;
+    guide:syllabusDescription "Programación en Ensamblador" ;
+    guide:itemIndex 2 .
+
+# Evaluation Systems and Trials
+:eval_system_progresiva a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva basada en exámenes parciales y proyecto." ;
+    guide:hasEvaluationTrial :trial_parcial_1, :trial_proyecto_ensamblador .
+
+:trial_parcial_1 a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "44%" ;
+    guide:minimumScore "2 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:eventWeek "Semana 11" .
+
+:trial_proyecto_ensamblador a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "20%" ;
+    guide:trialMode "Presencial" ;
+    guide:eventWeek "Semana 17" .
+
+:eval_system_global a guide:EvaluationSystem ;
+    guide:evaluationDescription "Prueba de evaluación global." ;
+    guide:hasEvaluationTrial :trial_final_teoria .
+
+:trial_final_teoria a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "80%" ;
+    guide:trialMode "Presencial" ;
+    guide:eventWeek "Semana 17" .
+
+# Activities (from Schedule)
+:act_week1_1 a guide:Activity ;
+    guide:activityDescription "Explicación de contenidos teóricos del Tema 1" ;
+    guide:activityDuration 4.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+:act_week1_2 a guide:Activity ;
+    guide:activityDescription "Resolución de problemas del Tema 1" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Clase de Problemas" .
+
+# Didactic Resources
+:res_libro_miguel a guide:DidacticResource ;
+    guide:bibliographyTitle "Libro P. de Miguel" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "de Miguel, P. Fundamentos de los computadores. Paraninfo, 2004. 9ª edición." .
+
+:res_web_asignatura a guide:DidacticResource ;
+    guide:bibliographyTitle "Página web de la asignatura" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "http://www.datsi.fi.upm.es/docencia/Estructura_09/" .
+
+# Required Knowledge
+:req_knowledge_1 a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Sistemas Digitales, Programación I" .

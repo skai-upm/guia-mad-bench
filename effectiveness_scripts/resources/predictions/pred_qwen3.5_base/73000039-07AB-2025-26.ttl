@@ -1,0 +1,355 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Course Guide Instance
+#################################################################
+
+<http://w3id.org/def/guia#73000039_2S_2025-26> rdf:type :CourseGuide ;
+                                                    sch:name "Prevencion De Incendios"@en ,
+                                                                    "73000039 - Prevencion de Incendios"@es ;
+                                                    dct:creator <http://w3id.org/def/guia#Ruben_Laina_Relano> ;
+                                                    guide:numberOfCredits 5^^xsd:decimal ;
+                                                    sch:inLanguage "Castellano"@en ;
+                                                    guide:teachingPeriod "Febrero-Junio"^^xsd:string ;
+                                                    dct:title "ANX-PR/CL/001 - GUÍA DE APRENDIZAJE"@es .
+
+#################################################################
+#    Degree Instance
+#################################################################
+
+<http://w3id.org/def/guia#MasterUniversitarioEnTecnicasDeLuchaContraIncendiosForestales> rdf:type :Degree ;
+                                                                                           sch:courseCode 7^^xsd:integer , "07AB"^^xsd:string .
+
+#################################################################
+#    University Center Instance
+#################################################################
+
+<http://w3id.org/def/guia#ETSIMontesForestalYMedioNatur> rdf:type sch:Organization ;
+                                                            guide:offers <http://w3id.org/def/guia#MasterUniversitarioEnTecnicasDeLuchaContraIncendiosForestales> .
+
+#################################################################
+#    Course Instance
+#################################################################
+
+<http://w3id.org/def/guia#PrevencionDeIncendios_73000039> rdf:type :Course ;
+                                                             sch:courseCode 7^^xsd:integer , "73000039"^^xsd:string .
+
+#################################################################
+#    Lecturer Instances (Coordinator & Staff)
+#################################################################
+
+<http://w3id.org/def/guia#Ruben_Laina_Relano> rdf:type :Lecturer ;
+                                                 sch:name "Ruben Laina Relaño"@es ,
+                                                                 "Ruben Laina"^^xsd:string ;
+                                                 guide:office "Defensa M 09:30 - 11:30, X 13:00 - 15:00 J 17:30 - 19:00"@es ,
+                                                                 "Se puede concertar tutorías en otros horarios escribiendo al correo electrónico"^^xsd:string ;
+                                                 sch:email <mailto:ruben.laina@upm.es> .
+
+<http://w3id.org/def/guia#Carolina_Martinez_SantaMaria> rdf:type :Lecturer ;
+                                                           sch:name "Carolina Martinez Santa-Maria"@es ,
+                                                                 "Carolina Martinez"^^xsd:string ;
+                                                           guide:office "Hidráulica"@es ;
+                                                           sch:email <mailto:carolina.martinez@upm.es> .
+
+<http://w3id.org/def/guia#Javier_Madrigal_Olmo> rdf:type :Lecturer ;
+                                                   sch:name "Javier Madrigal Olmo"@es ,
+                                                                   "Javier Madrigal"^^xsd:string ;
+                                                   guide:office "Defensa"@es ;
+                                                   sch:email <mailto:javier.madrigal@upm.es> .
+
+<http://w3id.org/def/guia#Jose_Anastasio_Fernandez_Yuste> rdf:type :Lecturer ;
+                                                             sch:name "Jose Anastasio Fernandez Yuste"@es ,
+                                                                 "Jose Anastasio"^^xsd:string ;
+                                                             guide:office "Hidráulica"@es ;
+                                                             sch:email <mailto:tasio.fyuste@upm.es> .
+
+#################################################################
+#    Competency Instances
+#################################################################
+
+<http://w3id.org/def/guia#CE_1_2> rdf:type :Competency ;
+                                   guide:competencyCode "CE 1.2"^^xsd:string , "Capacidad para emprender acciones relacionadas con la gestión forestal"@es .
+
+<http://w3id.org/def/guia#CE_2_1> rdf:type :Competency ;
+                                   guide:competencyCode "CE 2.1"^^xsd:string , "Capacidad para diseñar, redactar y gestionar planes y políticas de prevención y detección de incendios"@es .
+
+<http://w3id.org/def/guia#CG_5> rdf:type :Competency ;
+                                guide:competencyCode "CG 5"^^xsd:string , "Búsqueda bibliográfica, análisis de documentación y tratamiento de la información procedente de diversas fuentes y de su análisis y síntesis aplicándola a la resolución de problemas complejos"@es .
+
+<http://w3id.org/def/guia#CG_6> rdf:type :Competency ;
+                                guide:competencyCode "CG 6"^^xsd:string , "Perfeccionar el conocimiento oral y escrito de la lengua inglesa"@es .
+
+#################################################################
+#    Learning Result Instances
+#################################################################
+
+<http://w3id.org/def/guia#RA_45> rdf:type :LearningResult ;
+                                  guide:learningResultCode "RA 45"^^xsd:string , "Que los estudiantes tengan conocimientos para crear e interpretar cartografía temática y aplicarla a la gestión en su campo de trabajo"@es .
+
+<http://w3id.org/def/guia#RA_43> rdf:type :LearningResult ;
+                                  guide:learningResultCode "RA 43"^^xsd:string , "Capacidad para poner en práctica técnicas de selvicultura preventiva y de reducción del combustible en el monte"@es .
+
+<http://w3id.org/def/guia#RA_41> rdf:type :LearningResult ;
+                                  guide:learningResultCode "RA 41"^^xsd:string , "Capacidad para diseñar, dirigir, elaborar, implementar e interpretar proyectos y planes de prevención y gestión territorial de incendios"@es .
+
+<http://w3id.org/def/guia#RA_44> rdf:type :LearningResult ;
+                                  guide:learningResultCode "RA 44"^^xsd:string , "Que los estudiantes tengan conocimientos y capacidades para tomar, gestionar y analizar datos de detección, prevención o lucha contra incendios"@es .
+
+<http://w3id.org/def/guia#RA_42> rdf:type :LearningResult ;
+                                  guide:learningResultCode "RA 42"^^xsd:string , "Conocimientos adecuados para la gestión de trabajos de limpieza del sotobosque y el establecimiento de cortafuegos"@es .
+
+#################################################################
+#    Syllabus Instance & Items
+#################################################################
+
+<http://w3id.org/def/guia#Syllabus_73000039> rdf:type :Syllabus ;
+                                                 guide:hasItem <http://w3id.org/def/guia#SI_Intro>,
+                                                               <http://w3id.org/def/guia#SI_Normativa>,
+                                                               <http://w3id.org/def/guia#SI_Causalidad>,
+                                                               <http://w3id.org/def/guia#SI_Prevencion_Activa>,
+                                                               <http://w3id.org/def/guia#SI_Prevencion_Pasiva>,
+                                                               <http://w3id.org/def/guia#SI_Interfaz_Urbano_Forestal>,
+                                                               <http://w3id.org/def/guia#SI_Planiacion> .
+
+<http://w3id.org/def/guia#SI_Intro> rdf:type :SyllabusItem ;
+                                     guide:itemIndex 1^^xsd:integer , "Introducción a la prevención y tendencias"@es .
+
+<http://w3id.org/def/guia#SI_Normativa> rdf:type :SyllabusItem ;
+                                         guide:itemIndex 2^^xsd:integer , "Marco normativo (España, Comunidades Autónomas)"@es .
+
+<http://w3id.org/def/guia#SI_Causalidad> rdf:type :SyllabusItem ;
+                                           guide:itemIndex 3^^xsd:integer , "Causalidad de incendios forestales"@es .
+
+<http://w3id.org/def/guia#SI_Prevencion_Activa> rdf:type :SyllabusItem ;
+                                                  guide:itemIndex 4^^xsd:integer , "Prevención activa o social (Concienciación, Vigilancia)"@es .
+
+<http://w3id.org/def/guia#SI_Prevencion_Pasiva> rdf:type :SyllabusItem ;
+                                                   guide:itemIndex 5^^xsd:integer , "Prevención pasiva de incendios forestales"@es .
+
+<http://w3id.org/def/guia#SI_Interfaz_Urbano_Forestal> rdf:type :SyllabusItem ;
+                                                         guide:itemIndex 7^^xsd:integer , "Interfaz urbano forestal"@es .
+
+#################################################################
+#    Schedule Instance & Events (Teaching)
+#################################################################
+
+<http://w3id.org/def/guia#Schedule_73000039> rdf:type :Schedule ;
+                                                sch:eventSchedule <http://w3id.org/def/guia#SE_Sem1>,
+                                                                 <http://w3id.org/def/guia#SE_Sem2>.
+
+<http://w3id.org/def/guia#SE_Sem1> rdf:type :ScheduleEvent ;
+                                    sch:eventIndex 1^^xsd:integer , "Semana 1"@es .
+
+#################################################################
+#    Evaluation System & Trials
+#################################################################
+
+<http://w3id.org/def/guia#EvalSystem_73000039> rdf:type :EvaluationSystem ;
+                                                  guide:hasSyllabus <http://w3id.org/def/guia#Syllabus_73000039>,
+                                                                sch:description "Evaluación progresiva y global"@es .
+
+<http://w3id.org/def/guia#EvalTrial_Sem1> rdf:type :EvaluationTrial ;
+                                           guide:hasScheduleEvent <http://w3id.org/def/guia#SE_Sem1>.
+
+#################################################################
+#    Activities & Evaluation Trials (Detailed)
+#################################################################
+
+<http://w3id.org/def/guia#EvalTrials_73000039> rdf:type :EvaluationTrial ;
+                                                  guide:hasScheduleEvent <http://w3id.org/def/guia#SE_Sem1>,
+                                                                <http://w3id.org/def/guia#SE_Sem2>.
+
+<http://w3id.org/def/guia#EvalTrials_73000039> rdf:type :EvaluationTrial ;
+                                                  guide:hasScheduleEvent <http://w3id.org/def/guia#SE_Sem1>,
+                                                                <http://w3id.org/def/guia#SE_Sem2>.
+
+#################################################################
+#    Mapping Course Guide to Entities (Properties)
+#################################################################
+
+<http://w3id.org/def/guia#73000039_2S_2025-26> guide:hasCourse <http://w3id.org/def/guia#PrevencionDeIncendios_73000039>,
+                                                    sch:director <http://w3id.org/def/guia#Ruben_Laina_Relano>,
+                                                    sch:instructor <http://w3id.org/def/guia#Carolina_Martinez_SantaMaria> ,
+                                                                <http://w3id.org/def/guia#Javier_Madrigal_Olmo> ;
+                                                   guide:numberOfCredits 5^^xsd:decimal .
+
+<http://w3id.org/def/guia#73000039_2S_2025-26> sch:eventSchedule <http://w3id.org/def/guia#Schedule_73000039>.
+                                                    guide:hasEvaluation <http://w3id.org/def/guia#EvalSystem_73000039>,
+                                                                guide:hasSyllabus <http://w3id.org/def/guia#Syllabus_730039> .
+
+<http://w3id.org/def/guia#PrevencionDeIncendios_73000039> sch:courseSchedule <http://w3id.org/def/guia#Schedule_73000039>,
+                                                                guide:hasCourseInstance <http://w3id.org/def/guia#73000039_2S_2025-26>.
+
+#################################################################
+#    Schedule Events (Teaching Activities)
+#################################################################
+
+<http://w3id.org/def/guia#SE_Sem1> sch:eventIndex 1^^xsd:integer , "Semana 1"@es ;
+                                    guide:hasActivity <http://w3id.org/def/guia#Act_Presentacion>,
+                                                      <http://w3id.org/def/guia#Act_Normativa>.
+
+<http://w3id.org/def/guia#SE_Sem2> sch:eventIndex 2^^xsd:integer , "Semana 2"@es ;
+                                    guide:hasActivity <http://w3id.org/def/guia#Act_Evidencias_Fisicas>,
+                                                      <http://w3id.org/def/guia#Act_Indices_Peligro>.
+
+#################################################################
+#    Activities (Teaching)
+#################################################################
+
+<http://w3id.org/def/guia#Act_Presentacion> rdf:type :Activity ;
+                                             guide:activityDescription "Presentación"@es ,
+                                                                   "Tendencias de la prevención"^^xsd:string .
+
+<http://w3id.org/def/guia#Act_Normativa> rdf:type :Activity ;
+                                           guide:activityDescription "Normativa y prevención"@es ,
+                                                                     "Marco normativo (España, Comunidades Autónomas)"^^xsd:string .
+
+#################################################################
+#    Evaluation Trials & Activities (Detailed)
+#################################################################
+
+<http://w3id.org/def/guia#EvalTrials_73000039> rdf:type :EvaluationTrial ;
+                                                  guide:hasScheduleEvent <http://w3id.org/def/guia#SE_Sem1>,
+                                                                <http://w3id.org/def/guia#SE_Sem2>.
+
+<http://w3id.org/def/guia#EvalTrials_73000039> rdf:type :EvaluationTrial ;
+                                                  guide:hasScheduleEvent <http://w3id.org/def/guia#SE_Sem1>,
+                                                                <http://w3id.org/def/guia#SE_Sem2>.
+
+#################################################################
+#    Evaluation Trials (Detailed)
+#################################################################
+
+<http://w3id.org/def/guia#EvalTrial_Tendencias> rdf:type :EvaluationTrial ;
+                                                  guide:hasScheduleEvent <http://w3id.org/def/guia#SE_Sem1>,
+                                                                sch:eventIndex 1^^xsd:integer .
+
+<http://w3id.org/def/guia#EvalTrial_Normativa> rdf:type :EvaluationTrial ;
+                                                 guide:hasScheduleEvent <http://w3id.org/def/guia#SE_Sem1>,
+                                                               sch:eventIndex 2^^xsd:integer .
+
+#################################################################
+#    Evaluation Trial Properties (Data)
+#################################################################
+
+<http://w3id.org/def/guia#EvalTrial_Tendencias> guide:trialType "Prueba Telemática"@es ,
+                                                    guide:evaluationDescription "Evaluación Progresiva y Global"^^xsd:string ;
+                                                 om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour>,
+                                                   guide:gradePercentage 5%^^xsd:g .
+
+<http://w3id.org/def/guia#EvalTrial_Normativa> guide:trialType "Prueba Telemática"@es ,
+                                                 guide:evaluationDescription "Evaluación Progresiva y Global"^^xsd:string ;
+                                                om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour>,
+                                                  guide:gradePercentage 5%^^xsd:g .
+
+#################################################################
+#    Evaluation Trial Properties (Data) - Sem 1 & 2
+#################################################################
+
+<http://w3id.org/def/guia#EvalTrial_Evidencias> rdf:type :EvaluationTrial ;
+                                                 sch:eventIndex 2^^xsd:integer , "Semana 2"@es .
+
+<http://w3id.org/def/guia#EvalTrial_Indices_Peligro> rdf:type :EvaluationTrial ;
+                                                       guide:trialType "Trabajo Individual"^^xsd:string,
+                                                         guide:evaluationDescription "Evaluación Progresiva y Global"^^xsd:string ;
+                                                      om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour>,
+                                                        guide:gradePercentage 5%^^xsd:g .
+
+#################################################################
+#    Evaluation Trial Properties (Data) - Sem 3 & Final Exam
+#################################################################
+
+<http://w3id.org/def/guia#EvalTrial_Examen> rdf:type :EvaluationTrial ;
+                                              sch:eventIndex 6^^xsd:integer , "Semana 6"@es .
+
+<http://w3id.org/def/guia#EvalTrial_Examen> guide:trialType "Examen Escrito"^^xsd:string,
+                                             guide:evaluationDescription "Evaluación Progresiva y Global"^^xsd:string ;
+                                            om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour>,
+                                              guide:gradePercentage 15%^^xsd:g .
+
+#################################################################
+#    Evaluation Trial Properties (Data) - Final Exam & Work
+#################################################################
+
+<http://w3id.org/def/guia#EvalTrial_Trabajo> rdf:type :EvaluationTrial ;
+                                               sch:eventIndex 7^^xsd:integer , "Semana 7"@es .
+
+<http://w3id.org/def/guia#EvalTrial_Trabajo> guide:trialType "Trabajo Individual"^^xsd:string,
+                                              guide:evaluationDescription "Evaluación Progresiva y Global"^^xsd:string ;
+                                             om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour>,
+                                               guide:gradePercentage 40%^^xsd:g .
+
+#################################################################
+#    Evaluation Trial Properties (Data) - Final Exam & Work
+#################################################################
+
+<http://w3id.org/def/guia#EvalTrial_Defensa> rdf:type :EvaluationTrial ;
+                                              sch:eventIndex 7^^xsd:integer , "Semana 7"@es .
+
+<http://w3id.org/def/guia#EvalTrial_Defensa> guide:trialType "Presentación Individual"^^xsd:string,
+                                               guide:evaluationDescription "Evaluación Progresiva y Global"^^xsd:string ;
+                                              om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour>,
+                                                guide:gradePercentage 20%^^xsd:g .
+
+#################################################################
+#    Evaluation Trial Properties (Data) - Extraordinary Exam
+#################################################################
+
+<http://w3id.org/def/guia#EvalTrial_Extra> rdf:type :EvaluationTrial ;
+                                             sch:eventIndex 14^^xsd:integer , "Semana 14"@es .
+
+<http://w3id.org/def/guia#EvalTrial_Extra> guide:trialType "Prueba Telemática"^^xsd:string,
+                                            guide:evaluationDescription "Evaluación Convocatoria Extraordinaria"^^xsd:string ;
+                                           om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour>,
+                                             guide:gradePercentage 40%^^xsd:g .
+
+#################################################################
+#    Evaluation Trial Properties (Data) - Extraordinary Exam
+#################################################################
+
+<http://w3id.org/def/guia#EvalTrial_Extra> rdf:type :EvaluationTrial ;
+                                              sch:eventIndex 21^^xsd:integer , "Semana 21"@es .
+
+<http://w3id.org/def/guia#EvalTrial_Extra> guide:trialType "Trabajo Individual"^^xsd:string,
+                                             guide:evaluationDescription "Evaluación Convocatoria Extraordinaria"^^xsd:string ;
+                                            om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour>,
+                                              guide:gradePercentage 40%^^xsd:g .
+
+#################################################################
+#    Evaluation Trial Properties (Data) - Final Exam & Work
+#################################################################
+
+<http://w3id.org/def/guia#EvalTrial_Extra> rdf:type :EvaluationTrial ;
+                                             sch:eventIndex 28^^xsd:integer , "Semana 28"@es .
+
+<http://w3id.org/def/guia#EvalTrial_Extra> guide:trialType "Presentación Individual"^^xsd:string,
+                                            guide:evaluationDescription "Evaluación Convocatoria Extraordinaria"^^xsd:string ;
+                                           om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour>,
+                                             guide:gradePercentage 20%^^xsd:g .
+
+#################################################################
+#    Didactic Resources (Data)
+#################################################################
+
+<http://w3id.org/def/guia#Res_ArcMap> rdf:type :DidacticResource ;
+                                       sch:name "Software ArcMap"^^xsd:string ,
+                                         guide:bibliographyType "Equipamiento"@es .
+
+<http://w3id.org/def/guia#Res_Blog_Forestal> rdf:type :DidacticResource ;
+                                               sch:name "Blog Aprovechamientos forestales e incendios"^^xsd:string,
+                                                 guide:bibliographyType "Recursos web"@es .
+
+#################################################################
+#    Required Knowledge (Data)
+#################################################################
+
+<http://w3id.org/def/guia#Req_Know_Fuego> rdf:type :RequiredKnowledge ;
+                                            sch:description "Comportamiento Del Fuego, Teledeteccion"^^xsd:string ,
+                                              guide:previousCourses "Asignaturas previas recomendadas"@es .

@@ -1,0 +1,154 @@
+@prefix : <http://guia-markdown-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# Course Instance
+:course_565005802 a guide:Course ;
+    sch:name "Design And Selection Of Materials In 3d Printing" ;
+    sch:courseCode 565005802 ;
+    guide:courseType "Optional/elective" ;
+    guide:semester "Semester 1" ;
+    sch:hasCourseInstance :guide_565005802 .
+
+# Course Guide
+:guide_5650_565005802 a guide:CourseGuide ;
+    sch:name "Learning Guide: Design And Selection Of Materials In 3d Printing" ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "September" ;
+    guide:periodEndingMonth "January" ;
+    sch:inLanguage "English" ;
+    sch:instructor :lecturer_cristina_moreno ;
+    guide:hasSyllabus :syllabus_design_materials ;
+    guide:hasEvaluation :eval_system_design_materials ;
+    sch:courseSchedule :schedule_design_materials ;
+    guide:hasDidacticResource :res_lamikiz, :res_shahzad, :res_gomez, :res_3dnatives, :res_eelisa ;
+    guide:hasCompetency :comp_C11_3, :comp_CE10, :comp_CE11, :comp_CE12, :comp_CE13, :comp_CE15, :comp_CE16, :comp_CE19, :comp_CE23, :comp_CE25, :comp_CE27, :comp_CE3, :comp_CE5, :comp_CE6, :comp_CE9, :comp_CG1, :comp_CG10, :comp_CG2, :comp_CG3, :comp_CG4, :comp_CG5, :comp_CG6, :comp_CG7, :comp_CG8, :comp_CG9, :comp_H13, :comp_H14, :comp_H9 ;
+    guide:hasLearningResult :lr_RA440 .
+
+# Degree and University Center
+:degree_56DD a guide:Degree ;
+    sch:name "Grado Ingenieria En Diseño Industrial Y Desarrollo De Producto" ;
+    guide:degreeCode "56DD" ;
+    guide:hasCourse :course_565005802 .
+
+:center_56 a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Diseño Industrial" ;
+    guide:offers :degree_56DD .
+
+# Faculty
+:lecturer_cristina_moreno a guide:Lecturer ;
+    sch:name "Cristina Moreno Diaz" ;
+    sch:email "cristina.mdiaz@upm.es" ;
+    guide:office "B-150 (1)" ;
+    guide:tutorshipsSchedule "Sin horario. Check online" .
+
+# Prior Knowledge
+:req_knowledge_cad a guide:RequiredKnowledge ;
+    sch:name "Computer-Aided Design (CAD)" .
+
+# Learning Results
+:lr_RA440 a guide:LearningResult ;
+    guide:learningResultCode "RA440" ;
+    guide:learningResultDescription "Los resultados del aprendizaje correspondientes a esta asignatura han quedado definidos en el apartado de competencias..." .
+
+# Competencies (Sample of the list provided)
+:comp_C11_3 a guide:Competency ;
+    sch:name "C.11.3." ;
+    guide:competencyDescription "Conocer el estado actual de las técnicas de impresión 3D así como los criterios para realizar un diseño eficiente..." .
+
+:comp_CE10 a guide:Competency ;
+    sch:name "CE10" ;
+    guide:competencyDescription "Conocimiento y utilización de los principios de teoría de circuitos y máquinas eléctricas." .
+
+:comp_CG1 a guide:Competency ;
+    sch:name "CG1" ;
+    guide:competencyDescription "Conocer y aplicar los conocimientos de ciencias y tecnologías básicas." .
+
+# Syllabus
+:syllabus_design_materials a guide:Syllabus ;
+    guide:hasItem :item_intro, :item_design, :item_material, :item_economic, :item_env, :item_cases, :item_future .
+
+:item_intro a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introduction to Additive Manufacturing" .
+
+:item_design a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Efficient Design in Additive Manufacturing" .
+
+# Evaluation System and Trials
+:eval_system_design_materials a guide:EvaluationSystem ;
+    guide:evaluationDescription "The evaluation methodology will consist of individual tasks (40%), presentations (20%), and final project (40%)." ;
+    guide:hasEvaluationTrial :trial_pres1, :trial_pres2, :trial_final_project, :trial_exam_global, :trial_exam_final .
+
+:trial_pres1 a guide:EvaluationTrial ;
+    sch:name "Presentation 1" ;
+    guide:evaluationType "Progressive assessment" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presential" ;
+    guide:hasScheduleEvent :event_week4 .
+
+:trial_final_project a guide:EvaluationTrial ;
+    sch:name "Final project | FINAL JOINT PROYECT PROTOTIPING" ;
+    guide:evaluationType "Progressive assessment" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presential" ;
+    guide:hasScheduleEvent :event_week14 .
+
+:trial_exam_final a guide:EvaluationTrial ;
+    sch:name "Final Exam" ;
+    guide:evaluationType "Global examination" ;
+    guide:gradePercentage "60%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Not Presential" ;
+    guide:hasScheduleEvent :event_week17 .
+
+# Schedule and Events
+:schedule_design_materials a guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week4, :event_week8, :event_week14, :event_week15, :event_week17 .
+
+:event_week1 a guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :act_lecture_mod1 .
+
+:act_lecture_mod1 a guide:Activity ;
+    sch:name "Module 1: Introduction to Additive Manufacturing" ;
+    guide:activityDescription "Lecture" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Face-to-face" .
+
+:event_week4 a guide:ScheduleEvent ;
+    guide:eventWeek "4" ;
+    guide:eventIndex 4 ;
+    guide:hasActivity :act_pres1 .
+
+:act_pres1 a guide:Activity ;
+    sch:name "Presentation 1" ;
+    guide:activityDescription "Group presentation" ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "Face-to-face" .
+
+# Didactic Resources
+:res_lamikiz a guide:DidacticResource ;
+    sch:name "Fabricación Aditiva, UNED, 2023" ;
+    guide:bibliographyType "Bibliography" ;
+    guide:bibliographyDescription "Lamikiz, A., Camacho, A.M., Ferrández, S. y Batista, M." .
+
+:res_3dnatives a guide:DidacticResource ;
+    sch:name "Web de publicaciones sobre impresión 3D" ;
+    guide:bibliographyType "Web resource" ;
+    guide:bibliographyDescription "https://www.3dnatives.com" .
+
+:res_eelisa a guide:DidacticResource ;
+    sch:name "EELISA Community Industrial Design4Human" ;
+    guide:bibliographyType "Web resource" ;
+    guide:bibliographyDescription "https://community.eelisa.eu/..." .

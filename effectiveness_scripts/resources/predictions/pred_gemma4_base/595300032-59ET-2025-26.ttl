@@ -1,0 +1,195 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Guide
+:course_595300032 a guide:Course ;
+    sch:name "Electronica Analogica II" ;
+    sch:courseCode 595300032 ;
+    guide:courseYear 2025 ;
+    guide:courseType "Obligatoria" ;
+    sch:numberOfCredits 6.0 .
+
+:courseGuide_595300032_2S_2025_26 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Electronica Analogica II" ;
+    sch:description "Guía de aprendizaje para la asignatura Electrónica Analógica II." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:numberOfCredits 6.0 ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :lecturer_FranciscoMartinezMoreno ,
+                   :lecturer_JavierMaloGomez ,
+                   :lecturer_IgnacioAntonHernandez ;
+    sch:director :lecturer_JavierMaloGomez ;
+    guide:hasCourse :course_595300032 ;
+    guide:hasSyllabus :syllabus_EAII ;
+    guide:hasCompetency :competency_EC02 ,
+                        :competency_EC05 ,
+                        :competency_CG04 ,
+                        :competency_CG11 ;
+    guide:hasLearningResult :learningResult_RA546 ,
+                            :learningResult_RA550 ,
+                            :learningResult_RA553 ,
+                            :learningResult_RA551 ,
+                            :learningResult_RA552 ,
+                            :learningResult_RA558 ,
+                            :learningResult_RA556 ,
+                            :learningResult_RA549 ,
+                            :learningResult_RA557 ,
+                            :learningResult_RA545 ,
+                            :learningResult_RA548 ,
+                            :learningResult_RA555 ,
+                            :learningResult_RA554 ,
+                            :learningResult_RA547 ;
+    guide:hasEvaluation :evalSystem_EAII ;
+    guide:hasDidacticResource :resource_book_oa ,
+                               :resource_transparencias ,
+                               :resource_apuntes ,
+                               :resource_ejercicios ,
+                               :resource_web_moodle ;
+    sch:courseSchedule :schedule_EAII .
+
+# Degree and University Center
+:degree_59ET a guide:BachelorDegree ;
+    sch:name "59ET - Doble Grado En Ing.Electronica De Comunicaciones Y En Ing.Telematica" ;
+    guide:hasCourse :course_595300032 .
+
+:center_ETS_Telecom a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingeniería y Sist. de Telecom." ;
+    guide:offers :degree_59ET .
+
+# Lecturers
+:lecturer_FranciscoMartinezMoreno a guide:Lecturer ;
+    sch:name "Francisco Martinez Moreno" ;
+    guide:office "A4210" ;
+    sch:email "francisco.martinezm@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:lecturer_JavierMaloGomez a guide:Lecturer ;
+    sch:name "Javier Malo Gomez" ;
+    guide:office "A4215" ;
+    sch:email "javier.malo@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:lecturer_IgnacioAntonHernandez a guide:Lecturer ;
+    sch:name "Ignacio Anton Hernandez" ;
+    guide:office "A4220" ;
+    sch:email "i.anton@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+# Competencies
+:competency_EC02 a guide:Competency ;
+    guide:competencyCode "CE EC02" ;
+    guide:competencyDescription "Capacidad para seleccionar circuitos y dispositivos electrónicos especializados para la transmisión, el encaminamiento o enrutamiento y los terminales, tanto en entornos fijos como móviles." .
+
+:competency_EC05 a guide:Competency ;
+    guide:competencyCode "CE EC05" ;
+    guide:competencyDescription "Capacidad de diseñar circuitos de electrónica analógica y digital, de conversión analógico-digital y digital-analógica, de radiofrecuencia, de alimentación y conversión de energía eléctrica para aplicaciones de telecomunicación y computación." .
+
+:competency_CG04 a guide:Competency ;
+    guide:competencyCode "CG 04" ;
+    guide:competencyDescription "Capacidad de abstracción, de análisis y de síntesis y de resolución de problemas." .
+
+:competency_CG11 a guide:Competency ;
+    guide:competencyCode "CG 11" ;
+    guide:competencyDescription "Habilidades para la utilización de las Tecnologías de la Información y las Comunicaciones." .
+
+# Learning Results
+:learningResult_RA546 a guide:LearningResult ;
+    guide:learningResultCode "RA546" ;
+    guide:learningResultDescription "Comprender e interpretar las especiguificaciones y parámetros de un amplificador operacional a partir de las hojas de características del fabricante" .
+
+:learningResult_RA550 a guide:LearningResult ;
+    guide:learningResultCode "RA550" ;
+    guide:learningResultDescription "Calcular, de forma aproximada y rápida, el ancho de banda de un amplificador construido con amplificador operacional compensado en frecuencia." .
+
+# Syllabus
+:syllabus_EAII a guide:Syllabus ;
+    guide:hasItem :item_unit1 ,
+                  :item_unit2 ,
+                  :item_unit3 .
+
+:item_unit1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Circuitos realimentados con Amplificador Operacional" .
+
+:item_unit2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Respuesta en frecuencia de circuitos basados en el Amplificador Operacional" .
+
+:item_unit3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Parámetros de los Amplificadores Operacionales comerciales" .
+
+# Evaluation System
+:evalSystem_EAII a guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación distribuida o progresiva. La calificación final se obtiene de la suma del 70% Teoría y 30% Laboratorio." ;
+    guide:hasEvaluationTrial :trial_BT1a ,
+                            :trial_BT1b ,
+                            :trial_BT2 ,
+                            :trial_BT3 ,
+                            :trial_exam_final .
+
+:trial_BT1a a guide:EvaluationTrial ;
+    guide:trialType "Prueba Telemática" ;
+    guide:trialMode "No Presencial" ;
+    guide:gradePercentage "3%" ;
+    guide:evaluationDuration "01:00" ;
+    guide:involvesCompetency :competency_CG11 , :competency_CG04 .
+
+:trial_exam_final a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "48%" ;
+    guide:evaluationDuration "03:00" ;
+    guide:involvesCompetency :competency_CG04 .
+
+# Schedule and Activities
+:schedule_EAII a guide:Schedule ;
+    sch:eventSchedule :event_week1 ,
+                      :event_week2 ,
+                      :event_week6 .
+
+:event_week1 a guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :activity_presentation .
+
+:activity_presentation a guide:Activity ;
+    guide:activityDescription "Presentación Plan Docente de la Asignatura" ;
+    guide:activityDuration 0.5 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:event_week2 a guide:ScheduleEvent ;
+    guide:eventIndex 2 ;
+    guide:eventWeek "Semana 2" ;
+    guide:hasActivity :activity_exercises_w2 .
+
+:activity_exercises_w2 a guide:Activity ;
+    guide:activityDescription "Ejercicios de circuitos con realimentación negativa" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Clase de Problemas" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:resource_book_oa a guide:DidacticResource ;
+    guide:bibliographyTitle "Design with operational amplifiers and analog integrated circuits (fourth edition)" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Es el principal libro de texto, de entre los recomendados, para seguir la asignatura" .
+
+:resource_transparencias a guide:DidacticResource ;
+    guide:bibliographyTitle "Transparencias" ;
+    guide:bibliographyType "Otros" .
+
+# Required Knowledge
+:knowledge_previo a guide:RequiredKnowledge ;
+    guide:previousKnowledge "El alumno debe saber analizar circuitos eléctricos básicos: Lemas de Kirchoff, teoremas básicos de electricidad, teoría básica de cuadripolos y respuesta transitoria de circuitos R-L-C serie y paralelo." .

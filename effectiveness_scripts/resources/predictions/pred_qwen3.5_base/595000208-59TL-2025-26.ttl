@@ -1,0 +1,244 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Course Guide Instance
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide/GA_59TL_595000208> rdf:type guide:CourseGuide ;
+                                                        sch:name "Electronica I"@en ;
+                                                        dct:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@es ;
+                                                        guide:numberOfCredits 6.0^^xsd:decimal ;
+                                                        guide:teachingPeriod "2025-26"^^xsd:string ;
+                                                        guide:periodStartingMonth "Febrero"^^rdf:langString ;
+                                                        guide:periodEndingMonth "Junio"^^rdf:langString ;
+                                                        sch:inLanguage "Castellano"^^rdf:langString ;
+                                                        guide:syllabusDescription <http://guia-mad-bench.es/data/syllabus/GA_59TL_595000208> ;
+                                                        dct:creator "E.T.S. de Ingeniería y Sist. de Telecom."@en .
+
+#################################################################
+#    Degree Instance
+#################################################################
+
+<http://guia-mad-bench.es/data/degree/GradoEnIngenieriaTelematica> rdf:type guide:BachelorDegree ;
+                                                                      sch:name "59TL - Grado En Ingenieria Telematica"@es ;
+                                                                      dct:title "Plan de Estudios 59TL"^^rdf:langString .
+
+#################################################################
+#    University Center Instance
+#################################################################
+
+<http://guia-mad-bench.es/data/universitycenter/ETSdeTelecom> rdf:type guide:UniversityCenter, sch:Organization ;
+                                                                sch:name "E.T.S. de Ingeniería y Sist. de Telecom."@es .
+
+#################################################################
+#    Lecturers Instances
+#################################################################
+
+###  Coordinator / Director (Rita Hogan) ###
+<http://guia-mad-bench.es/data/lecturer/Rita_Hogan_Teves_De_Almeida> rdf:type guide:Lecturer, sch:Person ;
+                                                                         sch:name "Rita Hogan Teves De Almeida"@en ;
+                                                                         guide:office "A4202"^^xsd:string ;
+                                                                         sch:email <mailto:rita.hogan@upm.es> .
+
+###  Pedro Cobos Arribas ###
+<http://guia-mad-bench.es/data/lecturer/Pedro_Cobos_Arribas> rdf:type guide:Lecturer, sch:Person ;
+                                                                sch:name "Pedro Cobos Arribas"@en ;
+                                                                guide:office "A4210"^^xsd:string ;
+                                                                sch:email <mailto:pedro.cobos@upm.es> .
+
+###  Agustin Rodriguez Herrero ###
+<http://guia-mad-bench.es/data/lecturer/Agustin_Rodriguez_Herrero> rdf:type guide:Lecturer, sch:Person ;
+                                                                      sch:name "Agustin Rodriguez Herrero"@en ;
+                                                                      guide:office "A4214"^^xsd:string ;
+                                                                      sch:email <mailto:agustin.rodriguez@upm.es> .
+
+###  Luis Narvarte Fernandez ###
+<http://guia-mad-bench.es/data/lecturer/Luis_Narvarte_Fernandez> rdf:type guide:Lecturer, sch:Person ;
+                                                                   sch:name "Luis Narvarte Fernandez"@en ;
+                                                                   guide:office "A4218"^^xsd:string ;
+                                                                   sch:email <mailto:luis.narvarte@upm.es> .
+
+###  Francisco Martinez Moreno ###
+<http://guia-mad-bench.es/data/lecturer/Francisco_Martinez_Moreno> rdf:type guide:Lecturer, sch:Person ;
+                                                                     sch:name "Francisco Martinez Moreno"@en ;
+                                                                     guide:office "A4210"^^xsd:string ;
+                                                                     sch:email <mailto:francisco.martinezm@upm.es> .
+
+###  Javier Malo Gomez ###
+<http://guia-mad-bench.es/data/lecturer/Javier_Malo_Gomez> rdf:type guide:Lecturer, sch:Person ;
+                                                             sch:name "Javier Malo Gomez"@en ;
+                                                             guide:office "A4220"^^xsd:string ;
+                                                             sch:email <mailto:javier.malo@upm.es> .
+
+###  Jorge De Ponga Del Pozo ###
+<http://guia-mad-bench.es/data/lecturer/Jorge_De_Ponga_Del_Pozo> rdf:type guide:Lecturer, sch:Person ;
+                                                                   sch:name "Jorge De Ponga Del Pozo"@en ;
+                                                                   guide:office "A4220"^^xsd:string ;
+                                                                   sch:email <mailto:jorge.deponga@upm.es> .
+
+###  Guido Vallerotto ###
+<http://guia-mad-bench.es/data/lecturer/Guido_Vallerotto> rdf:type guide:Lecturer, sch:Person ;
+                                                            sch:name "Guido Vallerotto"@en ;
+                                                            guide:office "A4218"^^xsd:string ;
+                                                            sch:email <mailto:guido.vallerotto@upm.es> .
+
+#################################################################
+#    Competencies Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/competency/CE_B4> rdf:type guide:Competency ;
+                                                    dct:title "Comprensión y dominio de los conceptos básicos..."^^rdf:langString ;
+                                                    guide:competencyCode "CE B4"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CE_TEL12> rdf:type guide:Competency ;
+                                                       dct:title "Capacidad de utilizar distintas fuentes de energía..."^^rdf:langString ;
+                                                       guide:competencyCode "CE TEL12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CG_02> rdf:type guide:Competency ;
+                                                   dct:title "Capacidad de búsqueda y selección de información..."^^rdf:langString ;
+                                                   guide:competencyCode "CG 02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CG_04> rdf:type guide:Competency ;
+                                                    dct:title "Capacidad de abstracción, análisis y síntesis..."^^rdf:langString ;
+                                                    guide:competencyCode "CG 04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CG_05> rdf:type guide:Competency ;
+                                                   dct:title "Capacidad de trabajo en equipo y entornos multidisciplinares."^^rdf:langString ;
+                                                   guide:competencyCode "CG 05"^^xsd:string .
+
+#################################################################
+#    Learning Results Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/learningresult/RA_68> rdf:type guide:LearningResult ;
+                                                       dct:title "Entender el diagrama de bloques..."^^rdf:langString ;
+                                                       guide:learningResultCode "RA68"^^xsd:string .
+
+<http://guia-mad-bench.es/data/learningresult/RA_69> rdf:type guide:LearningResult ;
+                                                       dct:title "Conocer la función y características básicas de los componentes..."^^rdf:langString ;
+                                                       guide:learningResultCode "RA69"^^xsd:string .
+
+<http://guia-mad-bench.es/data/learningresult/RA_70> rdf:type guide:LearningResult ;
+                                                       dct:title "Entender el modelo y las propiedades básicas de los amplificadores..."^^rdf:langString ;
+                                                       guide:learningResultCode "RA70"^^xsd:string .
+
+<http://guia-mad-bench.es/data/learningresult/RA_67> rdf:type guide:LearningResult ;
+                                                       dct:title "Entender las características principales de los bloques funcionales..."^^rdf:langString ;
+                                                       guide:learningResultCode "RA67"^^xsd:string .
+
+<http://guia-mad-bench.es/data/learningresult/RA_71> rdf:type guide:LearningResult ;
+                                                       dct:title "Conocer la función y características básicas de los componentes activos..."^^rdf:langString ;
+                                                       guide:learningResultCode "RA71"^^xsd:string .
+
+<http://guia-mad-bench.es/data/learningresult/RA_66> rdf:type guide:LearningResult ;
+                                                       dct:title "Entender la nomenclatura y propiedades básicas de las señales elementales..."^^rdf:langString ;
+                                                       guide:learningResultCode "RA66"^^xsd:string .
+
+#################################################################
+#    Syllabus Instance
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/GA_59TL_595000208> rdf:type guide:Syllabus ;
+                                                               sch:name "Temario Electronica I"^^rdf:langString .
+
+###  Syllabus Items ###
+# Item 1. Introducción a los sistemas electrónicos (Señales, Sistemas)
+<http://guia-mad-bench.es/data/syllabussitem/Intro_Sistemas_Electronicos> rdf:type guide:SyllabusItem ;
+                                                                              sch:name "Introducción a los sistemas electrónicos"^^rdf:langString ;
+                                                                              guide:syllabusDescription <http://guia-mad-bench.es/data/syllabussitem/Intro_Sistemas_Electronicos#desc> .
+
+<http://guia-mad-bench.es/data/syllabussitem/Señales> rdf:type guide:SyllabusItem, sch:Course ;
+                                                          dct:title "1. Señales"^^rdf:langString ;
+                                                          guide:syllabusDescription <http://guia-mad-bench.es/data/syllabussitem/Señales#desc> .
+
+<http://guia-mad-bench.es/data/syllabussitem/Sistemas> rdf:type guide:SyllabusItem, sch:Course ;
+                                                           dct:title "2. Sistemas"^^rdf:langString ;
+                                                           guide:syllabusDescription <http://guia-mad-bench.es/data/syllabussitem/Sistemas#desc> .
+
+###  Item 2. Componentes y dispositivos electrónicos ###
+<http://guia-mad-bench.es/data/syllabussitem/Componentes_Pasivos_Sensores_Actuadores> rdf:type guide:SyllabusItem ;
+                                                                                            sch:name "2.1. Componentes pasivos, sensores y actuadores"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/syllabussitem/Diodos> rdf:type guide:SyllabusItem ;
+                                                        dct:title "2.2. Diodos"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/syllabussitem/MOSFET> rdf:type guide:SyllabusItem ;
+                                                       dct:title "2.3. MOSFET"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/syllabussitem/BJT> rdf:type guide:SyllabusItem ;
+                                                    dct:title "2.4. BJT"^^rdf:langString .
+
+###  Item 3. Subsistemas electrónicos integrados ###
+<http://guia-mad-bench.es/data/syllabussitem/Subsistemas_Integrados> rdf:type guide:SyllabusItem ;
+                                                                        sch:name "3.1. Amplificadores, Comparadores"^^rdf:langString .
+
+###  Item 4. Prácticas ###
+<http://guia-mad-bench.es/data/syllabussitem/Practicas> rdf:type guide:SyllabusItem ;
+                                                           dct:title "4. Prácticas"^^rdf:langString .
+
+#################################################################
+#    Schedule Instance (Course Guide)
+#################################################################
+
+###  Linking CourseGuide to Syllabus ###
+<http://guia-mad-bench.es/data/courseguide/GA_59TL_595000208> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus/GA_59TL_595000208> ;
+                                                                sch:eventSchedule <http://guia-mad-bench.es/data/schedule/SEMASTRO_2025-26>.
+
+#################################################################
+#    Schedule Instance (Semester)
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/GA_59TL_595000208> rdf:type guide:Schedule, sch:Event ;
+                                                               dct:title "Cronograma 2S_2025-26"^^rdf:langString .
+
+#################################################################
+#    Schedule Events Instances (Activities & Exams)
+#################################################################
+
+###  Week/Semester Activities ###
+<http://guia-mad-bench.es/data/scheduleevent/SEMASTRO_W1> rdf:type guide:ScheduleEvent, sch:Event ;
+                                                             dct:title "Semana 1"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/activity/Presentacion_Asignatura> rdf:type guide:Activity, sch:CourseInstance ;
+                                                                   sch:name "Presentación de la asignatura"^^rdf:langString ;
+                                                                   guide:activityDescription <http://guia-mad-bench.es/data/activity/Presentacion_Asignatura#desc> .
+
+<http://guia-mad-bench.es/data/scheduleevent/SEMASTRO_W1> sch:eventSchedule <http://guia-mad-bench.es/data/courseguide/GA_59TL_595000208>, guide:hasActivity <http://guia-mad-bench.es/data/activity/Presentacion_Asignatura>.
+
+###  Evaluation Trials ###
+<http://guia-mad-bench.es/data/evaluationsystem/EvalSystem_ElectronicaI> rdf:type guide:EvaluationSystem ;
+                                                                            sch:name "Sistema de Evaluación Electronica I"^^rdf:langString .
+
+# Trial 1: Examen en Grupo 1 (Semester 6) ###
+<http://guia-mad-bench.es/data/evaluationtrial/ExG1> rdf:type guide:EvaluationTrial ;
+                                                       sch:name "Examen en Grupo 1"^^rdf:langString ;
+                                                       guide:hasEvaluationTrial <http://guia-mad-bench.es/data/scheduleevent/Sem6_Exam_Grupo_1>, guide:trialWeek "Semestre 6"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluationtrial/ExG1> sch:eventSchedule <http://guia-mad-bench.es/data/courseguide/GA_59TL_595000208>, guide:hasEvaluationTrial <http://guia-mad-bench.es/data/scheduleevent/Sem6_Exam_Grupo_1>.
+
+# Trial 2: Examen Parcial 1 (Semester 7) ###
+<http://guia-mad-bench.es/data/evaluationtrial/ExP1> rdf:type guide:EvaluationTrial ;
+                                                       sch:name "Examen Parcial 1"^^rdf:langString .
+
+# Trial 3: Examen Global de Laboratorio (Semester 12) ###
+<http://guia-mad-bench.es/data/evaluationtrial/ExGL> rdf:type guide:EvaluationTrial, sch:Event ;
+                                                       dct:title "Examen Global de Laboratorio"^^rdf:langString .
+
+# Trial 4: Examen en Grupo 2 (Semester 13) ###
+<http://guia-mad-bench.es/data/evaluationtrial/ExG2> rdf:type guide:EvaluationTrial ;
+                                                       sch:name "Examen en Grupo 2"^^rdf:langString .
+
+# Trial 5: Examen Global de Teoría (Semester 17) ###
+<http://guia-mad-bench.es/data/evaluationtrial/ExGT> rdf:type guide:EvaluationTrial ;
+                                                        sch:name "Examen Global de Teoría"^^rdf:langString .
+
+# Trial 6: Examen Extraordinario ###
+<http://guia-mad-bench.es/data/evaluationtrial/ExE> rdf:type guide:EvaluationTrial, sch:Event ;
+                                                       dct:title "Examen Extraordinario"^^rdf:langString .

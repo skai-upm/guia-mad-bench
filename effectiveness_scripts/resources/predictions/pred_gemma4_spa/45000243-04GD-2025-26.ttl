@@ -1,0 +1,171 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+guide:Transportes_CourseGuide
+    rdf:type guide:CourseGuide ;
+    sch:name "Transportes" ;
+    sch:description "4500024	- Transportes" ;
+    guide:numberOfCredits 4.5 ;
+    guide:courseType "Obligatoria" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:semester "Séptimo semestre" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:instructor guide:Maria_Eugenia_Lopez_Lambas ;
+    sch:director guide:Maria_Eugenia_Lopez_Lambas ;
+    guide:hasSyllabus guide:Syllabus_Transportes ;
+    guide:hasEvaluation guide:EvalSystem_Transportes ;
+    guide:hasCompetency guide:Comp_CM40_2, guide:Comp_CM41_1, guide:Comp_CM43_3, guide:Comp_CM44, guide:Comp_CT1, guide:Comp_CT2, guide:Comp_CT3, guide:Comp_CT4 ;
+    guide:hasLearningResult guide:LR_RA180_RA03, guide:LR_RA137, guide:LR_RA100, guide:LR_RA139, guide:LR_RA227_R3, guide:LR_RA91_RA186 ;
+    guide:hasDidacticResource guide:Biblio_1, guide:Web_ELTIS ;
+    sch:courseSchedule guide:Schedule_Transportes .
+
+# Degree and University Center
+guide:Degree_04GD
+    rdf:type guide:Degree ;
+    sch:name "04GD - Doble Grado En Ingenierium Civil Y Territorial Y En Ade" ;
+    guide:degreeCode "04GD" ;
+    guide:hasCourse guide:Transportes_CourseInstance .
+
+guide:Transportes_CourseInstance
+    rdf:type guide:Course ;
+    sch:courseCode 45000243 ;
+    guide:courseYear 2025 ;
+    sch:hasCourseInstance guide:Transportes_CourseGuide .
+
+guide:ETS_Caminos
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ing. de Caminos Canales y P." ;
+    guide:offers guide:Degree_04GD .
+
+# Lecturers
+guide:Maria_Eugenia_Lopez_Lambas
+    rdf:type guide:Lecturer ;
+    sch:name "Maria Eugenia Lopez Lambas" ;
+    sch:email "mariaeugenia.lopez@upm.es" ;
+    guide:office "transyt" ;
+    guide:tutorshipsSchedule "L - 09:00 - 11:00, X - 09:00 - 11:00" .
+
+guide:Natalia_Sobrino_Vazquez
+    rdf:type guide:Lecturer ;
+    sch:name "Natal:ia Sobrino Vazquez" ;
+    sch:email "natalia.sobrino@upm.es" ;
+    guide:office "TRANSyT" ;
+    guide:tutorshipsSchedule "M - 10:00 - 11:00, X - 10:00 - 11:00" .
+
+guide:Aniceto_Zaragoza_Ramirez
+    rdf:type guide:Lecturer ;
+    sch:name "Aniceto Zaragoza Ramirez" ;
+    sch:email "aniceto.zaragoza@upm.es" ;
+    guide:office "transportes" ;
+    guide:tutorshipsSchedule "L - 16:00 - 19:00, V - 16:00 - 19:00" .
+
+# Competencies
+guide:Comp_CM40_2
+    rdf:type guide:Competency ;
+    guide:competencyCode "04GC. CM40.2" ;
+    guide:competencyDescription "Comprensión del fenómeno urbano y sus factores determinantes (historia, economía, actividad humana, movilidad)." .
+
+guide:Comp_CM41_1
+    rdf:type guide:Competency ;
+    guide:competencyCode "04GC. CM41.1" ;
+    guide:competencyDescription "Conocimiento de la influencia de las infraestructuras en la ordenación del territorio..." .
+
+guide:Comp_CT1
+    rdf:type guide:Competency ;
+    guide:competencyCode "04GC. CT1" ;
+    guide:competencyDescription "Compromiso y capacidad para aplicar los principios de sostenibilidad en las actuaciones profesionales." .
+
+# Learning Results
+guide:LR_RA180_RA03
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA180 - RA04" ;
+    guide:learningResultDescription "Trabajar de forma autónoma y con iniciativa personal" .
+
+guide:LR_RA137
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA137" ;
+    guide:learningResultDescription "Interioriza los principios de deontología profesional de ingeniería civil." .
+
+# Syllabus
+guide:Syllabus_Transportes
+    rdf:type guide:Syllabus ;
+    guide:hasItem guide:Tema_1, guide:Tema_2, guide:Tema_3, guide:Tema_4, guide:Tema_5, guide:Tema_6, guide:Tema_7, guide:Tema_8, guide:Tema_9, guide:Tema_10, guide:Tema_11, guide:Tema_12 .
+
+guide:Tema_1
+    rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Características y funciones. La actividad del sector del transporte" ;
+    guide:itemIndex 1 .
+
+guide:Tema_6
+    rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Intermodalidad" ;
+    guide:itemIndex 6 .
+
+# Evaluation System
+guide:EvalSystem_Transportes
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación continua y prueba final" ;
+    guide:hasEvaluationTrial guide:Examen_Parcial, guide:Examen_Final, guide:Test_Tema_1 .
+
+guide:Test_Tema_1
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Test" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "2.3%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "00:15" .
+
+guide:Examen_Parcial
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "5 / 10" .
+
+guide:Examen_Final
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" .
+
+# Schedule and Activities
+guide:Schedule_Transportes
+    rdf:type guide:Schedule ;
+    sch:eventSchedule guide:Act_Tema1, guide:Act_Tema2, guide:Act_Examen_Parcial .
+
+guide:Act_Tema1
+    rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1 Características y funciones del transporte" ;
+    guide:activityDuration 2.16 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+guide:Act_Examen_Parcial
+    rdf:type guide:Activity ;
+    guide:activityDescription "Examen parcial" ;
+    guide:activityDuration 2.5 ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:attendanceType "Presencial" .
+
+# Resources
+guide:Biblio_1
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Introducción a la ingeniería del Transporte: Teoría y práctica. Editorial Delta." ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:Web_ELTIS
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "ELTIS (European Local Transport Information System): www.eltis.org" ;
+    guide:bibliographyType "Recurso Web" .
+
+# Required Knowledge
+guide:ReqKnow_Transportes
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "procedimientos generales de construcción, formacion basica" ;
+    guide:previousCourses "Ingenieria Civil Y Medio Ambiente, Topografia Y Cartografia" .

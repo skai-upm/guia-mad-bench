@@ -1,0 +1,167 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+guide:CourseGuide_93001006
+    rdf:type guide:CourseGuide ;
+    sch:name "Servicios De Seguridad En Red" ;
+    sch:description "La asignatura trata sobre los servicios de seguridad que permiten proteger la información en tránsito a través de las redes de comunicaciones." ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCourse guide:Course_93001006 ;
+    guide:hasCompetency guide:Competency_CE04, guide:Competency_CE05, guide:Competency_CG03 ;
+    guide:hasLearningResult guide:LearningResult_RA10 ;
+    sch:instructor guide:Lecturer_DiegoRivera ;
+    guide:hasEvaluation guide:EvaluationSystem_93001006 ;
+    guide:hasSyllabus guide:Syllabus_93001006 ;
+    guide:hasDidacticResource guide:Resource_Moodle ;
+    guide:otherInformation "Esta asignatura puede contribuir a los Objet: 5 y 9 de la ONU." .
+
+# Course Instance
+guide:Course_93001006
+    rdf:type guide:Course ;
+    sch:courseCode 93001006 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Primer semestre" .
+
+# Degree Instance
+guide:Degree_09AW
+    rdf:type guide:Degree ;
+    sch:name "Master Universitario En Ciberseguridad" ;
+    guide:degreeCode "09AW" .
+
+# University Center Instance
+guide:UniversityCenter_ETS
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" .
+
+# Lecturer Instances
+guide:Lecturer_DiegoRivera
+    rdf:type guide:Lecturer ;
+    sch:name "Diego Rivera Pinto" ;
+    sch:email "diego.rivera@upm.es" ;
+    guide:office "C-216" ;
+    guide:tutorshipsSchedule "Sin horario. Concertar cita por correo electrónico." .
+
+guide:Lecturer_MariaBernardos
+    rdf:type guide:Lecturer ;
+    sch:name "María Del Socorro Bernardos Galindo" ;
+    sch:email "sbernardos@fi.upm.es" .
+
+guide:Lecturer_HugoParada
+    rdf:type guide:Lecturer ;
+    sch:name "Hugo Alexer Parada Gelvez" ;
+    sch:email "hugoalexer.parada@upm.es" .
+
+# Competency Instances
+guide:Competency_CE04
+    rdf:type guide:Competency ;
+    guide:competencyCode "CE04" ;
+    guide:competencyDescription "Capacidad para establecer una categorización de servicios de ciberseguridad para proteger a las infraestructuras conectadas en red." .
+
+guide:Competency_CE05
+    rdf:type guide:Competency ;
+    guide:competencyCode "CE05" ;
+    guide:competencyDescription "Capacidad de analizar y diseñar servicios de seguridad de control de acceso, protección de la información en tránsito y protección perimetral." .
+
+guide:Competency_CG03
+    rdf:type guide:Competency ;
+    guide:competencyCode "CG03" ;
+    guide:competencyDescription "Dotar al alumno de la capacidad de diseñar e implantar procedimientos de protección de la información asociados con los sistemas de información, las redes y comunicaciones telemáticas y los servicios de Internet." .
+
+# Learning Result Instance
+guide:LearningResult_RA10
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA10" ;
+    guide:learningResultDescription "Analizar y seleccionar los mecanismos adecuados para proteger las comunicaciones." .
+
+# Evaluation System and Trials
+guide:EvaluationSystem_93001006
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación progresiva que consiste en la realización de cuatro trabajos prácticos y un examen escrito." ;
+    guide:hasEvaluationTrial guide:Trial_ExamenTeoria, guide:Trial_PracticasMemorias, guide:Trial_PracticasExamen .
+
+guide:Trial_ExamenTeoria
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "60%" ;
+    guide:minimumScore "3.5 / 10" ;
+    guide:evaluationDuration "01:00" .
+
+guide:Trial_PracticasMemorias
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo en Grupo" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "3.5 / 10" ;
+    guide:evaluationDuration "01:00" .
+
+guide:Trial_PracticasExamen
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "3.5 / 10" ;
+    guide:evaluationDuration "01:00" .
+
+# Syllabus and Items
+guide:Syllabus_93001006
+    rdf:type guide:Syllabus ;
+    guide:hasItem guide:SyllabusItem_Tema1, guide:SyllabusItem_Tema2, guide:SyllabusItem_Tema3, guide:SyllabusItem_Tema4, guide:SyllabusItem_Tema5, guide:SyllablesItem_Tema6 .
+
+guide:SyllabusItem_Tema1
+    rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Protección de redes telemáticas y sistemas. Infraestructuras de seguridad." ;
+    guide:itemIndex 1 .
+
+guide:SyllabusItem_Tema2
+    rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Redes Privadas Virtuales (VPN)" ;
+    guide:itemIndex 2 .
+
+guide:SyllabusItem_Tema3
+    rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Seguridad en nivel de enlace, redes móviles y WiFi" ;
+    guide:itemIndex 3 .
+
+guide:SyllabusItem_Tema4
+    rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Seguridad en nivel de red: IPSEC" ;
+    guide:itemIndex 4 .
+
+guide:SyllabusItem_Tema5
+    rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Seguridad en nivel de transporte: SSL/TLS" ;
+    guide:itemIndex 5 .
+
+guide:SyllabusItem_Tema6
+    rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Seguridad en nivel de aplicación: SRTP, S/MIME, PGP" ;
+    guide:itemIndex 6 .
+
+# Schedule Events (from Cronograma)
+guide:ScheduleEvent_Week1
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity guide:Activity_LeccionMagistral_Tema1, guide:Activity_Practicas_W1 .
+
+guide:Activity_LeccionMagistral_Tema1
+    rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+# Didactic Resource
+guide:Resource_Moodle
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Presentaciones, enunciados de prácticas, software y material complementario" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Disponibles en la página Moodle de la asignatura." .

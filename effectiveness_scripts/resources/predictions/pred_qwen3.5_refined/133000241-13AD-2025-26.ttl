@@ -1,0 +1,651 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide-ANX_PRCL_001_01> rdf:type :CourseGuide ;
+    dct:title "Ordenacion De Montes Avanzada"@en ;
+    sch:name "Ordenacion De Montes Avanzada" ;
+    guide:courseYear 2025 ;
+    guide:numberOfCredits "5.0"^^xsd:decimal ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    dct:creator "Fernando Garcia Robredo" ,
+                "Luis Augusto Diaz Balteiro" .
+
+<http://guia-mad-bench.es/data/degree-13AD> rdf:type :MasterDegree ;
+    sch:name "Master Universitario En Ingenieria de Montes"@en ;
+    guide:degreeCode "13AD"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide-ANX_PRCL_001_01> dct:publisher <http://w3id.org/def/guia#UniversityCenter-E.T.S.I_Montes_Forestal_y_Medio_Natur> ;
+    sch:courseCode 241 .
+
+<http://guia-mad-bench.es/data/courseguide-ANX_PRCL_001_01> guide:sch:director <http://guia-mad-bench.es/data/lecturer-Fernando_Garcia_Robredo> ;
+    sch:instructor <http://guia-mad-bench.es/data/lecturer-Luis_Augusto_Diaz_Balteiro> .
+
+<http://guia-mad-bench.es/data/courseguide-ANX_PRCL_001_01> guide:sch:eventSchedule <http://guia-mad-bench.es/data/schedule-Semestre_2025_26> ;
+    sch:courseInstance <http://w3id.org/def/guia#CourseGuide>.
+
+<http://guia-mad-bench.es/data/courseguide-ANX_PRCL_001_01> guide:sch:publishedAt "https://www.upm.es"^^xsd:string .
+    
+#################################################################
+#    Competencies and Learning Results
+#################################################################
+
+###  http://w3id.org/def/guia#Competency instances
+<http://guia-mad-bench.es/data/competency-CB09> rdf:type :Competency ;
+    guide:competencyCode "CB09"^^xsd:string ;
+    guide:competencyDescription "Que los estudiantes sepan comunicar sus conclusiones y los conocimientos y razones últimas que las sustentan a públicos especializados y no especializados de un modo claro y sin ambigüedades"@en .
+
+<http://guia-mad-bench.es/data/competency-CE_2.8> rdf:type :Competency ;
+    guide:competencyCode "CE 2.8"^^xsd:string ;
+    guide:competencyDescription "Capacidad para la redacción, dirección y ejecución de Proyectos de Ordenación de Montes"@en .
+
+<http://guia-mad-bench.es/data/competency-CT06> rdf:type :Competency ;
+    guide:competencyCode "CT06"^^xsd:string ;
+    guide:competencyDescription "Búsqueda bibliográfica, análisis de documentación y tratamiento de la información procedente de diversas fuentes y de su análisis y síntesis aplicándola a la resolución de problemas complejos"@en .
+
+###  http://w3id.org/def/guia#LearningResult instances
+<http://guia-mad-bench.es/data/result-RA162> rdf:type :LearningResult ;
+    guide:learningResultCode "RA162"^^xsd:string ;
+    guide:learningResultDescription "Conocer cómo utilizar la información disponible en la toma de decisiones en gestión forestal"@en .
+
+<http://guia-mad-bench.es/data/result-RA134> rdf:type :LearningResult ;
+    guide:learningResultCode "RA134"^^xsd:string ;
+    guide:learningResultDescription "Capacidad para realizar búsquedas bibliográficas, consultar y utilizar con criterio bases de datos y otras fuentes de información"@en .
+
+#################################################################
+#    Syllabus and Items
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus-13AD_2025> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/item-Tema_1_Introductio_n_Montes> .
+
+<http://guia-mad-bench.es/data/competency-CB09> sch:inLanguage "Castellano"^^xsd:string ;
+    guide:syllabusDescription "Introducción a la Ordenación de Montes"@en .
+
+#################################################################
+#    Schedule Events and Activities
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-Semestre_2025_26> rdf:type :Schedule ;
+    sch:courseInstance <http://w3id.org/def/guia#CourseGuide>.
+
+###  http://w3id.org/def/guia#Activity instances (from Schedule)
+<http://guia-mad-bench.es/data/activity-Tema_1_Introductio_n_Montes> rdf:type :ScheduleEvent ;
+    guide:hasItem <http://guia-mad-bench.es/data/item-Introduccion_a_la_Ordenacion_de_Montes> .
+
+<http://guia-mad-bench.es/data/activity-Viaje_practicas_montes> rdf:type :Activity ;
+    sch:name "Viaje de prácticas a montes gestionados"^^xsd:string ;
+    guide:activityDurationUnit om:Hour ;
+    guide:inpersonHours "16.0"^^xsd:decimal .
+
+#################################################################
+#    Evaluation Trials and Systems
+#################################################################
+
+<http://guia-mad-bench.es/data/evaluation-Control_temas_1_y_2> rdf:type :EvaluationTrial ;
+    sch:name "Control temas 1 y 2"@en ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/activity-Tema_1_Introductio_n_Montes> .
+
+<http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> rdf:type :EvaluationTrial ;
+    sch:name "Control temas 3 y 4"@en ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/activity-Tema_2_Metodos_decisiones> .
+
+<http://guia-mad-bench.es/data/evaluation-Examen_final> rdf:type :EvaluationTrial ;
+    sch:name "Examen final"@en ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/activity-Tema_4_Sostenibilidad_Uso_Multiple> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_1_y_2> ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_1_y_2> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation-Control_temas_3_y_4> .
+
+<http://w3id.org/def/guia#CourseGuide-ANX_PRCL_001_01> sch:name "Ordenacion De Montes Avanzada"

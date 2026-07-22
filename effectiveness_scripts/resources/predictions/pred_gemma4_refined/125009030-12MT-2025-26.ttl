@@ -1,0 +1,114 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:CourseGuide_RedesTelecom rdf:type guide:CourseGuide ;
+    sch:name "Redes y Servicios de Telecomunicación" ;
+    guide:numberOfCredits 4.5 ;
+    guide:courseType "Obligatoria" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:semester "Quinto semestre" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCourse :Course_RedesTelecom ;
+    sch:instructor :Lecturer_JesusRodriguezMolina ;
+    guide:hasCompetency :Competency_12TG_CG8, :Competency_CT1, :Competency_CT2, :Competuly_CT9, :Competency_CT10 ;
+    guide:hasLearningResult :LR_RA218, :LR_RA221, :LR_RA229 ;
+    guide:hasEvaluation :EvalSystem_RedesTelecom ;
+    guide:hasDidacticResource :Res_Kurose, :Res_Stallings_Coms, :Res_Halsall ;
+    sch:description "La asignatura Redes y Servicios de Telecomunicación es una asignatura propia del Grado de Ingeniería de las Tecnologías de la Información Geoespacial." .
+
+# Course Instance
+:Course_RedesTelecom rdf:type guide:Course ;
+    sch:name "Redes y Servicios de Telecomunicación" ;
+    sch:courseCode 125009030 ;
+    sch:numberOfCredits 4.5 ;
+    guide:courseYear 2025 ;
+    guide:courseType "Obligatoria" .
+
+# Degree Instance
+:Degree_12MT rdf:type guide:Degree ;
+    sch:name "D.G. En Ing. Geomática Y En Ing. De Las Tecnologias De La Informacion Geoes" ;
+    guide:degreeCode "12MT" ;
+    guide:hasCourse :Course_RedesTelecom .
+
+# University Center Instance
+:UniversityCenter_ETSI rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S.I Topografia, geodesia, cartografia" ;
+    guide:offers :Degree_12MT .
+
+# Lecturer Instance
+:Lecturer_JesusRodriguezMolina rdf:type guide:Lecturer ;
+    sch:name "Jesus Rodriguez Molina" ;
+    sch:email "jesus.rodriguezm@upm.es" ;
+    guide:office "Sin horario. TBD" .
+
+# Competencies
+:Competency_12TG_CG8 rdf:type guide:Competency ;
+    guide:competencyCode "12TG-CG8" ;
+    guide:competencyDescription "Diseñar, desarrollar, gestionar y ejecutar proyectos relacionados con esta ingeniería en el ámbito de la investigación, innovación o producción" .
+
+:Competency_CT1 rdf:type guide:Competency ;
+    guide:competencyCode "CT1" ;
+    guide:competencyDescription "COMUNICACIÓN ORAL Y ESCRITA Capacidad para transmitir conocimientos y expresar ideas y argumentos de manera clara..." .
+
+:Competency_CT2 rdf:type guide:Competency ;
+    guide:competencyCode "CT2" ;
+    guide:competencyDescription "USO DE LAS TIC Capacidad sobre conocimientos tecnológicos que permitan desenvolverse cómodamente..." .
+
+:Competency_CT9 rdf:type guide:Competency ;
+    guide:competencyCode "CT9" ;
+    guide:competencyDescription "RESOLUCIÓN DE PROBLEMAS Desarrollar en los alumnos una actitud mental mediante la aplicación de procedimientos estructurados..." .
+
+:Competency_CT10 rdf:type guide:Competency ;
+    guide:competencyCode "CT10" ;
+    guide:competencyDescription "ANÁLISIS Y SÍNTESIS Capacidad de reconocer y describir los elementos constitutivos de una realidad..." .
+
+# Learning Results
+:LR_RA218 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA218" ;
+    guide:learningResultDescription "Contextualizar las redes de área local en la arquitectura Internet." .
+
+:LR_RA221 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA221" ;
+    guide:learningResultDescription "Identificar los elementos de las redes de telecomunicación" .
+
+:LR_RA229 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA229" ;
+    guide:learningResultDescription "Describir los servicios, mecanismos y protocolos de seguridad empleados en las redes de telecomunicación." .
+
+# Evaluation System and Trials
+:EvalSystem_RedesTelecom rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación progresiva y global." ;
+    guide:hasEvaluationTrial :Trial_EP1, :Trial_GlobalExam .
+
+:Trial_EP1 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" .
+
+:Trial_GlobalExam rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "03:00" .
+
+# Didactic Resources
+:Res_Kurose rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Redes de computadoras: un enfoque descendente" ;
+    guide:bibliographyDescription "James F. Kurose. Pearson, 2017" .
+
+:Res_Stallings_Coms rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Comunicaciones y Redes de Ordenadores" ;
+    guide:bibliographyDescription "Stallings, W. Prentice-Hall International, 2004." .
+
+:Res_Halsall rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Redes de computadores e Internet" ;
+    guide:bibliographyDescription "Halsall, Fred. Pearson Addison-Wesley, 2006" .

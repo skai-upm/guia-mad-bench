@@ -1,0 +1,183 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+# Course Guide Instance
+:course_guide_135004815 a guide:CourseGuide ;
+    sch:name "135004815 - Sostenibilidad 4.0: Integración De Taxonomía, Esg" ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :syllabus_135004815 ;
+    guide:hasCompetency :comp_CB03, :comp_CB04, :comp_CB05, :comp_CG13, :comp_CT1 ;
+    guide:hasLearningResult :lr_RA577, :lr_RA575, :lr_RA578, :lr_RA576, :lr_RA579 ;
+    guide:hasEvaluation :eval_system_135004815 ;
+    guide:hasDidacticResource :res_normativa_ue, :res_software_ecovadis, :res_software_datamaran, :res_biblio_eccles ;
+    sch:courseSchedule :schedule_135004815 ;
+    sch:instructor :lecturer_m_carmen ;
+    guide:otherInformation "La asignatura proporciona al estudiante las competencias clave para comprender e implementar los principios de sostenibilidad exigidos por el entorno normativo y empresarial actual." .
+
+# Course Instance
+:course_135004815 a guide:Course ;
+    sch:name "135: Sostenibilidad 4.0: Integración De Taxonomía, Esg" ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 2025 ;
+    sch:hasCourseInstance :course_guide_135004815 .
+
+# Degree Instance
+:degree_13IG a guide:Degree ;
+    sch:name "13IG - Grado En Ingenieria Forestal" ;
+    guide:degreeCode "13IG" ;
+    guide:hasCourse :course_135004815 .
+
+# University Center Instance
+:center_etsi_montes a guide:UniversityCenter ;
+    sch:name "E.T.S.I. Montes, Forestal y Medio Natur." ;
+    guide:offers :degree_13IG .
+
+# Lecturer Instance
+:lecturer_m_carmen a guide:Lecturer ;
+    sch:name "M. Carmen Aviles Palacios" ;
+    sch:email "carmen.aviles@upm.es" ;
+    guide:office "treeNNOVA Ed.B4" ;
+    guide:tutorshipsSchedule "L - 13:00 - 14:00" .
+
+# Competencies
+:comp_CB03 a guide:Competency ;
+    guide:competencyCode "CB03" ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes para emitir juicios que incluyan una reflexión sobre temas relevantes de índole social, científica - ética" .
+
+:comp_CB04 a guide:Competency ;
+    guide:competencyCode "CB04" ;
+    guide:competencyDescription "Que los estudiantes puedan transmitir información, ideas, problemas y soluciones a un público tanto especializado como no especializado" .
+
+:comp_CB05 a guide:Competency ;
+    guide:competencyCode "CB05" ;
+    guide:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía" .
+
+:comp_CG13 a guide:Competency ;
+    guide:competencyCode "CG13" ;
+    guide:competencyDescription "Capacidad para diseñar, dirigir, elaborar, implementar e interpretar proyectos y planes, así como para redactar informes técnicos, memorias de reconocimiento, valoraciones, peritajes y tasaciones." .
+
+:comp_CT1 a guide:Competency ;
+    guide:competencyCode "CT1" ;
+    guide:competencyDescription "Comunicación oral y escrita. Concluir aportaciones por escrito, desarrollando la capacidad de síntesis y presentación de las ideas propias en un grupo de trabajo y en exposición pública." .
+
+# Learning Results
+:lr_RA577 a guide:LearningResult ;
+    guide:learningResultCode "RA577" ;
+    guide:learningResultDescription "Diseñar un informe ESG adaptado al sector forestal o ambiental." .
+
+:lr_RA575 a guide:LearningResult ;
+    guide:learningResultCode "RA575" ;
+    guide:learningResultDescription "Comprender el marco legal y normativo actual en sostenibilidad (Taxonomía, SFDR, GRI, ESRS)." .
+
+:lr_RA578 a guide:LearningResult ;
+    guide:learningResultCode "RA578" ;
+    guide:learningResultDescription "Manejar plataformas y metodologías digitales orientadas a la sostenibilidad 4.0." .
+
+:lr_RA576 a guide:LearningResult ;
+    guide:learningResultCode "RA576" ;
+    guide:learningResultDescription "Identificar y aplicar los indicadores clave de sostenibilidad en proyectos reales." .
+
+:lr_RA579 a guide:LearningResult ;
+    guide:learningResultCode "RA579" ;
+    guide:learningResultDescription "Analizar y evaluar la doble materialidad en el contexto de cambio climático." .
+
+# Syllabus
+:syllabus_135004815 a guide:Syllabus ;
+    guide:hasItem :item_topic1, :item_topic2, :item_topic3, :item_topic4, :item_topic5, :item_topic6, :item_topic7 .
+
+:item_topic1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a la Sostenibilidad 4.0" .
+
+:item_topic2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Taxonomía de la UE: objetivos y aplicación" .
+
+:item_topic3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "ESG: indicadores, riesgos y oportunidades" .
+
+:item_topic4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Marcos de reporte no financiero (GRI, ESRS, SFDR)" .
+
+:item_topic5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Evaluación de la sostenibilidad y gestión de riesgos climáticos" .
+
+:item_topic6 a guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Herramientas digitales para sostenibilidad y reporting" .
+
+:item_topic7 a guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Análisis de informes y estudios de caso sectoriales" .
+
+# Evaluation System
+:eval_system_135004815 a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global." ;
+    guide:hasEvaluationTrial :trial_intermedia, :trial_final .
+
+:trial_intermedia a guide:EvaluationTrial ;
+    guide:trialType "Presentación en Grupo" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:00" .
+
+:trial_final a guide:EvaluationTrial ;
+    guide:trialType "Presentación en Grupo" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "75%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:00" .
+
+# Schedule and Activities
+:schedule_135004815 a guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week8, :event_week16 .
+
+:event_week1 a guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :act_leccion_magistral_1 .
+
+:act_leccion_magistral_1 a guide:Activity ;
+    guide:activityDescription "Introducción: sostenibilidad y contexto normativo" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:event_week8 a guide:ScheduleEvent ;
+    guide:eventWeek "8" ;
+    guide:hasActivity :act_eval_intermedia .
+
+:act_eval_intermedia a guide:Activity ;
+    guide:activityDescription "Evaluación intermedia (presentación de avances del informe) ESG" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Presentación en Grupo" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_normativa_ue a guide:DidacticResource ;
+    guide:bibliographyTitle "Reglamento (UE) 2020/852 sobre la Taxonomía de actividades sostenibles" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_software_ecovadis a guide:DidacticResource ;
+    guide:bibliographyTitle "EcoVadis" ;
+    guide:bibliographyType "Recurso web" .
+
+:res_software_datamaran a guide:DidacticResource ;
+    guide:bibliographyTitle "Datamaran" ;
+    guide:bibliographyType "Recurso web" .
+
+:res_biblio_eccles a guide:DidacticResource ;
+    guide:bibliographyTitle "The Integrated Reporting Movement (Eccles & Krzus)" ;
+    guide:bibliographyType "Bibliografía recomendada" .

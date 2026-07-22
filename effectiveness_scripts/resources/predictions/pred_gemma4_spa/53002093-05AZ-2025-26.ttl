@@ -1,0 +1,204 @@
+@prefix data: <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# --- Course and Degree Information ---
+
+data:Course_53002093 rdf:type guide:Course ;
+    sch:name "Procesado De Señales En La Ingeniería" ;
+    guide:courseCode "53002093" ;
+    sch:numberOfCredits 3.0 ;
+    guide:courseType "Optativa" .
+
+data:Master_Industrial_Engineering rdf:type guide:MasterDegree ;
+    sch:name "Master Universitario En Ingenieria Industrial" ;
+    guide:degreeCode "05AZ" .
+
+data:Course_53002093 guide:hasCourseInstance data:CourseGuide_53002093 .
+
+data:ETS_Industriales rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Industriales" .
+
+data:ETS_Industriales guide:offers data:Master_Industrial_Engineering .
+
+data:Master_Industrial_Engineering guide:hasCourse data:Course_53002093 .
+
+# --- Course Guide Details ---
+
+data:CourseGuide_53002093 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Procesado De Señales En La Ingeniería" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    sch:inLanguage "Inglés/Castellano" ;
+    guide:numberOfCredits 3.0 ;
+    guide:hasSyllabus data:Syllabus_53002093 ;
+    guide:hasCompetency data:Competency_CG01, data:Competency_CG11 ;
+    guide:hasLearningResult data:LearningResult_RA445, data:LearningResult_RA393 ;
+    guide:hasEvaluation data:EvaluationSystem_53002093 ;
+    sch:instructor data:Elena_Dominguez_Jimenez ;
+    sch:director data:Elena_Dominguez_Jimenez .
+
+# --- Lecturer Information ---
+
+data:Elena_Dominguez_Jimenez rdf:type guide:Lecturer ;
+    sch:name "M. Elena Dominguez Jimenez" ;
+    sch:email "elena.domingument@upm.es" ;
+    guide:office "Despacho 4" ;
+    guide:tutorshipsSchedule "Sin horario. Contactar cita previa via email" .
+
+# --- Competencies and Learning Results ---
+
+data:Competency_CG01 rdf:type guide:Competency ;
+    guide:competencyCode "CG01" ;
+    guide:competencyDescription "Tener conocimientos adecuados de los aspectos científicos y tecnológicos de: métodos matemáticos, analíticos y numéricos en la ingeniería, ingeniería eléctrica, ingeniería energética, ingeniería química, ingeniería mecánica, mecánica de medios continuos, electrónica industrial, automática, fabricación, materiales, métodos cuantitativos de gestión, informática industrial, urbanismo, infraestructuras, etc." .
+
+data:Competency_CG11 rdf:type guide:Competency ;
+    guide:competencyCode "CG11" ;
+    guide:competencyDescription "Poseer las habilidades de aprendizaje que permitan continuar estudiando de un modo autodirigido o autónomo." .
+
+data:LearningResult_RA445 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA445" ;
+    guide:learningResultDescription "Conocimiento de la transformada wavelet y sus aplicaciones" .
+
+data:LearningResult_RA393 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA393" ;
+    guide:learningResultDescription "Capacidad de interpretación en los dominios del tiempo y la frecuencia" .
+
+# --- Previous Knowledge ---
+
+data:RequiredKnowledge_53002093 rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Series de Fourier, Integración de funciones elementales, Conocimientos básicos de programación y de computación científica, Números complejos, Matrices" .
+
+# --- Syllabus ---
+
+data:Syllabus_53002093 rdf:type guide:Syllabus ;
+    guide:hasItem data:SyllabusItem_1, data:SyllabusItem_2, data:SyllabusItem_3, data:SyllablesItem_4, data:SyllabusItem_5 .
+
+data:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Series de Fourier" .
+
+data:SyllabusItem_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Transformada de Fourier" .
+
+data:SyllabusItem_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Transformada Discreta de Fourier (DFT)" .
+
+data:SyllablesItem_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Transformada wavelet" .
+
+data:SyllabusItem_5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Aplicaciones en Ingeniería" .
+
+# --- Evaluation System and Trials ---
+
+data:EvaluationSystem_53002093 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La Evaluación Progresiva (EP) consta de un trabajo práctico y un trabajo al final de la asignatura. Existe también una Prueba de Evaluación Global (PEG)." ;
+    guide:hasEvaluationTrial data:Trial_Práctica_Ordenador, data:Trial_Trabajo_Aplicacion, data:Trial_PEG .
+
+data:Trial_Práctica_Ordenador rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Práctica de ordenador" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency data:Competency_CG01, data:Competency_CG11 .
+
+data:Trial_Trabajo_Aplicacion rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Trabajo sobre aplicación de transformadas en Ingeniería" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialMode "Presencial" .
+
+data:Trial_PEG rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Prueba de evaluación global (PEG)" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+# --- Schedule and Activities ---
+
+data:Schedule_53002093 rdf:type guide:Schedule ;
+    sch:eventSchedule data:Event_Week1, data:Event_Week8, data:Event_Week14, data:Event_Week17 .
+
+data:Event_Week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity data:Activity_Fourier_LM .
+
+data:Activity_Fourier_LM rdf:type guide:Activity ;
+    guide:activityDescription "Series de Fourier" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+data:Event_Week8 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 8" ;
+    guide:eventIndex 8 ;
+    guide:hasActivity data:Activity_Práctica_Ordenador .
+
+data:Activity_Práctica_Ordenador rdf:type guide:Activity ;
+    guide:activityDescription "Práctica de ordenador" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Examen de Prácticas" ;
+    guide:attendanceType "Presencial" .
+
+data:Event_Week14 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 14" ;
+    guide:eventIndex 14 ;
+    guide:hasActivity data:Activity_Trabajo_Ingenieria .
+
+data:Activity_Trabajo_Ingenieria rdf:type guide:Activity ;
+    guide:activityDescription "Trabajo sobre aplicación de transformadas en Ingeniería" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Otras técnicas evaluativas" ;
+    guide:attendanceType "Presencial" .
+
+data:Event_Week17 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 17" ;
+    guide:eventIndex 17 ;
+    guide:hasActivity data:Activity_PEG .
+
+data:Activity_PEG rdf:type guide:Activity ;
+    guide:activityDescription "Prueba de evaluación global (PEG)" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "Trabajo Individual" ;
+    guide:attendanceType "Presencial" .
+
+# --- Didactic Resources ---
+
+data:Resource_Moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Página de Moodle" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "http://moodle.upm.es/titulaciones/oficiales" .
+
+data:Resource_Matlab rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Software MATLAB" ;
+    guide:bibliographyType "Equipamiento" ;
+    guide:bibliographyDescription "Disponible para los alumnos con licencia de Campus UPM" .
+
+data:Resource_Wavelets_Book rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Teoría básica de wavelets para ingenieros" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "M. E. Domínguez Jiménez y G. Sansigre Vidal, 2006." .
+
+data:Resource_Strang_Book rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Wavelets and filter Banks" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "G. Strang, T. Nguyen, SIAM, 1996." .
+
+data:Resource_Oppenheim_Book rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Tratamiento de señales en tiempo discreto" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "A. V. Oppenheim, R. W. Schafer, Prentice-Hall, 2009." .
+
+# --- Other Information ---
+
+data:CourseGuide_53002093 guide:otherInformation "El curso 23/24 fue el primero en que se impartió esta asignatura... La comunicación con la profesora se realizará por correo electrónico o plataforma telemática." .

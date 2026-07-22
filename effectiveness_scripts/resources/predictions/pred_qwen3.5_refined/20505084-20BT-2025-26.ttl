@@ -1,0 +1,86 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guia/anx-pr-cl-001_01> rdf:type :CourseGuide ;
+    dc:title "ANX-PR/CL/001-01 Guía de Aprendizaje"@en ;
+    dct:creator <http://w3id.org/def/guia#Pablo_Rodriguez_Palenzuela> ;
+    sch:name "Conceptos De Biología" ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriodMonths "Febrero-Junio"@en ;
+    sch:inLanguage "Castellano"@en ;
+    guide:hasCourse <http://guia-mad-bench.es/data/guia/20505084> .
+
+<http://w3id.org/def/guia#Pablo_Rodriguez_Palenzuela> rdf:type :Lecturer ;
+    sch:name "Pablo Rodriguez Palenzuela" ;
+    sch:email <mailto:pablo.rpalenzuela@upm.es> ;
+    guide:tutorshipsSchedule "- -"@en .
+
+<http://guia-mad-bench.es/data/guia/20505084> rdf:type :Course, sch:CourseInstance ;
+    sch:name "Conceptos De Biología" ;
+    guide:syllabusDescription "Esta asignatura trata los conceptos más importantes de la Biología..."@en .
+
+<http://guia-mad-bench.es/data/guia/20BT> rdf:type :Degree, BachelorDegree ;
+    guide:degreeCode "20BT"@en .
+
+<http://w3id.org/def/guia#Etsi_Agronómica_Aliment_y_Biosistemas> rdf:type sch:Organization, :UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas" ;
+    guide:offers <http://guia-mad-bench.es/data/guia/20BT> .
+
+<http://w3id.org/def/guia#CB_03> rdf:type :Competency ;
+    guide:competencyCode "CB03"@en ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes..."@en .
+
+<http://w3id.org/def/guia#CE_05> rdf:type :Competency ;
+    guide:competencyCode "CE05"@en ;
+    guide:competencyDescription "Capacidad para comprender los principales conceptos de Biología y saber relacionarlos con otras ciencias."@en .
+
+<http://w3id.org/def/guia#RA_121> rdf:type :LearningResult ;
+    guide:learningResultCode "RA121"@en ;
+    guide:learningResultDescription "Comprender la dimensión ética y social de la biotecnología"@en .
+
+<http://w3id.org/def/guia#RA_203> rdf:type :LearningResult ;
+    guide:learningResultCode "RA203"@en ;
+    guide:learningResultDescription "Conocimiento profundo de los conceptos fundamentales de la Biología"@en .
+
+<http://guia-mad-bench.es/data/guia/anx-pr-cl-001_01> :hasCompetency <http://w3id.org/def/guia#CB_03>,
+    <http://w3id.org/def/guia#CE_05> ;
+    guide:hasLearningResult <http://w3id.org/def/guia#RA_121>,
+        <http://w3id.org/def/guia#RA_203>.
+
+<http://guia-mad-bench.es/data/guia/anx-pr-cl-001_01> :hasEvaluationTrial <http://guia-mad-bench.es/data/guia/Eval_Progresiva>,
+    <http://guia-mad-bench.es/data/guia/Prueba_Evaluacion_Global>.
+
+<http://w3id.org/def/guia#Syllabus_20505084> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/guia/SI_Vida>,
+        <http://guia-mad-bench.es/data/guia/SI_Biologia_Evolucionaria>.
+
+<http://w3id.org/def/guia#SI_Vida> rdf:type :SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Vida, Energía e Información"@en .
+
+<http://guia-mad-bench.es/data/guia/SI_Biologia_Evolucionaria> rdf:type :SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Biología Evolutiva"@en .
+
+<http://w3id.org/def/guia#Moodle_Resource> rdf:type :DidacticResource, sch:CourseInstance ;
+    guide:bibliographyTitle "Recursos web" ;
+    guide:bibliographyType "Web"@en .
+
+<http://guia-mad-bench.es/data/guya/SI_Biologia_Evolucionaria> :hasItem <http://w3id.org/def/guia#SI_Naturaleza_Humana>.
+
+<http://guia-mad-bench.es/data/guia/Eval_Progresiva> rdf:type :EvaluationTrial ;
+    guide:trialType "Evaluación Progresiva"@en ;
+    guide:gradePercentage 7.1 ;
+    guide:minimumScore 5/10 ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/guia/Sem_1>,
+        <http://guia-mad-bench.es/data/guia/Sem_2> .
+
+<http://w3id.org/def/guia#Sem_1> rdf:type :ScheduleEvent ;
+    guide:eventIndex 1 ;
+    sch:hasCourseInstance <http://guia-mad-bench.es/data/guia/anx-pr-cl-001_01>.

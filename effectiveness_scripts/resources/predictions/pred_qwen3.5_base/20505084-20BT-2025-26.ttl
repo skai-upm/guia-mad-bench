@@ -1,0 +1,240 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Degree Instance
+#################################################################
+
+<http://guia-mad-bench.es/data/degree-20bt> rdf:type guide:BachelorDegree ;
+                                               sch:name "Grado En Biotecnología"@en ,
+                                                       "20BT - Grado en Biotecnología"@es .
+
+
+#################################################################
+#    Course Guide Instance
+#################################################################
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> rdf:type guide:CourseGuide ;
+                                                                sch:name "Conceptos De Biología"@en ,
+                                                                        "20505084 - Conceptos de Biología"@es .
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> :hasSyllabus <http://guia-mad-bench.es/data/syllabus-conceptos-biologia> ;
+                                                                  sch:courseSchedule <http://guia-mad-bench.es/data/schedule-20bt> .
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> :hasCourseInstance <http://guia-mad-bench.es/data/degree-20bt> ;
+                                                                  sch:courseCode 20505084 .
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> :numberOfCredits "3"^^xsd:decimal ;
+                                                                 :teachingPeriodMonths "Febrero-Junio"@es ,
+                                                                     "Segundo semestre"@en ;
+                                                                 :courseYear 2025 .
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-01> rdf:type guide:Lecturer ;
+                                                             sch:name "Pablo Rodriguez Palenzuela"^^xsd:string ,
+                                                                     "(Coordinador/a)"@es .
+
+<http://guia-mad-bench.es/data/lecturer-pablo-rodriguez> :email <mailto:pablo.rpalenzuela@upm.es> ;
+                                                            :office "" .
+
+
+#################################################################
+#    Syllabus Instance & Items
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus-conceptos-biologia> rdf:type guide:Syllabus ;
+                                                               sch:courseSchedule <http://guia-mad-bench.es/data/schedule-20bt> .
+
+
+###  Syllabus Item Instances (Based on Table Content)
+
+<http://guia-mad-bench.es/data/item-vida-energia-informacion> rdf:type guide:SyllabusItem ;
+                                                                 :itemIndex "1"^^xsd:integer ,
+                                                                     :syllabusDescription "Vida, Energía e Información"@es .
+
+
+###  Syllabus Item Instances (Based on Table Content)
+
+<http://guia-mad-bench.es/data/item-evolucion> rdf:type guide:SyllabusItem ;
+                                                 :itemIndex "2"^^xsd:integer ,
+                                                 :syllabusDescription "Biología Evolutiva"@es .
+
+
+###  Syllabus Item Instances (Based on Table Content)
+
+<http://guia-mad-bench.es/data/item-enfermedad> rdf:type guide:SyllabusItem ;
+                                                   :itemIndex "3"^^xsd:integer ,
+                                                   :syllabusDescription "Bases Biológicas de la Enfermedad"@es .
+
+
+###  Syllabus Item Instances (Based on Table Content)
+
+<http://guia-mad-bench.es/data/item-naturaleza-humana> rdf:type guide:SyllabusItem ;
+                                                           :itemIndex "4"^^xsd:integer ,
+                                                           :syllabusDescription "Naturaleza Humana"@es .
+
+
+#################################################################
+#    Schedule Instance & Events
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-20bt> rdf:type guide:Schedule ;
+                                                sch:eventSchedule <http://guia-mad-bench.es/data/event-semana1>,
+                                                                <http://guia-mad-bench.es/data/event-evaluacion-global>.
+
+
+###  Schedule Event Instances (Based on Table Content)
+
+<http://guia-mad-bench.es/data/event-semana1> rdf:type guide:ScheduleEvent ;
+                                                :eventIndex "1"^^xsd:integer ,
+                                                sch:eventWeek "Semana 1"@es .
+
+<http://guia-mad-bench.es/data/activity-clase-teorica-1> rdf:type guide:Activity ;
+                                                           :activityDescription "Clase teórica participativa"@en ,
+                                                               :activityFormat "AIV: Aula invertida"^^xsd:string ,
+                                                               :attendanceType "Presencial"^^xsd:string .
+
+<http://guia-mad-bench.es/data/activity-video-online-1> rdf:type guide:Activity ;
+                                                          :activityDescription "Vídeo on-line"@en ,
+                                                              :activityFormat "LM: Actividad del tipo Lección Magistral"^^xsd:string ,
+                                                              :attendanceType "" .
+
+<http://guia-mad-bench.es/data/event-semana1> sch:eventSchedule <http://guia-mad-bench.es/data/activity-clase-teorica-1>,
+                                                    <http://guia-mad-bench.es/data/activity-video-online-1>.
+
+
+###  Schedule Event Instances (Based on Table Content)
+
+<http://guia-mad-bench.es/data/event-evaluacion-global> rdf:type guide:ScheduleEvent ;
+                                                           :eventIndex "9"^^xsd:integer ,
+                                                           sch:eventWeek "Semana 9"@es .
+
+<http://guia-mad-bench.es/data/activity-clase-teorica-1> rdf:type guide:Activity ;
+                                                            :activityDescription "Clase teórica participativa"@en ,
+                                                                :activityFormat "AIV: Aula invertida"^^xsd:string ,
+                                                                :attendanceType "Presencial"^^xsd:string .
+
+<http://guia-mad-bench.es/data/activity-video-online-1> rdf:type guide:Activity ;
+                                                           :activityDescription "Vídeo on-line"@en ,
+                                                               :activityFormat "LM: Actividad del tipo Lección Magistral"^^xsd:string ,
+                                                               :attendanceType "" .
+
+<http://guia-mad-bench.es/data/event-evaluacion-global> sch:eventSchedule <http://guia-mad-bench.es/data/activity-clase-teorica-1>,
+                                                    <http://guia-mad-bench.es/data/activity-video-online-1>.
+
+
+#################################################################
+#    Evaluation System & Trials
+#################################################################
+
+<http://guia-mad-bench.es/data/evaluation-system-conceptos> rdf:type guide:EvaluationSystem ;
+                                                               sch:courseSchedule <http://guia-mad-bench.es/data/schedule-20bt>,
+                                                                   :hasEvaluationTrial <http://guia-mad-bench.es/data/trial-evaluacion-progresiva>.
+
+<http://guia-mad-bench.es/data/evaluation-system-conceptos> sch:courseSchedule <http://guia-mad-bench.es/data/schedule-20bt>,
+                                                               :hasEvaluationTrial <http://guia-mad-bench.es/data/trial-evaluacion-global>.
+
+<http://guia-mad-bench.es/data/evaluation-system-conceptos> sch:courseSchedule <http://guia-mad-bench.es/data/schedule-20bt>,
+                                                               :hasEvaluationTrial <http://guia-mad-bench.es/data/trial-evaluacion-extraordinaria>.
+
+
+###  Evaluation Trial Instances (Based on Table Content)
+
+<http://guia-mad-bench.es/data/trial-evaluacion-progresiva> rdf:type guide:EvaluationTrial ;
+                                                               :trialDescription "Evaluación en clase"@es ,
+                                                                   :evaluationType "Progresiva"^^xsd:string .
+
+
+###  Evaluation Trial Instances (Based on Table Content)
+
+<http://guia-mad-bench.es/data/trial-evaluacion-global> rdf:type guide:EvaluationTrial ;
+                                                           :trialDescription "prueba evaluación global"@es ,
+                                                               :evaluationType "Global"^^xsd:string .
+
+<http://guia-mad-bench.es/data/activity-clase-teorica-1> sch:courseSchedule <http://guia-mad-bench.es/data/schedule-20bt>,
+                                                    <http://guia-mad-bench.es/data/trial-evaluacion-progresiva>.
+
+
+###  Evaluation Trial Instances (Based on Table Content)
+
+<http://guia-mad-bench.es/data/activity-clase-teorica-1> sch:courseSchedule <http://guia-mad-bench.es/data/schedule-20bt>,
+                                                    <http://guia-mad-bench.es/data/trial-evaluacion-global>.
+
+
+###  Evaluation Trial Instances (Based on Table Content)
+
+<http://guia-mad-bench.es/data/activity-clase-teorica-1> sch:courseSchedule <http://guia-mad-bench.es/data/schedule-20bt>,
+                                                    <http://guia-mad-bench.es/data/trial-evaluacion-extraordinaria>.
+
+
+#################################################################
+#    Competencies & Learning Results
+#################################################################
+
+<http://guia-mad-bench.es/data/competency-cb03> rdf:type guide:Competency ;
+                                                   :competencyCode "CB03"^^xsd:string ,
+                                                   :competencyDescription "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes (normalmente dentro de su área de estudio) para emitir juicios que incluyan una reflexión sobre temas relevantes de índole social, científica - ética"@es .
+
+<http://guia-mad-bench.es/data/competency-ce05> rdf:type guide:Competency ;
+                                                  :competencyCode "CE05"^^xsd:string ,
+                                                  :competencyDescription "Capacidad para comprender los principales conceptos de Biología y saber relacionarlos con otras ciencias"@es .
+
+<http://guia-mad-bench.es/data/learning-result-ra121> rdf:type guide:LearningResult ;
+                                                        :learningResultCode "RA121"^^xsd:string ,
+                                                        :learningResultDescription "Comprender la dimensión ética y social de la biotecnología"@es .
+
+<http://guia-mad-bench.es/data/learning-result-ra203> rdf:type guide:LearningResult ;
+                                                         :learningResultCode "RA203"^^xsd:string ,
+                                                         :learningResultDescription "Conocimiento profundo de los conceptos fundamentales de la Biología"@es .
+
+
+#################################################################
+#    Didactic Resources
+#################################################################
+
+<http://guia-mad-bench.es/data/resource-moodle> rdf:type guide:DidacticResource ;
+                                                  sch:name "Moodle"^^xsd:string ,
+                                                  :bibliographyType "Recursos web"^^xsd:string .
+
+<http://guia-mad-bench.es/data/resource-youtube> rdf:type guide:DidacticResource ;
+                                                    sch:name "Canal You Tube"^^xsd:string ,
+                                                    :bibliographyDescription "Clases grabadas en un canal de You Tube"@es .
+
+<http://guia-mad-bench.es/data/resource-libro-humano> rdf:type guide:DidacticResource ;
+                                                        sch:name "Libro. Cómo entender a los humanos"^^xsd:string ,
+                                                        :bibliographyType "Bibliografía"^^xsd:string .
+
+
+#################################################################
+#    Other Information & Links
+#################################################################
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-01> rdf:type guide:CourseGuide ;
+                                                             sch:name "Conceptos De Biología"@en ,
+                                                                 :numberOfCredits 3^^xsd:decimal .
+
+
+###  Evaluation Trial Instances (Based on Table Content)
+
+<http://guia-mad-bench.es/data/trial-evaluacion-extraordinaria> rdf:type guide:EvaluationTrial ;
+                                                                   :trialDescription "Examen evaluación global extraordinario"@es ,
+                                                                       :evaluationType "Extraordinaria"^^xsd:string .
+
+
+###  Evaluation Trial Instances (Based on Table Content)
+
+<http://guia-mad-bench.es/data/trial-evaluacion-extraordinaria> rdf:type guide:EvaluationTrial ;
+                                                                   :trialDescription "Examen evaluación global extraordinario"@es ,
+                                                                       :evaluationType "Extraordinaria"^^xsd:string .
+
+
+###  Evaluation Trial Instances (Based on Table Content)
+
+<http://guia-mad-bench.es/data/trial-evaluacion-extraordinaria> rdf:type guide:EvaluationTrial ;
+                                                                   :trialDescription "Examen evaluación global extraordinario"@es ,
+                                                                       :evaluationType "Extraordinaria"^^xsd:string .

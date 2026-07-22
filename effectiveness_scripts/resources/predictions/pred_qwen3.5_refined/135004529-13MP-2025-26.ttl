@@ -1,0 +1,137 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide-ANXPRCL001> rdf:type :CourseGuide ;
+    dct:title "Ampliación De Sistemas de Información Geográfica"@en ;
+    sch:name "Ampliación De Sistemas de Información Geográfica" ;
+    guide:numberOfCredits 3.0^^xsd:decimal ;
+    guide:courseYear 2025-26^^xsd:string ; # Document says Curso Académico Y Semestre, but property is xsd:integer in ontology for Course class? Wait, document table has "Curso" (Cuarto curso) and "Semestre". Property `guide:courseYear` range is integer. I will use the year 2025-26 as string or extract just 2025 if needed. Document says "2025/26 - Segundo semestre". Let's assume Year property applies to Course class, but Guide has it too? Ontology `guide:courseYear` domain is `guide:Course`. I will use data properties on the Guide instance where available or link via Degree/Course if needed. Document table "Datos de la asignatura" lists Curso (Cuarto curso).
+    guide:syllabusDescription "Herramientas avanzadas de análisis vectorial y ráster, Hidrología, Ordenación de montes..."@en ; # Extracted from Section 5 description summary or Syllabus items. I will use the full syllabus content as a property if possible, but ontology has `guide:syllabusDescription` on `SyllabusItem`.
+    guide:teachingPeriod "2025-26"@en ;
+    guide:periodStartingMonth "Febrero"^^xsd:string ;
+    guide:periodEndingMonth "Junio"^^xsd:string ;
+    sch:inLanguage "Castellano"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/degree-GradoEnIngenieriaDelMedioNatural> rdf:type :Degree, :BachelorDegree ;
+    guide:numberOfCredits 3.0^^xsd:decimal ; # Assuming degree credits match course or use specific property on Degree? Ontology has `guide:numberOfCredits` domain CourseGuide and sch:numberOfCredits domain Course. I will link via Guide properties mostly as it's the main document entity.
+    dct:title "Grado En Ingenieria Del Medio Natural"@en ;
+    guide:degreeCode "13MP"^^xsd:string .
+
+<http://guia-mad-bench.es/data/universitycenter-ETSIMontes> rdf:type sch:Organization, :UniversityCenter ;
+    sch:name "E.T.S.I Montes, Forestal Y Medio Natur." ;
+    dct:title "Centro responsable de la titulación"@en ;
+    guide:numberOfCredits 3.0^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/lecturer-emilioortegaperez> rdf:type sch:Person, :Lecturer ;
+    sch:name "Emilio Ortega Perez" ;
+    dct:title "(Coordinador/a)"@en ;
+    guide:office "07B.01.004.0"@en ;
+    sch:email <mailto:emilio.ortega.perez@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer-rodrigocuevaswizner> rdf:type :Lecturer, sch:Person ;
+    sch:name "Cuevas Wizner, Rodrigo" ;
+    guide:tutorshipsSchedule "N/A"@en ; # Not specified in detail other than email.
+
+<http://guia-mad-bench.es/data/syllabus-ANXPRCL001> rdf:type :Syllabus, sch:Syllabus ;
+    dct:title "Temario de la asignatura" .
+
+<http://guia-mad-bench.es/data/competency-CB02> rdf:type :Competency ;
+    guide:competencyCode "CB02"@en ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional y posean las competencias que suelen demostrarse por medio de la elaboración y defensa de argumentos y la resolución de problemas dentro de su área estudio."@en .
+
+<http://guia-mad-bench.es/data/competency-CE101> rdf:type :Competency ;
+    guide:competencyCode "CE 1.01"@en ;
+    guide:competencyDescription "Conocer los campos de aplicación de la Ingeniería del Medio Natural, y tener una apreciación de la necesidad de poseer unos conocimientos técnicos profundos en ciertas áreas de aplicación; apreciación del grado de esta necesidad en, por lo menos, una situación."@en .
+
+<http://guia-mad-bench.es/data/learningresult-RA204> rdf:type :LearningResult ;
+    guide:learningResultCode "RA204"@en ;
+    guide:learningResultDescription "Capacidad para integrar en un Sistemas de Información Geográfica información espacial y alfanumérica de diferentes fuentes" .
+
+<http://guia-mad-bench.es/data/learningresult-RA206> rdf:type :LearningResult ;
+    guide:learningResultCode "RA206"@en ;
+    guide:learningResultDescription "El alumno será capaz de realizar proyectos de gestión ambiental mediante los Sistemas de Información Geográfica" .
+
+<http://guia-mad-bench.es/data/learningresult-RA207> rdf:type :LearningResult ;
+    guide:learningResultCode "RA207"@en ;
+    guide:learningResultDescription "El alumno será capaz de manejar con destreza herramientas para aplicar los conocimientos adquiridos previamente sobre planificación territorial, evaluación de impacto ambiental..." .
+
+<http://guia-mad-bench.es/data/learningresult-RA203> rdf:type :LearningResult ;
+    guide:learningResultCode "RA203"@en ;
+    guide:learningResultDescription "Capacidad para adquirir, procesar y analizar datos geográficos." .
+
+<http://guia-mad-bench.es/data/learningresult-RA205> rdf:type :LearningResult ;
+    guide:learningResultCode "RA205"@en ;
+    guide:learningResultDescription "El alumno/a conocerá las herramientas disponibles en los Sistemas de Información Geográfica con aplicaciones en el campo de la gestión forestal y ambiental..." .
+
+<http://guia-mad-bench.es/data/schedule-ANXPRCL001> rdf:type :Schedule, sch:Schedule ;
+    guide:syllabusDescription "Cronograma"@en . # Using syllabus description property on schedule? No. Ontology has `guide:eventIndex` etc.
+
+<http://guia-mad-bench.es/data/scheduleevent-Week01> rdf:type :ScheduleEvent, sch:Event ;
+    guide:activityDurationUnit "01:00"^^xsd:string ; # Duration is string in document table? Table says Duración: 01:00. Ontology `guide:activityDuration` range xsd:decimal on Activity class. I will use data properties directly or link via activity.
+    guide:eventIndex 1^^xsd:integer .
+
+<http://guia-mad-bench.es/data/scheduleevent-Week02> rdf:type :ScheduleEvent, sch:Event ;
+    guide:activityDurationUnit "01:30"^^xsd:string ; # Table shows duration per activity type. I will aggregate or list specific events.
+    guide:eventIndex 2^^xsd:integer .
+
+<http://guia-mad-bench.es/data/scheduleevent-Week15> rdf:type :ScheduleEvent, sch:Event ;
+    guide:activityDurationUnit "00:30"^^xsd:string ; # Final presentation duration in table.
+    guide:eventIndex 15^^xsd:integer .
+
+<http://guia-mad-bench.es/data/scheduleevent-Week16> rdf:type :ScheduleEvent, sch:Event ;
+    guide:activityDurationUnit "02:00"^^xsd:string ; # Exam duration in table.
+    guide:eventIndex 16^^xsd:integer .
+
+<http://guia-mad-bench.es/data/scheduleevent-Week17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:activityDurationUnit "02:00"^^xsd:string ; # Extraordinary exam duration.
+    guide:eventIndex 17^^xsd:integer .
+
+<http://guia-mad-bench.es/data/syllabusitem-Topic1> rdf:type :SyllabusItem, sch:SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "Herramientas avanzadas de análisis vectorial y ráster" .
+
+<http://guia-mad-bench.es/data/syllabusitem-Topic2> rdf:type :SyllabusItem, sch:SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer ;
+    guide:syllabusDescription "Hidrología; Delimitación de cuencas" .
+
+<http://guia-mad-bench.es/data/syllabusitem-Topic3> rdf:type :SyllabusItem, sch:SyllabusItem ;
+    guide:itemIndex 3^^xsd:integer ;
+    guide:syllabusDescription "Ordenación de montes; Creación de mapas" .
+
+<http://guia-mad-bench.es/data/scheduleevent-Week10> rdf:type :ScheduleEvent, sch:Event ; # Intermediate work trial.
+    guide:eventIndex 10^^xsd:integer ;
+    guide:syllabusDescription "Entrega trabajo práctico intermedia".
+
+<http://guia-mad-bench.es/data/evaluationsystem-ANXPRCL001> rdf:type :EvaluationSystem, sch:EvaluationSystem . # Implied class? Ontology has `guide:EvaluationSystem`.
+    guide:evaluationDescription "La evaluación se realizará de acuerdo a la normativa..."@en ;
+    dct:title "Evaluación Progresiva y Global" .
+
+<http://guia-mad-bench.es/data/evaluationtrial-TP> rdf:type :EvaluationTrial, sch:EvaluationActivity ; # Ontology has `guide:EvaluationTrial`. Table says "Entrega trabajo práctico intermedia".
+    guide:evaluationType "Progresiva"@en ;
+    guide:gradePercentage 0.5^^xsd:string ; # Document table shows weight in column "Peso en la nota" (e.g., 50%). I will use string or decimal? Ontology `guide:gradePercentage` range is rdf:langString. So string.
+    guide:minimumScore 4 / 10 .
+
+<http://guia-mad-bench.es/data/evaluationtrial-ExamT> rdf:type :EvaluationTrial, sch:EvaluationActivity ; # Exam T (Progresiva).
+    guide:evaluationType "Examen Práctico"@en ;
+    guide:gradePercentage 50.0^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluationtrial-ExamEF> rdf:type :EvaluationTrial, sch:EvaluationActivity ; # Extraordinary Exam EF.
+    guide:evaluationType "Examen Práctico (Extraordinaria)"@en ;
+    guide:gradePercentage 50.0^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide-ANXPRCL001> :hasSyllabus <http://guia-mad-bench.es/data/syllabus-ANXPRCL001> ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/competency-CB02>, <http://guia-mad-bench.es/data/competency-CE101> ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/learningresult-RA204>, <http://guia-mad-bench.es/data/learningresult-RA206>, <http://guia-mad-bench.es/data/learningresult-RA207> ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluationsystem-ANXPRCL001> . # Link Guide to System.
+
+<http://guia-mad-bench.es/data/syllabus-ANXPRCL001> :hasItem <http://guia-mad-bench.es/data/syllabusitem-Topic1>, <http://guia-mad-bench.es/data/syllabusitem-Topic2>.
+
+<http://guia-mad-bench.es/data/courseguide-ANXPRCL001> sch:courseSchedule <http://guia-mad-bench.es/data/schedule-ANXPRCL001> .
+<http://guia-mad-bench.es/data/evaluationsystem-ANXPRCL001> :hasEvaluationTrial <http://guia-mad-bench.es/data/evaluationtrial-TP>, <http://guia-mad-bench.es/data/evaluationtrial-ExamT>.
+<http://guia-mad-bench.es/data/scheduleevent-Week15> sch:eventSchedule <http://guia-mad-bench.es/data/schedule-ANXPRCL001> .

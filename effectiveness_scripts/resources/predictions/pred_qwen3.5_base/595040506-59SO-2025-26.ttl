@@ -1,0 +1,549 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Classes (Selected for this instance)
+#################################################################
+
+###  http://w3id.org/def/guia#Activity
+guide:Activity rdf:type owl:Class ;
+               rdfs:label "Activity"@en .
+
+
+###  http://w3id.org/def/guia#BachelorDegree
+guide:BachelorDegree rdf:type owl:Class ;
+                     rdfs:subClassOf guide:Degree ;
+                     rdfs:comment "An undergraduate degree programme that provides foundational higher education in a given field of study."@en .
+
+
+###  http://w3id.org/def/guia#Competency
+guide:Competency rdf:type owl:Class ;
+                 rdfs:label "Competency"@en .
+
+
+###  http://w3id.org/def/guia#CourseGuide
+guide:CourseGuide rdf:type owl:Class ;
+                  rdfs:subClassOf sch:CourseInstance ;
+                  rdfs:comment "A structured academic document that describes a course, including objectives, contents, methodology, resources, schedule, and evaluation."@en .
+
+
+###  http://w3id.org/def/guia#Degree
+guide:Degree rdf:type owl:Class ;
+             rdfs:label "Degree"@en .
+
+
+###  http://w3id.org/def/guia#EvaluationSystem
+guide:EvaluationSystem rdf:type owl:Class ;
+                       rdfs:comment "The overall framework that defines how student learning is assessed in a course, including criteria, components, and grading structure."@en .
+
+
+###  http://w3id.org/def/guia#LearningResult
+guide:LearningResult rdf:type owl:Class ;
+                     rdfs:label "Learning Result"@en .
+
+
+###  http://w3id.org/def/guia#Lecturer
+guide:Lecturer rdf:type owl:Class ;
+               rdfs:subClassOf sch:Person ;
+               rdfs:comment "A teaching person responsible for delivering, coordinating, or supporting a course within an academic programme."@en .
+
+
+###  http://w3id.org/def/guia#RequiredKnowledge
+guide:RequiredKnowledge rdf:type owl:Class ;
+                        rdfs:label "Required Knowledge"@en .
+
+
+###  http://w3id.org/def/guia#ScheduleEvent
+guide:ScheduleEvent rdf:type owl:Class ;
+                    rdfs:subClassOf sch:Event ;
+                    rdfs:comment "A dated or timed element within a course schedule, such as a class session, deadline, exam, or planned activity."@en .
+
+
+###  http://w3id.org/def/guia#SyllabusItem
+guide:SyllabusItem rdf:type owl:Class ;
+                   rdfs:label "Syllabus Item"@en .
+
+
+#################################################################
+#    Data Instances and Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/GA_59SO_595040506> a guide:CourseGuide, sch:CourseInstance ;
+     dc:title "Bases De Datos Relacionales Y Datos Estructurados"@es ;
+     dct:creator <http://w3id.org/def/guia#MarioSanEmeterio>, 
+                 <http://w3id.org/def/guia#SaraLana> ;
+     guide:numberOfCredits "6"^^xsd:decimal ;
+     sch:name "595040506 - Bases De Datos Relacionales Y Datos Estructurados"@es ;
+     sch:description "En esta asignatura se estudian conceptos teóricos y prácticos del diseño, definición y explotación de bases de datos relacionales."@en ;
+     guide:teachingPeriodMonths "Febrero-Junio"^^xsd:string ;
+     sch:inLanguage <http://purl.org/dc/terms/eng> , 
+                    <http://w3id.org/guia#es_ES> ;
+     guide:syllabusDescription "Tema 0 a Tema 7 sobre Bases de Datos Relacionales"@en .
+
+<http://guia-mad-bench.es/data/GA_59SO_595040506> guide:hasSyllabus <http://guia-mad-bench.es/data/Syl_GA_59SO_595040506> ;
+     sch:courseSchedule <http://guia-mad-bench.es/data/Sc_GA_59SO_595040506> .
+
+<http://w3id.org/guia#MarioSanEmeterio> a guide:Lecturer, sch:Person ;
+    sch:name "Mario San Emeterio De La Parte"@es ;
+    sch:email <mailto:mario.sanemeterio@upm.es> ;
+    guide:office "A4417"^^xsd:string .
+
+<http://w3id.org/guia#SaraLana> a guide:Lecturer, sch:Person ;
+    sch:name "Sara Lana Serrano"@es ;
+    sch:email <mailto:sara.lana@upm.es> ;
+    rdf:type owl:AnnotationProperty .
+
+<http://guia-mad-bench.es/data/GA_59SO_595040506> guide:hasDidacticResource <http://guia-mad-bench.es/data/Res_Moodle>, 
+                                              <http://guia-mad-bench.es/data/Res_Libro1>,
+                                              <http://guia-mad-bench.es/data/Res_Libro2>.
+
+<http://w3id.org/guia#MarioSanEmeterio> guide:hasCompetency <http://w3id.org/guia#CE_B2>, 
+                                                               <http://w3id.org/guia#CE_TEL01>,
+                                                               <http://w3id.org/guia#CG_03>.
+
+<http://guia-mad-bench.es/data/GA_59SO_595040506> guide:hasLearningResult <http://w3id.org/guia#RA1462>, 
+                                              <http://w3id.org/guia#RA1463>.
+
+<http://guia-mad-bench.es/data/GA_59SO_595040506> guide:hasEvaluation <http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> .
+
+<http://w3id.org/guia#CE_B2> a guide:Competency ;
+    sch:name "Conocimientos básicos sobre el uso y programación de los ordenadores"@es ;
+    guide:competencyCode <http://guia-mad-bench.es/data/CE_B2>.
+
+<http://w3id.org/guia#RA1463> a guide:LearningResult ;
+    sch:name "Entender cómo realizar un modelado de datos de cualquier aspecto de la realidad"@es .
+
+#################################################################
+#    Syllabus and Items
+#################################################################
+
+<http://guia-mad-bench.es/data/Syl_GA_59SO_595040506> a guide:Syllabus ;
+     sch:courseSchedule <http://w3id.org/guia#Sc_GA_59SO_595040506>.
+
+<http://guia-mad-bench.es/data/Syl_GA_59SO_595040506> guide:hasItem <http://guia-mad-bench.es/data/It_Tema0>, 
+                                              <http://guia-mad-bench.es/data/It_Tema1>.
+
+#################################################################
+#    Schedule and Events
+#################################################################
+
+<http://w3id.org/guia#Sc_GA_59SO_595040506> a guide:Schedule, sch:Schedule ;
+     rdf:type owl:ObjectProperty . # Placeholder for structure. Actually should be instance of Class. Corrected below in data section.
+
+<http://guia-mad-bench.es/data/Sc_GA_59SO_595040506> a guide:Schedule, sch:CourseInstance ;
+     rdf:type owl:ObjectProperty . # Placeholder for structure. Actually should be instance of Class. Corrected below in data section.
+
+<http://guia-mad-bench.es/data/Sc_GA_59SO_595040506> guide:eventSchedule <http://w3id.org/guia#Ev_Tema1>, 
+                                              <http://w3id.org/guia#Ev_ExamenFinal>.
+
+#################################################################
+#    Evaluation System and Trials
+#################################################################
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> a guide:EvaluationSystem ;
+     sch:name "Evaluación Progresiva y Global"@es .
+
+<http://w3id.org/guia#Ev_Tema1> a guide:ScheduleEvent, sch:Event ;
+    rdf:type owl:ObjectProperty. # Placeholder for structure. Actually should be instance of Class. Corrected below in data section.
+
+#################################################################
+#    Evaluation Trials and Events (Correcting Types)
+#################################################################
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial <http://w3id.org/guia/Trial_PEP1>, 
+                                              <http://w3id.org/guia/Trial_EFEG>.
+
+<http://guia-mad-bench.es/data/EvalSys_GA_59SO_595040506> guide:hasEvaluationTrial

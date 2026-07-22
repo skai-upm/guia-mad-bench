@@ -1,0 +1,248 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+### Course and Degree Information
+:course_305000127 rdf:type guide:Course ;
+    sch:courseCode 305000127 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Sexto semestre" ;
+    sch:hasCourseInstance :guide_instance_305000127 .
+
+:degree_30GM rdf:type guide:BachelorDegree ;
+    dc:title "Grado en Matemáticas" ;
+    guide:degreeCode "30GM" .
+
+:center_epes rdf:type guide:UniversityCenter ;
+    sch:name "Esc. Politéc. Enseñanza Superior (Epes)" ;
+    guide:offers :degree_30GM .
+
+### Course Guide Instance
+:guide_instance_305000127 rdf:type guide:CourseGuide ;
+    dc:title "Modelización y Simulación III" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:numberOfCredits 6.0 ;
+    guide:totalHours "150"^^xsd:langString ; # Estimated based on ECTS (6 * 25)
+    sch:inLanguage "Castellano" ;
+    sch:instructor :prof_maria_barbero ;
+    guide:hasSyllabus :syllabus_305000127 ;
+    guide:hasEvaluation :eval_system_305000127 ;
+    guide:hasCompetency :comp_CB2, :comp_CE1, :comp_CE3, :comp_CE4, :comp_CE6, :comp_CE7, :comp_CE8, :comp_CE9, :comp_CG2, :comp_CG3, :comp_CG4, :comp_CG5, :comp_CT3 ;
+    guide:hasLearningResult :res_RA146, :res_RA193, :res_RA194, :res_RA196, :res_RA187, :res_RA191, :res_RA192, :res_RA198, :res_RA199, :res_RA197 ;
+    guide:hasDidacticResource :res_book_fernandez, :res_book_farin, :res_book_courant, :res_book_fomenko, :res_book_bobenko, :res_book_pottmann, :res_book_gray, :res_book_lynch, :res_book_murray, :res_book_selig, :res_software_grasshopper, :res_software_matlab ;
+    sch:courseSchedule :schedule_305000127 .
+
+### Lecturer
+:prof_maria_barbero rdf:type guide:Lecturer ;
+    sch:name "Maria Barbero Liñan" ;
+    sch:email "m.barlos@upm.es" ;
+    guide:office "ETSAM" ;
+    rdfs:comment "Coordinador/a" .
+
+### Syllabus
+:syllabus_305000127 rdf:type guide:Syllabus ;
+    guide:hasItem :item_topic_1, :item_topic_2, :item_topic_3 .
+
+:item_topic_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Diseño geométrico asistido por ordenador (Curvas y superficies de forma libre)" .
+
+:item_topic_2 rdf:type guide:SyllabustItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Modelización de superficies mínimas" .
+
+:item_topic_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Métodos geométricos en robótica (Grupos y álgebras de Lie, Manipuladores)" .
+
+### Competencies
+:comp_CB2 rdf:type guide:Competency ;
+    guide:competencyCode "CB2" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional..." .
+
+:comp_CE1 rdf:type guide:Competency ;
+    guide:competencyCode "CE1" ;
+    guide:competencyDescription "Comprender y utilizar el lenguaje matemático. Adquirir la capacidad para enunciar propiedades..." .
+
+:comp_CE3 rdf:type guide:Competency ;
+    guide:competencyCode "CE3" ;
+    guide:competencyDescription "Asimilar la definición de un<0xC2>mac nuevo objeto matemático, en términos de otros ya conocidos..." .
+
+:comp_CE4 rdf:type guide:Competency ;
+    guide:competencyCode "CE4" ;
+    guide:competencyDescription "Abstraer las propiedades estructurales de objetos matemáticos..." .
+
+:comp_CE6 rdf:type guide:Competency ;
+    guide:competencyCode "CE6" ;
+    guide:competencyDescription "Proponer, analizar, validar e interpretar modelos matemáticos de sistemas reales..." .
+
+:comp_CE7 rdf:type guide:Competency ;
+    guide:competencyCode "CE7" ;
+    guide:competencyDescription "Resolver problemas de Matemáticas, mediante habilidades de cálculo básico y tecnologías de computación..." .
+
+:comp_CE8 rdf:type guide:Competency ;
+    guide:competencyCode "CE8" ;
+    guide:competencyDescription "Utilizar aplicaciones informáticas de análisis estadístico, cálculo numérico y simbólico..." .
+
+:comp_CE9 rdf:type guide:Competency ;
+    guide:competencyCode "CE9" ;
+    guide:competencyDescription "Desarrollar programas que ejecuten algoritmos de resolución de modelos matemáticos..." .
+
+:comp_CG2 rdf:type guide:Competency ;
+    guide:competencyCode "CG2" ;
+    guide:competencyDescription "Reconocer la presencia de la Matemática subyacente en la Naturaleza, en la Ciencia, en la Tecnología y en el Arte." .
+
+:comp_CG3 rdf:type guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Utilizar las capacidades analíticas y de abstracción, la intuición y el pensamiento lógico..." .
+
+:comp_CG4 rdf:type guide:Competency ;
+    guide:competencyCode "CG4" ;
+    guide:competencyDescription "Utilizar los conocimientos teóricos y prácticos adquiridos en la definición y planteamiento de problemas..." .
+
+:comp_CG5 rdf:type guide:Competency ;
+    guide:competencyCode "CG5" ;
+    guide:competencyDescription "Sintetizar conocimientos y habilidades adquiridas en el campo de la matemática..." .
+
+:comp_CT3 rdf:type guide:Competency ;
+    guide:competencyCode "CT3" ;
+    guide:competencyDescription "Asumir el liderazgo para dirigir y gestionar equipos o proyectos..." .
+
+### Learning Results
+:res_RA146 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA146" ;
+    guide:learningResultDescription "Programar, realizar e interpretar simulaciones de los modelos utilizados" .
+
+:res_RA193 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA193" ;
+    guide:learningResultDescription "Conocer y explicar los usos de las curvas y superficies NURBS para resolver problemas de la vida real." .
+
+:res_RA194 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA194" ;
+    guide:learningResultDescription "Identificar superficies mínimas en el espacio tridimensional." .
+
+:res_RA196 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA196" ;
+    guide:learningResultDescription "Discretizar superficies y analizar las propiedades geométricas asociadas." .
+
+:res_RA187 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA187" ;
+    guide:learningResultDescription "Aplicar las herramientas del cálculo diferencial al estudio de la geometría de curvas y superficies..." .
+
+:res_RA191 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA191" ;
+    guide:learningResultDescription "Adquirir conocimientos básicos sobre curvas y superficies NURBS." .
+
+:res_RA192 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA192" ;
+    guide:learningResultDescription "Manejar programas de diseño geométrico asistido por ordenador." .
+
+:res_RA198 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA198" ;
+    guide:learningResultDescription "Aplicar la teoría helicoidal para describir el movimiento de manipuladores robóticos." .
+
+:res_RA199 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA199" ;
+    guide:learningResultDescription "Modelar y simular problemas robóticos sencillos." .
+
+:res_RA197 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA197" ;
+    guide:learningResultDescription "Utilizar grupos de Lie y álgebras de Lie para describir la dinámica del sólido rígido." .
+
+### Evaluation System
+:eval_system_305000127 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación progresiva constará de pruebas escritas, prácticas y trabajos. Existe una prueba global en convocatoria ordinaria/extraordinaria." ;
+    guide:hasEvaluationTrial :trial_exam_week5, :trial_presentation_week6, :trial_practice_week8, :trial_groupwork_week9, :trial_control_robotics_week13, :trial_presentation_group_week15, :trial_attendance_week16, :trial_global_exam_week17 .
+
+:trial_exam_week5 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialWeek "Semana 5" ;
+    guide:involvesCompetency :comp_CE1, :comp_CG3, :comp_CE7 .
+
+:trial_presentation_week6 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Presentación en Grupo" ;
+    guide:gradePercentage "10%" ;
+    guide:trialWeek "Semana 6" ;
+    guide:involvesCompetency :comp_CB2, :comp_CE1, :comp_CE4, :comp_CE8, :comp_CG2, :comp_CG3, :comp_CG5, :comp_CE3 .
+
+:trial_practice_week8 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen de Prácticas" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialWeek "Semana 8" ;
+    guide:involvesCompetency :comp_CE8, :comp_CE3, :comp_CE7 .
+
+:trial_groupwork_week9 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Trabajo en Grupo" ;
+    guide:gradePercentage "20%" ;
+    guide:trialWeek "Semana 9" ;
+    guide:involvesCompetency :comp_CE6, :comp_CG2, :comp_CG3, :comp_CT3, :comp_CE3, :comp_CE1, :comp_CE4 .
+
+:trial_control_robotics_week13 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialWeek "Semana 13" ;
+    guide:involvesCompetency :comp_CE1, :comp_CE6, :comp_CG3, :comp_CE7 .
+
+:trial_presentation_group_week15 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Presentación en Grupo" ;
+    guide:gradePercentage "10%" ;
+    guide:trialWeek "Semana 15" ;
+    guide:involvesCompetency :comp_CE1, :comp_CE6, :comp_CG2, :comp_CG5 .
+
+:trial_attendance_week16 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Trabajo Individual" ;
+    guide:gradePercentage "5%" ;
+    guide:trialWeek "Semana 16" .
+
+:trial_global_exam_week17 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "Semana 17" ;
+    guide:involvesCompetency :comp_CE1, :comp_CE4, :comp_CE6, :comp_CE8, :comp_CE9, :comp_CG2, :comp_CG3, :comp_CG5, :comp_CE3, :comp_CE7 .
+
+### Schedule
+:schedule_305000127 rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week2, :event_week3, :event_week4, :event_week5, :event_week6, :event_week7, :event_week8, :event_week9, :event_week10, :event_week11, :event_week12, :event_week13, :event_week14, :event_week15 .
+
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_lecture_intro .
+
+:act_lecture_intro rdf:type guide:Activity ;
+    guide:activityDescription "Introducción al diseño geométrico asistido por ordenador. Curvas de forma libre." ;
+    guide:activityDuration 5.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+### Didactic Resources
+:res_book_fernandez rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Leonardo Fernández. Diseño Geométrico Asistido por Ordenador, UPM Press, 2021" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_book_farin rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "George Farin. Curves and Surfaces for CAGD. A Practical Guide, Morgan Kaufmann, 2002" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_software_grasshopper rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Grasshopper y GhPython" ;
+    guide:bibliographyType "Software" .
+
+:res_software_matlab rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "MatLab/Python" ;
+    guide:bibliographyType "Software" .
+
+### Required Knowledge
+:req_knowledge_305000127 rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Los conocimientos adquiridos en semestres anteriores. Capacidad lectora en inglés." ;
+    guide:previousCourses "Geometría Diferencial De Curvas Y Superficies, Geometría I, Geometría II, Estructuras Algebraicas, Física, Programación, Topología, Ecuaciones Diferenciales Ordinarias II, Ecuaciones Diferenciales Ordinarias I, Análisis Complejo" .

@@ -1,0 +1,222 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://w3id.org/def/guia#> .
+
+# Course Guide
+:course_53001642_guide rdf:type guide:CourseGuide ;
+    sch:name "Smart Grids" ;
+    sch:description "In this course, the fundamentals of smart grids are covered. In particular, attention is paid to intelligent micro and nano electric power grids..."@en ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Inglés/Castellano" ;
+    guide:hasSyllabus :syllabus_smartgrids ;
+    guide:hasCompetency :comp_MUEI_CB06, :comp_MUEI_CB07, :comp_MUEI_CE01, :comp_MUEI_CT01 ;
+    guide:hasLearningResult :lr_RA43, :lr_RA41, :lr_RA42, :lr_RA40, :lr_RA44 ;
+    guide:hasEvaluation :eval_system_smartgrids ;
+    sch:courseSchedule :schedule_smartgrids ;
+    guide:hasDidacticResource :res_grid_converters, :res_slides ;
+    sch:instructor :lecturer_airan_frances ;
+    sch:activitiesWorkload "26-27 hours per ECTS" ;
+    guide:otherInformation "La asignatura se relaciona con el ODS7 desde el punto de vista de la eficiencia energética."@en .
+
+# Degree and University Center
+:degree_05BI rdf:type guide:MasterDegree ;
+    sch:name "Doble Master Universitario Ingenieria Industrial - Electronica Industrial" ;
+    guide:degreeCode "05BI" ;
+    guide:hasCourse :course_smartgrids .
+
+:course_smartgrids rdf:type guide:Course ;
+    sch:courseCode 53001642 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Tercer semestre, Cuarto semestre" .
+
+:center_05 rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Industriales" ;
+    guide:offers :degree_05BI .
+
+# Lecturer
+:lecturer_airan_frances rdf:type guide:Lecturer ;
+    sch:name "Airan Frances Roger" ;
+    sch:email "airan.frances@upm.es" ;
+    guide:office "Electrónica" ;
+    guide:tutorshipsSchedule "Sin horario. Previa petición por email" .
+
+# Competencies
+:comp_MUEI_CB06 rdf:type guide:Competency ;
+    guide:competencyCode "MUEI.CB06" ;
+    guide:competencyDescription "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales..."@en .
+
+:comp_MUEI_CB07 rdf:type guide:Competency ;
+    guide:competencyCode "MUEI.CB07" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiramos y su capacidad de resolución de problemas..."@en .
+
+:comp_MUEI_CE01 rdf:type guide:Competency ;
+    guide:competencyCode "MUEI.CE01" ;
+    guide:competencyDescription "Comprender, diseñar y analizar sistemas y componentes electrónicos en el ámbito de la electrónica industrial..."@en .
+
+:comp_MUEI_CT01 rdf:type guide:Competency ;
+    guide:competencyCode "MUEI.CT01" ;
+    guide:competencyDescription "Uso de la lengua inglesa"@en .
+
+# Learning Results
+:lr_RA43 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA43" ;
+    guide:learningResultDescription "Identificar, analizar, e interpretar los datos de problemas relacionados con el tráfico y el transporte"@en .
+
+:lr_RA41 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA41" ;
+    guide:learningResultDescription "Conocer los conceptos relacionados con el transporte y sus modos"@en .
+
+:lr_RA42 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA42" ;
+    guide:learningResultDescription "Conocer las distintas tecnologías relativas a la seguridad de los vehículos automóviles"@en .
+
+:lr_RA40 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA40" ;
+    guide:learningResultDescription "Capacidad para analizar la influencia de determinadas variables en la eficiencia de un proceso"@en .
+
+:lr_RA44 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA44" ;
+    guide:learningResultDescription "Identificar los retos medioambientales del transporte por carretera"@en .
+
+# Syllabus
+:syllabus_smartgrids rdf:type guide:Syllabus ;
+    guide:hasItem :item_1, :item_2, :item_3, :item_4, :item_5, :item_6, :item_7, :item_8, :item_9, :item_10, :item_11 .
+
+:item_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introduction to Smart Grids and Microgrids" .
+
+:item_2 rdf:type guide:SylabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Architectures of AC and DC Microgrids. Different topologies" .
+
+:item_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "The role of Power Electronics in Smart Grids and Microgrids" .
+
+:item_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "AC Microgrids. Power Converters in AC Microgrids. Grid-connected mode. Islanded mode. Hierarchical Control" .
+
+:item_5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Synchronization Techniques. PLLs, DSOGI, etc." .
+
+:item_6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "PWM Techniques. Space Vector Modulation" .
+
+:item_7 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Park Transformation review. dq controllers in power converters" .
+
+:item_8 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 8 ;
+    guide:syllabusDescription "An exercise of a 3-phase power inverter in grid-connected mode using Matlab/Simulink" .
+
+:item_9 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 9 ;
+    guide:syllabusDescription "DC Microgrids. Advantages and disadvantages in DC Power Distribution" .
+
+:item_10 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 10 ;
+    guide:syllabusDescription "Power Converters in DC Distribution. Droop Control in DC Microgrids" .
+
+:item_11 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 11 ;
+    guide:syllabusDescription "DC Bus Signalling as a control strategy in DC distribution. Models and Simulation" .
+
+# Evaluation System
+:eval_system_smartgrids rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y evaluación global."@en ;
+    guide:hasEvaluationTrial :trial_9, :trial_16 .
+
+:trial_9 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialDescription "Check the modeling and simulation skills using Matlab/Simulink" ;
+    guide:trialMode "Presencial" ;
+    guide:hasScheduleEvent :event_9 .
+
+:trial_16 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialDescription "Homework Review and Evaluation" ;
+    guide:trialMode "Presencial" ;
+    guide:hasScheduleEvent :event_16 .
+
+# Schedule and Events
+:schedule_smartgrids rdf:type guide:Schedule ;
+    sch:eventSchedule :event_1, :event_5, :event_9, :event_16 .
+
+:event_1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_lm_1 .
+
+:act_lm_1 rdf:type guide:Activity ;
+    guide:activityDescription "Introduction to Smart Grids and Microgrids" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Presencial" .
+
+:event_5 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 5 ;
+    guide:eventWeek "Semana 5" ;
+    guide:hasActivity :act_pl_5 .
+
+:act_pl_5 rdf:type guide:Activity ;
+    guide:activityDescription "Matlab/Simulink for modeling and simulation in microgrids" ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Presencial" .
+
+:event_9 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 9 ;
+    guide:eventWeek "Semana 9" ;
+    guide:hasActivity :act_pi_9 .
+
+:act_pi_9 rdf:type guide:Activity ;
+    guide:activityDescription "Check the modeling and simulation skills using Matlab/Simulink" ;
+    guide:activityFormat "Presentación Individual" ;
+    guide:activityDuration 0.0 ;
+    guide:attendanceType "Presencial" .
+
+:event_16 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 16 ;
+    guide:eventWeek "Semana 16" ;
+    guide:hasActivity :act_ti_16 .
+
+:act_ti_16 rdf:type guide:Activity ;
+    guide:activityDescription "Homework Review and Evaluation" ;
+    guide:activityFormat "Trabajo Individual" ;
+    guide:activityDuration 3.0 ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_grid_converters rdf:type guide:DidacticResource ;
+    sch:name "Grid Converters for PV and Wind Power Systems" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Grid Converters for PV and Wind Power Systems - Remus Teodorescu, Marco Liserre, Pedro Rodriguez"@en .
+
+:res_slides rdf:type guide:DidacticResource ;
+    sch:name "Slides" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Slides with the main contents of the classes"@en .
+
+# Prerequisites (Required Knowledge)
+:req_knowledge_smartgrids rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Fundamentos de Electrónica de Potencia, Fundamentos de Sistemas Eléctricos de Potencia; Linear Control Theory" ;
+    guide:previousCourses "Three Phase Rectifiers And Inverters" .

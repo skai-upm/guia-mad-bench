@@ -1,0 +1,211 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+# Degree and University Center
+:degree_20BC rdf:type guide:MasterDegree ;
+    sch:name "20BC - Master Universitario en Biologia Computacional" ;
+    guide:degreeCode "20BC" .
+
+:center_ETSI rdf:type guide:UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas" ;
+    guide:offers :degree_20BC .
+
+# Course
+:course_203000027 rdf:type guide:Course ;
+    sch:name "203000027 - Computational Approaches In Evolutionary Biology" ;
+    sch:courseCode 203000027 ;
+    guide:courseType "Optional/elective" ;
+    sch:hasCourseInstance :guide_203000027 .
+
+:degree_20BC guide:hasCourse :course_203000027 .
+
+# Course Guide
+:guide_203000027 rdf:type guide:CourseGuide ;
+    sch:name "Learning Guide - Computational Approaches In Evolutionary Biology" ;
+    sch:inLanguage "English" ;
+    teachingPeriod "2025-26" ;
+    teachingPeriodMonths "September-January" ;
+    periodStartingMonth "September" ;
+    periodEndingMonth "January" ;
+    guide:numberOfCredits 3.0 ;
+    sch:instructor :lecturer_jesus, :lecturer_cristina ;
+    sch:director :lecturer_jesus ;
+    guide:hasSyllabus :syllabus_203000027 ;
+    guide:hasEvaluation :eval_system_203000027 ;
+    guide:hasCompetency :comp_CE02, :comp_CE03, :comp_CE05, :comp_CE10, :comp_CG03, :comp_CG05, :comp_CT02 ;
+    guide:hasLearningResult :lr_RA18, :lr_RA19, :lr_RA16, :lr_RA17 ;
+    guide:hasDidacticResource :res_nei, :res_hartl, :res_lemey ;
+    sch:courseSchedule :schedule_203000027 ;
+    sch:description "The course combines a solid formation in theoretical aspects on the mechanisms and forces determining the evolution of living organisms, with a strong practical component." .
+
+# Faculty
+:lecturer_jesus rdf:type guide:Lecturer ;
+    sch:name "Jesus Israel Pagan Muñoz" ;
+    sch:email "jesusisradel.pagan@upm.es" ;
+    guide:office "231" ;
+    guide:tutorshipsSchedule "Tu - 12:00 - 13:00" .
+
+:lecturer_cristina rdf:type guide:Lecturer ;
+    sch:name "Cristina Saez Sanchez" ;
+    sch:email "cristina.saez@upm.es" ;
+    guide:office "202 - CBGP" ;
+    guide:tutorshipsSchedule "M - 08:00 - 08:15" .
+
+# Competencies
+:comp_CE02 rdf:type guide:Competency ;
+    guide:competencyCode "CE02" ;
+    guide:competencyDescription "Utilizar sistemas operativos, programas y herramientas de uso común en biología computacional..." .
+
+:comp_CE03 rdf:type guide:Competency ;
+    guide:competencyCode "CE03" ;
+    guide:competencyDescription "Analizar e interpretar bioinformáticamente los datos que se derivan de las tecnologías ómicas..." .
+
+:comp_CE05 rdf:type guide:Competency ;
+    guide:competencyCode "CE05" ;
+    guide:competencyDescription "Utilizar herramientas de biología computacional para el análisis genómico..." .
+
+:comp_CE10 rdf:type guide:Competency ;
+    guide:competencyCode "CE10" ;
+    guide:competencyDescription "Conocimiento de las técnicas de representación del conocimiento reutilizables y modelos de razonamiento..." .
+
+:comp_CG03 rdf:type guide:Competency ;
+    guide:competencyCode "CG03" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas..." .
+
+:comp_CG05 rdf:type guide:Competency ;
+    guide:competencyCode "CG05" ;
+    guide:competencyDescription "Que los estudiantes sean capaces de integrar conocimientos en el area de la Biología Computacional..." .
+
+:comp_CT02 rdf:type guide:Competency ;
+    guide:competencyCode "CT02" ;
+    guide:competencyDescription "Capacidad para aplicar el método científico para la resolución de problemas de forma efectiva y creativa." .
+
+# Learning Results
+:lr_RA18 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA18" ;
+    guide:learningResultDescription "Conocer los supuestos teóricos y la base bioestadística en la que se apoyan los diferentes métodos de análisis computacional..." .
+
+:lr_RA19 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA19" ;
+    guide:learningResultDescription "Adquirir los conocimientos necesarios para el uso e interpretación de paquetes informáticos enfocados al estudio de la evolución..." .
+
+:lr_RA16 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA16" ;
+    guide:learningResultDescription "Aprender los conceptos básicos en Biología Evolutiva" .
+
+:lr_RA17 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA17" ;
+    guide:learningResultDescription "Conocer cuáles son las aproximaciones más utilizadas para el estudio de la evolución de los organismos" .
+
+# Syllabus
+:syllabus_203000027 rdf:type guide:Syllabus ;
+    guide:hasItem :item_1, :item_2, :item_3, :item_4, :item_5, :item_6, :item_7 .
+
+:item_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Mechanisms of evolution: mutation" .
+
+:item_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Natural selection" .
+
+:item_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Evolution in finite populations: genetic drift" .
+
+:item_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Genetic variability in natural populations" .
+
+:item_5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Sex and recombination" .
+
+:item_6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Coevolution" .
+
+:item_7 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Long-term evolution and macroevolution" .
+
+# Schedule and Activities
+:schedule_203000027 rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week4, :event_week8, :event_week12, :event_week15, :event_week17 .
+
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :act_lecture_mutation .
+
+:act_lecture_mutation rdf:type guide:Activity ;
+    guide:activityDescription "Mechanisms of evolution: mutation" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lecture" ;
+    guide:attendanceType "Face-to-face" .
+
+:event_week4 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "4" ;
+    guide:hasActivity :act_lab_selection .
+
+:act_lab_selection rdf:type guide:Activity ;
+    guide:activityDescription "Selection coefficients and heritability" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Laboratory assignments" ;
+    guide:attendanceType "Remote" .
+
+:event_week17 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "17" ;
+    guide:hasActivity :act_exam_global .
+
+:act_exam_global rdf:type guide:Activity ;
+    guide:activityDescription "Global examination" ;
+    guide:activityDuration 5.0 ;
+    guide:activityFormat "Individual work" ;
+    guide:attendanceType "Remote" .
+
+# Evaluation System
+:eval_system_203000027 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Progressive evaluation and Global evaluation based on manuscripts." ;
+    guide:hasEvaluationTrial :trial_week4, :trial_week8, :trial_week12, :trial_week15, :trial_week17 .
+
+:trial_week4 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Problem-solving test" ;
+    guide:evaluationType "Progressive assessment" ;
+    guide:evaluationDuration "03:00" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Not Presential" ;
+    guide:involvesCompetency :comp_CE05, :comp_CG03 .
+
+:trial_week8 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Practical work" ;
+    guide:evaluationType "Progressive assessment" ;
+    guide:evaluationDuration "03:00" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Not Presential" .
+
+:trial_week17 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Global examination" ;
+    guide:evaluationType "Global examination" ;
+    guide:evaluationDuration "05:00" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Not Presential" .
+
+# Teaching Resources
+:res_nei rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Nei, M. (1987) Molecular Evolutionary Genetics. Columbia University Press, New York" ;
+    guide:bibliographyType "Bibliography" .
+
+:res_hartl rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Hartl, D,L., Clark, A.G. (2007) Principles of population genetics, fourth ed. Sinauer, Sunderland." ;
+    guide:bibliographyType "Bibliography" .
+
+:res_lemey rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Lemey, P., Salemi, M., Vandamme, A-.M. (2009) The Phylogenetic Handbook: A Practical Approach to Phylogenetic Analysis and Hypothesis Testing. Cambridge University Press, Cambridge." ;
+    guide:bibliographyType "Bibliography" .

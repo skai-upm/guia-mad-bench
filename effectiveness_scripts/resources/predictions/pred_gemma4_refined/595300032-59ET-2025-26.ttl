@@ -1,0 +1,143 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# Course Instance
+:course_595300032 rdf:type guide:Course ;
+    sch:name "Electronica Analogica II" ;
+    sch:courseCode 595300032 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Sexto semestre" .
+
+# Course Guide Instance
+:course_guide_595300032 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Electronica Analogica II" ;
+    sch:description "Guía de aprendizaje para la asignatura Electrónica Analógica II." ;
+    guide:numberOfCredits 6.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:inLanguage "Castellano" ;
+    sch:instructor :lecturer_javier_malo_gomez , 
+                   :lecturer_francisco_martinez_moreno , 
+                   :lecturer_ignacio_anton_hernandez ;
+    guide:hasCompetency :comp_ec02 , 
+                        :comp_ec05 , 
+                        :comp_cg04 , 
+                        :comp_cg11 ;
+    guide:hasLearningResult :lr_ra546 , 
+                            :lr_ra550 , 
+                            :lr_ra553 ;
+    guide:hasEvaluation :eval_system_eaii ;
+    guide:hasDidacticResource :res_book_oa , 
+                             :res_notes_prof ;
+    sch:courseSchedule :schedule_eaii .
+
+# Degree Instance
+:degree_59ET rdf:type guide:Degree ;
+    sch:name "59ET - Doble Grado En Ing.Electronica De Comunicaciones Y En Ing.Telematica" ;
+    guide:degreeCode "59ET" ;
+    guide:hasCourse :course_595300032 .
+
+# University Center Instance
+:center_ets_telecom rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Sist. De Telecom." ;
+    guide:offers :degree_59ET .
+
+# Lecturer Instances
+:lecturer_javier_malo_gomez rdf:type guide:Lecturer ;
+    sch:name "Javier Malo Gomez" ;
+    sch:email "javier.malo@upm.es" ;
+    guide:office "A4215" .
+
+:lecturer_francisco_martinez_moreno rdf:type guide:Lecturer ;
+    sch:name "Francisco Martinez Moreno" ;
+    sch:email "francisco.martinezm@upm.es" ;
+    guide:office "A4210" .
+
+:lecturer_ignacio_anton_hernandez rdf:type guide:Lecturer ;
+    sch:name "Ignacio Anton Hernandez" ;
+    sch:email "i.anton@upm.es" ;
+    guide:office "A4220" .
+
+# Competency Instances
+:comp_ec02 rdf:type guide:Competency ;
+    guide:competencyCode "CE EC02" ;
+    guide:competencyDescription "Capacidad para seleccionar circuitos y dispositivos electrónicos especializados para la transmisión, el encaminamiento o enrutamiento y los terminales, tanto en entornos fijos como móviles." .
+
+:comp_ec05 rdf:type guide:Competency ;
+    guide:competencyCode "CE EC05" ;
+    guide:competencyDescription "Capacidad de diseñar circuitos de electrónica analógica y digital, de conversión analógico-digital y digital-analógica, de radiofrecuencia, de alimentación y conversión de energía eléctrica para aplicaciones de telecomunicación y computación." .
+
+:comp_cg04 rdf:type guide:Competency ;
+    guide:competencyCode "CG 04" ;
+    guide:competencyDescription "Capacidad de abstracción, de análisis y de síntesis y de resolución de problemas." .
+
+:comp_cg11 rdf:type guide:Competency ;
+    guide:competencyCode "CG 11" ;
+    guide:competencyDescription "Habilidades para la utilización de las Tecnologías de la Información y las Comunicaciones." .
+
+# Learning Result Instances
+:lr_ra546 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA546" ;
+    guide:learning_result_description "Comprender e interpretar las especificaciones y parámetros de un amplificador operacional a partir de las hojas de características del fabricante" .
+
+:lr_ra550 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA550" ;
+    guide:learning_result_description "Calcular, de forma aproximada y rápida, el ancho de banda de un amplificador construido con amplificador operacional compensado en frecuencia." .
+
+:lr_ra553 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA553" ;
+    guide:learning_result_description "Aplicar la teoría de circuitos realimentados al cálculo de la ganancia y resistencias terminales de un amplificador realimentado negativamente y construido con amplificador operacional" .
+
+# Evaluation System Instance
+:eval_system_eaii rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación distribuida o progresiva. La calificación final se obtiene de la suma del 70% de la parte de Teoría y el 30% de la parte de Laboratorio." ;
+    guide:hasEvaluationTrial :trial_bt1a_moodle , 
+                             :trial_bt2_moodle .
+
+# Evaluation Trial Instances
+:trial_bt1a_moodle rdf:type guide:EvaluationTrial ;
+    guide:trialType "Prueba Telemática" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "3%" ;
+    guide:trialWeek "Semana 2" .
+
+:trial_bt2_moodle rdf:type guide:EvaluationTrial ;
+    guide:trialType "Prural Telemática" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "3%" ;
+    guide:trialWeek "Semana 8" .
+
+# Didactic Resource Instances
+:res_book_oa rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Design with operational amplifiers and analog integrated circuits (fourth edition)" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Es el principal libro de texto, de entre los recomendados, para seguir la asignatura" .
+
+:res_notes_prof rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Apuntes" ;
+    guide:bibliographyType "Otros" ;
+    guide:bibliographyDescription "Colección de apuntes, elaborados por los profesores de la asignatura." .
+
+# Required Knowledge Instance
+:req_knowledge_prev rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Analisis De Circuitos I, Electronica Analogica I, Analisis De Circuitos II, Electronica I" ;
+    guide:previousKnowledge "El alumno debe saber analizar circuitos eléctricos básicos (Lemas de Kirchoff, teoremas básicos), circuitos con diodos, transistores y amplificador operacional ideal." .
+
+# Schedule Instance
+:schedule_eaii rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1 , 
+                      :event_week2 .
+
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_leccion_magistral_1 .
+
+:act_leccion_magistral_1 rdf:type guide:Activity ;
+    guide:activityDescription "El AO ideal realimentado negativamente" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 0.5 .

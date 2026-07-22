@@ -1,0 +1,194 @@
+@prefix data: <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Course and Degree Information
+data:Course_105000439 a guide:Course ;
+    sch:name "El Arte De Programar" ;
+    sch:courseCode 105000439 ;
+    guide:courseType "Optativa" ;
+    guide:numberOfCredits 6.0 ;
+    sch:hasCourseInstance data:CourseGuide_105000439 .
+
+data:Degree_10II a guide:Degree ;
+    sch:name "Grado En Ingenieria Informatica" ;
+    guide:degreeCode "10II" ;
+    guide:hasCourse data:Course_105000439 .
+
+data:UniversityCenter_ETS a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Informáticos" ;
+    guide:offers data:Degree_10II .
+
+# Course Guide Details
+data:CourseGuide_105000439 a guide:CourseGuide ;
+    sch:description "En esta asignatura se estudiaran los algoritmos en más detalle que en las asignaturas obligatorias del grado." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:semester "Quinto semestre" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus data:Syllabus_105000439 ;
+    guide:hasCompetency data:Comp_CG1, data:Comp_CG2, data:Comp_CG3, data:Comp_CG6, data:Comp_CG7, data:Comp_Ce19;
+    guide:hasLearningResult data:LR_RA278 ;
+    guide:hasEvaluation data:EvalSystem_Progresiva, data:EvalSystem_Global ;
+    guide:hasDidacticResource data:Res_Skiena1, data:Res_Skiena2, data:Res_Knuth1, data:Res_Knuth2, data:Res_Laaksonen ;
+    sch:instructor data:Lecturer_Larsake, data:Lecturer_Julio, data:Lecturer_Clara, data:Lecturer_Santiago ;
+    sch:director data:Lecturer_Santiago .
+
+# Lecturers
+data:Lecturer_Larsake a guide:Lecturer ;
+    sch:name "Lars-ake Fredlund" ;
+    guide:office "D2309" ;
+    sch:email "larsake.fredlund@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. https://upm365-my.sharepoint.com/..." .
+
+data:Lecturer_Julio a guide:Lecturer ;
+    sch:name "Julio Mariño Carballo" ;
+    guide:office "D2308" ;
+    sch:email "julio.marino@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. https://upm365-my.sharepoint/..." .
+
+data:Lecturer_Clara a guide:Lecturer ;
+    sch:name "Clara Benac Earle" ;
+    guide:office "D2302" ;
+    sch:email "clara.benac@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. https://upm365-my.sharepoint/..." .
+
+data:Lecturer_Santiago a guide:Lecturer ;
+    sch:name "Santiago Tapia Fernandez" ;
+    sch:email "santiago.tapia@upm.es" ;
+    guide:office "D2307" ;
+    guide:tutorshipsSchedule "Sin horario. https://upm365-my.sharepoint/..." .
+
+# Competencies
+data:Comp_CG1 a guide:Competency ;
+    guide:competencyCode "CG-1/21" ;
+    guide:competencyDescription "Capacidad de resolución de problemas aplicando conocimientos de matemáticas, ciencias e ingeniería." .
+
+data:Comp_CG2 a guide:Competency ;
+    guide:competencyCode "CG-2/CE45" ;
+    guide:competencyDescription "Capacidad para el aprendizaje autónomo y la actualización de conocimientos, y reconocimiento de su necesidad en el área de la informática." .
+
+data:Comp_CG3 a guide:Competency ;
+    guide:competencyCode "CG-3/4" ;
+    guide:competencyDescription "Saber trabajar en situaciones carentes de información y bajo presión, teniendo nuevas ideas, siendo creativo." .
+
+data:Comp_CG6 a guide:Competency ;
+    guide:competencyCode "CG-6" ;
+    guide:competencyDescription "Capacidad de abstracción, análisis y síntesis" .
+
+data:Comp_CG7 a guide:Competency ;
+    guide:competencyCode "CG-7:10/16/17" ;
+    guide:competencyDescription "Capacidad para trabajar dentro de un
+
+data:Comp_Ce19 a guide:Competency ;
+    guide:competencyCode "Ce 19/20" ;
+    guide:competencyDescription "Conocimiento de los tipos apropiados de soluciones, y comprensión de la complejidad de los problemas informáticos y la viabilidad de su solución." .
+
+# Learning Results
+data:LR_RA278 a guide:LearningResult ;
+    guide:learningResultCode "RA278" ;
+    guide:learningResultDescription "Desarrollar la solución matemática y algorítmica mas apropiada a un problema informático que requiera un tratamiento especialmente complejo, analizando y exponiendo su viabilidad." .
+
+# Syllabus
+data:Syllabus_105000439 a guide:Syllabus ;
+    guide:hasItem data:SyllabusItem_1, data:SyllabusItem_2, data:SyllabusItem_3, data:SyllabusItem_4 .
+
+data:SyllabusItem_1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción" .
+
+data:SyllabusItem_2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Eficiencia y complejidad de algoritmos" .
+
+data:SyllabusItem_3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Técnicas básicas" .
+
+data:SyllabusItem_4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Técnicas de diseño de algoritmos" .
+
+# Evaluation Systems and Trials
+data:EvalSystem_Progresiva a guide:EvaluationSystem ;
+    guide:evaluationDescription "La nota de evaluación progresiva se calcula como 0,3 * (Test de Teoría) + 0,7 * (Nota Concursos)." ;
+    guide:hasEvaluationTrial data:Trial_Concursos, data:Trial_AdaByron, data:Trial_TestTeoria .
+
+data:EvalSystem_Global a guide:EvaluationSystem ;
+    guide:evaluationDescription "La nota de evaluación global se calcula como 0,3 * (Test de Teoría) + 0,7 * (Nota de Concursos)." ;
+    guide:hasEvaluationTrial data:Trial_Recuperacion .
+
+data:Trial_Concursos a guide:EvaluationTrial ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "7%" ;
+    guide:trialMode "Presencial" ;
+    guide:trialType "Trabajo en Grupo" .
+
+data:Trial_AdaByron a guide:EvaluationTrial ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "10%" ;
+    guide:trialMode "Presencial" ;
+    guide:trialType "Otras técnicas evaluativas" .
+
+data:Trial_TestTeoria a guide:EvaluationTrial ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "30%" ;
+    guide:trialMode "Presencial" ;
+    guide:trialType "Examen Escrito" .
+
+data:Trial_Recuperacion a guide:EvaluationTrial ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "70%" ;
+    guide:trialMode "Presencial" ;
+    guide:trialType "Examen de Prácticas" .
+
+# Activities and Schedule
+data:Schedule_105000439 a guide:Schedule ;
+    sch:eventSchedule data:Event_Sem6, data:Event_Sem11, data:Event_Sem15 .
+
+data:Event_Sem6 a guide:ScheduleEvent ;
+    guide:eventIndex 6 ;
+    guide:eventWeek "Semana 6" ;
+    guide:hasActivity data:Act_Concursos .
+
+data:Act_Concursos a guide:Activity ;
+    guide:activityDescription "Concursos de Programación" ;
+    guide:activityDuration 0.0 ;
+    guide:activityFormat "Gamificación" ;
+    guide:attendanceType "Presencial" .
+
+data:Event_Sem11 a guide:ScheduleEvent ;
+    guide:eventIndex 11 ;
+    guide:eventWeek "Semana 11" ;
+    guide:hasActivity data:Act_ExamenPractico .
+
+data:Act_ExamenPractico a guide:Activity ;
+    guide:activityDescription "Examen Práctico de Evaluación" ;
+    guide:activityDuration 4.0 ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+data:Res_Skiena1 a guide:DidacticResource ;
+    guide:bibliographyTitle "The Algorithm Design Manual" ;
+    guide:bibliographyDescription "Steven S. Skiena. The Algorithm Design Manual. Springer, London, 2008." .
+
+data:Res_Skiena2 a guide:DidacticResource ;
+    guide:bibliographyTitle "Programming Challenges: The Programming Contest Training Manual" ;
+    guide:bibliographyDescription "Steven S. Skiena and Miguel Revilla. Springer-Verlag, Berlin, Heidelberg, 2003." .
+
+data:Res_Knuth1 a guide:DidacticResource ;
+    guide:bibliographyTitle "The Art of Computer Programming, Volume 3" ;
+    guide:bibliographyDescription "Donald E. Knuth. Addison Wesley Longman Publishing Co., Inc., USA, 1998." .
+
+data:Res_Knuth2 a guide:DidacticResource ;
+    guide:bibliographyTitle "The Art of Computer Programming: Combinatorial Algorithms, Part 1" ;
+    guide:bibliographyDescription "Donald E. Knuth. Addison-Wesley Professional, 2011." .
+
+data:Res_Laaksonen a guide:DidacticResource ;
+    guide:bibliographyTitle "Guide to Competitive Programming" ;
+    guide:bibliographyDescription "Antti Laaksonen. Springer Verlag, 2017." .
+
+# Required Knowledge
+data:RequiredKnowledge_105000439 a guide:RequiredKnowledge ;
+    guide:previousCourses "Programación II, Algoritmos Y Estructura De Datos, Programación I" .

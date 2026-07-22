@@ -1,0 +1,139 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Structure
+guide:Course_25001404 
+    rdf:type guide:Course ;
+    sch:courseCode 25001404 ;
+    sch:name "Analisis De Ecosistemas" ;
+    guide:courseType "Obligatoria" ;
+    sch:numberOfCredits 4.0 .
+
+guide:CourseGuide_25001404 
+    rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Analisis De Ecosistemas" ;
+    sch:courseInstance 25001404 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:numberOfCredits 4.0 ;
+    guide:inpersonHours "Not specified" ;
+    guide:remoteHours "Not specified" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor guide:Lecturer_Santiago, guide:Lecturer_Elena ;
+    sch:director guide:Lectructure_Santiago ;
+    guide:hasSyllabus guide:Syllabus_AnalisisEcosistemas ;
+    guide:hasEvaluation guide:EvalSystem_AnalisisEcosistemas ;
+    guide:hasLearningResult guide:LR_RA519, guide:LR_RA228, guide:LR_RA227, guide:LR_RA229, guide:LR_RA230 ;
+    guide:hasCompetency guide:Comp_CE14, guide:Comp_CE15, guide:Comp_CE17, guide:Comp_CE24, guide:Comp_CE36, guide:Comp_CE39, guide:Comp_CG14, guide:Comp_CG6, guide:Comp_CG7 ;
+    guide:hasDidacticResource guide:Res_Veg1, guide:Res_Anthos, guide:Res_IDEE, guide:Res_Natusfera, guide:Res_QGIS, guide:Res_R_Project .
+
+guide:Degree_02IA 
+    rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Ingenieria Agroambiental" ;
+    guide:degreeCode "02IA" ;
+    guide:hasCourse guide:Course_25001404 .
+
+guide:UniversityCenter_ETSI 
+    rdf:type guide:UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas" ;
+    guide:offers guide:Degree_02IA .
+
+# Lecturers
+guide:Lecturer_Santiago 
+    rdf:type guide:Lecturer ;
+    sch:name "Santiago Moreno Vazquez" ;
+    sch:email "santiago.moreno@upm.es" ;
+    guide:office "Banco Semillas" ;
+    guide:tutorshipsSchedule "X - 10:00 - 13:00, J - 10:00 - 13:00, Se concertará mediante correo electrónico" .
+
+guide:Lecturer_Elena 
+    rdf:type guide:Lecturer ;
+    sch:name "Elena Carrio Gonzalez" ;
+    sch:email "elena.carrio@upm.es" ;
+    guide:office "Biología Veg." ;
+    guide:tutorshipsSchedule "Sin horario. A concertar mediante correo electrónico al profesor" .
+
+# Competencies
+guide:Comp_CE14 rdf:type guide:Competency ; guide:competencyCode "CE14" ; guide:competencyDescription "Conocimiento de los conceptos básicos de Ecología, sus objetivos, metodología y modo de estudiar el biotopo, la biocenosis y sus relaciones." .
+guide:Comp_CE15 rdf:type guide:Competency ; guide:competencyCode "CE15" ; guide:competencyDescription "Capacidad para aplicar los principios de la botánica en la identificación y caracterización de especies vegetales..." .
+guide:Comp_CE17 rdf:type guide:Competency ; guide:competencyCode "CE17" ; guide:competencyDescription "Capacidad para utilizar los principios de Estadística Aplicada en el análisis y resolución de problemas en Agricultura e Ingeniería Agroambiental" .
+guide:Comp_CE24 rdf:type guide:Competency ; guide:competencyCode "CE24" ; guide:competencyDescription "Capacidad para utilizar los modelos de datos espaciales y la incorporación de atributos relacionados con el medio ambiente..." .
+guide:Comp_CE36 rdf:type guide:Competency ; guide:competencyCode "CE36" ; guide:competencyDescription "Capacitar para la medición de flora y fauna en agroecosistemas y aplicar los métodos de análisis del medio natural..." .
+guide:Comp_CE39 rdf:<0xC2>type guide:Competency ; guide:competencyCode "CE39" ; guide:competencyDescription "Capacidad para utilizar los sistemas globales de navegación por satélite y de teledetección..." .
+guide:Comp_CG14 rdf:type guide:Competency ; guide:competencyCode "CG14" ; guide:competencyDescription "Análisis y síntesis, razonamiento crítico y resolución de problemas científicos y técnicos" .
+guide:Comp_CG6 rdf:type guide:Competency ; guide:competencyCode "CG6" ; guide:competencyDescription "Transmitir con claridad y rigor información, ideas, problemas y soluciones de forma oral y escrita" .
+guide:Comp_CG7 rdf:type guide:Competency ; guide:competencyCode "CG7" ; guide:competencyDescription "Compromiso ético y profesional y respeto por el medio ambiente y la diversidad" .
+
+# Learning Results
+guide:LR_RA519 rdf:type guide:LearningResult ; guide:learningResultCode "RA519" ; guide:learningResultDescription "Utilizar organismos bioindicadores para conocer el estado de los ecosistemas" .
+guide:LR_RA228 rdf:type guide:LearningResult ; guide:learning                resultCode "RA228" ; guide:learningResultDescription "Aplicar correctamente herramientas estadísticas para el análisis de datos cualitativos y cuantitativos obtenidos en la naturaleza." .
+guide:LR_RA227 rdf:type guide:LearningResult ; guide:learningResultCode "RA227" ; guide:learningResultDescription "Aprender a muestrear plantas y animales en ecosistemas naturales y agroecosistemas." .
+guide:LR_RA229 rdf:type guide:LearningResult ; guide:learningResultCode "RA229" ; guide:learningResultDescription "Conocer las metodologías que permiten establecer relaciones entre factores ambientales y bióticos." .
+guide:LR_RA230 rdf:type guide:LearningResult ; guide:learningResultCode "RA230" ; guide:learningResultDescription "Conocer la potencialidad de los S.I.G. en combinación con la teledetección para el análisis de ecosistemas naturales." .
+
+# Syllabus
+guide:Syllabus_AnalisisEcosistemas 
+    rdf:type guide:Syllabus ;
+    guide:hasItem guide:SyllabusItem_Sec1, guide:SyllabusItem_Sec2, guide:SyllabusItem_Sec3, guide:SyllabusItem_Sec4 .
+
+guide:SyllabusItem_Sec1 rdf:type guide:SyllableItem ; guide:syllabusDescription "Muestreo en campo sobre la abundancia de especies biológicas" ; guide:itemIndex 1 .
+guide:SyllabusItem_Sec2 rdf:type guide:SyllableItem ; guide:syllabusDescription "Fitosociología" ; guide:itemIndex 2 .
+guide:SyllabusItem_Sec3 rdf:type guide:SyllableItem ; guide:syllabusDescription "Análisis de datos sobre la abundancia de especies" ; guide:itemIndex 3 .
+guide:SyllabusItem_Sec4 rdf:type guide:SyllableItem ; guide:syllabusDescription "Bioindicadores" ; guide:itemIndex 4 .
+
+# Evaluation System
+guide:EvalSystem_AnalisisEcosistemas 
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación continua aporta el 50% de la nota y el otro 50 % deriva de la evaluación global." ;
+    guide:hasEvaluationTrial guide:Trial_P02, guide:Trial_P03, guide:Trial_P04a, guide:Trial_Global .
+
+guide:Trial_P02 
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Evaluación de asistencia y participación" ;
+    guide:gradePercentage "2.5%" ;
+    guide:involvesCompetency guide:Comp_CE24 .
+
+guide:Trial_P03 
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Evaluación de asistencia y participación en viaje" ;
+    guide:gradePercentage "5%" ;
+    guide:involvesCompetency guide:Comp_CG7, guide:Comp_CE7, guide:Comp_CE14, guide:Comp_CE15, guide:Comp_CE24, guide:Comp_CE36, guide:Comp_CE39 .
+
+guide:Trial_P04a 
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Evaluación de matrices y fotografías" ;
+    guide:gradePercentage "2.5%" ;
+    guide:involvesCompetency guide:Comp_CG6, guide:Comp_CE7, guide:Comp_CE14, guide:Comp_CE17, guide:Comp_CE24, guide:Comp_CE36, guide:Comp_CE39 .
+
+guide:Trial_Global 
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Prueba de evaluación global" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "3/10" ;
+    guide:involvesCompetency guide:Comp_CG6, guide:Comp_CG14, guide:Comp_CE14, guide:Comp_CE17, guide:Comp_CE24 .
+
+# Didactic Resources
+guide:Res_Veg1 rdf:type guide:DidacticResource ; guide:bibliographyTitle "Vegetación 1" ; guide:bibliographyDescription "Barbour MG (1999) Terrestrial plant ecology." .
+guide:Res_Anthos rdf:type guide:DidacticResource ; guide:bibliographyTitle "Anthos" ; guide:bibliographyDescription "Sistema de información sobre las plantas de España. http://www.anthos.es/" .
+guide:Res_IDEE rdf:type guide:DidacticResource ; guide:bibliographyTitle "IDEE" ; guide:bibliographyDescription "Infraestructura de datos espaciales de España http://www.idee.es/" .
+guide:Res_Natusfera rdf:type guide:DidacticResource ; guide:bibliographyTitle "Natusfera" ; guide:bibliographyDescription "https://natusfera.gbif.es/" .
+guide:Res_QGIS rdf:type guide:DidacticResource ; guide:bibliographyTitle "Q-GIS" ; guide:bibliographyDescription "http://www.qgis.org" .
+guide:Res_R_Project rdf:type guide:DidacticResource ; guide:bibliographyTitle "R para windows" ; guide:bibliographyDescription "http://cran.es.r-project.org/" .
+
+# Activities (from Cronograma)
+guide:Activity_P1 rdf:type guide:Activity ; 
+    guide:activityDescription "Métodos florísticos (medidas de abundancia)" ; 
+    guide:activityFormat "Lección Magistral" ; 
+    guide:activityDuration 0.5 .
+
+guide:Activity_Lab1 rdf:type guide:Activity ; 
+    guide:activityDescription "Práctica 1 (Aula Informática): cartografía ambiental de la IDEE" ; 
+    guide:activityFormat "Prácticas de Laboratorio" ; 
+    guide:activityDuration 1.5 .
+
+guide:Activity_Trip rdf:type guide:Activity ; 
+    guide:activityDescription "Práctica 3 (Viaje S Martín de la Vega)" ; 
+    guide:activityFormat "Acciones Cooperativas" ; 
+    guide:activityDuration 8.0 .

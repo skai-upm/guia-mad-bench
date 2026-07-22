@@ -1,0 +1,386 @@
+@prefix guide: <http://guia-mad-bench.es/data/guide#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sch: <https://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+### Course Guide Instance (ANX_PR_CL_001_01)
+guide:ANX_PR_CL_001_01 a guide:CourseGuide ;
+    sch:name "Nuevas Tecnologías De Envasado de Alimentos" ;
+    sch:description "Guía de Aprendizaje para la asignatura 203000157 en el Master Universitario..."@en ;
+    guide:numberOfCredits "4.0"^^xsd:decimal ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Degree Instance (MASTER_20AT)
+guide:MASTER_20AT a guide:MasterDegree ;
+    sch:name "Master Universitario En Ingenieria Alimentaria Aplicada A La Salud" ;
+    guide:degreeCode "20AT".
+
+### Course Instance (COURSE_203000157)
+guide:COURSE_203000157 a guide:Course ;
+    sch:name "Nuevas Tecnologías De Envasado de Alimentos" ;
+    sch:courseCode 203000157^^xsd:integer ;
+    guide:numberOfCredits "4.0"^^xsd:decimal .
+
+### Link Degree to Course Guide (via hasCourseInstance)
+guide:COURSE_203000157 sch:hasCourseInstance guide:ANX_PR_CL_001_01 .
+
+### Lecturers Instances
+guide:FERNANDO_CALDERON a guide:Lecturer ;
+    sch:name "Fernando Calderon Fernandez" ;
+    sch:email <http://guia-mad-bench.es/data/guide#fernando.calderon@upm> ;
+    guide:tutorshipsSchedule "M - 10:30 - 12:30; X - 10:30 - 12:30"^^xsd:string .
+
+guide:EVA_NAVASCUES a guide:Lecturer ;
+    sch:name "Eva Navascues Lopez-Cordon" ;
+    sch:email <http://guia-mad-bench.es/data/guide#eva.navascues@upm> ;
+    guide:tutorshipsSchedule "M - 10:30 - 12:00; J - 12:30 - 14:00"^^xsd:string .
+
+guide:FELIPE_PALOMERO a guide:Lecturer ;
+    sch:name "Felipe Palomero Rodriguez" ;
+    sch:email <http://guia-mad-bench.es/data/guide#felipe.palomero@upm> ;
+    guide:tutorshipsSchedule "M - 10:30 - 12:30; X - 10:30 - 12:30"^^xsd:string .
+
+### Competencies Instances (CB8, CG1, CG3, CG8)
+guide:C_B_8 a guide:Competency ;
+    guide:competencyCode "CB8"^^xsd:string ;
+    sch:description "Que los estudiantes sean capaces de integrar conocimientos y enfrentarse a la complejidad..."@en .
+
+guide:C_G_1 a guide:Competency ;
+    guide:competencyCode "CG1"^^xsd:string ;
+    sch:description "Capacidad de observación, generación de hipótesis y planteamiento de problemas experimentales en el ámbito de la alimentación y la salud."@es .
+
+guide:C_G_3 a guide:Competency ;
+    guide:competencyCode "CG3"^^xsd:string ;
+    sch:description "Capacidad para evaluar los sistemas de control de la cadena alimentaria..."@en .
+
+guide:C_G_8 a guide:Competency ;
+    guide:competencyCode "CG8"^^xsd:string ;
+    sch:description "Resolver con eficacia y eficiencia problemas relacionados con la alimentación salvaguardando y mejorando la salud de la sociedad mediante estrategias adecuadas..."@es .
+
+### Learning Results Instances (RA7-16, RA2-R A1-RA68, etc.)
+guide:R_A_50 a guide:LearningResult ;
+    guide:learningResultCode "RA50"^^xsd:string ;
+    sch:description "Conocer los avances en materiales tradicionales de envasado"@es .
+
+guide:R_A_51 a guide:LearningResult ;
+    guide:learningResultCode "RA51"^^xsd:string ;
+    sch:description "Conocer los avances en nuevos materiales y técnicas de envasado"@es .
+
+guide:R_A_7_R_16 a guide:LearningResult ;
+    guide:learningResultCode "RA7-RA16"^^xsd:string ;
+    sch:description "Evaluar resultados analíticos y su repercusión en el contexto alimentación/salud"@en .
+
+### Syllabus Instance and Items (Tema 1 to Tema 6)
+guide:S_203000157 a guide:Syllabus ;
+    guide:hasSyllabus guide:ANX_PR_CL_001_01 .
+
+guide:TEMA_1 a guide:SyllabusItem ;
+    sch:name "Introducción"^^xsd:string ;
+    guide:syllabusDescription "Nuevas funciones del envase de alimentos, Legislación y normativa"@es ;
+    guide:hasItem 1^^xsd:integer . # Index
+
+guide:TEMA_2 a guide:SyllabusItem ;
+    sch:name "Avances en materiales tradicionales"^^xsd:string ;
+    guide:syllabusDescription "Materiales metálicos, vidrio, cerámica, papel y cartón"@es ;
+    guide:hasItem 10^^xsd:integer .
+
+guide:TEMA_3 a guide:SyllabusItem ;
+    sch:name "Nuevos materiales de envasado"^^xsd:string ;
+    guide:syllabusDescription "Polímeros plásticos, biopolímeros, compuestos"@es ;
+    guide:hasItem 20^^xsd:integer .
+
+guide:TEMA_4 a guide:SyllabusItem ;
+    sch:name "Tecnologías de envasado emergentes"^^xsd:string ;
+    guide:syllabusDescription "Envasado activo e inteligente, etiquetado"@es ;
+    guide:hasItem 30^^xsd:integer .
+
+guide:TEMA_5 a guide:SyllabusItem ;
+    sch:name "Aspectos medioambientales del envasado"^^xsd:string ;
+    guide:syllabusDescription "Legislación y normativa, gestión de residuos"@es ;
+    guide:hasItem 40^^xsd:integer .
+
+guide:TEMA_6 a guide:SyllabusItem ;
+    sch:name "Futuro de la gestión ambiental del envasado"^^xsd:string ;
+    guide:syllabusDescription "Políticas de reducción, residuos"@es ;
+    guide:hasItem 50^^xsd:integer .
+
+### Schedule Instance (Cronograma)
+guide:SCHEDULE_203000157 a guide:Schedule ;
+    sch:eventSchedule guide:TEMA_1 , guide:Tema_2 , guide:EVALUACION_TEMAS_1_2 . # Simplified mapping based on table
+
+### Evaluation System and Trials (Progresiva, Global)
+guide:SISTEMA_EVALUACION_PROGRESIVA a guide:EvaluationSystem ;
+    sch:description "Dos pruebas de seguimiento escritas liberatorias con calificación >= 4.0"@es ;
+    guide:hasEvaluationTrial guide:EVALUACION_TEMAS_1_2 .
+
+guide:EVALUACION_TEMAS_1_2 a guide:EvaluationTrial ;
+    sch:name "Evaluación Temas 1-2"^^xsd:string ;
+    guide:trialType "EXamen Escrito Presencial"@es ;
+    guide:evaluationDuration "01:00"^^xsd:string ; # Duration from table (Semester 7)
+    guide:gradePercentage "35%"^^xsd:string ;
+    sch:description "Evaluación Progresiva Presencial, Duración 01:00"@es .
+
+guide:EVALUACION_TEMAS_4_6 a guide:EvaluationTrial ;
+    sch:name "Evaluación Temas 4-6"^^xsd:string ;
+    guide:trialType "EXamen Escrito Presencial"@es ;
+    guide:evaluationDuration "01:00"^^xsd:string ; # Semester 15
+    guide:gradePercentage "35%"^^xsd:string .
+
+guide:EVALUACION_GLOBAL a guide:EvaluationTrial ;
+    sch:name "Temas 1-6 Examen Global"@es ;
+    guide:trialType "EXamen Escrito Presencial"@es ;
+    guide:evaluationDuration "02:30"^^xsd:string ; # Semester 17
+    guide:gradePercentage "100%"^^xsd:string .
+
+### Link Guide to Evaluation System and Syllabus
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Resources (Bibliography)
+guide:BAAGHAN_J_S a guide:DidacticResource ;
+    sch:name "Food Packaging Law in the United States"^^xsd:string ;
+    guide:bibliographyType "Bibliografía"^^xsd:string ;
+    guide:bibliographyDescription "Baaghan, J.S. and D. Attwood..."@en .
+
+guide:BRC_IOP_PACKAGING a guide:DidacticResource ;
+    sch:name "Packaging, IFS Pac Secure o FSSC 22000"^^xsd:string ;
+    guide:bibliographyType "Bibliografía"^^xsd:string .
+
+### Link Guide to Resources and Competencies/Learning Results
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch:eventSchedule guide:SCHEDULE_203000157 ;
+    guide:syllabusDescription "Temario sobre nuevas tecnologías de envasado, materiales y legislación alimentaria"@es .
+
+### Link Guide to Evaluation System and Syllabus (Final)
+guide:ANX_PR_CL_001_01 sch

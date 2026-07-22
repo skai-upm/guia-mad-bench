@@ -1,0 +1,264 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+
+### Course and Degree Information
+:course_103000843 a guide:Course ;
+    sch:name "Introduction To Technology Watch And Competitive I" ;
+    sch:courseCode 103000843 ;
+    guide:courseType "Compulsory" ;
+    sch:numberOfCredits 1.0 .
+
+:guide_103000843 a guide:CourseGuide ;
+    sch:name "Learning Guide: Introduction To Technology Watch And Competitive I" ;
+    sch:hasCourseInstance :course_103000843 ;
+    sch:instructor :lecturer_ATelero ;
+    sch:description "To provide students with some conceptual and practical tools to understand the possible evolution of technologies for specific purposes." ;
+    guide:numberOfCredits 1.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "February" ;
+    guide:periodEndingMonth "June" ;
+    guide:inpersonHours "26/27 hours" ;
+    guide:remoteHours "Not specified" ;
+    guide:hasSyllabus :syllabus_103000843 ;
+    guide:hasCompetency :comp_CB07, :comp_CB08, :comp_CB09, :comp_CEEIT03, :comp_CG01, :comp_CG03, :comp_CG07, :comp_CG08, :comp_CG09 ;
+    guide:hasLearningResult :res_RA104 ;
+    guide:hasEvaluation :eval_system_103000843 ;
+    sch:courseSchedule :schedule_103000843 ;
+    guide:hasDidacticResource :res_cotec, :res_georghiou, :res_une, :res_miles, :res_moehrle, :res_matei, :res_rohrbeck, :res_tejero, :res_slides ;
+    guide:otherInformation "In this subject, the United Nations SDG7.Affordable and clean energy, SDG9.Industry, innovation and infrastructure, SDG12.Responsible consumption and production and SDG13.Climate action are worked through the group projects." .
+
+:degree_10AZ a guide:MasterDegree ;
+    sch:name "Master Universitario en Innovación Digital" ;
+    guide:degreeCode "10AZ" ;
+    guide:hasCourse :course_103000843 .
+
+:center_ETS a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Informáticos" ;
+    guide:offers :degree_10AZ .
+
+### Faculty Information
+:lecturer_ATelero a guide:Lecturer ;
+    sch:name "Alberto Tejero Lopez" ;
+    sch:email "alberto.tejero@upm.es" ;
+    guide:office "Office D5215" ;
+    guide:tutorshipsSchedule "W - 09:00 - 10:00, W - 14:00 - 15:00" .
+
+### Competencies and Learning Results
+:comp_CB07 a guide:Competency ;
+    guide:competencyCode "CB07" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos dentro de contextos más amplios (o multidisciplinares) relacionados con su área de estudio" .
+
+:comp_CB08 a guide:Competency ;
+    guide:competencyCode "CB08" ;
+    guide:competencyDescription "Que los estudiantes sean capaces de integrar conocimientos y enfrentarse a la complejidad de formular juicios a partir de una información que, siendo incompleta o limitada, incluya reflexiones sobre las responsabilidades sociales y éticas vinculadas a la aplicación de sus conocimientos y juicios" .
+
+:comp_CB09 a guide:Competency ;
+    guide:competencyCode "CB09" ;
+    guide:competencyDescription "Que los estudiantes sepan comunicar sus conclusiones y los conocimientos y razones últimas que las sustentan a públicos especializados y no especializados de un modo claro y sin ambigüedades" .
+
+:comp_CEEIT03 a guide:Competency ;
+    guide:competencyCode "CE-EIT03" ;
+    guide:competencyDescription "Capacidad para identificar el nivel de academic maturity of a technology and develop and interpret a technological roadmap..." .
+
+:comp_CG01 a guide:Competency ;
+    guide:competencyCode "CG01" ;
+    guide:competencyDescription "Que los estudiantes sean capaces de predecir y controlar la evolución de situaciones complejas mediante el desarrollo de nuevas e innovadoras metodologías de trabajo..." .
+
+:comp_CG03 a guide:Competency ;
+    guide:competencyCode "CG03" ;
+    guide:competencyDescription "La capacidad de usar la lengua inglesa de manera competente..." .
+
+:comp_CG07 a guide:Competency ;
+    guide:competencyCode "CG07" ;
+    guide:competencyDescription "Capacidad de trabajar y comunicarse también en contextos internacionales." .
+
+:comp_CG08 a guide:Competency ;
+    guide:competencyCode "CG08" ;
+    guide:competencyDescription "La capacidad de traducir innovaciones en soluciones comerciales factibles." .
+
+:comp_CG09 a guide:Competency ;
+    guide:competencyCode "CG09" ;
+    guide:competencyDescription "La capacidad de transformar las experiencias prácticas en problemas y desafíos de investigación." .
+
+:res_RA104 a guide:LearningResult ;
+    guide:learningResultCode "RA104" ;
+    guide:learningResultDescription "In depth understanding the basics of technology watch and transfer" .
+
+### Syllabus
+:syllabus_10300<0xC2>0843 a guide:Syllabus ;
+    guide:hasItem :item_welcome, :item_tw_basics, :item_tw_purpose, :item_tw_report_critical, :item_tw_report_sci, :item_tw_report_market, :item_tw_report_analysis .
+
+:item_welcome a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Welcome session: Contents, grading processes and groups creation" .
+
+:item_tw_basics a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Technology watch basics: Technology watch basic concepts, procedure and tools" .
+
+:item_tw_purpose a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Definition of the technology watch purpose: Definition of the purpose and identification of application points" .
+
+:item_tw_report_critical a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "TW Report - Critical watch factors: Introduction to the technology watch report and identification of critical watch factors" .
+
+:item_tw_report_sci a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "TW Report - Scientific-technological information: Identification and analysis of scientific-technological sources of information" .
+
+:item_tw_report_market a guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "TW Report - Market and industry information: Identification and analysis of market and industrial sources of information" .
+
+:item_tw_report_analysis a guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "TW Report - Analysis of information: Analysis of the information gathered and drawing conclusions to complete the TW report" .
+
+### Schedule and Activities
+:schedule_103000843 a guide:Schedule ;
+    sch:eventSchedule :event_week_1, :event_week_2, :event_week_3, :event_week_4, :event_week_5, :event_week_6, :event_week_17 .
+
+:event_week_1 a guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :act_welcome .
+
+:act_welcome a guide:Activity ;
+    guide:activityDescription "Welcome session and groups creation" ;
+    guide:activityFormat "Lecture" ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "Presential" .
+
+:event_week_5 a guide:ScheduleEvent ;
+    guide:eventWeek "5" ;
+    guide:eventIndex 5 ;
+    guide:hasActivity :act_exam_indiv .
+
+:act_exam_indiv a guide:Activity ;
+    guide:activityDescription "Individual exam" ;
+    guide:activityFormat "Written test" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Presential" .
+
+:event_week_6 a guide:ScheduleEvent ;
+    guide:eventWeek "6" ;
+    guide:eventIndex 6 ;
+    guide:hasActivity :act_group_pres, :act_tw_report_work .
+
+:act_group_pres a guide:Activity ;
+    guide:activityDescription "Group presentations" ;
+    guide:activityFormat "Group presentation" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Presential" .
+
+:act_tw_report_work a guide:Activity ;
+    guide:activityDescription "Technology Watch Report" ;
+    guide:activityFormat "Group work" ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "Presential" .
+
+### Evaluation System
+:eval_system_103000843 a guide:EvaluationSystem ;
+    guide:evaluationDescription "Progressive assessment and Global examination structure." ;
+    guide:hasEvaluationTrial :trial_participation, :trial_exam_indiv, :trial_group_pres, :trial_tw_report, :trial_global, :trial_extraordinary .
+
+:trial_participation a guide:EvaluationTrial ;
+    guide:trialType "Other assessment" ;
+    guide:evaluationType "Progressive assessment" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "1" ;
+    guide:trialMode "Face-to-face" .
+
+:trial_exam_indiv a guide:EvaluationTrial ;
+    guide:trialType "Written test" ;
+    guide:evaluationType "Progressive assessment" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "5" ;
+    guide:trialMode "Face-to-face" ;
+    guide:involvesCompetency :comp_CB07, :comp_CB08, :comp_CB09, :comp_CG01, :comp_CG03, :comp_CG07, :comp_CG08, :comp_CG09, :comp_CEEIT03 .
+
+:trial_group_pres a guide:EvaluationTrial ;
+    guide:trialType "Group presentation" ;
+    guide:evaluationType "Progressive assessment" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "6" ;
+    guide:trialMode "Face-to-face" ;
+    guide:involvesCompetency :comp_CB07, :comp_CB08, :comp_CB09, :comp_CG01, :com_CG03, :comp_CG07, :comp_CG08, :comp_CG09, :comp_CEEIT03 .
+
+:trial_tw_report a guide:EvaluationTrial ;
+    guide:trialType "Group work" ;
+    guide:evaluationType "Progressive assessment" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "6" ;
+    guide:trialMode "Face-to-face" ;
+    guide:involvesCompetency :comp_CB07, :comp_CB08, :comp_CB09, :comp_CG01, :comp_CG03, :comp_CG07, :comp_CG08, :comp_CG09, :comp_CEEIT03 .
+
+:trial_global a guide:EvaluationTrial ;
+    guide:trialType "Final exam" ;
+    guide:evaluationType "Global examination" ;
+    guide:gradePercentage "70%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:trialMode "Face-to-face" .
+
+:trial_extraordinary a guide:EvaluationTrial ;
+    guide:trialType "Other assessment" ;
+    guide:evaluationType "Extraordinary assessment test" ;
+    guide:gradePercentage "70%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "July" ;
+    guide:trialMode "Face-to-face" .
+
+### Teaching Resources
+:res_cotec a guide:DidacticResource ;
+    guide:bibliographyTitle "COTEC (1999). Pautas Metodológicas en Gestión de la Tecnología y de la Innovación para Empresas TEMAGUIDE." ;
+    guide:bibliographyType "Bibliography" .
+
+:res_georghiou a guide:DidacticResource ;
+    guide:bibliographyTitle "Georghiou, L., et al. (2008). The Handbook of technology foresight. Concepts and practice?." ;
+    guide:bibliographyType "Bibliography" .
+
+:res_une a guide:DidacticResource ;
+    guide:bibliographyTitle "Gestión de la I+D+i: Sistema de vigilancia tecnológica e inteligencia competitiva. UNE 166006:2011" ;
+    guide:bibliographyType "Bibliography" .
+
+:res_miles a guide:DidacticResource ;
+    guide:bibliographyTitle "Miles, I. From futures to foresight? in (Georghiou et al., 2008)." ;
+    guide:bibliographyType "Bibliography" .
+
+:res_moehrle a guide:DidacticResource ;
+    guide:bibliographyTitle "Moehrle, M., et al. (2013). Technology roadmapping for strategy and innovation." ;
+    guide:bibliographyType "Bibliography" .
+
+:res_matei a guide:DidacticResource ;
+    guide:bibliographyTitle "Ramona-Mihaela MATEI, Ioan RADU. Conceptual Relationship between ICT and CI Activities" ;
+    guide:bibliographyType "Bibliography" .
+
+:res_rohrbeck a guide:DidacticResource ;
+    guide:bibliographyTitle "René Rohrbeck: Harnessing a Network of Experts for Competitive Advantage..." ;
+    guide:bibliographyType "Bibliography" .
+
+:res_tejero a guide:DidacticResource ;
+    guide:bibliographyTitle "Tejero, A. and León, G. (2017). Plataformas cognitivas de inteligencia tecnológica..." ;
+    guide:bibliographyType "Bibliography" .
+
+:res_slides a guide:DidacticResource ;
+    guide:bibliographyTitle "Slides used in the lectures" ;
+    guide:bibliographyType "Others" ;
+    guide:bibliographyDescription "Available on EIT Digital Moodle e-learning platform during the course." .
+
+### Prior Knowledge
+:req_knowledge_intro a guide:RequiredKnowledge ;
+    guide:previousCourses "Introduction To Innovation And Entrepreneurship Ma" .

@@ -1,0 +1,241 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/elements/1.1> ;
+@prefix dc:title : "GUIA ontology"@en ;
+@prefix dct:creator "Andrea Cimmino Arriaga" ,
+                     "Covadonga Arias" ,
+                     "Joaquín Gayoso Cabada" ,
+                     "Juan Cano de Benito" ,
+                     "Paola Espinoza Arias" ;
+@prefix dc:license <http://purl.org/NET/rdflicense/cc-by4.0> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dct:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dct:license rdf:type owl:AnnotationProperty .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://w3id.org/def/guia#hasSyllabus
+guide:hasSyllabus rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:CourseGuide ;
+                  rdfs:range guide:Syllabus ;
+                  rdfs:comment "Links a course guide to the syllabus that describes the thematic contents of the course."@en .
+
+###  http://w3id.org/def/guia#hasActivity
+guide:hasActivity rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:SyllabusItem ;
+                  rdfs:range guide:Activity ;
+                  rdfs:comment "Links a syllabus item to an academic activity carried out during that event."@en .
+
+###  http://w3id.org/def/guia#hasCompetency
+guide:hasCompetency rdf:type owl:ObjectProperty ;
+                    rdfs:domain guide:CourseGuide ;
+                    rdfs:range guide:Competency ;
+                    rdfs:comment "Links a course guide to a competency developed or addressed in the course."@en .
+
+###  http://w3id.org/def/guia#hasLearningResult
+guide:hasLearningResult rdf:type owl:ObjectProperty ;
+                        rdfs:domain guide:CourseGuide ;
+                        rdfs:range guide:LearningResult ;
+                        rdfs:comment "Links a course guide to a learning result expected from the course."@en .
+
+###  http://w3id.org/def/guia#hasScheduleEvent
+guide:hasScheduleEvent rdf:type owl:ObjectProperty ;
+                       rdfs:domain guide:EvaluationTrial ;
+                       rdfs:range guide:ScheduleEvent ;
+                       rdfs:comment "Links an evaluation trial to the schedule event in which it takes place."@en .
+
+###  http://w3id.org/def/guia#involvesCompetency
+guide:involvesCompetency rdf:type owl:ObjectProperty ;
+                         rdfs:domain guide:EvaluationTrial ;
+                         rdfs:range guide:Competency ;
+                         rdfs:comment "Links an evaluation trial to a competency involved in that assessment."@en .
+
+###  http://w3id.org/def/guia#offers
+guide:offers rdf:type owl:ObjectProperty ;
+             rdfs:domain guide:Lecturer ;
+             rdfs:range guide:BachelorDegree ;
+             rdfs:comment "Links a university center to a degree programme that it offers."@en .
+
+###  https://schema.org/courseSchedule
+sch:courseSchedule rdf:type owl:ObjectProperty ;
+                   rdfs:domain guide:CourseGuide ;
+                   rdfs:range guide:Schedule ;
+                   rdfs:comment "Links a course guide to the schedule that organizes its planned events."@en .
+
+###  https://schema.org/hasCourseInstance
+sch:hasCourseInstance rdf:type owl:ObjectProperty ;
+                      rdfs:domain guide:BachelorDegree ;
+                      rdfs:range guide:SyllabusItem ;
+                      rdfs:comment "Links a course to a concrete course guide or offering for a given academic period."@en .
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://w3id.org/def/guia#courseYear
+guide:courseYear rdf:type owl:DatatypeProperty ;
+                 rdfs:domain guide:SyllabusItem ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Indicates the academic year or course year associated with a syllabus item."@en .
+
+###  http://w3id.org/def/guia#competencyCode
+guide:competencyCode rdf:type owl:DatatypeProperty ;
+                     rdfs:domain guide:Competency ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "Provides the institutional or academic code that identifies a competency."@en .
+
+###  http://w3id.org/def/guia#learningResultCode
+guide:learningResultCode rdf:type owl:DatatypeProperty ;
+                         rdfs:domain guide:LearningResult ;
+                         rdfs:range xsd:string ;
+                         rdfs:comment "Provides the institutional or academic code that identifies a learning result."@en .
+
+###  http://w3id.org/def/guia#itemIndex
+guide:itemIndex rdf:type owl:DatatypeProperty ;
+                rdfs:domain guide:SyllabusItem ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Indicates the position or order of a syllabus item within the syllabus structure."@en .
+
+###  http://w3id.org/def/guia#syllabusDescription
+guide:syllabusDescription rdf:type owl:DatatypeProperty ;
+                          rdfs:domain guide:SyllabusItem ;
+                          rdfs:range xsd:string ;
+                          rdfs:comment "Provides the textual description of a syllabus item or thematic unit."@en .
+
+###  http://w3id.org/def/guia#eventIndex
+guide:eventIndex rdf:type owl:DatatypeProperty ;
+                 rdfs:domain guide:ScheduleEvent ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "Indicates the position or order of a schedule event within the course schedule."@en .
+
+###  http://w3id.org/def/guia#eventWeek
+guide:eventWeek rdf:type owl:DatatypeProperty ;
+                rdfs:domain guide:ScheduleEvent ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Indicates the teaching week or temporal slot in which a schedule event takes place."@en .
+
+###  http://w3id.org/def/guia#activityDescription
+guide:activityDescription rdf:type owl:DatatypeProperty ;
+                          rdfs:domain guide:ScheduleEvent ;
+                          rdfs:range xsd:string ;
+                          rdfs:comment "Provides a textual description of an academic activity."@en .
+
+###  http://w3id.org/def/guia#trialDescription
+guide:trialDescription rdf:type owl:DatatypeProperty ;
+                       rdfs:domain guide:EvaluationTrial ;
+                       rdfs:range xsd:string ;
+                       rdfs:comment "Provides a textual description of an evaluation trial."@en .
+
+###  http://w3id.org/def/guia#gradePercentage
+guide:gradePercentage rdf:type owl:DatatypeProperty ;
+                      rdfs:domain guide:EvaluationTrial ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "Specifies the percentage weight of an evaluation activity in the final grade."@en .
+
+###  http://w3id.org/def/guia#minimumScore
+guide:minimumScore rdf:type owl:DatatypeProperty ;
+                   rdfs:domain guide:EvaluationTrial ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "Indicates the minimum score required for an evaluation activity or assessment component."@en .
+
+###  http://w3id.org/def/guia#numberOfCredits
+guide:numberOfCredits rdf:type owl:DatatypeProperty ;
+                      rdfs:domain guide:SyllabusItem ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "States the number of academic credits assigned to a course."@en .
+
+###  https://schema.org/name
+sch:name rdf:type owl:DatatypeProperty ;
+         rdfs:domain guide:Lecturer ;
+         rdfs:range xsd:string ;
+         rdfs:comment "Provides the name of an entity such as a person, or university center."@en .
+
+###  https://schema.org/email
+sch:email rdf:type owl:DatatypeProperty ;
+          rdfs:domain guide:Lecturer ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Provides the email address of a person involved in teaching or coordination."@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://w3id.org/def/guia#Activity
+guide:Activity rdf:type owl:Class ;
+               rdfs:subClassOf sch:Event ;
+               rdfs:comment "A teaching or learning activity carried out as part of the course."@en .
+
+###  http://w3id.org/def/guia#BachelorDegree
+guide:BachelorDegree rdf:type owl:Class ;
+                     rdfs:subClassOf guide:Degree ;
+                     rdfs:comment "An undergraduate degree programme that provides foundational higher education in a given field of study."@en .
+
+###  http://w3id.org/def/guia#Competency
+guide:Competency rdf:type owl:Class ;
+                 rdfs:subClassOf sch:Thing ;
+                 rdfs:comment "A capability, skill, or integrated learning outcome that students are expected to develop through the course."@en .
+
+###  http://w3id.org/def/guia#CourseGuide
+guide:CourseGuide rdf:type owl:Class ;
+                  rdfs:subClassOf sch:Thing ;
+                  rdfs:comment "A structured academic document that describes a course, including objectives, contents, methodology, resources, schedule, and evaluation."@en .
+
+###  http://w3id.org/def/guia#Degree
+guide:Degree rdf:type owl:Class ;
+             rdfs:subClassOf sch:Thing ;
+             rdfs:comment "An academic degree programme that structures and groups courses within a formal higher education curriculum."@en .
+
+###  http://w3id.org/def/guia#EvaluationTrial
+guide:EvaluationTrial rdf:type owl:Class ;
+                      rdfs:subClassOf sch:Event ;
+                      rdfs:comment "A specific assessment instance or examination opportunity within the evaluation system, such as an ordinary or extraordinary attempt."@en .
+
+###  http://w3id.org/def/guia#LearningResult
+guide:LearningResult rdf:type owl:Class ;
+                     rdfs:subClassOf sch:Thing ;
+                     rdfs:comment "A specific and assessable statement of what a student is expected to know, understand, or be able to do after completing the course."@en .
+
+###  http://w3id.org/def/guia#Lecturer
+guide:Lecturer rdf:type owl:Class ;
+               rdfs:subClassOf sch:Person ;
+               rdfs:comment "A teaching person responsible for delivering, coordinating, or supporting a course within an academic programme."@en .
+
+###  http://w3id.org/def/guia#ScheduleEvent
+guide:ScheduleEvent rdf:type owl:Class ;
+                    rdfs:subClassOf sch:Event ;
+                    rdfs:comment "A dated or timed element within a course schedule, such as a class session, deadline, exam, or planned activity."@en .
+
+###  http://w3id.org/def/guia#SyllabusItem
+guide:SyllabusItem rdf:type owl:Class ;
+                   rdfs:subClassOf sch:Thing ;
+                   rdfs:comment "A single element of a syllabus, representing a topic, unit, lesson, or other content component within the course structure."@en .
+
+###  http://w3id.org/def/guia#UniversityCenter
+guide:UniversityCenter rdf:type owl:Class ;
+                       rdfs:subClassOf sch:Organization ;
+                       rdfs:description "An organizational unit within a university where degree programmes are taught, such as a faculty, school, or institute responsible for academic delivery."@en .
+
+###  http://w3id.org/def/guia#Syllabus
+guide:Syllabus rdf:type owl:Class ;
+               rdfs:subClassOf sch:Thing ;
+               rdfs:comment "The structured outline of the course content, usually organized into thematic units, topics, or instructional blocks."@en .
+
+###  http://w3id.org/def/guia#Schedule
+guide:Schedule rdf:type owl:Class ;
+               rdfs:subClassOf sch:Thing ;
+               rdfs:comment "A temporal organization of course-related events, activities, or milestones across the academic period."@en .

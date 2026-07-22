@@ -1,0 +1,188 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> rdf:type :CourseGuide ;
+    sch:name "ANX-PR/CL/001 - Coordination Process of Learning Activities"@en ;
+    dct:creator <http://w3id.org/def/guia#Cristina_Moreno_Diaz> ,
+              <http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> ;
+    sch:description "Design And Selection Of Materials In 3d Printing"@en ;
+    guide:courseYear 2025/26 ;
+    guide:numberOfCredits "3"^^xsd:decimal ;
+    guide:syllabusDescription "Introduction to Additive Manufacturing, Efficient Design in Additive Manufacturing, Material Selection for Additive Manufacturing, Economic and Technical Implications, Environmental Implications, Practical Case Studies, Future Trends"@en ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/anx-pr-cl-001-01> .
+
+<http://w3id.org/def/guia#Cristina_Moreno_Diaz> rdf:type :Lecturer ,
+                                              sch:Person ;
+    sch:name "Cristina Moreno Diaz"@en ;
+    guide:office "B-150 (1)"^^xsd:string ;
+    sch:email <mailto:cristina.mdiaz@upm.es> .
+
+<http://guia-mad-bench.es/data/degree/56dd> rdf:type :BachelorDegree ,
+                                                          sch:CourseInstance ;
+    guide:numberOfCredits "3"^^xsd:decimal ;
+    guide:courseYear 2025/26 ;
+    guide:syllabusDescription "Grado Ingenieria En Diseño Industrial Y Desarrollo De Producto"@en .
+
+<http://guia-mad-bench.es/data/universitycenter/etsidi> rdf:type :UniversityCenter ,
+                                                                sch:Organization ;
+    sch:name "E.T.S. de Ingeniería y Diseño Industrial"^^xsd:string .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01_Syllabus> rdf:type :Syllabus ;
+    guide:syllabusDescription "Design And Selection Of Materials In 3d Printing"@en ;
+    sch:courseCode <https://schema.org/courseCode> .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01_Schedule> rdf:type :Schedule ,
+                                                                sch:EventSchedule ;
+    guide:syllabusDescription "Design And Selection Of Materials In 3d Printing"@en .
+
+### Syllabus Items ###
+<http://guia-mad-bench.es/data/syllabussitem/56dd-01-intro> rdf:type :SyllabusItem ,
+                                                                    sch:Syllabus ;
+    guide:itemIndex "1"^^xsd:integer ;
+    guide:syllabusDescription "Introduction to Additive Manufacturing"@en .
+
+<http://guia-mad-bench.es/data/syllabussitem/56dd-02-design> rdf:type :SyllabusItem ,
+                                                                   sch:Syllabus ;
+    guide:itemIndex "2"^^xsd:integer ;
+    guide:syllabusDescription "Efficient Design in Additive Manufacturing"@en .
+
+<http://guia-mad-bench.es/data/syllabussitem/56dd-03-material> rdf:type :SyllabusItem ,
+                                                                  sch:Syllabus ;
+    guide:itemIndex "3"^^xsd:integer ;
+    guide:syllabusDescription "Material Selection for Additive Manufacturing"@en .
+
+<http://guia-mad-bench.es/data/syllabussitem/56dd-04-econ> rdf:type :SyllabusItem ,
+                                                              sch:Syllabus ;
+    guide:itemIndex "4"^^xsd:integer ;
+    guide:syllabusDescription "Economic and Technical Implications"@en .
+
+<http://guia-mad-bench.es/data/syllabussitem/56dd-05-env> rdf:type :SyllabusItem ,
+                                                              sch:Syllabus ;
+    guide:itemIndex "5"^^xsd:integer ;
+    guide:syllabusDescription "Environmental Implications"@en .
+
+<http://guia-mad-bench.es/data/syllabussitem/56dd-06-case> rdf:type :SyllabusItem ,
+                                                              sch:Syllabus ;
+    guide:itemIndex "6"^^xsd:integer ;
+    guide:syllabusDescription "Practical Case Studies"@en .
+
+<http://guia-mad-bench.es/data/syllabussitem/56dd-07-future> rdf:type :SyllabusItem ,
+                                                               sch:Syllabus ;
+    guide:itemIndex "7"^^xsd:integer ;
+    guide:syllabusDescription "Future Trends and Technological Developments"@en .
+
+### Schedule Events ###
+<http://guia-mad-bench.es/data/scheduleevent/week1> rdf:type :ScheduleEvent ,
+                                                               sch:Event ;
+    guide:eventIndex 1^^xsd:integer ;
+    guide:eventWeek "Semester 7"^^xsd:string ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://guia-mad-bench.es/data/scheduleevent/week4-presentation1> rdf:type :ScheduleEvent ,
+                                                                            sch:Event ;
+    guide:eventIndex 4^^xsd:integer ;
+    guide:eventWeek "Semester 7"^^xsd:string ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://guia-mad-bench.es/data/scheduleevent/week14-final-project> rdf:type :ScheduleEvent ,
+                                                                       sch:Event ;
+    guide:eventIndex 14^^xsd:integer ;
+    guide:eventWeek "Semester 7"^^xsd:string ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://guia-mad-bench.es/data/scheduleevent/week15-class-assigments> rdf:type :ScheduleEvent ,
+                                                                         sch:Event ;
+    guide:eventIndex 15^^xsd:integer ;
+    guide:eventWeek "Semester 7"^^xsd:string ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://guia-mad-bench.es/data/scheduleevent/week17-final-exam> rdf:type :ScheduleEvent ,
+                                                                   sch:Event ;
+    guide:eventIndex 17^^xsd:integer ;
+    guide:eventWeek "Semester 7"^^xsd:string ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+### Activities ###
+<http://guia-mad-bench.es/data/activity/module1-intro> rdf:type :Activity ,
+                                                                sch:EventSchedule ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabussitem/56dd-01-intro> .
+
+### Evaluation System ###
+<http://w3id.org/def/guia#ANX_PR_CL_001_EvaluationSystem> rdf:type :EvaluationSystem ;
+    guide:evaluationDescription "Individual tasks and a summary of the sessions attended (40%), presentations, final project"@en ;
+    sch:name "Design And Selection Of Materials In 3d Printing Evaluation System"^^xsd:string .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_Trial_Presentation> rdf:type :EvaluationTrial ,
+                                                                    sch:CourseInstance ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/scheduleevent/week4-presentation1> .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_Trial_FinalProject> rdf:type :EvaluationTrial ,
+                                                                sch:CourseInstance ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/scheduleevent/week14-final-project> .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_Trial_FinalExam> rdf:type :EvaluationTrial ,
+                                                             sch:CourseInstance ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/scheduleevent/week17-final-exam> .
+
+### Competencies ###
+<http://w3id.org/def/guia#CE_01> rdf:type :Competency ,
+                                              sch:EventSchedule ;
+    guide:competencyCode "CG1"^^xsd:string ;
+    guide:competencyDescription "Conocer y aplicar los conocimientos de ciencias y tecnologas básicas"@en .
+
+<http://w3id.org/def/guia#CE_02> rdf:type :Competency ,
+                                              sch:EventSchedule ;
+    guide:competencyCode "CG10"^^xsd:string ;
+    guide:competencyDescription "Creatividad"@en .
+
+### Learning Results ###
+<http://w3id.org/def/guia#RA440_LearningResult> rdf:type :LearningResult ,
+                                                      sch:EventSchedule ;
+    guide:learningResultCode "RA440"^^xsd:string ;
+    guide:learningResultDescription "Los resultados del aprendizaje correspondientes a esta asignatura han quedado definidos en el apartado de competencias"@en .
+
+### Resources ###
+<http://w3id.org/def/guia#Lamikiz_2023> rdf:type :DidacticResource ,
+                                                  sch:EventSchedule ;
+    guide:bibliographyTitle "Fabricación Aditiva, UNED"^^xsd:string ;
+    guide:bibliographyType "Bibliografía"@en .
+
+<http://w3id.org/def/guia#Web_3D_Natives> rdf:type :DidacticResource ,
+                                                  sch:EventSchedule ;
+    guide:bibliographyTitle "Web de publicaciones sobre impresión 3D"^^xsd:string ;
+    guide:bibliographyType "Web resource"@en .
+
+### Links ###
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> rdf:type :CourseGuide ,
+                                                      sch:EventSchedule ;
+    guide:syllabus <http://guia-mad-bench.es/data/syllabussitem/56dd-07-future> .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> rdf:type :CourseGuide ,
+                                                      sch:EventSchedule ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabussitem/56dd-07-future> .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> rdf:type :CourseGuide ,
+                                                      sch:EventSchedule ;
+    guide:hasEvaluation <http://w3id.org/def/guia#ANX_PR_CL_001_EvaluationSystem> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> rdf:type :CourseGuide ,
+                                                                sch:EventSchedule ;
+    guide:hasDidacticResource <http://w3id.org/def/guia#Lamikiz_2023> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> rdf:type :CourseGuide ,
+                                                                sch:EventSchedule ;
+    guide:hasDidacticResource <http://w3id.org/def/guia#Web_3D_Natives> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> rdf:type :CourseGuide ,
+                                                                sch:EventSchedule ;
+    guide:hasLearningResult <http://w3id.org/def/guia#RA440_LearningResult> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> rdf:type :CourseGuide ,
+                                                                sch:EventSchedule ;
+    guide:hasCompetency <http://w3id.org/def/guia#CE_02> .

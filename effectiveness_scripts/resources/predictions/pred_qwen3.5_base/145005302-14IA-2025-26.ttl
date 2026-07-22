@@ -1,0 +1,1206 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.guia-mad-bench.es/course-guide-145005302> rdf:type :CourseGuide ;
+    sch:name "Instalaciones Electricas"@en ,
+        "145005302 - Instalaciones Electricas"@es ;
+    dc:title "Guía de Aprendizaje 145005302"@en ;
+    dct:creator <http://data.guia-mad-bench.es/lecturer-victoria-alonso> ,
+        "<http://w3id.org/guia#E.T.S.I.Aeronáutica_y_del_Espacio>"@es ;
+    sch:description "En esta asignatura se estudia la configuración y el funcionamiento de los sistemas eléctricos de las aeronaves y de los aeropuertos."@en ;
+    guide:hasCourse <http://data.guia-mad-bench.es/degree-14IA> ;
+    guide:syllabus <http://data.guia-mad-bench.es/syllabus-145005302> ;
+    sch:eventSchedule <http://data.guia-mad-bench.es/schedule-145005302> ;
+    guide:hasEvaluationSystem <http://data.guia-mad-bench.es/evaluation-system-145005302> ;
+    sch:numberOfCredits "4.5"^^xsd:decimal ;
+    guide:teachingPeriodMonths "Septiembre", "Enero"@es ;
+    guide:periodStartingMonth "Septiembre"@en ,
+        "<http://w3id.org/guia#Primer_semestre>"@en ;
+    guide:numberOfCredits "4.5"^^xsd:decimal ;
+    sch:inLanguage "Castellano"@es ;
+    guide:courseYear 3^^xsd:integer .
+
+<http://data.guia-mad-bench.es/lecturer-victoria-alonso> rdf:type :Lecturer ,
+        sch:Person ;
+    sch:name "M Victoria Alonso Maldonado"@en ;
+    guide:office "<A-208>"^^xsd:string ;
+    sch:email <mailto:mariavictoria.alonso@upm.es> .
+
+<http://data.guia-mad-bench.es/degree-14IA> rdf:type :BachelorDegree ,
+        sch:CourseInstance ;
+    guide:hasSyllabus <http://w3id.org/guia#syllabus_145005302> .
+
+<http://data.guia-mad-bench.es/schedule-145005302> rdf:type :Schedule ,
+        sch:Event ;
+    guide:hasSyllabus <http://w3id.org/guia#syllabus_145005302> .
+
+<http://data.guia-mad-bench.es/syllabus-145005302> rdf:type :Syllabus ,
+        sch:Syllabus ;
+    guide:hasItem <http://data.guia-mad-bench.es/item_1>,
+        <http://data.guia-mad-bench.es/item_2>,
+        <http://data.guia-mad-bench.es/item_3> .
+
+<http://data.guia-mad-bench.es/syllabus-145005302> guide:hasItem <http://w3id.org/guia#item_4>.
+    sch:eventSchedule <http://data.guia-mad-bench.es/item_4>,
+        <http://data.guia-mad-bench.es/schedule-145005302> .
+
+<http://data.guia-mad-bench.es/evaluation-system-145005302> rdf:type :EvaluationSystem ;
+    guide:hasEvaluationTrial <http://data.guia-mad-bench.es/trial-intermedia>,
+        <http://data.guia-mad-bench.es/trial-final>.
+
+<http://data.guia-mad-bench.es/competency_CE67> rdf:type :Competency ;
+    guide:hasLearningResult <http://w3id.org/guia#learningResult_RA144>,
+        <http://w3id.org/guia#learningResult_RA143>.
+
+<http://data.guia-mad-bench.es/competency_CE71> rdf:type :Competency ;
+    guide:hasLearningResult <http://w3id.org/guia#learningResult_RA144>,
+        <http://w3id.org/guia#learningResult_RA143>.
+
+<http://data.guia-mad-bench.es/competency_CG3> rdf:type :Competency ;
+    guide:hasLearningResult <http://w3id.org/guia#learningResult_RA144>,
+        <http://w3id.org/guia#learningResult_RA143>.
+
+<http://data.guia-mad-bench.es/competency_CG9> rdf:type :Competency ;
+    guide:hasLearningResult <http://w3id.org/guia#learningResult_RA144>,
+        <http://w3id.org/guia#learningResult_RA143>.
+
+<http://data.guia-mad-bench.es/competency_CE67> sch:name "CE67"@en ;
+    guide:hasCompetency <http://data.guia-mad-bench.es/course-guide-145005302>,
+        <http://w3id.org/guia#courseGuide_145005302> .
+
+<http://data.guia-mad-bench.es/competency_CE71> sch:name "CE71"@en ;
+    guide:hasCompetency <http://data.guia-mad-bench.es/course-guide-145005302>,
+        <http://w3id.org/guia#courseGuide_145005302> .
+
+<http://data.guia-mad-bench.es/competency_CG3> sch:name "CG3"@en ;
+    guide:hasCompetency <http://data.guia-mad-bench.es/course-guide-145005302>,
+        <http://w3id.org/guia#courseGuide_145005302> .
+
+<http://data.guia-mad-bench.es/competency_CG9> sch:name "CG9"@en ;
+    guide:hasCompetency <http://data.guia-mad-bench.es/course-guide-145005302>,
+        <http://w3id.org/guia#courseGuide_145005302> .
+
+<http://data.guia-mad-bench.es/learningResult_RA144> rdf:type :LearningResult ;
+    guide:hasCompetency <http://data.guia-mad-bench.es/course-guide-145005302>,
+        <http://w3id.org/guia#courseGuide_145005302>.
+
+<http://data.guia-mad-bench.es/learningResult_RA143> rdf:type :LearningResult ;
+    guide:hasCompetency <http://data.guia-mad-bench.es/course-guide-145005302>,
+        <http://w3id.org/guia#courseGuide_145005302>.
+
+<http://data.guia-mad-bench.es/trial-intermedia> rdf:type :EvaluationTrial ;
+    guide:hasScheduleEvent <http://data.guia-mad-bench.es/schedule-event-17>,
+        <http://w3id.org/guia#schedule_event_10>.
+
+<http://data.guia-mad-bench.es/trial-final> rdf:type :EvaluationTrial ;
+    guide:hasScheduleEvent <http://data.guia-mad-bench.es/schedule-event-17>,
+        <http://w3id.org/guia#schedule_event_10>.
+
+<http://data.guia-mad-bench.es/trial-intermedia> sch:name "Prueba de evaluación intermedia"@en ;
+    guide:trialType "<Examen Escrito>"^^xsd:string ,
+        "Evaluación Progresiva"^^xsd:string .
+
+<http://data.guia-mad-bench.es/trial-final> sch:name "Examen Final Ordinario"@en ;
+    guide:trialType "<Examen Escrito>"^^xsd:string ,
+        "Evaluación Global"^^xsd:string .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_1>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 10^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 17^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 17^^xsd:integer .
+
+<http://data.guia-mad-bench.es/schedule-event-10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventWeek 10^^xsd:integer ,
+        "<Semestre_2>"@en ;
+    guide:itemIndex 1

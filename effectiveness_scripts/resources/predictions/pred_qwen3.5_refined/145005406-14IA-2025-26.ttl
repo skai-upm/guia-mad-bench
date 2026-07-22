@@ -1,0 +1,89 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://guia-mad-bench.es/data/courseguide/GA_14IA_145005406> rdf:type :CourseGuide ;
+    sch:name "Geotecnia"@en ;
+    guide:courseYear 3 ;
+    guide:numberOfCredits "3"^^xsd:decimal ;
+    dct:title "GUÍA DE APRENDIZAJE"@es ;
+    sch:description "Introducción a los conceptos básicos de la Geotecnia como disciplina de la Geología Aplicada..."@en ;
+    sch:inLanguage "Castellano"@en ;
+    guide:teachingPeriodMonths "Septiembre-Enero"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/GA_14IA_145005406> :hasCourse <http://guia-mad-bench.es/data/degree/14IA> ;
+    sch:director <http://guia-mad-bench.es/data/lecturer/Antonia_Pacios_Alvarez> .
+
+<http://guia-mad-bench.es/data/courseguide/GA_14IA_145005406> :hasSyllabus <http://guia-mad-bench.es/data/syllabus/SYLLABUS_GEO> ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule/SCHE_GEO> .
+
+<http://guia-mad-bench.es/data/courseguide/GA_14IA_145005406> :hasLearningResult <http://guia-mad-bench.es/data/lr/RA72>,
+    <http://guia-mad-bench.es/data/lr/RA300>,
+    <http://guia-mad-bench.es/data/lr/RA70>,
+    <http://guia-mad-bench.es/data/lr/RA71> ;
+
+<http://guia-mad-bench.es/data/courseguide/GA_14IA_145005406> :hasCompetency <http://guia-mad-bench.es/data/cp/CE59>,
+    <http://guia-mad-bench.es/data/cp/CE60>,
+    <http://guia-mad-bench.es/data/cp/CG3>,
+    <http://guia-mad-bench.es/data/cp/CG5>,
+    <http://guia-mad-bench.es/data/cp/CG9> .
+
+<http://guia-mad-bench.es/data/courseguide/GA_14IA_145005406> :hasDidacticResource <http://guia-mad-bench.es/data/resource/APUNTES>,
+    <http://guia-mad-bench.es/data/resource/INGENIERIA_GEOLOGICA>,
+    <http://guia-mad-bench.es/data/resource/GEOTECNIA_CIMENTOS_I> ;
+
+<http://guia-mad-bench.es/data/courseguide/GA_14IA_145005406> :hasEvaluationSystem <http://guia-mad-bench.es/data/eval/EVAL_SYSTEM_GEO>.
+
+<http://guia-mad-bench.es/data/syllabus/SYLLABUS_GEO> rdf:type sch:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/item/T1>,
+        <http://guia-mad-bench.es/data/item/T2>,
+        <http://guia-mad-bench.es/data/item/T3>,
+        <http://guia-mad-bench.es/data/item/T4>,
+        <http://guia-mad-bench.es/data/item/T5> ;
+
+<http://guia-mad-bench.es/data/syllabus/SYLLABUS_GEO> guide:syllabusDescription "Origen de los suelos y sus propiedades físicas"@es .
+
+<http://guia-mad-bench.es/data/degree/14IA> rdf:type :BachelorDegree ;
+    sch:name "Grado En Ingeniería Aeroespacial"^^xsd:string ;
+    guide:courseYear 3 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/ECTS> .
+
+<http://guia-mad-bench.es/data/schedule/SCHE_GEO> rdf:type :Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/se/S1>,
+        <http://guia-mad-bench.es/data/se/S2>,
+        <http://guia-mad-bench.es/data/se/S3>,
+        <http://guia-mad-bench.es/data/se/S4> ;
+
+<http://guia-mad-bench.es/data/schedule/SCHE_GEO> sch:courseSchedule <http://guia-mad-bench.es/data/courseguide/GA_14IA_145005406>.
+
+<http://guia-mad-bench.es/data/se/S8> rdf:type :ScheduleEvent ;
+    guide:eventIndex 8 ;
+    sch:courseCode "GA_14IA_145005406"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval/EVAL_SYSTEM_GEO> rdf:type :EvaluationSystem ;
+    guide:evaluationDescription "La evaluación continua se realizará mediante dos pruebas de evaluación intermedia..."@es ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/se/S8>,
+        <http://guia-mad-bench.es/data/ev/EV_INTERMEDIA_1> .
+
+<http://guia-mad-bench.es/data/lr/RA72> rdf:type :LearningResult ;
+    guide:learningResultCode "RA72"^^xsd:string ;
+    guide:learningResultDescription "Conocimiento, comprensión, aplicación y análisis de las diferentes tipologías de cimentación calculando las cargas de hundimiento en cimentaciones."@es .
+
+<http://guia-mad-bench.es/data/cp/CE59> rdf:type :Competency ;
+    guide:competencyCode "CE59"^^xsd:string ;
+    guide:competencyDescription "Conocimiento adecuado y aplicado a la Ingeniería de los métodos de cálculo..."@es .
+
+<http://guia-mad-bench.es/data/lecturer/Angel_Paris_Loreiro> rdf:type :Lecturer ;
+    sch:name "Angel Paris Loreiro"^^xsd:string ;
+    guide:office "L.Aerop. ETSIA"@en ;
+    sch:email <mailto:angel.paris@upm.es>.
+
+<http://guia-mad-bench.es/data/lecturer/Antonia_Pacios_Alvarez> rdf:type :Lecturer ;
+    sch:name "Antonia Pacios Alvarez"^^xsd:string ;
+    guide:office ""^^xsd:string .

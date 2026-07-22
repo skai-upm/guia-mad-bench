@@ -1,0 +1,218 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guide#ANX-PRCL001> a guide:CourseGuide ;
+    dc:title "GUÍA DE APRENDIZAJE"@en ;
+    dct:creator <http://w3id.org/def/guia#Andrea_Cimmino_Arriaga>, <http://w3id.org/def/guia#Covadonga_Arias> , <http://w3id.org/def/guia#Joaquín_Gayosso_Cabada>, <http://w3id.org/def/guia#Juan_Cano_de_Benito>, <http://w3id.org/def/guia#Paola_Espinoza_Arias> ;
+    guide:publishedAt "https://www.upm.es"^^xsd:string ;
+    sch:name "ANX-PRCL001 - Guía de Aprendizaje"@es ;
+    guide:numberOfCredits 3.0^^xsd:decimal ;
+    guide:syllabusDescription "Electronica Digital (55000104)"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/guide#ANX-PRCL001> sch:hasCourseInstance <http://guia-mad-bench.es/data/course/55000104> ;
+    guide:syllabusDescription "Electronica Digital (55000104)"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/guide#ANX-PRCL001> sch:eventSchedule <http://guia-mad-bench.es/data/schedule/2025_26_semestre1>.
+<http://guia-mad-bench.es/data/course/55000104> a guide:Course ;
+    rdfs:subClassOf sch:Course .
+
+<http://guia-mad-bench.es/data/guide#ANX-PRCL001> sch:director <http://guia-mad-bench.es/data/lecturer/jose_andres_otero_marnotes>.
+<http://guia-mad-bench.es/data/course/55000104> guide:hasCourseInstance <http://guia-mad-bench.es/data/guide#ANX-PRCL001> .
+
+<http://guia-mad-bench.es/data/guide#ANX-PRCL001> sch:instructor <http://guia-mad-bench.es/data/lecturer/jose_andres_otero_marnotes>, <http://guia-mad-bench.es/data/lecturer/jorge_portilla_berrueco>.
+
+<http://guia-mad-bench.es/data/guide#ANX-PRCL001> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus/anx-prcl001-syllabus>.
+<http://guia-mad-bench.es/data/lecturer/jose_andres_otero_marnotes> a guide:Lecturer ;
+    sch:name "Jose Andres Otero Marnotes"@en ;
+    sch:email <mailto:joseandres.otero@upm.es>^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer/jorge_portilla_berrueco> a guide:Lecturer ;
+    sch:name "Jorge Portilla Berrueco"@en ;
+    sch:email <mailto:jorge.portilla@upm.es>^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer/jose_andres_otero_marnotes> guide:tutorshipsSchedule "L - 08:00 - 08:15"^^rdf:langString ;
+    sch:office ""^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus/anx-prcl001-syllabus> a guide:Syllabus ;
+    rdfs:subClassOf sch:Syllabus ;
+    guide:itemIndex 1,2,3,4,5,6,7 .
+
+<http://guia-mad-bench.es/data/syllabus/anx-prcl001-syllabus> guide:hasItem <http://guia-mad-bench.es/data/ssi/introduccion>,
+    <http://guia-mad-bench.es/data/ssi/diseño_digital_vhdl>,
+    <http://guia-mad-bench.es/data/ssi/circuitos_combinatorios>,
+    <http://guia-mad-bench.es/data/ssi/circuitos_secuenciales>,
+    <http://guia-mad-bench.es/data/ssi/síntesis_circuitos>,
+    <http://guia-mad-bench.es/data/ssi/implementación_física>,
+    <http://guia-mad-bench.es/data/ssi/arquitectura_sistemas>.
+
+<http://guia-mad-bench.es/data/ssi/introduccion> a guide:SyllabusItem ;
+    guide:syllabusDescription "Introducción a los Sistemas Digitales"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/ssi/diseño_digital_vhdl> a guide:SyllabusItem ;
+    guide:syllabusDescription "Diseño Digital con Lenguajes de descripción Hardware (VHDL)"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/ssi/circuitos_combinatorios> a guide:SyllabusItem ;
+    guide:syllabusDescription "Diseño de Circuitos Combinacionales"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/ssi/circuitos_secuenciales> a guide:SyllabusItem ;
+    guide:syllabusDescription "Diseño de Circuitos Secuenciales Síncronos"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/ssi/síntesis_circuitos> a guide:SyllabusItem ;
+    guide:syllabusDescription "Síntesis de Circuitos Secuenciales Síncronos (I)"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/ssi/implementación_física> a guide:SyllabusItem ;
+    guide:syllabusDescription "Implementación Física"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/ssi/arquitectura_sistemas> a guide:SyllabusItem ;
+    guide:syllabusDescription "Arquitectura de Sistemas Digitales"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/schedule/2025_26_semestre1> a guide:Schedule ;
+    rdfs:subClassOf sch:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/seve/introduccion>,
+        <http://guia-mad-bench.es/data/seve/diseño_digital_vhdl_i>.
+
+<http://guia-mad-bench.es/data/schedule/2025_26_semestre1> guide:teachingPeriodMonths "Septiembre-Enero"^^rdf:langString .
+<http://guia-mad-bench.es/data/course/55000104> sch:courseCode 55000104 ;
+    guide:semester "Séptimo semestre"^^xsd:string ;
+    guide:teachingPeriod "2025-26"^^xsd:string .
+
+<http://guia-mad-bench.es/data/seve/introduccion> a guide:ScheduleEvent ;
+    rdfs:subClassOf sch:Event ;
+    guide:eventIndex 1,2,3,4,5,6,7,8,9,10,11,12 .
+
+<http://guia-mad-bench.es/data/seve/introduccion> guide:activityDescription "Introducción a los Sistemas Digitales"^^rdf:langString ;
+    sch:name "Actividad del tipo Lección Magistral"@en .
+
+<http://guia-mad-bench.es/data/ssi/diseño_digital_vhdl_i> a guide:SyllabusItem ;
+    guide:syllabusDescription "Diseño Digital con Lenguajes de descripción Hardware (VHDL)"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/seve/practica_1> a guide:ScheduleEvent ;
+    rdfs:subClassOf sch:Event ;
+    guide:eventIndex 2,3,4,5,6,7,8,9,10,11,12 .
+
+<http://guia-mad-bench.es/data/seve/practica_1> guide:activityDescription "Práctica 1. Introducción a Vivado"^^rdf:langString ;
+    sch:name "Actividad del tipo Prácticas de Laboratorio"@en .
+
+<http://guia-mad-bench.es/data/ssi/circuitos_combinatorios> a guide:SyllabusItem ;
+    guide:syllabusDescription "Diseño de Circuitos Combinacionales"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/seve/evaluacion_practica_1> a guide:EvaluationTrial ;
+    rdfs:subClassOf sch:Event ;
+    guide:eventIndex 2,3,4,5,6,7,8,9,10,11,12 .
+
+<http://guia-mad-bench.es/data/seve/evaluacion_practica_1> a guide:EvaluationTrial ;
+    sch:name "Evaluación Práctica 1"^^xsd:string ;
+    guide:trialType "Examen de Prácticas"@en ;
+    guide:modalidad "Presencial"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/seve/evaluacion_practica_1> sch:eventSchedule <http://guia-mad-bench.es/data/schedule/2025_26_semestre1>.
+<http://guia-mad-bench.es/data/course/55000104> guide:hasCourseInstance <http://guia-mad-bench.es/data/guide#ANX-PRCL001> .
+
+<http://guia-mad-bench.es/data/seve/evaluacion_practica_2> a guide:EvaluationTrial ;
+    sch:name "Evaluación Práctica 2"^^xsd:string ;
+    guide:trialType "Examen de Prácticas"@en ;
+    guide:modalidad "Presencial"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/seve/evaluacion_practica_3> a guide:EvaluationTrial ;
+    sch:name "Evaluación Práctica 3"^^xsd:string ;
+    guide:trialType "Examen de Prácticas"@en ;
+    guide:modalidad "Presencial"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/seve/evaluacion_practica_4> a guide:EvaluationTrial ;
+    sch:name "Evaluación Práctica 4"^^xsd:string ;
+    guide:trialType "Examen de Prácticas"@en ;
+    guide:modalidad "Presencial"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/seve/examen_vhdl> a guide:EvaluationTrial ;
+    sch:name "Examen de VHDL"^^xsd:string ;
+    guide:trialType "Examen Escrito"@en ;
+    guide:modalidad "Presencial"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/seve/examen_vhdl> guide:gradePercentage 20.0^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/2025_26_semestre1>.
+
+<http://guia-mad-bench.es/data/guide#ANX-PRCL001> guide:hasEvaluationSystem <http://guia-mad-bench.es/data/es/anx-prcl001-evaluation-system>.
+<http://guia-mad-bench.es/data/ssi/implementación_física> a guide:SyllabusItem ;
+    guide:syllabusDescription "Implementación Física"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/seve/examen_final> a guide:EvaluationTrial ;
+    sch:name "Examen final."^^xsd:string ;
+    guide:trialType "Examen Escrito"@en ;
+    guide:modalidad "Presencial"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/seve/examen_final> guide:gradePercentage 40.0^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/2025_26_semestre1>.
+
+<http://guia-mad-bench.es/data/es/anx-prcl001-evaluation-system> a guide:EvaluationSystem ;
+    rdfs:subClassOf sch:Event .
+
+<http://guia-mad-bench.es/data/seve/revisión_trabajo> a guide:EvaluationTrial ;
+    sch:name "Revisión del trabajo"^^xsd:string ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    guide:modalidad "Presencial"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/seve/revisión_trabajo> guide:gradePercentage 30.0^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/2025_26_semestre1>.
+
+<http://guia-mad-bench.es/data/es/anx-prcl001-evaluation-system> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/seve/evaluacion_practica_1>,
+    <http://guia-mad-bench.es/data/seve/examen_vhdl>.
+
+<http://guia-mad-bench.es/data/es/anx-prcl001-evaluation-system> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/seve/revisión_trabajo>,
+    <http://guia-mad-bench.es/data/seve/examen_final>.
+
+<http://guia-mad-bench.es/data/es/anx-prcl001-evaluation-system> guide:evaluationDescription "Evaluación progresiva y global"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/course/55000104> sch:name "Electronica Digital"@en ;
+    guide:numberOfCredits 3.0^^xsd:decimal ;
+    guide:courseType "Optativa"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/guide#ANX-PRCL001> sch:description "Guía de Aprendizaje para Electronica Digital (55000104)"^^xsd:string ;
+    guide:syllabusDescription "Electronica Digital"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/competency/ce21a> a guide:Competency ;
+    rdfs:subClassOf sch:Event .
+
+<http://guia-mad-bench.es/data/competency/ce24a> a guide:Competency ;
+    rdfs:subClassOf sch:Event .
+
+<http://guia-mad-bench.es/data/guide#ANX-PRCL001> guide:hasLearningResult <http://guia-mad-bench.es/data/lr/ra8>,
+        <http://guia-mad-bench.es/data/lr/ra9>.
+
+<http://guia-mad-bench.es/data/guide#ANX-PRCL001> guide:hasCompetency <http://guia-mad-bench.es/data/cp/ce21a>,
+        <http://guia-mad-bench.es/data/cp/ce24a>.
+
+<http://guia-mad-bench.es/data/lr/ra8> a guide:LearningResult ;
+    rdfs:subClassOf sch:Event .
+
+<http://guia-mad-bench.es/data/lr/ra9> a guide:LearningResult ;
+    rdfs:subClassOf sch:Event .
+
+<http://guia-mad-bench.es/data/cp/ce21a> a guide:Competency ;
+    guide:competencyCode "CE21A"^^xsd:string ;
+    guide:competencyDescription "Conocimiento de los fundamentos y aplicaciones de la electrónica digital y microprocesadores."^^rdf:langString .
+
+<http://guia-mad-bench.es/data/cp/ce24a> a guide:Competency ;
+    guide:competencyCode "CE24A"^^xsd:string ;
+    guide:competencyDescription "Capacidad para diseñar sistemas electrónicos analógicos, digitales y de potencia."^^rdf:langString .
+
+<http://guia-mad-bench.es/data/cp/ce1> a guide:Competency ;
+    rdfs:subClassOf sch:Event .
+
+<http://guia-mad-bench.es/data/guide#ANX-PRCL001> guide:hasLearningResult <http://guia-mad-bench.es/data/lr/cg1>,
+        <http://guia-mad-bench.es/data/lr/ra8>.
+
+<http://guia-mad-bench.es/data/guide#ANX-PRCL001> guide:hasCompetency <http://guia-mad-bench.es/data/cp/cg1>,
+        <http://guia-mad-bench.es/data/cp/ce24a>.
+
+<http://guia-mad-bench.es/data/lr/cg1> a guide:LearningResult ;
+    rdfs:subClassOf sch:Event .
+
+<http://guia-mad-bench.es/data/guide#ANX-PRCL001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/seve/examen_final>.

@@ -1,0 +1,60 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guide/GA_10AK_ANX_PR_CL_001_01> rdf:type :CourseGuide ;
+    sch:name "ANX-PR/CL/001 - LEARNING GUIDE"@en ;
+    dct:creator <http://guia-mad-bench.es/data/person/GA_10AK_Manuel_Carro_Liñares> ,
+                <http://guia-mad-bench.es/data/person/GA_10AK_Julio_Mariño_Carballo> ;
+    sch:courseCode 103000590^^xsd:integer ;
+    guide:numberOfCredits "4"^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/degree/GA_10AK> rdf:type :Degree ;
+    dct:title "Master Universitario En Software Y Sistemas"@en .
+
+<http://guia-mad-bench.es/data/course/GA_10AK_103000590> rdf:type :Course ;
+    sch:name "Computer Security" ;
+    guide:numberOfCredits "4"^^xsd:decimal ;
+    dct:title "103000590 - Computer Security"@en .
+
+<http://guia-mad-bench.es/data/syllabus/GA_10AK_ANX_PR_CL_001_01> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/subject/SYLLABUS_ITEM_INTRO>,
+                 <http://guia-mad-bench.es/data/subject/SYLLABUS_ITEM_NET_SEC>,
+                 <http://guia-mad-bench.es/data/subject/SYLLABUS_ITEM_SOF_SEC> .
+
+<http://guia-mad-bench.es/data/schedule/GA_10AK_ANX_PR_CL_001_01> rdf:type :Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event/evt_week9_midterm>,
+                     <http://guia-mad-bench.es/data/event/evt_week17_global>.
+
+<http://guia-mad-bench.es/data/person/GA_10AK_Manuel_Carro_Liñares> rdf:type :Lecturer ;
+    sch:name "Manuel Carro Liñares" ;
+    sch:email <mailto:manuel.carro@upm.es> .
+
+<http://guia-mad-bench.es/data/person/GA_10AK_Julio_Mariño_Carballo> rdf:type :Lecturer ;
+    sch:name "Julio Mariño Carballo" ;
+    guide:tutorshipsSchedule <https://schema.org/Person#tutorshipTime>.
+
+<http://guia-mad-bench.es/data/event/evt_week9_midterm> rdf:type :ScheduleEvent .
+
+<http://guia-mad-bench.es/data/event/evt_week17_global> rdf:type :ScheduleEvent ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial/GA_10AK_Midterm>,
+                           <http://guia-mad-bench.es/data/trial/GA_10AK_Global>.
+
+<http://guia-mad-bench.es/data/competency/CG4> rdf:type :Competency ;
+    guide:competencyCode "CG4"^^xsd:string .
+
+<http://guia-mad-bench.es/data/learningResult/RA12> rdf:type :LearningResult ;
+    guide:learningResultCode "RA12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial/GA_10AK_Midterm> rdf:type :EvaluationTrial ;
+    sch:name "Midterm exam"@en ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/event/evt_week9_midterm>,
+                          <http://guia-mad-bench.es/data/event/evt_week17_global>.
+
+<http://guia-mad-bench.es/data/trial/GA_10AK_Global> rdf:type :EvaluationTrial ;
+    sch:name "Global exam"@en .

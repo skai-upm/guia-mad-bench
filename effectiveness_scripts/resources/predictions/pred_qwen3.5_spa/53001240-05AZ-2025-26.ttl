@@ -1,0 +1,157 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseGuide/anx-pr-cl-001-01> rdf:type guide:CourseGuide ;
+    sch:name "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en ;
+    dct:title "GUÍA ontology"@en ;
+    rdfs:label "Microelectronica"@es ;
+    guide:numberOfCredits 3^^xsd:decimal ;
+    sch:description "This subject addresses two main topics: on the one hand, microelectronics... and reconfigurable computing..."@en ;
+    guide:syllabusDescription "1. Microelectronics\n2. Reconfigurable Computing"^^rdf:langString ;
+    guide:teachingPeriodMonths "Septiembre-Enero"@es ;
+    sch:inLanguage "Inglés/Castellano"@es .
+
+<http://guia-mad-bench.es/data/degree/master-ingenieria-industrial> rdf:type guide:Degree ;
+    rdfs:label "Master Universitario En Ingenieria Industrial"^^rdf:langString ;
+    sch:name "05AZ - Master Universitario En Ingenieria Industrial"@es .
+
+<http://guia-mad-bench.es/data/course/microelectronica-53001240> rdf:type guide:Course ;
+    rdfs:label "Microelectronica"^^rdf:langString ;
+    sch:name "53001240 - Microelectronica"@es .
+
+<http://guia-mad-bench.es/data/courseGuide/anx-pr-cl-001-01> guide:hasCourse <http://guia-mad-bench.es/data/course/microelectronica-53001240> ;
+    sch:courseCode 53001240^^xsd:integer .
+
+<http://guia-mad-bench.es/data/lecturer/alfonso-rodriguez-medina> rdf:type guide:Lecturer ;
+    rdfs:label "Alfonso Rodriguez Medina"@es ;
+    sch:name "Alfonso Rodriguez Medina"^^rdf:langString ;
+    guide:office "UD Electrónica"@es .
+
+<http://guia-mad-bench.es/data/lecturer/alfonso-rodriguez-medina> sch:email <mailto:alfonso.rodriguezm@upm.es> ;
+    guide:tutorshipsSchedule "Sin horario. Please send an email to arrange a meeting"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/lecturer/jose-andres-otero-marnotes> rdf:type guide:Lecturer ;
+    rdfs:label "Jose Andres Otero Marnotes"@es ;
+    sch:name "Jose Andres Otero Marnotes"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/lecturer/jose-andres-otero-marnotes> sch:email <mailto:joseandres.otero@upm.es> ;
+    guide:tutorshipsSchedule "Sin horario. Please send an email to arrange a meeting"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/lecturer/luis-donatien-waucquez-jimenez> rdf:type guide:Lecturer ;
+    rdfs:label "Luis Donatien Waucquez Jiménez"@es ;
+    sch:name "Luis Donatien Waucquez Jiménez"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/lecturer/luis-donatien-waucquez-jimenez> guide:tutorshipsSchedule ""^^xsd:string ;
+    sch:email <mailto:luis.waucquez.jimenez@upm.es> .
+
+<http://guia-mad-bench.es/data/competency/aplica> rdf:type guide:Competency ;
+    rdfs:label "APLICA"^^rdf:langString ;
+    guide:competencyCode "(a)"^^xsd:string ;
+    sch:description "Habilidad para aplicar conocimientos científicos, matemáticos y tecnológicos en sistemas relacionados con la práctica de la ingeniería."^^rdf:langString .
+
+<http://guia-mad-bench.es/data/competencia/experimenta> rdf:type guide:Competency ;
+    rdfs:label "(b)"^^xsd:string ;
+    sch:description "Habilidad para diseñar y realizar experimentos así como analizar e interpretar datos."^^rdf:langString .
+
+<http://guia-mad-bench.es/data/competencia/diseña> rdf:type guide:Competency ;
+    rdfs:label "(c)"^^xsd:string ;
+    sch:description "Habilidad para diseñar un sistema, componente o proceso que alcance los requisitos deseados teniendo en cuenta restricciones realistas..."^^rdf:langString .
+
+<http://guia-mad-bench.es/data/competencia/trabaja-en-equipo> rdf:type guide:Competency ;
+    rdfs:label "(d)"^^xsd:string ;
+    sch:description "Habilidad para trabajar en equipos multidisciplinares."^^rdf:langString .
+
+<http://guia-mad-bench.es/data/competencia/resuelve> rdf:type guide:Competency ;
+    rdfs:label "(e)"^^xsd:string ;
+    sch:description "Habilidad para identificar, formular y resolver problemas de ingeniería."^^rdf:langString .
+
+<http://guia-mad-bench.es/data/competencia/comunica> rdf:type guide:Competency ;
+    rdfs:label "(g)"^^xsd:string ;
+    sch:description "Habilidad para comunicar eficazmente."^^rdf:langString .
+
+<http://guia-mad-bench.es/data/competencia/usaherramientas> rdf:type guide:Competency ;
+    rdfs:label "(k)"^^xsd:string ;
+    sch:description "Habilidad para usar las técnicas, destrezas y herramientas ingenieriles modernas necesarias..."^^rdf:langString .
+
+<http://guia-mad-bench.es/data/competencia/idea> rdf:type guide:Competency ;
+    rdfs:label "(n)"^^xsd:string ;
+    sch:description "Creatividad"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/courseGuide/anx-pr-cl-001-01> guide:hasLearningResult <http://guia-mad-bench.es/data/learningresult/ra121> ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/competencia/aplica> .
+
+<http://guia-mad-bench.es/data/courseGuide/anx-pr-cl-001-01> guide:hasLearningResult <http://guia-mad-bench.es/data/learningresult/ra123> ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/competencia/aplica>, <http://guia-mad-bench.es/data/competencia/experimenta>.
+
+<http://guia-mad-bench.es/data/courseGuide/anx-pr-cl-001-01> guide:hasLearningResult <http://guia-mad-bench.es/data/learningresult/ra77> ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/competencia/diseña>.
+
+<http://guia-mad-bench.es/data/courseGuide/anx-pr-cl-001-01> guide:hasLearningResult <http://guia-mad-bench.es/data/learningresult/ra125> ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/competencia/comunica>.
+
+<http://guia-mad-bench.es/data/courseGuide/anx-pr-cl-001-01> guide:hasLearningResult <http://guia-mad-bench.es/data/learningresult/ra24> ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/competencia/resuelve>.
+
+<http://guia-mad-bench.es/data/syllabusItem/intro-microelectronics> rdf:type guide:SyllabusItem ;
+    rdfs:label "1. Introduction to microelectronics"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/syllabusItem/cmos-technology-i> rdf:type guide:SyllabusItem ;
+    rdfs:label "1.2. CMOS Technology: CMOS logic, fabrication..."^^rdf:langString .
+
+<http://guia-mad-bench.es/data/courseGuide/anx-pr-cl-001-01> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus/microelectronica-syllabus> ;
+    sch:name "Microelectronics and Reconfigurable Computing"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/learningresult/ra121> rdf:type guide:LearningResult ;
+    rdfs:label "RA121 - Organiza la información."^^rdf:langString ;
+    guide:learningResultCode "RA121"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluationTrial/homework-cmos> rdf:type guide:EvaluationTrial ;
+    rdfs:label "Homework: CMOS technology - Physical layout"@es ;
+    sch:name "Homework: CMOS technology - Physical layout"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/evaluationtrial/homework-cmos> guide:hasScheduleEvent <http://guia-mad-bench.es/data/scheduleevent/se1-sem3-hw-cmos> ;
+    sch:name "Sem 3"^^xsd:string ;
+    guide:gradePercentage "20%"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/evaluationtrial/homework-advanced> rdf:type guide:EvaluationTrial ;
+    rdfs:label "Homework: Advanced digital modules - Architecture exploration"@es ;
+    sch:name "Sem 5"^^xsd:string ;
+    guide:gradePercentage "20%"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/evaluationtrial/homework-advanced> guide:hasScheduleEvent <http://guia-mad-bench.es/data/scheduleevent/se1-sem5-hw-adv> ;
+    sch:name "Sem 5"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluationTrial/final-exam> rdf:type guide:EvaluationTrial ;
+    rdfs:label "Final written exam"@es ;
+    sch:name "Final written exam"^^rdf:langString ;
+    guide:gradePercentage "60%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluationtrial/final-exam> guide:hasScheduleEvent <http://guia-mad-bench.es/data/scheduleevent/se1-sem17-final> ;
+    sch:name "Sem 17"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseGuide/anx-pr-cl-001-01> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationSystem/microelectronica-eval-system> ;
+    sch:name "Evaluación Progresiva y Global"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/scheduleevent/se1-sem3-hw-cmos> rdf:type guide:SylabusItem, guide:ScheduleEvent ;
+    rdfs:label "Sem 3 - Homework CMOS"@es ;
+    sch:eventIndex 3^^xsd:string ;
+    om:Unit "0.5"^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/scheduleevent/se1-sem5-hw-adv> rdf:type guide:SylabusItem, guide:ScheduleEvent ;
+    rdfs:label "Sem 5 - Homework Advanced"@es ;
+    sch:eventIndex 5^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluationSystem/microelectronica-eval-system> rdf:type guide:EvaluationSystem ;
+    rdfs:label "Evaluación Progresiva y Global"^^rdf:langString ;
+    sch:description "The evaluation of the subject will consist of 20% from a homework project on CMOS technology, 20% from a homework project on Advanced digital modules, and 60% from the final written exam."^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluationtrial/homework-cmos> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/scheduleevent/se1-sem3-hw-cmos> ;
+    sch:name "Sem 3"^^xsd:string .

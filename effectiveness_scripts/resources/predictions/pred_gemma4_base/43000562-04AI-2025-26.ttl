@@ -1,0 +1,198 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.org/2000/01/rdf-schema#> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@base <http://guia-mad-bench.es/data/> .
+
+# --- University Center ---
+guide:ETS_Ing_Caminos rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ing. de Caminos Canales y P." ;
+    guide:offers guide:DobleMaster_04AI .
+
+# --- Degree ---
+guide:DobleMaster_04AI rdf:type guide:MasterDegree ;
+    sch:name "04AI - Doble Master Universitario En Iccp Y En Sistemas De Ingenieria Civil" ;
+    guide:degreeCode "04AI" .
+
+# --- Course ---
+guide:Course_43000562 rdf:type guide:Course ;
+    sch:courseCode 43000562 ;
+    sch:name "Marine Energies" ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 2025 ;
+    guide:semester "Cuarto semestre" .
+
+# --- Course Guide (Instance) ---
+guide:CourseGuide_43000562_2S_2025-26 rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance guide:Course_43000562 ;
+    sch:name "Marine Energies - 2025/26" ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:numberOfCredits 4.5 ;
+    sch:description "This subject is optional within the specialty of Hydraulics, Energy and Environment. The course offers an overview of the use of renewable energies in the marine environment such as waves, currents, tides or wind."@en ;
+    guide:hasSyllabus guide:Syllabus_MarineEnergies ;
+    guide:hasCompetency guide:MICCPCE27, guide:MICCPCE30, guide:MICCPCE33, guide:MICCPCE35, guide:MICCPCE37, guide:MICCPCGP01, guide:MICCPCGP02, guide:MICCPCGP05, guide:MICCPCGP06, guide:MICCPCGP07, guide:MICCPCGP10, guide:MICCPCGP12, guide:MICCPCGP15, guide:MICCPCGP18, guide:MICCPCT01, guide:MICCPCT08, guide:MSICCG05 ;
+    guide:hasLearningResult guide:RA124, guide:RA114, guide:RA99, guide:RA60, guide:RA12, guide:RA107, guide:RA118 ;
+    sch:instructor guide:Vicente_Negro_Valdecantos, guide:Jose_Santos_Lopez_Gutierrez, guide:Pedro_Fernandez_Carrasco, guide:Maria_Dolores_Esteban_Perez ;
+    sch:director guide:Jose_Santos_Lopez_Gutierrez ;
+    guide:hasEvaluation guide:EvalSystem_MarineEnergies ;
+    guide:hasDidacticResource guide:Res_Esteban_2009, guide:Res_Coastal_Eng_Manual, guide:Res_Twidell_2009, guide:Res_BSH_2007, guide:Res_Charlier_2009, guide:Res_Cruz_2008, guide:Res_DNV_2011, guide:Res_Esteban_2011, guide:Res_Germanischer_Lloyd, guide:Res_IEC_61400_3, guide:Res_IEC_61400_3_2, guide:Res_Ley_2_2013, guide:Res_Lynn_2014, guide:Res_Matutano_2013, guide:Res_Multon_2011, guide:Res_Negro_2014 ;
+    sch:activitiesWorkload "26-27 hours per ECTS" .
+
+# --- Lecturers ---
+guide:Vicente_Negro_Valdecintamos rdf:type guide:Lecturer ;
+    sch:name "Vicente Negro Valdecantos" ;
+    sch:email "vicente.negro@upm.es" ;
+    guide:office "Ports Lab" ;
+    guide:tutorshipsSchedule "X - 08:30 - 10:30, J - 08:30 - 10:30, V - 08:30 - 10:30" .
+
+guide:Jose_Santos_Lopez_Gutierrez rdf:type guide:Lecturer ;
+    sch:name "Jose Santos Lopez Gutierrez" ;
+    sch:email "josesantos.lopez@upm.es" ;
+    guide:office "Ports Lab" ;
+    guide:tutorshipsSchedule "X - 09:00 - 10:30, J - 09:00 - 10:30, V - 09:00 - 10:30" .
+
+guide:Pedro_Fernandez_Carrasco rdf:type guide:Lecturer ;
+    sch:name "Pedro Fernandez Carrasco" ;
+    sch:email "pedro.fernandez@upm.es" ;
+    guide:office "Ports Lab" ;
+    guide:tutorshipsSchedule "J - 10:30 - 13:30, V - 10:30 - 13:30" .
+
+guide:Maria_Dolores_Esteban_Perez rdf:type guide:Lecturer ;
+    sch:name "Maria Dolores Esteban Perez" ;
+    sch:email "mariadolores.esteban@upm.es" ;
+    guide:office "Ports Lab" ;
+    guide:tutorshipsSchedule "L - 17:30 - 19:30, X - 17:30 - 19:30" .
+
+# --- Required Knowledge ---
+guide:ReqKnow_MarineEnergies rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Ingeniería Geotécnica, Hidráulica Técnica, Ingeniería Marítima, Puertos Y Costas" .
+
+# --- Competencies ---
+guide:MICCPCE27 rdf:type guide:Competency ; guide:competencyCode "MICCPCE27" ; guide:competencyDescription "Conocimientos y capacidades que permiten comprender los fenómenos dinámical..."@en .
+guide:MICCPCE30 rdf:type guide:Competency ; guide:competencyCode "MICCPCE30" ; guide:competencyDescription "Capacidad de planificación, gestión y explotación de infraestructuras..."@en .
+guide:MICCPCE33 rdf:type guide:Competency ; guide:competencyCode "MICCPCE33" ; guide:competencyDescription "Capacidad para aplicar los conocimientos técnicos en actividades de I+D+i..."@en .
+guide:MICCPCE35 rdf:type guide:Competency ; guide:competencyCode "MICCPCE35" ; guide:competencyDescription "Capacidad para integrar y aplicar los conocimientos técnicos en asesoría, análisis..."@en .
+guide:MICCPCE37 rdf:type guide:Competency ; guide:competencyCode "MICCPCE37" ; guide:competencyDescription "Capacidad para integrar y aplicar los conocimientos técnicos en asesoría... efectos medioambientales..."@en .
+guide:MICCPCGP01 rdf:type guide:Competency ; guide:competencyCode "MICCPCGP01" ; guide:competencyDescription "Capacitación científico-técnica y metodológica para el reciclaje continuo..."@en .
+guide:MICCPCGP02 rdf:type guide:Competency ; guide:competencyCode "MICCPCGP02" ; guide:competencyDescription "alternativas válidas, elegir la óptima..."@en .
+guide:MICCPCGP05 rdf:type guide:Competency ; guide:competencyCode "MICCPCGP05" ; guide:competencyDescription "Conocimiento de la profesión de Ingeniero de Caminos..."@en .
+guide:MICCPCGP06 rdf:type guide:Competency ; guide:competencyCode "MICCPCGP06" ; guide:competencyDescription "Conocimiento para aplicar las capacidades técnicas y gestoras en actividades de I+D+i..."@en .
+guide:MICCPCGP07 rdf:type guide:Competency ; guide:competencyCode "MICCPCGP07" ; guide:competencyDescription "Capacidad para planificar, proyectar, inspeccionar y dirigir obras..."@en .
+guide:MICCPCGP10 rdf:type guide:Competency ; guide:loscompetencyCode "MICCPCGP10" ; guide:competencyDescription "Capacidad para la realización de estudios de planificación territorial..."@en .
+guide:MICCPCGP12 rdf:type guide:Competency ; guide:competencyCode "MICCPCGP12" ; guide:competencyDescription "Capacidad para planificar, diseñar y gestionar infraestructuras..."@en .
+guide:MICCPCGP15 rdf:type guide:Compet competencyCode "MICCPCGP15" ; guide:competencyDescription "Capacidad para evaluar y acondicionar medioambientalmente las obras..."@en .
+guide:MICCPCGP18 rdf:type guide:Competency ; guide:competencyCode "MICCPCGP18" ; guide:competencyDescription "Conocimientos adecuados de los aspectos científicos y tecnológicos..."@en .
+guide:MICCPCT01 rdf:type guide:Competency ; guide:competencyCode "MICCPCT01" ; guide:competencyDescription "Capacidad de preparar y presentar comunicaciones orales, escritas y gráficas..."@en .
+guide:MICCPCT08 rdf:type guide:Competency ; guide:competencyCode "MICCPCT08" ; guide:competencyDescription "Capacidad de diseñar, analizar e interpretar experimentos relevantes..."@en .
+guide:MSICCG05 rdf:type guide:Competency ; guide:competencyCode "MSICCG05" ; guide:competencyDescription "Uso de la lengua inglesa"@en .
+
+# --- Learning Results ---
+guide:RA124 rdf:type guide:LearningResult ; guide:learningResultCode "RA124" ; guide:learningResultDescription "Explica, conoce y tiene capacidad para conocer los aspectos técnicos..."@en .
+guide:RA114 rdf:type guide:LearningResult ; guide:learningResultCode "RA114" ; guide:learningResultDescription "Capacidad para analizar y sintetizar los diversos contenidos de información..."@en .
+guide:RA99 rdf:type guide:LearningResult ; guide:learningResultCode "RA99" ; guide:learningResultDescription "Analizar con carácter crítico la parte metodológica de un proyecto de investigación..."@en .
+guide:RA60 rdf:type guide:LearningResult ; guide:learningResultCode "RA60" ; guide:learningResultDescription "Conocer el medio marino y los recursos oceanicos"@en .
+guide:RA12 rdf:type guide:LearningResult ; guide:learningResultCode "RA12" ; guide:learningResultDescription "Planifica, proyecta, dirige y gestiona obras marítimas..."@en .
+guide:RA107 rdf:type guide:LearningResult ; guide:learningResultCode "RA107" ; guide:learningResultDescription "Comunicar y exponer las conclusiones de sus análisis a un público científico"@en .
+guide:RA118 rdf:type guide:LearningResult ; guide:learningResultCode "RA118" ; guide:learningResultDescription "Capacidad para comunicarse de forma escrita y oral"@en .
+
+# --- Syllabus ---
+guide:Syllabus_MarineEnergies rdf:type guide:Syllabus ;
+    guide:hasItem guide:Unit1, guide:Unit2, guide:Unit3, guide:Unit4, guide:Unit5, guide:Unit6, guide:Unit7, guide:Unit8, guide:Unit9, guide:Unit10 .
+
+guide:Unit1 rdf:type guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "Introduction" .
+guide:Unit2 rdf:type guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "Technologies for the exploitation of marine energy" .
+guide:Unit3 rdf:type guide:SyllabusItem ; guide:itemIndex 3 ; guide:syllabusDescription "Energy resource" .
+guide:Unit4 rdf:type guide:SyllabusItem ; guide:itemIndex 4 ; guide:syllabusDescription "Components of an installation" .
+guide:Unit5 rdf:type guide:SyllabusItem ; guide:itemIndex 5 ; guide:syllabusDiscription "Foundations and supporting structures" .
+guide:Unit6 rdf:type guide:SyllabusItem ; guide:itemIndex 6 ; guide:syllabusDescription "Construction and operation phases" .
+guide:Unit7 rdf:type guide:SyllabusItem ; guide:itemIndex 7 ; guide:syllabusDescription "Environmental impact" .
+guide:Unit8 rdf:type guide:SyllabusItem ; guide:itemIndex 8 ; guide:syllabusDescription "Other aspects" .
+guide:Unit9 rdf:type guide:SyllabusItem ; guide:itemIndex 9 ; guide:syllabusDescription "Minority marine energies" .
+guide:Unit10 rdf:type guide:SyllabusItem ; guide:itemIndex 10 ; guide:syllabusDescription "The future of marine energies" .
+
+# --- Evaluation System ---
+guide:EvalSystem_MarineEnergies rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluation through progressive assessment and global assessment."@en ;
+    guide:hasEvaluationTrial guide:Trial_Submission, guide:Trial_Presentation, guide:Trial_FinalExam .
+
+guide:Trial_Submission rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo en Grupo" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "00:00" .
+
+guide:Trial_Presentation rdf:type guide:EvaluationTrial ;
+    guide:trialType "Presentación en Grupo de Laboratorio" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "03:30" .
+
+guide:Trial_FinalExam rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:30" .
+
+# --- Schedule & Activities ---
+guide:Schedule_MarineEnergies rdf:type guide:Schedule ;
+    sch:eventSchedule guide:Event_Unit1, guide:Event_Unit2_LM, guide:Event_Unit2_PL, guide:Event_Unit4_LM, guide:Event_Unit4_AC, guide:Event_Exam .
+
+guide:Event_Unit1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Week 1" ;
+    guide:hasActivity guide:Act_Unit1 ;
+    guide:trialWeek "Week 1" .
+
+guide:Act_Unit1 rdf:type guide:Activity ;
+    guide:activityDescription "Unit 1. Introduction" ;
+    guide:activityDuration 3.5 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+guide:Event_Exam rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 17 ;
+    guide:eventWeek "Week 17" ;
+    guide:hasActivity guide:Act_FinalExam .
+
+guide:Act_FinalExam rdf:type guide:Activity ;
+    guide:activityDescription "Final exam" ;
+    guide:activityDuration 2.5 ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:attendanceType "Presencial" .
+
+# --- Didactic Resources ---
+guide:Res_Esteban_2009 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Esteban M.D. (2009). Propuesta Metodológica para la Implantación de Parques Eólicas Offshore. Tesis Doctoral UPM" ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:Res_Coastal_Eng_Manual rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "COASTAL ENGINEERING MANUAL (2006). CEM. U.S. Corps of Engineers." ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:Res_Twidell_2009 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Twidell, J. y Gaudiosi, G. (2009). Offshore Wind Power. Multi-Science Publishing Co. Ltd." ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:Res_IEC_61400_3 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "INTERNATIONAL ELECTROTECHNICAL COMMISSION. (2011). IEC 61400-3: Design requirements for offshore wind turbines." ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:Res_Ley_2_2013 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Ley 2/2013, de 29 de mayo, de protección y uso sostenible del litoral..." ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:Res_Multon_2011 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Multon, B. (2011). Marine Renewable Energy Handbook. Wiley-ISTE." ;
+    guide:bibliographyType "Bibliografía" .

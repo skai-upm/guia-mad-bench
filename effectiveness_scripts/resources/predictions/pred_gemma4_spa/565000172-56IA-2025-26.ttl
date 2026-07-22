@@ -1,0 +1,166 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Information
+:SistemasElectronicosDigitales_Course rdf:type guide:Course ;
+    sch:name "Sistemas Electronicos Digitales" ;
+    sch:courseCode 565000172 ;
+    guide:courseYear 2025 ;
+    guide:semester "Primer semestre" ;
+    guide:courseType "Optativa" .
+
+:GradoIngenieriaElectronica_Degree rdf:type guide:Degree ;
+    sch:name "56IA - Grado En Ingenieria Electronica Industrial Y Automatica" ;
+    guide:degreeCode "56IA" .
+
+:SistemasElectronicosDigitales_Guide rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje: Sistemas Electronicos Digitales" ;
+    sch:hasCourseInstance :SistemasElectronicosDigitales_Course ;
+    guide:numberOfCredits 7.5 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCompetency :CE24, :CE25, :CG1, :CG10, :CG3, :CG4, :CG6, :CG7 ;
+    guide:hasLearningResult :RA58, :RA59, :RA238, :RA239, :RA241, :RA242, :RA236, :RA237, :RA234, :RA240, :RA243 ;
+    guide:hasEvaluation :EvalSystem_SistemasDigitales ;
+    guide:hasDidacticResource :Recurso_Moodle, :Recurso_Git, :Recurso_ST, :Recurso_AMD ;
+    sch:instructor :RebecaHerreroMartin, :PedroLuisCastedoCepeda, :AlbertoBruneteGonzalez, :RubenNunezJudez, :GiuseppeConti .
+
+:ETS_Ingenieria_Design_Center rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Diseño Industrial" ;
+    guide:offers :GradoIngenieriaElectronica_Degree .
+
+# Faculty/Lecturers
+:RebecaHerreroMartin rdf:type guide:Lecturer ;
+    sch:name "Rebec: Rebeca Herrero Martin" ;
+    sch:email "rebeca.herrero@upm.es" ;
+    guide:office "C-108" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:PedroLuisCastedoCepeda rdf:type guide:Lecturer ;
+    sch:name "Pedro Luis Castedo Cepeda" ;
+    sch:email "pedroluis.castedo@upm.es" ;
+    guide:office "C-204" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:AlbertoBruneteGonzalez rdf:type guide:Lecturer ;
+    sch:name "Alberto Brunete Gonzalez" ;
+    sch:email "alberto.brunete@upm.es" ;
+    guide:office "C-107" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:RubenNunezJudez rdf:type guide:Lecturer ;
+    sch:name "Ruben Nuñez Judez" ;
+    sch:email "ruben.nunez@upm.es" ;
+    guide:office "C-108" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:GiuseppeConti rdf:type guide:Lecturer ;
+    sch:name "Giuseppe Conti" ;
+    sch:email "g.conti@upm.es" ;
+    guide:office "C-106" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+# Competencies
+:CE24 rdf:type guide:Competency ;
+    guide:competencyCode "CE 24" ;
+    guide:competencyDescription "Capacidad para diseñar sistemas electrónicos analógicos, digitales y de potencia." .
+
+:CE25 rdf:type guide:Competency ;
+    guide:competencyCode "CE 25" ;
+    guide:competencyDescription "Conocimiento y capacidad para el modelado y simulación de sistemas." .
+
+:CG1 rdf:type guide:Competency ;
+    guide:competencyCode "CG 1" ;
+    guide:competencyDescription "Conocer y aplicar los conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Industrial" .
+
+:CG10 rdf:type guide:Competency ;
+    guide:competencyCode "CG 10" ;
+    guide:competencyDescription "Creatividad." .
+
+# Learning Results
+:RA58 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA58" ;
+    guide:learningResultDescription "Conocimiento y capacidad para el modelado y simulación de sistemas electrónicos digitales." .
+
+:RA238 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA238" ;
+    guide:learningResultDescription "Realizar descripciones de circuitos mediante VHDL." .
+
+# Evaluation System
+:EvalSystem_SistemasDigitales rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación consta de un examen parcial y un examen global en aula. La nota final se calcula según la ponderación de los componentes." ;
+    guide:hasEvaluationTrial :ExamenParcial_Trial, :ExlamenGlobal_Trial, :TrabajoAsignatura_Trial .
+
+:ExamenParcial_Trial rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialType "Examen Escrito" .
+
+:ExlamenGlobal_Trial rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "global" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialType "Examen Escrito" .
+
+:TrabajoAsignatura_Trial rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "global" ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialType "Presentación en Grupo de Laboratorio" .
+
+# Syllabus and Topics
+:Syllabus_SistemasDigitales rdf:type guide:Syllabus ;
+    guide:hasItem :Tema1_Item, :Tema2_Item, :Tema3_Item, :Tema4_Item .
+
+:Tema1_Item rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Introducción a la microelectrónica, breve historia y tendencias actuales. Dispositivos Lógicos Programables (PL．PLD) y CPLD. FPGA." ;
+    guide:itemIndex 1 .
+
+:Tema2_Item rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Diseño mediante Lenguajes de Descripción Hardware (VHDL). Sintaxis dataflow, behavioural, estructural y simulación." ;
+    guide:itemIndex 2 .
+
+# Schedule and Activities
+:Schedule_SistemasDigitales rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week1, :Event_Week5, :Event_Week11 .
+
+:Event_Week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :Activity_LeccionMagistral_Tema1 .
+
+:Activity_LeccionMagistral_Tema1 rdf:type guide:Activity ;
+    guide:activityDescription "Lección Magistral Tema 1" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "LM" .
+
+:Event_Week5 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 5" ;
+    guide:hasActivity :Activity_Practica1 .
+
+:Activity_Practica1 rdf:type guide:Activity ;
+    guide:activityDescription "Práctica 1" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "PL" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:Recurso_Moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "La asignatura tiene una página en Moodle UPM con materiales." .
+
+:Recurso_Git rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Repositorios git" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "https://bitbucket.org/abrunete/sistemas-electronicos-digitales" .
+
+# Required Knowledge
+:ConocimientosPrevios_SistemasDigitales rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Electronica Digital Y Microprocesadores, Informatica, Informatica Industrial Y Comunicaciones" .

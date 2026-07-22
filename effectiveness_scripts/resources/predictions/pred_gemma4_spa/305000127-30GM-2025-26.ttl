@@ -1,0 +1,114 @@
+@prefix : <http://guia-md-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Structure
+:degree_30GM a guide:Degree ;
+    sch:name "Grado en Matemáticas" ;
+    guide:degreeCode "30GM" ;
+    guide:hasCourse :course_305000127 .
+
+:course_305000127 a guide:Course ;
+    sch:name "Modelización y Simulación III" ;
+    sch:courseCode 305000127 ;
+    guide:courseType "Obligatoria" ;
+    sch:hasCourseInstance :course_guide_305000127 .
+
+:course_guide_305000127 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Modelización y Simulación III" ;
+    guide:numberOfCredits 6.0 ;
+    guide:semester "Sexto semestre" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:inpersonHours "No especificado" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :syllabus_305000127 ;
+    guide:hasCompetency :comp_ce1, :comp_ce3, :comp_ce6, :comp_cg2 ;
+    guide:hasLearningResult :lr_ra146, :lr_ra193, :lr_ra194 ;
+    guide:hasDidacticResource :res_leonardo_fernandez, :res_george_farin ;
+    guide:hasEvaluation :eval_system_305000127 .
+
+# University Center and Lecturer
+:center_epes a guide:UniversityCenter ;
+    sch:name "Esc. Politéc. Enseñanza Superior (Epes)" ;
+    guide:offers :degree_30GM .
+
+:lecturer_mbarbero a guide:Lecturer ;
+    sch:name "Maria Barbero Liñan" ;
+    sch:email "m.barbero@upm.es" ;
+    guide:office "ETSAM" ;
+    guide:tutorshipsSchedule "Sin horario. Concretar por correo electrónico." .
+
+# Competencies
+:comp_ce1 a guide:Competency ;
+    guide:competencyCode "CE1" ;
+    guide:competencyDescription "Comprender y utilizar el lenguaje matemático. Adquirir la capacidad para enunciar propiedades en distintos campos de la Matemática..." .
+
+:comp_ce3 a guide:Competency ;
+    guide:competencyCode "CE3" ;
+    guide:competencyDescription "Asimilar la definición de un nuevo objeto matemático, en términos de otros ya conocidos, y ser capaz de utilizar este objeto en diferentes contextos." .
+
+:comp_ce6 a guide:Competency ;
+    guide:competencyCode "CE6" ;
+    guide:competencyDescription "Proponer, analizar, validar e interpretar modelos matemáticos de sistemas reales..." .
+
+:comp_cg2 a guide:Competency ;
+    guide:competencyCode "CG2" ;
+    guide:competencyDescription "Reconocer la presencia de la Matemática subyacente en la Naturaleza, en la Ciencia, en la Tecnología y en el Arte." .
+
+# Learning Results
+:lr_ra146 a guide:LearningResult ;
+    guide:learningResultCode "RA146" ;
+    guide:learningResultDescription "Programar, realizar e interpretar simulaciones de los modelos utilizados" .
+
+:lr_ra193 a guide:LearningResult ;
+    guide:learningResultCode "RA193" ;
+    guide:learningResultDescription "Conocer y explicar los usos de las curvas y superficies NURBS para resolver problemas de la vida real." .
+
+:lr_ra194 a guide:LearningResult ;
+    guide:learningResultCode "RA194" ;
+    guide:learningResultDescription "Identificar superficies mínimas en el espacio tridimensional." .
+
+# Syllabus
+:syllabus_305000127 a guide:Syllabus ;
+    guide:hasItem :item_design_geometrico, :item_robotica .
+
+:item_design_geometrico a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Diseño geométrico asistido por ordenador" .
+
+:item_robotica a guide:SyllablesItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Métodos geométricos en robótica" .
+
+# Evaluation System
+:eval_system_305000127 a guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación progresiva constará de pruebas escritas, prácticas y trabajos. Existe una prueba global de examen teórico-práctico." ;
+    guide:hasEvaluationTrial :trial_exam_theory, :trial_control_curvas .
+
+:trial_exam_theory a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+:trial_control_curvas a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialMode "Presencial" .
+
+# Didactic Resources
+:res_leonardo_fernandez a guide:DidacticResource ;
+    guide:bibliographyTitle "Leonardo Fernández. Diseño Geométrico Asistimo por Ordenador, UPM Press, 2021" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_george_farin a guide:DidacticResource ;
+    guide:bibliographyTitle "George Farin. Curves and Surfaces for CAGD. A Practical Guide, Morgan Kaufmann, 2002" ;
+    guide:bibliographyType "Bibliografía" .
+
+# Required Knowledge
+:req_knowledge_305000127 a guide:RequiredKnowledge ;
+    guide:previousCourses "Geometria Diferencial De Curvas Y Superficies, GeometrÍa I, GeometrÍa Ii, Estructuras Algebraicas, FÍsica, ProgramaciÓn, TopologÍa, Ecuaciones Diferenciales Ordinarias Ii, Ecuaciones Diferenciales Ordinarias I, AnÁlisis Complejo" ;
+    guide:previousKnowledge "Capacidad lectora en inglés." .

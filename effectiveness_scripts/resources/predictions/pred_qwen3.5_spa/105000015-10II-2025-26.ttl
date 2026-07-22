@@ -1,0 +1,64 @@
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://guia-mad-bench.es/data/course_guide_105000015> a guide:CourseGuide ;
+    sch:name "Programación Ii" ;
+    guide:numberOfCredits 6.0 ;
+    guide:syllabusDescription "Introducción a la programación orientada a objetos (POO). Objetivo principal presentar principios de resolución de problemas en POO y modelos de datos básicos."@es .
+
+<http://guia-mad-bench.es/data/degree_10II> a guide:Degree ;
+    sch:name "Grado En Ingenieria Informatica" ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course_programacion_i> .
+
+<http://guia-mad-bench.es/data/course_programacion_i> a guide:Course ;
+    sch:name "105000015 - Programación Ii" ;
+    guide:syllabusDescription "Introducción a la programación orientada a objetos (POO). Su objetivo principal es presentar a los estudiantes los principios de la resolución de problemas en el paradigma POO."@es .
+
+<http://guia-mad-bench.es/data/course_guide_105000015> sch:hasCourseInstance <http://guia-mad-bench.es/data/course_programacion_i> ;
+    guide:syllabusDescription "Este curso es una introducción a la programación orientada a objetos (POO)."@es .
+
+<http://guia-mad-bench.es/data/lecturer_javier_galve> a guide:Lecturer ;
+    sch:name "Javier Galve Frances" ;
+    guide:office "D-2315" ;
+    sch:email <mailto:javier.galve@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer_santiago_tapia> a guide:Lecturer ;
+    sch:name "Santiago Tapia Fernandez (Coordinador/a)" ;
+    guide:office "D-2307" ;
+    sch:email <mailto:santiago.tapia@upm.es> .
+
+<http://guia-mad-bench.es/data/competency_cg121> a guide:Competency ;
+    guide:competencyCode "CG-1/21" ;
+    guide:competencyDescription "Capacidad de resolución de problemas aplicando conocimientos de matemáticas, ciencias e ingeniería."@es .
+
+<http://guia-mad-bench.es/data/learning_result_ra287> a guide:LearningResult ;
+    guide:learningResultCode "RA287" ;
+    guide:learningResultDescription "Traducir especificaciones de tipos abstractos de datos (TADs) a implementaciones."@es .
+
+<http://guia-mad-bench.es/data/syllabus_programacion_i> a guide:Syllabus ;
+    sch:name "Temario Programación Ii" ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus_item_1> ,
+              <http://guia-mad-bench.es/data/syllabus_item_2> .
+
+<http://guia-mad-bench.es/data/syllabus_item_1> a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a la programación orientada a objetos (POO)"@es .
+
+<http://guia-mad-bench.es/data/evaluation_trial_aep> a guide:EvaluationTrial ;
+    sch:name "Actividades de Evaluación Progresiva en Aula" ;
+    guide:trialType "Prueba Telemática" ;
+    guide:gradePercentage 2.5 .
+
+<http://guia-mad-bench.es/data/evaluation_trial_eg> a guide:EvaluationTrial ;
+    sch:name "Examen Global" ;
+    guide:trialType "Examen Escrito" ;
+    guide:gradePercentage 60 ,
+              100 .
+
+<http://guia-mad-bench.es/data/schedule_event_1> a guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    sch:name "Presentación de la asignatura" ;
+    om:Unit <om:hour> .

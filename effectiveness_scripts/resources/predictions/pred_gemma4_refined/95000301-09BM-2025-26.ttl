@@ -1,0 +1,268 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://guia-mad-bench.es/data#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+_:courseGuide rdf:type guide:CourseGuide ;
+    sch:name "Física" ;
+    guide:numberOfCredits 6.0 ;
+    guide:teachingPeriod "2:2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:inpersonHours "Not specified" ;
+    guide:remoteHours "Not specified" ;
+    sch:inLanguage "Castellano" ;
+    sch:description "El programa de la asignatura cubre los temas de mecánica clásica, elasticidad, dinámica de fluidos y termodinámica." ;
+    guide:hasSyllabus _:syllabus ;
+    guide:hasEvaluation _:evalSystem ;
+    guide:hasCompetency _:compCE06, _:compCG01, _:compCG04, _:compCG05, _:compCG07, _:compCG08, _:compCG09, _:compCG11, _:compCE07, _:compCE10, _:compCE11 ;
+    guide:hasLearningResult _:lrRA31, _:lrRA4, _:lrRA30, _:lrRA17, _:lrRA55, _:lrRA132, _:lrRA155, _:lrRA212, _:lrRA209, _:lrRA34, _:lrRA35, _:lrRA33, _:lrRA131, _:lrRA150, _:lrRA36, _:lrRA37 ;
+    sch:director _:lecturerElisa ;
+    sch:instructor _:lecturerElisa, _:lecturerSimon, _:lecturerMiguel, _:lecturerDaniel, _:lecturerPablo ;
+    sch:activitiesWorkload "26-27 hours per ECTS credit" .
+
+# Course Instance
+_:course rdf:type guide:Course ;
+    sch:name "95000301 - Física" ;
+    guide:courseYear 2025 ;
+    guide:courseType "Básica" ;
+    guide:semester "Primer semestre" ;
+    sch:courseCode 95000301 ;
+    sch:hasCourseInstance _:courseGuide .
+
+# Degree Instance
+_:degree rdf:type guide:BachelorDegree ;
+    sch:name "09BM - Gr него En Ingenieria Biomedica" ;
+    guide:degreeCode "09BM" ;
+    guide:hasCourse _:course .
+
+# University Center Instance
+_:univCenter rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" ;
+    guide:offers _:degree .
+
+# Lecturers
+_:lecturerElisa rdf:type guide:Lecturer ;
+    sch:name "Elisa Antolin Fernandez" ;
+    sch:email "elisa.anturing@upm.es" ;
+    guide:office "Sin despacho asignado" ;
+    guide:tutorshipsSchedule "Sin horario. Previa petición de cita previa por email." .
+
+_:lecturerSimon rdf:type guide:Lecturer ;
+    sch:name "Simon Aurel Svatek" ;
+    sch:email "simon.svatek@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. Previa petición de cita previa por email." .
+
+_:lecturerMiguel rdf:type guide:Lecturer ;
+    sch:name "Miguel Montes Bajo" ;
+    sch:email "miguel.montes@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. Previa petición de cita previa por email." .
+
+_:lecturerDaniel rdf:type guide:Lecturer ;
+    sch:name "Daniel Fernandez Muñoz" ;
+    sch:email "daniel.fernandezm@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. Previa petición de cita previa por email." .
+
+_:lecturerPablo rdf:type guide:Lecturer ;
+    sch:name "Pablo Fernandez Palacios" ;
+    sch:email "pablo.fpalacios@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. Previa petición de cita previa por email." .
+
+# Competencies
+_:compCE06 rdf:type guide:Competency ;
+    guide:competencyCode "CE06" ;
+    guide:competencyDescription "Comprender y saber calcular el equilibrio y la dinámica de sistemas mecánicos" .
+
+_:compCG01 rdf:type guide:Competency ;
+    guide:competencyCode "CG01" ;
+    guide:competencyDescription "Desarrollar las habilidades de aprendizaje necesarias para emprender actividades o estudios posteriores de forma autónoma y con confianza." .
+
+_:compCG04 rdf:type guide:Competency ;
+    guide:competencyCode "CG04" ;
+    guide:competencyDescription "Trabajar de forma adecuada en un laboratorio incluyendo un registro anotado de las actividades y seguridad, manipulación y eliminación de residuos químicos o biológicos." .
+
+_:compCG05 rdf:type guide:Competency ;
+    guide:competencyCode "CG05" ;
+    guide:competencyDescription "Tener capacidad de análisis y síntesis, pensar de forma integrada, abordar los problemas desde diferentes perspectivas y estar siempre preparado para ¿to think out of the box¿" .
+
+_:compCG07 rdf:type guide:Competency ;
+    guide:competencyCode "CG07" ;
+    guide:competencyDescription "Ser capaz de utilizar el método científico." .
+
+_:compCG08 rdf:type guide:Competency ;
+    guide:competencyCode "CG08" ;
+    guide:competencyDescription "Entender, aplicar, adaptar y desarrollar herramientas, técnicas y protocolos de experimentación con rigor metodológico comprendiendo las limitaciones que tiene la aproximación experimental." .
+
+_:compCG09 rdf:type guide:Competency ;
+    guide:competencyCode "CG09" ;
+    guide:competencyDescription "Tener capacidad de descripción, cuantificación, análisis y evaluación de resultados experimentales." .
+
+_:compCG11 rdf:type guide:Competency ;
+    guide:competencyCode "CG11" ;
+    guide:competencyDescription "Elaborar y defender argumentos y resolver los problemas de forma efectiva y creativa." .
+
+_:compCE07 rdf:type guide:Competency ;
+    guide:competencyCode "CE07" ;
+    guide:competencyDescription "Saber aplicar las ecuaciones elementales de la mecánica de fluidos en el cálculo de sistemas de conducción convencionales macroscópicos y en microfluídica." .
+
+_:compCE10 rdf:type guide:Competency ;
+    guide:competencyCode "CE10" ;
+    guide:competencyDescription "Comprender y saber aplicar la interrelación y las equivalencias entre sistemas mecánicos, hidráulicos, térmicos y eléctricos." .
+
+_:compCE11 rdf:type guide:Competency ;
+    guide:competencyCode "CE11" ;
+    guide:competencyDescription "Calcular y representar gráficamente los parámetros más relevantes de un experimento utilizando funciones matemáticas." .
+
+# Learning Results
+_:lrRA31 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA31 - RA34" ;
+    guide:learningResultDescription "Conocer, comprender y dominar los conceptos y principios básicos de la Dinámica de sistemas" .
+
+_:lrRA4 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA4" ;
+    guide:learningResultDescription "Capacidad para emplear con rigor el lenguaje matemático." .
+
+_:lrRA30 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA30 - RA32" ;
+    guide:learningResultDescription "Conocer, comprender y dominar los conceptos y principios básicos de la Dinámica del punto material" .
+
+_:lrRA17 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA17" ;
+    guide:learningResultDescription "Capacidad para elaborar informes con el tratamiento y la interpretación adecuada de resultados experimentales" .
+
+_:lrRA55 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA55" ;
+    guide:learningResultDescription "Elaborar documentos y preparar presentaciones para difundir los resultados de los trabajos" .
+
+_:lrRA132 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA132" ;
+    guide:learningResultDescription "Comprender las ventajas y el alcance del lenguaje matemático en la descripción de los problemas de disciplinas técnicas." .
+
+_:lrRA155 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA155" ;
+    guide:learningResultDescription "Saber ajustar correctamente los datos de mediciones experimentales por regresión lineal y no lineal con herramientas informáticas." .
+
+_:lrRA212 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA212" ;
+    guide:learningResultDescription "Conocer, comprender y analizar las ecuaciones de balance y principios de conservación que rigen el equilibrio y la dinámica en los medios continuos" .
+
+_:lrRA209 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA209" ;
+    guide:learningResultDescription "Conocer, comprender y analizar las ecuaciones de la elasticidad como relaciones básicas del comportamiento de los sólidos y tejidos biológicos" .
+
+_:lrRA34 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA34 - RA41" ;
+    guide:learningResultDescription "Conocer, aplicar y analizar los conceptos, leyes y principios de la Termodinámica" .
+
+_:lrRA35 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA35 - RA42" ;
+    guide:learningResultDescription "Conocer y analizar los ciclos termodinámicos reversibles seguidos por un gas perfecto" .
+
+_:lrRA33 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA33 - RA40" ;
+    guide:learningResultDescription "Conocer, aplicar y analizar los conceptos y leyes que rigen el comportamiento de fluidos en reposo y en movimiento" .
+
+_:lrRA131 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA131" ;
+    guide:learningResultDescription "Reconocer la importancia del razonamiento abstracto y la necesidad de trasladar los problemas de ingeniería a formulaciones matemáticas." .
+
+_:lrRA150 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA150" ;
+    guide:learningResultDescription "Representar datos y realizar representaciones derivadas de los mismos." .
+
+_:lrRA36 rdf:type guide:LearningResult ;
+    guide:learningResultలకు "RA36 - RA43" ;
+    guide:learningResultDescription "Comprender y analizar el segundo y tercer principio de la Termodinámica" .
+
+_:lrRA37 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA37 - RA44" ;
+    guide:learningResultDescription "Adquirir los conocimientos y técnicas necesarias para resolver y analizar problemas de Termodinámica" .
+
+# Syllabus
+_:syllabus rdf:type guide:Syllabus ;
+    guide:hasItem _:itemMecanica, _:itemElasticidad, _:itemFluidos, _:itemTermodinamica .
+
+_:itemMecanica rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Mecánica: Análisis dimensional. Vectores. Dinámica y cinemática de la partícula. Trabajo y energía. Sistemas de partículas y sólido rígido. Equilibrio y estática." .
+
+_:itemElasticidad rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Elasticidad: Ley de Hooke, coeficientes elásticos. Flexión y torsión." .
+
+_:itemFluidos rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Fluidos: Fluidos ideales. Fluidos reales. Fenomenos de superficie y capilaridad." .
+
+_:itemTermodinamica rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Termodinámica: Conceptos generales. Teoría cinética de los gases. Primer Principio de la Termodinámica. Máquinas térmicas y segundo principio." .
+
+# Evaluation System
+_:evalSystem rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Los alumnos serán evaluados mediante evaluación progresiva. En este sistema, la calificación se calcula teniendo en cuenta todas las actividades de evaluación realizadas durante el cuatrimestre." ;
+    guide:hasEvaluationTrial _:trialPrueba1, _:trialPrueba2, _:trialControl1, _:trialLab, _:trialFinal .
+
+_:trialPrueba1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "37.5%" ;
+    guide:trialMode "Presencial" ;
+    guide:trialDescription "Evaluación (Prueba 1)" .
+
+_:trialPrueba2 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "37.5%" ;
+    guide:trialMode "Presencial" ;
+    guide:trialDescription "Evaluación (Prueba 2)" .
+
+_:trialControl1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "5%" ;
+    guide:trialMode "Presencial" ;
+    guide:trialDescription "Primera prueba de control" .
+
+_:trialLab rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Trabajo en Grupo" ;
+    guide:gradePercentage "15%" ;
+    guide:trialMode "Presencial" ;
+    guide:trialDescription "Evaluación del laboratorio" .
+
+_:trialFinal rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "75%" ;
+    guide:trialMode "Presencial" ;
+    guide:trialDescription "Examen final (Prueba evaluación global)" .
+
+# Schedule Events and Activities
+_:eventWeek4 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "4" ;
+    guide:hasActivity _:actControl1 .
+
+_:actControl1 rdf:type guide:Activity ;
+    guide:activityDescription "Primera prueba de control" ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:attendanceType "Presencial" ;
+    guide:activityDuration 0.33 .
+
+# Didactic Resources
+_:resTipler rdf:type guide:DidacticResource ;
+    sch:name "Tipler, P.A., Mosca, G. Física, vol. 1 y 2, 6ª edición, Ed. Reverté, 2010" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Libro clásico de Física General." .
+
+_:resSears rdf:type guide:DidacticResource ;
+    sch:name "Sears, Zemansky, Young y Freedman, Física universitaria (12ª Ed.)" ;
+    guide:bibliographyType "Bibliografía" .
+
+_:resMoodle rdf:type guide:DidacticResource ;
+    sch:name "http://moodle.upm.es/titulaciones/oficiales/" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Plataforma de comunicación con los estudiantes." .
+
+_:resKhan rdf:type guide:DidacticResource ;
+    sch:name "https://www.khanacademy.org/science/physics" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Portal online con explicaciones en vídeo y escritas de Física General (en inglés)" .

@@ -1,0 +1,89 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course_guide_ANX_PR_CL_001_01> rdf:type :CourseGuide ;
+    sch:name "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer_vicente_felipe_gomez_encinas> ,
+                <http://guia-mad-bench.es/data/lecturer_lazaro_mediavilla_saldaña> ;
+    sch:description "Actividades Deportivas Acuaticas En La Naturaleza"@en ;
+    guide:teachingPeriod "2025-26"^^xsd:string ;
+    guide:numberOfCredits 3.0^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/course_13AM> rdf:type :Course , sch:CourseInstance ;
+    sch:name "Actividades Deportivas Acuaticas En La Naturaleza"@en ;
+    sch:courseCode 133000050^^xsd:integer ;
+    guide:numberOfCredits 3.0^^xsd:string .
+
+<http://guia-mad-bench.es/data/degree_master_agua> rdf:type :Degree , sch:CourseInstance ;
+    sch:name "Master Universitario El Agua En El Medio Natural"@en ;
+    dct:title "13AM - Master Universitario el Agua en el Medio Natural. Usos y Gestion."@en .
+
+<http://guia-mad-bench.es/data/course_guide_ANX_PR_CL_001_01> guide:hasCourse <http://guia-mad-bench.es/data/course_13AM> ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule_2S_2025-26> .
+
+<http://guia-mad-bench.es/data/lecturer_vicente_felipe_gomez_encinas> rdf:type :Lecturer , sch:Person ;
+    sch:name "Vicente Felipe Gomez Encinas"@en ;
+    guide:Lecturer <http://guia-mad-bench.es/data/course_guide_ANX_PR_CL_001_01> .
+
+<http://guia-mad-bench.es/data/lecturer_lazaro_mediavilla_saldaña> rdf:type :Lecturer , sch:Person ;
+    sch:name "Lazaro Mediavilla Saldaña"@en ;
+    guide:Lecturer <http://guia-mad-bench.es/data/course_guide_ANX_PR_CL_001_01> .
+
+<http://guia-mad-bench.es/data/lecturer_vicente_felipe_gomez_encinas> sch:email "v.gencinas@upm.es"^^xsd:string ;
+    guide:office "702"@en .
+
+<http://guia-mad-bench.es/data/syllabus_13AM> rdf:type :Syllabus , sch:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus_item_1> ,
+                 <http://guia-mad-bench.es/data/syllabus_item_2> .
+
+<http://guia-mad-bench.es/data/competency_CB7> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/lr_RA57> .
+
+<http://guia-mad-bench.es/data/course_guide_ANX_PR_CL_001_01> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_13AM> ;
+    sch:description "Los contenidos teóricos y prácticos, asi como las experiencias personales..."@en .
+
+<http://guia-mad-bench.es/data/course_guide_ANX_PR_CL_001_01> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluation_system_13AM> ;
+    sch:description "Evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/schedule_2S_2025-26> rdf:type :Schedule , sch:Schedule ;
+    guide:eventWeek 1^^xsd:string ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://guia-mad-bench.es/data/syllabus_item_1> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Conceptos y fundamentos del Ocio, Tiempo Libre y la Recreación Deportiva"@en ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule_2S_2025-26> sch:eventSchedule <http://guia-mad-bench.es/data/event_schedule_semester_1> .
+
+<http://guia-mad-bench.es/data/evaluation_system_13AM> rdf:type :EvaluationSystem ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial_progresiva>,
+                            <http://guia-mad-bench.es/data/trial_global>.
+
+<http://guia-mad-bench.es/data/evaluation_system_13AM> sch:description "Evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/syllabus_item_2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Demanda de actividades físicas y deportivas en el tiempo libre y de ocio"@en ;
+    guide:itemIndex 2^^xsd:integer .
+
+<http://guia-mad-bench.es/data/trial_progresiva> rdf:type :EvaluationTrial ;
+    sch:name "Evaluación Progresiva"@en ;
+    guide:trialType "Progresiva"^^xsd:string ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://guia-mad-bench.es/data/trial_global> rdf:type :EvaluationTrial ;
+    sch:name "Evaluación Global"@en ;
+    guide:trialType "Global"^^xsd:string ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://guia-mad-bench.es/data/trial_progresiva> sch:eventSchedule <http://guia-mad-bench.es/data/event_schedule_semester_3> ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation_trial_exam_written>.
+
+<http://guia-mad-bench.es/data/syllabus_item_7> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Gestión del riesgo en actividades fluviales y barrancos"@en ;
+    guide:itemIndex 7^^xsd:integer .

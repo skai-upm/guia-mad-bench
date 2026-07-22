@@ -1,0 +1,244 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix data: <http://guia-mad-bench.es/data/guide/> .
+
+#################################################################
+#    Classes (from Ontology Reference)
+#################################################################
+
+###  http://w3id.org/def/guia#CourseGuide
+guide:CourseGuide rdf:type owl:Class ;
+                  rdfs:subClassOf sch:CourseInstance ;
+                  rdfs:comment "A structured academic document that describes a course, including objectives, contents, methodology, resources, schedule, and evaluation."@en .
+
+###  http://w3id.org/def/guia#Degree
+guide:Degree rdf:type owl:Class ;
+             rdfs:subClassOf guide:BachelorDegree ,
+                            guide:MastersDegree ; # Assuming generic Degree structure if needed, but text says Bachelor.
+             rdfs:comment "An academic degree programme that structures and groups courses within a formal higher education curriculum."@en .
+
+###  http://w3id.org/def/guia#BachelorDegree
+guide:BachelorDegree rdf:type owl:Class ;
+                     rdfs:subClassOf guide:Degree ;
+                     rdfs:comment "An undergraduate degree programme that provides foundational higher education in a given field of study."@en .
+
+###  http://w3id.org/def/guia#Lecturer
+guide:Lecturer rdf:type owl:Class ;
+               rdfs:subClassOf sch:Person ;
+               rdfs:comment "A teaching person responsible for delivering, coordinating, or supporting a course within an academic programme."@en .
+
+###  http://w3id.org/def/guia#Competency
+guide:Competency rdf:type owl:Class ;
+                 rdfs:comment "A capability, skill, or integrated learning outcome that students are expected to develop through the course."@en .
+
+###  http://w3id.org/def/guia#LearningResult
+guide:LearningResult rdf:type owl:Class ;
+                     rdfs:comment "A specific and assessable statement of what a student is expected to know, understand, or be able to do after completing the course."@en .
+
+#################################################################
+#    Object Properties (from Ontology Reference)
+#################################################################
+
+###  http://w3id.org/def/guia#hasSyllabus
+guide:hasSyllabus rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:CourseGuide ;
+                  rdfs:range guide:Syllabus .
+
+###  http://w3id.org/def/guia#hasActivity
+guide:hasActivity rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:ScheduleEvent ;
+                  rdfs:range guide:Activity .
+
+###  http://w3id.org/def/guia#hasCompetency
+guide:hasCompetency rdf:type owl:ObjectProperty ;
+                    rdfs:domain guide:CourseGuide ;
+                    rdfs:range guide:Competency .
+
+###  http://w3id.org/def/guia#hasEvaluationTrial
+guide:hasEvaluationTrial rdf:type owl:ObjectProperty ;
+                         rdfs:domain guide:EvaluationSystem ;
+                         rdfs:range guide:EvaluationTrial .
+
+#################################################################
+#    Data Properties (from Ontology Reference)
+#################################################################
+
+###  http://w3id.org/def/guia:numberOfCredits
+guide:numberOfCredits rdf:type owl:DatatypeProperty ;
+                      rdfs:domain guide:CourseGuide ;
+                      rdfs:range xsd:decimal .
+
+###  https://schema.org/name
+sch:name rdf:type owl:DatatypeProperty ;
+         rdfs:domain guide:Lecturer ,
+                    guide:SyllabusItem ,
+                    guide:EvaluationTrial ;
+         rdfs:comment "Provides the name of an entity such as a course, person, or university center."@en .
+
+###  https://schema.org/email
+sch:email rdf:type owl:DatatypeProperty ;
+          rdfs:domain guide:Lecturer ;
+          rdfs:range xsd:string .
+
+#################################################################
+#    Instances (Extraction from Document)
+#################################################################
+
+data:gauge/GA_08NV_85003112 rdf:type guide:CourseGuide ,
+                                      sch:CourseInstance ;
+                             dct:title "Guía de Aprendizaje"@en ;
+                             dc:description "Cálculo I - Grado En Arquitectura Naval 2025/26" .
+
+data:gauge/GA_08NV_85003112 guide:numberOfCredits "6.0"^^xsd:decimal ;
+                            sch:name "85003112 - Cálculo I"@en ;
+                            dct:creator <http://guia-mad-bench.es/data/guide/lecturer/CJ_Meroño> ,
+                                     <http://guia-mad-bench.es/data/guide/lecturer/AP_Pire> .
+
+data:gauge/GA_08NV_85003112 guide:teachingPeriod "Septiembre-Enero"@en ;
+                             sch:inLanguage "Castellano"^^xsd:string ;
+                             dct:publisher <http://guia-mad-bench.es/data/guide/organization/E.T.S._de_Ingenieros_Navales> .
+
+data:gauge/GA_08NV_85003112 guide:hasCourseInstance data:gauge/course/CALCULO_I ;
+                            sch:courseCode "85003112"^^xsd:string .
+
+#################################################################
+#    Degree Instance
+#################################################################
+
+data:gauge/degree/GRADE_08NV rdf:type guide:BachelorDegree ,
+                                      guide:Degree ;
+                             dct:title "Grado En Arquitectura Naval"@en ;
+                             sch:name "08 - E.T.S. De Ingenieros Navales" .
+
+data:gauge/course/CALCULO_I rdf:type guide:Course ,
+                                     sch:Course ;
+                            guide:numberOfCredits "6.0"^^xsd:decimal ;
+                            guide:courseYear 2025-26 ; # Using integer as per ontology range for course year if applicable, though text says academic year string. Ontology defines xsd:integer. I'll use the numeric part or just leave it out to be safe with data types in document context (text is "2025/26").
+                            sch:description "Cálculo I - Primer curso".
+
+#################################################################
+#    Lecturers Instances
+#################################################################
+
+data:gauge/lecturer/CJ_Meroño rdf:type guide:Lecturer ,
+                                        sch:Person ;
+                              dct:title "Cristobal Jacobo Meroño Moreno"@en ;
+                              sch:name "Cristobal J. Meroño" .
+
+data:gauge/lecturer/CJ_Meroño sch:email <http://guia-mad-bench.es/data/guide/email/cj.merono@upm.es>^^xsd:string ;
+                               guide:tutorshipsSchedule "Sin horario.<br>Por determinar, se mostrará en el Moodle de la asignatura. Es aconsejable citarse con anterioridad mediante correo electrónico." .
+
+data:gauge/lecturer/CJ_Meroño sch:office <http://guia-mad-bench.es/data/guide/location/P1_02>^^xsd:string ;
+                               guide:scholarshipSchedule "Sin horario. Por determinar, se mostrará en el Moodle de la asignatura." .
+
+data:gauge/lecturer/AP_Pire rdf:type guide:Lecturer ,
+                                       sch:Person ;
+                             dct:title "Alicia Canton Pire"@en ;
+                             sch:name "Alicia C. Pire" .
+
+data:gauge/lecturer/AP_Pire sch:email <http://guia-mad-bench.es/data/guide/email/alicia.canton@upm.es>^^xsd:string ;
+                            guide:tutorshipsSchedule "Sin horario.<br>Por determinar, se mostrarán en el Moodle de la asignatura. Es aconsejable citarse con anterioridad con un mensaje de correo electrónico." .
+
+#################################################################
+#    Competencies Instances
+#################################################################
+
+data:gauge/competency/CB1 rdf:type guide:Competency ;
+                          sch:name "CB1"@en ;
+                          guide:competencyCode <http://guia-mad-bench.es/data/guide/code/CB1>^^xsd:string .
+
+data:gauge/competency/CB5 rdf:type guide:Competency ;
+                          sch:name "CB5"^^xsd:string ;
+                          guide:competencyCode <http://guia-mad-bench.es/data/guide/code/CB5>^^xsd:string .
+
+data:gauge/competency/CE1 rdf:type guide:Competency ;
+                          sch:name "CE 1"@en ;
+                          guide:competencyCode <http://guia-mad-bench.es/data/guide/code/CE_1>^^xsd:string .
+
+#################################################################
+#    Learning Results Instances
+#################################################################
+
+data:gauge/result/RA20 rdf:type guide:LearningResult ;
+                       sch:name "RA 20"@en ;
+                       guide:learningResultCode <http://guia-mad-bench.es/data/guide/code/RA_20>^^xsd:string .
+
+data:gauge/result/RA21 rdf:type guide:LearningResult ;
+                        sch:name "RA 21"^^xsd:string ;
+                        guide:learningResultCode <http://guia-mad-bench.es/data/guide/code/RA_21>^^xsd:string .
+
+#################################################################
+#    Syllabus Instances
+#################################################################
+
+data:gauge/syllabus/SYLLABUS_CALCULO_I rdf:type guide:Syllabus ;
+                                        sch:name "Temario Cálculo I"@en ;
+                                        dct:creator <http://guia-mad-bench.es/data/guide/lecturer/CJ_Meroño> .
+
+# Syllabus Items (Representative)
+data:gauge/syllabusitem/T1_0 rdf:type guide:SyllabusItem ;
+                              sch:name "Números complejos"@en ;
+                              guide:syllabusDescription <http://guia-mad-bench.es/data/guide/desc/Numeros_Complejos>^^xsd:string .
+
+data:gauge/syllabusitem/T2_0 rdf:type guide:SyllabusItem ;
+                              sch:name "Funciones de variable real. Límites y derivadas"@en ;
+                              guide:syllabusDescription <http://guia-mad-bench.es/data/guide/desc/Funciones_Real>^^xsd:string .
+
+#################################################################
+#    Schedule Instances
+#################################################################
+
+data:gauge/schedule/SCHED_CALCULO_I rdf:type guide:Schedule ,
+                                               sch:EventSchedule ;
+                                     dct:title "Cronograma Cálculo I"@en .
+
+data:gauge/event/EVENT_1S_SEM1 rdf:type guide:ScheduleEvent ;
+                                sch:name <http://guia-mad-bench.es/data/guide/name/Tema_1>^^xsd:string ;
+                                guide:eventWeek 2025-09 , # Assuming Sept is week 1 or similar. Document says "Semestre" and weeks are not explicitly numbered but implied by table rows (Sem). I'll use the semester number as a proxy for event index if needed, but ontology has `guide:activityDurationUnit`.
+                                guide:eventIndex 1 .
+
+#################################################################
+#    Evaluation System Instances
+#################################################################
+
+data:gauge/evalsystem/EVAL_CALCULO_I rdf:type guide:EvaluationSystem ;
+                                      sch:name "Sistema de Evaluación Cálculo I"@en .
+
+data:gauge/trial/TRIAL_CONTROL_1 rdf:type guide:EvaluationTrial ,
+                                       sch:EventSchedule ;
+                                   dct:title <http://guia-mad-bench.es/data/guide/name/Control_Temas>^^xsd:string ;
+                                   guide:trialType "Examen Escrito"^^xsd:string .
+
+data:gauge/trial/TRIAL_CONTROL_1 guide:evaluationDescription "Técnica del tipo Examen Escrito. Evaluación Progresiva."@en ;
+                                  sch:name <http://guia-mad-bench.es/data/guide/name/Control_Temas>^^xsd:string ;
+                                  guide:trialMode "Presencial"^^xsd:string .
+
+data:gauge/trial/TRIAL_CONTROL_1 guide:gradePercentage 40 , # Using xsd:decimal or string? Ontology says `guide:gradePercentage` is `rdf:langString`. I'll use langString.
+                                 sch:name <http://guia-mad-bench.es/data/guide/name/Control_Temas>^^xsd:string ;
+                                  guide:minScore "5 / 10" .
+
+data:gauge/trial/TRIAL_FINAL rdf:type guide:EvaluationTrial ,
+                                       sch:EventSchedule ;
+                               dct:title <http://guia-mad-bench.es/data/guide/name/Examen_Final>^^xsd:string ;
+                               guide:trialType "Examen Escrito"@en ; # Ontology says `guide:trialType` is `rdf:langString`.
+
+data:gauge/trial/TRIAL_FINAL sch:name <http://guia-mad-bench.es/data/guide/name/Examen_Final>^^xsd:string ;
+                             guide:evaluationDescription "Técnica del tipo Examen Escrito. Evaluación Global."@en .
+
+#################################################################
+#    Didactic Resources Instances
+#################################################################
+
+data:gauge/resource/MOODLE rdf:type guide:DidacticResource ,
+                                    sch:EventSchedule ;
+                            dct:title <http://guia-mad-bench.es/data/guide/name/Plataforma>^^xsd:string ;
+                            guide:bibliographyType "Recursos web" .
+
+#################################################################

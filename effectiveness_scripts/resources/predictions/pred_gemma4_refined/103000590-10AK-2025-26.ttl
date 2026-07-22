@@ -1,0 +1,165 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:course_guide_103000590 a guide:CourseGuide ;
+    sch:name "Computer Security" ;
+    sch:courseCode 103000590 ;
+    guide:numberOfCredits 4.0 ;
+    guide:courseType "Optional/elective" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:semester "Semester 1" ;
+    sch:inLanguage "English" ;
+    guide:hasSyllabus :syllabus_103000590 ;
+    guide:hasEvaluation :evaluation_system_103000590 ;
+    guide:hasCompetency :competency_CG1, :competency_CG13, :competency_CG4, :competency_CG8, :competency_CG9, :competency_CGI20, :competency_CGI23 ;
+    guide:hasLearningResult :learning_result_RA12, :learning_result_RA112 ;
+    sch:instructor :lecturer_manuel_carro_liniares ;
+    sch:description "This course will focus on providing the students with a global view of the field of computer security. Classes will be divided in 2 independent blocks of lectures." .
+
+# Degree and University Center
+:degree_10AK a guide:Degree ;
+    sch:name "Master Universitario En Software Y Sistemas" ;
+    guide:degreeCode "10AK" ;
+    guide:hasCourse :course_103000590 .
+
+:university_center_ets a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Informáticos" ;
+    guide:offers :degree_10AK .
+
+# Faculty Members
+:lecturer_julio_marino_carballo a guide:Lecturer ;
+    sch:name "Julio Mari $\text{a}$no Carballo" ;
+    guide:office "D-2308" ;
+    sch:email "julio.marino@upm.es" ;
+    guide:tutorshipsSchedule "Tu - 15:00 - 17:00, W - 10:00 - 12:00, W - 15:00 - 17:00" .
+
+:lecturer_manuel_carro_liniares a guide:Lecturer ;
+    sch:name "Manuel Carro Li$\text{ñ}$ares" ;
+    guide:office "2303" ;
+    sch:email "manuel.carro@upm.es" .
+
+:lecturer_juan_caballero a guide:Lecturer ;
+    sch:name "Juan Caballero" ;
+    sch:email "Juan.caballero@imdea.org" .
+
+:lecturer_srdjan_matic a guide:Lecturer ;
+    sch:name "Srdjan Matic" ;
+    sch:email "srdjan.matic@imdea.org" .
+
+:lecturer_alessandra_gorla a guide:Lecturer ;
+    sch:name "Alessandra Gorla" ;
+    sch:email "alessandra.gorla@imdea.org" .
+
+# Syllabus
+:syllabus_103000590 a guide:Syllabus ;
+    guide:hasItem :syllabus_item_1, :syllabus_item_2, :syllabus_item_3 .
+
+:syllabus_item_1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introduction to Security" .
+
+:syllabus_item_2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Network and web security" .
+
+:syllabus_item_3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Software security" .
+
+# Competencies
+:competency_CG1 a guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos dentro de contextos más amplios (o multidisciplinares) relacionados con su área de estudio." .
+
+:competency_CG13 a guide:Competency ;
+    guide:competencyCode "CG13" ;
+    guide:competencyDescription "Apreciación de los límites del conocimiento actual y de la aplicación práctica de la tecnología más reciente." .
+
+:competency_CG4 a guide:Competency ;
+    guide:competencyCode "CG4" ;
+    guide:competencyDescription "Que los estudiantes posean las habilidades de aprendizaje que les permitan continuar estudiando de un modo que habrá de ser en gran medida autodirigido o autónomo." .
+
+:competency_CG8 a guide:Competency ;
+    guide:competencyCode "CG8" ;
+    guide:competencyDescription "Planteamiento y resolución de problemas también en áreas nuevas y emergentes de su disciplina" .
+
+:competency_CG9 a guide:Competency ;
+    guide:competencyCode "CG9" ;
+    guide:competencyDescription "Aplicación de los métodos de resolución de problemas más recientes o innovadores y que puedan implicar el uso de otras disciplinas" .
+
+:competency_CGI20 a guide:Competency ;
+    guide:competencyCode "CGI20" ;
+    guide:competencyDescription "Adquirir conocimientos científicos avanzados del campo de la informática que le permitan generar nuevas ideas dentro de una línea de investigación." .
+
+:competency_CGI23 a guide:Competency ;
+    guide:competencyCode "CGI23" ;
+    guide:competencyDescription "Capacidad de leer y comprender publicaciones dentro de su ámbito de estudio/investigación, así como su catalogación y valor científico" .
+
+# Learning Outcomes
+:learning_result_RA12 a guide:LearningResult ;
+    guide:learningResultCode "RA12" ;
+    guide:learningResultDescription "Be familiar with examples of real applications and research trends and lines" .
+
+:learning_result_RA112 a guide:LearningResult ;
+    guide:learningResultCode "RA112" ;
+    guide:learningResultDescription "Identify computer security threats and decide the best proactive and reactive measures against them" .
+
+# Evaluation System
+:evaluation_system_103000590 a guide:EvaluationSystem ;
+    guide:evaluationDescription "The evaluation will be based on two exams: mid-term and final." ;
+    guide:hasEvaluationTrial :trial_midterm, :trial_global .
+
+:trial_midterm a guide:EvaluationTrial ;
+    sch:name "Midterm exam" ;
+    guide:evaluationType "Progressive assessment" ;
+    guide:gradePercentage "50%" ;
+	guide:minimumScore "2 / 10" ;
+    guide:trialMode "Presential" ;
+    guide:hasScheduleEvent :event_week9 .
+
+:trial_global a guide:EvaluationTrial ;
+    sch:name "Global exam" ;
+    guide:evaluationType "Global examination" ;
+    guide:gradePercentage "100%" ;
+	guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presential" ;
+    guide:hasScheduleEvent :event_week17 .
+
+# Schedule and Activities
+:event_week9 a guide:ScheduleEvent ;
+    guide:eventWeek "9" ;
+    guide:hasActivity :activity_midterm_exam .
+
+:activity_midterm_exam a guide:Activity ;
+    guide:activityDescription "Midterm exam" ;
+    guide:activityFormat "Written test" ;
+    guide:attendanceType "Face-to-face" ;
+    guide:activityDuration 2.0 .
+
+:event_week17 a guide:ScheduleEvent ;
+    guide:eventWeek "17" ;
+    guide:hasActivity :activity_global_exam .
+
+:activity_global_exam a guide:Activity ;
+    guide:activityDescription "Global exam" ;
+    guide:activityFormat "Written test" ;
+    guide:attendanceType "Face-to-face" ;
+    guide:activityDuration 2.0 .
+
+# Teaching Resources
+:resource_various a guide:DidacticResource ;
+    guide:bibliographyTitle "Various" ;
+    guide:bibliographyType "Others" ;
+    guide:bibliographyDescription "Will be decided based on the selected topics." .
+
+:course_guide_103000590 guide:hasDidacticResource :resource_various .
+
+# Required Knowledge
+:knowledge_prior a guide:RequiredKnowledge ;
+    guide:previousKnowledge "An undergraduate level course on computer security is desired but not required. Some demonstrable knowledge on the basic principles of computer security is necessary." .
+
+:course_guide_103000590 guide:hasRequiredKnowledge :knowledge_prior .

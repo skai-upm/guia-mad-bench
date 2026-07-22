@@ -1,0 +1,128 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.string.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Information
+guide:Course_65001030 a guide:Course ;
+    sch:name "Laboreo De Minas I" ;
+    guide:courseCode 65001030 ;
+    guide:courseType "Optativa" ;
+    sch:numberOfCredits 4.5 ;
+    guide:semester "Quinto semestre" .
+
+guide:CourseGuide_65001030 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Laboreo De Minas I" ;
+    sch:instructor guide:Lecturer_JuanHerrera ;
+    sch:director guide:Lecturer_JuanHerrera ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:numberOfCredits 4.5 ;
+    guide:hasSyllabus guide:Syllabus_65001030 ;
+    guide:hasCompetency guide:Comp_CG1, guide:Comp_CG2, guide:Comp_CG3, guide:Comp_CG4, guide:Comp_CG5, guide:Comp_CG6, guide:Comp_CG7, guide:Comp_CG9, guide:Comp_F22, guide:Comp_F25, guide:Comp_F27, guide:Comp_F29, guide:Comp_F30 ;
+    guide:hasLearningResult guide:LR_RA162, guide:LR_RA294, guide:LR_RA297, guide:LR_RA295, guide:LR_RA296, guide:LR_RA298, guide:LR_RA161 ;
+    guide:hasEvaluation guide:EvalSystem_65001030 ;
+    guide:hasDidacticResource guide:Res_B1, guide:Res_B2, guide:Res_B3 ;
+    guide:otherInformation "La asignatura se imparte en el marco de la metodología CDIO." .
+
+guide:Degree_06TM a guide:Degree ;
+    sch:name "06TM - Grado En Ingenieria En Tecnologia Minera" ;
+    guide:degreeCode "06TM" .
+
+guide:UniversityCenter_ETS a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Minas y Energía" ;
+    guide:offers guide:Degree_06TM .
+
+# Lecturers
+guide:Lecturer_JuanHerrera a guide:Lecturer ;
+    sch:name "Juan Herrera Herbert" ;
+    sch:email "juan.herradera@upm.es" ;
+    guide:office "208 y/o 218" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 12:00 - 14:00, J - 10:00 - 12:00" .
+
+guide:Lecturer_CarlosLopez a guide:Lecturer ;
+    sch:name "Carlos Lopez Jimeno" ;
+    sch:email "carlos.lopezj@upm.es" ;
+    guide:office "211" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 12:00 - 14:00, J - 10:00 - 12:00" .
+
+guide:Lecturer_JesusCaceres a guide:Lecturer ;
+    sch:name "Jesus Caceres Jimeno" ;
+    sch:email "jesus.caceres@upm.es" ;
+    guide:office "217" ;
+    guide:tutorshipsSchedule "Sin horario. A concertar por correo electrónico" .
+
+# Competencies
+guide:Comp_CG1 a guide:Competency ; sch:name "CG 1 - Conocer y aplicar conocimientos de ciencias y tecnologías básicas..." .
+guide:Comp_CG2 a guide:Competency ; sch:name "CG 2 - Poseer capacidad para diseñar, analizar, calcular..." .
+guide:Comp_CG3 a guide:Competency ; sch:name "CG 3 - Aplicar los conocimientos adquiridos para identificar..." .
+guide:Comp_CG4 a guide:Competency ; sch:name "CG 4 - Comprender el impacto de la tecnología minera..." .
+guide:Comp_CG5 a guide:Competency ; sch:name "CG 5 - Saber comunicar los conocimientos y conclusiones..." .
+guide:Comp_CG6 a guide:CR_Competency ; sch:name "CG 6 - Poseer habilidades de aprendizaje..." .
+guide:Comp_CG7 a guide:Competency ; sch:name "CG 7 - Incorporar nuevas tecnologías y herramientas..." .
+guide:Comp_CG9 a guide:Competency ; sch:name "CG 9 - Organización y planificación en el ámbito de la empresa..." .
+guide:Comp_F22 a guide:Competency ; sch:name "F22 - Extracción de materias primas de origen mineral" .
+guide:Comp_F23 a guide:Competency ; sch:name "F23 - Diseño, planificación y dirección de explotaciones mineras" .
+guide:Comp_F27 a guide:Competency ; sch:name "F27 - Modelización de yacimientos" .
+guide:Comp_F29 a guide:Competency ; sch:name "F29 - Diseño y ejecución de obras superficiales y subterráneas" .
+guide:Comp_F30 a guide:Competency ; sch:name "F30 - Técnicas de perforación y sostenimiento..." .
+
+# Learning Results
+guide:LR_RA162 a guide:LearningResult ; guide:learningResultCode "RA162" ; guide:learningResultDescription "Conocer los distintos métodos de explotación de los recursos minerales" .
+guide:LR_RA294 a guide:LearningResult ; guide:learningResultCode "RA294" ; guide:learningResultDescription "Conocer la naturaleza de la industria minera..." .
+guide:LR_RA161 a guide:LearningResult ; guide:learningResultCode "RA161" ; guide:learningResultDescription "Conocer los sistemas de extracción de materias primas..." .
+
+# Syllabus
+guide:Syllabus_65001030 a guide:Syllabus ;
+    guide:hasItem guide:SyllabusItem_B1T1, guide:SyllabusItem_B2T1, guide:SyllabusItem_B3T1, guide:SyllabusItem_B4T1, guide:SyllabsItem_B5T1, guide:SyllabusItem_B6T1 .
+
+guide:SyllabusItem_B1T1 a guide:SyllabusItem ; guide:syllabusDescription "El abastecimiento de materias primas" ; guide:itemIndex 1 .
+guide:SyllabusItem_B2T1 a guide:SyllabusItem ; guide:syllabusDescription "Fundamentos de las técnicas de arranque de rocas" ; guide:itemIndex 2 .
+
+# Evaluation System
+guide:EvalSystem_65001030 a guide:EvaluationSystem ;
+    guide:evaluationDescription "La calificación final se expresará en una cifra numérica entre 0 y 10." ;
+    guide:hasEvaluationTrial guide:EvalTrial_Prog1, guide:EvalTrial_Final .
+
+guide:EvalTrial_Prog1 a guide:EvaluationTrial ;
+    sch:name "Evaluación de Bloques 1 y 2" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "00:30" .
+
+guide:EvalTrial_Final a guide:EvaluationTrial ;
+    sch:name "Evaluación Final" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:00" .
+
+# Didactic Resources
+guide:Res_B1 a guide:DidacticResource ;
+    guide:bibliographyTitle "Introducción a los Fundamentos de la Tecnología Minera" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "HERRERA HERBERT, J. (2006). Fundación Gómez Pardo." .
+
+guide:Res_B2 a guide:DidacticResource ;
+    guide:bibliographyTitle "Diseño de Explotaciones e Infraestructuras Mineras Subterráneas" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "GÓMEZ JAÉN, J.P.; HERRERA HERBERT, J. (2007)." .
+
+# Required Knowledge
+guide:ReqKnow_65001030 a guide:RequiredKnowledge ;
+    guide:previousCourses "Gestion De Empresas, Geologia De Materiales, Geologia" ;
+    guide:previousKnowledge "Física, Matemáticas, Ingles, Química, Informática, Mecánica, Economía" .
+
+# Schedule Events (Examples from table)
+guide:Event_Week1 a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity guide:Act_Lecture1 .
+
+guide:Act_Lecture1 a guide:Activity ;
+    guide:activityDescription "Presentación de la asignatura" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "Presencial" .

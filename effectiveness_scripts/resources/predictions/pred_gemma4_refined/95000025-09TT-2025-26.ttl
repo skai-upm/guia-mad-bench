@@ -1,0 +1,182 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Instance
+:course_95000025 a guide:Course ;
+    sch:name "Circuitos Electronicos" ;
+    sch:courseCode 95000025 ;
+    guide:numberOfCredits 3.0 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Quinto semestre" ;
+    guide:courseYear 2025 .
+
+# Degree
+:degree_09TT a guide:Degree ;
+    sch:name "Grado En Ingenieria De Tecnologias Y Servicios De Telecomunicacion" ;
+    guide:degreeCode "09TT" ;
+    guide:hasCourse :course_95000025 .
+
+# University Center
+:university_center_etsit a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" ;
+    guide:offers :degree_09TT .
+
+# Course Guide (The Document)
+:cg_95000025 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Circuitos Electronicos" ;
+    sch:hasCourseInstance :course_95000025 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:inpersonHours "No especificado" ;
+    guide:remoteHours "No especificado" ;
+    guide:totalHours "No especificado" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :lecturer_alvaro, :lecturer_luis, :lect_miguel, :lect_octavio, :lect_alberto, :lect_samuel ;
+    sch:director :lecturer_alvaro ;
+    guide:hasSyllabus :syllabus_95000025 ;
+    guide:hasEvaluation :eval_system_95000025 ;
+    guide:hasCompetency :comp_ce_se3, :comp_ce_se5, :comp_ce_se8, :comp_cg10, :comp_cg12, :comp_cg8 ;
+    guide:hasLearningResult :lr_ra70, :lr_ra210, :lr_ra555, :lr_ra73, :lr_ra556, :lr_ra209, :lr_ra554, :lr_ra553, :lr_ra71, :lr_ra552, :lr_ra75 ;
+    guide:hasDidacticResource :res_moodle, :res_basys2, :res_franco, :res_wakerly, :res_ferreiros, :res_oppenheim, :res_malik .
+
+# Lecturers
+:lecturer_luis a guide:Lecturer ;
+    sch:name "Luis Fernando D'haro Enriquez" ;
+    sch:email "luisfernando.dharo@upm.es" ;
+    guide:office "B-108" ;
+    guide:tutorshipsSchedule "Sin horario. solicitar por e-mail" .
+
+:lecturer_miguel a guide:Lecturer ;
+    sch:name "Miguel Angel Sanchez Garcia" ;
+    sch:email "miguelangel.sanchez@upm.es" ;
+    guide:office "B-107" ;
+    guide:tutorshipsSchedule "Sin horario. solicitar por<0xC2>_mail" .
+
+:lect_octavio a guide:Lecturer ;
+    sch:name "Octavio Nieto-Taladriz Garcia" ;
+    sch:email "octavio.nieto-taladriz@upm.es" ;
+    guide:office "C-228" ;
+    guide:tutorshipsSchedule "Sin horario. solicitar por e-mail" .
+
+:lecturer_alvaro a guide:Lecturer ;
+    sch:name "Alvaro De Guzman Fernandez Gonzalez" ;
+    sch:email "alvarodeguzman.fernandez@upm.es" ;
+    guide:office "B-112" ;
+    guide:tutorshipsSchedule "Sin horario. solicitar por e-mail" .
+
+:lect_alberto a guide:Lecturer ;
+    sch:name "Alberto Bosca Mojena" ;
+    sch:email "alberto.bosca@upm.es" ;
+    guide:office "C-206" ;
+    guide:tutorshipsSchedule "Sin horario. solicitar por e-mail" .
+
+:lect_samuel a guide:Lecturer ;
+    sch:name "Samuel Lopez Asuncion" ;
+    sch:email "samuel.lopez.asuncion@upm.es" ;
+    guide:office "C-203" ;
+    guide:tutorshipsSchedule "Sin horario. solicitar por e-mail" .
+
+# Competencies
+:comp_ce_se3 a guide:Competency ;
+    guide:competencyCode "CE-SE3" ;
+    guide:competencyDescription "Capacidad de realizar la especificación, implementación, documentación y puesta a punto de equipos y sistemas, electrónicos, de instrumentación y de control..." .
+
+:comp_ce_se5 a guide:Competency ;
+    guide:competencyCode "CE-SE5" ;
+    guide:competencyDescription "Capacidad de diseñar circuitos de electrónica analógica y digital, de conversión analógico-digital y digital analógica..." .
+
+:comp_ce_se8 a guide:Competency ;
+    guide:competencyCode "CE-SE8" ;
+    guide:competencyDescription "Capacidad para especificar y utilizar instrumentación electrónica y sistemas de medida" .
+
+:comp_cg10 a guide:Competency ;
+    guide:competencyCode "CG10" ;
+    guide:competencyDescription "Creatividad" .
+
+:comp_cg12 a guide:Competency ;
+    guide:competencyCode "CG12" ;
+    guide:competencyDescription "Organización y planificación" .
+
+:comp_cg8 a guide:Competency ;
+    guide:competencyCode "CG8" ;
+    guide:competencyDescription "Comunicación oral y escrita" .
+
+# Learning Results
+:lr_ra70 a guide:LearningResult ;
+    guide:learningResultCode "RA70" ;
+    guide:learningResultDescription "Conocimientos de dispositivos, circuitos, equipos y sistemas electrónicos." .
+
+:lr_ra210 a guide:LearningResult ;
+    guide:learningResultCode "RA210" ;
+    guide:learningResultDescription "Realizar una documentación técnica completa sobre el diseño realizado..." .
+
+:lr_ra555 a guide:LearningResult ;
+    guide:learningResultCode "RA555" ;
+    guide:learningResultDescription "Diseñar individualmente los módulos digitales y ser capaz de describirlos adecuadamente en un lenguaje de descripción hardware" .
+
+# Syllabus
+:syllabus_95000025 a guide:Syllabus ;
+    guide:hasItem :item_1, :item_2, :item_3, :item_4 .
+
+:item_1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Descripción del sistema electrónico a diseñar" .
+
+:item_2 a guide:SylabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Desarrollo de la parte analógica" .
+
+# Evaluation System
+:eval_system_95000025 a guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación progresiva tendrá en cuenta el seguimiento del desarrollo del proyecto por parte del profesor." ;
+    guide:hasEvaluationTrial :trial_tg_12, :trial_ep_13, :trial_ex_17 .
+
+:trial_tg_12 a guide:EvaluationTrial ;
+    guide:trialType "Trabajo en Grupo" ;
+    guide:trialMode "No Presencial" ;
+    guide:gradePercentage "20%" ;
+    guide:evaluationDuration "00:00" ;
+    guide:involvesCompetency :comp_cg10, :comp_cg12, :comp_cg8, :comp_ce_se3 .
+
+:trial_ep_13 a guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "30%" ;
+    guide:evaluationDuration "00:00" ;
+    guide:involvesCompetency :comp_ce_se3, :comp_ce_se5 .
+
+:trial_ex_17 a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:evaluationDuration "01:30" ;
+    guide:involvesCompetency :comp_cg12, :comp_ce_se3 .
+
+# Activities (from Schedule)
+:act_lab_week2 a guide:Activity ;
+    guide:activityDescription "Familiarización con los sistemas del laboratorio" ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:activityDuration 2.5 ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_moodle a guide:DidacticResource ;
+    guide:bibliographyTitle "Pagina web de Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Contiene el enunciado, los ficheros necesarios..." .
+
+:res_basys2 a guide:DidacticResource ;
+    guide:bibliographyTitle "Manual de referencia de la tarjeta BASYS-2" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_franco a guide:DidacticResource ;
+    guide:bibliographyTitle "Design with Operational Amplifiers and Analog Integrated Circuits, Sergio Franco" ;
+    guide:bibliographyType "Bibliografía" .
+
+# Required Knowledge
+:req_knowledge_95000025 a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Analisis Y DiseÑo De Circuitos, Electronica Digital, Electronica Analogica..." .

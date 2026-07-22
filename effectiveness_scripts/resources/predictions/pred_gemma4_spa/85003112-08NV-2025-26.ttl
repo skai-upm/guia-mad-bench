@@ -1,0 +1,195 @@
+@prefix data: <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+data:Grado_Arquitectura_Naval rdf:type guide:Degree ;
+    sch:name "08NV - Grado en Arquitectura Naval" ;
+    guide:degreeCode "08NV" .
+
+data:ETS_Ingenieros_Navales rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Navales" .
+
+data:ETS_Ingenieros_Navales guide:offers data:Grado_Arquitectura_Naval .
+
+# Course
+data:Calculo_I rdf:type guide:Course ;
+    sch:name "85003112 - Cálculo I" ;
+    sch:courseCode 85003112 ;
+    guide:courseType "Básica" ;
+    guide:semester "Primer semestre" .
+
+data:Grado_Arquitectura_Naval guide:hasCourse data:Calculo_I .
+
+# Course Guide
+data:Guia_Aprendizaje_Calculo_I rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance data:Calculo_I ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:numberOfCredits 6.0 ;
+    guide:totalHours "150" ; # Estimated based on ECTS 6 * 25
+    sch:inLanguage "Castellano" ;
+    sch:description "Guía de aprendizaje para la asignatura Cálculo I." .
+
+sch:instructor data:Guia_Aprendizaje_Calculo_I, data:Cristobal_Meroño_Moreno .
+sch:instructor data:Guia_Aprendizaje_Calculo_I, data:Alicia_Canton_Pire .
+
+# Lecturers
+data:Cristobal_Meroño_Moreno rdf:type guide:Lecturer ;
+    sch:name "Cristobal Jacobo Meroño Moreno" ;
+    sch:email "cj.merono@upm.es" ;
+    guide:office "P1.02" .
+
+data:Alicia_Canton_Pire rdf:type guide:Lecturer ;
+    sch:name "Alicia Canton Pire" ;
+    sch:email "alicia.canton@upm.es" ;
+    guide:office "P1.06" .
+
+# Prerequisites
+data:Knowledge_Previo_Calculo rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Los correspondientes a las matemáticas de la ESO y de primero y segundo de Bachillerato" .
+
+# Competencies
+data:CB1 rdf:type guide:Competency ;
+    guide:competencyCode "CB1" ;
+    guide:competencyDescription "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de estudio que parte de la base de la educación secundaria general..." .
+
+data:CB5 rdf:type guide:Competency ;
+    guide:competencyCode "CB5" ;
+    guide:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía" .
+
+data:CE1 rdf:type guide:Competency ;
+    guide:competencyCode "CE 1" ;
+    guide:competencyDescription "Capacidad para la resolución de los problemas matemáticos que puedan plantearse en la ingeniería." .
+
+data:CG3 rdf:type guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Capacidad para el aprendizaje de nuevos métodos y teorías, y en la versatilidad para adaptarse a nuevas situaciones..." .
+
+guide:hasCompetency data:Guia_Aprendizaje_Calculo_I, data:CB1, data:CB5, data:CE1, data:CG3 .
+
+# Learning Results
+data:RA22 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA22" ;
+    guide:learningResultDescription "Estudiar la convergencia de sucesiones y series numéricas. Determinar el conjunto de convergencia de una serie de potencias..." .
+
+data:RA20 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA20" ;
+    guide:learningResultDescription "Resolver límites de funciones. Analizar la continuidad y derivabilidad..." .
+
+data:RA23 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA23" ;
+    guide:learningResultDescription "Manejar la aritmética compleja con soltura. Representar en forma binómica, trigonométrica o exponencial..." .
+
+data:RA21 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA21" ;
+    guide:learningResultDescription "Aplicar correctamente los métodos de integración elementales..." .
+
+data:RA24 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA24" ;
+    guide:learningResultDescription "Métodos numéricos: método de la bisección, interpolación de Lagrange e integración numérica." .
+
+guide:hasLearningResult data:Guia_Aprendizaje_Calculo_I, data:RA22, data:RA20, data:RA23, data:RA21, data:RA24 .
+
+# Syllabus
+data:Syllabus_Calculo_I rdf:type guide:Syllabus ;
+    guide:hasItem data:Syllabus_Unit_1, data:Syllabus_Unit_2, data:Syllabus_Unit_3, data:Syllabus_Unit_4 .
+
+data:Syllabus_Unit_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Números complejos" .
+
+data:Syllabus_Unit_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Funciones de variable real. Límites y derivadas" .
+
+data:Syllabus_Unit_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Integración" .
+
+data:Syllabus_Unit_4 rdf:type guide:SyllablesItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Sucesiones y series. Series de potencias" .
+
+guide:hasSyllabus data:Guia_Aprendizaje_Calculo_I .
+
+# Evaluation System
+data:EvalSystem_Calculo_I rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La nota de la evaluación progresiva será la media ponderada de los dos controles... Se realizará un examen final..." ;
+    guide:hasEvaluationTrial data:Trial_Control_1_2, data:Trial_Control_3_4, data:Trial_Final .
+
+guide:hasEvaluation data:Guia_Aprendizaje_Calculo_I .
+
+data:Trial_Control_1_2 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "3/10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "2:00" .
+
+data:Trial_Control_3_4 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "60%" ;
+    guide:minimumScore "3/10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "2:00" .
+
+data:Trial_Final rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "3:00" .
+
+guide:hasEvaluation data:Guia_Aprendizaje_Calculo_I .
+
+# Schedule and Activities
+data:Schedule_Calculo_I rdf:type guide:Schedule ;
+    sch:eventSchedule data:Event_Week1, data:Event_Week8, data:Event_Week15, data:Event_Week17 .
+
+guide:courseSchedule data:Guia_Aprendizaje_Calculo_I .
+
+data:Event_Week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity data:Activity_Lecture_Unit1 .
+
+data:Activity_Lecture_Unit1 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1. Apartados 1.1-1.4." ;
+    guide:activityDuration 4.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+data:Event_Week8 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 8" ;
+    guide:eventIndex 8 ;
+    guide:hasActivity data:Activity_Exercises_1_2 .
+
+data:Activity_Exercises_1_2 rdf:type guide:Activity ;
+    guide:activityDescription "Ejercicios: Temas 1 y 2" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+# Didactic Resources
+data:Resource_Moodle rdf:type guide:DidacticResource ;
+    sch:name "Moodle" ;
+    guide:bibliographyType "Recursos web" .
+
+data:Resource_Zill rdf:type guide:DidacticResource ;
+    sch:name "Zill, Wright, Cálculo de una variable. Transcendentes tempranas" ;
+    guide:bibliographyDescription "4 edición, McGraw Hill (2011)" ;
+    guide:bibliographyType "Bibliografía" .
+
+data:Resource_Stewart rdf:type guide:DidacticResource ;
+    sch:name "J. Stewart, Cálculo: conceptos y contexto" ;
+    guide:bibliographyDescription "3 edición, International Thomson (2006)" ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:hasDidacticResource data:Guia_Aprendizaje_Calculo_I, data:Resource_Moodle, data:Resource_Zill, data:Resource_Stewart .

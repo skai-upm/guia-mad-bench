@@ -1,0 +1,101 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course_guide_135004815_sostenibilidad_4.0> rdf:type :CourseGuide ;
+    sch:name "Sostenibilidad 4.0: Integración De Taxonomía, Esg"@en ;
+    guide:numberOfCredits "3"^^xsd:decimal ;
+    dct:title "Guía de Aprendizaje - Sostenibilidad 4.0"@es ;
+    guide:teachingPeriodMonths "Febrero-Junio"@en ;
+    sch:inLanguage "Castellano"@en ;
+    guide:syllabusDescription "Introducción a la sostenibilidad, Taxonomía UE, ESG y reportes GRI/ESRS/SFDR"@en .
+
+<http://guia-mad-bench.es/data/course_guide_135004815_sostenibilidad_4.0> sch:courseSchedule <http://guia-mad-bench.es/data/schedule_2025_26_semestre_2> ;
+    guide:sch:director <http://guia-mad-bench.es/data/lecturer_carmen_aviles_palacios> .
+
+<http://guia-mad-bench.es/data/course_guide_135004815_sostenibilidad_4.0> sch:eventSchedule <http://guia-mad-bench.es/data/schedule_event_semester_8_intermediate_evaluation> ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation_trial_seminar_2025_16_final_report>.
+
+<http://guia-mad-bench.es/data/course_guide_135004815_sostenibilidad_4.0> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_13IG_forest_eng_degree> ;
+    sch:description "Esta asignatura proporciona al estudiante las competencias clave para comprender e implementar los principios de sostenibilidad exigidos por el entorno normativo y empresarial actual."@en .
+
+<http://guia-mad-bench.es/data/course_guide_135004815_sostenibilidad_4.0> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluation_system_forest_eng_degree> ;
+    sch:description "Se valorará dominio conceptual y normativo de la Taxonomía y marcos ESG."@en .
+
+<http://guia-mad-bench.es/data/course_guide_135004815_sostenibilidad_4.0> guide:hasLearningResult <http://guia-mad-bench.es/data/learning_result_ra577>,
+    <http://guia-mad-bench.es/data/learning_result_ra575>,
+    <http://guia-mad-bench.es/data/learning_result_ra578> ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/competency_cb03>,
+    <http://guia-mad-bench.es/data/competency_cg13>.
+
+<http://guia-mad-bench.es/data/course_guide_135004815_sostenibilidad_4.0> sch:courseCode "135004815"^^xsd:string ;
+    guide:periodStartingMonth "Febrero"@en .
+
+<http://guia-mad-bench.es/data/degree_bachelor_forest_eng_degree> rdf:type :BachelorDegree ;
+    dct:title "Grado En Ingenieria Forestal"@es ;
+    sch:name "13IG - Grado en Ingeniería Forestal"^^xsd:string ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course_guide_135004815_sostenibilidad_4.0> .
+
+<http://guia-mad-bench.es/data/lecturer_carmen_aviles_palacios> rdf:type :Lecturer ;
+    sch:name "M. Carmen Aviles Palacios"@es ;
+    guide:office "treeNNOVA Ed.B4"^^xsd:string ;
+    sch:email <mailto:carmen.aviles@upm.es> .
+
+<http://guia-mad-bench.es/data/competency_cb03> rdf:type :Competency ;
+    guide:competencyCode "CB03"@es ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes para emitir juicios que incluyan una reflexión sobre temas relevantes de índole social, científica y ética."@en .
+
+<http://guia-mad-bench.es/data/learning_result_ra577> rdf:type :LearningResult ;
+    guide:learningResultCode "RA577"@es ;
+    guide:learningResultDescription "Diseñar un informe ESG adaptado al sector forestal o ambiental."@en .
+
+<http://guia-mad-bench.es/data/syllabus_13IG_forest_eng_degree> rdf:type :Syllabus ;
+    sch:description "Temario de la asignatura: Introducción a Sostenibilidad 4.0, Taxonomía UE, ESG y reportes GRI/ESRS/SFDR."@en .
+
+<http://guia-mad-bench.es/data/syllabus_13IG_forest_eng_degree> guide:itemIndex "1"^^xsd:integer ;
+    sch:description "Introducción a la Sostenibilidad 4.0"@es .
+
+<http://guia-mad-bench.es/data/evaluation_system_forest_eng_degree> rdf:type :EvaluationSystem ;
+    dct:title "Sistema de Evaluación - Sostenibilidad 4.0"^^xsd:string ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation_trial_seminar_2025_16_final_report>,
+        <http://guia-mad-bench.es/data/evaluation_trial_intermediate_semester> .
+
+<http://guia-mad-bench.es/data/schedule_event_semester_8_intermediate_evaluation> rdf:type :ScheduleEvent ;
+    guide:eventIndex "8"^^xsd:integer ;
+    sch:description "Evaluación intermedia (presentación de avances del informe) ESG"@es .
+
+<http://guia-mad-bench.es/data/evaluation_trial_seminar_2025_16_final_report> rdf:type :EvaluationTrial ;
+    guide:trialDescription "Entrega y defensa de informe ESG corregido"^^xsd:string ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule_event_semester_8_intermediate_evaluation>,
+        <http://guia-mad-bench.es/data/evaluation_trial_seminar_2025_16_final_report> .
+
+<http://guia-mad-bench.es/data/resource_bibliography_official> rdf:type :DidacticResource ;
+    guide:bibliographyTitle "Reglamento (UE) 2020/852 sobre la Taxonomía de actividades sostenibles"^^xsd:string ;
+    sch:hasCourseInstance <http://guia-mad-bench.es/data/course_guide_135004815_sostenibilidad_4.0> .
+
+<http://guia-mad-bench.es/data/resource_software_tools> rdf:type :DidacticResource ;
+    guide:bibliographyTitle "Software y herramientas digitales (EcoVadis, Datamaran)"^^xsd:string ;
+    sch:hasCourseInstance <http://guia-mad-bench.es/data/course_guide_135004815_sostenibilidad_4.0> .
+
+<http://guia-mad-bench.es/data/resource_bibliography_recommended> rdf:type :DidacticResource ;
+    guide:bibliographyTitle "Eccles, R. & Krzus, M. (2018). The Integrated Reporting Movement."^^xsd:string ;
+    sch:hasCourseInstance <http://guia-mad-bench.es/data/course_guide_135004815_sostenibilidad_4.0> .
+
+<http://guia-mad-bench.es/data/competency_cg13> rdf:type :Competency ;
+    guide:competencyCode "CG13"@es ;
+    guide:competencyDescription "Capacidad para diseñar, dirigir, elaborar, implementar e interpretar proyectos y planes..."@en .
+
+<http://guia-mad-bench.es/data/learning_result_ra579> rdf:type :LearningResult ;
+    guide:learningResultCode "RA579"@es ;
+    guide:learningResultDescription "Analizar y evaluar la doble materialidad en el contexto de cambio climático."@en .
+
+<http://guia-mad-bench.es/data/evaluation_trial_intermediate_semester> rdf:type :EvaluationTrial ;
+    sch:description "Evaluación intermedia (presentación de avances del informe) ESG"^^xsd:string ;
+    guide:trialDescription "Presentación en Grupo - Evaluación Progresiva y Global"@es .
+
+<http://guia-mad-bench.es/data/evaluation_trial_intermediate_semester> guide:hasScheduleEvent <http://guia-mad-bench.es/data/schedule_event_semester_8_intermediate_evaluation>.

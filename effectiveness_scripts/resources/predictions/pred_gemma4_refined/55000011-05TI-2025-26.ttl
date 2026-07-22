@@ -1,0 +1,226 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+_:courseGuide a guide:CourseGuide ;
+    sch:name "Ecuaciones Diferenciales" ;
+    guide:numberOfCredits 6.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:inpersonHours "Not specified" ;
+    guide:remoteHours "Not specified" ;
+    guide:totalHours "Not specified" ;
+    sch:courseSchedule _:schedule ;
+    guide:hasSyllabus _:syllabus ;
+    guide:hasCompetency _:compCE1, _:compCG1, _:compCG10, _:compCG2, _:compCG3, _:compCG6 ;
+    guide:hasLearningResult _:lrRA242, _:lrRA243, _:lrRA244, _:lrRA232, _:lrRA245 ;
+    guide:hasEvaluation _:evalSystem ;
+    guide:hasDidacticResource _:res1, _:res2, _:res3, _:res4, _:res5 ;
+    sch:instructor _:profVictor, _:profPablo, _:profAna, _:profPedro ;
+    sch:director _:profVictor ;
+    sch:description "Los contenidos de esta asignatura se orientan especialmente al estudio de las ecuaciones diferenciales ordinarias así como a problemas de contorno y de valor inicial formulados en términos de ecuaciones en derivadas parciales." ;
+    sch:inLanguage "Castellano" .
+
+# Course Instance
+_:course a guide:Course ;
+    sch:name "Ecuaciones Diferenciales" ;
+    sch:courseCode 55000011 ;
+    guide:courseYear 2025 ;
+    guide:courseType "Básica" ;
+    guide:semester "Tercer semestre" ;
+    sch:hasCourseInstance _:courseGuide .
+
+# Degree Instance
+_:degree a guide:BachelorDegree ;
+    sch:name "Grado En Ingeniería En Tecnologias Industriales" ;
+    guide:degreeCode "05TI" ;
+    guide:hasCourse _:course .
+
+# University Center Instance
+_:uniCenter a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Industriales" ;
+    guide:offers _:degree .
+
+# Lecturers
+_:profVictor a guide:Lecturer ;
+    sch:name "Victor Muñoz Villarragut" ;
+    sch:email "victor.munoz@upm.es" ;
+    guide:office "Despacho" ;
+    guide:tutorshipsSchedule "Sin horario. Consultar con el profesor" .
+
+_:profPablo a guide:Lecturer ;
+    sch:name "Pablo Gomez Mourelo" ;
+    sch:email "pablo.gomez.mourelo@upm.es" ;
+    guide:office "Despacho" ;
+    guide:tutorshipsSchedule "Sin horario. Consultar con el profesor" .
+
+_:profAna a guide:Lecturer ;
+    sch:name "Ana Soledad Meroño Moreno" ;
+    sch:email "anasoledad.merono@upm.es" ;
+    guide:office "Despacho" ;
+    guide:tutorshipsSchedule "Sin horario. Consultar con el profesor" .
+
+_:profPedro a guide:Lecturer ;
+    sch:name "Pedro Galan Del Sastre" ;
+    sch:email "pedro.galan@upm.es" ;
+    guide:office "Despacho" ;
+    guide:tutorshipsSchedule "M - 10:00 - 12:00, X - 10:00 - 11:00, X - 12:30 - 13:30, J - 10:00 - 11:00, J - 12:30 - 13:30" .
+
+# Competencies
+_:compCE1 a guide:Competency ;
+    guide:competencyCode "CE1" ;
+    guide:competencyDescription "Capacidad para la resolución de los problemas matemáticos que puedan plantemos en la ingeniería. Aptitud para aplicar los conocimientos sobre: álgebra lineal; geometría; geometría diferencial; cálculo diferencial e integral; ecuaciones diferenciales ordinarias y en derivadas parciales; métodos numéricos; algorítmica numérica; optimización" .
+
+_:compCG1 a guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Industrial." .
+
+_:compCG10 a guide:Competency ;
+    guide:competencyCode "CG10" ;
+    guide:competencyDescription "Capacidad para generar nuevas ideas (Creatividad)." .
+
+_:compCG2 a guide:Competency ;
+    guide:competencyCode "CG2" ;
+    guide:competencyDescription "Poseer capacidad para diseñar, desarrollar, implementar, gestionar y mejorar productos, sistemas y procesos en los distintos ámbitos industriales, usando técnicas analíticas, computacionales o experimentales apropiadas." .
+
+_:compCG3 a guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Aplicar los conocimientos adquiridos para identificar, formular y resolver problemas dentro de contextos amplios y multidisciplinarios, siendo capaces de integrar conocimientos, trabajando en equipos multidisciplinares." .
+
+_:compCG6 a guide:Competency ;
+    guide:competencyCode "CG6" ;
+    guide:competencyDescription "Poseer habilidades de aprendizaje que permitan continuar estudiando a lo largo de la vida para su adecuado desarrollo profesional." .
+
+# Learning Results
+_:lrRA242 a guide:LearningResult ;
+    guide:learningResultCode "RA242" ;
+    guide:learningResultDescription "Capacidad de abstracción y reconocimiento de conceptos generales en situaciones prácticas." .
+
+_:lrRA243 a guide:LearningResult ;
+    guide:learningResultCode "RA243" ;
+    guide:learningResultDescription "Capacidad para formular y analizar modelos de procesos naturales. Capacidad de interpretar los resultados obtenidos y evaluar los modelos utilizados." .
+
+_:lrRA244 a guide:LearningResult ;
+    guide:learningResultCode "RA244" ;
+    guide:learningResultDescription "Habilidad para aplicación de métodos analíticos a la resolución de problemas técnicos conocidos que han aparecido en otras materias." .
+
+_:lrRA232 a guide:LearningResult ;
+    guide:learningResultCode "RA232" ;
+    guide:learningResultDescription "Proporciona un abanico muy diverso de herramientas para abordar el tratamiento de modelos de procesos naturales." .
+
+_:lrRA245 a guide:LearningResult ;
+    guide:learningResultCode "RA245" ;
+    guide:learningResultDescription "Proporciona una panorámica muy amplia de modelos clásicos aplicados en muy diversos campos: mecánica, ecología teórica, economía, epidemiología, etc." .
+
+# Syllabus
+_:syllabus a guide:Syllabus ;
+    guide:hasItem _:item1, _:item2, _:item3, _:item4, _:item5 .
+
+_:item1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Ecuaciones diferenciales ordinarias de primer orden." .
+
+_:item2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Sistemas de ecuaciones diferencial lineales de primer orden." .
+
+_:item3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Ecuaciones diferenciales lineales de orden n." .
+
+_:item4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Ecuaciones en derivadas parciales de primer orden." .
+
+_:item5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Introducción a las ecuaciones en derivadas parciales de segundo orden." .
+
+# Evaluation System
+_:evalSystem a guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación progresiva consta de las siguientes pruebas: Dos prácticas de computación científica... Una primera prueba escrita con un valor del 40%... Una segunda prueba escrita con un valor del 50%..." ;
+    guide:hasEvaluationTrial _:trial1, _:trial2, _:trial3, _:trial4 .
+
+_:trial1 a guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:gradePercentage "5%" ;
+    guide:evaluationDuration "02:00" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency _:compCG1, _:compCG2, _:compCG3, _:compCE1 .
+
+_:trial2 a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:gradePercentage "40%" ;
+    guide:evaluationDuration "02:00" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency _:compCG1, _:compCG2, _:compCG6, _:compCG10, _:compCE1 .
+
+_:trial3 a guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:gradePercentage "5%" ;
+    guide:evaluationDuration "02:00" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency _:compCG3, _:compCE1, _:compCG1, _:compCG2 .
+
+_:trial4 a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:gradePercentage "50%" ;
+    guide:evaluationDuration "02:30" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency _:compCG1, _:compCG2, _:compCG6, _:compCG10, _:compCE1 .
+
+# Schedule
+_:schedule a guide:Schedule ;
+    sch:eventSchedule _:event1, _:event2, _:event3, _:event4, _:event5, _:event6, _:event7, _:event8, _:event9, _:event10, _:event11 .
+
+_:event1 a guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "1" ;
+    guide:hasActivity _:act1 .
+
+_:act1 a guide:Activity ;
+    guide:activityDescription "Introducción a la asignatura (1 hora). Desarrollo teórico y práctico del Tema 1 (4 horas)" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 5.0 ;
+    guide:attendanceType "Presencial" .
+
+_:event2 a guide:ScheduleEvent ;
+    guide:eventIndex 2 ;
+    guide:eventWeek "2" ;
+    guide:hasActivity _:act2 .
+
+_:act2 a guide:Activity ;
+    guide:activityDescription "Desarrollo teórico y práctico del Tema 1" ;
+    guide:activityFormat "Clase de Problemas" ;
+    guide:activityDuration 5.0 ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+_:res1 a guide:DidacticResource ;
+    sch:name "E. Sánchez, J. González y J. Gutiérrez. Sistemas Dinámicos. Una introducción a través de ejercicios." ;
+    guide:bibliographyType "Bibliografía" .
+
+_:res2 a guide:DidacticResource ;
+    sch:name "Ecuaciones Diferenciales. Exámenes resueltos de Grado" ;
+    guide:bibliographyType "Otros" .
+
+_:res3 a guide:DidacticResource ;
+    sch:name "M. Braun. Ecuaciones diferenciales y sus aplicaciones." ;
+    guide:bibliographyType "Bibliografía" .
+
+_:res4 a guide:DidacticResource ;
+    sch:name "R. K. Nagle, E. B. Saff. Fundamentos de ecuaciones diferenciales 2ª ed." ;
+    guide:bibliographyType "Bibliografía" .
+
+_:res5 a guide:DidacticResource ;
+    sch:name "R. Haberman. Applied partial differential equations with fourier series and boundary value problems." ;
+    guide:bibliographyType "Bibliografía" .
+
+# Required Knowledge (as SyllabusItems or separate entities if needed, here using syllabus context)
+_:reqKnowledge a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Técnicas del cálculo infinitesimal con funciones de varias variables reales; Conocimientos básicos de Física General; Técnicas elementales de Cálculo Infinitesimal; Técnicas elementales de Álgebra Lineal; Operaciones básicas con números complejos." .

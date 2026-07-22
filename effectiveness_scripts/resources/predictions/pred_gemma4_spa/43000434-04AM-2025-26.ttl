@@ -1,0 +1,79 @@
+```turtle
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# --- Degree and University Center ---
+:ets_caminos a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ing. de Caminos Canales y P." ;
+    guide:offers :master_04AM .
+
+:master_04AM a guide:MasterDegree ;
+    sch:name "Master Universitario Ingenieria De Estructuras, Cimentaciones Y Materiales" ;
+    guide:degreeCode "04AM" .
+
+# --- Course and Course Guide ---
+:course_43000434 a guide:Course ;
+    sch:name "Fiabilidad Y Modelos Geotécnicos" ;
+    sch:courseCode 43000434 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Segundo semestre" .
+
+:guide_43000434_2S_2025_26 a guide:CourseGuide ;
+    sch:hasCourseInstance :course_43000434 ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCompetency :CB10, :CB9, :CE8, :CG1, :CG4, :CT1 ;
+    guide:hasLearningResult :RA2, :RA1, :RA .
+    # Note: RA3 and RA4 are also present in text.
+    guide:hasEvaluation :eval_system_43000434 ;
+    guide:hasDidacticResource :res_ang, :res_atkinson, :res_baecher, :res_cundall, :res_lade, :res_schofield, :res_wong ;
+    guide:hasSyllabus :syllabus_43000434 .
+
+# --- Lecturers ---
+:enrique_asanza a guide:Lecturer ;
+    sch:name "Enrique Asanza Izquierdo" ;
+    sch:email "enrique.asanza@upm.es" ;
+    guide:office "Laboratorio" ;
+    guide:tutorshipsSchedule "L - 15:15 - 17:15, J - 15:15 - 17:15" .
+
+:rafael_jimenez a guide:Lecturer ;
+    sch:name "Rafael Jimenez Rodriguez" ;
+    sch:email "rafael.jimenez@upm.es" ;
+    guide:office "Laboratorio" ;
+    guide:tutorshipsSchedule "M - 09:00 - 14:00" .
+
+:ignacio_gonzalez a guide:Lecturer ;
+    sch:name "Ignacio Gonzalez Tejada" ;
+    sch:email "ignacio.gtejada@upm.es" ;
+    guide:office "Laboratorio" ;
+    guide:tutorshipsSchedule "M - 09:00 - 12:00, V - 09:00 - 12:00" .
+
+:guide_43000434_2S_2025_26 sch:instructor :enrique_asanza, :rafael_jamenez, :ignacio_gonzalez ;
+    sch:director :rafael_jimenez .
+
+# --- Competencies ---
+:CB10 a guide:Competency ;
+    guide:competencyCode "CB10" ;
+    guide:competencyDescription "Que los estudiantes posean las habilidades de aprendizaje que les permitan continuar estudiando de un modo que habrá de ser en gran medida autodirigido o autónomo." .
+
+:CB9 a guide:Competency ;
+    guide:competencyCode "CB9" ;
+    guide:competencyDescription "Que los estudiantes sepan comunicar sus conclusiones y los conocimientos y razones últimas que las sustentan a públicos especializados y no especializados de un modo claro y sin ambigüedades" .
+
+:CE8 a guide:Competency ;
+    guide:competencyCode "CE8" ;
+    guide:competencyDescription "Capacidad para la participación en actividades de I+D+i mediante la utilización de recursos de modelización predictiva en Fiabilidad de modelos geotécnicos." .
+
+:CG1 a guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Polivalencia para extender a ámbitos afines las competencias generales adquiridas en el ámbito temático del título." .
+
+:CG4 a guide:Competency ;
+    guide:competencyCode "CG4" ;
+    guide:competencyDescription "Capacidad de comunicación académica de contenido técnico y</code>

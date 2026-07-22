@@ -1,0 +1,152 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:course_guide_143002004 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Desarrollo De Infraestructuras Aeronáuticas" ;
+    sch:description "Conocimiento del ámbito de las infraestructías aeroportuarias, desde el punto de vista de su relación con las operaciones de las aeronaves, la organización del sector, la terminología, reglamentación y normativas, y planificación, diseño, construcción y operación de las mismas." ;
+    guide:numberOfCredits 6.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :syllabus_143002004 ;
+    guide:hasCompetency :comp_CE_IA_1, :comp_CG1, :comp_CT1 ;
+    guide:hasLearningResult :lr_RA49, :lr_RA51, :lr_RA50 ;
+    guide:hasEvaluation :eval_system_143002004 ;
+    guide:hasDidacticResource :res_bibliografia_1, :res_web_moodle ;
+    sch:instructor :lecturer_diego, :lecturer_alvaro, :lecturer_santiago, :lecturer_daniel, :lecturer_angel ;
+    sch:director :lecturer_angel .
+
+# Course Instance
+:course_143002004 rdf:type guide:Course ;
+    sch:name "143002004 - Desarrollo De Infraestructuras Aeronáuticas" ;
+    guide:courseYear 2025 ;
+    guide:semester "Segundo semestre" ;
+    guide:courseType "Obligatoria" ;
+    sch:courseCode 143002004 ;
+    sch:hasCourseInstance :course_guide_143002004 .
+
+# Degree Instance
+:degree_14IB rdf:type guide:MasterDegree ;
+    sch:name "14IB - Master Universitario En Ingenieria Aeronautica" ;
+    guide:degreeCode "14IB" ;
+    guide:hasCourse :course_143002004 .
+
+# University Center Instance
+:univ_center_etsi rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S.I. Aeronáutica Y Del Espacio" ;
+    guide:offers :degree_14IB .
+
+# Lecturers
+:lecturer_diego rdf:type guide:Lecturer ;
+    sch:name "Nicolas Diego Garcia Ortiz De Villajos" ;
+    sch:email "diego.garcia.ortizdevillajos@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. Tutorías publicadas en el tablón y en la Web del Departamento" .
+
+:lecturer_alvaro rdf:type guide:Lecturer ;
+    sch:name "Alvaro Rodriguez Sanz" ;
+    sch:email "alvaro.rodriguez.sanz@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. Tutorías publicadas en el tablón y en la Web del Departamento" .
+
+:lecturer_santiago rdf:type guide:Lecturer ;
+    sch:name "Santiago Pindado Carrion" ;
+    sch:email "santiago.pindado@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. Tutorías publicadas en el tablón y en la Web del Departamento" .
+
+:lecturer_daniel rdf:type guide:Lecturer ;
+    sch:name "Daniel Alfonso Corcuera" ;
+    sch:email "daniel.alfonso.corcuera@upm.es" ;
+    guide:tutorshipsSchedule "L - 08:00 - 08:15" .
+
+:lecturer_angel rdf:type guide:Lecturer ;
+    sch:name "Angel Paris Loreiro" ;
+    sch:email "angel.paris@upm.es" ;
+    guide:tutorshipsSchedule "-" .
+
+# Competencies (Sample)
+:comp_CE_IA_1 rdf:type guide:Competency ;
+    guide:competencyCode "CE-IA-1" ;
+    guide:competencyDescription "Aptitud para realizar los Planes Directores de aeropuertos y los proyectos y la dirección de construcción de las infraestructuras, edificaciones e instalaciones aeroportuarias." .
+
+:comp_CG1 rdf:type guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Capacidad para proyectar, construir, inspeccionar, certificar y mantener todo tipo de aeronaves y vehículos espaciales, con sus correspondientes subsistemas." .
+
+:comp_CT1 rdf:type guide:Competency ;
+    guide:competencyCode "CT1" ;
+    guide:competencyDescription "Capacidad para comprender los contenidos de clases magistrales, conferencias y seminarios, así como cualquier información y documentación en lengua inglesa." .
+
+# Learning Results (Sample)
+:lr_RA49 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA49" ;
+    guide:learningResultDescription "Identifica las unidades estratégicas de análisis del negocio de explotación aeroportuaria" .
+
+:lr_RA51 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA51" ;
+    guide:learningResultDescription "Analiza internamente el aeropuerto e identifica las ventajas competitivas y las debilidades significativas" .
+
+:lr_RA50 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA50" ;
+    guide:learningResultDescription "Analiza el entorno e identifica las amenazas y oportunidades que afectan al negocio de explotación aeroportuaria" .
+
+# Syllabus
+:syllabus_143002004 rdf:type guide:Syllabus ;
+    guide:hasItem :syllabus_item_tema1, :syllabus_item_tema2, :syllabus_item_tema3 .
+
+:syllabus_item_tema1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Tema 1. CARACTERÍSTICAS FÍSICAS." .
+
+:syllabus_item_tema2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Tema 2. ORDENACIÓN Y REGULACIÓN DEL SISTEMA AEROPORTUARIO." .
+
+:syllabus_item_tema3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Tema 3. PLANES DIRECTORES." .
+
+# Evaluation System
+:eval_system_143002004 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La asignatura consta de cuatro partes: planificación, diseño, seguridad operacional e ingeniería eléctrica. El peso de cada parte en la nota es del 2	5%." ;
+    guide:hasEvaluationTrial :trial_examen_escrito, :trial_trabajo .
+
+:trial_examen_escrito rdf:type guide:EvaluationTrial ;
+    sch:name "Examen escrito" ;
+    guide:evaluationType "Examen" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:trialWeek "17" .
+
+:trial_trabajo rdf:type guide:EvaluationTrial ;
+    sch:name "Trabajo" ;
+    guide:evaluationType "Trabajo" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "No presencial" ;
+    guide:evaluationDuration "17:00" .
+
+# Didactic Resources
+:res_bibliografia_1 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "M. GARCÍA CRUZADO. 'Ingeniería Aeroportuaria'. Ed. UPM, ETSI Aeronáuticos" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_web_moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Espacio MOODLE de la asignatura http://moodle.upma.es/" ;
+    guide:bibliographyType "Recursos web" .
+
+# Schedule Events (Sample from Cronograma)
+:event_sem1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :activity_leccion_magistral_tema1 .
+
+:activity_leccion_magistral_tema1 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1. Características físicas" ;
+    guide:activityDuration 4.0 ;
+    guide:activityFormat "Lección Magistral" .

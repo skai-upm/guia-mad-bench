@@ -1,0 +1,98 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guia-anx-pr-cl-001-01> a :CourseGuide ;
+    dct:title "Guía de Aprendizaje"@en ;
+    sch:name "Sistemas Electronicos Para Iot" ;
+    guide:numberOfCredits 4.0^^xsd:decimal ;
+    guide:teachingPeriodMonths "septiembre-enero"@en ;
+    sch:inLanguage "Castellano"@en ;
+    dct:creator <http://guia-mad-bench.es/data/alvaro-araujo-pinto> ,
+               <http://guia-mad-bench.es/data/pedro-jose-malagon-marzo> ;
+    guide:sch:director <http://guia-mad-bench.es/data/alvaro-araujo-pinto> ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-93001104> .
+
+<http://guia-mad-bench.es/data/degree-master-telco> a :MasterDegree ,
+                                                     :Degree ;
+    guide:degreeCode "09AQ"@en ;
+    sch:name "Master Universitario En Ingenieria De Telecomunicacion" .
+
+<http://guia-mad-bench.es/data/course-93001104> a :Course ;
+    sch:courseCode 93001104^^xsd:integer ;
+    guide:sch:hasCourseInstance <http://guia-mad-bench.es/data/guia-anx-pr-cl-001-01> .
+
+<http://guia-mad-bench.es/data/alvaro-araujo-pinto> a :Lecturer ,
+                                                       sch:Person ;
+    sch:name "Alvaro Araujo Pinto" ;
+    guide:sch:director <http://guia-mad-bench.es/data/guia-anx-pr-cl-001-01> ;
+    sch:email "alvaro.araujo@upm.es"@en ;
+    guide:office "B-104.1b" ;
+    guide:tutorshipsSchedule "X - 12:00 - 14:00; Para cualquier otra hora, concertar cita por correo electrónico"@en .
+
+<http://guia-mad-bench.es/data/pedro-jose-malagon-marzo> a :Lecturer ,
+                                                             sch:Person ;
+    sch:name "Pedro Jose Malagon Marzo" ;
+    guide:sch:instructor <http://guia-mad-bench.es/data/guia-anx-pr-cl-001-01> ;
+    sch:email "pedro.malagon.marzo@upm.es"@en ;
+    guide:office "B-113" .
+
+<http://guia-mad-bench.es/data/competency-ce12> a :Competency ;
+    guide:competencyCode "CE12"@en ;
+    guide:competencyDescription "Capacidad para utilizar dispositivos lógicos programables, así como para diseñar sistemas electrónicos avanzados, tanto analógicos como digitales. Capacidad para diseñar componentes de comunicaciones como por ejemplo encaminadores, conmutadores, concentradores, emisores y receptores en diferentes bandas."@en .
+
+<http://guia-mad-bench.es/data/competency-ce15> a :Competency ;
+    guide:competencyCode "CE15"@en ;
+    guide:competencyDescription "Capacidad para la integración de tecnologías y sistemas propios de la Ingeniería de Telecomunicación, con carácter generalista, y en contextos más amplios y multidisciplinares como por ejemplo en bioingeniería, conversión fotovoltaica, nanotecnología, telemedicina."@en .
+
+<http://guia-mad-bench.es/data/competency-cg2> a :Competency ;
+    guide:competencyCode "CG2"@en ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos dentro de contextos más amplios (o multidisciplinares) relacionados con su área de estudio."@en .
+
+<http://guia-mad-bench.es/data/learning-result-ra116> a :LearningResult ;
+    guide:learningResultCode "RA116"@en ;
+    guide:learningResultDescription "Diseñar e implementar aplicaciones reales usando plataformas de diseño basadas en procesadores avanzados" .
+
+<http://guia-mad-bench.es/data/learning-result-ra218> a :LearningResult ;
+    guide:learningResultCode "RA218"@en ;
+    guide:learningResultDescription "Analizar y diseñar el software de un sistema electrónico" .
+
+<http://guia-mad-bench.es/data/guia-anx-pr-cl-001-01> :hasCompetency <http://guia-mad-bench.es/data/competency-ce12>,
+                                                                    <http://guia-mad-bench.es/data/competency-ce15>,
+                                                                    <http://guia-mad-bench.es/data/competency-cg2> ;
+    :hasLearningResult <http://guia-mad-bench.es/data/learning-result-ra116>,
+                       <http://guia-mad-bench.es/data/learning-result-ra218>.
+
+<http://guia-mad-bench.es/data/schedule-93001104> a :Schedule ,
+                                                      sch:Schedule ;
+    guide:sch:eventSchedule <http://guia-mad-bench.es/data/event-seminar-1>,
+                            <http://guia-mad-bench.es/data/event-practica-0>.
+
+<http://guia-mad-bench.es/data/evaluation-system> a :EvaluationSystem ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus-anx-pr-cl-001-01> .
+
+<http://guia-mad-bench.es/data/guia-anx-pr-cl-001-01> :hasEvaluationSystem <http://guia-mad-bench.es/data/evaluation-system>.
+<http://guia-mad-bench.es/data/evaluation-system> :hasEvaluationTrial <http://guia-mad-bench.es/data/trial-progresiva>,
+                                                                       <http://guia-mad-bench.es/data/trial-global>.
+
+<http://guia-mad-bench.es/data/syllabus-anx-pr-cl-001-01> a :Syllabus ,
+                                                              sch:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/item-intro>,
+                  <http://guia-mad-bench.es/data/item-diseño-hw>.
+
+<http://guia-mad-bench.es/data/resource-moodle> a :DidacticResource ,
+                                                  sch:CourseInstance ;
+    guide:bibliographyTitle "Moodle de la asignatura" .
+
+<http://guia-mad-bench.es/data/lee-seshia-book> a :DidacticResource ;
+    guide:bibliographyType "Bibliografía"@en ;
+    guide:bibliographyDescription "Edward A. Lee and Sanjit A. Seshia, Introduction to Embedded Systems..." .
+
+<http://guia-mad-bench.es/data/wolf-computers-book> a :DidacticResource ;
+    guide:bibliographyType "Bibliografía"@en ;
+    guide:bibliographyDescription "Marilyn Wolf, Computers as Components: Principles of Embedded Computing System Design" .

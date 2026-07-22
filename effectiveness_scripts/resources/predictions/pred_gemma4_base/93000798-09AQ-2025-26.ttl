@@ -1,0 +1,177 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+# --- Degree and University Center ---
+
+:Master_Telecomunicacion rdf:type guide:MasterDegree ;
+    sch:name "Master Universitario en Ingenieria de Telecomunicacion" ;
+    guide:degreeCode "09AQ" .
+
+:ETSIT rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros De Telecomunicacion" ;
+    guide:offers :Master_Telecomunicacion .
+
+# --- Course ---
+
+:Course_Aplicaciones_Servicios rdf:type guide:Course ;
+    sch:name "Aplicaciones y Servicios" ;
+    sch:courseCode 93000798 ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 2025 ;
+    guide:semester "Primer semestre" ;
+    sch:hasCourseInstance :Guide_Aplicaciones_Servicios .
+
+# --- Course Guide ---
+
+:Guide_Aplicaciones_Servicios rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Aplicaciones y Servicios" ;
+    sch:description "La asignatura tiene como objetivo que el alumno conozca los tipos principales de tecnologías de software y servicios, y su contexto de uso en el ámbito empresarial."@en ;
+    sch:hasCourseInstance :Course_Aplicaciones_Servicios ;
+    sch:instructor :Lecturer_JuanCarlos_Duenas ;
+    sch:director :Lecturer_JuanCarlos_Duenas ;
+    sch:inLanguage "Inglés/Castellano" ;
+    guide:numberOfCredits 6.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:totalHours "150" ; # Estimated based on ECTS 6 * 25
+    guide:hasSyllabus :Syllabus_Aplicaciones_Servicios ;
+    guide:hasCompetency :Comp_CE6, :Comp_CE7, :Comp_CE8, :Comp_CT4, :Comp_CT5 ;
+    guide:hasLearningResult :LR_RA4, :LR_RA3, :LR_RA5, :LR_RA1, :LR_RA2, :LR_RA7 ;
+    guide:hasEvaluation :EvalSystem_Aplicaciones_Servicios ;
+    guide:hasDidacticResource :Res_Moodle, :Res_Libro1, :Res_Libro2 ;
+    sch:courseSchedule :Schedule_Aplicaciones_Servicios .
+
+# --- Lecturers ---
+
+:Lecturer_JuanCarlos_Duenas rdf:type guide:Lecturer ;
+    sch:name "Juan Carlos Dueñas Lopez" ;
+    sch:email "juancarlos.duenas@upm.es" ;
+    guide:office "C210" .
+
+:Lecturer_Felix_Cuadrado rdf:type guide:Lecturer ;
+    sch:name "Felix Aurelio Cuadrado Latasa" ;
+    sch:email "felix.cuadrado@upm.es" ;
+    guide:office "C218" .
+
+:Lecturer_David_Rodriguez rdf:type guide:Lecturer ;
+    sch:name "David Rodriguez Torrado" ;
+    sch:email "david.rtorrado@upm.es" ;
+    guide:office "C215" .
+
+# --- Competencies ---
+
+:Comp_CE6 rdf:type guide:Competency ;
+    guide:competencyCode "CE6" ;
+    guide:competencyDescription "Capacidad para modelar, diseñar, implantar, gestionar, operar, administrar y mantener redes, servicios y contenidos."@en .
+
+:Comp_CE7 rdf:type guide:Competency ;
+    guide:competencyCode "CE7" ;
+    guide:competencyDescription "Capacidad para realizar la planificación, toma de decisiones y empaquetamiento de redes, servicios y aplicaciones..."@en .
+
+:Comp_CT4 rdf:type guide:Competency ;
+    guide:competencyCode "CT4" ;
+    guide:competencyDescription "Capacidad para trabajar de forma efectiva como individuo, organizando y planificando su propio trabajo..."@en .
+
+# --- Learning Results ---
+
+:LR_RA4 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA4" ;
+    guide:learningResultDescription "Conocer los métodos de ingeniería útiles en el desarrollo y operación de aplicaciones y servicios"@en .
+
+:LR_RA1 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA1" ;
+    guide:learningResultDescription "Conocer estándares y protocolos utilizados en el desarrollo de aplicaciones orientadas a servicios..."@en .
+
+# --- Syllabus ---
+
+:Syllabus_Aplicaciones_Servicios rdf:type guide:Syllabus ;
+    guide:hasItem :SyllabusItem_Tema1, :SyllabusItem_Tema5, :SyllabusItem_Tema13, :SyllabusItem_Tema17 .
+
+:SyllabusItem_Tema1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Economía digital"@en .
+
+:SyllabusItem_Tema5 rdf:type guide:SyllableItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Sistemas de información en la empresa"@en .
+
+:SyllabusItem_Tema13 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 13 ;
+    guide:syllabusDescription "SCRUM"@en .
+
+# --- Evaluation System ---
+
+:EvalSystem_Aplicaciones_Servicios rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La calificación se obtiene mediante la media de las calificaciones correspondientes a los dos exámenes parciales, con igual peso."@en ;
+    guide:hasEvaluationTrial :Trial_ExamenParcial1, :Trial_ExamenFinal .
+
+:Trial_ExamenParcial1 rdf:type guide:EvaluationTrial ;
+    sch:name "Examen parcial 1" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :Comp_CE6, :Comp_CT4 .
+
+:Trial_ExamenFinal rdf:type guide:EvaluationTrial ;
+    sch:name "Examen final parcial 1" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+# --- Schedule and Activities ---
+
+:Schedule_Aplicaciones_Servicios rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week1, :Event_Week8, :Event_Week17 .
+
+:Event_Week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1"@en ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :Act_Tema1 .
+
+:Act_Tema1 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1. Economía digital"@en ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral"@en ;
+    guide:attendanceType "Presencial"@en .
+
+:Event_Week8 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 8"@en ;
+    guide:eventIndex 8 ;
+    guide:hasActivity :Act_ExamenParcial1 .
+
+:Act_ExamenParcial1 rdf:type guide:Activity ;
+    guide:activityDescription "Realización del examen parcial 1"@en ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Examen"@en .
+
+# --- Didactic Resources ---
+
+:Res_Moodle rdf:type guide:DidacticResource ;
+    sch:name "Moodle de la asignatura" ;
+    guide:bibliographyType "Recurso web"@en ;
+    guide:bibliographyDescription "https://moodle.upm.es/titulaciones/oficiales/login/login.php"@en .
+
+:Res_Libro1 rdf:type guide:DidacticResource ;
+    sch:name "Engineering software products" ;
+    guide:bibliographyType "Bibliografía"@en ;
+    guide:bibliographyDescription "I. Sommerville, Pearson 2020."@en .
+
+:Res_Libro2 rdf:type guide:DidacticResource ;
+    sch:name "Microservices patterns" ;
+    guide:bibliographyType "Bibliografía"@en ;
+    guide:bibliographyDescription "C. Richardson, Manning 2019."@en .
+
+# --- Required Knowledge ---
+
+:ReqKnow_Java rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Conocimientos de programación en Java"@en .
+
+:ReqKnow_SoftwareEng rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Conocimientos de Ingeniería del Software y desarrollo de aplicaciones"@en .

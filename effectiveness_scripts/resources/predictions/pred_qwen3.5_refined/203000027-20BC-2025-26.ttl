@@ -1,0 +1,499 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix data: <http://guia-mad-bench.es/data/> .
+
+<http://w3id.org/def/guia#CourseGuide_20BC_Master_Biologia_Computacional> rdf:type owl:Class ;
+    rdfs:subClassOf sch:CourseInstance, guide:SyllabusItem ; # Placeholder for structure if needed, but focusing on instances.
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> rdf:type :CourseGuide , sch:CourseInstance .
+    <http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> dc:title "Computational Approaches In Evolutionary Biology"@en ;
+        dct:creator "Jesus Israel Pagan Muñoz" ; # Coordinator mentioned in Faculty section.
+        sch:name "203000027 - Computational Approaches In Evolutionary Biology"@en .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :numberOfCredits 3 ; # ECTS credits from Section 1.
+    sch:courseCode "203000027"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :teachingPeriodMonths "September-January"@en ; # Section 1.
+    sch:inLanguage "English"@en .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> dct:creator <http://w3id.org/def/guia#Jesus_Israel_Pagan_Muñoz> ;
+    :hasSyllabus <http://guia-mad-bench.es/data/syllabus/Master_Biologia_Computacional_20BC>.
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> sch:courseCode "203000027"^^xsd:string .
+    <http://guia-mad-bench.es/data/syllabus/Master_Biologia_Computacional_20BC> rdf:type :Syllabus ; # Assuming Syllabus class exists or using generic. The ontology has guide:Syllabus.
+
+<http://w3id.org/def/guia#Jesus_Israel_Pagan_Muñoz> rdf:type sch:Person, :Lecturer .
+    <http://w3id.org/def/guia#Jesus_Israel_Pagan_Muñoz> sch:name "Jesus Israel Pagan Muñoz"@en ; # Section 2.1 Name and surname.
+        dc:title "Subject coordinator"^^xsd:string ; # Role inferred from text, but using ontology terms where possible. Actually `sch:director` is in ontology for CourseGuide -> Lecturer.
+
+<http://w3id.org/def/guia#Jesus_Israel_Pagan_Muñoz> :office "231"@en .
+    <http://w3id.org/def/guia#Jesus_Israel_Pagan_Muñoz> sch:email "jesusisrael.pagan@upm.es"^^xsd:string ; # Section 2.1 Email.
+        guide:tutorshipsSchedule "Tu - 12:00 - 13:00"@en .
+
+<http://w3id.org/def/guia#Cristina_Saez_Sanchez> rdf:type sch:Person, :Lecturer ; # Section 2.1 Name and surname.
+    <http://w3id.org/def/guia#Cristina_Saez_Sanchez> sch:name "Cristina Saez Sanchez"@en .
+
+<http://w3id.org/def/guia#Cristina_Saez_Sanchez> :office "202 - CBGP"^^xsd:string ; # Section 2.1 Office/Room.
+    <http://w3id.org/def/guia#Cristina_Saez_Sanchez> sch:email "cristina.saez@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus/Master_Biologia_Computacional_20BC> :hasItem <http://guia-mad-bench.es/data/subjectitem/S1_MECHANISMS_OF_EVOLUTION>.
+    <http://guia-mad-bench.es/data/subjectitem/S1_MECHANISMS_OF_EVOLUTION> rdf:type :SyllabusItem ; # Section 5.2 Item Index and Description.
+        guide:itemIndex "1"^^xsd:integer .
+
+<http://guia-mad-bench.es/data/subjectitem/S1_MECHANISMS_OF_EVOLUTION> sch:description "Mechanisms of evolution: mutation"@en .
+    <http://guia-mad-bench.es/data/syllabus/Master_Biologia_Computacional_20BC> :hasItem <http://guia-mad-bench.es/data/subjectitem/S2_NATURAL_SELECTION>.
+
+<http://guia-mad-bench.es/data/subjectitem/S2_NATURAL_SELECTION> rdf:type :SyllabusItem ;
+    guide:itemIndex "2"^^xsd:integer .
+    <http://guia-mad-bench.es/data/subjectitem/S2_NATURAL_SELECTION> sch:description "Natural selection"@en .
+
+<http://w3id.org/def/guia#Competency_CE02> rdf:type :LearningResult ; # Section 4.1 Skills to be learned (CE codes).
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> sch:description "Utilizar sistemas operativos, programas y herramientas de uso común en biología computacional..."^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE03>.
+    <http://w3id.org/def/guia#Competency_CE03> guide:competencyCode "CE03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia#Competency_CE05> guide:competencyCode "CE05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE10>.
+    <http://w3id.org/def/guia#Competency_CE10> guide:competencyCode "CE10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE02>.
+    <http://w3id.org/def/guia#Competency_CE02> guide:competencyCode "CE02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/ANX-PR-CL-001-01> :hasLearningResult <http://w3id.org/def/guia#Competency_CE05>.
+    <http://w3id.org/def/guia

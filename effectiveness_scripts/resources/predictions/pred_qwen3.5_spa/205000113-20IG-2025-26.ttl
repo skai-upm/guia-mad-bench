@@ -1,0 +1,96 @@
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix sch: <https://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guide#courseGuide_ANX_PR_CL_001> a guide:CourseGuide ;
+    sch:name "ANX-PRCL001 - Guía de Aprendizaje" ,
+        dct:title "GUÍA DE APRENDIZAJE"@en ;
+    guide:numberOfCredits 4 .
+
+<http://guia-mad-bench.es/data/guide#degree_20IG> a guide:BachelorDegree, sch:CourseInstance ;
+    sch:name "Grado En Ingenieria Agricola" ,
+        dct:title "Plan de Estudios"@en ;
+    guide:hasCourseGuide <http://guia-mad-bench.es/data/guide#courseGuide_ANX_PR_CL_001> .
+
+<http://guia-mad-bench.es/data/guide#lecturer_nora_formoso_rafferty> a guide:Lecturer, sch:Person ;
+    sch:name "Nora Formoso-Rafferty Castilla" ,
+        dct:title "Coordinador/a"@en ;
+    sch:email <mailto:nora.formosorafferty@upm.es> ;
+    guide:office "Campos"@en .
+
+<http://guia-mad-bench.es/data/guide#competency_CB01> a guide:Competency ;
+    guide:competencyCode "CB01"^^xsd:string ,
+        guide:competencyDescription "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de estudio que parte de la base de la educación secundaria general"@en .
+
+<http://guia-mad-bench.es/data/guide#competency_CB03> a guide:Competency ;
+    guide:competencyCode "CB03"^^xsd:string ,
+        guide:competencyDescription "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes para emitir juicios que incluyan una reflexión sobre temas relevantes"@en .
+
+<http://guia-mad-bench.es/data/guide#learningResult_RA271> a guide:LearningResult ;
+    guide:learningResultCode "RA271"^^xsd:string ,
+        guide:learningResultDescription "Aplicar los principios de la genética a los procedimientos relacionados con la conservación, selección y mejora de especies de interés ganadero"@en .
+
+<http://guia-mad-bench.es/data/guide#syllabus_205000113> a guide:Syllabus ;
+    sch:name "Genética Animal" ,
+        dct:title "Temario de la asignatura"@es ;
+    guide:hasItem <http://guia-mad-bench.es/data/guide#syllabusItem_Tema_1>,
+                 <http://guia-mad-bench.es/data/guide#syllabusItem_Tema_2> .
+
+<http://guia-mad-bench.es/data/guide#syllabusItem_Tema_1> a guide:SyllabusItem ;
+    sch:name "Introducción a la genética animal" ,
+        guide:syllabusDescription "Tema 1: Introducción"@en ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://guia-mad-bench.es/data/guide#syllabusItem_Tema_2> a guide:SyllabusItem ;
+    sch:name "Genética de poblaciones" ,
+        guide:syllabusDescription "Tema 2: Genética de poblaciones"@en ;
+    guide:itemIndex 2^^xsd:integer .
+
+<http://guia-mad-bench.es/data/guide#schedule_205000113> a guide:Schedule, sch:Schedule ;
+    sch:name "Cronograma" ,
+        dct:title "Plan de estudios"@en ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/guide#scheduleEvent_Sem_1>,
+                      <http://guia-mad-bench.es/data/guide#scheduleEvent_Sem_2> .
+
+<http://guia-mad-bench.es/data/guide#scheduleEvent_Sem_1> a guide:ScheduleEvent, sch:Event ;
+    sch:eventIndex 1^^xsd:integer ,
+        guide:eventWeek "Séptimo semestre"^^rdf:langString ;
+    sch:name "Tema 1: Introducción"@en .
+
+<http://guia-mad-bench.es/data/guide#activity_LeccionMagistral> a guide:Activity, sch:EventSchedule ;
+    sch:name "Actividad del tipo Lección Magistral" ,
+        guide:activityDescription "LM: Actividad del tipo Lección Magistral"@en .
+
+<http://guia-mad-bench.es/data/guide#evaluationSystem_205000113> a guide:EvaluationSystem ;
+    sch:name "Sistema de Evaluación" ,
+        dct:title "Evaluación Progresiva y Global"@es ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guide#evaluationTrial_Tarea_Simulacion>,
+                             <http://guia-mad-bench.es/data/guide#evaluationTrial_Prueba_Progresiva> .
+
+<http://guia-mad-bench.es/data/guide#evaluationTrial_Tarea_Simulacion> a guide:EvaluationTrial ;
+    sch:name "Tarea Simulación Rebaño lechero" ,
+        guide:trialType "Trabajo Individual"@en,
+            guide:gradePercentage 2.5^^xsd:string .
+
+<http://guia-mad-bench.es/data/guide#evaluationTrial_Prueba_Progresiva> a guide:EvaluationTrial ;
+    sch:name "Prueba Evaluación Progresiva" ,
+        guide:trialType "Prueba Telemática"@en,
+            guide:gradePercentage 40^^xsd:string .
+
+<http://guia-mad-bench.es/data/guide#evaluationTrial_Prueba_Global> a guide:EvaluationTrial ;
+    sch:name "Prueba evaluación global" ,
+        guide:trialType "Examen Escrito"@en,
+            guide:gradePercentage 85^^xsd:string .
+
+<http://guia-mad-bench.es/data/guide#resource_Falconer> a guide:DidacticResource ;
+    sch:name "Falconer: Introducción a la genética cuantitativa" ,
+        guide:bibliographyTitle "Falconer",
+            guide:bibliographyType "Bibliografía"@en .
+
+<http://guia-mad-bench.es/data/guide#requiredKnowledge_205000113> a guide:RequiredKnowledge ;
+    sch:name "Conocimientos previos recomendados" ,
+        dct:title "Asignaturas previas y otros conocimientos"@es ;
+    guide:previousCourses "Producción De Rumiantes, Producción De Monogástricos, Estadística".

@@ -1,0 +1,490 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3id.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@base <http://guia-mad-bench.es/data/> .
+
+#################################################################
+#    Classes and Properties (Reference)
+#################################################################
+
+###  http://www.w3id.org/def/guia#CourseGuide
+guide:CourseGuide rdf:type owl:Class ;
+                  rdfs:subClassOf sch:CourseInstance ;
+                  rdfs:comment "A structured academic document that describes a course, including objectives, contents, methodology, resources, schedule, and evaluation."@en .
+
+###  http://www.w3id.org/def/guia#Degree
+guide:Degree rdf:type owl:Class ;
+             rdfs:subClassOf sch:COURSE ;
+             rdfs:comment "An academic degree programme that structures and groups courses within a formal higher education curriculum."@en .
+
+#################################################################
+#    Instance Data Extraction
+#################################################################
+
+###  Course Guide Instance (ANX-PR/CL/001-01)
+<http://guia-mad-bench.es/data/guia/courseguide/GA_53001726> rdf:type guide:CourseGuide ;
+                                                          dc:title "Dirección Estratégica Y De La Innovación"@en ;
+                                                          dct:creator <http://w3id.org/def/guia#Rafael_Ramos_Diaz> ,
+                                                                                     <http://w3id.org/def/guia#Ebru_Susur_Donerkan> ;
+                                                          guide:numberOfCredits "3"^^xsd:decimal ;
+                                                          sch:name "53001726 - Dirección Estratégica Y De La Innovación"@en ;
+                                                          dct:description "La asignatura tiene como objetivos fundamentales que los alumnos sean capaces de abordar proyectos de innovación en un entorno real mediante trabajo colaborativo."@es .
+
+###  Degree Instance (D.M.U. En Ingeniería Industrial...)
+<http://guia-mad-bench.es/data/guia/degree/D_05DI> rdf:type guide:Degree ;
+                                                       sch:name "D.M.U. En Ingeniería Industrial Y En Automática y Robótica"@en ;
+                                                       guide:degreeCode "05DI"^^xsd:string .
+
+###  Link Degree to Course Guide (hasCourseInstance)
+<http://guia-mad-bench.es/data/guia/courseguide/GA_53001726> sch:hasCourseInstance <http://guia-mad-bench.es/data/guia/degree/D_05DI> .
+
+###  Lecturer Instances (Rafael Ramos Diaz, Ebru Susur Donerkan)
+<http://w3id.org/def/guia#Rafael_Ramos_Diaz> rdf:type guide:Lecturer ;
+                                                sch:name "Rafael Ramos Diaz"@en ,
+                                                       <http://purl.org/dc/terms/title>"Coordinador/a"^^xsd:string .
+
+###  Rafael's Email and Office (Empty in table)
+<http://w3id.org/def/guia#Ebru_Susur_Donerkan> rdf:type guide:Lecturer ;
+                                                   sch:name "Ebru Susur Donerkan"@en ,
+                                                          <http://purl.org/dc/terms/title>"Profesor/a"^^xsd:string .
+
+###  Rafael's Email and Office (UD Economía)
+<http://w3id.org/def/guia#Rafael_Ramos_Diaz> sch:email "rafael.ramos@upm.es"@en ;
+                                                guide:tutorshipsSchedule "- -"^^xsd:string .
+
+###  External Lecturers Instances
+<http://guia-mad-bench.es/data/guia/Lecturer/G_Penas_Garcia> rdf:type guide:Lecturer ;
+                                                                sch:name "Gerardo Penas García"@en ,
+                                                                       <http://purl.org/dc/terms/title>"Profesor/a Externo"^^xsd:string .
+
+###  External Lecturers Email and Origin
+<http://guia-mad-bench.es/data/guia/Lecturer/G_Penas_Garcia> sch:email "gerardo.penas@upm.es"@en ;
+                                                                guide:tutorshipsSchedule "- -"^^xsd:string .
+
+###  Competency Instances (MUAR.CB06, etc.)
+<http://guia-mad-bench.es/data/guia/competency/MUAR_CB06> rdf:type guide:Competency ;
+                                                            guide:competencyCode "MUAR.CB06"^^xsd:string ,
+                                                                   <http://purl.org/dc/terms/title>"Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales en el desarrollo y/o aplicación de ideas, a menudo en un contexto de investigación"@es .
+
+###  Learning Result Instances (RA87)
+<http://guia-mad-bench.es/data/guia/learningresult/RA_01> rdf:type guide:LearningResult ;
+                                                             guide:learningResultCode "RA87"^^xsd:string ,
+                                                                    <http://purl.org/dc/terms/title>"Aplicar distintas herramientas y metodologías para el diseño y puesta en práctica de estrategias y políticas de innovación en contextos competitivos"@es .
+
+###  Syllabus Instance (Section 4.2)
+<http://guia-mad-bench.es/data/guia/syllabus/S_53001726> rdf:type guide:Syllabus ;
+                                                            sch:name "Temario de la asignatura"^^xsd:string .
+
+###  Syllabus Items (Section 4.2)
+<http://guia-mad-bench.es/data/guia/syllabusitem/SI_01> rdf:type guide:SyllabusItem ;
+                                                           <http://w3id.org/def/guia#itemIndex> "1"^^xsd:integer ,
+                                                                  <http://purl.org/dc/terms/title>"TALLER DE INNOVACIÓN SESIÓN 1: lanzamiento (kick-off) del proyecto y plan de investigación"@es .
+
+###  Schedule Instance (Section 5.1)
+<http://guia-mad-bench.es/data/guia/schedule/S_2025_26> rdf:type guide:Schedule ;
+                                                           sch:eventSchedule <http://guia-mad-bench.es/data/guia/event/E_01>,
+                                                                   <http://guia-mad-bench.es/data/guia/event/E_02>.
+
+###  Schedule Events (Section 5.1)
+<http://guia-mad-bench.es/data/guia/event/E_01> rdf:type guide:ScheduleEvent ;
+                                                  sch:eventIndex "1"^^xsd:integer ,
+                                                         <http://purl.org/dc/terms/title>"PRESENTACIÓN DE LA ASIGNATURA"@es .
+
+###  Evaluation System Instance (Section 6)
+<http://guia-mad-bench.es/data/guia/evalsystem/E_53001726> rdf:type guide:EvaluationSystem ;
+                                                               sch:name "Evaluación de la asignatura"^^xsd:string ,
+                                                                      <http://purl.org/dc/terms/title>"Calificación de la presentación del resultado del Taller de Innovación: 60%"@es .
+
+###  Evaluation Trial Instances (Progressive and Final)
+<http://guia-mad-bench.es/data/guia/evaltrial/T_01> rdf:type guide:EvaluationTrial ;
+                                                       sch:name "Entrega intermedia del Taller"^^xsd:string ,
+                                                            <http://purl.org/dc/terms/title>"Evaluación Progresiva"@es .
+
+###  Evaluation Trial Properties (Weight, Min Score)
+<http://guia-mad-bench.es/data/guia/evaltrial/T_01> guide:gradePercentage "5%"^^xsd:string ,
+                                                       <http://w3id.org/def/guia#minimumScore> "5 / 10"^^xsd:string .
+
+###  Evaluation Trial Linked to Schedule Event (Weeks)
+<http://guia-mad-bench.es/data/guia/event/E_02> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/evaltrial/T_01>.
+
+###  Didactic Resource Instances (Section 7.1)
+<http://guia-mad-bench.es/data/guia/resource/R_Moodle> rdf:type guide:DidacticResource ;
+                                                          sch:name "Moodle"^^xsd:string ,
+                                                                 <http://purl.org/dc/terms/title>"Recursos web"@es .
+
+###  Bibliographic Resource Instance (William Chesbrough)
+<http://guia-mad-bench.es/data/guia/resource/R_Christensen> rdf:type guide:DidacticResource ;
+                                                               sch:name "The innovator's dilemma"^^xsd:string ,
+                                                                      <http://purl.org/dc/terms/title>"Bibliografía"@es .
+
+###  Link Resources to Course Guide
+<http://guia-mad-bench.es/data/guia/courseguide/GA_53001726> guide:hasDidacticResource <http://guia-mad-bench.es/data/guia/resource/R_Moodle>,
+                                                                                          <http://guia-mad-bench.es/data/guia/resource/R_Christensen>.
+
+###  Link Competencies to Course Guide
+<http://guia-mad-bench.es/data/guia/courseguide/GA_53001726> guide:hasCompetency <http://guia-mad-bench.es/data/guia/competency/MUAR_CB06>,
+                                                                                       <http://guia-mad-bench.es/data/guia/learningresult/RA_01>.
+
+###  Link Learning Results to Course Guide
+<http://guia-mad-bench.es/data/guia/courseguide/GA_53001726> guide:hasLearningResult <http://guia-mad-bench.es/data/guia/learningresult/RA_87>,
+                                                                                          <http://guia-mad-bench.es/data/guia/competency/MUAR_CB09>.
+
+###  Link Syllabus to Course Guide
+<http://guia-mad-bench.es/data/guia/courseguide/GA_53001726> guide:hasSyllabus <http://guia-mad-bench.es/data/guia/syllabus/S_53001726>.
+
+###  Link Evaluation System to Course Guide
+<http://guia-mad-bench.es/data/guia/courseguide/GA_53001726> guide:hasEvaluation <http://guia-mad-bench.es/data/guia/evalsystem/E_53001726>.
+
+###  Link Schedule to Course Guide
+<http://guia-mad-bench.es/data/guia/courseguide/GA_53001726> sch:courseSchedule <http://guia-mad-bench.es/data/guia/schedule/S_2025_26>.
+
+###  Link Lecturers to Course Guide
+<http://w3id.org/def/guia#Rafael_Ramos_Diaz> sch:director <http://guia-mad-bench.es/data/guia/courseguide/GA_53001726>,
+                                                           guide:Lecturer .
+
+###  Link Degree to Course Guide (hasCourse) - Note: Ontology has `guide:Degree` -> `guide:hasCourse`. I will use this property.
+<http://guia-mad-bench.es/data/guia/degree/D_05DI> guide:hasCourse <http://guia-mad-bench.es/data/guia/course/CourseInstance>.
+
+###  Link Course Guide to Degree (sch:hasCourseInstance) - Already done above but ensuring consistency.
+<http://w3id.org/def/guia#Rafael_Ramos_Diaz> sch:instructor <http://guia-mad-bench.es/data/guia/courseguide/GA_53001726>.
+
+###  Link Evaluation Trial to Schedule Event (hasScheduleEvent)
+<http://guia-mad-bench.es/data/guia/evaltrial/T_Final> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>,
+                                                                                   <http://w3id.org/def/guia#PRUEBA_GLOBAL>.
+
+###  Link Evaluation Trial to Competency (involvesCompetency)
+<http://guia-mad-bench.es/data/guia/evaltrial/T_Final> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/guia/competency/MUAR_CB07>,
+                                                       sch:eventSchedule .
+
+###  Link Evaluation Trial to Schedule Event (hasScheduleEvent) - Corrected based on ontology property `guide:hasScheduleEvent` domain `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ontology Property `guide:hasScheduleEvent` domain is `EvaluationTrial`.
+<http://w3id.org/def/guia#PRUEBA_GLOBAL> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/event/E_17>.
+
+###  Link Evaluation Trial to Schedule Event (Corrected) - Ont

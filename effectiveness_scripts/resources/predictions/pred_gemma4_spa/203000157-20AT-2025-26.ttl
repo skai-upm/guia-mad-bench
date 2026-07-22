@@ -1,0 +1,180 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Information
+guide:Course_203000157 a guide:Course ;
+    sch:name "Nuevas Tecnologías De Envasado De Alimentos" ;
+    sch:courseCode 203000157 ;
+    guide:courseType "Optativa" ;
+    guide:hasCourseInstance guide:CourseGuide_203000157 .
+
+guide:Master_20AT a guide:MasterDegree ;
+    sch:name "Master Universitario En Ingenieria Alimentaria Aplicada A La Salud" ;
+    guide:degreeCode "20AT" ;
+    guide:hasCourse guide:Course_203000157 .
+
+guide:ETSI_Agronomica a guide:UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas" ;
+    guide:offers guide:Master_20AT .
+
+# Course Guide Details
+guide:CourseGuide_203000157 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Nuevas Tecnologías De Envasado De Alimentos" ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:numberOfCredits 4.0 ;
+    guide:hasSyllabus guide:Syllabus_203000157 ;
+    guide:hasEvaluation guide:EvalSystem_203000157 ;
+    guide:hasLearningResult guide:LR_RA50, guide:LR_RA51, guide:LR_RA53, guide:LR_RA52, guide:LR_RA49 ;
+    guide:hasCompetency guide:Comp_CB8, guide:Comp_CG1, guide:Comp_CG3, guide:Comp_CG8 ;
+    guide:hasDidacticResource guide:Res_Baaghan, guide:Res_Barros ;
+    sch:instructor guide:Lecturer_Fernando, guide:Lecturer_Eva, guide:Lecturer_Felipe .
+
+# Lecturers
+guide:Lecturer_Fernando a guide:Lecturer ;
+    sch:name "Fernando Calderon Fernandez" ;
+    sch:email "fernando.calderon@upm.es" ;
+    guide:office "02A.01.021" ;
+    guide:tutorshipsSchedule "M - 10:30 - 12:30, X - 10:30 - 12:30" .
+
+guide:Lecturer_Eva a guide:Lecturer ;
+    sch:name "Eva Navascues Lopez-Cordon" ;
+    sch:email "eva.navascues@upm.es" ;
+    guide:office "02A-01.021" ;
+    guide:tutorshipsSchedule "M - 10:30 - 12:00, J - 12:30 - 14:00" .
+
+guide:Lecturer_Felipe a guide:Lecturer ;
+    sch:name "Felipe Palomero Rodriguez" ;
+    sch:email "felipe.palomero@upm.es" ;
+    guide:office "02.01.039.1" ;
+    guide:tutorshipsSchedule "M - 10:30 - 12:30, X - 10:30 - 12:30" .
+
+# Competencies
+guide:Comp_CB8 a guide:Competency ;
+    guide:competencyCode "CB8" ;
+    guide:competencyDescription "Que los estudiantes sean capaces de integrar conocimientos y enfrentarse a la complejidad de formular juicios..." .
+
+guide:Comp_CG1 a guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Capacidad de observación, generación de hipótesis y planteamiento de problemas experimentales en el ámbito de la alimentación y la salud." .
+
+guide:Comp_CG3 a guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Capacidad para evaluar los sistemas de control de la cadena alimentaria y promover la seguridad en el consumo como estrategia competitiva." .
+
+guide:Comp_CG8 a guide:Competency ;
+    guide:competencyCode "CG8" ;
+    guide:competencyDescription "Resolver con eficacia y eficiencia problemas relacionados con la alimentación salvaguardando y mejorando la salud de la sociedad..." .
+
+# Learning Results
+guide:LR_RA50 a guide:LearningResult ;
+    guide:learningResultCode "RA50" ;
+    guide:learningResultDescription "Conocer los avances en materiales tradicionales de envasado" .
+
+guide:LR_RA51 a guide:LearningResult ;
+    guide:learningResultCode "RA51" ;
+    guide:learningResultDescription "Conocer los avances en nuevos materiales y técnicas de envasado" .
+
+guide:LR_RA53 a guide:LearningResult ;
+    guide:learningResultCode "RA53" ;
+    guide:learningResultDescription "Conocer los nuevos sistemas de gestión ambiental de envases" .
+
+guide:LR_RA52 a guide:CR_RA52 ; # Note: Using class for consistency if code is just string
+    guide:learningResultCode "RA52" ;
+    guide:learningResultDescription "Conocer y aplicar la legislación sobre envasado de alimentos y salud" .
+
+guide:LR_RA49 a guide:LearningResult ;
+    guide:learningResultCode "RA49" ;
+    guide:learningResultDescription "Aquirir conocimientos sobre la relación ingeniería del envasado y salud" .
+
+# Syllabus
+guide:Syllabus_203000157 a guide:Syllabus ;
+    guide:hasItem guide:SyllabusItem_1, guide:SyllabusItem_2, guide:SyllabusItem_3, guide:SyllabusItem_4, guide:SyllabusItem_5, guide:SyllabusItem_6 .
+
+guide:SyllabusItem_1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción" .
+
+guide:SyllabusItem_2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Avances en materiales de envasado tradicionales" .
+
+guide:SyllabusItem_3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Nuevos materiales de envasado" .
+
+guide:SyllabusItem_4 a guide:SyllableItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Tecnologías de envasado emergentes" .
+
+guide:SyllabusItem_5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Etiquetado. Información al consumidor. Avances" .
+
+guide:SyllabusItem_6 a guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Aspectos medioambientales del envasado de alimentos" .
+
+# Evaluation System and Trials
+guide:EvalSystem_203000157 a guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación progresiva y global." ;
+    guide:hasEvaluationTrial guide:Trial_Prog_1, guide:Trial_Prog_2, guide:Trial_Prog_3, guide:Trial_Global .
+
+guide:Trial_Prog_1 a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:trialWeek "7" ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialDescription "Evaluación Temas 1-2" .
+
+guide:Trial_Prog_2 a guide:EvaluationTrial ;
+    guide:evaluationType "Presentación en Grupo" ;
+    guide:trialWeek "13" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialDescription "Evaluacion Tema 3" .
+
+guide:Trial_Prog_3 a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:trialWeek "15" ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialDescription "Evaluación Temas 4-6" .
+
+guide:Trial_Global a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:trialWeek "17" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialDescription "Temas 1-6 (Prueba global)" .
+
+# Activities and Schedule
+guide:Schedule_203000157 a guide:Schedule ;
+    sch:eventSchedule guide:Event_Tema1, guide:Event_Exam_Prog_1 .
+
+guide:Event_Tema1 a guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity guide:Activity_Tema1 .
+
+guide:Activity_Tema1 a guide:Activity ;
+    guide:activityDescription "Tema 1" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+guide:Res_Baaghan a guide:DidacticResource ;
+    guide:bibliographyTitle "Food Packaging Law in the United States, in Global Legislation for Food Packaging Materials" ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:Res_Barros a guide:DidacticResource ;
+    guide:bibliographyTitle "Antimicrobial Food Packaging ; 4th Edition - 2020" ;
+    guide:bibliographyType "Bibliografía" .
+
+# Required Knowledge
+guide:ReqKnow_Packaging a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Tecnología del envasado de alimentos" .

@@ -1,0 +1,251 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix data: <http://guia-mad-bench.es/data/> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dct:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dct:license rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://schema.org/courseSchedule
+sch:courseSchedule rdf:type owl:ObjectProperty ;
+                   rdfs:domain guide:CourseGuide ;
+                   rdfs:range guide:Schedule ;
+                   rdfs:comment "Links a course guide to the schedule that organizes its planned events."@en ;
+                   rdfs:label "course schedule"@en .
+
+
+###  https://schema.org/director
+sch:director rdf:type owl:ObjectProperty ;
+             rdfs:domain guide:CourseGuide ;
+             rdfs:range guide:Lecturer ;
+             rdfs:comment "Links a course guide to the lecturer acting as course coordinator or academic lead."@en ;
+             rdfs:label "director"@en .
+
+
+###  https://schema.org/eventSchedule
+sch:eventSchedule rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:Schedule ;
+                  rdfs:range guide:ScheduleEvent ;
+                  rdfs:comment "Links a schedule to one of its schedule events."@en ;
+                  rdfs:label "event schedule"@en .
+
+
+###  https://schema.org/hasCourseInstance
+sch:hasCourseInstance rdf:type owl:ObjectProperty ;
+                      rdfs:domain guide:Course ;
+                      rdfs:range guide:CourseGuide ;
+                      rdfs:comment "Links a course to a concrete course guide or offering for a given academic period."@en ;
+                      rdfs:label "has course instance"@en .
+
+
+###  https://schema.org/instructor
+sch:instructor rdf:type owl:ObjectProperty ;
+               rdfs:domain guide:CourseGuide ;
+               rdfs:range guide:Lecturer ;
+               rdfs:comment "Links a course guide to a lecturer involved in teaching the course."@en ;
+               rdfs:label "instructor"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://schema.org/name
+sch:name rdf:type owl:DatatypeProperty ;
+         rdfs:range rdf:langString ;
+         rdfs:comment "Provides the name of an entity such as a course, person, or university center."@en ;
+         rdfs:label "name"@en .
+
+
+###  https://schema.org/email
+sch:email rdf:type owl:DatatypeProperty ;
+          rdfs:domain guide:Lecturer ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Provides the email address of a person involved in teaching or coordination."@en ;
+          rdfs:label "email"@en .
+
+
+###  https://schema.org/numberOfCredits
+sch:numberOfCredits rdf:type owl:DatatypeProperty ;
+                    rdfs:domain guide:Course ;
+                    rdfs:range xsd:decimal ;
+                    rdfs:comment "States the number of academic credits assigned to a course."@en ;
+                    rdfs:label "number of credits"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://w3id.org/def/guia#Degree
+guide:Degree rdf:type owl:Class ;
+             rdfs:comment "An academic degree programme that structures and groups courses within a formal higher education curriculum."@en ;
+             rdfs:label "Degree"@en .
+
+
+#################################################################
+#    Instances
+#################################################################
+
+###  Degree Instance (05BI)
+data:DobleMasterIngenieriaIndustrial rdf:type guide:Degree ;
+                                      sch:name "Doble Master Universitario Ingenieria Industrial - Electronica Industrial" ;
+                                      dct:title "05BI"@en .
+
+
+###  University Center Instance
+data:EtsIndustrialesUPM rdf:type guide:UniversityCenter ;
+                         sch:name "E.T.S. De Ingenieros Industriales" ;
+                         rdfs:comment "An organizational unit within a university where degree programmes are taught."@en ;
+                         dct:title "05 - E.T.S. De Ingenieros Industriales"@en .
+
+
+###  Course Guide Instance (Design Of Magnetic Components)
+data:GA_05BI_53001640 rdf:type guide:CourseGuide, sch:CourseInstance ;
+                       sch:name "Design Of Magnetic Components" ;
+                       dct:title "ANX-PR/CL/001-01"@en ;
+                       guide:numberOfCredits 3.0 ;
+                       guide:teachingPeriodMonths "Septiembre", "Enero" ;
+                       guide:inLanguage "Inglés/Castellano" ;
+                       sch:description "The course is organized to provide students with knowledge of the advanced design of high frequency magnetic components used in power converters."@en .
+
+
+###  Course Instance (53001640)
+data:Course_53001640 rdf:type guide:Course ;
+                      sch:name "Design Of Magnetic Components" ;
+                      data:sch_courseCode 53001640 ;
+                      guide:numberOfCredits 3.0 .
+
+
+###  Lecturer Instance (Alberto Delgado Exposito)
+data:Lecturer_AlbertoDelgadoExposito rdf:type guide:Lecturer, sch:Person ;
+                                      sch:name "Alberto Delgado Exposito" ;
+                                      data:sch_email "a.delgado@upm.es"@en ;
+                                      guide:office "CEI" .
+
+
+###  Schedule Instance (Course Guide)
+data:Schedule_53001640 rdf:type guide:Schedule, sch:Schedule ;
+                        sch:eventSchedule <http://w3id.org/def/guia#Event_Semester_1>, 
+                                          <http://w3id.org/def/guia#Event_Semester_2> .
+
+
+###  Schedule Event Instance (Semester 1)
+data:Event_Semester_1 rdf:type guide:ScheduleEvent, sch:Event ;
+                       data:eventIndex 1 ;
+                       guide:syllabusDescription "Theory" ;
+                       om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+
+###  Schedule Event Instance (Semester 4 - Evaluation)
+data:Event_Semester_4 rdf:type guide:ScheduleEvent, sch:Event ;
+                       data:eventIndex 13 ; # Approximate based on table structure in doc
+                       om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+
+###  Evaluation System Instance (Global)
+data:EvaluationSystem_Global rdf:type guide:EvaluationSystem ;
+                              sch:description "The student evaluation will be implemented as a global evaluation that will be implemented through an Exam, Practical Design and Training CAD tool course."@en .
+
+
+###  Evaluation Trial Instances
+
+#### Trial 1: Training CAD Tool (Progressive)
+data:Trial_TrainingCADTool rdf:type guide:EvaluationTrial ;
+                           sch:name "Training CAD Tool" ;
+                           data:eventIndex 4 ; # From table row Sem=4, Activity Type 2 column has training in week 3/4? Table shows Sem 1-17. Trial is listed as Sem 4 in evaluation section but schedule says Week 3 or 4. I will use the Evaluation Section reference for trial ID if available.
+                           guide:trialType "Prueba Telemática" ;
+                           guide:trialMode "No Presencial" ;
+                           om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+
+#### Trial 1 Details (from Section 7 Table)
+data:Trial_TrainingCADTool rdf:type guide:EvaluationTrial, sch:EventSchedule ;
+                           data:eventIndex 4 ; # Based on table row Sem=4 in Evaluation section? Actually evaluation trials are listed by Semester. I will link to ScheduleEvent if possible or just define as Trial instance linked via hasEvaluationTrial property (which is not defined for CourseGuide but for EvaluationSystem). Ontology says `guide:hasEvaluationTrial` domain `guide:EvaluationSystem`.
+                           guide:evaluationDuration "03:00" ;
+                           guide:gradePercentage 10.0 ;
+                           guide:minimumScore "0 / 10"@en .
+
+
+#### Trial 2 Details (Practical Design)
+data:Trial_PracticalDesign rdf:type guide:EvaluationTrial, sch:EventSchedule ;
+                           data:eventIndex 16 ; # From table row Sem=16 in Evaluation section? Table lists Sem 4 and Sem 17. I will use the IDs from Section 7 tables (Semester column).
+                           guide:trialType "Trabajo Individual" ;
+                           guide:trialMode "Presencial" ;
+                           om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+
+#### Trial 3 Details (Test)
+data:Trial_TestQuestions rdf:type guide:EvaluationTrial, sch:EventSchedule ;
+                          data:eventIndex 17 ; # From table row Sem=17 in Evaluation section? Table lists Sem 4 and Sem 16/17. I will use the IDs from Section 7 tables (Semester column).
+                          guide:trialType "Examen Escrito" ;
+                          guide:trialMode "Presencial" ;
+                          om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+
+###  Syllabus Instance (Course Guide)
+data:Syllabus_53001640 rdf:type guide:Syllabus, sch:Syllabus ;
+                         data:GA_05BI_53001640 hasSyllabus <http://w3id.org/def/guia#Syllabus_53001640> .
+
+
+###  Syllabus Item Instances (from Section 5.2)
+
+#### Item 1: Introduction
+data:SyllabusItem_Introduction rdf:type guide:SyllabusItem ;
+                                data:itemIndex 1 ;
+                                sch:description "Introduction" ;
+                                rdfs:comment "First thematic unit of the course."@en .
+
+
+###  Syllabus Items (Selected)
+
+#### Item 2.1: Round Conductors
+data:SyllabusItem_RoundConductors rdf:type guide:SyllabusItem ;
+                                   data:itemIndex 3 ; # Based on list order in Section 5.2
+                                   sch:description "Round conductors" .
+
+
+###  Competency Instances (Mapped from text codes)
+
+#### MUEI.CB06 Instance
+data:Competency_CB06 rdf:type guide:Competency, sch:CourseInstance ;
+                      data:competencyCode "MUEI.CB06"@en ;
+                      sch:description "Poseer y comprender conocimientos que aportan una base u oportunidad de ser originales en el desarrollo y/o aplicación de ideas."@en .
+
+
+###  Learning Result Instances (Mapped from text codes)
+
+#### RA1 Instance
+data:LearningResult_RA1 rdf:type guide:LearningResult, sch:CourseInstance ;
+                        data:learningResultCode "RA1"@en ;
+                        sch:description "Comprensión de los principios de operación de la conversión de la energía y de las principales tecnologías de semiconductores" .
+
+
+###  Required Knowledge Instance (from Section 3)
+
+#### Electromagnetism Instance
+data:RequiredKnowledge_ElectroMag rdf:type guide:RequiredKnowledge ;
+                                   sch:description "Electromagnetismo"@en .

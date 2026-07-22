@@ -1,0 +1,127 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:CourseGuide_303000073 a guide:CourseGuide ;
+    sch:name "Organizacion De Los Centros Docentes De Enseñanza Secundaria Y De Formacion Profesional" ;
+    sch:courseCode 303000073 ;
+    guide:numberOfCredits 3.0 ;
+    guide:courseType "Obligatoria" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:semester "Primer semestre" ;
+    guide:inLanguage "Castellano" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:instructor :Lecturer_RodrigoPardo, :Lecturer_OlgaSegovia ;
+    guide:hasCompetency :Comp_CE05, :Comp_CE06, :Comp_CE09, :Comp_CE15, :Comp_CE16, :Comp_CE29, :Comp_CG09, :Comp_CG10, :Comp_CT04, :Comp_CT05, :Comp_CT06 ;
+    guide:hasLearningResult :LR_RA63, :LR_RA64, :LR_RA31, :LR_RA48, :LR_RA60, :LR_RA61, :LR_RA65, :LR_RA59 ;
+    guide:hasEvaluation :EvalSystem_303000073 ;
+    sch:courseSchedule :Schedule_303000073 ;
+    guide:hasSyllabus :Syllabus_303000073 .
+
+# Degree and University Center
+:Degree_30AG a guide:Degree ;
+    sch:name "30AG - M U En Formacion Del Profesorado En Eso Bachillerato Y F
+
+    Fp (esp Educ Física)" ;
+    guide:degreeCode "30AG" .
+
+:UniversityCenter_CCAFD a guide:UniversityCenter ;
+    sch:name "Facultad Cc. Actividad Fisica Y Deporte" ;
+    guide:offers :Degree_30AG .
+
+# Lecturers
+:Lecturer_RodrigoPardo a guide:Lecturer ;
+    sch:name "Rodrigo Pardo Garcia" ;
+    sch:email "rodrigo.pardo@upm.es" ;
+    guide:office "503" ;
+    guide:tutorshipsSchedule "Sin horario. Consultar la web del Departamento" .
+
+:Lecturer_OlgaSegovia a guide:Lecturer ;
+    sch:name "Olga Segovia Pulido" ;
+    sch:email "olga.segovia@upm.es" .
+
+# Competencies
+:Comp_CE05 a guide:Competency ;
+    guide:competencyCode "CE05" ;
+    guide:competencyDescription "Conocer los procesos de interacción en el aula y en el centro, abordar y resolver posibles problemas." .
+
+:Comp_CE06 a guide:Competency ;
+    guide:competencyCode "CE06" ;
+    guide:competencyDescription "Conocer la evolución histórica del sistema educativo." .
+
+:Comp_CE09 a guide:Competency ;
+    guide:competencyCode "CE09" ;
+    guide:competencyDescription "Participar en la definición del proyecto educativo y en las actividades generales del centro atendiendo a criterios de mejora de calidad, atención a la diversidad, prevención de problemas de aprendizaje y convivencia." .
+
+:Comp_CG09 a guide:Competency ;
+    guide:competencyCode "CG09" ;
+    guide:competencyDescription "Conocer la normativa y organización institucional del sistema educativo y modelos de mejora de la calidad con aplicación a los centros de enseñanza." .
+
+# Learning Results
+:LR_RA63 a guide:LearningResult ;
+    guide:learningResultCode "RA63" ;
+    guide:learningResultDescription "Saber identificar, elaborar y evaluar los diferentes documentos de trabajo relativos a la organización docente en los centros educativos" .
+
+:LR_RA64 a guide:LearningResult ;
+    guide:learningResultCode "RA64" ;
+    guide:learningResultDescription "Conocer la organización y funcionamiento de los Centros Escolares, tanto en relación a los Recursos Humanos como a los elementos normativos" .
+
+# Evaluation System and Trials
+:EvalSystem_303000073 a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación continua formativa y evaluación global." ;
+    guide:hasEvaluationTrial :Trial_Desafio, :Trial_Pacto, :Trial_AnalisisLOMLOE, :Trial_Supuestos, :Trial_PruebaEscrita .
+
+:Trial_Desafio a guide:EvaluationTrial ;
+    sch:name "Desafío de la ...) ";
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "0%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+:Trial_PruebaEscrita a guide:EvaluationTrial ;
+    sch:name "Prueba escrita de los contenidos de la asignatura" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+# Schedule and Activities
+:Schedule_303000073 a guide:Schedule ;
+    sch:eventSchedule :Event_Sem1, :Event_Sem2, :Event_Sem4, :Event_Sem5, :Event_Sem15 .
+
+:Event_Sem1 a guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :Activity_Introduccion .
+
+:Activity_Introduccion a guide:Activity ;
+    guide:activityDescription "Introducción asignatura" ;
+    guide:activityDuration 0.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+# Syllabus
+:Syllabus_303: a guide:Syllabus ;
+    guide:hasItem :SyllabusItem_Tema1, :SyllabusItem_Tema2 .
+
+:SyllabusItem_Tema1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "MARCO LEGAL Y EVOLUCIÓN DEL SISTEMA EDUCATIVO" .
+
+# Didactic Resources
+:Resource_Moodle a guide:DidacticResource ;
+    sch:name "Plataforma Moodle" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "El seguimiento y presentación de trabajos a través de la plataforma Moodle será obligado." .
+
+:Biblio_1 a guide:DidacticResource ;
+    guide:bibliographyTitle "La organización escolar. Práctica y fundamentos" ;
+    guide:bibliographyDescription "Álvarez Rojo, V. y Lázaro Martínez, A (2002). Barcelona: Graio." .
+
+:Biblio_2 a guide:DidacticResource ;
+    guide:bibliographyTitle "El proyecto educativo de centro" ;
+    guide:bibliographyDescription "Antúñez, S. (2006). Barcelona: Grao." .

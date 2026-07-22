@@ -1,0 +1,74 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guia-anx-pr-cl-001-01> rdf:type :CourseGuide ;
+    sch:name "Gestión Avanzada De Combustibles Iii: Gestion Y Pl"@en ;
+    guide:numberOfCredits 3Ects .
+
+<http://guia-mad-bench.es/data/degree-master-minas> rdf:type :MasterDegree ;
+    dct:title "Máster Universitario En Ingeniería De Minas"@es ;
+    sch:name "06AF - Máster Universitario En Ingeniería De Minas"@en .
+
+<http://guia-mad-bench.es/data/course-63000140> rdf:type :Course ;
+    guide:courseYear 2025/26 ;
+    sch:name "Gestion Avanzada De Combustibles Iii: Gestion Y Pl"@en .
+
+<http://guia-mad-bench.es/data/guia-anx-pr-cl-001-01> :hasCourse <http://guia-mad-bench.es/data/course-63000140> ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-semestre-2025-26> .
+
+<http://guia-mad-bench.es/data/degree-master-minas> :hasCourse <http://guia-mad-bench.es/data/course-63000140> ;
+    sch:courseCode 63000140 .
+
+<http://guia-mad-bench.es/data/syllabus-temario> rdf:type :Syllabus ;
+    guide:syllabusDescription "Estrategias para la planificación, control y seguimiento de proyectos de infraestructuras de combustibles. Análisis de Inversiones y Financiación..."@en .
+
+<http://guia-mad-bench.es/data/guia-anx-pr-cl-001-01> :hasSyllabus <http://guia-mad-bench.es/data/syllabus-temario> ;
+    guide:publishedAt "https://www.upm.es" .
+
+<http://guia-mad-bench.es/data/lecturer-luis-felipe> rdf:type :Lecturer ;
+    sch:name "Luis Felipe Mazadiego Martinez"@en ;
+    guide:office "416"@es ;
+    sch:email "luisfelipe.mazadiego@upm.es" .
+
+<http://guia-mad-bench.es/data/lecturer-enrique-querol> rdf:type :Lecturer ;
+    sch:name "Enrique Querol Aragon"@en ;
+    guide:office "418"@es ;
+    sch:email "enrique.querol@upm.es" .
+
+<http://guia-mad-bench.es/data/guia-anx-pr-cl-001-01> :director <http://guia-mad-bench.es/data/lecturer-luis-felipe> ;
+    sch:instructor <http://guia-mad-bench.es/data/lecturer-enrique-querol> .
+
+<http://guia-mad-bench.es/data/schedule-semestre-2025-26> rdf:type :Schedule ;
+    guide:eventWeek "Septiembre-Enero"@en ;
+    sch:courseCode 63000140 .
+
+<http://guia-mad-bench.es/data/competency-cb09> rdf:type :Competency ;
+    guide:competencyCode "CB09"^^xsd:string ;
+    guide:competencyDescription "Que los estudiantes sepan comunicar sus conclusiones y los conocimientos..."@en .
+
+<http://guia-mad-bench.es/data/learning-result-ra22> rdf:type :LearningResult ;
+    guide:learningResultCode "RA22"^^xsd:string ;
+    guide:learningResultDescription "Proyectar instalaciones de generación, transporte y distribución de combustibles"@en .
+
+<http://guia-mad-bench.es/data/schedule-event-sem-1> rdf:type :ScheduleEvent ;
+    sch:eventIndex 1 ;
+    activityDescription "Presentación de la asignatura. Objetivos y Metodología."@es ;
+    guide:activityDurationUnit om:Hour .
+
+<http://guia-mad-bench.es/data/evaluation-trial-progresiva> rdf:type :EvaluationTrial ;
+    sch:name "Evaluación Progresiva"@en ;
+    guide:trialType "Progresiva"^^xsd:string ;
+    guide:minimumScore 5 / 10 .
+
+<http://guia-mad-bench.es/data/evaluation-trial-final> rdf:type :EvaluationTrial ;
+    sch:name "Examen Evaluación Final"@en ;
+    guide:trialType "Final"^^xsd:string ;
+    guide:gradePercentage 100% .
+
+<http://guia-mad-bench.es/data/guia-anx-pr-cl-001-01> :hasEvaluation <http://guia-mad-bench.es/data/evaluation-system-generico> .

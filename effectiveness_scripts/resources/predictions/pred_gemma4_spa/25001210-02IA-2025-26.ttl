@@ -1,0 +1,123 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# Course Guide Instance
+guide:Ecologia_CourseGuide rdf:type guide:CourseGuide ;
+    sch:name "25001210 - Ecologia" ;
+    guide:numberOfCredits 6.0 ;
+    guide:courseType "Obligatoria" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:semester "Cuarto semestre" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:instructor guide:Santiago_Moreno_Vazquez, guide:Daniel_De_La_Torre_Llorente ;
+    sch:director guide:Santiago_Moreno_Vazquez ;
+    guide:hasCompetency guide:CE14, guide:CE47, guide:CG1, guide:CG12, guide:CG6, guide:CG7 ;
+    guide:hasLearningResult guide:RA80, guide:RA83, guide:RA84, guide:RA85, guide:RA86, guide:RA81, guide:RA82 ;
+    guide:hasSyllabus guide:Ecologia_Syllabus ;
+    guide:hasEvaluation guide:Ecologia_EvalSystem ;
+    guide:hasDidacticResource guide:Res_Smith_Ecologia, guide:Res_Odum_Fundamentos, guide:Res_Begon_Ecologia ;
+    sch:inLanguage "Castellano" ;
+    guide:otherInformation "La asignatura se relaciona con los ODS nº 12, 13 y 15." .
+
+# Degree and University Center
+guide:Grado_Ingenieria_Agroambiental rdf:type guide:Degree ;
+    sch:name "02IA - Grado En Ingenieria Agroambiental" ;
+    guide:degreeCode "02IA" .
+
+guide:ETSI_Agronomica_Aliment_Biosistemas rdf:type guide:UniversityCenter ;
+    sch:name "20 - Etsi Agronómica, Aliment. Y Biosistemas" ;
+    guide:offers guide:Grado_Ingenier_Agroambiental .
+
+# Lecturers
+guide:Santiago_Moreno_Vazquez rdf:type guide:Lecturer ;
+    sch:name "Santiago Moreno Vazquez" ;
+    sch:email "santiago.moreno@upm.es" ;
+    guide:office "Banco Semillas" ;
+    guide:tutorshipsSchedule "Sin horario. Las tutorías se concertarán mediante mensaje de correo-e" .
+
+guide:Daniel_De_La_Torre_Llorente rdf:type guide:Lecturer ;
+    sch:name "Daniel De La Torre Llorente" ;
+    sch:email "daniel.delatorre@upm.es" ;
+    guide:office "Edificio A" ;
+    guide:tutorshipsSchedule "Sin horario. Las tutorías se concertarán mediante mensaje de correo-e." .
+
+# Competencies
+guide:CE14 rdf:type guide:Competency ;
+    guide:competencyCode "CE14" ;
+    guide:competencyDescription "Conocimiento de los conceptos básicos de Ecología, sus objetivos, metodología y modo de estudiar el biotopo, la biocenosis y sus relaciones." .
+
+guide:CE47 rdf:type guide:Competency ;
+    guide:competencyCode "CE47" ;
+    guide:competencyDescription "Capacitar para el análisis y conservación de la biodiversidad y describir los métodos de caracterización de la gestión de recursos biológicos en los agroecosistemas." .
+
+guide:CG6 rdf:type guide:Competency ;
+    guide:competencyCode "CG6" ;
+    guide:competencyDescription "Transmitir con claridad y rigor información, ideas, $\text{problemas}$ y soluciones de forma oral y escrita" .
+
+# Learning Results
+guide:RA80 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA80" ;
+    guide:learningResultDescription "Conocimientos sobre el medio físico y los componentes biológicos de los ecosistemas." .
+
+guide:RA83 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA83" ;
+    guide:learningResultDescription "Utilizar modelos informáticos en estudio de ecosistemas." .
+
+# Syllabus and Items
+guide:Ecologia_Syllabus rdf:type guide:Syllabus ;
+    guide:hasItem guide:Topic_1, guide:Topic_2, guide:Topic_3 .
+
+guide:Topic_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a la Ecología. Definición. Datos históricos. Conceptos básicos utilizados en Ecología." .
+
+guide:Topic_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Los organismos y el medio. Recursos y condiciones del medio físico. Hábitat. Factores ambientales." .
+
+# Evaluation System and Trials
+guide:Ecologia_EvalSystem rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La calificación será la media ponderada de informes, trabajos cooperativos, exámenes de prácticas y exámenes teóricos." ;
+    guide:hasEvaluationTrial guide:P01_Informe, guide:Prueba_Prog_Exam, guide:Examen_Practicas .
+
+guide:P01_Informe rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo Individual" ;
+    guide:gradePercentage "4%" ;
+    guide:trialMode "No Presencial" .
+
+guide:Prueba_Prog_Exam rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:gradePercentage "32.5%" ;
+    guide:trialMode "Presencial" .
+
+# Activities and Schedule
+guide:Schedule_Ecologia rdf:type guide:Schedule ;
+    sch:eventSchedule guide:Event_Tema1, guide:Event_P01_GIS .
+
+guide:Event_Tema1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity guide:Act_Leccion_Magistral_1 .
+
+guide:Act_Leccion_Magistral_1 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+# Didactic Resources
+guide:Res_Smith_Ecologia rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Ecología" ;
+    guide:bibliographyDescription "Autor: R.L. Smith y T.M. Smith. Editorial: Addison Wesley. Sexta Edición." .
+
+guide:Res_Odum_Fundamentos rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Fundamentos de Ecología" ;
+    guide:bibliographyDescription "Autor: E. P. Odum y G. W. Warret. Editorial Thomson 2006." .
+
+# Previous Knowledge
+guide:Ecologia_Course rdf:type guide:Course ;
+    guide:previousKnowledge "Calculo De Varias Variables, Calculo Diferencial E Integral, Edafologia, Biologia, Climatologia, Algebra Lineal Y Aplicaciones" .

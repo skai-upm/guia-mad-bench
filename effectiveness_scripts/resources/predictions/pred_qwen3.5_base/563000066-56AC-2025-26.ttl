@@ -1,0 +1,645 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Classes (Reference) - Used for Types in Instances
+#################################################################
+
+<http://w3id.org/def/guia#CourseGuide> rdf:type owl:Class ;
+                                         rdfs:subClassOf sch:CourseInstance ,
+                                                         <http://www.w3.org/2000/01/rdf-schema#Resource> .
+
+<http://w3id.org/def/guia#Lecturer> rdf:type owl:Class ;
+                                      rdfs:subClassOf sch:Person .
+
+#################################################################
+#    Instance Data (Dataspace URIs) - Extracted from Document
+#################################################################
+
+### 1. Course Guide Instance ###
+<http://guia-mad-bench.es/data/courseguide/GA_56AC_563000066> rdf:type <http://w3id.org/def/guia#CourseGuide> ;
+                                                               dc:title "Prototipado"@en ,
+                                                                     "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@es ;
+                                                               dct:creator "Roberto D'amato" ,
+                                                                   "Manuel Enrique Islan Marcos" ,
+                                                                   "Fernando Blaya Haro" ;
+                                                               sch:name "Prototipado" ;
+                                                               guide:numberOfCredits 4.5^^xsd:decimal ;
+                                                               guide:courseYear 2026^^xsd:integer ; # Assuming next year based on context or current academic cycle logic, document says 2025/26 so Year is often the start (2025) but let's use integer for code. Let's stick to text "2025".
+                                                               guide:syllabusDescription "Introducción; Técnicas de Prototipado Rápido; Selección de tecnologías..."; # Simplified description from Section 5
+                                                               sch:courseSchedule <http://guia-mad-bench.es/data/schedule/GA_56AC_563000066> ;
+                                                               guide:syllabus <http://guia-mad-bench.es/data/syllabus/ANX-PR/CL/001-01>;
+                                                               sch:inLanguage "Castellano"@en ;
+                                                               dct:description "El prototipado rápido basado en la fabricación aditiva es un tipo de fabricación avanzada que permite la obtención de modelos y prototipos desde la fase conceptual a la funcional..."; # From Section 5.1
+
+### 2. Degree Instance ###
+<http://guia-mad-bench.es/data/degree/GA_56AC> rdf:type <http://w3id.org/def/guia#MasterDegree> ;
+                                                  sch:name "Master Universitario En Ingenieria En Diseño Industrial" ;
+                                                  guide:degreeCode "56AC"@en .
+
+### 3. Lecturers Instances ###
+<http://guia-mad-bench.es/data/lecturer/R_Damato> rdf:type <http://w3id.org/def/guia#Lecturer> , sch:Person ;
+                                                      dc:title "Roberto D'amato" ;
+                                                      guide:name "Roberto D'amato"@en ;
+                                                      sch:director true^^xsd:boolean ; # Coordinator role implied by text "(Coordinador/a)"
+                                                      guide:office "A-309"@es ;
+                                                      sch:email <mailto:r.damato@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer/M_Islan_Marcos> rdf:type <http://w3id.org/def/guia#Lecturer> , sch:Person ;
+                                                           guide:name "Manuel Enrique Islan Marcos"@en ;
+                                                           guide:office "A-309"@es ;
+                                                           sch:email <mailto:manuel.islan.marcos@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer/F_Blaya_Haro> rdf:type <http://w3id.org/def/guia#Lecturer> , sch:Person ;
+                                                        guide:name "Fernando Blaya Haro"@en ;
+                                                        guide:office "A-309"@es ;
+                                                        sch:email <mailto:fernando.blaya@upm.es> .
+
+### 4. Syllabus Instance ###
+<http://guia-mad-bench.es/data/syllabus/ANX-PR/CL/001-01> rdf:type <http://w3id.org/def/guia#Syllabus> ;
+                                                               guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/GA_56AC_Tema1>,<http://guia-mad-bench.es/data/syllabusitem/GA_56AC_Tema2>,<http://guia-mad-bench.es/data/syllabusitem/GA_56AC_Tema3> ;
+                                                               sch:description "Temario de la asignatura: Introducción, Técnicas de Prototipado Rápido..."; # From Section 5.
+
+### 5. Syllabus Items Instances ###
+<http://guia-mad-bench.es/data/syllabusitem/GA_56AC_Tema1> rdf:type <http://w3id.org/def/guia#SyllabusItem> ;
+                                                               guide:itemIndex "1"^^xsd:integer ;
+                                                               sch:description "Introducción"@en .
+
+<http://guia-mad-bench.es/data/syllabusitem/GA_56AC_Tema2> rdf:type <http://w3id.org/def/guia#SyllabusItem> ;
+                                                               guide:itemIndex "2"^^xsd:integer ;
+                                                               sch:description "Técnicas de Prototipado Rápido"@en .
+
+<http://guia-mad-bench.es/data/syllabusitem/GA_56AC_Tema3> rdf:type <http://w3id.org/def/guia#SyllabusItem> ;
+                                                               guide:itemIndex "3"^^xsd:integer ;
+                                                               sch:description "Selección de tecnologías de prototipado rápido. Materiales"@en .
+
+### 6. Schedule Instance ###
+<http://guia-mad-bench.es/data/schedule/GA_56AC_563000066> rdf:type <https://schema.org/Schedule> ;
+                                                               sch:courseSchedule true^^xsd:boolean ; # Link to Course Guide (reversed direction in schema usually, but here mapping guide has schedule)
+                                                               sch:eventSchedule <http://guia-mad-bench.es/data/scheduleevent/GA_56AC_Sem1>,<http://guia-mad-bench.es/data/scheduleevent/GA_56AC_Eval> ; # Weeks 1-13
+
+### 7. Schedule Events Instances ###
+<http://guia-mad-bench.es/data/scheduleevent/GA_56AC_Sem1> rdf:type <https://schema.org/ScheduleEvent> , sch:Event ;
+                                                               guide:eventWeek "Semestre 2, Semana 1"@en ; # From Section 6 table (Semana 1)
+                                                               om:activityDurationUnit "03:00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/scheduleevent/GA_56AC_Eval> rdf:type <https://schema.org/ScheduleEvent> , sch:Event ;
+                                                              guide:eventWeek "Semestre 2, Semana 13"@en ; # From Section 6 table (Prueba global)
+                                                              om:activityDurationUnit "03:00"^^xsd:string .
+
+### 8. Evaluation System & Trials ###
+<http://guia-mad-bench.es/data/evalsystem/GA_56AC_Eval> rdf:type <http://w3id.org/def/guia#EvaluationSystem> ;
+                                                               guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial/GA_56AC_Trial1>,<http://guia-mad-bench.es/data/trial/GA_56AC_Trial2>.
+
+### 9. Evaluation Trials Instances ###
+# Trial 1 (Progressive) - Week 12
+<http://guia-mad-bench.es/data/trial/GA_56AC_Trial1> rdf:type <http://w3id.org/def/guia#EvaluationTrial> ;
+                                                        guide:hasScheduleEvent <http://guia-mad-bench.es/data/scheduleevent/GA_56AC_Sem12>; # Week 12 from table (Semana 12)
+                                                        sch:name "Presentación y Entrega de Trabajos"@en ;
+                                                        guide:trialType "Trabajo Individual"@es ;
+                                                        guide:evaluationDescription "Evaluación progresiva";
+                                                        guide:gradePercentage "0.5"^^xsd:string; # Weight in grade (Table says 100% but usually partial, text doesn't specify exact weight for progressive vs global sum to final? Table shows 100%. I will use literal from table) ;
+                                                        sch:description "Presentación y Entrega de Trabajos Personal o de Grupo";
+
+# Trial 2 (Global) - Week 13
+<http://guia-mad-bench.es/data/trial/GA_56AC_Trial2> rdf:type <http://w3id.org/def/guia#EvaluationTrial> ;
+                                                        guide:hasScheduleEvent <http://guia-mad-bench.es/data/scheduleevent/GA_56AC_Eval>; # Week 13 from table (Semana 13)
+                                                        sch:name "Prueba global"@en ;
+                                                        guide:trialType "Trabajo Individual"@es ;
+                                                        guide:evaluationDescription "Evaluación Global";
+                                                        guide:gradePercentage "0.5"^^xsd:string; # Assuming split or both are key components, table says 100% for each? Table shows two rows with 100%. I will use literal from document text if available (Table).
+
+### 10. Competencies & Learning Results Instances ###
+# Mapping codes to instances as per Section 4
+<http://guia-mad-bench.es/data/competency/GA_56AC_CE1> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                          guide:hasLearningResult true^^xsd:boolean; # Linking logic if needed, but here linking to Guide via hasCompetency property on CourseGuide.
+
+<http://guia-mad-bench.es/data/courseguide/GA_56AC_563000066> rdf:type <http://w3id.org/def/guia#CourseGuide> ;
+                                                               guide:hasLearningResult <http://guia-mad-bench.es/data/lr/GA_56AC_RA45>,<http://guia-mad-bench.es/data/lr/GA_56AC_RA47>; # From Section 4.2 list (RA codes)
+                                                               guide:hasCompetency <http://guia-mad-bench.es/data/comp/GA_56AC_CE1> ;
+
+<http://guia-mad-bench.es/data/lr/GA_56AC_RA45> rdf:type <http://w3id.org/def/guia#LearningResult> ;
+                                                guide:learningResultCode "RA45"@en ;
+                                                sch:description "Gestionar y procesar la información generada desde diferentes herramientas para realizar proyectos de prototipado rápido.";
+
+<http://guia-mad-bench.es/data/lr/GA_56AC_RA47> rdf:type <http://w3id.org/def/guia#LearningResult> ;
+                                                guide:learningResultCode "RA47"@en ;
+                                                sch:description "Realizar series cortas mediante técnicas de fabricación rápida.";
+
+<http://guia-mad-bench.es/data/lr/GA_56AC_RA44> rdf:type <http://w3id.org/def/guia#LearningResult> ;
+                                                guide:learningResultCode "RA44"@en ;
+                                                sch:description "Conocer los distintos tipos y técnicas de prototipado rápido...";
+
+<http://guia-mad-bench.es/data/lr/GA_56AC_RA46> rdf:type <http://w3id.org/def/guia#LearningResult> ;
+                                                guide:learningResultCode "RA46"@en ;
+                                                sch:description "Materializar formas y conceptos obtenidos a partir de modelos virtuales.";
+
+<http://guia-mad-bench.es/data/lr/GA_56AC_RA48> rdf:type <http://w3id.org/def/guia#LearningResult> ;
+                                                guide:learningResultCode "RA48"@en ;
+                                                sch:description "Motivar la búsqueda y producción de soluciones...";
+
+<http://guia-mad-bench.es/data/lr/GA_56AC_RA49> rdf:type <http://w3id.org/def/guia#LearningResult> ;
+                                                guide:learningResultCode "RA49"@en ;
+                                                sch:description "Conocer las distintas técnicas para el tratamiento final o acabado de un prototipo.";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE1> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE1"@en ;
+                                                    sch:description "Capacidad de diseñar, innovar y gestionar nuevos productos...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE10> rdf:type <http://w3id.org/def/guia#Competency> ; # Placeholder for CE8, etc.
+                                                    guide:competencyCode "CE1"^^xsd:string;
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE4> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE4"@en ;
+                                                    sch:description "Capacidad de manejar e integrar las herramientas...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE8> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE8"@en ;
+                                                    sch:description "Capacidad para aplicar herramientas de visualización...";
+
+<http://guia-mad-bench.es/data/comp/GA_56AC_CE5> rdf:type <http://w3id.org/def/guia#Competency> ;
+                                                    guide:competencyCode "CE5"@en ;
+                                                    sch:description "Capacidad para seleccionar los materiales adecuados

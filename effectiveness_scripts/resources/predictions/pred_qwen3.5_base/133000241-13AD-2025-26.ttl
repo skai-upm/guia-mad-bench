@@ -1,0 +1,209 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix data: <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Classes (from Ontology)
+#################################################################
+
+###  http://w3id.org/def/guia#Activity
+guide:Activity rdf:type owl:Class ;
+               rdfs:label "Activity"@en .
+
+
+###  http://w3id.org/def/guia#BachelorDegree
+guide:BachelorDegree rdf:type owl:Class ;
+                     rdfs:subClassOf guide:Degree ;
+                     rdfs:comment "An undergraduate degree programme that provides foundational higher education in a given field of study."@en .
+
+
+###  http://w3id.org/def/guia#Competency
+guide:Competency rdf:type owl:Class ;
+                 rdfs:label "Competency"@en .
+
+
+###  http://w3id.org/def/guia#Course
+guide:Course rdf:type owl:Class ;
+             rdfs:subClassOf sch:Course ;
+             rdfs:comment "An academic course as defined in the GUIA model, typically described through its content, teaching organization, assessment, and related course guide."@en .
+
+
+###  http://w3id.org/def/guia#Degree
+guide:Degree rdf:type owl:Class ;
+             rdfs:label "Degree"@en .
+
+
+###  http://w3id.org/def/guia#DidacticResource
+guide:DidacticResource rdf:type owl:Class ;
+                       rdfs:comment "A teaching or learning resource used in the course, such as readings, software, audiovisual material, or practical tools."@en .
+
+
+###  http://w3id.org/def/guia#EvaluationSystem
+guide:EvaluationSystem rdf:type owl:Class ;
+                       rdfs:label "Evaluation System"@en .
+
+
+###  http://w3id.org/def/guia#LearningResult
+guide:LearningResult rdf:type owl:Class ;
+                     rdfs:comment "A specific and assessable statement of what a student is expected to know, understand, or be able to do after completing the course."@en .
+
+
+###  http://w3id.org/def/guia#Lecturer
+guide:Lecturer rdf:type owl:Class ;
+               rdfs:subClassOf sch:Person ;
+               rdfs:comment "A teaching person responsible for delivering, coordinating, or supporting a course within an academic programme."@en .
+
+
+###  http://w3id.org/def/guia#MasterDegree
+guide:MasterDegree rdf:type owl:Class ;
+                   rdfs:subClassOf guide:Degree ;
+                   rdfs:comment "A postgraduate degree programme corresponding to advanced academic or professional specialization."@en .
+
+
+###  http://w3id.org/def/guia#RequiredKnowledge
+guide:RequiredKnowledge rdf:type owl:Class ;
+                        rdfs:label "Required Knowledge"@en .
+
+
+#################################################################
+#    Instances (using dataspace URIs)
+#################################################################
+
+<http://guia-mad-bench.es/data/#Etsi_Montes> a guide:UniversityCenter, sch:Organization ;
+                             dc:title "13 - E.T.S.I. Montes, Forestal Y Medio Natur."@en .
+
+
+<http://guia-mad-bench.es/data/#Master_En_Ingenieria_De_Montes> a guide:MasterDegree ;
+                            dct:creator "Universidad Politécnica de Madrid"@en ;
+                            sch:name "13AD - Master Universitario En Ingenieria De Montes" .
+
+
+<http://guia-mad-bench.es/data/#Ordenacion_de_Montes_Avanzada> a guide:Course, sch:Course ;
+                             dct:title "133000241 - Ordenacion de Montes Avanzada"@en ;
+                             guide:numberOfCredits 5 .
+
+
+<http://guia-mad-bench.es/data/#ANX_PR_CL_001_01> a guide:CourseGuide, sch:CourseInstance ;
+                            dct:title "Guía de Aprendizje - ANX-PR/CL/001-01"@en ;
+                            dc:description "Ordenacion De Montes Avanzada. Master Universitario En Ingenieria De Montes."@en .
+
+
+<http://guia-mad-bench.es/data/#Fernando_Garcia_Robredo> a guide:Lecturer, sch:Person ;
+                             dct:title "Fernando Garcia Robredo"@en ;
+                             sch:name "Fernando Garcia Robredo" ,
+                                     "(Coordinador/a)" .
+
+
+<http://guia-mad-bench.es/data/#Luis_Augusto_Diaz_Balteiro> a guide:Lecturer, sch:Person ;
+                              dct:title "Luis Augusto Diaz Balteiro"@en ;
+                              sch:name "Luis Augusto Diaz Balteiro" .
+
+
+#################################################################
+#    Object Properties (from Ontology)
+#################################################################
+
+###  http://w3id.org/def/guia#hasSyllabus
+guide:hasSyllabus rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:CourseGuide ;
+                  rdfs:range guide:Syllabus .
+
+
+###  https://schema.org/courseSchedule
+sch:courseSchedule rdf:type owl:ObjectProperty ;
+                   rdfs:domain guide:CourseGuide ;
+                   rdfs:range guide:Schedule .
+
+#################################################################
+#    Data Properties (from Ontology)
+#################################################################
+
+###  http://w3id.org/def/guia#numberOfCredits
+guide:numberOfCredits rdf:type owl:DatatypeProperty ;
+                      rdfs:domain guide:CourseGuide, guide:Course ;
+                      rdfs:range xsd:decimal .
+
+
+###  https://schema.org/name
+sch:name rdf:type owl:DatatypeProperty ;
+         rdfs:range rdf:langString .
+
+#################################################################
+#    Instance Properties & Links (Extraction)
+#################################################################
+
+<http://guia-mad-bench.es/data/#ANX_PR_CL_001_01> sch:description "Esta asignatura se impartió por primera vez en el curso 2020/2021 y su objetivo es profundizar los conocimientos de Ordenación de Montes adquiridos en el grado."@en ;
+                             guide:hasCourse <http://guia-mad-bench.es/data/#Ordenacion_de_Montes_Avanzada> .
+
+
+<http://guia-mad-bench.es/data/#ANX_PR_CL_001_01> sch:name "Guía de Aprendizje - ANX-PR/CL/001-01"@en ;
+                             guide:hasDidacticResource <http://guia-mad-bench.es/data/#DUBOURDIEU_Manual>, 
+                                                        <http://guia-mad-bench.es/data/#MADRIGAL_Ordenacion> .
+
+
+<http://guia-mad-bench.es/data/#ANX_PR_CL_001_01> sch:courseSchedule <http://guia-mad-bench.es/data/#Cronograma_2025-26> ;
+                             guide:numberOfCredits 5 , 
+                             xsd:string "Septiembre-Enero" .
+
+
+<http://guia-mad-bench.es/data/#ANX_PR_CL_001_01> sch:director <http://guia-mad-bench.es/data/#Fernando_Garcia_Robredo> ;
+                            guide:tutorshipsSchedule "L - 11:00 - 14:00<br>M - 11:00 - 14:00" .
+
+
+<http://guia-mad-bench.es/data/#ANX_PR_CL_001_01> sch:inLanguage "Castellano"@en ;
+                             guide:syllabusDescription "Temario de la asignatura."@en .
+
+#################################################################
+#    Competencies & Learning Results (Extraction)
+#################################################################
+
+<http://guia-mad-bench.es/data/#CB09_Competency> a guide:Competency, sch:Course ;
+                            dct:title "Que los estudiantes sepan comunicar sus conclusiones..."@en .
+
+
+<http://guia-mad-bench.es/data/#CE_2.8_Comp> a guide:Competency, sch:Course ;
+                             dct:title "Capacidad para la redacción, dirección y ejecución de Proyectos de Ordenación de Montes"@en .
+
+#################################################################
+#    Schedule & Evaluation (Extraction)
+#################################################################
+
+<http://guia-mad-bench.es/data/#Cronograma_2025-26> a guide:Schedule ;
+                             sch:eventSchedule <http://guia-mad-bench.es/data/#Sem1_Event>, 
+                                              <http://guia-mad-bench.es/data/#Sem8_Eval>.
+
+
+<http://guia-mad-bench.es/data/#Sem8_Eval> a guide:EvaluationTrial, sch:Course ;
+                             dct:title "Control temas 1 y 2"@en .
+
+#################################################################
+#    Resources (Extraction)
+#################################################################
+
+<http://guia-mad-bench.es/data/#DUBOURDIEU_Manual> a guide:DidacticResource, sch:Bibliography ;
+                            dc:title "Manual de Ordenación de Montes"@en ;
+                            dct:type "Bibliografía"@en .
+
+
+<http://guia-mad-bench.es/data/#MADRIGAL_Ordenacion> a guide:DidacticResource, sch:Bibliography ;
+                             dc:title "Ordenación de montes arbolados"@en ;
+                             dct:type "Bibliografía"@en .
+
+#################################################################
+#    Required Knowledge (Extraction) - Note: No link property defined in text for Guide->RequiredKnowledge. 
+#        Using data properties on instance as per ontology constraints.
+#################################################################
+
+<http://guia-mad-bench.es/data/#Prerequisites_13AD> a guide:RequiredKnowledge ;
+                            dct:title "Conocimientos previos recomendados"@en .
+
+
+<http://guia-mad-bench.es/data/#Prerequisites_13AD> guide:previousCourses "Ordenación de Montes y Valoración Agraria"@en , 
+                                                    "Economía Forestal"@en ;
+                             guide:previousKnowledge "Es muy conveniente que las personas que cursen esta materia revisen los conocimientos sobre estadística, álgebra matricial, ecología y selvicultura."@en .

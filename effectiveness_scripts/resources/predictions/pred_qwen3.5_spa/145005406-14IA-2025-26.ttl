@@ -1,0 +1,91 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guia-geotecnia> rdf:type guide:SyllabusItem ;
+    dc:title "Geotecnia"@en ;
+    dct:description "Guía de Aprendizaje para la asignatura Geotecnia (Código 145005406) en el Grado En Ingeniería Aeroespacial."@en .
+
+<http://guia-mad-bench.es/data/degree-14IA> rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Ingeniería Aeroespacial"@es ;
+    dct:creator <http://w3id.org/def/guia#E.T.S.I.Aeronáutica.y.del.Espacio> .
+
+<http://guia-mad-bench.es/data/guide-geotecnia> rdf:type guide:SyllabusItem ;
+    sch:name "Geotecnia"@es ;
+    dct:creator <http://w3id.org/def/guia#E.T.S.I.Aeronáutica.y.del.Espacio> .
+
+<http://guia-mad-bench.es/data/schedule-14IA_2025-26> rdf:type sch:Schedule ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/guide-geotecnia> .
+
+# Lecturers
+<http://guia-mad-bench.es/data/lecturer-paris> rdf:type guide:Lecturer ;
+    sch:name "Angel Paris Loreiro"@es ;
+    sch:email <mailto:angel.paris@upm.es> ;
+    guide:office "L.Aerop. ETSIA"@en .
+
+<http://guia-mad-bench.es/data/lecturer-tarifa> rdf:type guide:Lecturer ;
+    sch:name "Manuel Agustin Tarifa Crespo"@es ;
+    sch:email <mailto:manuel.tarifa@upm.es> ;
+    guide:office "Aerop. Edif. B"@en .
+
+<http://guia-mad-bench.es/data/lecturer-rodriguez> rdf:type guide:Lecturer ;
+    sch:name "Jesus Maria Rodriguez Romero"@es ;
+    sch:email <mailto:jesusmaria.rodriguez@upm.es> ;
+    guide:tutorshipsSchedule "Sin horario. Ver web Departamento SATAA"@en .
+
+<http://guia-mad-bench.es/data/lecturer-pacios> rdf:type guide:Lecturer ;
+    sch:name "Antonia Pacios Alvarez"@es ;
+    dct:creator <http://w3id.org/def/guia#E.T.S.I.Aeronáutica.y.del.Espacio> .
+
+<http://guia-mad-bench.es/data/schedule-14IA_2025-26> sch:eventSchedule <http://guia-mad-bench.es/data/event-week-8> ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity-intermedia-examen>.
+
+# Competencies and Learning Results
+<http://guia-mad-bench.es/data/competency-ce59> rdf:type guide:Competency ;
+    sch:name "CE59"@en ;
+    guide:competencyDescription "Conocimiento adecuado y aplicado a la Ingeniería de los métodos de cálculo..."@es .
+
+<http://guia-mad-bench.es/data/learning-result-ra72> rdf:type guide:LearningResult ;
+    sch:name "RA72"@en ;
+    guide:learningResultCode "RA72"^^xsd:string ;
+    guide:learningResultDescription "Conocimiento, comprensión, aplicación y análisis de las diferentes tipologías de cimentación..."@es .
+
+# Syllabus Items (Topics)
+<http://guia-mad-bench.es/data/syllabus-item-1> rdf:type guide:SyllabusItem ;
+    sch:name "Origen de los suelos y propiedades"@en ;
+    guide:syllabusDescription "Definición, concepto de suelo y roca, tipos..."@es .
+
+<http://guia-mad-bench.es/data/schedule-event-1> rdf:type sch:Event ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/degree-14IA> ;
+    guide:itemIndex "1"^^xsd:integer ;
+    om:Unit "01:00" .
+
+# Evaluation Trials
+<http://guia-mad-bench.es/data/trial-intermedia-examen> rdf:type guide:EvaluationTrial ;
+    sch:name "Prueba de Evaluación Intermedia"@es ;
+    guide:trialType "Examen Escrito"@en ;
+    guide:gradePercentage "40%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial-final-exam> rdf:type guide:EvaluationTrial ;
+    sch:name "Examen ordinario"@es ;
+    guide:trialType "Examen Escrito"@en ;
+    guide:gradePercentage "80%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial-lab-practices> rdf:type guide:EvaluationTrial ;
+    sch:name "Prácticas de Laboratorio"@es ;
+    guide:trialType "Presentación Individual"@en ;
+    guide:gradePercentage "20%"^^xsd:string .
+
+# Resources
+<http://guia-mad-bench.es/data/resource-apuntes> rdf:type guide:DidacticResource ;
+    sch:name "Apuntes de la asignatura"@es ;
+    guide:bibliographyType "Bibliografía"@en .
+
+<http://guia-mad-bench.es/data/resource-web-moodle> rdf:type guide:DidacticResource ;
+    sch:name "Espacio MOODLE de la asignatura"@es ;
+    dct:url <https://moodle.upm.es/>@en .

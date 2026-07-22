@@ -1,0 +1,138 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix guide: <http://w3id.org/def/guia#> .
+
+# Course Instance (The Guide itself)
+:guide_613000136 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Metodología Y Técnicas De Investigación" ;
+    sch:hasCourseInstance :course_613000136 ;
+    sch:instructor :lecturer_david_camacho ;
+    sch:director :lecturer_david_camacho ;
+    guide:hasSyllabus :syllabus_613000136 ;
+    guide:hasCompetency :comp_CB10, :comp_CB6, :comp_CB7, :comp_CB8, :comp_CB9, :comp_CE01, :comp_CG1, :comp_CG2, :comp_CG3, :comp_CG4, :comp_CG5, :comp_CT1, :comp_CT2, :comp_CT3, :comp_CT4, :comp_CT5 ;
+    guide:hasLearningResult :lr_RA50, :lr_RA51, :lr_RA52, :lr_RA53, :lr_RA54, :lr_RA55 ;
+    guide:hasEvaluation :eval_system_613000136 ;
+    guide:hasDidacticResource :res_hopf_2019, :res_jones_2015, :res_lukic_2014, :res_reynolds_2011, :res_kothari_2004, :res_vakkari_2003, :res_dodig_2002, :res_gregar_1994, :res_theocharis_1987 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:numberOfCredits 3.0 ;
+    guide:totalHours "78" ; # Calculated based on 26h per credit as per text
+    sch:inLanguage "Castellano" ;
+    guide:otherInformation "Carácter Obligatorio. Primer curso." .
+
+# Course
+:course_613000136 rdf:type guide:Course ;
+    sch:name "Metodología Y Técnicas De Investigación" ;
+    sch:courseCode "613000136" ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Primer semestre" .
+
+# Degree
+:degree_61AH rdf:type guide:MasterDegree ;
+    sch:name "Máster Universitario En Aprendের學習 Automático Y Datos Masivos" ;
+    guide:degreeCode "61AH" .
+
+# University Center
+:center_61 rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S De Ing. De Sistemas Informáticos" ;
+    guide:degreeCode "61" ;
+    guide:offers :degree_61AH .
+
+# Lecturer
+:lecturer_david_camacho rdf:type guide:Lecturer ;
+    sch:name "David Camacho Fernandez" ;
+    sch:email "david.camacho@upm.es" ;
+    guide:office "1215" ;
+    guide:tutorshipsSchedule "Sin horario. Las tutorías serán concertadas vía correo electrónico." .
+
+:lecturer_jose_eugenio rdf:type guide:Lecturer ;
+    sch:name "Jose Eugenio Naranjo Hernandez" ;
+    sch:email "joseeugenio.naranjo@upm.es" ;
+    guide:office "4120" ;
+    guide:tutorshipsSchedule "Sin horario. Las tutorías serán concertadas vía correo electrónico." .
+
+# Competencies
+:comp_CB10 rdf:type guide:Competency ;
+    guide:competencyCode "CB10" ;
+    guide:competencyDescription "Que los estudiantes poseមាន las habilidades de aprendizaje que les permitan continuar estudiando..." .
+
+:comp_CB6 rdf:type guide:Competency ;
+    guide:competencyCode "CB6" ;
+    guide:competencyDescription "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales..." .
+
+:comp_CE01 rdf:type guide:Competency ;
+    guide:competencyCode "CE01" ;
+    guide:competencyDescription "Emplear resultados de aprendizaje automático, adaptados al tratamiento de datos masivos..." .
+
+# Learning Results
+:lr_RA50 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA50" ;
+    guide:learningResultDescription "Buscar bibliografía científica, herramientas software y recursos para validación de resultados" .
+
+:lr_RA51 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA51" ;
+    guide:learningResultDescription "Abordar y plantear un tema de investigación de interés" .
+
+# Syllabus
+:syllabus_613000136 rdf:type guide:Syllabus ;
+    guide:hasItem :item_bloque_I, :item_bloque_II .
+
+:item_bloque_I rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Bloque I (Investigación): El conocimiento y la investigación, Impacto y diseminación, Redacción, Malas prácticas, Tesis Doctoral." .
+
+:item_bloque_II rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Bloque II (Proyectos): Concepción y diseño, Desarrollo de tema, Formación de equipo, Proyectos competitivos, Transferencia, Foros." .
+
+# Evaluation System
+:eval_system_613000136 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y evaluación global/extraordinaria." ;
+    guide:hasEvaluationTrial :trial_prog_sem3, :trial_prog_sem5, :trial_global_sem17 .
+
+:trial_prog_sem3 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Presentación de un trabajo de investigación" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:00" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_CB6, :comp_CB8, :comp_CG1 .
+
+:trial_global_sem17 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Presentación de un trabajo de investigación y de un proyecto de I+D+i" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "03:00" ;
+    guide:trialMode "Presencial" .
+
+# Schedule and Activities
+:schedule_613000136 rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week_1, :event_week_2, :event_week_3, :event_week_4, :event_week_5 .
+
+:event_week_1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :act_leccion_magistral_1 .
+
+:act_leccion_magistral_1 rdf:type guide:Activity ;
+    guide:activityDescription "Bloque I: 1.1. El conocimiento y la investigación" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_hopf_2019 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Hopf, H., Krief, A., Mehta, G., & Matlin, S. A. (2019). Fake science and the knowledge crisis..." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_jones_2015 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Jones, M. (2015). Writing a research proposal..." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_jcr_web rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "https://jcr.clarivate.com/" ;
+    guide:bibliographyType "Recursos web" .

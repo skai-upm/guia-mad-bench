@@ -1,0 +1,203 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+# Degree and University Center
+guide:degree_10II rdf:type guide:BachelorDegree ;
+    sch:name "Grado en Ingeniería Informática" ;
+    guide:degreeCode "10II" .
+
+guide:center_ETS rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Informáticos" ;
+    guide:offers guide:degree_10II .
+
+# Course
+guide:course_105000015 rdf:type guide:Course ;
+    sch:name "Programación II" ;
+    sch:courseCode 105000015 ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 2025 ;
+    guide:semester "Segundo semestre" .
+
+# Course Guide
+guide:guide_105000015 rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance guide:course_105000015 ;
+    sch:name "Guía de Aprendizaje - Programación II" ;
+    sch:inLanguage "Inglés/Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    guide:numberOfCredits 6.0 ;
+    guide:totalHours "Estimación basada en créditos ECTS (26-27h por crédito)" ;
+    guide:hasSyllabus guide:syllabus_prog2 ;
+    guide:hasCompetency guide:comp_CG1, guide:comp_CG2, guide:comp_CG3, guide:comp_Ce3, guide:comp_Ce6, guide:comp_Ce8, guide:comp_Ce9 ;
+    guide:hasLearningResult guide:lr_RA288, guide:lr_RA287, guide:lr_RA290, guide:lr_RA289 ;
+    guide:hasEvaluation guide:eval_system_prog2 ;
+    guide:hasDidacticResource guide:res_moodle, guide:res_java_manual, guide:res_java_notes ;
+    sch:instructor guide:lecturer_javier, guide:lecturer_santiago, guide:lecturer_tonghong, guide:lecturer_angel, guide:lecturer_raul, guide:lecturer_luis ;
+    sch:courseSchedule guide:schedule_prog2 .
+
+# Lecturers
+guide:lecturer_javier rdf:type guide:Lecturer ;
+    sch:name "Javier Galve Frances" ;
+    sch:email "javier.galve@upm.es" ;
+    guide:office "D-2315" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:lecturer_santiago rdf:type guide:Lecturer ;
+    sch:name "Santiago Tapia Fernandez" ;
+    sch:email "santiago.tapia@upm.es" ;
+    guide:office "D-2307" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:lecturer_tonghong rdf:type guide:Lecturer ;
+    sch:name "Tonghong Li" ;
+    sch:email "tonghong.li@upm.es" ;
+    guide:office "D-2312" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:lecturer_angel rdf:type guide:Lecturer ;
+    sch:name "Angel Herranz Nieva" ;
+    sch:email "angel.herranz@upm.es" ;
+    guide:office "D-2309" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:lecturer_raul rdf:type guide:Lecturer ;
+    sch:name "Raul Alonso Calvo" ;
+    sch:email "raul.alonso@upm.es" ;
+    guide:office "D-2315" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:lecturer_luis rdf:type guide:Lecturer ;
+    sch:name "Luis Eduardo Bueso De Barrio" ;
+    sch:email "luiseduardo.bueso.debarrio@upm.es" ;
+    guide:office "D-2310" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+# Competencies
+guide:comp_CG1 rdf:type guide:Competency ;
+    guide:competencyCode "CG-1/21" ;
+    guide:competencyDescription "Capacidad de resolución de problemas aplicando conocimientos de matemáticas, ciencias e ingeniería." .
+
+guide:comp_CG2 rdf:type guide:Competency ;
+    guide:competencyCode "CG-2/CE45" ;
+    guide:competencyDescription "Capacidad para el aprendizaje autónomo y la actualización de conocimientos, y reconocimiento de su necesidad en el área de la informática." .
+
+guide:comp_CG3 rdf:type guide:Competency ;
+    guide:compet competencyCode "CG-3/4" ;
+    guide:competencyDescription "Saber trabajar en situaciones carentes de información y bajo presión, teniendo nuevas ideas, siendo creativo." .
+
+guide:comp_Ce3 rdf:type guide:Competency ;
+    guide:competencyCode "Ce 3/4" ;
+    guide:competencyDescription "Capacidad de elegir y usar los．los métodos analíticos y de modelización relevantes, y de describir una solución de forma abstracta." .
+
+guide:comp_Ce6 rdf:type guide:Competency ;
+    guide:competencyCode "Ce 6" ;
+    guide:competencyDescription "Comprender intelectualmente el papel central que tienen los algoritmos y las estructuras de datos, así como una apreciación del mismo." .
+
+guide:comp_Ce8 rdf:type guide:Competency ;
+    guide:competencyCode "Ce 8" ;
+    guide:competencyDescription "Poseer destrezas fundamentales de la programación que permitan la implementación de los algoritmos y las estructuras de datos en el software." .
+
+guide:comp_Ce9 rdf:type guide:Competency ;
+    guide:competencyCode "Ce 9" ;
+    guide:competencyDescription "Poseer las destrazas que se requieren para diseñar e implementar unidades estructurales mayores que utilizan los algoritmos y las estructuras de datos, así como las interfaces por las que se comunican estas unidades." .
+
+# Learning Results
+guide:lr_RA288 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA288" ;
+    guide:learningResultDescription "Programar aplicaciones mediante librerías existentes de TADs, iteradores, etc,." .
+
+guide:lr_RA287 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA287" ;
+    guide:learningResultDescription "Traducir especificaciones de tipos abstractos de datos (TADs) a implementaciones." .
+
+guide:lr_RA290 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA290" ;
+    guide:learningResultDescription "Realizar pruebas para asegurar el correcto funcionamiento de un TAD así como" .
+
+guide:lr_RA289 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA289" ;
+    guide:learningResultDescription "Documentar clases y bibliotecas, tanto de manera pública (hacia el cliente)." .
+
+# Syllabus
+guide:syllabus_prog2 rdf:type guide:Syllabus ;
+    guide:hasItem guide:item_1, guide:item_2, guide:item_3, guide:item_4, guide:item_5, guide:item_6, guide:item_7 .
+
+guide:item_1 rdf:type guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "Introducción a la programación orientada a objetos (POO)" .
+guide:item_2 rdf:type guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "Modelo de objetos: abstracciones de datos, clases y objetos" .
+guide:item_3 rdf:type guide:SyllabusItem ; guide:itemIndex 3 ; guide:syllabusDescription "Listas" .
+guide:item_4 rdf:type guide:SyllabusItem ; guide:itemIndex 4 ; guide:syllabusDescription "Listas enlazadas" .
+guide:item_5 rdf:type guide:SyllabusItem ; guide:itemIndex 5 ; guide:syllabusDescription "Herencia y Polimorfismo" .
+guide:item_6 rdf:type guide:SyllabusItem ; guide:itemIndex 6 ; guide:syllabusDescription "Pilas y Colas" .
+guide:item_7 rdf:type guide:SyllabusItem ; guide:itemIndex 7 ; guide:syllabusDescription "Excepciones" .
+
+# Evaluation System
+guide:eval_system_prog2 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación se regirá por la Normativa de Evaluación de la Upreg, con dos sistemas: progresiva y global." ;
+    guide:hasEvaluationTrial guide:trial_aep_5, guide:trial_aep_6, guide:trial_aep_7, guide:trial_aep_8, guide:trial_aep_9, guide:trial_aep_10, guide:trial_aep_11, guide:trial_aep_13, guide:trial_aep_14, guide:trial_aep_15, guide:trial_eep_12, guide:trial_eg_16, guide:trial_eg_extra .
+
+guide:trial_aep_5 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "2.5%" ;
+    guide:trialWeek "Semana 5" ;
+    guide:trialMode "Presencial" .
+
+guide:trial_eep_12 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "10%" ;
+    guide:trialWeek "Semana 12" ;
+    guide:trialMode "Presencial" .
+
+guide:trial_eg_16 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "60%" ;
+    guide:trialWeek "Semana 16" ;
+    guide:trialMode "Presencial" .
+
+# Schedule and Activities
+guide:schedule_prog2 rdf:type guide:Schedule ;
+    sch:eventSchedule guide:event_week1, guide:event_week3, guide:event_week12, guide:event_week16 .
+
+guide:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity guide:act_presentation .
+
+guide:act_presentation rdf:type guide:Activity ;
+    guide:activityDescription "Presentación de la asignatura" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+guide:event_week3 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 3 ;
+    guide:eventWeek "Semana 3" ;
+    guide:hasActivity guide:act_lab .
+
+guide:act_lab rdf:type guide:Activity ;
+    guide:activityDescription "Laboratorio" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+guide:res_moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Sitio Moodle UPM de la asignatura" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:res_java_manual rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Manual de referencia de Java" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:res_java_notes rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Apuntes de Java" ;
+    guide:bibliographyType "Recursos web" .
+
+# Required Knowledge
+guide:req_knowledge_prog2 rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Programación I" ;
+    guide:previousKnowledge "Capacidad de comprensión lectora y hablada en español/castellano. Conocimientos básicos de aritmética, lógica y álgebra." .

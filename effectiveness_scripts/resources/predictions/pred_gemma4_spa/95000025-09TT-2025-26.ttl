@@ -1,0 +1,137 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+### Course Guide Instance
+:CourseGuide_95000025 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Circuitos Electrónicos" ;
+    guide:numberOfCredits 3.0 ;
+    guide:courseType "Obligatoria" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCompetency :Comp_CE_SE3, :Comp_CE_SE5, :Comp_CE_SE8, :Comp_CG10, :Comp_CG12, :Comp_CG8 ;
+    guide:hasLearningResult :LR_RA70, :LR_RA2_210, :LR_RA555, :LR_RA73, :LR_RA556, :LR_RA209, :LR_RA554, :LR_RA553, :LR_RA71, :LR_RA552, :LR_RA75 ;
+    guide:hasEvaluation :EvalSystem_Progresiva, :EvalSystem_Global, :EvalSystem_Extraordinaria ;
+    guide:hasDidacticResource :Res_Moodle, :Res_Manual_BASYS2, :Res_Franco_2002, :Res_Wakerly_2005 ;
+    sch:courseSchedule :Schedule_95000025 ;
+    sch:instructor :Lecturer_Alvaro_De_Guzman ;
+    guide:otherInformation "Esta asignatura sigue un esquema de aprendizaje basado en proyecto (PBL)." .
+
+### Course Instance
+:Course_95000025 rdf:type guide:Course ;
+    sch:name "Circuitos Electrónicos" ;
+    sch:courseCode 95000025 ;
+    guide:courseYear 2025 ;
+    guide:semester "Quinto semestre" ;
+    sch:hasCourseInstance :CourseGuide_95000025 .
+
+### Degree Instance
+:Degree_09TT rdf:type guide:Degree ;
+    sch:name "09TT - Grado en Ingeniería de Tecnologías y Servicios de Telecomunicación" ;
+    guide:degreeCode "09TT" ;
+    guide:hasCourse :Course_95000025 .
+
+### University Center Instance
+:UnivCenter_ETSIT rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicación" ;
+    guide:offers :Degree_09TT .
+
+### Lecturers
+:Lecturer_Alvaro_De_Guzman rdf:type guide:Lecturer ;
+    sch:name "Alvaro De Guzman Fernandez Gonzalez" ;
+    sch:email "alvarodegun.fernandez@upm.es" ;
+    guide:office "B-112" ;
+    rdfs:label "(Coordinador/a)" .
+
+:Lecturer_Luis_Fernando_Dharo rdf:type guide:Lecturer ;
+    sch:name "Luis Fernando D'haro Enriquez" ;
+    sch:email "luisfernando.dharo@upm.es" ;
+    guide:office "B-108" .
+
+:Lecturer_Miguel_Angel_Sanchez rdf:type guide:Lecturer ;
+    sch:name "Miguel Angel Sanchez Garcia" ;
+    sch:email "miguelangel.sanchez@upm.es" ;
+    guide:office "B-107" .
+
+### Competencies
+:Comp_CE_SE3 rdf:type guide:Competency ;
+    guide:competencyCode "CE-SE3" ;
+    guide:competencyDescription "Capacidad de realizar la especificación, implementación, documentación y puesta a punto de equipos y sistemas..." .
+
+:Comp_CE_SE5 rdf:type guide:Competency ;
+    guide:competencyCode "CE-SE5" ;
+    guide:competencyDescription "Capacidad de diseñar circuitos de electrónica analógica y digital..." .
+
+:Comp_CG10 rdf:type guide:Competency ;
+    guide:competencyCode "CG10" ;
+    guide:competencyDescription "Creatividad" .
+
+### Learning Results
+:LR_RA70 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA70" ;
+    guide:learningResultDescription "Conocimientos de dispositivos, circuitos, equipos y sistemas electrónicos." .
+
+:LR_RA210 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA210" ;
+    guide:learningResultDescription "Realizar una documentación técnica completa sobre el diseño realizado..." .
+
+### Evaluation Systems and Trials
+:EvalSystem_Progresiva rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva de la asignatura." ;
+    guide:hasEvaluationTrial :Trial_Week12, :Trial_Week13, :Trial_Week17 .
+
+:Trial_Week12 rdf:type guide:EvaluationTrial ;
+    guide:trialWeek "12" ;
+    guide:evaluationType "TG" ;
+    guide:gradePercentage "20%" ;
+    guide:trialDescription "Presentación de la documentación técnica y medidas del circuito completo" .
+
+:Trial_Week17 rdf:type guide:EvaluationTrial ;
+    guide:trialWeek "17" ;
+    guide:evaluationType "EX" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialDescription "Examen escrito" .
+
+### Schedule and Activities
+:Schedule_95000025 rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week2, :Event_Week12, :Event_Week13, :Event_Week17 .
+
+:Event_Week2 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 2 ;
+    guide:eventWeek "Semana 2" ;
+    guide:hasActivity :Activity_Lab_Familiarization .
+
+:Activity_Lab_Familiarization rdf:type guide:Activity ;
+    guide:activityDescription "Familiarización con los sistemas del laboratorio" ;
+    guide:activityDuration 2.5 ;
+    guide:activityFormat "Prácticas de Laboratorio" .
+
+:Event_Week17 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 17 ;
+    guide:eventWeek "Semana 17" ;
+    guide:hasActivity :Activity_Exam_Written .
+
+:Activity_Exam_Written rdf:type guide:Activity ;
+    guide:activityDescription "Examen escrito" ;
+    guide:activityDuration 1.5 ;
+    guide:activityFormat "Examen Escrito" .
+
+### Didactic Resources
+:Res_Moodle rdf:type guide:DidacticResource ;
+    sch:name "Pagina web de Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Contiene el enunciado, ficheros necesarios, manuales, etc." .
+
+:Res_Franco_2002 rdf:type guide:DidacticResource ;
+    sch:name "Design with Operational Amplifiers and Analog Integrated Circuits, Sergio Franco 3ª edición" ;
+    guide:bibliographyType "Bibliografía" .
+
+### Required Knowledge
+:ReqKnow_Pre_Course rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Analisis Y DiseÑo De Circuitos, Electronica Digital, Electronica Analogica, Electronica E Instrumentacion Basicas, Introduccion A La Electronica" .

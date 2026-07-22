@@ -1,0 +1,142 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide
+:AnalisisDelNegocioTic_Guide a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Analisis Del Negocio Tic" ;
+    guide:numberOfCredits 3.0 ;
+    guide:courseType "Optativa" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    guide:semester "Segundo semestre" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCourse :AnalisisDelNegocioTic_Course ;
+    guide:hasSyllabus :AnalisisDelNgocioTic_Syllabus ;
+    guide:hasEvaluation :AnalisisDelNegocioTic_EvalSystem ;
+    guide:hasCompetency :CE7, :CG1, :CG3, :CT3, :CT6 ;
+    guide:hasLearningResult :RA172, :RA24, :RA33, :RA145, :RA29, :RA25, :RA139, :RA138, :RA23, :RA76, :RA244, :RA245, :RA70, :RA243, :RA246, :RA146, :RA10, :RA148 ;
+    sch:instructor :FernandoHerrera, :LuisCastejon, :ZoraidaFrias ;
+    guide:hasDidacticResource :ExcelTool, :BookPark, :BookNewnan, :BookCopeland .
+
+# Course
+:AnalisisDelNegocioTic_Course a guide:Course ;
+    sch:name "93000855 - Analisis Del Negocio Tic" ;
+    sch:courseCode 93000855 ;
+    guide:courseType "Optativa" .
+
+# Degree
+:MasterTelecom_Degree a guide:Degree ;
+    sch:name "09AQ - Master Universitario En Ingenieria De Telecomunic<0xC2>acion" ;
+    guide:degreeCode "09AQ" ;
+    guide:hasCourse :AnalisisDelNegocioTic_Course .
+
+# University Center
+:ETS_Telecom_Center a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" ;
+    guide:offers :MasterTelecom_Degree .
+
+# Lecturers
+:FernandoHerrera a guide:Lecturer ;
+    sch:name "Fernando Herrera Gonzalez" ;
+    sch:email "fernando.herrera@upm.es" ;
+    guide:office "C-425" ;
+    guide:tutorshipsSchedule "Sin horario. Solicitud de hora con cita previa mediante correo-e." .
+
+:LuisCastejon a guide:Lecturer ;
+    sch:name "Luis Castejon Martin" ;
+    sch:email "luis.castejon@upm.es" ;
+    guide:office "C-426" ;
+    guide:tutorshipsSchedule "Sin horario. Solicitud de hora con cita previa mediante correo-e." .
+
+:ZoraidaFrias a guide:Lecturer ;
+    sch:name "Zoraida Frias Barroso" ;
+    sch:email "zoraida.frias@upm.es" ;
+    guide:office "C-431" ;
+    guide:tutorshipsSchedule "Sin horario. Solicitud de hora con cita previa mediante correo-e." .
+
+# Competencies
+:CE7 a guide:Competency ;
+    guide:competencyCode "CE7" ;
+    guide:competencyDescription "Capacidad para realizar la planificación, toma de decisiones y empaquet ​etamiento de redes, servicios y aplicaciones considerando la calidad de servicio, los costes directos y de operación..." .
+
+:CG1 a guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales en el desarrollo y/o aplicación de ideas..." .
+
+:CG3 a guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Que los estudiantes sean capaces de integrar conocimientos y enfrentarse a la complejidad de formular juicios..." .
+
+:CT3 a guide:Competency ;
+    guide:competencyCode "CT3" ;
+    guide:competencyDescription "Capacidad para adoptar soluciones creativas que satisfagan adecuadamente las diferentes necesidades planteadas." .
+
+:CT6 a guide:Competency ;
+    guide:competencyCode "CT6" ;
+    guide:competencyDescription "Capacidad para emitir juicios sobre implicaciones económicas, administrativas, sociales, éticas y medioambientales..." .
+
+# Learning Results
+:RA172 a guide:LearningResult ;
+    guide:learningResultCode "RA172" ;
+    guide:learningResultDescription "Analizar las finanzas de un operador de telecom, comparativamente con las de una OTT, para conocer EBITDA, rotación activos, ROE, caja, Capex" .
+
+:RA24 a guide:LearningResult ;
+    guide:learningResultCode "RA24" ;
+    guide:learningResultDescription "Adquisición de conocimientos sobre aspectos complementarios para la gestión de un proyecto de ingeniería: gestión de calidad y riesgos y toma de decisiones." .
+
+:RA33 a guide:LearningResult ;
+    guide:learningResultCode "RA33" ;
+    guide:learningResultDescription "Capacidad para abordar y desarrollar en grupo casos prácticos de análisis, diseño, dimensionamiento, simulación, pruebas y su gestión técnico-económica..." .
+
+# Syllabus
+:AnalisisNgocioTic_Syllabus a guide:Syllabus ;
+    guide:hasItem :Tema1, :Tema2, :Tema3 .
+
+:Tema1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Valoración de proyectos de inversión" .
+
+:Tema2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Valoración de empresas" .
+
+:Tema3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "El método del Venture Capital para valorar startups" .
+
+# Evaluation System
+:AnalisisDelNegocioTic_EvalSystem a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y prueba global." ;
+    guide:hasEvaluationTrial :ExamenFinal_Trial, :Caso1_Trial, :Caso2_Trial .
+
+:ExamenFinal_Trial a guide:EvaluationTrial ;
+    guide:trialType "Examen" ;
+    guide:trialDescription "Examen final ordinario" ;
+    guide:evaluationType "final" ;
+    guide:gradePercentage "50%" .
+
+:Caso1_Trial a guide:EvaluationTrial ;
+    guide:trialType "Trabajo Individual" ;
+    guide:trialDescription "Caso 1: selección de proyectos de inversión mediante NPV y IRR" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "9%" .
+
+# Didactic Resources
+:ExcelTool a guide:DidacticResource ;
+    guide:bibliographyTitle "Excel - Tool for valuation of investment projects" ;
+    guide:bibliographyType "Equipamiento" .
+
+:BookPark a guide:DidacticResource ;
+    guide:bibliographyTitle "Chan S. Park. Fundamentals of Engineering Economics" ;
+    guide:bibliographyType "Bibliografía" .
+
+:BookNewnan a guide:DidacticResource ;
+    guide:bibliographyTitle "Donald G. Newnan, Jerome P. Lavelle, Ted G. Eschenbach. Engineering Economic Analysis" ;
+    guide:bibliographyType "Bibliografía" .
+
+:BookCopeland a guide:DidacticResource ;
+    guide:bibliographyTitle "Tom Copeland, Vladimir Antikarov. Real Options" ;
+    guide:bibliographyType "Bibliografía" .

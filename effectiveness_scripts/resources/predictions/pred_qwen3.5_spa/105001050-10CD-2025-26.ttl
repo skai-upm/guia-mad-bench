@@ -1,0 +1,85 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course_guide_105001050> rdf:type :CourseGuide ;
+    dct:title "Ecuaciones Diferenciales Y Modelización De Fenómen"@en ;
+    guide:numberOfCredits 6^^xsd:decimal ;
+    sch:name "ANX-PR/CL/001-01 Guía de Aprendizaje"@es ;
+    guide:syllabusDescription "Temario sobre ecuaciones diferenciales, sistemas lineales y no lineales."@en .
+
+<http://guia-mad-bench.es/data/schedule_105001050> rdf:type :Schedule ;
+    sch:courseCode 105001050^^xsd:integer ;
+    guide:eventIndex "Semestre"^^xsd:string , "Primer semestre"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_system_105001050> rdf:type :EvaluationSystem ;
+    sch:description "Evaluación progresiva y global."@en .
+
+# Lecturers
+<javier_lopez_delacruz> rdf:type :Lecturer , sch:Person ;
+    guide:office "1312"@es ;
+    sch:name "Javier Lopez De La Cruz"^^xsd:string ;
+    sch:email <javier.lopez.delacruz@upm.es> .
+
+<paulo_seminario_huertas> rdf:type :Lecturer , sch:Person ;
+    guide:office "1312"@es ;
+    sch:name "Paulo Nicanor Seminario Huertas"^^xsd:string ;
+    sch:email <paulo.seminario.huertas@upm.es> .
+
+<http://guia-mad-bench.es/data/course_guide_105001050> guide:sch:director <javier_lopez_delacruz> ;
+    sch:instructor <paulo_seminario_huertas> .
+
+# Competencies (CB04, CE01...)
+<comp_CB04> rdf:type :Competency ;
+    guide:competencyCode "CB04"^^xsd:string ;
+    guide:competencyDescription "Que los estudiantes puedan transmitir información..."@en .
+
+<comp_CE01> rdf:type :Competency ;
+    guide:competencyCode "CE01"^^xsd:string ;
+    guide:competencyDescription "Capacidad para utilizar con destreza los conceptos matemáticos..."@en .
+
+# Learning Results (RA...)
+<ra_RA133> rdf:type :LearningResult ;
+    guide:learningResultCode "RA133"^^xsd:string ;
+    guide:learningResultDescription "Entender la importancia de las ecuaciones diferenciales..."@es .
+
+<ra_RA136> rdf:type :LearningResult ;
+    guide:learningResultCode "RA136"^^xsd:string ;
+    guide:learningResultDescription "Saber realizar un estudio cualitativo de sistemas diferenciales no lineales."@en .
+
+# Syllabus Items (Topics)
+<item_1> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "Ecuaciones diferenciales de primer orden"^^xsd:string .
+
+<item_2> rdf:type :SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer ;
+    guide:syllabusDescription "Ecuaciones diferenciales de orden superior."@en .
+
+# Schedule Events (Semester-wise)
+<event_sem1> rdf:type :ScheduleEvent ;
+    sch:eventWeek "Septiembre-Enero"^^xsd:string ;
+    guide:eventIndex 1^^xsd:integer .
+
+# Evaluation Trials
+<trial_ordinary_works> rdf:type :EvaluationTrial ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    guide:gradePercentage "25%"^^xsd:string ;
+    sch:description "Evaluación progresiva."@es .
+
+<http://guia-mad-bench.es/data/course_guide_105001050> :hasEvaluation <http://guia-mad-bench.es/data/eval_system_105001050> ;
+    guide:hasLearningResult <ra_RA133>, <ra_RA136> .
+
+<http://guia-mad-bench.es/data/course_guide_105001050> :hasCompetency <comp_CB04>, <comp_CE01> .
+
+# Didactic Resources
+<Resource_Zill> rdf:type :DidacticResource ;
+    guide:bibliographyTitle "D. G. Zill, Ecuaciones diferenciales con aplicación al modelado"^^xsd:string ;
+    guide:bibliographyType "Bibliografía"@en .
+
+<http://guia-mad-bench.es/data/course_guide_105001050> :hasDidacticResource <Resource_Zill>, <Resource_Hirsch> .

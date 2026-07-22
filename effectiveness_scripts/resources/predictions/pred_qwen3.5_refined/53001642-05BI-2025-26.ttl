@@ -1,0 +1,61 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide-ANX-PRCL001> rdf:type :CourseGuide ;
+    dct:title "Smart Grids"@en ;
+    sch:name "53001642 - Smart Grids" ;
+    guide:teachingPeriodMonths "Febrero-Junio"@en ;
+    guide:numberOfCredits 3^^xsd:decimal ;
+    guide:syllabusDescription "In this course, the fundamentals of smart grids are covered. In particular, attention is paid to intelligent micro and nano electric power grids..."@en ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-ANX-PRCL001> .
+
+<http://guia-mad-bench.es/data/degree-05BI> rdf:type :Degree ;
+    guide:degreeCode "05BI"@en ;
+    sch:name "Doble Master Universitario Ingenieria Industrial - Electronica Industrial" .
+
+<http://guia-mad-bench.es/data/course-SmartGrids> rdf:type :Course ;
+    sch:courseCode 53001642^^xsd:integer ;
+    guide:numberOfCredits 3^^xsd:decimal ;
+    guide:syllabusDescription "In this course, the fundamentals of smart grids are covered..."@en .
+
+<http://guia-mad-bench.es/data/course-guide-ANX-PRCL001> sch:hasCourseInstance <http://guia-mad-bench.es/data/course-SmartGrids> ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus-53001642> .
+
+<http://guia-mad-bench.es/data/lecturer-AiranFrancesRoger> rdf:type :Lecturer , sch:Person ;
+    sch:name "Airan Frances Roger"@en ;
+    guide:office "Electrónica" ;
+    sch:email <mailto:airan.frances@upm.es> .
+
+<http://guia-mad-bench.es/data/course-guide-ANX-PRCL001> sch:director <http://guia-mad-bench.es/data/lecturer-AiranFrancesRoger> ;
+    guide:syllabusDescription "In this course, the fundamentals of smart grids are covered..."@en .
+
+<http://guia-mad-bench.es/data/schedule-ANX-PRCL001> rdf:type :Schedule , sch:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event-Semester1>, <http://guia-mad-bench.es/data/event-Semester2>.
+
+<http://guia-mad-bench.es/data/syllabus-53001642> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/item-introduction>, <http://guia-mad-bench.es/data/item-power-electronics>.
+
+<http://guia-mad-bench.es/data/competency-MUEI-CB06> rdf:type :Competency ;
+    guide:competencyCode "MUEI.CB06"@en ;
+    guide:competencyDescription "Poseer y comprender conocimientos que aportan una base u oportunidad de ser originales..."@en .
+
+<http://guia-mad-bench.es/data/learning-result-RA43> rdf:type :LearningResult ;
+    guide:learningResultCode "RA43"@en ;
+    guide:learningResultDescription "Identificar, analizar, e interpretar los datos de problemas relacionados con el tráfico y el transporte" .
+
+<http://guia-mad-bench.es/data/competency-MUEI-CB07> rdf:type :Competency ;
+    guide:competencyCode "MUEI.CB07"@en ;
+    guide:learningResultDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas..."@en .
+
+<http://guia-mad-bench.es/data/evaluation-trial-1> rdf:type :EvaluationTrial ;
+    sch:name "Check the modeling and simulation skills using Matlab/Simulink"@en ;
+    guide:trialType "Presentación Individual" ;
+    guide:gradePercentage 20^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluation-trial-1> :hasScheduleEvent <http://guia-mad-bench.es/data/event-Semester9>.

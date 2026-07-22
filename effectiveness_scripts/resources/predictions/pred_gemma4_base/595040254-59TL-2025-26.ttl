@@ -1,0 +1,261 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+### Degree and University Center ###
+
+:Degree_59TL rdf:type guide:BachelorDegree ;
+    sch:name "59TL - Grado en Ingenieria Telematica" ;
+    guide:degreeCode "59TL" .
+
+:ETSISI rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Sist. De Telecom." .
+
+### Course and Course Guide ###
+
+:Course_595040254 rdf:type guide:Course ;
+    sch:name "595040254 - Tic Emergentes para la Sostenibilidad" ;
+    guide:courseYear 3 ;
+    guide:semester "Sexto semestre" ;
+    guide:courseType "Optativa" ;
+    sch:hasCourseInstance :CourseGuide_595040254 .
+
+:CourseGuide_595040254 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Tic Emergentes Para La Sostenibilidad" ;
+    sch:description "En esta asignatura se profundizará en los conceptos y herramientas estudiadas en CIENCIA, TECNOLOGÍA y SOCIEDAD sobre un temario amplio y concreto de temas de actualidad en las TIC." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    guide:numberOfCredits 4.5 ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :Lecturer_MiguelAngel ;
+    sch:director :Lecturer_MiguelAngel ;
+    guide:hasSyllabus :Syllabus_595040254 ;
+    guide:hasCompetency :Comp_CETEL03, :Comp_CETEL16, :Comp_CG02, :Comp_CG03, :Comp_CG04, :Comp_CG05, :Comp_CG06, :Comp_CG09, :Comp_CG10, :Comp_CG11 ;
+    guide:hasLearningResult :LR_RA232 ;
+    guide:hasEvaluation :EvalSystem_595040254 ;
+    guide:hasDidacticResource :Res_Book_Alonso, :Res_Book_Pariser, :Res_Book_Virilio, :Res_Book_Morozov, :Res_Book_Telefónica, :Res_Book_Aragall, :Res_Book_AI_Ethics, :Res_Book_Rasso ;
+    sch:courseSchedule :Schedule_595040254 .
+
+### Lecturers ###
+
+:Lecturer_Aurelio rdf:type guide:Lecturer ;
+    sch:name "Aurelio Berges Garcia" ;
+    sch:email "aurelio.berges@upm.es" ;
+    guide:office "A4423" ;
+    guide:tutorshipsSchedule "X - 12:30 - 13:30" .
+
+:Lecturer_MiguelAngel rdf:type guide:Lecturer ;
+    sch:name "Miguel Angel Valero Duboy" ;
+    sch:email "miguelangel.valero@upm.es" ;
+    guide:office "A4422" ;
+    guide:tutorshipsSchedule "X - 12:30 - 13:30" .
+
+:Lecturer_Celia rdf:type guide:Lecturer ;
+    sch:name "Celia Fernández Aller" ;
+    sch:email "mariacelia.fernandez@upm.es" .
+
+:Lecturer_Sergio rdf:type guide:Lecturer ;
+    sch:name "Sergio Dantonio Maceiras" ;
+    sch:email "sergio.dantonio@upm.es" .
+
+### Competencies ###
+
+:Comp_CETEL03 rdf:type guide:Competency ;
+    guide:competencyCode "CE TEL03" ;
+    guide:competencyDescription "Capacidad para utilizar herramientas informáticas de búsqueda de</em> recursos bibliográficos o de información relacionada con las telecomunicaciones y la electrónica." .
+
+:Comp_CETEL16 rdf:type guide:Competency ;
+    guide:competencyCode "CE TEL16" ;
+    guide:competencyDescription "Conocimiento de la normativa y la regulación de las telecomunicaciones en los ámbitos nacional, europeo e internacional." .
+
+:Comp_CG02 rdf:type guide:Competency ;
+    guide:competencyCode "CG 02" ;
+    guide:competencyDescription "Capacidad de búsqueda y selección de información, de razonamiento crítico y de elaboración y defensa de argumentos dentro del área." .
+
+:Comp_CG03 rdf:type guide:Competency ;
+    guide:competencyCode "CG 03" ;
+    guide:competencyDescription "Capacidad para expresarse correctamente de forma oral y escrita y transmitir información mediante documentos y exposiciones en público." .
+
+:Comp_CG04 rdf:type guide:Competency ;
+    guide:competencyCode "CG 04" ;
+    guide:competencyDescription "Capacidad de abstracción, de análisis y de síntesis y de resolución de problemas." .
+
+:Comp_CG05 rdf:type guide:Competency ;
+    guide:competencyCode "CG 05" ;
+    guide:competencyDescription "Capacidad de trabajo en equipo y en entornos multidisciplinares." .
+
+:Comp_CG06 rdf:type guide:Competency ;
+    guide:competencyCode "CG 06" ;
+    guide:competencyDescription "Capacidad de adaptación, negociación, resolución de conflictos y de liderazgo." .
+
+:Comp_CG09 rdf:type guide:Competency ;
+    guide:competencyCode "CG 09" ;
+    guide:competencyDescription "Capacidad de analizar y valorar el impacto social y medioambiental de las soluciones técnicas." .
+
+:Comp_CG10 rdf:type guide:Competency ;
+    guide:competencyCode "CG 10" ;
+    guide:competencyDescription "Capacidad para manejar especificaciones, reglamentos y normativas y la aplicación de las mismas en el desarrollo de la profesión." .
+
+:Comp_CG11 rdf:type guide:Competency ;
+    guide:competencyCode "CG 11" ;
+    guide:competencyDescription "Habilidades para la utilización de las Tecnologías de la Información y las Comunicaciones." .
+
+### Learning Results ###
+
+:LR_RA232 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA232" ;
+    guide:learningResultDescription "Se concretarán para cada asignatura optativa o para la realización de prácticas en empresas." .
+
+### Syllabus ###
+
+:Syllabus_595040254 rdf:type guide:Syllabus ;
+    guide:hasItem :Topic_1, :Topic_2, :Topic_3, :Topic_4, :Topic_5, :Topic_6, :Topic_7 .
+
+:Topic_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Sociedad de la Información, sociedad del ruido y brechas digitales" .
+
+:Topic_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "TIC emergentes y retos sociales" .
+
+:Topic_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Solucionismo, convivencialidad y tecnología apropiada" .
+
+:Topic_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "E-accesibilidad y diseño para todas las personas" .
+
+:Topic_5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Ética y legislación en robótica, IA, y Big Data" .
+
+:Topic_6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Transformación digital en integración, salud, y aprendizaje" .
+
+:Topic_7 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Innovación y emprendimiento social" .
+
+### Evaluation System ###
+
+:EvalSystem_595040254 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La asignatura se imparte en modo seminario. La nota se compone de evaluación progresiva (60% presentaciones, 40% examen escrito) y una prueba global." ;
+    guide:hasEvaluationTrial :Trial_Progressive_Presentation, :Trial_Progressive_Exam, :Trial_Global_Exam, :Trial_Extraordinary_Exam .
+
+:Trial_Progressive_Presentation rdf:type guide:EvaluationTrial ;
+    guide:trialType "Presentación Individual/Parejas" ;
+    guide:evaluationType "progresiva" ;
+．
+    guide:gradePercentage "60%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:evaluationDuration "00:40" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :Comp_CETEL03, :Comp_CETEL16, :Comp_CG02, :Comp_CG03, :Comp_CG04, :Comp_CG05, :Comp_CG06, :Comp_CG09, :Comp_CG10, :Comp_CG11 .
+
+:Trial_Progressive_Exam rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen escrito" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:evaluationDuration "01:30" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :Comp_CETEL03, :Comp_CG02, :Comp_CG03, :Comp_CG04, :Comp_CG06, :Comp_CG09, :Comp_CG10 .
+
+:Trial_Global_Exam rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen final" ;
+    guide:evaluationType "global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "01:30" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :Comp_CETEL16, :Comp_CG02, :Comp_CG03, :Comp_CG04, :Comp_CG06, :Comp_CG09 .
+
+:Trial_Extraordinary_Exam rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen convocatoria extraordinaria" ;
+    guide:evaluationType "extraordinaria" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "01:30" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :Comp_CETEL03, :Comp_CETEL16, :Comp_CG02, :Comp_CG03, :Comp_CG04, :Comp_CG06, :Comp_CG09, :Comp_CG10 .
+
+### Schedule ###
+
+:Schedule_595040254 rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week1, :Event_Week2, :Event_Week13, :Event_Week17 .
+
+:Event_Week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :Act_Lecture_Intro .
+
+:Act_Lecture_Intro rdf:type guide:Activity ;
+    guide:activityDescription "Presentación de la asignatura, Sociedad de la información, Brechas digitales" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "Presencial" .
+
+:Event_Week2 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 2 ;
+    guide:eventWeek "Semana 2" ;
+    guide:hasActivity :Act_Student_Presentation .
+
+:Act_Student_Presentation rdf:type guide:Activity ;
+    guide:activityDescription "Presentaciones de los alumnos" ;
+    guide:activityFormat "Otras actividades formativas / Evaluación" ;
+    guide:activityDuration 1.5 ;
+    guide:attendanceType "Presencial" .
+
+### Didactic Resources ###
+
+:Res_Book_Alonso rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "\"El desencanto del Progreso\" Andoni Alonso & Iñaki Arzoz" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Para una critica luddita de la tecnología (2021)" .
+
+:Res_Book_Pariser rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "El filtro burbuja" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Eli Pariser, (2011)" .
+
+:Res_Book_Virilio rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "The Information Bomb" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Paul Virilio 2000" .
+
+:Res_Book_Morozov rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "To Save Everything, Click Here: the Folly of Technological Solutionism." ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Morozov, Evgeny (2013)" .
+
+:Res_Book_Telefónica rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Informe de la Sociedad Digital en España 2020-21" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Fundación Telefónica (2022)" .
+
+:Res_Book_Aragall rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Universal Design. The HUMBLES Method for User-Centered Business" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "ARAGALL F. y MONTANA J. 2012" .
+
+:Res_Book_AI_Ethics rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "ETHICS GUIDELINES FOR TRUSTWORTHY AI" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "High-Level Expert Group on Artificial Intelligence (2019)" .
+
+:Res_Book_Rasso rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Artificial Intelligence & Human Rights: Opportunities & Risks" ;
+    guide:bibliographyType "Bibli．ografía" ;
+    guide:bibliographyDescription "Filippo Rasso et al. (Berkman Klein Center Research Publication No 2018-6)" .
+
+### Required Knowledge ###
+
+:ReqKnow_Previous rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Ciencia, Tecnologia Y Sociedad" .

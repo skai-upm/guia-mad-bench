@@ -1,0 +1,164 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Information
+:course_595300032 a guide:Course ;
+    sch:name "Electronica Analogica II" ;
+    guide:courseType "Obligatoria" ;
+    sch:numberOfCredits 6.0 ;
+    sch:courseCode 595300032 .
+
+:degree_59ET a guide:Degree ;
+    sch:name "59ET - Doble Grado En Ing.Electronica De Comunicaciones Y En Ing.Telematica" ;
+    guide:degreeCode "59ET" ;
+    guide:hasCourse :course_595300032 .
+
+:center_ets a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingeniería y Sist. de Telecom." ;
+    guide:offers :degree_59ET .
+
+# Course Guide Instance
+:guide_595300032 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Electronica Analogica II" ;
+    sch:description "Guía de aprendizaje para la asignatura Electrónica Analógica II." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :syllabus_ea2 ;
+    guide:hasCompetency :comp_ec02, :comp_ec05, :comp_cg04, :comp_cg11 ;
+    guide:hasLearningResult :lr_ra546, :lr_ra550, :lr_ra553, :lr_ra551, :lr_ra552, :lr_ra558, :lr_ra556, :lr_ra549, :lr_ra557, :lr_ra545, :lr_ra548, :lr_ra555, :lr_ra554, :lr_ra547 ;
+    guide:hasEvaluation :eval_system_ea2 ;
+    guide:hasDidacticResource :res_book_oa, :res_transparencias, :res_apuntes, :res_ejercicios, :res_examenes_pasados, :res_informes_previos, :res_guiones_practicas, :res_videos_lab, :res_doc_tecnica, :res_puesto_lab, :res_pcb, :res_moodle ;
+    sch:activitiesWorkload "26-27 horas por crédito ECTS" .
+
+# Professors/Lecturers
+:lecturer_fm a guide:Lecturer ;
+    sch:name "Francisco Martinez Moreno" ;
+    guide:office "A4210" ;
+    sch:email "francisco.martinezm@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:lecturer_jm a guide:Lecturer ;
+    sch:name "Javier Malo Gomez" ;
+    guide:office "A4215" ;
+    sch:email "javier.malo@upm.es" ;
+    sch:director :guide_595300032 .
+
+:lecturer_ia a guide:Lecturer ;
+    sch:name "Ignacio Anton Hernandez" ;
+    guide:office "A4220" ;
+    sch:email "i.anton@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+# Competencies
+:comp_ec02 a guide:Competency ;
+    guide:competencyCode "CE EC02" ;
+    guide:competencyDescription "Capacidad para seleccionar circuitos y dispositivos electrónicos especializados para la transmisión, el encaminamiento o enrutamiento y los terminales, tanto en entornos fijos como móviles." .
+
+:comp_ec05 a guide:Competency ;
+    guide:competencyCode "CE EC05" ;
+    guide:competencyDescription "Capacidad de diseñar circuitos de electrónica analógica y digital, de conversión analógico-digital y digital-analógica, de radiofrecuencia, de alimentación y conversión de energía eléctrica para aplicaciones de telecomunicación y computación." .
+
+:comp_cg04 a guide:Competency ;
+    guide:competencyCode "CG 04" ;
+    guide:competencyDescription "Capacidad de abstracción, de análisis y de síntesis y de resolución de problemas." .
+
+:comp_cg11 a guide:Competency ;
+    guide:competencyCode "CG 11" ;
+    guide:competencyDescription "Habilidades para la utilización de las Tecnologías de la Información y las Comunicaciones." .
+
+# Learning Results
+:lr_ra546 a guide:LearningResult ;
+    guide:learningResultCode "RA546" ;
+    guide:learningResultDescription "Comprender e interpretar las especificaciones y parámetros de un amplificador operacional a partir de las hojas de características del fabricante" .
+
+:lr_ra550 a guide:LearningResult ;
+    guide:learningResultCode "RA550" ;
+    guide:learningResultDescription "Calcular, de forma aproximada y rápida, el ancho de banda de un amplificador construido con amplificador operacional compensado en frecuencia." .
+
+# Syllabus and Items
+:syllabus_ea2 a guide:Syllabus ;
+    guide:hasItem :item_unit1, :item_unit2, :item_unit3 .
+
+:item_unit1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Circuitos realimentados con Amplificador Operacional" .
+
+:item_unit2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Respuesta en frecuencia de circuitos basados en el Amplificador Operacional" .
+
+:item_unit3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Parámetros de los Amplificadores Operacionales comerciales" .
+
+# Evaluation System and Trials
+:eval_system_ea2 a guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación distribuida o progresiva con especial incidencia en su convocatoria ordinaria." ;
+    guide:hasEvaluationTrial :trial_bt1a, :trial_bt1b, :trial_bt2, :trial_bt3, :trial_bt1_bt2, :trial_bt3_eva, :trial_lab_practica, :trial_lab_teorica, :trial_final_teorica .
+
+:trial_bt1a a guide:EvaluationTrial ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "3%" ;
+    guide:trialWeek "Semana 2" ;
+    guide:trialMode "No presencial" ;
+    guide:involvesCompetency :comp_cg11, :comp_cg04 .
+
+:trial_bt1b a guide:EvaluationTrial ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "3%" ;
+    guide:trialWeek "Semana 4" ;
+    guide:trialMode "No presencial" ;
+    guide:involvesCompetency :comp_cg11, :comp_cg04 .
+
+:trial_lab_practica a guide:EvaluationTrial ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "12%" ;
+    guide:trialWeek "Semana 13" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_cg11, :comp_ec02, :comp_ec05 .
+
+:trial_final_teorica a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "48%" ;
+    guide:trialWeek "Semana 17" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "4/10" ;
+    guide:involvesCompetency :comp_cg04 .
+
+# Didactic Resources
+:res_book_oa a guide:DidacticResource ;
+    guide:bibliographyTitle "Design with operational amplifiers and analog integrated circuits (fourth edition)" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Es el principal libro de texto, de entre los recomendados, para seguir la asignatura" .
+
+:res_moodle a guide:DidacticResource ;
+    sch:name "Espacio Web Moodle" ;
+    guide:bibliographyType "Recursos web" .
+
+# Previous Knowledge
+:knowledge_prev a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Análisis de circuitos eléctricos básicos, diodos, transistores, amplificador operacional ideal, teoría de sistemas lineales continuos." ;
+    guide:previousCourses "Analisis De Circuitos I, Electronica Analogica I, Analisis De Circuitos II, Electronica I" .
+
+# Schedule Events and Activities
+:event_week1 a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :act_leccion_magistral_1 .
+
+:act_leccion_magistral_1 a guide:Activity ;
+    guide:activityDescription "El AO ideal realimentado negativamente" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 0.5 ;
+    guide:attendanceType "Presencial" .
+
+:act_clase_problemas_2 a guide:Activity ;
+    guide:activityDescription "Ejercicios de análisis de circuitos" ;
+    guide:activityFormat "Clase de Problemas" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Presencial" .

@@ -1,0 +1,313 @@
+@prefix : <http://guia-mad-bench.es/data/> ;
+    prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> ;
+    prefix dct: <http://purl.org/dc/terms/> ;
+    prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> ;
+    prefix owl: <http://www.w3.org/2002/07/owl#> ;
+    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ;
+    prefix sch: <https://schema.org/> .
+
+<http://guia-mad-bench.es/data/guia-65005004> a guide:CourseGuide, sch:CourseInstance ;
+        dc:title "Laboreo De Minas"@es ;
+        dct:creator "Juan Herrera Herbert" ,
+                    "Carlos Lopez Jimeno" ,
+                    "Jesus Caceres Jimeno" ;
+        guide:numberOfCredits 4.5^^xsd:decimal ;
+        sch:name "65005004 - Laboreo De Minas"@en ;
+        guide:syllabusDescription "Introducción al conjunto de la industria minera actual, sus funciones, procesos, tecnologías..."@es ;
+        guide:teachingPeriodMonths "Septiembre-Enero"^^xsd:string ;
+        sch:description "La asignatura está planteada como una introducción a los conceptos fundamentales utilizados en la industria y las actividades desde una perspectiva integral."@en .
+
+<http://guia-mad-bench.es/data/degree-06MM> a guide:BachelorDegree, guide:Degree ;
+    dct:title "Grado En Ingeniería Mineralúrgica Y Metalúrgica De Las Materias Primas"@es ;
+    sch:name "06MM - Grado en Ingeniería..."@en .
+
+<http://guia-mad-bench.es/data/guia-65005004> guide:hasCourse <http://guia-mad-bench.es/data/degree-06MM> ;
+        sch:courseCode 65005004^^xsd:integer .
+
+<http://guia-mad-bench.es/data/syllabus-65005004> a guide:Syllabus, sch:Syllabus ;
+    dct:title "Temario Laboreo De Minas"@es ;
+    rdf:type owl:ObjectProperty ;
+        rdfs:domain <http://w3id.org/def/guia#SyllabusItem> .
+
+<http://guia-mad-bench.es/data/syllabus-65005004> guide:hasSyllabus <http://guia-mad-bench.es/data/guia-65005004> ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-65005004> .
+
+<http://guia-mad-bench.es/data/sem1-item> a guide:SyllabusItem, rdf:Resource ;
+        guide:itemIndex 1^^xsd:integer ;
+        sch:name "BLOQUE 1: LA INDUSTRIA MINERA"@es ;
+        guide:syllabusDescription "Conceptos básicos, características y singularidad de la industria minera."@en .
+
+<http://guia-mad-bench.es/data/sem2-item> a guide:SyllabusItem, rdf:Resource ;
+    guide:itemIndex 2^^xsd:integer ;
+    sch:name "BLOQUE 2: INTRODUCCIÓN A LAS TÉCNICAS DE ARRANQUE DE ROCAS"@es .
+
+<http://guia-mad-bench.es/data/sem3-item> a guide:SyllabusItem, rdf:Resource ;
+        guide:itemIndex 3^^xsd:integer ;
+    sch:name "BLOQUE 3: MÉTODOS DE MINERÍA A CIELO ABIERTO"@es .
+
+<http://guia-mad-bench.es/data/sem4-item> a guide:SyllabusItem, rdf:Resource ;
+        guide:itemIndex 4^^xsd:integer ;
+    sch:name "BLOQUE 4: MÉTODOS DE MINERÍA SUBTERRÁNEA"@es .
+
+<http://guia-mad-bench.es/data/sem5-item> a guide:SyllabusItem, rdf:Resource ;
+        guide:itemIndex 5^^xsd:integer ;
+    sch:name "BLOQUE 5: MÉTODOS DE MINERÍA POR SONDEOS"@es .
+
+<http://guia-mad-bench.es/data/sem6-item> a guide:SyllabusItem, rdf:Resource ;
+        guide:itemIndex 6^^xsd:integer ;
+    sch:name "BLOQUE 6: MÉTODOS ESPECIALES"@es .
+
+<http://guia-mad-bench.es/data/schedule-65005004> a guide:Schedule, sch:Schedule ;
+        dct:title "Cronograma Laboreo De Minas"@es ;
+    rdf:type owl:ObjectProperty ;
+            rdfs:domain <http://w3id.org/def/guia#CourseGuide> .
+
+<http://guia-mad-bench.es/data/schedule-65005004> sch:eventSchedule <http://guia-mad-bench.es/data/sev1>, <http://guia-mad-bench.es/data/sev2>, <http://guia-mad-bench.es/data/sev3>, <http://guia-mad-bench.es/data/sev7>, <http://guia-mad-bench.es/data/sev8> ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/guia-65005004>.
+
+<http://guia-mad-bench.es/data/sev1> a guide:ScheduleEvent, rdf:Resource ;
+        guide:eventIndex 1^^xsd:integer ;
+    sch:name "Presentación de la asignatura"@es .
+
+<http://guia-mad-bench.es/data/sev2> a guide:ScheduleEvent, rdf:Resource ;
+        guide:eventIndex 2^^xsd:integer ;
+    sch:name "BLOQUE 1 y BLOQUE 2 - Evaluación Progresiva"@es .
+
+<http://guia-mad-bench.es/data/sev3> a guide:ScheduleEvent, rdf:Resource ;
+        guide:eventIndex 7^^xsd:integer ;
+    sch:name "Evaluación de Bloques 1 y 2"@es .
+
+<http://guia-mad-bench.es/data/sev4> a guide:ScheduleEvent, rdf:Resource ;
+        guide:eventIndex 8^^xsd:integer ;
+    sch:name "BLOQUE 3 - Evaluación Progresiva"@es .
+
+<http://guia-mad-bench.es/data/sev5> a guide:ScheduleEvent, rdf:Resource ;
+        guide:eventIndex 10^^xsd:integer ;
+    sch:name "Evaluación del Bloque 4"@es .
+
+<http://guia-mad-bench.es/data/sev6> a guide:ScheduleEvent, rdf:Resource ;
+        guide:eventIndex 13^^xsd:integer ;
+    sch:name "BLOQUE 5 y BLOQUE 6 - Evaluación Progresiva"@es .
+
+<http://guia-mad-bench.es/data/sev7> a guide:ScheduleEvent, rdf:Resource ;
+        guide:eventIndex 14^^xsd:integer ;
+    sch:name "Evaluación Final Convocatoria Ordinaria"@es .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> a guide:EvaluationSystem, rdf:Resource ;
+        dct:title "Sistema de Evaluación Laboreo De Minas"@es ;
+    sch:name "Evaluación Global y Parciales"@en .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluation <http://guia-mad-bench.es/data/trial1>, <http://guia-mad-bench.es/data/trial2>, <http://guia-mad-bench.es/data/trial3>.
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial1>;
+    sch:name "Evaluación de Bloques 1 y 2"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial3>;
+    sch:name "Evaluación Final"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial2>;
+    sch:name "Evaluación del Bloque 3"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial1>;
+    sch:name "Evaluación de Bloques 1 y 2"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial3>;
+    sch:name "Evaluación Final"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial2>;
+    sch:name "Evaluación del Bloque 3"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial1>;
+    sch:name "Evaluación de Bloques 1 y 2"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial3>;
+    sch:name "Evaluación Final"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial2>;
+    sch:name "Evaluación del Bloque 3"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial1>;
+    sch:name "Evaluación de Bloques 1 y 2"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial3>;
+    sch:name "Evaluación Final"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial2>;
+    sch:name "Evaluación del Bloque 3"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial1>;
+    sch:name "Evaluación de Bloques 1 y 2"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial3>;
+    sch:name "Evaluación Final"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial2>;
+    sch:name "Evaluación del Bloque 3"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial1>;
+    sch:name "Evaluación de Bloques 1 y 2"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial3>;
+    sch:name "Evaluación Final"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial2>;
+    sch:name "Evaluación del Bloque 3"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial1>;
+    sch:name "Evaluación de Bloques 1 y 2"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial3>;
+    sch:name "Evaluación Final"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial2>;
+    sch:name "Evaluación del Bloque 3"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial1>;
+    sch:name "Evaluación de Bloques 1 y 2"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial3>;
+    sch:name "Evaluación Final"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial2>;
+    sch:name "Evaluación del Bloque 3"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial1>;
+    sch:name "Evaluación de Bloques 1 y 2"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial3>;
+    sch:name "Evaluación Final"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial2>;
+    sch:name "Evaluación del Bloque 3"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial1>;
+    sch:name "Evaluación de Bloques 1 y 2"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial3>;
+    sch:name "Evaluación Final"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial2>;
+    sch:name "Evaluación del Bloque 3"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial1>;
+    sch:name "Evaluación de Bloques 1 y 2"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial3>;
+    sch:name "Evaluación Final"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial2>;
+    sch:name "Evaluación del Bloque 3"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial1>;
+    sch:name "Evaluación de Bloques 1 y 2"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial3>;
+    sch:name "Evaluación Final"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial2>;
+    sch:name "Evaluación del Bloque 3"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial1>;
+    sch:name "Evaluación de Bloques 1 y 2"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial3>;
+    sch:name "Evaluación Final"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial2>;
+    sch:name "Evaluación del Bloque 3"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial1>;
+    sch:name "Evaluación de Bloques 1 y 2"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial3>;
+    sch:name "Evaluación Final"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial2>;
+    sch:name "Evaluación del Bloque 3"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial1>;
+    sch:name "Evaluación de Bloques 1 y 2"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial3>;
+    sch:name "Evaluación Final"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial2>;
+    sch:name "Evaluación del Bloque 3"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial1>;
+    sch:name "Evaluación de Bloques 1 y 2"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial3>;
+    sch:name "Evaluación Final"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial2>;
+    sch:name "Evaluación del Bloque 3"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial1>;
+    sch:name "Evaluación de Bloques 1 y 2"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial3>;
+    sch:name "Evaluación Final"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial2>;
+    sch:name "Evaluación del Bloque 3"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial1>;
+    sch:name "Evaluación de Bloques 1 y 2"@es ;
+        rdf:type owl:ObjectProperty .
+
+<http://guia-mad-bench.es/data/eval-system-65005004> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial3>;
+    sch:name "Evaluación Final"@es ;
+        rdf:type owl:ObjectProperty .

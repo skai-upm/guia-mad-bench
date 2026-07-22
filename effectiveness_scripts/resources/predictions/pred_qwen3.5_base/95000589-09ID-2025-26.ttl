@@ -1,0 +1,485 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> rdf:type :CourseGuide ;
+    sch:name "Laboratorio de Aplicaciones en Salud Digital"@en ,
+        "95000589 - Laboratorio De Aplicaciones En Salud Digital"@es ;
+    dct:identifier 95000589 ;
+    guide:numberOfCredits "4.0"^^xsd:decimal ;
+    sch:description "El laboratorio proporciona al alumno un conjunto de métodos y recursos para su formación en el diseño, desarrollo y evaluación de aplicaciones de salud digital."@es ;
+    guide:syllabusDescription "Introducción al diseño de interfaces; Gestión de bases de datos relacionales; Entorno de desarrollo web; Aplicación Web de gestión de usuarios; Aplicación Web para profesionales; Aplicación Web para pacientes"@en ;
+    sch:teachingPeriodMonths "Febrero-Junio"^^xsd:string ;
+    guide:courseYear 2025 ;
+    dct:title "Guía de Aprendizaje - Laboratorio De Aplicaciones En Salud Digital"@es .
+
+<http://guia-mad-bench.es/data/degree/BachelorDegree_09ID> rdf:type :BachelorDegree , sch:CourseInstance ;
+    guide:numberOfCredits 4.0^^xsd:decimal ;
+    dct:title "Grado en Ingenieria y Sistemas de Datos"@es .
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> sch:hasCourseInstance <http://guia-mad-bench.es/data/degree/BachelorDegree_09ID> ;
+    guide:courseYear 2025 .
+
+<http://w3id.org/guia#lecturer-GemaGarciaSaez> rdf:type :Lecturer , sch:Person ;
+    sch:name "Gema Garcia Saez"@es ;
+    dct:title "Coordinador/a"^^xsd:string ;
+    guide:office "B-302.2"^^xsd:string ;
+    sch:email <mailto:gema.garcia.saez@upm.es> .
+
+<http://w3id.org/guia#lecturer-MariaElenaHernandoPerez> rdf:type :Lecturer , sch:Person ;
+    sch:name "Maria Elena Hernando Perez"@es ;
+    guide:office "B-316"^^xsd:string ;
+    sch:email <mailto:mariaelena.hernando@upm.es> .
+
+<http://w3id.org/guia#lecturer-JoseTapiaGalisteo> rdf:type :Lecturer , sch:Person ;
+    sch:name "Jose Tapia Galisteo"@es ;
+    guide:tutorshipsSchedule "Sin horario. Se concertará cita por correo electrónico"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> sch:director <http://w3id.org/guia#lecturer-GemaGarciaSaez> ;
+    guide:syllabusDescription "Introducción al diseño de interfaces; Gestión de bases de datos relacionales; Entorno de desarrollo web; Aplicación Web de gestión de usuarios; Aplicación Web para profesionales; Aplicación Web para pacientes"@en .
+
+<http://guia-mad-bench.es/data/syllabus/Syllabus_LaboratorioDeAplicacionesEnSaludDigital_2025-26> rdf:type :Syllabus ;
+    guide:hasItem <http://w3id.org/guia#syllabusitem1>,<http://w3id.org/guia#syllabusitem2>,<http://w3id.org/guia#syllabusitem3>,<http://w3id.org/guia#syllabusitem4>,<http://w3id.org/guia#syllabusitem5>,<http://w3id.org/guia#syllabusitem6> .
+
+<http://guia-mad-bench.es/data/syllabus/Syllabus_LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasSyllabus <http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> .
+
+<http://w3id.org/guia#syllabusitem1> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    sch:description "Introducción al diseño de interfaces: Usabilidad"@es .
+
+<http://w3id.org/guia#syllabusitem2> rdf:type :SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer ;
+    sch:description "Gestión de bases de datos relacionales"@es .
+
+<http://w3id.org/guia#syllabusitem3> rdf:type :SyllabusItem ;
+    guide:itemIndex 3^^xsd:integer ;
+    sch:description "Introducción al entorno de desarrollo Web"@es .
+
+<http://w3id.org/guia#syllabusitem4> rdf:type :SyllabusItem ;
+    guide:itemIndex 4^^xsd:integer ;
+    sch:description "Aplicación Web de gestión de usuarios"@es .
+
+<http://w3id.org/guia#syllabusitem5> rdf:type :SyllabusItem ;
+    guide:itemIndex 5^^xsd:integer ;
+    sch:description "Aplicación Web para profesionales"@es .
+
+<http://w3id.org/guia#syllabusitem6> rdf:type :SyllabusItem ;
+    guide:itemIndex 6^^xsd:integer ;
+    sch:description "Aplicación Web para pacientes"@es .
+
+<http://guia-mad-bench.es/data/competency/CB05> rdf:type :Competency ;
+    guide:competencyCode "CB05"@en ;
+    guide:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CE10> rdf:type :Competency ;
+    guide:competencyCode "CE10"@en ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de construir sistemas, aplicaciones y servicios telemáticos..."^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CE17> rdf:type :Competency ;
+    guide:competencyCode "CE17"@en ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de utilizar los fundamentos de la programación..."^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CG03> rdf:type :Competency ;
+    guide:competencyCode "CG03"@en ;
+    guide:competencyDescription "Ser capaz de explicar de forma oral o escrita las soluciones planteadas..."^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CG04> rdf:type :Competency ;
+    guide:competencyCode "CG04"@en ;
+    guide:competencyDescription "Saber identificar y utilizar las herramientas de las Tecnologías de la Información..."^^xsd:string .
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> sch:name "Laboratorio De Aplicaciones En Salud Digital" ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/competency/CB05>,<http://guia-mad-bench.es/data/competency/CE10>,<http://guia-mad-bench.es/data/competency/CE17>,<http://w3id.org/guia#syllabusitem4> .
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasLearningResult <http://guia-mad-bench.es/data/learningresult/RA196>,<http://w3id.org/guia#syllabusitem4>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluation/EvaluationSystem_LaboratorioDeAplicacionesEnSaludDigital_2025-26>.
+
+<http://w3id.org/guia#syllabusitem4> rdf:type :SyllabusItem ;
+    guide:itemIndex 4^^xsd:integer .
+
+<http://guia-mad-bench.es/data/learningresult/RA196> rdf:type :LearningResult ;
+    guide:competencyCode "RA196"@en ;
+    sch:description "Conocimientos teóricos y habilidades prácticas en tecnologías necesarias para el desarrollo e integración de servicios de telemedicina."^^xsd:string .
+
+<http://guia-mad-bench.es/data/learningresult/RA76> rdf:type :LearningResult ;
+    guide:competencyCode "RA76"@en ;
+    sch:description "Conocimientos teóricos y habilidades prácticas en tecnologías necesarias para el desarrollo e integración de servicios de telemedicina."^^xsd:string .
+
+<http://guia-mad-bench.es/data/learningresult/RA063> rdf:type :LearningResult ;
+    guide:competencyCode "RA063"@en ;
+    sch:description "Saber diseñar páginas web estáticas y dinámicas usando HTML, CSS y JavaScript."^^xsd:string .
+
+<http://guia-mad-bench.es/data/learningresult/RA062> rdf:type :LearningResult ;
+    guide:competencyCode "RA062"@en ;
+    sch:description "Comprender la web y el protocolo HTTP."^^xsd:string .
+
+<http://guia-mad-bench.es/data/learningresult/RA061> rdf:type :LearningResult ;
+    guide:competencyCode "RA061"@en ;
+    sch:description "Diseñar e implementar una solución completa a un caso de uso."^^xsd:string .
+
+<http://guia-mad-bench.es/data/learningresult/RA157> rdf:type :LearningResult ;
+    guide:competencyCode "RA157"@en ;
+    sch:description "Conocer y aprender el desarrollo de aplicaciones web para terminales móviles y de escritorio usando tecnologías web."^^xsd:string .
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasDidacticResource <http://w3id.org/guia#resource1>,<http://w3id.org/guia#resource2>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAplicacionesEnSaludDigital_2025-26> guide:hasEvaluationTrial <http://w3id.org/guia#trial-practica1>,<http://w3id.org/guia#trial-examen-global>.
+
+<http://guia-mad-bench.es/data/course/LaboratorioDeAp

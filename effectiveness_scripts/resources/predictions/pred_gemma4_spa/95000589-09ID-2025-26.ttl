@@ -1,0 +1,144 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Guide
+:course_95000589 a guide:Course ;
+    sch:name "Laboratorio De Aplicaciones En Salud Digital" ;
+    guide:courseCode "95:000589" ;
+    guide:courseType "Optativa" ;
+    guide:semester "Octavo semestre" ;
+    sch:hasCourseInstance :guide_95000589 .
+
+:guide_95000589 a guide:CourseGuide ;
+    sch:hasCourseInstance :course_95000589 ;
+    guide:numberOfCredits 4.0 ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    guide:hasCompetency :comp_CB05, :comp_CE10, :comp_CE17, :comp_CG03, :comp_CG04 ;
+    guide:hasLearningResult :lr_RA196, :lr_RA063, :lr_RA062, :lr_RA061, :lr_RA157 ;
+    guide:hasEvaluation :evalSystem_progressive, :evalSystem_global ;
+    guide:hasDidacticResource :res_enunciados, :res_tutoriales .
+
+# Degree and University Center
+:degree_09ID a guide:BachelorDegree ;
+    sch:name "Grado En Ingenieria Y Sistemas De Datos" ;
+    guide:degreeCode "09ID" ;
+    guide:hasCourse :course_95000589 .
+
+:center_ets a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" ;
+    guide:offers :degree_09ID .
+
+# Faculty/Lecturers
+:lecturer_gema a guide:Lecturer ;
+    sch:name "Gema Garcia Saez" ;
+    sch:email "gema.garcia.saez@upm.es" ;
+    guide:office "B-302.2" ;
+    guide:tutorshipsSchedule "X - 12:00 - 13:00 (Concertar cita)" .
+
+:lecturer_maria a guide:Lecturer ;
+    sch:name "Maria Elena Hernando Perez" ;
+    sch:email "mariaelena.hernando@upm.es" ;
+    guide:office "B-316" ;
+    guide:tutorshipsSchedule "Sin horario (Concertar cita)" .
+
+:lecturer_jose a guide:Lecturer ;
+    sch:name "Jose Tapia Galisteo" ;
+    sch:email "jose.tapia.galisteo@upm.es" .
+
+# Competencies
+:comp_CB05 a guide:Competency ;
+    guide:competencyCode "CB05" ;
+    guide:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprepar estudios posteriores con un alto grado de autonomía" .
+
+:comp_CE10 a guide:Competency ;
+    guide:competencyCode "CE10" ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de construir sistemas, aplicaciones y servicios telemáticos, interconectados y multiplataforma a partir de su comprensión de la arquitectura web." .
+
+:comp_CE17 a guide:Competency ;
+    guide:competencyCode "CE17" ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de utilizar los fundamentos de la programación, sistemas operativos, bases de datos, tecnología web y las redes y servicios de telecomunicación en proyectos de ingeniería de datos y sistemas." .
+
+:comp_CG03 a guide:Competency ;
+    guide:competencyCode "CG03" ;
+    guide:competencyDescription "Ser capaz de explicar de forma oral o escrita las soluciones plantetaas para la resolución de un problema." .
+
+:comp_CG04 a guide:Competency ;
+    guide:competencyCode "CG04" ;
+    guide:competencyDescription "Saber identificar y utilizar las herramientas de las Tecnologías de la Información y de las Comunicaciones más adecuadas para plantear y construir soluciones a problemas" .
+
+# Learning Results
+:lr_RA196 a guide:LearningResult ;
+    guide:learningResultCode "RA196 - RA76" ;
+    guide:learningResultDescription "Conocimientos teóricos y habilidades prácticas en tecnologías necesarias para el desarrollo e integración de servicios de telemedicina." .
+
+:lr_RA063 a guide:LearningResult ;
+    guide:learningResultCode "RA063" ;
+    guide:learningResultDescription "Saber diseñar páginas web estáticas y dinámicas usando HTML, CSS y JavaScript." .
+
+:lr_RA062 a guide:LearningResult ;
+    guide:learningResultCode "RA062" ;
+    guide:learningResultDescription "Comprender la web y el protocolo HTTP." .
+
+:lr_RA061 a guide:LearningResult ;
+    guide:learningResultCode "RA061" ;
+    guide:learningResultDescription "Diseñar e implementar una solución completa a un caso de uso." .
+
+:lr_RA157 a guide:LearningResult ;
+    guide:learningResultCode "RA157" ;
+    guide:learningResultDescription "Conocer y aprender el desarrollo de aplicaciones web para terminales móviles y de escritorio usando tecnologías web." .
+
+# Previous Knowledge
+:req_knowledge_db a guide:RequiredKnowledge ;
+    guide:previousCourses "Bases De Datos Relacionales Y Datos Estructurados" .
+
+# Evaluation Systems and Trials
+:evalSystem_progressive a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación Progresiva" ;
+    guide:hasEvaluationTrial :trial_memoria1, :trial_memoria2, :trial_cuestionario3, :trial_practica4, :trial_memoria5, :trial_memoria6, :trial_presentacion_prácticas .
+
+:evalSystem_global a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación Global" ;
+    guide:hasEvaluationTrial :trial_examen_global, :trial_entrega_global .
+
+:trial_memoria1 a guide:EvaluationTrial ;
+    guide:trialType "Entrega de memoria de práctica 1" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialMode "No Presencial" .
+
+:trial_examen_global a guide:EvaluationTrial ;
+    guide:trialType "Examen GLOBAL" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+# Schedule and Activities
+:event_week1 a guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :activity_intro .
+
+:activity_intro a guide:Activity ;
+    guide:activityDescription "Introducción a la asignatura" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+:activity_practica1 a guide:Activity ;
+    guide:activityDescription "Introducción práctica" ;
+    guide:activityDuration 1.5 ;
+    guide:activityFormat "Prácticas de Laboratorio" .
+
+# Didactic Resources
+:res_enunciados a guide:DidacticResource ;
+    guide:bibliographyTitle "Enunciados de las prácticas" ;
+    guide:bibliographyType "Otros" ;
+    guide:bibliographyDescription "Enunciados donde se describen las tareas que debe realizar el alumno y la memoria que se debe entregar como resultado del trabajo" .
+
+:res_tutoriales a guide:DidacticResource ;
+    guide:bibliographyTitle "Tutoriales" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Tutoriales de las herramientas de desarrollo utilizadas durante la realización de las prácticas" .

@@ -1,0 +1,203 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Structure
+:course_ecuaciones_diferenciales rdf:type guide:Course ;
+    sch:name "55000011 - Ecuaciones Diferenciales" ;
+    sch:courseCode "55000011" ;
+    guide:courseType "Básica" ;
+    guide:numberOfCredits 6.0 ;
+    guide:semester "Tercember semestre" ;
+    sch:hasCourseInstance :course_guide_ecuaciones_diferenciales .
+
+:degree_05TI rdf:type guide:Degree ;
+    sch:name "05TI - Grado en Ingeniería en Tecnologías Industriales" ;
+    guide:degreeCode "05TI" ;
+    guide:hasCourse :course_ecuaciones_diferenciales .
+
+:center_ets_industriales rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Industriales" ;
+    guide:offers :degree_05TI .
+
+# Course Guide
+:course_guide_ecuaciones_diferenciales rdf:type guide:CourseGuide ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:hasSyllabus :syllabus_ecuaciones_diferenciales ;
+    guide:hasCompetency :comp_ce1, :comp_cg1, :comp_cg10, :comp_cg2, :comp_cg3, :comp_cg6 ;
+    guide:hasLearningResult :lr_ra242, :lr_ra243, :lr_ra244, :lr_ra232, :lr_ra245 ;
+    guide:hasEvaluation :eval_system_ecuaciones ;
+    guide:hasDidacticResource :res_sanchez, :res_braun, :res_nagle, :res_haberman ;
+    sch:instructor :lecturer_victor_munoz, :lecturer_pablo_gomez, :lecturer_ana_merono, :lecturer_pedro_galan .
+
+# Lecturers
+:lecturer_victor_munoz rdf:type guide:Lecturer ;
+    sch:name "Victor Muñoz Villarragut" ;
+    sch:email "victor.munoz@upm.es" ;
+    guide:office "Despacho" ;
+    guide:tutorshipsSchedule "Sin horario. Consultar con el profesor" .
+
+:lecturer_pablo_gomez rdf:type guide:Lecturer ;
+    sch:name "Pablo Gomez M0urelo" ;
+    sch:email "pablo.gomez.mourelo@upm.es" ;
+    guide:office "Despacho" ;
+    guide:tutorshipsSchedule "Sin horario. Consultar con el profesor" .
+
+:lecturer_ana_merono rdf:type guide:Lecturer ;
+    sch:name "Ana Soledad Meroño Moreno" ;
+    sch:email "anasoledad.merono@upm.es" ;
+    guide:office "Despacho" ;
+    guide:tutorshipsSchedule "Sin horario. Consultar con el profesor" .
+
+:lecturer_pedro_galan rdf:type guide:Lecturer ;
+    sch:name "Pedro Galan Del Sastre" ;
+    sch:email "pedro.galan@upm.es" ;
+    guide:office "Despacho" ;
+    guide:tutorshipsSchedule "M - 10:00 - 12:00, X - 10:00 - 11:00, X - 12:30 - 13:30, J - 10:00 - 11:00, J - 12:30 - 13:30" .
+
+# Competencies
+:comp_ce1 rdf:type guide:Competency ;
+    guide:competencyCode "CE1" ;
+    guide:competencyDescription "Capacidad para la resolución de los problemas matemáticos que puedan plantearse en la ingeniería. Aptitud para aplicar los conocimientos sobre: álgebra lineal; geometría; geometría diferencial; cálculo diferencial e integral; ecuaciones diferenciales ordinarias y en derivadas parciales; métodos numéricos; algorítmica numérica; optimización" .
+
+:comp_cg1 rdf:type guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Industrial." .
+
+:comp_cg10 rdf:type guide:Competency ;
+    guide:competencyCode "CG10" ;
+    guide:competencyDescription "Capacidad para generar nuevas ideas (Creatividad)." .
+
+:comp_cg2 rdf:type guide:Competency ;
+    guide:competencyCode "CG2" ;
+    guide:competencyDescription "Poseer capacidad para diseñar, desarrollar, implementar, gestionar y mejorar productos, sistemas y procesos en los distintos ámbitos industriales, usando técnicas analíticas, computacionales o experimentales apropiadas." .
+
+:comp_cg3 rdf:type guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Aplicar los conocimientos adquiridos para identificar, formular y resolver problemas dentro de contextos amplios y multidisciplinarios, siendo capaces de integrar conocimientos, trabajando en equipos multidisciplinares." .
+
+:comp_cg6 rdf:type guide:Competency ;
+    guide:competencyCode "CG6" ;
+    guide:competencyDescription "Poseer habilidades de aprendizaje que permitan continuar estudiando a lo largo de la vida para su adecuado desarrollo profesional." .
+
+# Learning Results
+:lr_ra242 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA242" ;
+    guide:learningResultDescription "Capacidad de abstracción y reconocimiento de conceptos generales en situaciones prácticas." .
+
+:lr_ra243 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA243" ;
+    guide:learningResultDescription "Capacidad para formular y analizar modelos de procesos naturales. Capacidad de interpretar los resultados obtenidos y evaluar los modelos utilizados." .
+
+:lr_ra244 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA244" ;
+    guide:learningResultDescription "Habilidad para aplicación de métodos analíticos a la resolución de problemas técnicos conocidos que han aparecido en otras materias." .
+
+:lr_ra232 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA232" ;
+    guide:learningResultDescription "Proporciona un abanico muy diverso de herramientas para abordar el tratamiento de modelos de procesos naturales." .
+
+:lr_ra245 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA245" ;
+    guide:learningResultDescription "Proporciona una panorámica muy amplia de modelos clásicos aplicados en muy diversos campos: mecánica, ecología teórica, economía, epidemiología, etc." .
+
+# Syllabus
+:syllabus_ecuaciones_diferenciales rdf:type guide:Syllabus ;
+    guide:hasItem :item_tema1, :item_tema2, :item_tema3, :item_tema4, :item_tema5 .
+
+:item_tema1 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Ecuaciones diferenciales ordinarias de primer orden. Modelización matemática en problemas de ingeniería y medio ambiente; E.D.O. de variables separables, homogéneas, exactas, lineales de primer orden, Bernoulli, métodos numéricos." .
+
+:item_tema2 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Sistemas de ecuaciones diferencial lineales de primer orden. Modelización matemática; Sistemas E.D.O. lineales y coeficientes constantes; Matriz diagonalizable; Espacios de fases." .
+
+:item_tema3 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Ecuaciones diferenciales lineales de orden n. Modelización matemática; E.D.O. lineales con coeficientes constantes y variables; Reducción del orden; Ecuaciones de Euler." .
+
+:item_tema4 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Ecuaciones en derivadas parciales de primer orden. Modelización matemática; E.P.D. cuasilineal; Curvas características; Ondas de choque y condición de Rankine-Hugoniot; Resolución numérica." .
+
+:item_tema5 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Introducción a las ecuaciones en derivadas parciales de segundo orden. Modelización matemática (calor, Laplace, Poisson, ondas); Método de separación de variables; Series de Fourier." .
+
+# Evaluation System
+:eval_system_ecuaciones rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación progresiva consta de dos prácticas de computación científica (10%), una primera prueba escrita (40%) y una segunda prueba escrita global (50%)." ;
+    guide:hasEvaluationTrial :trial_practica_1, :trial_examen_escrito, :trial_practica_2, :trial_examen_global .
+
+:trial_practica_1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen de Prácticas" ;
+    guide:gradePercentage "5%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_ce1, :comp_cg1, :comp_cg2, :comp_cg3 .
+
+:trial_examen_escrito rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_ce1, :comp_cg2, :comp_cg6, :comp_cg10 .
+
+:trial_practica_2 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen de Prácticas" ;
+    guide:gradePercentage "5%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_cg3, :comp_ce1, :comp_cg1, :comp_cg2 .
+
+:trial_examen_global rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "2.5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_ce1, :comp_cg1, :comp_cg2, :comp_cg6, :comp_cg10 .
+
+# Didactic Resources
+:res_sanchez rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Sistemas Dinámicos. Una introducción a través de ejercicios." ;
+    guide:bibliographyDescription "Libro escrito por profesores del Departamento, cuyo contenido se adapta al programa de la asignatura. Es de orientación práctica." .
+
+:res_braun rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Ecuaciones diferenciales y sus aplicaciones" ;
+    guide:bibliographyDescription "M. Braun. Grupo Editorial Iberoamericana, 1990." .
+
+:res_nagle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Fundamentos de ecuaciones diferenciales 2ª ed." ;
+    guide:bibliographyDescription "R. K. Nagle, E. B. Saff. Addison-Wesley Iberoamericana, 1992." .
+
+:res_haberman rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Applied partial differential equations with fourier series and boundary value problems" ;
+    guide:bibliographyDescription "R. Haberman. Pearson Prentice Hall, 2004." .
+
+# Required Knowledge
+:req_knowledge_ecuaciones rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Técnicas del cálculo infinitesimal con funciones de varias variables reales; Conocimientos básicos de Física General; Técnicas elementales de Cálculo Infinitesimal; Técnicas elementales de Álgebra Lineal; Operaciones básicas con números complejos." ;
+    guide:previousCourses "Algebra, Calculo I, Calculo II" .
+
+# Schedule Events (Examples from Cronograma)
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :act_leccion_magistral_tema1 .
+
+:act_leccion_magistral_tema1 rdf:type guide:Activity ;
+    guide:activityDescription "Introducción a la asignatura y Desarrollo teórico y práctico del Tema 1" ;
+    guide:activityDuration 5.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:event_week8 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 8" ;
+    guide:eventIndex 8 ;
+    guide:hasActivity :act_examen_escrito_individual .
+
+:act_examen_escrito_individual rdf:type guide:Activity ;
+    guide:activityDescription "Realización de una prueba escrita individual" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:attendanceType "Presencial" .

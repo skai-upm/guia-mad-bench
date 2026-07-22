@@ -1,0 +1,88 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide-53002093> rdf:type :CourseGuide ;
+    dc:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en ;
+    sch:name "Procesado de Señales en la Ingeniería" ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriod "Septiembre-Enero"@en ;
+    guide:syllabus <http://guia-mad-bench.es/data/syllabus-53002093> .
+
+<http://guia-mad-bench.es/data/degree-05AZ> rdf:type :MasterDegree ;
+    sch:name "Master Universitario En Ingenieria Industrial" ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course-guide-53002093> .
+
+<http://guia-mad-bench.es/data/lecturer-elena-dominguez> rdf:type :Lecturer ;
+    sch:name "M. Elena Dominguez Jimenez" ;
+    guide:office "Despacho 4"@en ;
+    sch:email <mailto:elena.dominguez@upm.es> .
+
+<http://guia-mad-bench.es/data/course-guide-53002093> sch:director <http://guia-mad-bench.es/data/lecturer-elena-dominguez> ;
+    guide:syllabusDescription "Series de Fourier, Transformada de Fourier, DFT, Wavelet"@en .
+
+<http://guia-mad-bench.es/data/syllabus-53002093> rdf:type :Syllabus ;
+    sch:name "Temario" ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus-item-series-fourier>,
+                <http://guia-mad-bench.es/data/syllabus-item-transformada-fourier>,
+                <http://guia-mad-bench.es/data/syllabus-item-dft>,
+                <http://guia-mad-bench.es/data/syllabus-item-wavelet>.
+
+<http://guia-mad-bench.es/data/syllabus-item-series-fourier> rdf:type :SyllabusItem ;
+    guide:itemIndex 1 ;
+    sch:description "Series de Fourier" .
+
+<http://guia-mad-bench.es/data/syllabus-item-transformada-fourier> rdf:type :SyllabusItem ;
+    guide:itemIndex 2 ;
+    sch:description "Transformada de Fourier" .
+
+<http://guia-mad-bench.es/data/syllabus-item-dft> rdf:type :SyllabusItem ;
+    guide:itemIndex 3 ;
+    sch:description "Transformada Discreta de Fourier (DFT)" .
+
+<http://guia-mad-bench.es/data/syllabus-item-wavelet> rdf:type :SyllabusItem ;
+    guide:itemIndex 4 ;
+    sch:description "Transformada wavelet" .
+
+<http://guia-mad-bench.es/data/course-guide-53002093> sch:courseSchedule <http://guia-mad-bench.es/data/schedule-53002093> .
+
+<http://guia-mad-bench.es/data/schedule-53002093> rdf:type :Schedule ;
+    guide:eventIndex 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 .
+
+<http://guia-mad-bench.es/data/schedule-53002093> sch:eventSchedule <http://guia-mad-bench.es/data/evt-series-fourier>,
+    <http://guia-mad-bench.es/data/evt-transformada-fourier>.
+
+<http://guia-mad-bench.es/data/evt-series-fourier> rdf:type :ScheduleEvent ;
+    guide:eventIndex 1, 2 .
+
+<http://guia-mad-bench.es/data/schedule-53002093> sch:hasCourseInstance <http://guia-mad-bench.es/data/course-guide-53002093>.
+
+<http://guia-mad-bench.es/data/eval-system-53002093> rdf:type :EvaluationSystem ;
+    guide:evaluationDescription "Evaluación Progresiva y Prueba de Evaluación Global"@en .
+
+<http://guia-mad-bench.es/data/course-guide-53002093> guide:hasEvaluation <http://guia-mad-bench.es/data/eval-system-53002093>.
+
+<http://guia-mad-bench.es/data/eval-trial-practica> rdf:type :EvaluationTrial ;
+    sch:description "Práctica de ordenador" ;
+    guide:trialType "Examen de Prácticas"@en ;
+    guide:gradePercentage 20.0 ;
+    guide:minScore "0 / 10"@en .
+
+<http://guia-mad-bench.es/data/eval-trial-global> rdf:type :EvaluationTrial ;
+    sch:description "Prueba de evaluación global (PEG)" ;
+    guide:trialType "Trabajo Individual"@en ;
+    guide:gradePercentage 100.0 ;
+    guide:minScore "5 / 10"@en .
+
+<http://guia-mad-bench.es/data/course-guide-53002093> sch:name "Procesado de Señales en la Ingeniería" ;
+    dc:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en .
+
+<http://guia-mad-bench.es/data/course-guide-53002093> guide:hasDidacticResource <http://guia-mad-bench.es/data/resource-apuntes>,
+    <http://guia-mad-bench.es/data/resource-matlab>.
+
+<http://guia-mad-bench.es/data/course-guide-53002093> guide:hasLearningResult "RA445", "RA393"@en .

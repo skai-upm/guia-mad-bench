@@ -1,0 +1,248 @@
+@prefix data: <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Instance / Guide
+data:CourseGuide_115100015 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Biomecánica de la Afyd" ;
+    sch:description "Aplica las leyes de la mecánica a los movimientos del cuerpo humano teniendo en cuenta sus características anatómicas y biológicas" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    guide:numberOfCredits 6.0 ;
+    guide:inpersonHours "No especificado" ;
+    guide:remoteHours "No especificado" ;
+    sch:instructor data:EnriqueNavarroCabello ;
+    sch:director data:EnriqueNavarroCabello ;
+    guide:hasSyllabus data:Syllabus_115100015 ;
+    guide:hasEvaluation data:EvalSystem_115100015 ;
+    guide:hasCompetency data:CE08, data:CE09 ;
+    guide:hasLearningResult data:RA9, data:RA84, data:RA14, data:RA189 ;
+    guide:hasDidacticResource data:Res_LabBiomecanica, data:Res_Moodle, data:Res_Barlett1997, data:Res_Barlett1999, data:Res_Beer1992a, data:Res_Beer1992b, data:Res_Cavanagh1990, data:Res_Gutierrez1998, data:Res_Hamill1995, data:Res_Hochmuth1973, data:Res_Kapandji1990, data:Res_Kreighbaum1996, data:Res_Leva1996, data:Res_McGinnis1999, data:Res_Ozkaya1999, data:Res_Perry1992, data:Res_Plas1996, data:Res_Prat1992 ;
+    sch:courseSchedule data:Schedule_115100015 .
+
+# Course
+data:Course_115100015 a guide:Course ;
+    sch:name "115100015 - Biomecánica de la Afyd" ;
+    sch:courseCode 115100015 ;
+    guide:courseType "Básica" ;
+    guide:semester "Cuarto semestre" ;
+    sch:hasCourseInstance data:CourseGuide_115100015 .
+
+# Degree
+data:Degree_11AF a guide:Degree ;
+    sch:name "11AF - Grado en Ciencias de la Actividad Física y del Deporte" ;
+    guide:degreeCode "11AF" ;
+    guide:hasCourse data:Course_115100015 .
+
+# University Center
+data:UnivCenter_FacultadCC a guide:UniversityCenter ;
+    sch:name "11 - Facultad Cc. Actividad Fisica Y Deporte" ;
+    guide:offers data:Degree_11AF .
+
+# Lecturers
+data:EnriqueNavarroCabello a guide:Lecturer ;
+    sch:name "Enrique Navarro Cabello" ;
+    sch:email "enrique.navarro@upm.es" ;
+    guide:office "204" ;
+    guide:tutorshipsSchedule "L - 12:00 - 14:00, M - 12:00 - 14:00, X - 12:00 - 14:00" .
+
+data:ArchitNavandar a guide:Lecturer ;
+    sch:name "Archit Navandar" ;
+    sch:email "archit.navandar@upm.es" ;
+    guide:tutorshipsSchedule "L - 08:00 - 12:00, M - 08:00 - 10:00" .
+
+data:JavierRuedaOjeda a guide:Lecturer ;
+    sch:name "Javier Rueda Ojeda" ;
+    sch:email "javier.ruedao@upm.es" ;
+    guide:tutorshipsSchedule "L - 08:00 - 12:00" .
+
+# Competencies
+data:CE08 a guide:Competency ;
+    guide:competencyCode "CE08" ;
+    guide:competencyDescription "Aplicar de manera fundamentada y argumentada los principios fisiológicos, biomecánicos, comportamentales y sociales, durante la dirección del entrenamiento deportivo. Nivel 3." .
+
+data:CE09 a guide:Competency ;
+    guide:competencyCode "CE09" ;
+    guide:competencyDescription "Identificar y prevenir los riesgos que se derivan para la salud de los deportistas por la práctica de actividades físicas inadecuadas, en el contexto del entrenamiento deportivo. Nivel 2." .
+
+# Learning Results
+data:RA9 a guide:LearningResult ;
+    guide:learningResultCode "RA9" ;
+    guide:learningResultDescription "Capacidad de trabajar en equipo" .
+
+data:RA84 a guide:LearningResult ;
+    guide:learningResultCode "RA84" ;
+    guide:learningResultDescription "Seleccionar y utilizar el material y el equipamiento deportivo adecuado en cada caso" .
+
+data:RA14 a guide:LearningResult ;
+    guide:learningResultCode "RA14" ;
+    guide:learningResultDescription "Saber aplicar los principios del entrenamiento y así como los fundamentos fisiológicos y biomecánicos a los programas de entrenamiento" .
+
+data:RA189 a guide:LearningResult ;
+    guide:learningResultCode "RA189" ;
+    guide:learningResultDescription "Saber realizar el análisis mecánico de cualquier ejercicio físico, entendiendo las características articulares y musculares de cualquier movimiento humano." .
+
+# Required Knowledge
+data:ReqKnowledge_115100015 a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Conocimientos básicos de Mecánica y Matemáticas" ;
+    guide:previousCourses "Anatomía Funcional Del Aparato Locomotor" .
+
+# Syllabus
+data:Syllabus_115100015 a guide:Syllabus ;
+    guide:hasItem data:SyllabusItem_1, data:SyllabusItem_2, data:SyllabusItem_3, data:SyllabusItem_4, data:SyllabusItem_5, data:SyllableItem_6, data:SyllabusItem_7, data:SyllabusItem_8 .
+
+data:SyllabusItem_1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción al estudio de la biomecánica" .
+
+data:SyllabusItem_2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Análisis cinemático Lineal" .
+
+data:SyllabusItem_3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Análisis Cinematico Angular" .
+
+data:SyllabusItem_4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Dinámica del Centro de Masas" .
+
+data:SyllabusItem_5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Dinámica del cuerpo humano" .
+
+data:SyllabusItem_6 a guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Equilibrio mecánico del cuerpo humano" .
+
+data:SyllabusItem_7 a guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Energía Mecánica" .
+
+data:SyllabusItem_8 a guide:SyllabusItem ;
+    guide:itemIndex 8 ;
+    guide:syllabusDescription "Métodos de análisis biomecánico" .
+
+# Evaluation System
+data:EvalSystem_115100015 a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global" ;
+    guide:hasEvaluationTrial data:Trial_ExamenParcial1, data:Trial_PracticasLab7, data:Trial_PracticasLab11, data:Trial_ExamenParcal2, data:Trial_PracticasLab15, data:Trial_ExamenFinal .
+
+data:Trial_ExamenParcial1 a guide:EvaluationTrial ;
+    sch:name "Examen Parcial 1" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" ;
+    guide:gradePercentage "45%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:involvesCompetency data:CE08, data:CE09 .
+
+data:Trial_PracticasLab7 a guide:EvaluationTrial ;
+    sch:name "Practicas laboratorio" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "00:15" ;
+    guide:gradePercentage "3.3%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:involvesCompetency data:CE08, data:CE09 .
+
+data:Trial_ExamenFinal a guide:EvaluationTrial ;
+    sch:name "Examen Final" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:involvesCompetency data:CE08, data:CE09 .
+
+# Schedule
+data:Schedule_115100015 a guide:Schedule ;
+    sch:eventSchedule data:Event_Week6, data:Event_Week7, data:Event_Week10, data:Event_Week11, data:Event_Week15, data:Event_Week17 .
+
+data:Event_Week6 a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 6" ;
+    guide:eventIndex 6 ;
+    guide:hasActivity data:Act_Lab3D .
+
+data:Act_Lab3D a guide:Activity ;
+    sch:name "Sistema de Captura del movimiento 3D" ;
+    guide:activityDescription "Prácticas de Laboratorio" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "PL" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+data:Res_LabBiomecanica a guide:DidacticResource ;
+    sch:name "laboratorio biomecanica" ;
+    guide:bibliographyType "Equipamiento" ;
+    guide:bibliographyDescription "Sistema Captura 3D, Plataformas de Fuerza, Electromiografía de Superficie" .
+
+data:Res_Moodle a guide:DidacticResource ;
+    sch:name "Plataforma Moodle" ;
+    guide:bibliographyType "Recursos web" .
+
+data:Res_Barlett1997 a guide:DidacticResource ;
+    guide:bibliographyTitle "Barlett, R. (1997). Introduction to sports biomechanics. London: E & FN Spon." ;
+    guide:bibliographyType "Bibliografía" .
+
+data:Res_Barlett1999 a guide:DidacticResource ;
+    guide:bibliographyTitle "Barlett, R. (1999). Sports biomechanics: reducing injury and improving performance: London: E & FN Spon." ;
+    guide:bibliographyType "Bibliografía" .
+
+data:Res_Beer1992a a guide:DidacticResource ;
+    guide:bibliographyTitle "Beer, F. P. y Johnston, E. R. (1992). Dinámica. Madrid: McGraw-Hill." ;
+    guide:bibliographyType "Bibliografía" .
+
+data:Res_Beer1992b a guide:DidacticResource ;
+    guide:bibliographyTitle "Beer, F. P. y Johnston, E. R. (1992). Estática. Madrid: McGraw-Hill." ;
+    guide:bibliographyType "Bibliografía" .
+
+data:Res_Cavanagh1990 a guide:DidacticResource ;
+    guide:bibliographyTitle "Cavanagh, P. R. (1990). Biomechanics of distance running. Champaign, Illinois: Human." ;
+    guide:bibliographyType "Bibliografía" .
+
+data:Res_Gutierrez1998 a guide:DidacticResource ;
+    guide:bibliographyTitle "Gutiérrez Dávila, M. (1998). Biomecánica deportiva: Bases para el análisis. Madrid: Síntesis." ;
+    guide:bibliographyType "Bibliografía" .
+
+data:Res_Hamill1995 a guide:DidacticResource ;
+    guide:bibliographyTitle "Hamill, J., & Knutzen, K. M. (1995). Biomechanical basis of human movement. Baltimore: Englewood Cliffs New Jersey: Prentice-Hall." ;
+    guide:bibliographyType "Bibliografía" .
+
+data:Res_Hochmuth1973 a guide:DidacticResource ;
+    guide:bibliographyTitle "Hochmuth, G. (1973). Biomecánica de los movimientos deportivos. Madrid: Doncel." ;
+    guide:bibliographyType "Bibliografía" .
+
+data:Res_Kapandji1990 a guide:DidacticResource ;
+    guide:bibliographyTitle "Kapandji, A. I. (1990). Cuadernos de Fisiología articular. Madrid: Editorial Médica Panamericana." ;
+    guide:bibliographyType "Bibliografía" .
+
+data:Res_Kreighbaum1996 a guide:DidacticResource ;
+    guide:bibliographyTitle "Kreighbaum, E. y Barthels, K. M. (1996). Biomechanics : A qualitative approach fro studying human movement. Boston: Allyn and Bacon." ;
+    guide:bibliographyType "Bibliografía" .
+
+data:Res_Leva1996 a guide:DidacticResource ;
+    guide:bibliographyTitle "Leva, P. de (1996). Adjustments to Zatsiorsky-Seluyanov's segment inertia parameters. Journal of Biomichanics. 29(9), 1223-1230." ;
+    guide:bibliographyType "Bibliografía" .
+
+data:Res_McGinnis1999 a guide:DidacticResource ;
+    guide:bibliographyTitle "McGinnis, P. M. (1999). Biomechanics of sport and exercise. Champaign: Human Kinetics." ;
+    guide:bibliographyType "Bibliografía" .
+
+data:Res_Ozkaya1999 a guide:DidacticResource ;
+    guide:bibliographyTitle "Ozkaya, N. y Nordin, M. (1999). Fundamentals of biomechanics. Equilibrium, motion and deformation. New York: Springer." ;
+    guide:bibliographyType "Bibliografía" .
+
+data:Res_Perry1992 a guide:DidacticResource ;
+    guide:bibliographyTitle "Perry, J. y Schoneberger, B. I. (1992). Gait analysis: Normal and pathological function. Thorofare, New Jersey: SLACK Incorporated." ;
+    guide:bibliographyType "Bibliografía" .
+
+data:Res_Plas1996 a guide:DidacticResource ;
+    guide:bibliographyTitle "Plas, F., Viel, E., Blanc, Y. y Plaja Marip, J. (1996). La marcha humana: Cinesiología dinámica, biomecánica y patomecánica. Barcelona: Masson." ;
+    guide:bibliographyType "Bibliografía" .
+
+data:Res_Prat1992 a guide:DidacticResource ;
+    guide:bibliographyTitle "Prat, J. y Comín, M. (1992). Biomecánica de la fractura ósea y técnicas de reparación. Valencia: Instituto de Biomecánica de Valencia." ;
+    guide:bibliographyType "Bibliografía" .

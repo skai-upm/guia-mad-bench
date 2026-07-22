@@ -1,0 +1,157 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+# Course Guide Instance
+:course_guide_25001404
+    a guide:CourseGuide ;
+    sch:name "Analisis De Ecosistemas" ;
+    sch:courseCode 25001404 ;
+    guide:numberOfCredits 4.0 ;
+    guide:courseType "Obligatoria" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:semester "Séptimo semestre" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :lecturer_santiago, :lecturer_elena ;
+    sch:director :lecturer_santiago ;
+    guide:hasCompetency :competency_ce14, :competency_ce15, :competency_ce17, :competency_ce24, :competency_ce36, :competency_ce39, :competency_cg14, :competency_cg6, :competency_cg7 ;
+    guide:hasLearningResult :learning_result_ra519, :learning_result_ra228, :learning_result_ra227, :learning_result_ra229, :learning_result_ra230 ;
+    guide:hasEvaluation :evaluation_system_25001404 ;
+    guide:hasSyllabus :syllabus_25001404 ;
+    sch:description "La asignatura se compone de cuatro partes: 1) Metodología de muestreo en campo; 2) Análisis de datos de muestreos en campo; 3) Fitosociología; 4) Bioindicadores." .
+
+# Course Template
+:course_template_25001404
+    a guide:Course ;
+    sch:name "Analisis De Ecosistemas" ;
+    sch:courseCode 25001404 ;
+    guide:courseYear 2025 ;
+    guide:courseType "Obligatoria" ;
+    sch:hasCourseInstance :course_guide_25001404 .
+
+# Degree
+:degree_02IA
+    a guide:BachelorDegree ;
+    sch:name "Grado En Ingenieria Agroambiental" ;
+    guide:degreeCode "02IA" ;
+    guide:hasCourse :course_template_25001404 .
+
+# University Center
+:university_center_etsi
+    a guide:UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas" ;
+    guide:offers :degree_02IA .
+
+# Lecturers
+:lecturer_santiago
+    a guide:Lecturer ;
+    sch:name "Santiago Moreno Vazquez" ;
+    sch:email "santiago.moreno@upm.es" ;
+    guide:office "Banco Semillas" ;
+    guide:tutorshipsSchedule "X - 10:00 - 13:00, J - 10:00 - 13:00, Se concertará mediante correo electrónico" .
+
+:lecturer_elena
+    a guide:Lecturer ;
+    sch:name "Elena Carrio Gonzalez" ;
+    sch:email "elena.carrio@upm.es" ;
+    guide:office "Biología Veg." .
+
+# Competencies
+:competency_ce14
+    a guide:Competency ;
+    guide:competencyCode "CE14" ;
+    guide:competencyDescription "Conocimiento de los conceptos básicos de Ecología, sus objetivos, metodología y modo de estudiar el biotopo, la biocenosis y sus relaciones." .
+
+:competency_ce15
+    a guide:Competency ;
+    guide:competencyCode "CE15" ;
+    guide:competencyDescription "Capacidad para aplicar los principios de la botánica en la identificación y caracterización de especies vegetales..." .
+
+:competency_ce24
+    a guide:Competency ;
+    guide:competencyCode "CE24" ;
+    guide:competencyDescription "Capacidad para utilizar los modelos de datos espaciales y la incorporación de atributos relacionados con el medio ambiente, y diseñar y aplicar los SIG..." .
+
+:competency_cg14
+    a guide:Competency ;
+    guide:competencyCode "CG14" ;
+    guide:competencyDescription "Análisis y síntesis, razonlamiento crítico y resolución de problemas científicos y técnicos" .
+
+# Learning Results
+:learning_result_ra519
+    a guide:LearningResult ;
+    guide:learningResultCode "RA519" ;
+    guide:learningResultDescription "Utilizar organismos bioindicadores para conocer el estado de los ecosistemas" .
+
+:learning_result_ra228
+    a guide:LearningResult ;
+    guide:learningResultCode "RA228" ;
+    guide:learningResultDescription "Aplicar correctamente herramientas estadísticas para el análisis de datos cualitativos y cuantitativos obtenidos en la naturaleza." .
+
+# Evaluation System
+:evaluation_system_25001404
+    a guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación continua aporta el 50% de la nota y el otro 50 % deriva de la evaluación global." ;
+    guide:hasEvaluationTrial :trial_p02, :trial_p03, :trial_global_exam .
+
+:trial_p02
+    a guide:EvaluationTrial ;
+    guide:evaluationType "Otras técnicas evaluativas" ;
+    guide:gradePercentage "2.5%" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :competency_ce24 .
+
+:trial_p03
+    a guide:EvaluationTrial ;
+    guide:evaluationType "Otras técnicas evaluativas" ;
+    guide:gradePercentage "5%" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :competency_cg7 .
+
+:trial_global_exam
+    a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "3/10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :competency_cg14 .
+
+# Syllabus
+:syllabus_25001404
+    a guide:Syllabus ;
+    guide:hasItem :syllabus_item_section1, :syllabus_item_section2, :syllabus_item_section3, :syllabus_item_section4 .
+
+:syllabus_item_section1
+    a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Sección 1. Muestreo en campo sobre la abundancia de especies biológicas" .
+
+:syllabus_item_section2
+    a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Sección 2. Fitosociología" .
+
+# Didactic Resources
+:resource_vegetacion_1
+    a guide:DidacticResource ;
+    guide:bibliographyTitle "Barbour MG (1999) Terrestrial plant ecology." ;
+    guide:bibliographyType "Bibliografía" .
+
+:resource_qgis
+    a guide:DidacticResource ;
+    sch:name "Q-GIS" ;
+    guide:bibliographyDescription "Software para cartografía ambiental" .
+
+# Required Knowledge
+:knowledge_previo_sig
+    a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Sistemas De Informacion Geografica (sig)" .
+
+:knowledge_previo_biologia
+    a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Biologia" .

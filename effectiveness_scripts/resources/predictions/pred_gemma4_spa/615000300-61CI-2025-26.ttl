@@ -1,0 +1,201 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:course_guide_databases a guide:CourseGuide ;
+    sch:name "Bases De Datos" ;
+    guide:courseYear 2025 ;
+    guide:numberOfCredits 9.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:semester "Tercer semestre" ;
+    guide:courseType "Obligatoria" ;
+    guide:inpersonHours "No especificado" ;
+    guide:remoteHours "No especificado" ;
+    guide:totalHours "No especificado" ;
+    guide:hasLearningResult :lr_ra1, :lr_ra2, :lr_ra7, :lr_ra6, :lr_ra3, :lr_ra4, :lr_ra5 ;
+    guide:hasCompetency :comp_cb01, :comp_cc12, :comp_cc13, :comp_cc7, :comp_ct1, :comp_ct2 ;
+    guide:hasEvaluation :eval_system_progressive, :eval_system_global ;
+    guide:hasDidacticResource :res_moodle, :res_ordenador, :res_book_elmasri, :res_book_silberschatz, :res_book_date ;
+    sch:instructor :lecturer_fernando_ortega ;
+    sch:courseSchedule :schedule_databases .
+
+# Course Instance
+:course_databases a guide:Course ;
+    sch:name "61500_Bases De Datos" ;
+    guide:courseYear 2025 ;
+    guide:courseType "Obligatoria" ;
+    sch:numberOfCredits 9.0 .
+
+# Degree Instance
+:degree_comp_eng a guide:Degree ;
+    sch:name "61CI - Grado En Ingenieria De Computadores" ;
+    guide:degreeCode "61CI" ;
+    guide:hasCourse :course_databases .
+
+# University Center Instance
+:center_ets_sis a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ing. de Sistemas Informáticos" ;
+    guide:offers :degree_comp_eng .
+
+# Lecturer Instances
+:lecturer_fernando_ortega a guide:Lecturer ;
+    sch:name "Fernando Ortega Requena" ;
+    sch:email "fernando.ortega@upm.es" ;
+    guide:office "No especificado" ;
+    guide:tutorshipsSchedule "Sin horario" .
+
+:lecturer_maria_angeles a guide:Lecturer ;
+    sch:name "Maria Angeles Mahillo Garcia" ;
+    sch:email "mariaangeles.mahillo@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario" .
+
+:lecturer_santiago_alonso a guide:Lecturer ;
+    sch:name "Santiago Alonso Villaverde" ;
+    sch:email "santiago.alonso@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario" .
+
+:lecturer_edgar_talavera a guide:Lecturer ;
+    sch:name "Edgar Talavera Muñoz" ;
+    sch:email "e.talavera@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario" .
+
+# Competency Instances
+:comp_cb01 a guide:Competency ;
+    guide:competencyCode "CB01" ;
+    guide:competencyDescription "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de estudio..."@en .
+
+:comp_cc12 a guide:Competency ;
+    guide:competencyCode "CC12" ;
+    guide:competencyDescription "Conocimiento y aplicación de las características, funcionalidades y estructura de las bases de datos..."@en .
+
+:comp_cc13 a guide:Competency ;
+    guide:competencyCode "CC13" ;
+    guide:competencyDescription "Conocimiento y aplicación de las herramientas necesarias para el almacenamiento, procesamiento y acceso a los Sistemas de información..."@en .
+
+:comp_cc7 a guide:Competency ;
+    guide:competencyCode "CC7" ;
+    guide:competencyDescription "Conocimiento, diseño y utilización de forma eficiente los tipos y estructuras de datos más adecuados..."@．
+
+:comp_ct1 a guide:Competency ;
+    guide:competencyCode "CT1" ;
+    guide:competencyDescription "Análisis y síntesis: Descomponer la información en unidades más pequeñas..."@en .
+
+:comp_ct2 a guide:Competency ;
+    guide:competencyCode "CT2" ;
+    guide:competencyDescription "Resolución de problemas: Identificar, analizar y definir los elementos significativos que constituyen un problema..."@en .
+
+# Learning Result Instances
+:lr_ra1 a guide:LearningResult ;
+    guide:learningResultCode "RA1" ;
+    guide:learningResultDescription "Conoce y utiliza correctamente las estructuras y tipos de ficheros de datos que conforman un sistema de información."@en .
+
+:lr_ra2 a guide:LearningResult ;
+    guide:learningResultCode "RA2" ;
+    guide:learningResultDescription "Conoce la estructura y utilización de ficheros índices para manejar ficheros de datos."@en .
+
+:lr_ra7 a guide:LearningResult ;
+    guide:learningResultCode "RA7" ;
+    guide:learningResultDescription "Lee un texto un artículo científico de cierta complejidad..."@en .
+
+:lr_ra6 a guide:LearningResult ;
+    guide:learningResultCode "RA6" ;
+    guide:learningResultDescription "Identifica las estructuras y problemas derivados de la integridad referencial en bases de datos."@en .
+
+:lr_ra3 a guide:LearningResult ;
+    guide:learningResultCode "RA3" ;
+    guide:learningResultDescription "Conoce las bases teóricas del modelado conceptual de datos..."@en .
+
+:lr_ra4 a guide:LearningResult ;
+    guide:learningResultCode "RA4" ;
+    guide:learningResultDescription "Conoce los fundamentos de los lenguajes de acceso a bases de datos relacionales..."@en .
+
+:lr_ra5 a guide:LearningResult ;
+    guide:learningResultCode "RA5" ;
+    guide:learningResultDescription "Conoce los fundamentos teóricos del proceso concurrente de transacciones en bases de datos..."@en .
+
+# Evaluation System Instances
+:eval_system_progressive a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global."@en ;
+    guide:hasEvaluationTrial :trial_oral_practica, :trial_exam_final_ord, :trial_exam_practica_escrita .
+
+:eval_system_global a guide:EvaluationSystem ;
+    guide:evaluationDescription "Prueba evaluación global."@en ;
+    guide:hasEvaluationTrial :trial_oral_practica, :trial_exam_final_ord, :trial_exam_practica_escrita .
+
+:trial_oral_practica a guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:evaluationType "Progresiva" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "40%" ;
+    guide:evaluationDuration "06:00" ;
+    guide:involvesCompetency :comp_ct1, :comp_cc12, :comp_cc13, :comp_cc7 .
+
+:trial_exam_final_ord a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Progresiva" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:evaluationDuration "02:15" ;
+    guide:involvesCompetency :comp_ct1, :comp_cc12, :comp_cc13, :comp_cc7, :comp_ct2, :comp_cb01 .
+
+:trial_exam_practica_escrita a guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:evaluationType "Progresiva" ;
+    guide:trialMode "Presintencial" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:evaluationDuration "00:15" ;
+    guide:involvesCompetency :comp_cc7, :comp_cc13, :comp_ct1, :comp_cc12 .
+
+# Didactic Resource Instances
+:res_moodle a guide:DidacticResource ;
+    sch:name "Moodle" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Material de la asignatura"@en .
+
+:res_ordenador a guide:DidacticResource ;
+    sch:name "Ordenador" ;
+    guide:bibliographyType "Equipamiento" ;
+    guide:bibliographyDescription "Ordenador para la realización de las prácticas de la asignatura"@en .
+
+:res_book_elmasri a guide:DidacticResource ;
+    guide:bibliographyTitle "Fundamentos de sistemas de bases de datos" ;
+    guide:bibliographyDescription "Elmasri, R. A., & Navathe, S. B. (2007). Addison Wesley."@en .
+
+:res_book_silberschatz a guide:DidacticResource ;
+    guide:bibliographyTitle "Fundamentos de bases de datos" ;
+    guide:bibliographyDescription "Silberschatz, A., Korth, H. F., et al. (2002)."@en .
+
+:res_book_date a guide:DidacticResource ;
+    guide:bibliographyTitle "Introducción a los sistemas de bases de datos" ;
+    guide:bibliographyDescription "Date, C. J. (2001). Pearson Educación."@en .
+
+# Schedule Instance
+:schedule_databases a guide:Schedule ;
+    sch:eventSchedule :event_week_1, :event_week_2, :event_week_3, :event_week_4, :event_week_5, :event_week_6, :event_week_7, :event_week_8, :event_week_9, :event_week_10, :event_week_12, :event_week_13, :event_week_14, :event_week_15, :event_week_17 .
+
+:event_week_1 a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :act_leccion_magistral_tema1 .
+
+:act_leccion_magistral_tema1 a guide:Activity ;
+    guide:activityDescription "Tema 1: Introducción" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:event_week_15 a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 15" ;
+    guide:eventIndex 15 ;
+    guide:hasActivity :act_evaluacion_oral_practica .
+
+:act_evaluacion_oral_practica a guide:Activity ;
+    guide:activityDescription "Evaluación oral de la práctica de la asignatura" ;
+    guide:activityDuration 6.0 ;
+    guide:activityFormat "OT: Otras actividades formativas / Evaluación" ;
+    guide:attendanceType "Presencial" .

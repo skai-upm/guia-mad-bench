@@ -1,0 +1,120 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# Course and Course Guide
+_:course_565005802 rdf:type guide:Course ;
+    sch:name "Design And Selection Of Materials In 3d Printing" ;
+    sch:courseCode 565005802 ;
+    guide:courseYear 2025 ;
+    guide:courseType "Optional/elective" ;
+    sch:hasCourseInstance _:guide_565005802 .
+
+_:guide_565005802 rdf:type guide:CourseGuide ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "September" ;
+    guide:periodEndingMonth "January" ;
+    guide:inpersonHours "80%" ;
+    guide:remoteHours "0%" ;
+    sch:instructor _:lecturer_cristina_moreno ;
+    sch:director _:lecturer_cristina_moreno ;
+    guide:hasSyllabus _:syllabus_565005802 ;
+    guide:hasEvaluation _:eval_system_565005802 ;
+    guide:hasDidacticResource _:res_lamikiz, _:res_shahzad, _:res_gomez, _:res_3dnatives, _:res_eelisa ;
+    guide:hasCompetency _:comp_C113, _:comp_CE10, _:comp_CE11, _:comp_CE12, _:comp_CE13, _:comp_CE15, _:comp_CE16, _:comp_CE19, _:comp_CE23, _:comp_CE25, _:comp_CE27, _:comp_CE3, _:comp_CE5, _:comp_CE6, _:comp_CE9, _:comp_CG1, _:comp_CG10, _:comp_CG2, _:comp_CG3, _:comp_CG4, _:comp_CG5, _:comp_CG6, _:comp_CG7, _:comp_CG8, _:comp_CG9, _:comp_H13, _:comp_H14, _:comp_H9 ;
+    guide:hasLearningResult _:lr_RA440 .
+
+# Degree and University Center
+_:degree_56DD rdf:type guide:Degree ;
+    guide:degreeCode "56DD" ;
+    sch:name "Grado Ingenieria En Diseño Industrial Y Desarrollo De Producto" .
+
+_:center_etsidi rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Diseño Industrial" ;
+    guide:offers _:degree_56DD .
+
+# Faculty
+_:lecturer_cristina_moreno rdf:type guide:Lecturer ;
+    sch:name "Cristina Moreno Diaz" ;
+    sch:email "cristina.mdiaz@upm.es" ;
+    guide:office "B-150 (1)" ;
+    guide:tutorshipsSchedule "Sin horario. Check online" .
+
+# Competencies
+_:comp_C113 rdf:type guide:Competency ;
+    guide:competencyCode "C.11.3" ;
+    guide:competencyDescription "Conocer el estado actual de las técnicas de impresión 3D así como los criterios para realizar un diseño eficiente con las características y materiales más adecuados a cada proyecto." .
+
+_:comp_CE10 rdf:type guide:Competency ;
+    guide:competencyCode "CE10" ;
+    guide:competencyDescription "Conocimiento y utilización de los principios de teoría de circuitos y máquinas eléctricas." .
+
+# Learning Results
+_:lr_RA440 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA440" ;
+    guide:learningResultDescription "Los resultados del aprendizaje correspondientes a esta asignatura han quedado definidos en el apartado de competencias de este documento." .
+
+# Syllabus
+_:syllabus_565005802 rdf:type guide:Syllabus ;
+    guide:hasItem _:item_1, _:item_2, _:item_3, _:item_4, _:item_5, _:item_6, _:item_7 .
+
+_:item_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introduction to Additive Manufacturing" .
+
+_:item_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Efficient Design in Additive Manufacturing" .
+
+# Evaluation System and Trials
+_:eval_system_565005802 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "The evaluation methodology will consist of individual tasks and a summary of the sessions attended (40%), presentations (40%), and final project (20%)." ;
+    guide:hasEvaluationTrial _:trial_pres1, _:trial_pres2, _:trial_final_proj, _:trial_assignments, _:trial_exam_global, _:trial_exam_reSit .
+
+_:trial_pres1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Progressive assessment" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialType "Group presentation" ;
+    guide:hasScheduleEvent _:event_week4 .
+
+_:trial_pres2 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Progressive assessment" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialType "Group presentation" ;
+    guide:hasScheduleEvent _:event_week10 .
+
+_:trial_final_proj rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Progressive assessment" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialType "Group work" ;
+    guide:hasScheduleEvent _:event_week14 .
+
+# Schedule Events and Activities
+_:event_week4 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "4" ;
+    guide:eventIndex 4 ;
+    guide:hasActivity _:act_module2 .
+
+_:act_module2 rdf:type guide:Activity ;
+    guide:activityDescription "Module 2: Efficient Design in Additive Manufacturing" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Design thinking" .
+
+# Didactic Resources
+_:res_lamikiz rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Fabricación Ad</strong> Aditiva, UNED, 2023" ;
+    guide:bibliographyType "Bibliography" .
+
+_:res_shahzad rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Bibliographic analysis on 3D printing in the building and construction industry" ;
+    guide:bibliographyType "Bibliography" .
+
+_:res_3dnatives rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Web de publicaciones sobre impresión 3D" ;
+    guide:bibliographyType "Web resource" .

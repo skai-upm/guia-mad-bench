@@ -1,0 +1,220 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://w3id.org/def/guia#> .
+
+# Degree
+:degree_arquitectura_naval rdf:type guide:BachelorDegree ;
+    sch:name "Grado en Arquitectura Naval" ;
+    guide:degreeCode "08NV" .
+
+# University Center
+:ets_ingenieros_navales rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Navales" ;
+    guide:offers :degree_arquitectura_naval .
+
+# Course
+:course_calculo_i rdf:type guide:Course ;
+    sch:name "Cálculo I" ;
+    sch:courseCode 85003112 ;
+    guide:courseType "Básica" ;
+    guide:courseYear 2025 ;
+    guide:semester "Primer semestre" .
+
+# Course Guide
+:guide_calculo_i rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance :course_calculo_i ;
+    sch:instructor :lecturer_cristobal, :lecturer_alicia ;
+    sch:director :lecturer_cristobal ;
+    sch:inLanguage "Castellano" ;
+    guide:numberOfCredits 6.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:hasSyllabus :syllabus_calculo_i ;
+    guide:hasCompetency :comp_cb1, :comp_cb5, :comp_ce1, :comp_cg3 ;
+    guide:hasLearningResult :lr_ra22, :lr_ra20, :lr_ra23, :lr_ra21, :lr_ra24 ;
+    guide:hasEvaluation :eval_system_calculo_i ;
+    guide:hasDidacticResource :res_moodle, :res_zill, :res_stewart, :res_larson, :res_burgos_1, :res_demidovich, :res_burgos_2, :res_burgos_3, :res_wolfram, :res_graphics, :res_3blue1brown .
+
+# Lecturers
+:lecturer_cristobal rdf:type guide:Lecturer ;
+    sch:name "Cristobal Jacobo Meroño Moreno" ;
+    sch:email "cj.merono@upm.es" ;
+    guide:office "P1.02" .
+
+:lecturer_alicia rdf:type guide:Lecturer ;
+    sch:name "Alicia Canton Pire" ;
+    sch:email "alicia.canton@upm.es" ;
+    guide:office "P1.06" .
+
+# Competencies
+:comp_cb1 rdf:type guide:Competency ;
+    guide:competencyCode "CB1" ;
+    guide:competencyDescription "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de estudio que parte de la base de la educación secundaria general..."@en .
+
+:comp_cb5 rdf:type guide:Competency ;
+    guide:competencyCode "CB5" ;
+    guide:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía"@en .
+
+:comp_ce1 rdf:type guide:Competency ;
+    guide:competencyCode "CE 1" ;
+    guide:competencyDescription "Capacidad para la resolución de los problemas matemáticos que puedan plantarse en la ingeniería"@en .
+
+:comp_cg3 rdf:type guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Capacidad para el aprendizaje de nuevos métodos y teorías, y en la versatabilidad para adaptarse a nuevas situaciones..."@en .
+
+# Learning Results
+:lr_ra22 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA22" ;
+    guide:learningResultDescription "Estudiar la convergencia de sucesiones y series numéricas. Determinar el conjunto de convergencia de una serie de potencias..."@en .
+
+:lr_ra20 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA20" ;
+    guide:learningResultDescription "Resolver límites de funciones. Analizar la continuidad y derivabilidad. Aproximación polinómica y acotación del error..."@en .
+
+:lr_ra23 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA23" ;
+    guide:learningResultDescription "Manejar la aritmética compleja con soltura. Representar en forma binómica, trigonométrica o exponencial..."@en .
+
+:lr_ra21 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA21" ;
+    guide:learningResultDescription "Aplicar correctamente los métodos de integración elementales. Estudiar la convergencia de las integrales impropias..."@en .
+
+:lr_ra24 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA24" ;
+    guide:learningResultDescription "Métodos numéricos: método de la bisección, interpolación de Lagrange e integración numérica"@en .
+
+# Syllabus
+:syllabus_calculo_i rdf:type guide:Syllabus ;
+    guide:hasItem :item_unit_1, :item_unit_2, :item_unit_3, :item_unit_4 .
+
+:item_unit_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Números complejos" .
+
+:item_unit_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Funciones de variable real. Límites y derivadas" .
+
+:item_unit_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Integración" .
+
+:item_unit_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Sucesiones y series. Series de potencias" .
+
+# Evaluation System
+:eval_system_calculo_i rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La nota de la evaluación progresiva será la media ponderada de los dos controles... Se realizará un examen final..."@en ;
+    guide:hasEvaluationTrial :trial_control_8, :trial_control_15, :trial_final .
+
+:trial_control_8 rdf:type guide:EvaluationTrial ;
+    sch:name "Control temas 1 y 2" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "8" ;
+    guide:hasScheduleEvent :event_week_8 ;
+    guide:involvesCompetency :comp_cb1, :comp_cb5, :comp_cg3, :comp_ce1 .
+
+:trial_control_15 rdf:type guide:EvaluationTrial ;
+    sch:name "Control temas 3 y 4" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "60%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "15" ;
+    guide:hasScheduleEvent :event_week_15 ;
+    guide:involvesCompetency :comp_cb1, :comp_cb5, :comp_cg3, :comp_ce1 .
+
+:trial_final rdf:type guide:EvaluationTrial ;
+    sch:name "Examen final (temas 1-4)" ;
+    guide:evaluationType "global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:hasScheduleEvent :event_week_17 ;
+    guide:involvesCompetency :comp_cb1, :comp_cb5, :comp_cg3, :comp_ce1 .
+
+# Schedule and Activities
+:event_week_1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :act_lecture_1 .
+
+:act_lecture_1 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1. Apartados 1.1-1.4." ;
+    guide:activityDuration 4.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+:event_week_8 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "8" ;
+    guide:hasActivity :act_exercises_1_2 .
+
+:act_exercises_1_2 rdf:type guide:Activity ;
+    guide:activityDescription "Ejercicios: Temas 1 y 2" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+# Didactic Resources
+:res_moodle rdf:type guide:DidacticResource ;
+    sch:name "Moodle" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Plataforma de tele-enseñanza"@en .
+
+:res_zill rdf:type guide:DidacticResource ;
+    sch:name "Zill, Wright, Cálculo de una variable. Transcendentes tempranas, 4 edición, McGraw Hill (2011)" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Adecuado para el programa y nivel de la asignatura"@en .
+
+:res_stewart rdf:type guide:DidacticResource ;
+    sch:name "J. Stewart, Cálculo: conceptos y contexto, 3 edición, International Thomson (2006)" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Adecuado para el programa y nivel de la asignatura"@en .
+
+:res_larson rdf:type guide:DidacticResource ;
+    sch:name "Larson, Hostetler, Edwards, Cálculo I, 8ª edición, McGraw Hill (2006)" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Adecuado para el programa y nivel de la asignatura"@en .
+
+:res_burgos_1 rdf:type guide:DidacticResource ;
+    sch:name "J. de Burgos, Funciones de una variable. Límites, continuidad y derivadas. 80 problemas útiles. García-Maroto Editores (2006)" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Libro de problemas y ejercicios resueltos"@en .
+
+:res_demidovich rdf:type guide:DidacticResource ;
+    sch:name "B.P. Demidovich, Problemas y ejercicios de análisis matemático, Ed. Paraninfo (2007)" ;
+    guide:bibliographyType "Bibliogram" ;
+    guide:bibliographyDescription "Libro de ejercicios resueltos"@en .
+
+:res_burgos_2 rdf:type guide:DidacticResource ;
+    sch:name "J. de Burgos, Análisis matemático I (una variable real). 100 problemas útiles. García-Maroto Editores (2006)" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Libro de problemas y ejercicios resueltos"@en .
+
+:res_burgos_3 rdf:type guide:DidacticResource ;
+    sch:name "J. de Burgos, Cálculo Infinitesimal. Definiciones, teoremas y resultados. García-Maroto Editores (2006)" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Libro de problemas y ejercicios resueltos"@en .
+
+:res_wolfram rdf:type guide:DidacticResource ;
+    sch:name "WolframAlpha" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Aplicación online que realiza cálculo simbólico"@en .
+
+:res_graphics rdf:type guide:DidacticResource ;
+    sch:name "Graphics for the calculus classroom" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Gráficos animados que ilustra conceptos de cálculo"@en .
+
+:res_3blue1brown rdf:type guide:DidacticResource ;
+    sch:name "3Blue1Brown" ;
+    guide:bibliographyType "Otros" ;
+    guide:bibliographyDescription "Vídeos explicativos de nociones matemáticas"@en .

@@ -1,0 +1,207 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:course_guide_145005304
+    rdf:type guide:CourseGuide ;
+    sch:name "Sistemas De Radiofrecuencia" ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :lecturer_izpura ;
+    sch:courseSchedule :schedule_145005304 ;
+    guide:hasSyllabus :syllabus_145005304 ;
+    guide:hasCompetency :comp_CE71, :comp_CG3, :comp_CG9 ;
+    guide:hasLearningResult :lr_RA119 ;
+    guide:hasEvaluation :eval_system_145005304 ;
+    guide:hasDidacticResource :res_book_maneev, :res_book_liao, :res_book_benson, :res_book_smith, :res_book_kraus, :res_moodle, :res_lab ;
+    sch:description "En esta asignatura se estudian los elementos de radiofrecuencia que conforman los sistemas de radiofrecuencia utilizados en el entorno aeronáutico..." .
+
+# Degree Instance
+:degree_14IA
+    rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Ingeniería Aeroespacial" ;
+    guide:degreeCode "14IA" ;
+    guide:hasCourse :course_145005304 .
+
+# Course Instance
+:course_145005304
+    rdf:type guide:Course ;
+    sch:courseCode 1450053:304 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Quinto semestre" ;
+    guide:courseYear 3 .
+
+# University Center Instance
+:center_etsia
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S.I. Aeronáutica Y Del Espacio" ;
+    guide:offers :degree_14IA .
+
+# Lecturer Instance
+:lecturer_izpura
+    rdf:type guide:Lecturer ;
+    sch:name "Jose Ignacio Izura Torres" ;
+    sch:email "joseignacio.izpura@upm.es" ;
+    guide:office "A-259" ;
+    guide:tutorshipsSchedule "L - 11:00 - 12:00, X - 18:15 - 19:15, V - 11:00 - 12:00" .
+
+# Competencies
+:comp_CE71
+    rdf:type guide:Competency ;
+    guide:competencyCode "CE71" ;
+    guide:competencyDescription "Conocimiento aplicado de: Transmisores y receptores; Líneas de<0xC2>transmission y sistemas radiantes..." .
+
+:comp_CG3
+    rdf:type guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Capacidad para identificar y resolver problemas aplicando, con creatividad, los conocimientos adquiridos" .
+
+:comp_CG9
+    rdf:type guide:Competency ;
+    guide:competencyCode "CG9" ;
+    guide:competencyDescription "Razonamiento crítico y capacidad de asociación que posibiliten el aprendizaje continuo" .
+
+# Learning Result
+:lr_RA119
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA119" ;
+    guide:learningResultDescription "Comprensión, aplicación, análisis y síntesis de las Líneas de Transmisión, Guías de Ondas, Fibra Óptica, Antenas y Redes de antenas..." .
+
+# Syllabus
+:syllabus_145005304
+    rdf:type guide:Syllabus ;
+    guide:hasItem :item_topic1, :item_topic2, :item_topic3, :item_topic4, :item_topic5, :item_topic6 .
+
+:item_topic1
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "PRINCIPIOS FUNDAMENTALES DE LOS SISTEMAS DE RADIOFRECUENCIA" .
+
+:item_topic2
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "ONDAS ELECTROMAGNÉTICAS: NATURALEZA Y PROPAGACIÓN" .
+
+:item_topic3
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "LINEAS DE TRANSMISION" .
+
+:item_topic4
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "GUIAS DE ONDA" .
+
+:item_topic5
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "ANTENAS" .
+
+:item_topic6
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "TIPOS Y REDES DE ANTENAS" .
+
+# Evaluation System and Trials
+:eval_system_145005304
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La asignatura puede ser aprobada de varias formas, en las que la más habitual es por evaluación progresiva..." ;
+    guide:hasEvaluationTrial :trial_prog_1, :trial_lab_report, :trial_prog_2, :trial_ord_exam, :trial_ext_exam .
+
+:trial_prog_1
+    rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "progresiva" ;
+    guide:trialWeek "7" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "2.5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_CE71, :comp_CG3, :comp_CG9 .
+
+:trial_lab_report
+    rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "progresiva" ;
+    guide:trialWeek "11" ;
+    guide:gradePercentage "10%" ;
+    guide:trialMode "No presencial" .
+
+:trial_prog_2
+    rdf:type guide:EvaluationTrial ;
+    rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "progresiva" ;
+    guide:trialWeek "16" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "2.5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_CE71, :comp_CG3, :comp_CG9 .
+
+:trial_ord_exam
+    rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "global" ;
+    guide:trialWeek "16" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involessCompetency :comp_CE71, :comp_CG3, :comp_CG9 .
+
+:trial_ext_exam
+    rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "global" ;
+    guide:trialWeek "17" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_CE71, :comp_CG3, :comp_CG9 .
+
+# Schedule
+:schedule_145005304
+    rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week2, :event_week7, :event_week11, :event_week16, :event_week17 .
+
+:event_week1
+    rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_lecture_topic1 .
+
+:act_lecture_topic1
+    rdf:type guide:Activity ;
+    guide:activityDescription "Clases teóricas y prácticas del Tema 1" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_book_maneev
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "E. MANAEV. Fundamentos de la radioelectrónica" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_book_liao
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "SAMUEL Y. LIAO. Engineering applications of electromagnetic theory" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_moodle
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Plataforma MOODLE de la asignatura" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_lab
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Laboratorio de Electrónica" ;
+    guide:bibliographyType "Equipamiento" .
+
+# Required Knowledge
+:req_knowledge_145005304
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "FÍsica Ii, Electronica Y Automatica, Ingenieria Electrica" ;
+    guide:previousKnowledge "Manejo fluido de números complejos" .
+
+# Course Guide instance link to required knowledge (as part of the course context)
+:course_guide_145005304 guide:hasRequiredKnowledge :req_knowledge_145005304 .

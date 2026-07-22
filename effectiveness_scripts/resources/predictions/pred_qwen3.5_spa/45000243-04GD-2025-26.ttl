@@ -1,0 +1,84 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide-45000243> rdf:type guide:CourseGuide ;
+    dct:title "Transportes"@en ;
+    sch:name "Transportes" ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2025/26"@en ;
+    sch:inLanguage "Castellano"@en ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course-45000243> .
+
+<http://guia-mad-bench.es/data/course-45000243> rdf:type guide:Course ;
+    sch:name "Transportes" ;
+    guide:numberOfCredits 4.5 ;
+    guide:courseYear 4 ;
+    guide:syllabusDescription "Capítulo I, II y III de la asignatura"@en .
+
+<http://guia-mad-bench.es/data/degree-04GD> rdf:type guide:Degree ;
+    sch:name "Doble Grado En Ingenieria Civil Y Territorial Y En Ade" ;
+    guide:degreeCode "04GD"@en .
+
+<http://guia-mad-bench.es/data/syllabus-transportes> rdf:type guide:Syllabus ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/course-guide-45000243> .
+
+<http://guia-mad-bench.es/data/lecturer-natalia> rdf:type guide:Lecturer ;
+    sch:name "Natalia Sobrino Vazquez" ;
+    sch:email <mailto:natalia.sobrino@upm.es> ;
+    guide:office "TRANSyT"@en ;
+    guide:tutorshipsSchedule "M - 10:00 - 11:00; X - 10:00 - 11:00" .
+
+<http://guia-mad-bench.es/data/lecturer-aniceto> rdf:type guide:Lecturer ;
+    sch:name "Aniceto Zaragoza Ramirez" ;
+    sch:email <mailto:aniceto.zaragoza@upm.es> ;
+    guide:tutorshipsSchedule "L - 16:00 - 19:00; V - 16:00 - 19:00"@en .
+
+<http://guia-mad-bench.es/data/lecturer-maria-eugenia> rdf:type guide:Lecturer ;
+    sch:name "Maria Eugenia Lopez" ;
+    sch:title "Coordinador/a";
+    sch:email <mailto:mariaeugenia.lopez@upm.es> ;
+    guide:tutorshipsSchedule "L - 09:00 - 11:00; X - 09:00 - 11:00"@en .
+
+<http://guia-mad-bench.es/data/competency-cm40_2> rdf:type guide:Competency ;
+    guide:competencyCode "04GC. CM40.2" ;
+    guide:competencyDescription "Comprensión del fenómeno urbano y sus factores determinantes (historia, economía, actividad humana, movilidad)" .
+
+<http://guia-mad-bench.es/data/learning-result-ra180> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA180" ;
+    guide:learningResultDescription "Trabajar de forma autónoma y con iniciativa personal"@en .
+
+<http://guia-mad-bench.es/data/schedule-transportes> rdf:type guide:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/course-guide-45000243> .
+
+<http://guia-mad-bench.es/data/evaluation-system-transportes> rdf:type guide:EvaluationSystem ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-examen-final> ;
+    sch:name "Evaluación Global" .
+
+<http://guia-mad-bench.es/data/syllabus-item-t1> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Tema 1. Características y funciones del transporte"@en ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/learning-result-ra180> .
+
+<http://guia-mad-bench.es/data/schedule-event-1> rdf:type guide:ScheduleEvent ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/course-guide-45000243> ;
+    guide:activityDurationUnit "Semestre 1" .
+
+<http://guia-mad-bench.es/data/activity-lecture-t1> rdf:type guide:Activity ;
+    sch:name "Tema 1. Características y funciones del transporte"@en ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/learning-result-ra180> .
+
+<http://guia-mad-bench.es/data/resource-1> rdf:type guide:DidacticResource ;
+    sch:name "Introducción a la ingeniería del Transporte" ;
+    guide:bibliographyTitle "Truyols Mateu, Sebastián et. al." ;
+    guide:bibliographyType "Biblioteca"@en .
+
+<http://guia-mad-bench.es/data/trial-examen-final> rdf:type guide:EvaluationTrial ;
+    sch:name "Examen final" ;
+    guide:trialDescription "Evaluación Global Presencial Duración 03:30 Peso en la nota 100%"@en .

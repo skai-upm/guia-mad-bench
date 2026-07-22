@@ -1,0 +1,221 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:course_55000104 a guide:CourseGuide ;
+    sch:name "Electronica Digital" ;
+    sch:description "La asignatura cubre los aspectos principales del diseño de sistemas digitales empleando para ello un Lenguaje de Descripción Hardware (VHDL). Se estudiarán tanto el diseño de circuitos combinacionales como el de circuitos secuenciales síncronos." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:numberOfCredits 3.0 ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :syllabus_55000104 ;
+    guide:hasEvaluation :eval_system_55000104 ;
+    guide:hasCompetency :comp_CE21A, :comp_CE24A, :comp_CG1, :comp_CG10, :comp_CG2, :comp_CG3, :comp_CG5, :comp_CG6, :comp_CG7, :comp_CG9 ;
+    guide:hasLearningResult :lr_RA8, :lr_RA9 ;
+    guide:hasDidacticResource :res_transparencias, :res_fpgas, :res_sw_estudiante, :res_weblab, :res_videotutoriales ;
+    sch:instructor :lecturer_otero_marnotes, :lecturer_portilla_berrueco ;
+    sch:courseSchedule :schedule_55000104 ;
+    guide:otherInformation "Curso: Cuarto curso. Semestre: Séptimo semestre. Carácter: Optativa." .
+
+:degree_05TI a guide:BachelorDegree ;
+    sch:name "Grado En Ingeniería En Tecnologías Industriales" ;
+    guide:degreeCode "05TI" ;
+    guide:hasCourse :course_55000104 .
+
+:center_ets_industriales a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Industriales" ;
+    guide:offers :degree_05TI .
+
+:lecturer_otero_marnotes a guide:Lecturer ;
+    sch:name "Jose Andres Otero Marnotes" ;
+    sch:email "joseandres.otero@upm.es" ;
+    guide:tutorshipsSchedule "L - 08:00 - 08:15" .
+
+:lecturer_portilla_berrueco a guide:Lecturer ;
+    sch:name "Jorge Portilla Berrueco" ;
+    sch:email "jorge.portilla@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:lecturer_external_granja a guide:Lecturer ;
+    sch:name "Juan Granja" ;
+    sch:email "juan.granjava@upm.es" .
+
+:lecturer_external_waucquez a guide:Lecturer ;
+    sch:name "Luis Waucquez" ;
+    sch:email "luis.waucquez.jimenez@upm.es" .
+
+:comp_CE21A a guide:Competency ;
+    guide:competencyCode "CE21A" ;
+    guide:competencyDescription "Conocimiento de los fundamentos y aplicaciones de la electrónica digital y microprocesadores." .
+
+:comp_CE24A a guide:Competency ;
+    guide:competencyCode "CE24A" ;
+    guide:competencyDescription "Capacidad para diseñar sistemas electrónicos analógicos, digitales y de potencia." .
+
+:comp_CG1 a guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Industrial." .
+
+:comp_CG10 a guide:Competency ;
+    guide:competencyCode "CG10" ;
+    guide:competencyDescription "Capacidad para generar nuevas ideas (Creatividad)." .
+
+:comp_CG2 a guide:Competency ;
+    guide:competencyCode "CG2" ;
+    guide:competencyDescription "Poseer capacidad para diseñar, desarrollar, implementar, gestionar y mejorar productos, sistemas y procesos en los distintos ámbitos industriales, usando técnicas analíticas, computacionales o experimentales apropiadas." .
+
+:comp_CG3 a guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Aplicar los conocimientos adquiridos para identificar, formular y resolver problemas dentro de contextos amplios y multidisciplinarios, siendo capaces de integrar conocimientos, trabajando en equipos multidisciplinares." .
+
+:comp_CG5 a guide:Competency ;
+    guide:competencyCode "CG5" ;
+    guide:competencyDescription "Saber comunicar los conocimientos y conclusiones, de forma oral, escrita y gráfica, a públicos especializados y no especializados de un modo claro y sin ambigüedades." .
+
+:comp_CG6 a guide:Competency ;
+    guide:competencyCode "CG6" ;
+    guide:competencyDescription "Poseer habilidades de aprendizaje que permitan continuar estudiando a lo largo de la vida para su adecuado desarrollo profesional." .
+
+:comp_CG7 a guide:Competency ;
+    guide:competencyCode "CG7" ;
+    competencyDescription "Incorporar nuevas tecnologías y herramientas de la Ingeniería Industrial en sus actividades profesionales." .
+
+:comp_CG9 a guide:Competency ;
+    guide:competencyCode "CG9" ;
+    guide:competencyDescription "Organización y planificación en el ámbito de la empresa, y otras instituciones y organizaciones de proyectos y equipos humanos." .
+
+:lr_RA8 a guide:LearningResult ;
+    guide:learningResultCode "RA8" ;
+    guide:learningResultDescription "Capacidad y habilidades para diseñar circuitos digitales de complejidad intermedia, a partir de bloques funcionales conocidos, combinados con máquinas de estados." .
+
+:lr_RA9 a guide:LearningResult ;
+    guide:learningResultCode "RA9" ;
+    guide:learningResultDescription "Adquirir criterios para seleccionar las diferentes posibilidades tecnológicas de implementación de circuitos." .
+
+:syllabus_55000104 a guide:Syllabus ;
+    guide:hasItem :item_1, :item_2, :item_3, :item_4, :item_5, :item_6, :item_7 .
+
+:item_1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a los Sistemas Digitales" .
+
+:item_2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Diseño Digital con Lenguajes de descripción Hardware (VHDL)" .
+
+:item_3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Diseño de Circuitos Combinacionales" .
+
+:item_4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Diseño de Circuitos Secuenciales Síncronos" .
+
+:item_5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Síntesis de Circuitos Secuenciales Síncronos" .
+
+:item_6 a guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Implementación física" .
+
+:item_7 a guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Arquitectura de sistemas digitales" .
+
+:schedule_55000104 a guide:Schedule ;
+    sch:eventSchedule :event_week2, :event_week4, :event_week5, :event_week6, :event_week13, :event_week17 .
+
+:event_week2 a guide:ScheduleEvent ;
+    guide:eventWeek "2" ;
+    guide:hasActivity :act_prac1 .
+
+:act_prac1 a guide:Activity ;
+    guide:activityDescription "Práctica 1. Introducción a Vivado. Implementación de bloques básicos: Decodificación BCD a 7 segmentos. Realización de simulaciones" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "PL" ;
+    guide:attendanceType "Presencial" .
+
+:event_week4 a guide:ScheduleEvent ;
+    guide:eventWeek "4" ;
+    guide:hasActivity :act_prac2 .
+
+:act_prac2 a guide:Activity ;
+    guide:activityDescription "Práctica 2 de laboratorio. Diseño con bloques secuenciales. Diseño con bloques secuenciales: reloj digital" ;
+    guide:activityDuration 2.5 ;
+    guide:activityFormat "PL" ;
+    guide:attendanceType "Presencial" .
+
+:event_week6 a guide:ScheduleEvent ;
+    guide:eventWeek "6" ;
+    guide:hasActivity :act_exam_vhdl .
+
+:act_exam_vhdl a guide:Activity ;
+    guide:activityDescription "Examen de VHDL" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "EX" ;
+    guide:attendanceType "Presencial" .
+
+:eval_system_55000104 a guide:EvaluationSystem ;
+    guide:evaluationDescription "La nota en la convocatoria ordinaria será 2,5% por cada una de las cuatro prácticas (10% en total), 20% para la PEC, 30% Para el trabajo práctico, y 40% el examen final." ;
+    guide:hasEvaluationTrial :trial_prac1, :trial_prac2, :trial_prac3, :trial_prac4, :trial_vhdl, :trial_work, :trial_final .
+
+:trial_prac1 a guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "2.5%" ;
+    guide:trialWeek "2" ;
+    guide:involvesCompetency :comp_CE21A, :comp_CG1 .
+
+:trial_vhdl a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Evaluación Progresiva y Global" ;
+    guide:gradePercentage "20%" ;
+    guide:trialWeek "6" ;
+    guide:involvesCompetency :comp_CE21A, :comp_CG1 .
+
+:trial_work a guide:EvaluationTrial ;
+    guide:trialType "Trabajo en Grupo" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "30%" ;
+    guide:trialWeek "13" ;
+    guide:involvesCompetency :comp_CG1 .
+
+:trial_final a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialWeek "17" ;
+    guide:involvesCompetency :comp_CG3, :comp_CG5 .
+
+:res_transparencias a guide:DidacticResource ;
+    sch:name "Transparencias de clase" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_fpgas a guide:DidacticResource ;
+    sch:name "Placas y SW de diseño con FPGAs" ;
+    guide:bibliographyType "Equipamiento" .
+
+:res_sw_estudiante a guide:DidacticResource ;
+    sch:name "SW de diseño versión estudiante" ;
+    guide:bibliographyType "Otros" .
+
+:res_weblab a guide:DidacticResource ;
+    sch:name "Weblab" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_videotutoriales a guide:DidacticResource ;
+    sch:name "Videotutoriales de prácticas" ;
+    guide:bibliographyType "Otros" .
+
+:req_knowledge_previo a guide:RequiredKnowledge ;
+    guide:previousCourses "Fundamentos De Programacion, Fundamentos De Electronica" .

@@ -1,0 +1,152 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Course and Degree Information
+:course_85003112 a guide:Course ;
+    sch:name "Cálculo I" ;
+    sch:courseCode 85003112 ;
+    guide:courseType "Básica" ;
+    guide:semester "Primer semestre" ;
+    sch:hasCourseInstance :course_guide_85003112 .
+
+:degree_08NV a guide:Degree ;
+    sch:name "Grado En Arquitectura Naval" ;
+    guide:degreeCode "08NV" ;
+    guide:hasCourse :course_85003112 .
+
+:university_center_ets a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Navales" ;
+    guide:offers :degree_08NV .
+
+# Course Guide Instance
+:course_guide_85003112 a guide:CourseGuide ;
+    guide:teachingPeriod "2025-26" ;
+    guide:numberOfCredits 6.0 ;
+    guide:inLanguage "Castellano" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:instructor :lecturer_cristobal ;
+    sch:director :lecturer_cristobal ;
+    guide:hasSyllabus :syllabus_calc1 ;
+    guide:hasEvaluation :evaluation_system_calc1 ;
+    guide:hasDidacticResource :resource_moodle, :resource_zill, :resource_stewart, :resource_larson, :resource_burgos_1, :resource_demidovich, :resource_burgos_2, :resource_burgos_3, :resource_wolfram, :resource_graphics, :resource_3blue1brown ;
+    guide:hasCompetency :competency_CB1, :competency_CB5, :competency_CE1, :competency_CG3 ;
+    guide:hasLearningResult :learning_result_RA22, :learning_result_RA20, :learning_result_RA23, :learning_result_RA21, :learning_result_RA24 .
+
+# Lecturers
+:lecturer_cristobal a guide:Lecturer ;
+    sch:name "Cristobal Jacobo Meroño Moreno" ;
+    sch:email "cj.merono@upm.es" ;
+    guide:office "P1.02" ;
+    guide:tutorshipsSchedule "Sin horario. Por determinar, se mostrará en el Moodle de la asignatura." .
+
+:lecturer_alicia a guide:Lecturer ;
+    sch:name "Alicia Canton Pire" ;
+    sch:email "alicia.canton@upm.es" ;
+    guide:office "P1.06" ;
+    guide:tutorshipsSchedule "Sin horario. Por determinar." .
+
+# Competencies
+:competency_CB1 a guide:Competency ;
+    guide:competencyCode "CB1" ;
+    guide:competencyDescription "Que los estudiantes hayan demostrado poseblen y comprender conocimientos en un área de estudio que parte de la base de la educación secundaria general..." .
+
+:competency_CB5 a guide:Competency ;
+    guide:competencyCode "CB5" ;
+    guide:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía" .
+
+:competency_CE1 a guide:Competency ;
+    guide:competencyCode "CE 1" ;
+    guide:competencyDescription "Capacidad para la resolución de los problemas matemáticos que puedan plantearse en la ingeniería." .
+
+:competency_CG3 a guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Capacidad para el aprendizaje de nuevos métodos y teorías, y en la versatilidad para adaptarse a nuevas situaciones..." .
+
+# Learning Results
+:learning_result_RA22 a guide:LearningResult ;
+    guide:learningResultCode "RA22" ;
+    guide:learningResultDescription "Estudiar la convergencia de sucesiones y series numéricas. Determinar el conjunto de convergencia de una serie de potencias..." .
+
+:learning_result_RA20 a guide:LearningResult ;
+    guide:learningResultCode "RA20" ;
+    guide:learningResultDescription "Resolver límites de funciones. Analizar la continuidad y derivabilidad. Aproximación polinómica y acotación del error..." .
+
+# Syllabus
+:syllabus_calc1 a guide:Syllabus ;
+    guide:hasItem :syllabus_item_complex_numbers, :syllabus_item_real_functions, :syllabus_item_integration, :syllabus_item_sequences_series .
+
+:syllabus_item_complex_numbers a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Números complejos: Aritmética, Fórmula de Euler, Representación, Potencias y raíces, Funciones de variable compleja, Logaritmo complejo." .
+
+:syllabus_item_real_functions a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Funciones de variable real. Límites y derivadas: Definición, Propiedades, Continuidad, Derivada, Reglas de derivación, Polinomios de Taylor, Curvatura." .
+
+:syllabus_item_integration a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Integración: Sumas de Riemann, Integral definida, Cálculo de primitivas, Teorema fundamental del cálculo, Técnicas de integración, Integrales impropias." .
+
+:syllabus_item_sequences_series a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Sucesiones y series. Series de potencias: Sucesión de números reales, Límite de una sucesión, Convergencia de series, Criterios de convergencia." .
+
+# Evaluation System and Trials
+:evaluation_system_calc1 a guide:EvaluationSystem ;
+    guide:evaluationDescription "La nota de la evaluación progresiva será la media ponderada de los dos controles... Se realizará un examen final..." ;
+    guide:hasEvaluationTrial :trial_control_8, :trial_control_15, :trial_final_17 .
+
+:trial_control_8 a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:00" ;
+    guide:eventIndex 8 ;
+    guide:involvesCompetency :competency_CB1, :competency_CB5, :competency_CG3, :competency_CE1 .
+
+:trial_control_15 a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "60%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:00" ;
+    guide:eventIndex 15 ;
+    guide:involvesCompetency :competency_CB1, :competency_CB5, :competency_CG3, :competency_CE1 .
+
+:trial_final_17 a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "03:00" ;
+    guide:eventIndex 17 ;
+    guide:involvesCompetency :competency_CB1, :competency_CB5, :competency_CG3, :competency_CE1 .
+
+# Didactic Resources
+:resource_moodle a guide:DidacticResource ;
+    sch:name "Moodle" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Plataforma de tele-enseñanza" .
+
+:resource_zill a guide:DidacticResource ;
+    sch:name "Zill, Wright, Cálculo de una variable. Transcendentes tempranas" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "4 edición, McGraw Hill (2011). Adecuado para el programa y nivel de la asignatura" .
+
+:resource_stewart a guide:DidacticResource ;
+    sch:name "J. Stewart, Cálculo: conceptos y contexto" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "3 edición, International Thomson (2006). Adecuado para el programa y nivel de la asignatura" .
+
+:resource_wolfram a guide:DidacticResource ;
+    sch:name "WolframAlpha" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Aplicación 'online' que realiza cálculo simbólico" .
+
+# Required Knowledge
+:knowledge_math_base a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Los correspondientes a las matemáticas de la ESO y de primero y segundo de Bachillerato" .

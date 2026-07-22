@@ -1,0 +1,148 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# Course Guide Instance
+:course_guide_93000855 rdf:type guide:CourseGuide ;
+    sch:name "93000855 - Analisis del Negocio Tic" ;
+    sch:description "Análisis de negocios digitales en el hipersector TIC, utilizando metodologías de 'aprender haciendo' y casos reales." ;
+    guide:numberOfCredits 3.0 ;
+    guide:courseType "Optativa" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCourse :course_93000855 ;
+    guide:hasSyllabus :syllabus_93000855 ;
+    guide:hasEvaluation :eval_system_93000855 ;
+    guide:hasCompetency :comp_ce7, :comp_cg1, :comp_cg3, :comp_ct3, :comp_ct6 ;
+    guide:hasLearningResult :lr_ra172, :lr_ra24, :lr_ra33, :lr_ra145, :lr_ra29, :lr_ra25, :lr_ra139, :lr_ra138, :lr_ra23, :lr_ra76, :lr_ra244, :lr_ra245, :lr_ra70, :lr_ra243, :lr_ra246, :lr_ra146, :lr_ra10, :lr_ra148 ;
+    guide:hasDidacticResource :res_excel, :res_book_park, :res_book_newnan, :res_book_copeland ;
+    sch:instructor :lecturer_luis_castejon ;
+    sch:director :lecturer_luis_castejon .
+
+# Course Instance
+:course_93000855 rdf:type guide:Course ;
+    sch:courseCode 93000855 ;
+    guide:semester "Cuarto semestre" ;
+    sch:numberOfCredits 3.0 .
+
+# Degree Instance
+:degree_09aq rdf:type guide:MasterDegree ;
+    sch:name "09AQ - Master Universitario en Ingenieria de Telecomunicacion" ;
+    guide:degreeCode "09AQ" ;
+    guide:hasCourse :course_93000855 .
+
+# University Center Instance
+:center_ets rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros De Telecomunicacion" ;
+    guide:offers :degree_09aq .
+
+# Lecturer Instances
+:lecturer_fernando rdf:type guide:Lecturer ;
+    sch:name "Fernando Herrera Gonzalez" ;
+    sch:email "fernando.herrera@upm.es" ;
+    guide:office "C-425" ;
+    guide:tutorshipsSchedule "Sin horario. Solicitud de hora con cita previa mediante correo-e." .
+
+:lecturer_luis_castejon rdf:type guide:Lecturer ;
+    sch:name "Luis Castejon Martin" ;
+    sch:email "luis.castejon@upm.es" ;
+    guide:office "C-426" ;
+    guide:tutorshipsSchedule "Sin horario. Solicitud de hora con cita previa mediante correo-e." .
+
+:lecturer_zoraida rdf:type guide:Lecturer ;
+    sch:name "Zoraida Frias Barroso" ;
+    sch:email "zoraida.frias@upm.es" ;
+    guide:office "C-431" ;
+    guide:tutorshipsSchedule "Sin horario. Solicitud de hora con cita previa mediante correo-e." .
+
+# Competency Instances
+:comp_ce7 rdf:type guide:Competency ;
+    guide:competencyCode "CE7" ;
+    guide:competencyDescription "Capacidad para realizar la planificación, toma de decisiones y empaquetamiento de redes, servicios y aplicaciones considerando la calidad de servicio, los costes directos y de operación..." .
+
+:comp_cg1 rdf:type guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales en el desarrollo y/o aplicación de ideas..." .
+
+:comp_cg3 rdf:type guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Que los estudiantes sean capaces de integrar conocimientos y enfrentarse a la complejidad de formular juicios..." .
+
+:comp_ct3 rdf:type guide:Competency ;
+    guide:competencyCode "CT3" ;
+    guide:competencyDescription "Capacidad para adoptar soluciones creativas que satisfagan adecuadamente las diferentes necesidades planteadas." .
+
+:comp_ct6 rdf:type guide:Competency ;
+    guide:competencyCode "CT6" ;
+    guide:comptencyDescription "Capacidad para emitir juicios sobre implicaciones económicas, administrativas, sociales, éticas y medioambientales..." .
+
+# Learning Result Instances
+:lr_ra172 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA172" ;
+    guide:learningResultDescription "Analizar las finanzas de un operador de telecom, comparativamente con las de una OTT, para conocer EBITDA, rotación activos, ROE, caja, Capex" .
+
+:lr_ra24 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA24" ;
+    guide:learningResultDescription "Adquisición de conocimientos sobre aspectos complementarios para la gestión de un proyecto de ingeniería: gestión de calidad y riesgos y toma de decisiones." .
+
+:lr_ra33 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA33" ;
+    guide:learningResultDescription "Capacidad para abordar y desarrollar en grupo casos prácticos de análisis, diseño, dimensionamiento, simulación, pruebas y su gestión técnico-económica..." .
+
+# Evaluation System and Trials
+:eval_system_93000855 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación progresiva (casos de estudio y participación) y prueba global (examen final)." ;
+    guide:hasEvaluationTrial :trial_exam_final, :trial_case1, :trial_case2, :trial_case3a, :trial_case3b, :trial_case4 .
+
+:trial_exam_final rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen final ordinario" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5.0/10" ;
+    guide:trialMode "Presencial" .
+
+:trial_case1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Trabajo Individual" ;
+    guide:gradePercentage "9%" ;
+    guide:minimumScore "5.0/10" ;
+    guide:trialMode "No presencial" .
+
+# Syllabus and Items
+:syllabus_93000855 rdf:type guide:Syllabus ;
+    guide:hasItem :item_tema1, :item_tema2, :item_tema3 .
+
+:item_tema1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Valoración de proyectos de inversión (Engineering economics, NPV, IRR, WACC)." .
+
+:item_tema2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Valoración de empresas (Plan de negocio, proyecciones de cash flows)." .
+
+:item_tema3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "El método del Venture Capital para valorar startups." .
+
+# Didactic Resources
+:res_excel rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Excel - Tool for valuation of investment projects" ;
+    guide:bibliographyType "Equipamiento" .
+
+:res_book_park rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Fundamentals of Engineering Economics (Chan S. Park)" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_book_newnan rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Engineering Economic Analysis (Donald G. Newnan)" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_book_copeland rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Real Options (Tom Copeland)" ;
+    guide:bibliographyType "Bibliografía" .
+
+# Required Knowledge
+:req_knowledge_93000855 rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Se recomienda conocimientos de contabilidad financiera (cuenta de resultados, flujos de caja y balance)." .

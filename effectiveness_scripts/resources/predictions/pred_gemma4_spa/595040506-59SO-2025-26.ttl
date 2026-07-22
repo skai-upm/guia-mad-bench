@@ -1,0 +1,127 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Instance
+:course_595040506 a guide:Course ;
+    sch:name "595040506 - Bases De Databases Relacionales Y Datos Estructurados" ;
+    sch:courseCode 595040506 ;
+    guide:courseType "Optativa" ;
+    sch:inLanguage "Castellano" .
+
+# Degree Instance
+:degree_59SO a guide:BachelorDegree ;
+    sch:name "59SO - Grado En Ingenieria De Sonido E Imagen" ;
+    guide:degreeCode "59SO" ;
+    guide:hasCourse :course_595040506 .
+
+# University Center Instance
+:univ_center_ETSIST a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Sist. De Telecom." ;
+    guide:offers :degree_59SO .
+
+# Course Guide Instance
+:guide_595040506_2025_26 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Bases De Databases Relacionales Y Datos Estructurados" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:numberOfCredits 6.0 ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:instructor :lecturer_sara_lana ;
+    sch:director :lecturer_sara_lana ;
+    guide:hasCompetency :comp_CE_B2, :comp_CE_TEL01, :comp_CE_TEL02, :comp_CE_TEL03, :comp_CE_TEL07, :comp_CG_03, :comp_CG_10 ;
+    guide:hasLearningResult :lr_RA1463, :lr_RA1462, :lr_RA1464 ;
+    guide:hasSyllabus :syllabus_595040506 ;
+    guide:hasEvaluation :eval_system_progresiva ;
+    guide:hasDidacticResource :res_moodle, :res_libro1, :res_libro2 .
+
+# Lecturers
+:lecturer_mario_san a guide:Lecturer ;
+    sch:name "Mario San Emeterio De La Parte" ;
+    sch:email "mario.sanemeterio@upm.es" ;
+    guide:office "A4417" .
+
+:lecturer_sara_lana a guide:Lecturer ;
+    sch:name "Sara Lana Serrano" ;
+    sch:email "sara.lana@upm.es" ;
+    guide:office "A4424" .
+
+# Competencies
+:comp_CE_B2 a guide:Competency ;
+    guide:competencyCode "CE B2" ;
+    guide:competencyDescription "Conocimientos básicos sobre el uso y programación de los ordenadores, sistemas operativos, bases de datos y programas informáticos con aplicación en ingeniería." .
+
+:comp_CE_TEL01 a guide:Competency ;
+    guide:competencyCode "CE TEL01" ;
+    guide:competencyDescription "Capacidad para aprender de manera autónoma nuevos conocimientos y técnicas adecuados para la concepción, el desarrollo o la explotación de sistemas y servicios de telecomunicación." .
+
+:comp_CG_10 a guide:Competency ;
+    guide:competencyCode "CG 10" ;
+    guide:competencyDescription "Capacidad para manejar especificaciones, reglamentos y normativas y la aplicación de las mismas en el desarrollo de la profesión." .
+
+# Learning Results
+:lr_RA1463 a guide:LearningResult ;
+    guide:learningResultCode "RA1463" ;
+    guide:learningResultDescription "Entender cómo realizar un modelado de datos de cualquier aspecto de la realidad e implementarlo sobre diversas tecnologías de bases de datos relacionales" .
+
+:lr_RA1462 a guide:LearningResult ;
+    guide:learningResultCode "RA1462" ;
+    guide:learningResultDescription "Dominar los principios de una arquitectura basada en servicios para darles soporte y aplicar los elementos técnicos necesarios para implantarla y decidir y proponer los procesos de desarrollo y operación de servicios adecuados a un dominio" .
+
+# Syllabus and Items
+:syllabus_595040506 a guide:Syllabus ;
+    guide:hasItem :item_tema0, :item_tema1, :item_tema2, :item_tema3, :item_tema4, :item_tema5, :item_tema6, :item_tema7 .
+
+:item_tema0 a guide:SyllabusItem ;
+    guide:syllabusDescription "Introducción y contextualización a las Bases de Datos Relacionales" ;
+    guide:itemIndex 0 .
+
+:item_tema1 a guide:SyllabusItem ;
+    guide:syllabusDescription "Modelado Conceptual y Modelos de Datos Semánticos" ;
+    guide:itemIndex 1 .
+
+# Evaluation System and Trials
+:eval_system_progresiva a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva que incluye pruebas de prácticas y examen final." ;
+    guide:hasEvaluationTrial :trial_PEP1, :trial_EPEP2, :trial_PEP3, :trial_EPEP4, :trial_EF .
+
+:trial_PEP1 a guide:EvaluationTrial ;
+    sch:name "PEP1 - Práctica 1" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "6%" ;
+    guide:minimumScore "2 / 10" ;
+    guide:trialMode "No presencial" .
+
+:trial_EF a guide:EvaluationTrial ;
+    sch:name "EF - Examen Final" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "76%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialMode "Presencial" .
+
+# Didactic Resources
+:res_moodle a guide:DidacticResource ;
+    sch:name "Sitio Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "https://moodle.upm.es/" .
+
+:res_libro1 a guide:DidacticResource ;
+    sch:name "Sistemas de Bases de Datos - Elmasri / Navathe" ;
+    guide:bibliographyType "Bibliografía" .
+
+# Activities (from Schedule)
+:act_tema0_lm a guide:Activity ;
+    sch:name "Tema 0 - Lección Magistral" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 2.0 .
+
+:act_tema1_pr a guide:Activity ;
+    sch:name "Tema 1 - Clase de Problemas" ;
+    guide:activityFormat "Clase de Problemas" ;
+    guide:activityDuration 2.0 .
+
+# Required Knowledge
+:req_knowledge_previo a guide:RequiredKnowledge ;
+    guide:previousCourses "Programacion I, Microprocesadores, Programacion Ii" .

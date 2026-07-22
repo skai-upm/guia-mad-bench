@@ -1,0 +1,97 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix guide: <http://w3id.org/def/guia#> .
+
+<http://guia-mad-bench.es/data/guide/anx-pr-cl-001-01> rdf:type guide:CourseGuide ;
+    dc:title "ANX-PR/CL/001 - GUÍA DE APRENDIZAJE"@en ;
+    sch:name "Circuitos Electronicos" ;
+    guide:numberOfCredits 3.0^^xsd:decimal ;
+    guide:syllabusDescription "Esta es una asignatura que sigue un esquema de aprendizaje basado en proyecto (PBL). El objetivo es aprender la metodología para el diseño de un prototipo consistente en un sistema electrónico analógico-digital partiendo de una descripción y unas especificaciones básicas..."@en .
+
+<http://guia-mad-bench.es/data/degree/grado-09tt> rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Ingenieria De Tecnologias Y Servicios De Telecomunicacion" ;
+    dct:creator "E.T.S. de Ingenieros de Telecommunicacion"@en .
+
+<http://guia-mad-bench.es/data/course/95000025> rdf:type guide:Course ;
+    sch:name "Circuitos Electronicos" ;
+    guide:numberOfCredits 3.0^^xsd:decimal ;
+    guide:syllabusDescription "Esta es una asignatura que sigue un esquema de aprendizaje basado en proyecto (PBL). El objetivo es aprender la metodología para el diseño de un prototipo consistente en un sistema electrónico analógico-digital partiendo de una descripción y unas especificaciones básicas..."@en .
+
+<http://guia-mad-bench.es/data/guide/anx-pr-cl-001-01> sch:hasCourseInstance <http://guia-mad-bench.es/data/course/95000025> ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus/prcl001-syllabus> .
+
+<http://guia-mad-bench.es/data/guide/anx-pr-cl-001-01> sch:eventSchedule <http://guia-mad-bench.es/data/schedule/2025-26-semestre1>.
+<http://guia-mad-bench.es/data/course/95000025> guide:hasCourseInstance <http://guia-mad-bench.es/data/guide/anx-pr-cl-001-01> .
+
+### Lecturers
+<http://guia-mad-bench.es/data/lecturer/alvarodeguzman> rdf:type guide:Lecturer ;
+    sch:name "Alvaro De Guzman Fernandez Gonzalez" ;
+    guide:office "B-112"@en ;
+    sch:email <mailto:alvarodeguzman.fernandez@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer/luisdharo> rdf:type guide:Lecturer ;
+    sch:name "Luis Fernando D'haro Enriquez" ;
+    guide:office "B-108"@en ;
+    sch:email <mailto:luisfernando.dharo@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer/miguelangel.sanchez> rdf:type guide:Lecturer ;
+    sch:name "Miguel Angel Sanchez Garcia" ;
+    guide:office "B-107"@en ;
+    sch:email <mailto:miguelangel.sanchez@upm.es> .
+
+### Competencies and Learning Results
+<http://guia-mad-bench.es/data/competency/ce-se3> rdf:type guide:Competency ;
+    guide:competencyCode "CE-SE3"@en ;
+    rdfs:description "Capacidad de realizar la especificación, implementación, documentación y puesta a punto de equipos y sistemas..."@en .
+
+<http://guia-mad-bench.es/data/learningresult/ra70> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA70"@en ;
+    rdfs:description "Conocimientos de dispositivos, circuitos, equipos y sistemas electrónicos."@en .
+
+### Syllabus Items (Temario)
+<http://guia-mad-bench.es/data/syllabus/prcl001-syllabus> rdf:type guide:Syllabus ;
+    sch:name "Guía de Aprendizaje" ;
+    dct:creator <http://w3id.org/def/guia#> .
+
+<http://guia-mad-bench.es/data/syllabusitem/item-1> rdf:type guide:SyllabusItem ;
+    rdfs:description "Descripción del sistema electrónico a diseñar"@en ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "Descripción del sistema electrónico a diseñar" .
+
+<http://guia-mad-bench.es/data/syllabusitem/item-2> rdf:type guide:SyllabusItem ;
+    rdfs:description "Desarrollo de la parte analógica"@en ;
+    guide:itemIndex 2^^xsd:integer ;
+    guide:syllabusDescription "Desarrollo de la parte analógica" .
+
+<http://guia-mad-bench.es/data/syllabusitem/item-3> rdf:type guide:SyllabusItem ;
+    rdfs:description "Elaboración de documentación técnica"@en ;
+    guide:itemIndex 4^^xsd:integer ;
+    guide:syllabusDescription "Elaboración de documentación técnica" .
+
+### Evaluation System and Trials
+<http://guia-mad-bench.es/data/evaluation-system/prcl001-eval> rdf:type guide:EvaluationSystem ;
+    sch:name "Evaluación Circuitos Electronicos"@en ;
+    rdfs:description "La evaluación progresiva tendrá en cuenta el seguimiento del desarrollo del proyecto por parte del profesor."@en .
+
+<http://guia-mad-bench.es/data/evaluation-trial/tg> rdf:type guide:EvaluationTrial ;
+    sch:name "Presentación de la documentación técnica y medidas"@en ;
+    guide:trialType "Trabajo en Grupo"^^xsd:string ;
+    guide:gradePercentage 20.0^^xsd:decimal ;
+    guide:minScore "/ 10" .
+
+<http://guia-mad-bench.es/data/evaluation-trial/ex> rdf:type guide:EvaluationTrial ;
+    sch:name "Examen escrito"@en ;
+    guide:trialType "Examen Escrito"^^xsd:string ;
+    guide:gradePercentage 50.0^^xsd:decimal ;
+    guide:minScore "3 / 10" .
+
+<http://guia-mad-bench.es/data/evaluation-trial/ep> rdf:type guide:EvaluationTrial ;
+    sch:name "Prueba de validación del funcionamiento"@en ;
+    guide:trialType "Examen de Prácticas"^^xsd:string ;
+    guide:gradePercentage 30.0^^xsd:decimal ;
+    guide:minScore "/ 10" .
+
+<http://guia-mad-bench.es/data/guide/anx-pr-cl-001-01> sch:eventSchedule <http://guia-mad-bench.es/data/schedule/2025-26-semestre1>.
+<http://guia-mad-bench.es/data/syllabus/prcl001-syllabus> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/item-1>, <http://guia-mad-bench.es/data/syllabusitem/item-2>.
+<http://guia-mad-bench.es/data/competency/ce-se3> rdf:type guide:Competency ;
+    rdfs:description "Capacidad de realizar la especificación, implementación, documentación y puesta a punto de equipos..."@en .

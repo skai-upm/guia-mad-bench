@@ -1,0 +1,238 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+
+# University Center
+:center_ETSI_Montes rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S.I. Montes, Forestal y Medio Natur." .
+
+# Degree
+:degree_13MP rdf:type guide:BachelorDegree ;
+    sch:name "Grado en Ingeniería del Medio Natural" ;
+    guide:degreeCode "13MP" ;
+    guide:hasCourse :course_135004529 .
+
+# Course
+:course_135004529 rdf:type guide:Course ;
+    sch:name "Ampliación de Sistemas de Información Geográfica" ;
+    sch:courseCode 135004529 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 4 ;
+    guide:semester "Octavo semestre" ;
+    sch:hasCourseInstance :guide_135004529 .
+
+# Course Guide
+:guide_135004529 rdf:type guide:CourseGuide ;
+    dc:title "Guía de Aprendizaje: Ampliación de Sistemas de Información Geográfica" ;
+    sch:hasCourseInstance :course_135004529 ;
+    sch:instructor :lecturer_emilio ;
+    guide:numberOfCredits 3.0 ;
+    teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :syllabus_135004529 ;
+    guide:hasEvaluation :evalSystem_135004529 ;
+    guide:hasCompetency :comp_CB02, :comp_CE101 ;
+    guide:hasLearningResult :lr_RA204, :lr_RA206, :lr_RA207, :lr_RA203, :lr_RA205 ;
+    guide:hasDidacticResource :res_moodle, :res_esri, :res_arcgis ;
+    sch:courseSchedule :schedule_135004529 ;
+    guide:otherInformation "La asignatura se imparte en modalidad presencial. Los estudiantes dispondrán de una licencia de ArcGIS durante todo el curso." .
+
+# Lecturer
+:lecturer_emilio rdf:type guide:Lecturer ;
+    sch:name "Emilio Ortega Perez" ;
+    sch:email "emilio.ortega.perez@upm.es" ;
+    guide:office "07B.01.004.0" ;
+    guide:tutorshipsSchedule "L - 09:30 - 12:30; J - 09:30 - 12:30" .
+
+# Researcher
+:researcher_rodrigo rdf:type guide:Lecturer ;
+    sch:name "Rodrigo Cuevas Wizner" ;
+    sch:email "r.cuevas@upm.es" .
+
+# Required Knowledge
+:reqKnowledge_135004529 rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Topografía Y Sistemas De Información Geográfica" ;
+    guide:previousKnowledge "Planificación territorial" .
+
+# Competencies
+:comp_CB02 rdf:type guide:Competency ;
+    guide:competencyCode "CB02" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional y posean las competencias que suelen demostrarse por medio de la elaboración y defensa de argumentos y la resolución de problemas dentro de su área de estudio" .
+
+:comp_CE101 rdf:type guide:Competency ;
+    guide:competencyCode "CE 1.01" ;
+    guide:competencyDescription "Conocer los campos de aplicación de la Ingeniería del Medio Natural, y tener una apreciación de la necesidad de poseer unos conocimientos técnicos profundos en ciertas áreas de aplicación" .
+
+# Learning Results
+:lr_RA204 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA204" ;
+    guide:learningResultDescription "Capacidad para integrar en un Sistemas de Información Geográfica información espacial y alfanumérica de diferentes fuentes" .
+
+:lr_RA206 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA206" ;
+    guide:learningResultDescription "El alumno será capaz de realizar proyectos de gestión ambiental mediante los Sistemas de Información Geográfica" .
+
+:lr_RA207 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA207" ;
+    guide:learningResultDescription "El alumno será capaz de manejar con destreza herramientas para aplicar los conocimientos adquiridos previamente sobre planificación territorial, evaluación de impacto ambiental, parques y jardines, paisajismo, ordenación de montes, hidrología, incendios forestales o cálculos de volúmenes de tierras" .
+
+:lr_RA203 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA203" ;
+    guide:learningResultDescription "Capacidad para adquirir, procesamente y analizar datos geográficos" .
+
+:lr_RA205 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA205" ;
+    guide:learningResultDescription "El alumno/a conocerá las herramientas disponibles en los Sistemas de Información Geográfica con aplicaciones en el campo de la gestión forestal y ambiental y de los recursos naturales" .
+
+# Syllabus
+:syllabus_135004529 rdf:type guide:Syllabus ;
+    guide:hasItem :item_topic1, :item_topic2, :item_topic3, :item_topic4, :item_topic5, :item_topic6, :item_topic7, :item_topic8, :item_topic9, :item_topic10, :item_topic11, :item_topic12 .
+
+:item_topic1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Herramientas avanzadas de análisis vectorial y ráster" .
+
+:item_topic2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Hidrología: Delimitación de cuencas; red de drenaje" .
+
+:item_topic3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Ordenación de montes: Creación de mapas; creación de bases de datos" .
+
+:item_topic4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "MDT: Gestión de MDT; cálculo de volúmenes; movimientos de tierras" .
+
+:item_topic5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Análisis de redes (Network analyst): Preparación de redes; cálculos de camino mínimo; áreas de<0xC2>servicio; matrices origen-destino" .
+
+:item_topic6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Procesado de datos LIDAR: Descarga de datos; Visualización; Creación de modelos digitales" .
+
+:item_topic7 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Tratamiento de imágenes: Herramientas de tratamiento de ortofotos en la gestión forestal" .
+
+:item_topic8 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 8 ;
+    guide:syllabusDescription "Modelos digitales 3D: Creación de modelos 3D; Modelado de vegetación" .
+
+:item_topic9 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 9 ;
+    guide:syllabusDescription "Conversión de formatos SIG; Conversión CAD-SIG; Otras conversiones" .
+
+:item_topic10 rdf:<0xC2>type guide:SyllabusItem ;
+    guide:itemIndex 10 ;
+    guide:syllabusDescription "Topología: Concepto; herramientas topológicas" .
+
+:item_topic11 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 11 ;
+    guide:syllabusDescription "Programación de procesos: Comandos básicos de programación; programación visual; bucles" .
+
+:item_topic12 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 12 ;
+    guide:syllabusDescription "Cartografía temática: Metodologías para la creación de cartografía temática" .
+
+# Schedule and Activities
+:schedule_135004529 rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week10, :event_week15, :event_week16, :event_week17 .
+
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_lecture_vectorial, :act_lab_vectorial .
+
+:act_lecture_vectorial rdf:type guide:Activity ;
+    guide:activityDescription "Herramientas avanzadas de análisis vectorial y raster" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:act_lab_vectorial rdf:type guide:Activity ;
+    guide:activityDescription "Herramientas avanz．avanzadas de análisis vectorial y raster" ;
+    guide:activityDuration 1.5 ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:attendanceType "Presencial" .
+
+:event_week10 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 10 ;
+    guide:eventWeek "Semana 10" ;
+    guide:hasActivity :act_network_analysis .
+
+:act_network_analysis rdf:type guide:Activity ;
+    guide:activityDescription "Análisis de redes (Network analyst)" ;
+    guide:activityDuration 1.5 ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:attendanceType "Presencial" .
+
+:event_week15 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 15 ;
+    guide:eventWeek "Semana 15" ;
+    guide:hasActivity :act_final_work .
+
+:act_final_work rdf:type guide:Activity ;
+    guide:activityDescription "Entrega y Exposición del trabajo final" ;
+    guide:activityDuration 2.5 ;
+    guide:activityFormat "Práctical de Laboratorio" ;
+    guide:attendanceType "Presencial" .
+
+# Evaluation System
+:evalSystem_135004529 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación se realizará de acuerdo a la normativa de la UPM. Se valorará el empleo de conocimientos previos, planteamiento adecuado y claridad." ;
+    guide:hasEvaluationTrial :trial_intermediate, :trial_final_work, :trial_exam_t, :trial_exam_ef .
+
+:trial_intermediate rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Entrega trabajo práctico intermedia" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "0%" ;
+    guide:trialWeek "Semana 10" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "0 / 10" .
+
+:trial_final_work rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Entrega y Exposición del trabajo final" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:trialWeek "Semana 15" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "5 / 10" ;
+    guide:involvesCompetency :comp_CB02 .
+
+:trial_exam_t rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Examen teórico/práctico (T)" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:trialWeek "Semana 16" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "4 / 10" .
+
+:trial_exam_ef rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Examen teórico/práctico (EF)" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "50%" ;
+    guide:trialWeek "Semana 17" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "5 / 10" .
+
+# Didactic Resources
+:res_moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Plataforma Moodle de la UPM" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_esri rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "ESRI" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_arcgis rdf:type guide:DidacticResource ;
+    guide:bibliographyDescription "Los estudiantes dispondrán de una licencia de ArcGIS durante todo el curso." ;
+    guide:bibliographyType "Software" .

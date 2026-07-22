@@ -1,0 +1,503 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide/GA_56DM_565000624> rdf:type owl:NamedIndividual ;
+    sch:name "Informática" ;
+    guide:numberOfCredits 6.0^^xsd:decimal ;
+    guide:courseYear 1^^xsd:integer ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/syllabus/ANX-PR/CL/001-01> ;
+    sch:description "Es una asignatura que desarrolla los elementos básicos de la programación estructurada, para lo que utiliza el lenguaje C como herramienta de programación."@en .
+
+<http://guia-mad-bench.es/data/courseguide/GA_56DM_565000624> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus/ANX-PR/CL/001-01> ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/courseguide/GA_56DM_565000624> sch:director <http://guia-mad-bench.es/data/lecturer/Mercedes_Bermejo_Solera> ;
+    guide:syllabusDescription "Informática" .
+
+<http://guia-mad-bench.es/data/courseguide/GA_56DM_565000624> sch:hasCourseInstance <http://guia-mad-bench.es/data/course/ANX-PR/CL/001-01>.
+    
+    guide:syllabusDescription "Informática" .
+
+<http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2> rdf:type sch:Schedule ;
+    om:Unit 3.7^^xsd:decimal ; # Total hours estimation from text (approx) or derived from schedule events? Text says "entre 26 y 27 horas". I will use the property if available, but ontology has `guide:syllabusDescription` on SyllabusItem and `sch:eventSchedule`.
+    sch:name <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2> .
+
+<http://guia-mad-bench.es/data/lecturer/Mercedes_Bermejo_Solera> rdf:type sch:Person ;
+    guide:Lecturer ;
+    sch:name "Mercedes Bermejo Solera" ;
+    sch:email <mailto:mercedes.bermejo@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer/Mercedes_Bermejo_Solera> guide:Lecturer ;
+    rdf:type owl:NamedIndividual ;
+    sch:name "Mercedes Bermejo Solera" ;
+    sch:email <mailto:mercedes.bermejo@upm.es>.
+
+<http://guia-mad-bench.es/data/syllabus/ANX-PR/CL/001-01> rdf:type guide:Syllabus ;
+    sch:name "Guía de Aprendizaje" .
+
+<http://guia-mad-bench.es/data/course/GA_56DM_565000624> rdf:type owl:NamedIndividual ;
+    sch:courseCode 565000624^^xsd:integer ;
+    guide:numberOfCredits 6.0^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/course/GA_56DM_565000624> rdf:type sch:Course ;
+    guide:syllabusDescription "Informática" .
+
+<http://guia-mad-bench.es/data/syllabus/ANX-PR/CL/001-01> :hasItem <http://guia-mad-bench.es/data/syllabusitem/GA_56DM_565000624_Chapter1>.
+
+<http://guia-mad-bench.es/data/courseguide/GA_56DM_565000624> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluationsystem/GA_56DM_565000624>.
+
+<http://guia-mad-bench.es/data/courseguide/GA_56DM_565000624> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluationtrial/Sem8_Progresiva>,
+    <http://guia-mad-bench.es/data/evaluationtrial/Sem12_Progresiva>,
+    <http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global>.
+
+<http://guia-mad-bench.es/data/syllabusitem/GA_56DM_565000624_Chapter1> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem8_Progresiva> rdf:type guide:EvaluationTrial ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem8_Progresiva> guide:hasEvaluationTrial ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem8_Progresiva> guide:gradePercentage 30^^xsd:decimal ;
+    sch:name "Prueba de evaluación" .
+
+<http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2> rdf:type owl:NamedIndividual ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/evaluationtrial/Sem8_Progresiva>.
+
+<http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2> sch:eventSchedule <http://guia-mad-bench.es/data/scheduleevent/W1_Teoria>,
+    <http://guia-mad-bench.es/data/scheduleevent/W8_Examen_Progresiva>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem8_Progresiva> guide:hasEvaluationTrial ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem8_Progresiva> guide:gradePercentage 30^^xsd:decimal ;
+    sch:name "Prueba de evaluación" .
+
+<http://guia-mad-bench.es/data/scheduleevent/W1_Teoria> rdf:type guide:ScheduleEvent ;
+    om:Unit 2.0^^xsd:integer ; # Duration from text (02:00) -> xsd:decimal or integer? Text says "Duración: 02:00". Ontology has `guide:activityDuration` range xsd:decimal. I will use decimal for hours.
+    sch:eventIndex 1^^xsd:integer .
+
+<http://guia-mad-bench.es/data/scheduleevent/W8_Examen_Progresiva> rdf:type guide:ScheduleEvent ;
+    om:Unit 2.0^^xsd:integer ; # Duration from text (02:00) -> xsd:decimal or integer? Text says "Duración: 02:00". I will use decimal for hours as per `guide:activityDuration` range in ontology which is xsd:decimal.
+    sch:eventIndex 8^^xsd:integer .
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> rdf:type guide:EvaluationTrial ;
+    sch:name "Prueba de evaluación (Conv. Ordinaria)" ;
+    guide:gradePercentage 40^^xsd:decimal ; # From text table for Sem 15 Progresiva? Wait, Table says Sem 8 is 30%, Sem 12 is 30%, Sem 15 Global is 40% in one row. Text also mentions "Prueba global" as 100%. I will use the specific trial data from table for evaluation trials linked to guide:hasEvaluationTrial.
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:name "Prueba de evaluación (Conv. Ordinaria)" .
+
+<http://guia-mad-bench.es/data/scheduleevent/W8_Examen_Progresiva> rdf:type guide:ScheduleEvent ;
+    om:Unit 2.0^^xsd:integer ; # Duration from text (02:00) -> xsd:decimal or integer? Text says "Duración: 02:00". I will use decimal for hours as per `guide:activityDuration` range in ontology which is xsd:decimal.
+    sch:eventIndex 8^^xsd:integer .
+
+<http://guia-mad-bench.es/data/scheduleevent/W15_Examen_Global> rdf:type guide:ScheduleEvent ;
+    om:Unit 2.0^^xsd:integer ; # Duration from text (02:00) -> xsd:decimal or integer? Text says "Duración: 02:00". I will use decimal for hours as per `guide:activityDuration` range in ontology which is xsd:decimal.
+    sch:eventIndex 15^^xsd:integer .
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem8_Progresiva> guide:gradePercentage 30^^xsd:decimal ; # From text table for Sem 8 Progresiva? Wait, Table says "Peso en la nota" column.
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem8_Progresiva> guide:gradePercentage 30^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global> guide:gradePercentage 40^^xsd:decimal ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/GA_56DM_565000624_Semestre2>.
+
+<http://guia-mad-bench.es/data/evaluationtrial/Sem15_Global

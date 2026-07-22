@@ -1,0 +1,221 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Information
+:course_105000381 a guide:Course ;
+    sch:name "Estructura De Computadores" ;
+    sch:courseCode 105000381 ;
+    guide:courseType "Obligatoria" ;
+    guide:numberOfCredits 6.0 ;
+    guide:semester "Quinto semestre" ;
+    guide:teachingPeriod "2025-26" ;
+    sch:hasCourseInstance :courseGuide_105000381 .
+
+:degree_10ID a guide:Degree ;
+    sch:name "Doble Grado En Ingenieria Informatica Y En Ade" ;
+    guide:degreeCode "10ID" ;
+    guide:hasCourse :course_105000381 .
+
+:center_ets_informaticos a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Informáticos" ;
+    guide:offers :degree_10ID .
+
+# Course Guide
+:courseGuide_105000381 a guide:CourseGuide ;
+    sch:description "La asignatura describe la arquitectura von Neumann, presentando una arquitectura de un computador elemental..." ;
+    sch:instructor :lecturer_santiago_rodriguez_de_la_fuente, :lecturer_rafael_sautua_ruiz, :lecturer_antonio_garcia_dopico, :lecturer_jose_luis_pedraza_dominguez, :lecturer_manuel_maria_nieto_rodriguez, :lecturer_maria_luisa_cordoba_cabeza, :lecturer_maria_isabel_garcia_clemente, :lecturer_angel_grover_perez_munoz ;
+    sch:director :lecturer_santiago_rodriguez_de_la_fuente ;
+    guide:hasSyllabus :syllabus_105000381 ;
+    guide:hasCompetency :comp_10II_CE05, :comp_10II_CE07, :comp_10II_CG01_21, :comp_10II_CG05, :comp_10II_CG06, :comp_10II_CE22 ;
+    guide:hasLearningResult :lr_RA103, :lr_RA104 ;
+    guide:hasEvaluation :evalSystem_105000381 ;
+    guide:hasDidacticResource :res_p_de_miguel, :res_stallings, :res_patterson, :res_garcia_clemente, :res_web_asignatura ;
+    sch:courseSchedule :schedule_105000381 .
+
+# Lecturers
+:lecturer_rafael_sautua_ruiz a guide:Lecturer ;
+    sch:name "Rafael Sautua Ruiz" ;
+    sch:email "rafael.sautua@upm.es" ;
+    guide:office "4107" ;
+    guide:tutorshipsSchedule "Sin horario. Se debe concertar cita por correo electrónico" .
+
+:lecturer_antonio_garcia_dopico a guide:Lecturer ;
+    sch:name "Antonio Garcia Dopico" ;
+    sch:email "antonio.garcia.dopico@upm.es" ;
+    guide:office "4202" ;
+    guide:tutorshipsSchedule "Sin horario. Se debe concertar cita por correo electrónico" .
+
+:lecturer_jose_luis_pedraza_dominguez a guide:Lecturer ;
+    sch:name "Jose Luis Pedraza Dominguez" ;
+    sch:email "joseluis.pedraza@upm.es" ;
+    guide:office "4105" ;
+    guide:tutorshipsSchedule "Sin horario. Se debe concertar cita por correo electrónico" .
+
+:lecturer_manuel_maria_nieto_rodriguez a guide:Lecturer ;
+    sch:name "Manuel Maria Nieto Rodriguez" ;
+    sch:email "m.nieto@upm.es" ;
+    guide:office "4106" ;
+    guide:tutorshipsSchedule "Sin horario. Se debe concertar cita por correo electrónico" .
+
+:lecturer_maria_luisa_cordoba_cabeza a guide:Lecturer ;
+    sch:name "Maria Luisa Cordoba Cabeza" ;
+    sch:email "marialuisa.cordoba@upm.es" ;
+    guide:office "4106" ;
+    guide:tutorshipsSchedule "Sin horario. Se debe concertar cita por correo electrónico" .
+
+:lecturer_maria_isabel_garcia_clemente a guide:Lecturer ;
+    sch:name "Maria Isabel Garcia Clemente" ;
+    sch:email "mariaisabel.garciac@upm.es" ;
+    guide:office "4105" ;
+    guide:tutorshipsSchedule "Sin horario. Se debe concertar cita por correo electrónico" .
+
+:lecturer_santiago_rodriguez_de_la_fuente a guide:Lecturer ;
+    sch:name "Santiago Rodriguez De La Fuente" ;
+    sch:email "santiago.rodriguez@upm.es" ;
+    guide:office "4107" ;
+    guide:tutorshipsSchedule "Sin horario. Se debe concertar cita por correo electrónico" .
+
+:lecturer_angel_grover_perez_munoz a guide:Lecturer ;
+    sch:name "Angel Grover Perez Muñoz" ;
+    sch:email "angel.perez.munoz@upm.es" ;
+    guide:office "4202" ;
+    guide:tutorshipsSchedule "Sin horario. Se debe concertar cita por correo electrónico" .
+
+# Competencies
+:comp_10II_CE05 a guide:Competency ;
+    guide:competencyCode "10II-CE05" ;
+    guide:competencyDescription "Capacidad de diseñar y realizar experimentos apropiados, interpretar los datos y extraer conclusiones." .
+
+:comp_10II_CE07 a guide:Competency ;
+    guide:competencyCode "10II-CE07" ;
+    guide:competencyDescription "Entender el soporte físico (hardware) de los ordenadores desde el punto de vista del soporte lógico (software)..." .
+
+:comp_10II_CG01_21 a guide:Competency ;
+    guide:competencyCode "10II-CG01/21" ;
+    guide:competencyDescription "Capacidad de resolución de problemas aplicando conocimientos de matemáticas, ciencias e ingeniería." .
+
+:comp_10II_CG05 a guide:Competency ;
+    guide:competencyCode "10II-CG05" ;
+    guide:competencyDescription "Capacidad de gestión de la información." .
+
+:comp_10II_CG06 a guide:Competency ;
+    guide:competencyCode "10II-CG06" ;
+    guide:competencyDescription "Capacidad de abstracción, análisis y síntesis." .
+
+:comp_10II_CE22 a guide:Competency ;
+    guide:competencyCode "10II-CE22" ;
+    guide:competencyDescription "Capacidad de aplicar sus conocimientos e intuición para diseñar el hardware/software que cumple unos requisitos especificados." .
+
+# Learning Results
+:lr_RA103 a guide:LearningResult ;
+    guide:learningResultCode "RA103" ;
+    guide:learningResultDescription "Utilizar eficientemente los recursos básicos del computador mediante el lenguaje nativo del mismo." .
+
+:lr_RA104 a guide:LearningResult ;
+    guide:learningResultCode "RA104" ;
+    guide:learningResultDescription "Analizar y evaluar la estructura interna del computador: modos de direccionamiento, sistemas de...” .
+
+# Syllabus
+:syllabus_105000381 a guide:Syllabus ;
+    guide:hasItem :item_topic1, :item_topic2, :item_topic3, :item_topic4, :item_topic5 .
+
+:item_topic1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a los computadores" .
+
+:item_topic2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Programación en Ensamblador" .
+
+:item_topic3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Procesador" .
+
+:item_topic4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Aritmética del computador" .
+
+:item_topic5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Periféricos" .
+
+# Evaluation System
+:evalSystem_105000381 a guide:EvaluationSystem ;
+    guide:evaluationDescription "La asignatura consta de dos partes: teoría y proyecto, no liberatorias..." ;
+    guide:hasEvaluationTrial :trial_first_partial, :trial_project_exam, :trial_final_theory .
+
+:trial_first_partial a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "44%" ;
+    guide:minimumScore "2 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:eventWeek "11" .
+
+:trial_project_exam a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Progresiva y Global" ;
+    guide:gradePercentage "20%" ;
+    guide:trialMode "Presencial" ;
+    guide:eventWeek "17" .
+
+:trial_final_theory a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "80%" ;
+    guide:trialMode "Presencial" ;
+    guide:eventWeek "17" .
+
+# Schedule
+:schedule_105000381 a guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week2, :event_week3, :event_week4, :event_week5, :event_week6, :event_week7, :event_week8, :event_week9, :event_week10, :event_week11, :event_week12, :event_week13, :event_week14, :event_week15, :event_week17 .
+
+:event_week1 a guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :act_lecture_topic1, :act_problem_topic1 .
+
+:act_lecture_topic1 a guide:Activity ;
+    guide:activityDescription "Explicación de contenidos teóricos del Tema 1" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 4.0 ;
+    guide:attendanceType "Presencial" .
+
+:act_problem_topic1 a guide:Activity ;
+    guide:activityDescription "Resolución de problemas del Tema 1" ;
+    guide:activityFormat "Clase de Problemas" ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_p_de_miguel a guide:DidacticResource ;
+    guide:bibliographyTitle "Libro P. de Miguel" ;
+    guide:bibliographyDescription "de Miguel, P. Fundamentos de los computadores. Paraninfo, 2004. 9ª edición." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_stallings a guide:DidacticResource ;
+    guide:bibliographyTitle "Libro Stallings" ;
+    guide:bibliographyDescription "Stallings, W. Organización y arquitectura de computadores. Prentice Hall, 7ª edición. 2006." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_patterson a guide:DidacticResource ;
+    guide:bibliographyTitle "Libro Patterson" ;
+    guide:bibliographyDescription "Patterson, D. A.; Hennessy, J. L. Estructura y diseño de Computadores. Ed. Reverté 2011. 4ª edición." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_garcia_clemente a guide:DidacticResource ;
+    guide:bibliographyTitle "Libro García Clemente" ;
+    guide:bibliographyDescription "García Clemente y otros. Estructের de computadores. Problemas resueltos. RAMA, 2006. 1ª edición." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_web_asignatura a guide:DidacticResource ;
+    guide:bibliographyTitle "Página web de la asignatura" ;
+    guide:bibliographyDescription "http://www.datsi.fi.upm.es/docencia/Estructura_09/" ;
+    guide:bibliographyType "Recursos web" .
+
+# Required Knowledge
+:req_knowledge_105000381 a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Conocimiento de la especificación de los bloques de circuitos combinacionales y secuenciales..." ;
+    guide:previousCourses "Sistemas Digitales, Programación I" .

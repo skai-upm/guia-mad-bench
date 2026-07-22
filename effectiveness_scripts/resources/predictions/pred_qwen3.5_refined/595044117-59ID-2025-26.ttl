@@ -1,0 +1,136 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix data: <http://guia-mad-bench.es/data/> .
+
+<http://w3id.org/def/guia#> rdf:type owl:Ontology ;
+                             dc:title "GUIA ontology"@en ;
+                             dct:creator "Andrea Cimmino Arriaga" ,
+                                         "Covadonga Arias" ,
+                                         "Joaquín Gayoso Cabada" ,
+                                         "Juan Cano de Benito" ,
+                                         "Paola Espinoza Arias" ;
+                             dct:license <http://purl.org/NET/rdflicense/cc-by4.0> .
+
+#################################################################
+#    Instance Data Extraction
+#################################################################
+
+###  Course Guide Instance
+data:guia_ANX_PR_CL_001 rdf:type :CourseGuide , sch:CourseInstance ;
+                         dc:title "Ciencia, Tecnología Y Sociedad"@en ;
+                         dct:creator "Ivan Pau De La Cruz" ,
+                                     "Miguel Angel Valero Duboy" ;
+                         rdfs:comment "Guía de aprendizaje para la asignatura 595044117 en el Grado En Ingenieria y Sistemas de Datos."@en ;
+                         sch:name "Ciencia, Tecnología Y Sociedad"@en ;
+                         guide:numberOfCredits "3.0"^^xsd:decimal ;
+                         guide:teachingPeriodMonths "Febrero-Junio"@en ;
+                         guide:periodStartingMonth "Febbraio"@en ,
+                                                 "Junio"@en ;
+                         sch:description "La asignatura pretende promover la reflexión sobre las interacciones entre la sociedad actual y el desarrollo tecnológico."@es .
+
+###  Degree Instance
+data:degree_59ID rdf:type :Degree ;
+                 rdfs:label "Grado En Ingenieria Y Sistemas De Datos"@en ;
+                 guide:courseYear "2025"^^xsd:string ,
+                                  "26"^^xsd:string ; # Assuming year 2025-26 implies code or label. Using text from doc.
+
+###  Lecturer Instances
+data:Ivan_Pau_De_La_Cruz rdf:type :Lecturer , sch:Person ;
+                         rdfs:label "Ivan Pau De La Cruz"@en ;
+                         guide:sch:name "Ivan Pau De La Cruz"^^xsd:string ; # Using schema name prop as per ontology list. Actually `sch:name` is a data property on CourseGuide, but also used for Person in Schema.org context provided. I will use the object properties defined: `guide:Lecturer`.
+                         sch:email "ivan.pau@upm.es"^^xsd:string ;
+                         guide:sch:director <data:guia_ANX_PR_CL_001> .
+
+###  Lecturer Instance 2 (Miguel Angel Valero Duboy)
+data:Miguel_Angel_Valero_Duboy rdf:type :Lecturer , sch:Person ;
+                               rdfs:label "Miguel Angel Valero Duboy"@en ;
+                               guide:sch:name "Miguel Angel Valero Duboy"^^xsd:string ;
+                               sch:email "miguelangel.valero@upm.es"^^xsd:string .
+
+###  Competency Instances (Sample of CB/CG codes)
+data:C_B02 rdf:type :Competency ;
+           guide:competencyCode "CB02"@en ;
+           rdfs:comment "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional..."@es .
+
+###  Learning Result Instances (Sample of RA codes)
+data:RA_027 rdf:type :LearningResult ;
+            guide:learningResultCode "RA027"@en ;
+            rdfs:comment "Comprender las implicaciones éticas asociadas al tratamiento de datos..."@es .
+
+###  Syllabus Instance and Items
+data:syllabus_CTS rdf:type :Syllabus , sch:Syllabus ;
+                  guide:hasItem data:item_1, data:item_2, data:item_3, data:item_4 .
+
+# Syllabus Item Instances (Section 4.2)
+data:item_1 rdf:type :SyllabusItem ;
+            rdfs:label "Sostenibilidad ecológica y social"@en ;
+            guide:syllabusDescription "Sostenibilidad ecológica y social"^^xsd:string ;
+            data:index_item_1 .
+
+# Note on Index property usage in ontology (guide:itemIndex) - Data Property xsd:integer. I will use literal for index 1-4.
+data:item_2 rdf:type :SyllabusItem ;
+            rdfs:label "Las revoluciones tecnológicas"@en ;
+            guide:syllabusDescription "Las revoluciones tecnológicas"^^xsd:string .
+
+# Note on Index property usage in ontology (guide:eventIndex) - Data Property xsd:integer. I will use literal for index 1-4.
+data:item_3 rdf:type :SyllabusItem ;
+            rdfs:label "TIC, ética y derechos humanos"@en ;
+            guide:syllabusDescription "TIC, ética y derechos humanos"^^xsd:string .
+
+# Note on Index property usage in ontology (guide:eventIndex) - Data Property xsd:integer. I will use literal for index 1-4.
+data:item_4 rdf:type :SyllabusItem ;
+            rdfs:label "Casos de uso de tecnología social"@en ;
+            guide:syllabusDescription "Evaluación Voluntaria"^^xsd:string .
+
+### Schedule Event Instances (Section 5)
+# Mapping Semesters to Events. Using eventIndex property from ontology.
+data:event_1 rdf:type :ScheduleEvent , sch:Event ;
+             rdfs:label "Introducción a la asignatura"@en ;
+             guide:eventWeek "Semestre 1"^^xsd:string ; # Ontology has `guide:eventWeek` as langString range.
+             om:activityDurationUnit "02:30"^^xsd:string .
+
+# Note on activity duration unit property (om:Unit). Document uses string like "02:30". I will use xsd:decimal for numeric where possible, but document text is mixed. Using langString as per ontology `guide:eventWeek` and similar data props often being strings in this context.
+data:event_4 rdf:type :ScheduleEvent , sch:Event ;
+             rdfs:label "Evaluación contenidos Tema 1"@en ;
+             guide:eventIndex "4"^^xsd:string .
+
+### Evaluation Trial Instances (Section 6)
+# Mapping Evaluations to Trials via `guide:EvaluationSystem` -> `hasEvaluationTrial`. I will create a generic system instance or link directly if ontology allows. Ontology says CourseGuide hasEvaluation -> EvaluationSystem. So:
+data:eval_system_CTS rdf:type :EvaluationSystem ;
+                     guide:evaluationDescription "La evaluación progresiva libera cada tema..."@es .
+
+# Linking Guide to System (via `guide:hasEvaluation`) - Wait, ontology property is on CourseGuide? Yes.
+<http://guia-mad-bench.es/data/course/guia_ANX_PR_CL_001> guide:hasEvaluation data:eval_system_CTS ;
+                                                        rdfs:type :CourseGuide .
+
+# Evaluation Trials (Section 6 Tables)
+data:trial_Tema1 rdf:type :EvaluationTrial , sch:Event ;
+                 guide:evaluationType "Progresiva"@en ; # Ontology has `guide:evaluationType` on Trial.
+                 guide:gradePercentage "25"^^xsd:string .
+
+# Note on ontology property ranges for evaluation type (langString). Document says "Evaluación Progresiva". I will use string literal as per data prop range in text provided (`rdf:langString`).
+data:trial_Tema1 rdf:type :EvaluationTrial ;
+                 guide:hasScheduleEvent <http://guia-mad-bench.es/data/schedule/event_4> .
+
+# Note on ontology property `guide:involvesCompetency` (Object Property) linking Trial to Competency. I will link the trial instance to CB02, etc., as per table columns "Competencias evaluadas".
+data:trial_Tema1 guide:involvesCompetency data:C_B02 , data:C_B03 .
+
+### Didactic Resource Instances (Section 7)
+# Mapping resources via `guide:hasDidacticResource` on CourseGuide.
+<http://guia-mad-bench.es/data/course/guia_ANX_PR_CL_001> guide:hasDidacticResource <data:res_Kuhn>, data:res_Apunts .
+
+data:res_Kuhn rdf:type :DidacticResource ;
+              rdfs:label "La estructura de las revoluciones científicas. T. Kuhn"@en ;
+              sch:name "Ideas, máquinas y valores"^^xsd:string ; # Using schema name prop as per ontology list for resources? No specific resource class in text has `sch:name`. I will use generic properties or Schema.org props if available on DidacticResource (not explicitly defined in `[ONTOLOGY]` data section except via inheritance).
+              guide:bibliographyType "Bibliografía"@en ; # Ontology property range is langString. Document says "Bibliografía".
+
+data:res_Apunts rdf:type :DidacticResource ;
+                rdfs:label "Apuntes de clase"@en ;
+                sch:name "Descargables"^^xsd:string .

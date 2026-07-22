@@ -1,0 +1,56 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+<http://guia-mad-bench.es/data/course-guide/anx-pr-cl001> a guide:CourseGuide ;
+    sch:name "Programación De Clientes Web Ligeros"@en ;
+    dct:title "59SC - Grado En Ingenieria De Sistemas De Telecomunicacion" ;
+    guide:numberOfCredits 6^^xsd:decimal ;
+    guide:syllabusDescription "Tema 1. Introducción a la asignatura, Tema 2. Arquitectura de la WEB..."@en .
+
+<http://guia-mad-bench.es/data/degree/bachelor-59sc> a guide:BachelorDegree ;
+    sch:name "Grado En Ingenieria De Sistemas De Telecomunicacion" ;
+    dct:creator <http://w3id.org/def/guia#Andrea Cimmino Arriaga>, <http://w3id.org/def/guia#Covadonga Arias> .
+
+<http://guia-mad-bench.es/data/course/anx-pr-cl001-2025> a guide:Course ;
+    sch:name "Programación De Clientes Web Ligeros" ;
+    guide:numberOfCredits 6^^xsd:decimal ;
+    guide:syllabusDescription "Tema 1. Introducción..."@en .
+
+<http://guia-mad-bench.es/data/lecturer/vicente-hernandez> a guide:Lecturer, sch:Person ;
+    sch:name "Vicente Hernandez Diaz"@es ;
+    sch:email <mailto:vicente.hernandez@upm.es> ;
+    guide:office "A4412" .
+
+<http://guia-mad-bench.es/data/lecturer/carlos-carrillo> a guide:Lecturer, sch:Person ;
+    sch:name "Carlos Carrillo Sanchez"@es ;
+    sch:email <mailto:carlos.carrillo@upm.es> .
+
+guide:CourseGuide<http://guia-mad-bench.es/data/course-guide/anx-pr-cl001> guide:sch:director <http://guia-mad-bench.es/data/lecturer/vicente-hernandez> ;
+    sch:instructor <http://guia-mad-bench.es/data/lecturer/carlos-carrillo> .
+
+<http://guia-mad-bench.es/data/competency/ce-b2> a guide:Competency ;
+    guide:competencyCode "CE B2"^^xsd:string ;
+    sch:description "Conocimientos básicos sobre el uso y programación de los ordenadores..."@en .
+
+<http://guia-mad-bench.es/data/learning-result/ra1239> a guide:LearningResult ;
+    guide:learningResultCode "RA1239"^^xsd:string ;
+    sch:description "Identificar, comprender y aplicar la sintaxis y semántica de lenguajes..."@en .
+
+<http://guia-mad-bench.es/data/syllabus/anx-pr-cl001> a guide:Syllabus ;
+    dct:title "Guía de Aprendizaje" ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/course-guide/anx-pr-cl001>.
+
+<http://guia-mad-bench.es/data/syllabus-item/tema-1> a guide:SyllabusItem, guide:Syllabus .
+guide:Syllabus<http://guia-mad-bench.es/data/syllabus/anx-pr-cl001> guide:hasItem <http://guia-mad-bench.es/data/syllabus-item/tema-1>.
+
+<http://guia-mad-bench.es/data/activity/practica-web-basicas> a guide:ScheduleEvent ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/course-guide/anx-pr-cl001>, <http://w3id.org/def/guia#schedule>.
+
+<http://guia-mad-bench.es/data/activity/examen-primero-parcial> a guide:EvaluationTrial ;
+    sch:trialType "Examen Escrito"^^xsd:string ;
+    guide:gradePercentage 50 .
+
+guide:EvaluationSystem <http://w3id.org/def/guia#evaluation-system-anx-pr-cl001> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/activity/examen-primero-parcial>.

@@ -1,0 +1,115 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix data: <http://guia-mad-bench.es/data/> .
+
+<http://w3id.org/def/guia#> rdf:type owl:Ontology ;
+                             dc:title "GUIA ontology"@en ;
+                             dct:creator "Andrea Cimmino Arriaga" ,
+                                         "Covadonga Arias" ,
+                                         "Joaquín Gayoso Cabada" ,
+                                         "Juan Cano de Benito" ,
+                                         "Paola Espinoza Arias" ;
+                             dct:license <http://purl.org/NET/rdflicense/cc-by4.0> .
+
+#################################################################
+#    Instance Data Extraction
+#################################################################
+
+###  Course Guide Instance
+data:courseguide/GA_20BI_205000060 rdf:type :CourseGuide ;
+                                   sch:name "Diseño y gestión de explotaciones ganaderas"@es ;
+                                   guide:numberOfCredits xsd:"5.0"^^xsd:decimal ;
+                                   guide:teachingPeriodMonths "Septiembre-Enero"@en ;
+                                   guide:syllabusDescription "La asignatura aborda los alojamientos y equipos necesarios para la explotación..."@es .
+
+###  Degree Instance (Bachelor)
+data:degree/GRADE_Ciencias_Agrarias rdf:type :Degree , :BachelorDegree ;
+                                    sch:name "Grado en Ciencias Agrarias y Bioeconomia"@en ;
+                                    guide:numberOfCredits xsd:"5.0"^^xsd:decimal .
+
+###  Course Instance
+data:course/20BI_205000060 rdf:type :Course , sch:CourseInstance ;
+                            sch:name "Diseño y gestión de explotaciones ganaderas"@es ;
+                            guide:numberOfCredits xsd:"5.0"^^xsd:decimal .
+
+###  Course Guide to Degree Link (via Course)
+data:course/20BI_205000060 :hasCourse data:degree/GRADE_Ciencias_Agrarias .
+data:courseguide/GA_20BI_205000060 sch:hasCourseInstance data:course/20BI_205000060 ;
+                                    guide:numberOfCredits xsd:"5.0"^^xsd:decimal .
+
+###  Lecturers Instances
+data:lecturer/Antonio_Callejo_Ramos rdf:type :Lecturer , sch:Person ;
+                                     sch:name "Antonio Callejo Ramos"@es ;
+                                     sch:email <mailto:antonio.callejo@upm.es> ;
+                                     guide:office "" .
+
+data:lecturer/Ismael_Ovejero_Rubio rdf:type :Lecturer , sch:Person ;
+                                    sch:name "Ismael Ovejero Rubio"@es ;
+                                    sch:email <mailto:Ismael.ovejero.rubio@upm.es> ;
+                                    guide:office "" .
+
+###  Course Guide to Lecturers Links
+data:courseguide/GA_20BI_205000060 :director data:lecturer/Antonio_Callejo_Ramos ;
+                                     sch:instructor data:lecturer/Ismael_Ovejero_Rubio .
+
+###  Competencies Instances (CB02, CE17...)
+data:competency/CB02 rdf:type :Competency ;
+                     guide:competencyCode "CB02"@en ;
+                     sch:description "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación..."@es .
+
+data:competency/CE17 rdf:type :Competency ;
+                      guide:competencyCode "CE17"@en ;
+                      sch:description "Conocer y gestionar los principales sistemas de producción de materias primas de origen animal."@es .
+
+###  Learning Results Instances (RA318...)
+data:result/RA318 rdf:type :LearningResult ;
+                   guide:learningResultCode "RA318"@en ;
+                   sch:description "Conocer y aplicar el análisis de la estructura de costes a la explotación del ganado vacuno..."@es .
+
+###  Syllabus Instance & Items
+data:syllabus/GA_20BI_205000060 rdf:type :Syllabus , sch:Syllabus ;
+                                 guide:hasItem data:item/Tema_1, data/item/Tema_4, data/item/Instalaciones_complementarias .
+
+###  Syllabus Items Instances (Representative)
+data:item/Tema_1 rdf:type :SyllabusItem ;
+                  guide:syllabusDescription "Instalaciones para avicultura de carne"@es ;
+                  guide:hasLearningResult data:result/RA318, data/result/RA169 .
+
+###  Schedule Instance & Events (Representative)
+data:schedule/GA_20BI_205000060 rdf:type :Schedule , sch:Schedule ;
+                                 sch:eventSchedule data/event/Semana_1, data/event/Semana_8 .
+
+###  Schedule Event Instances (Representative)
+data/event/Semana_1 rdf:type :ScheduleEvent ;
+                     guide:eventIndex xsd:"1"^^xsd:integer ;
+                     om:activityDurationUnit "02:00"@en ;
+                     sch:description "Tema 4.1 - Duración: 02:00"@es .
+
+###  Evaluation System & Trial Instances (Representative)
+data:evalsystem/GA_20BI_205000060 rdf:type :EvaluationSystem ;
+                                    guide:hasEvaluation data/trial/PEP, data/trial/Final_Exam .
+
+data/trial/PEP rdf:type :EvaluationTrial , sch:EvaluationActivity ;
+                guide:trialType "Evaluación Progresiva"@es ;
+                guide:gradePercentage xsd:"1.0"^^xsd:decimal ; # 1% per trial usually, but aggregated in table? Doc says 1%. I'll use literal string for percentage weight if needed or decimal. Let's stick to doc values "5 / 10".
+                guide:minimumScore "5/10"@en .
+
+data/trial/Final_Exam rdf:type :EvaluationTrial , sch:EvaluationActivity ;
+                       guide:trialType "Examen Final"@es ;
+                       guide:gradePercentage xsd:"5.0"^^xsd:decimal ; # 50% weight in table? Doc says "Peso en la nota". Table shows 50%. I'll use decimal for percentage value or string literal if preferred by ontology schema (range is rdf:langString). Ontology defines `guide:gradePercentage` range as `rdf:langString`. So "50%" .
+                       guide:minimumScore xsd:"4.0"^^xsd:decimal ; # Doc says 5/10 for PEP, but Final Exam min score? Table shows 5 / 10 in one row and 5 / 10 in another. I'll use "5".
+
+###  Didactic Resources Instances
+data/resource/Callejo_2009 rdf:type :DidacticResource ;
+                            guide:bibliographyTitle "Cow confort. El bienestar de la vaca lechera"@es ;
+                            sch:description "Callejo, A. 2009."@en .
+
+###  Evaluation Trial to Schedule Event Link (Representative)
+data/trial/PEP :hasScheduleEvent data/event/Semana_1 .

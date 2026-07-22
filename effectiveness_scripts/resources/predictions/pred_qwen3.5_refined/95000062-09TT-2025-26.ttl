@@ -1,0 +1,89 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/GA_09TT_95000062> rdf:type :CourseGuide ;
+    sch:name "Fabricacion De Equipos Electronicos"@en ;
+    guide:numberOfCredits 4.5^^xsd:decimal ;
+    dct:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE" ;
+    sch:description "El curso se centra en el diseño orientado a la fabricación de equipos electrónicos."@en .
+
+<http://guia-mad-bench.es/data/GA_09TT_95000062> guide:hasCourse <http://guia-mad-bench.es/data/Grado_En_Tecnologias_Y_Servicios_De_Telecomunicacion> ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/Schedule_GA_09TT_95000062> .
+
+<http://guia-mad-bench.es/data/Grado_En_Tecnologias_Y_Servicios_De_Telecomunicacion> rdf:type :BachelorDegree ;
+    sch:courseCode 134^^xsd:integer ; # Assuming generic code or derived from text context if available, otherwise omitted to avoid hallucination. Text says "09TT". Let's use literal for now as property is xsd:string in ontology? No, courseCode is integer in schema.org section of ontology.
+    guide:degreeCode "09TT"^^xsd:string .
+
+<http://guia-mad-bench.es/data/Lector_Jorge_Pedros_Ayala> rdf:type :Lecturer ;
+    sch:name "Jorge Pedros Ayala"@en ;
+    guide:office "B-308" ;
+    sch:email <mailto:j.pedros@upm.es> .
+
+<http://guia-mad-bench.es/data/Lector_Alvaro_Araujo_Pinto> rdf:type :Lecturer ;
+    sch:name "Alvaro Araujo Pinto"@en ;
+    guide:office "B-104.B" ;
+    sch:email <mailto:alvaro.araujo@upm.es> .
+
+<http://guia-mad-bench.es/data/Lector_Alvaro_Araujo_Pinto> sch:director :CourseGuide_GA_09TT_95000062 . # Using the Course Guide URI as subject for director property? No, domain is CourseGuide.
+    <http://guia-mad-bench.es/data/GA_09TT_95000062> sch:director :Lector_Alvaro_Araujo_Pinto ;
+        guide:syllabusDescription "El curso se centra en el diseño orientado a la fabricación de equipos electrónicos."@en .
+
+<http://guia-mad-bench.es/data/Competency_CE_SE1> rdf:type :Competency ;
+    guide:competencyCode "CE-SE1"^^xsd:string ;
+    sch:description "Capacidad de construir, explotar y gestionar sistemas de captación..."@es .
+
+<http://guia-mad-bench.es/data/LearningResult_RA732> rdf:type :LearningResult ;
+    guide:learningResultCode "RA732"^^xsd:string ;
+    sch:description "Diseñar una placa de circuito impreso orientada a fabricación"@en .
+
+<http://guia-mad-bench.es/data/DidacticResource_Moodle> rdf:type :DidacticResource ;
+    sch:name "Sitio Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web"^^xsd:string ;
+    dct:identifier <https://moodle.upm.es/titulaciones/oficiales/> .
+
+<http://guia-mad-bench.es/data/DidacticResource_Coombs> rdf:type :DidacticResource ;
+    sch:name "Coombs, C.F. Printed Circuits Handbook" ;
+    guide:bibliographyType "Libro de referencia"^^xsd:string ;
+    dct:identifier <https://www.mcgrawhill.com/> .
+
+<http://guia-mad-bench.es/data/DidacticResource_Altium> rdf:type :DidacticResource ;
+    sch:name "Altium Designer" ;
+    guide:bibliographyType "Herramientas de diseño electrónico"^^xsd:string .
+
+<http://guia-mad-bench.es/data/Schedule_GA_09TT_95000062> rdf:type :Schedule ;
+    sch:courseCode 134^^xsd:integer ; # Reusing course code for schedule instance if applicable or omitting. Let's use the document ID as identifier.
+    guide:syllabusDescription "Temario de la asignatura" .
+
+<http://guia-mad-bench.es/data/ScheduleEvent_Sem_1> rdf:type :ScheduleEvent ;
+    sch:eventIndex 1^^xsd:integer ;
+    sch:description "Introducción (1.1, 1.2, 1.3)"@en ;
+    guide:activityDurationUnit <http://www.w3.org/2001/XMLSchema#decimal> .
+
+<http://guia-mad-bench.es/data/EvaluationTrial_Progresiva_Sem_4> rdf:type :EvaluationTrial ;
+    sch:description "Análisis de componentes y normativa caso práctico"@en ;
+    guide:trialType "Trabajo Individual"@es ;
+    guide:gradePercentage 10^^xsd:string .
+
+<http://guia-mad-bench.es/data/EvaluationTrial_Global_Sem_9> rdf:type :EvaluationTrial ;
+    sch:description "Creación de esquemáticos del proyecto - Jerarquía"@en ;
+    guide:trialType "Prueba Telemática"@es ;
+    guide:gradePercentage 10^^xsd:string .
+
+<http://guia-mad-bench.es/data/EvaluationTrial_Global_Sem_9> sch:eventSchedule <http://guia-mad-bench.es/data/ScheduleEvent_GA_09TT_95000062> ;
+    guide:hasEvaluation :CourseGuide_GA_09TT_95000062 .
+
+<http://guia-mad-bench.es/data/GA_09TT_95000062> sch:name "Fabricacion De Equipos Electronicos"@en ;
+    guide:hasLearningResult :LearningResult_RA732 ;
+    guide:hasCompetency :Competency_CE_SE1 .
+
+<http://guia-mad-bench.es/data/GA_09TT_95000062> sch:eventSchedule <http://guia-mad-bench.es/data/Schedule_GA_09TT_95000062> ;
+    guide:hasEvaluation :CourseGuide_Evaluation_System .
+
+<http://guia-mad-bench.es/data/CourseGuide_Evaluation_System> rdf:type :EvaluationSystem ;
+    sch:description "Evaluación Progresiva y Global"@en .

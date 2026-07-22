@@ -1,0 +1,159 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Information
+:course_65001030 a guide:Course ;
+    sch:name "Laboreo De Minas I" ;
+    sch:courseCode 65001030 ;
+    guide:courseType "Optativa" .
+
+:degree_06TM a guide:BachelorDegree ;
+    sch:name "Grado En Ingenieria En Tecnologia Minera" ;
+    guide:hasCourse :course_65001030 .
+
+:center_ETS a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Minas y Energía" .
+
+# Course Guide Details
+:courseGuide_65001030 a guide:CourseGuide ;
+    sch:instructor :lecturer_juan, :lecturer_carlos, :lecturer_jesus ;
+    guide:hasSyllabus :syllabus_65001030 ;
+    guide:hasEvaluation :evalSystem_65001030 ;
+    guide:numberOfCredits 4.5 ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" .
+
+# Lecturers
+:lecturer_juan a guide:Lecturer ;
+    sch:name "Juan Herrera Herbert" ;
+    sch:email "juan.herrera@upm.es" ;
+    guide:office "208 y/o 218" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 12:00 - 14:00, J - 10:00 - 12:00" .
+
+:lecturer_carlos a guide:Lecturer ;
+    sch:name "Carlos Lopez Jimeno" ;
+    sch:email "carlos.lopezj@upm.es" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 12:00 - 14:00, J - 10:00 - 12:00" .
+
+:lecturer_jesus a guide:Lecturer ;
+    sch:name "Jesus Caceres Jimeno" ;
+    sch:email "jesus.caceres@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. A concertar por correo electrónico" .
+
+# Competencies
+:comp_CG1 a guide:Competency ;
+    guide:competencyCode "CG 1" ;
+    guide:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Tecnología Minera." .
+
+:comp_CG2 a guide:Competency ;
+    guide:competencyCode "CG 2" ;
+    guide:competencyDescription "Poseer capacidad para diseñar, analizar, calcular, proyectar, construir, mantener, conservar, explotar, desarrollar, implementar, gestionar y mejorar productos, sistemas y procesos..." .
+
+:comp_CG3 a guide:Competency ;
+    guide:competencyCode "CG 3" ;
+    guide:competencyDescription "Aplicar los conocimientos adquiridos para identificar, formular y resolver problemas dentro de contextos amplios y multidisciplinarios..." .
+
+:comp_CG4 a guide:Competency ;
+    guide:competencyCode "CG 4" ;
+    guide:competency .
+
+:comp_CG5 a guide:Competency ;
+    guide:competencyCode "CG 5" ;
+    guide:competencyDescription "Saber comunicar los conocimientos y conclusiones, tanto de forma oral, escrita y gráfica..." .
+
+:comp_CG6 a guide:Competency ;
+    guide:competencyCode "CG 6" ;
+    guide:competencyDescription "Poseer habilidades de aprendizaje que permitan continuar estudiando a lo largo de la vida..." .
+
+:comp_CG7 a guide:Competency ;
+    guide:competencyCode "CG 7" ;
+    guide:competencyDescription "Incorporar nuevas tecnologías y herramientas de la ingeniería en tecnología minera..." .
+
+:comp_CG9 a guide:Competency ;
+    guide:competencyCode "CG 9" ;
+    guide:competencyDescription "Organización y planificación en el ámbito de la empresa, y otras instituciones y organizaciones de proyectos y equipos humanos." .
+
+# Learning Results
+:lr_RA162 a guide:LearningResult ;
+    guide:learningResultCode "RA162" ;
+    guide:learningResultDescription "Conocer los distintos métodos de explotación de los recursos minerales" .
+
+:lr_RA294 a guide:LearningResult ;
+    guide:learningResultCode "RA294" ;
+    guide:learningResultDescription "Conocer la naturaleza de la industria minera, su situación actual y el marco de desarrollo." .
+
+:lr_RA297 a guide:LearningResult ;
+    guide:learningResultCode "RA297" ;
+    guide:learningResultDescription "Adquirir los conocimientos teóricos y práct．icos sobre los criterios, medios y métodos para la explotación de recursos minerales y energéticos." .
+
+# Syllabus
+:syllabus_65001030 a guide:Syllabus ;
+    guide:hasItem :item_B1T1, :item_B2T1, :item_B3T1, :item_B4T1, :item_B5T1, :item_B6T1 .
+
+:item_B1T1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "El abastecimiento de materias primas" .
+
+:item_B2T1 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Fundamentos de las técnicas de arranque de rocas" .
+
+:item_B3T1 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Características Generales de los Métodos de Minería a Cielo Abierto" .
+
+# Evaluation System
+:evalSystem_65001030 a guide:EvaluationSystem ;
+    guide:evaluationDescription "La calificación final de la asignatura se expresará en una cifra numérica en una escala entre 0 y 10 en Actas." ;
+    guide:hasEvaluationTrial :trial_eval_b1_b2, :trial_eval_b3, :trial_eval_b4, :trial_eval_b5_b6, :trial_final .
+
+:trial_eval_b1_b2 a guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "7" ;
+    guide:trialMode "Presencial" .
+
+:trial_eval_b3 a guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "2．5%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "10" ;
+    guide:trialMode "Presencial" .
+
+:trial_final a guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:trialMode "Presencial" .
+
+# Didactic Resources
+:res_biblio_herrera_2006 a guide:DidacticResource ;
+    guide:bibliographyTitle "Introducción a los Fundamentos de la Tecnología Minera" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_biblio_herrera_2017_v1 a guide:DidacticResource ;
+    guide:bibliographyTitle "Introducción a la Minería. Vol. I: Conceptos, tecnologías y procesos." ;
+    guide:bibliographyType "Bibliografía" .
+
+# Schedule Events (Examples from Chronogram)
+:event_week1 a guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :act_leccion_magistral_b1t1 .
+
+:act_leccion_magistral_b1t1 a guide:Activity ;
+    guide:activityDescription "Lección Magistral B1T1. El abastecimiento de materias primas" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "LM" ;
+    guide:attendanceType "Presencial" .
+
+# Required Knowledge
+:req_knowledge_65001030 a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Gestion De Empresas, Geologia De Materiales, Geologia, Física, Matemáticas, Ingles, Química, Informática, Mecánica, Economía" .

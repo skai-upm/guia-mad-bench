@@ -1,0 +1,147 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Information
+:degree_06MM a guide:BachelorDegree ;
+    sch:name "Grado En Ingeniería Mineralúrgica Y Metalúrgica De Las Materias Primas" ;
+    guide:degreeCode "06MM" .
+
+:university_center_ets a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Minas y Energía" ;
+    guide:offers :degree_06MM .
+
+:course_laboreo_de_minas a guide:Course ;
+    sch:name "65005004 - Laboreo De Minas" ;
+    sch:courseCode 65005004 ;
+    guide:courseYear 2025 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Quinto semestre" .
+
+:course_guide_laboreo a guide:CourseGuide ;
+    sch:hasCourseInstance :course_laboreo_de_minas ;
+    sch:name "Guía de Aprendizaje - Laboreo De Minas" ;
+    sch:inLanguage "Castellano" ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:instructor :lecturer_juan_herrera, :lecturer_carlos_lopez, :lecturer_jesus_caceres ;
+    guide:hasSyllabus :syllabus_laboreo ;
+    guide:hasCompetency :comp_C1, :comp_C14, :comp_C15, :comp_C2, :comp_CON13, :comp_CON2, :comp_CON7, :comp_CON8, :comp_CON9, :comp_HAB10, :comp_HAB11, :comp_HAB5, :comp_HAB7, :comp_HAB8, :comp_HAB9 ;
+    guide:hasLearningResult :lr_RA49, :lr_RA17_197, :lr_RA19_199 ;
+    guide:hasEvaluation :eval_system_laboreo ;
+    guide:hasDidacticResource :res_herrera_2006_1, :res_herrera_2006_2, :res_herrera_2007_1, :res_lab_equip .
+
+# Lecturers
+:lecturer_juan_herrera a guide:Lecturer ;
+    sch:name "Juan Herrera Herbert" ;
+    sch:email "juan.herrena@upm.es" ;
+    guide:office "208 y/o 218" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 12:00 - 14:00, J - 10:00 - 12:00" .
+
+:lecturer_carlos_lopez a guide:Lecturer ;
+    sch:name "Carlos Lopez Jimeno" ;
+    sch:email "carlos.lopezj@upm.es" ;
+    guide:office "211" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 12:00 - 14:00, J - 10:00 - 12:00" .
+
+:lecturer_jesus_caceres a guide:Lecturer ;
+    sch:name "Jesus Caceres Jimeno" ;
+    sch:email "jesus.caceres@upm.es" ;
+    guide:office "217" ;
+    guide:tutorshipsSchedule "Sin horario. A concertar por correo electrónico" .
+
+# Competencies
+:comp_C1 a guide:Competency ;
+    guide:competencyCode "C1" ;
+    guide:competencyDescription "Comprender y utilizar los principios de la extracción de materias primas de origen mineral." .
+
+:comp_C14 a guide:Competency ;
+    guide:competencyCode "C14" ;
+    guide:competencyDescription "Capacidad de trabajar en un entorno bilingüe (inglés-castellano)." .
+
+:comp_CON13 a guide:Competency ;
+    guide:competencyCode "CON13" ;
+    guide:competencyDescription "Conocer y comprender la metodología, gestión y organización de proyectos." .
+
+# Learning Results
+:lr_RA49 a guide:LearningResult ;
+    guide:learningResultCode "RA49" ;
+    guide:learningResultDescription "Conocer, comprender y utilizar las técnicas de extracción, de transformación y elaboración de la piedra natural." .
+
+:lr_RA17_197 a guide:LearningResult ;
+    guide:learningResultCode "RA17-RA197" ;
+    guide:learningResultDescription "Relacionar las propiedades de minerales y rocas con su empleo." .
+
+# Syllabus
+:syllabus_laboreo a guide:Syllabus ;
+    guide:hasItem :item_B1T1, :item_B2T1, :item_B3T1, :item_B4T1, :item_B5T1, :item_B6T1 .
+
+:item_B1T1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "B1T1. El abastecimiento de materias primas" .
+
+:item_B2T1 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "B2T1. Fundamentos de las técnicas de arranque de rocas" .
+
+# Evaluation System
+:eval_system_laboreo a guide:EvaluationSystem ;
+    guide:evaluationDescription "La calificación final se expresará en una cifra numérica en una escala entre 0 y 10." ;
+    guide:hasEvaluationTrial :trial_eval_blocks_1_2, :trial_eval_block_3, :trial_eval_final .
+
+:trial_eval_blocks_1_2 a guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "7" ;
+    guide:hasScheduleEvent :event_eval_1_2 .
+
+:trial_eval_final a guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:hasScheduleEvent :event_eval_final .
+
+# Schedule Events and Activities
+:event_eval_1_2 a guide:ScheduleEvent ;
+    guide:eventIndex 7 ;
+    guide:eventWeek "Semana 7" ;
+    guide:hasActivity :act_exam_test .
+
+:event_eval_final a guide:ScheduleEvent ;
+    guide:eventIndex 17 ;
+    guide:eventWeek "Semana 17" ;
+    guide:hasActivity :act_exam_final .
+
+:act_exam_test a guide:Activity ;
+    guide:activityDescription "Prueba Telemática" ;
+    guide:activityFormat "ET" ;
+    guide:attendanceType "Presencial" .
+
+:act_exam_final a guide:Activity ;
+    guide:activityDescription "Prueba Telemática" ;
+    guide:activityFormat "ET" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_herrera_2006_1 a guide:DidacticResource ;
+    guide:bibliographyTitle "Introducción a los Fundamentos de la Tecnología Minera" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_herrera_2006_2 a guide:DidacticResource ;
+    guide:bibliographyTitle "Métodos de Minería a Cielo Abierto" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_lab_equip a guide:DidacticResource ;
+    guide:bibliographyTitle "Laboratorio de Laboreo de Minas" ;
+    guide:bibliographyType "Equipamiento" .

@@ -1,0 +1,83 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide/prcl001> rdf:type owl:NamedIndividual ;
+    dct:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@es ;
+    sch:name "Sostenibilidad 4.0: Integración De Taxonomía, Esg" ;
+    guide:numberOfCredits xsd:decimal "3"^^xsd:integer ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer/carmenavilespalacios> ;
+    sch:description "Esta asignatura proporciona al estudiante las competencias clave para comprender e implementar los principios de sostenibilidad exigidos por el entorno normativo y empresarial actual."@es .
+
+<http://w3id.org/def/guia#CourseGuide> rdf:type owl:Class ;
+    rdfs:subClassOf <https://schema.org/CourseInstance> .
+
+<http://guia-mad-bench.es/data/syllabus/prcl001> rdf:type :Sylbusus ;
+    sch:name "Temario de la asignatura" ;
+    dct:description "Contenido estructurado en 7 unidades temáticas."@es .
+
+:hasItem <http://w3id.org/def/guia#hasItem> .
+
+<http://guia-mad-bench.es/data/syllabusitem/intro-sostenibilidad40> rdf:type :SylbususItem ;
+    sch:name "Introducción a la Sostenibilidad 4.0" ;
+    guide:sylbususDescription "Conceptos clave, sostenibilidad como ventaja competitiva y nuevas demandas regulatorias."@es .
+
+<http://guia-mad-bench.es/data/syllabusitem/taxonomia-ue> rdf:type :SylbususItem ;
+    sch:name "Taxonomía de la UE: objetivos y aplicación" ;
+    guide:sylbususDescription "Actividades económicas sostenibles, alineación con objetivos ambientales."@es .
+
+<http://guia-mad-bench.es/data/syllabusitem/esg-indicadores> rdf:type :SylbususItem ;
+    sch:name "ESG: indicadores, riesgos y oportunidades" ;
+    guide:sylbususDescription "Métricas ESG clave, materialidad financiera."@es .
+
+<http://guia-mad-bench.es/data/syllabusitem/marcos-reporting> rdf:type :SylbususItem ;
+    sch:name "Marcos de reporte no financiero (GRI, ESRS, SFDR)" ;
+    guide:sylbususDescription "Estructura y requisitos de los principales marcos."@es .
+
+<http://guia-mad-bench.es/data/syllabusitem/evaluacion-sostenibilidad> rdf:type :SylbususItem ;
+    sch:name "Evaluación de la sostenibilidad y gestión de riesgos climáticos" ;
+    guide:sylbususDescription "Adaptación al cambio climático, escenarios TCFD."@es .
+
+<http://guia-mad-bench.es/data/syllabusitem/herramientas-digitales> rdf:type :SylbususItem ;
+    sch:name "Herramientas digitales para sostenibilidad y reporting" ;
+    guide:sylbususDescription "Introducción a software y plataformas ESG."@es .
+
+<http://guia-mad-bench.es/data/syllabusitem/analisis-informes> rdf:type :SylbususItem ;
+    sch:name "Análisis de informes y estudios de caso sectoriales" ;
+    guide:sylbususDescription "Evaluación crítica de informes reales."@es .
+
+<http://guia-mad-bench.es/data/lecturer/carmenavilespalacios> rdf:type :sch:Person, <http://w3id.org/def/guia#Lecturer> ;
+    sch:name "M. Carmen Aviles Palacios" ;
+    dct:title "Coordinador/a";
+    guide:tutorshipsSchedule "L - 13:00 - 14:00"@es .
+
+<http://guia-mad-bench.es/data/competency/cb03> rdf:type :Competency ;
+    sch:name "CB03" ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes..."@en .
+
+<http://guia-mad-bench.es/data/learningresult/ra577> rdf:type :LearningResult ;
+    sch:name "RA577" ;
+    guide:learningResultCode xsd:string "RA577"^^xsd:string ;
+    guide:learningResultDescription "Diseñar un informe ESG adaptado al sector forestal o ambiental."@es .
+
+<http://guia-mad-bench.es/data/evaluationtrial/seminar8> rdf:type :EvaluationTrial ;
+    sch:name "Evaluación intermedia (presentación de avances del informe) ESG" ;
+    guide:trialType xsd:string "Presentación en Grupo"@en ;
+    guide:gradePercentage xsd:string "25%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluationtrial/seminar16> rdf:type :EvaluationTrial ;
+    sch:name "Entrega y defensa de informe ESG corregido" ;
+    guide:trialType xsd:string "Presentación en Grupo"@en ;
+    guide:gradePercentage xsd:string "75%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/prcl001> :hasSylbusus <http://guia-mad-bench.es/data/syllabus/prcl001> ;
+    sch:courseSchedule <http://w3id.org/def/guia#schedule-prcl001> .
+
+<http://w3id.org/def/guia#hasSylbusus> rdf:type owl:ObjectProperty ;
+    rdfs:domain :CourseGuide ;
+    rdfs:range :Sylbusus .

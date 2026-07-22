@@ -1,0 +1,164 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+# Degree and University Center
+:degree_59EC rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Ingenieria Electronica De Comunicaciones" ;
+    guide:degreeCode "5TR-59EC" .
+
+:center_ETS rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Sist. De Telecom." .
+
+# Course
+:course_595024131 rdf:type guide:Course ;
+    sch:name "Ingenieria De Audio II" ;
+    sch:courseCode 595024131 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 3 ;
+    guide:semester "Sexto semestre" .
+
+# Course Guide
+:guide_595024131 rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance :course_595024131 ;
+    sch:name "Guía de Aprendizaje - Ingenieria De Audio II" ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:numberOfCredits 6.0 ;
+    guide:hasCompetency :comp_EC01, :comp_SC01, :comp_SC02, :comp_CG02, :comp_CG04 ;
+    guide:hasLearningResult :lr_RA170, :lr_RA408, :lr_RA409, :lr_RA411, :lr_RA412, :lr_RA410, :lr_RA406, :lr_RA169 ;
+    guide:hasEvaluation :eval_system_audio2 ;
+    guide:hasSyllabus :syllabus_audio2 ;
+    guide:hasDidacticResource :res_apuntes, :res_guiones, :res_software, :res_videos_mudos ;
+    sch:courseSchedule :schedule_audio2 ;
+    sch:instructor :lecturer_lino, :lect:lecturer_daniel, :lect:lecturer_maria .
+
+# Lecturers
+:lecturer_lino rdf:type guide:Lecturer ;
+    sch:name "Lino Pedro Garcia Morales" ;
+    sch:email "lino.garcia@upm.es" ;
+    guide:office "8208" ;
+    guide:tutorshipsSchedule "Sin horario. Consultar horario en Moodle." .
+
+:lecturer_daniel rdf:type guide:Lecturer ;
+    sch:name "Daniel De La Prida Caballero" ;
+    sch:email "daniel.prida@upm.es" ;
+    guide:office "D8209" .
+
+:lecturer_maria rdf:type guide:Lecturer ;
+    sch:name "Maria Larrosa Navarro" ;
+    sch:email "m.larrosa@upm.es" ;
+    guide:office "D8209" .
+
+# Competencies
+:comp_EC01 rdf:type guide:Competency ;
+    guide:competencyCode "CE EC01" ;
+    guide:competencyDescription "Capacidad de construir, explotar y gestionar sistemas de captación, transporte, representación, procesado, almacenamiento, gestión y presentación de información multimedia, desde el punto de vista de los sistemas electrónicos." .
+
+:comp_SC01 rdf:type guide:Competency ;
+    guide:competencyCode "CE SC01" ;
+    guide:competencyDescription "Capacidad para construir, explotar y gestionar las redes, servicios, procesos y aplicaciones de telecomunicaciones..." .
+
+:comp_SC02 rdf:type guide:Competency ;
+    guide:competencyCode "CE SC02" ;
+    guide:competencyDescription "Capacidad para aplicar las técnicas en que se basan las redes, servicios y aplicaciones de telecomunicación tanto en entornos fijos como móviles..." .
+
+:comp_CG02 rdf:type guide:Competency ;
+    guide:competencyCode "CG 02" ;
+    guide:competencyDescription "Capacidad de búsqueda y selección de información, de razonamiento crítico y de elaboración y defensa de argumentos dentro del área." .
+
+:comp_CG04 rdf:type guide:Competency ;
+    guide:competencyCode "CG 04" ;
+    guide:competencyDescription "Capacidad de abstracción, de análisis y de síntesis y de resolución de problemas." .
+
+# Learning Results
+:lr_RA170 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA170" ;
+    guide:learningResultDescription "Comprensión y manejo de las señales de audio y video (digitalización, formatos y sistemas de codificación)" .
+
+:lr_RA408 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA408" ;
+    guide:learningResultDescription "Conocer los aspectos específicos en la digitalización de la señal de audio." .
+
+:lr_RA409 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA409" ;
+    guide:learningResultDescription "Analizar las características y diseñar la interconexión entre equipos de audio." .
+
+# Syllabus
+:syllabus_audio2 rdf:type guide:Syllabus ;
+    guide:hasItem :item_daw, :item_estudios, :item_digitalizacion, :item_almacenamiento, :item_codificacion .
+
+:item_daw rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW)" .
+
+:item_estudios rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Diseño de Estudios" .
+
+:item_digitalizacion rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Digitalización de la señal de audio" .
+
+# Evaluation System
+:eval_system_audio2 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación es progresiva (controles y proyecto) y global (recuperación)." ;
+    guide:hasEvaluationTrial :trial_control1, :trial_control2, :trial_control3, :trial_control4, :trial_control5, :trial_proyecto .
+
+:trial_control1 rdf:type guide:EvaluationTrial ;
+    sch:name "Control 1" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "18%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:evaluationDuration "00:10" ;
+    guide:trialMode "Presencial" .
+
+:trial_proyecto rdf:type guide:EvaluationTrial ;
+    sch:name "Presentación de proyectos de diseño" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+# Schedule
+:schedule_audio2 rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week2, :event_week4, :event_week8 .
+
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_lm_daw1 .
+
+:act_lm_daw1 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1.1 Estaciones de trabajo con audio digital (DAW). Interconexión de señales musicales" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 0.83 ;
+    guide:attendanceType "Presencial" .
+
+:event_week4 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 4" ;
+    guide:hasActivity :act_control1 .
+
+:act_control1 rdf:type guide:Activity ;
+    guide:activityDescription "Control 1" ;
+    guide:activityFormat "Prueba Telemática" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_apuntes rdf:type guide:DidacticResource ;
+    sch:name "Apuntes propios" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_videos_mudos rdf:type guide:DidacticResource ;
+    sch:name "Vídeos mudos" ;
+    guide:bibliographyDescription "Vídeos sin audio para que el alumno practique los conocimientos." ;
+    guide:bibliographyType "Recursos web" .
+
+:res_software rdf:type guide:DidacticResource ;
+    sch:name "Software específico" ;
+    guide:bibliographyType "Equipamiento" .

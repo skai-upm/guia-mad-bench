@@ -1,0 +1,163 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+:degree_06TM rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Ingenieria En Tecnologia Minera" ;
+    guide:degreeCode "06TM" .
+
+:ets_minas_energia rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Minas y Energía" .
+
+# Course
+:course_65001030 rdf:type guide:Course ;
+    sch:name "Laboreo De Minas I" ;
+    sch:courseCode 65001030 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 2025 ;
+    sch:hasCourseInstance :courseGuide_65001030 .
+
+# Course Guide
+:courseGuide_65001030 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Laboreo De Minas I" ;
+    sch:description "Introducción al conjunto de la industria minera actual, sus funciones, procesos, tecnologías, etapas y procesos."@en ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:totalHours "Variable según créditos ECTS" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :lecturer_juan_herrera ;
+    sch:instructor :lecturer_carlos_lopez ;
+    sch:instructor :lecturer_jesus_caceres ;
+    guide:hasSyllabus :syllabus_65001030 ;
+    guide:hasEvaluation :evalSystem_65001030 ;
+    guide:hasCompetency :comp_CG1, :comp_CG2, :comp_CG4, :comp_F29 ;
+    guide:hasLearningResult :lr_RA162, :lr_RA294, :lr_RA297 ;
+    guide:hasDidacticResource :res_book_herrera_2006, :res_equip_lab ;
+    sch:activitiesWorkload "Entre 26 y 27 horas por crédito ECTS" .
+
+# Lecturers
+:lecturer_juan_herrera rdf:type guide:Lecturer ;
+    sch:name "Juan Herrera Herbert" ;
+    sch:email "juan.herrera@upm.es" ;
+    guide:office "208 y/o 218" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 12:00 - 14:00, J - 10:00 - 12:00" .
+
+:lecturer_carlos_lopez rdf:type guide:Lecturer ;
+    sch:name "Carlos Lopez Jimeno" ;
+    sch:email "carlos.lopezj@upm.es" ;
+    guide:office "211" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 12:00 - 14:00, J - 10:00 - 12:00" .
+
+:lecturer_jesus_caceres rdf:type guide:Lecturer ;
+    sch:name "Jesus Caceres Jimeno" ;
+    sch:email "jesus.caceres@upm.es" ;
+    guide:office "217" ;
+    guide:tutorshipsSchedule "A concertar por correo electrónico" .
+
+# Competencies
+:comp_CG1 rdf:type guide:Competency ;
+    guide:competencyCode "CG 1" ;
+    guide:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Tecnología Minera."@en .
+
+:comp_CG2 rdf:type guide:Competency ;
+    guide:competencyCode "CG 2" ;
+    guide:competencyDescription "Poseer capacidad para diseñar, analizar, calcular, proyectar, construir, mantener, conservar, explotar, desarrollar, implementar, gestionar y mejorar productos, sistemas y procesos..."@en .
+
+:comp_CG4 rdf:type guide:Competency ;
+    guide:competencyCode "CG 4" ;
+    guide:competencyDescription "Comprender el impacto de la tecnología minera en el medio ambiente, el desarrollo sostenible de la sociedad."@en .
+
+:comp_F29 rdf:type guide:Competency ;
+    guide:competencyCode "F29" ;
+    guide:competencyDescription "Diseño y ejecución de obras superficiales y subterráneas."@en .
+
+# Learning Results
+:lr_RA162 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA1deg2" ;
+    guide:learningResultDescription "Conocer los distintos métodos de explotación de los recursos minerales"@en .
+
+:lr_RA294 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA294" ;
+    guide:learningResultDescription "Conocer la naturaleza de la industria minera, su situación actual y el marco de desarrollo."@en .
+
+:lr_RA297 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA297" ;
+    guide:learningResultDescription "Adquirir los conocimientos teóricos y prácticos sobre los criterios, medios y métodos para la explotación de recursos minerales y energéticos."@en .
+
+# Syllabus
+:syllabus_65001030 rdf:type guide:Syllabus ;
+    guide:hasItem :item_B1T1, :item_B2T1, :item_B3T1, :item_B4T1, :item_B5T1, :item_B6T1 .
+
+:item_B1T1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "El abastecimiento de materias primas"@en .
+
+:item_B2T1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Fundamentos de las técnicas de arranque de rocas"@en .
+
+:item_B3T1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Características Generales de los Métodos de Minería a Cielo Abierto"@en .
+
+# Evaluation System
+:evalSystem_65001030 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La calificación final se expresará en una cifra numérica en una escala entre 0 y 10. Se compone de pruebas telemáticas progresivas y examen final."@en ;
+    guide:hasEvaluationTrial :trial_prog_sem7, :trial_final .
+
+:trial_prog_sem7 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "Semana 7" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_CG1, :comp_F29 .
+
+:trial_final rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "Semana 17" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_CG1, :comp_F29 .
+
+# Schedule Events and Activities
+:event_sem1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_lecture_B1T1 .
+
+:act_lecture_B1T1 rdf:type guide:Activity ;
+    guide:activityDescription "Lección Magistral B1T1. El abastecimiento de materias primas"@en ;
+    guide:activityFormat "LM" ;
+    guide:attendanceType "Presencial" ;
+    guide:activityDuration 1.0 .
+
+# Didactic Resources
+:res_book_herrera_2006 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Introducción a los Fundamentos de la Tecnología Minera"@en ;
+    guide:bibliographyType "Bibliografía"@en ;
+    guide:bibliographyDescription "HERRERA HERBERT, J. (2006). Fundación Gómez Pardo - ETS de Ingenieros de Minas de Madrid."@en .
+
+:res_equip_lab rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Laboratorio de Laboreo de Minas"@en ;
+    guide:bibliographyType "Equipamiento"@en .
+
+# Required Knowledge
+:req_knowledge_65001030 rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Física, Matemáticas, Ingles, Química, Informática, Mecánica, Economía"@en ;
+    guide:previousCourses "Gestion De Empresas, Geologia De Materiales, Geologia"@en .
+
+# Link Course to Degree
+:course_65001030 sch:hasCourseInstance :courseGuide_65001030 .
+:degree_06TM guide:hasCourse :course_65001030 .

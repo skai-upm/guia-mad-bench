@@ -1,0 +1,77 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/ecologia_25001210> rdf:type :CourseGuide ;
+    dct:title "Ecología"@en ,
+        "25001210 - Ecologia"@en ;
+    sch:name "Ecología" ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/ecologia_syllabus> ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/ra80>,<http://guia-mad-bench.es/data/ra83>,<http://guia-mad-bench.es/data/ra84>,<http://guia-mad-bench.es/data/ra85>,<http://guia-mad-bench.es/data/ra86>,<http://guia-mad-bench.es/data/ra81>,<http://guia-mad-bench.es/data/ra82> ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/ce14>,<http://guia-mad-bench.es/data/ce47>,<http://guia-mad-bench.es/data/cg6>,<http://guia-mad-bench.es/data/cg7> ;
+    guide:hasDidacticResource <http://guia-mad-bench.es/data/ecologia_book_1>,<http://guia-mad-bench.es/data/ecologia_book_2>,<http://guia-mad-bench.es/data/ecologia_resource_web> ;
+    sch:courseCode 25001210 ;
+    guide:numberOfCredits "6"^^xsd:decimal ;
+    guide:teachingPeriodMonths "Febrero-Junio"@en ,
+        "Segundo semestre"@en ;
+    guide:inLanguage "Castellano"@en .
+
+<http://guia-mad-bench.es/data/02IA> rdf:type :BachelorDegree ;
+    sch:name "Grado En Ingenieria Agroambiental" ;
+    guide:degreeCode "02IA"^^xsd:string ;
+    sch:hasCourseInstance <http://guia-mad-bench.es/data/ecologia_25001210> .
+
+<http://guia-mad-bench.es/data/ecologia_syllabus> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/tema_1>,<http://guia-mad-bench.es/data/tema_2>,<http://guia-mad-bench.es/data/tema_3>.
+
+<http://guia-mad-bench.es/data/ecologia_schedule> rdf:type :Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/evento_w1>,<http://guia-mad-bench.es/data/evento_p01>,<http://guia-mad-bench.es/data/examen_global>.
+
+<http://guia-mad-bench.es/data/ecologia_evaluation_system> rdf:type :EvaluationSystem ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/p01_trial>,<http://guia-mad-bench.es/data/prueba_evaluacion_progresiva>.
+
+<http://guia-mad-bench.es/data/santiago_moreno> rdf:type :Lecturer ;
+    sch:name "Santiago Moreno Vazquez" ;
+    guide:office "Banco Semillas"@en ,
+        "Edificio A"@en ;
+    sch:email <mailto:santiago.moreno@upm.es> .
+
+<http://guia-mad-bench.es/data/daniel_delatorre> rdf:type :Lecturer ;
+    sch:name "Daniel De La Torre Llorente" ;
+    guide:office "Edificio A"@en ,
+        <mailto:daniel.delatorre@upm.es>.
+
+<http://guia-mad-bench.es/data/tema_1> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Introducción a la Ecología. Definición, datos históricos."^^xsd:string .
+
+<http://guia-mad-bench.es/data/p01_trial> rdf:type :EvaluationTrial ;
+    sch:trialType "Informe práctica"@en ,
+        "Trabajo Individual"@en ;
+    guide:gradePercentage "4"^^xsd:decimal ;
+    guide:minimumScore 5 .
+
+<http://guia-mad-bench.es/data/ra80> rdf:type :LearningResult ;
+    guide:learningResultCode "RA80"^^xsd:string ;
+    guide:learningResultDescription "Conocimientos sobre el medio físico y los componentes biológicos de los ecosistemas."^^rdf:langString .
+
+<http://guia-mad-bench.es/data/ce14> rdf:type :Competency ;
+    guide:competencyCode "CE14"^^xsd:string ;
+    guide:competencyDescription "Conocimiento de los conceptos básicos de Ecología, sus objetivos..."^^rdf:langString .
+
+<http://guia-mad-bench.es/data/ecologia_book_1> rdf:type :DidacticResource ;
+    sch:name "Ecología" ;
+    guide:bibliographyTitle "Ecología Autor: R.L. Smith y T.M. Smith"@en ,
+        "Editorial Addison Wesley"@en .
+
+<http://guia-mad-bench.es/data/evento_p01> rdf:type :ScheduleEvent ;
+    sch:eventIndex 4^^xsd:integer ;
+    guide:activityDescription "P01: Practica de Sistema de Información Geográfica (Obligatoria; GIS, ordenador)"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/examen_global> rdf:type :ScheduleEvent ;
+    sch:eventIndex 17^^xsd:integer ;
+    guide:activityDescription "Prueba Evaluación Global"^^rdf:langString .

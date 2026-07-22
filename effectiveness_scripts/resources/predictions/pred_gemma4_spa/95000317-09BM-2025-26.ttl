@@ -1,0 +1,168 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Course Instance
+:course_95000317 a guide:Course ;
+    sch:name "95000317 - Fisiología De Sistemas" ;
+    guide:courseType "Obligatoria" ;
+    guide:numberOfCredits 6.0 ;
+    guide:semester "Segundo semestre" ;
+    sch:hasCourseInstance :guide_95000317 .
+
+# Course Guide
+:guide_95000317 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Fisiología De Sistemas" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:inpersonHours "Not specified" ;
+    guide:remoteHours "Not specified" ;
+    guide:totalHours "Not specified" ;
+    sch:instructor :lecturer_milagros_ramos_gomez ;
+    sch:director :lecturer_milagros_ramos_gomez ;
+    guide:hasSyllabus :syllabus_fisiologia ;
+    guide:hasEvaluation :eval_system_progresiva ;
+    guide:hasLearningResult :lr_ra99, :lr_ra96, :lr_ra95, :lr_ra98, :lr_ra97 ;
+    guide:hasCompetency :comp_ce12, :comp_ce49, :comp_ce52, :comp_ce53, :comp_ce54, 
+                        :comp_cg01, :comp_cg02, :comp_cg05, :comp_cg06, :comp_cg11, :comp_cg12 ;
+    guide:hasDidacticResource :res_tortora, :res_guyton, :res_silverthorn, :res_tresguerres .
+
+# Degree and University Center
+:degree_09bm a guide:BachelorDegree ;
+    sch:name "09BM - Grado En Ingenieria Biomedica" ;
+    guide:degreeCode "09BM" ;
+    guide:hasCourse :course_95000317 .
+
+:univ_center_ets a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" ;
+    guide:offers :degree_09bm .
+
+# Lecturers
+:lecturer_milagros_ramos_gomez a guide:Lecturer ;
+    sch:name "Milagros Ramos Gomez" ;
+    sch:email "milologras.ramos@upm.es" ;
+    guide:office "A035" ;
+    guide:tutorshipsSchedule "M - 09:00 - 10:00" .
+
+:lecturer_daniel_gonzalez_nieto a guide:Lecturer ;
+    sch:name "Daniel Gonzalez Nieto" ;
+    sch:email "daniel.gonzalez.nieto@upm.es" ;
+    guide:office "A-035" ;
+    guide:tutorshipsSchedule "M - 10:30 - 11:30" .
+
+:lecturer_miguel_ramon_rodriguez_garcia a guide:Lecturer ;
+    sch:name "Miguel Ramón Rodriguez García" ;
+    sch:email "miguelramon.rodgarcia@ctb.upm.es" .
+
+# Competencies
+:comp_ce12 a guide:Competency ; guide:competencyCode "CE12" ; guide:competencyDescription "Saber buscar, obtener e interpretar la información de las principales bases de datos biomédicas y bibliográficos." .
+:comp_ce49 a guide:Competency ; guide:competencyCode "CE49" ; guide:competencyDescription "Conocer los sistemas fisiológicos y órganos humanos tanto a nivel estructural como funcional y sus patologías más relevantes." .
+:comp_ce52 a guide:Competency ; guide:competencyCode "CE52" ; guide:competencyDescription "Comprender el funcionamiento de los diferentes órganos y sistemas del cuerpo humano y la regulación de sus funciones para el mantenimiento de la homeostasis." .
+:comp_ce53 a guide:Competency ; guide:competencyCode "CE53" ; guide:competencyDescription "Conocer y comprender las modificaciones fisiológicas y morfológicas que los procesos patológicos más relevantes ocasionan en el organismo humano." .
+:comp_ce54 a guide:Competency ; guide:competencyCode "CE5CA" ; guide:competencyDescription "Aplicar de manera fundamentada, crítica y argumentada los principios fisiológicos para contribuir al desarrollo tecnológico en el ámbito de la salud." .
+:comp_cg01 a guide:Competency ; guide:competencyCode "CG01" ; guide:competencyDescription "Desarrollar las habilidades de aprendizaje necesarias para emprender actividades o estudios posteriores de forma autónoma y con confianza." .
+:comp_cg02 a guide:Competency ; guide:competencyCode "CG02" ; guide:competencyDescription "Aplicar de forma profesional a su trabajo los conocimientos adquiridos." .
+:comp_cg05 a guide:Competency ; guide:competencyCode "CG05" ; guide:competencyDescription "Tener capacidad de análisis y síntesis, pensar de forma integrada, abordar los problemas desde diferentes perspectivas..." .
+:comp_cg06 a guide:Competency ; guide:competencyCode "CG06" ; guide:competencyDescription "Adoptar una actitud ante los problemas de su competencia que considere que su papel no es exclusivamente aportar soluciones..." .
+:comp_cg11 a guide:Competency ; guide:competencyCode "CG11" ; guide:competencyDescription "Elaborar y defender argumentos y resolver los problemas de forma efectiva y creativa." .
+:comp_cg12 a guide:Competency ; guide:competencyCode "CG12" ; guide:competencyDescription "Tener capacidad de iniciativa, integración, colaboración y potenciación de la discusión crítica en el ámbito del trabajo en equipo." .
+
+# Learning Results
+:lr_ra99 a guide:LearningResult ; guide:learningResultCode "RA99" ; guide:learningResultDescription "Adquirir una participación creativa, como tecnólogos, en el análisis de los problemas biomédicos planteados..." .
+:lr_ra96 a guide:LearningResult ; guide:learningResultCode "RA96" ; guide:learningResultDescription "Identificar las funciones de los distintos sistemas fisiológicos y los mecanismos biológicos que permiten el mantenimiento de la homeostasis" .
+:lr_ra95 a guide:LearningResult ; guide:learningResultCode "RA95" ; guide:learningResultDescription "Conocimientos básicos sobre el funcionamiento e interacción de los diferentes sistemas caracterías de la fisiología humana." .
+:lr_ra98 a guide:LearningResult ; guide:learningResultCode "RA98" ; guide:learningResultDescription "Adquirir terminología propia de ciencias de la salud." .
+:lr_ra97 a guide:LearningResult ; guide:learningResultCode "RA97" ; guide:learningResultDescription "Reconocer y distinguir los distintos órganos y sistemas del cuerpo humano para su identificación mediante distintos sistemas de imagen." .
+
+# Syllabus
+:syllabus_fisiologia a guide:Syllabus ;
+    guide:hasItem :item_intro, :item_nervous, :item_circulatory, :item_respiratory, :item_endocrine, :item_renal, :item_digestive, :item_immune .
+
+:item_intro a guide:SyllabusItem ; guide:syllabusDescription "Introducción a la fisiología" ; guide:itemIndex 1 .
+:item_nervous a guide:SyllabusItem ; guide:syllabusDescription "Sistema nervioso" ; guide:itemIndex 2 .
+:item_circulatory a guide:SyllabusItem ; guide:syllabusDescription "Sistema circulatorio. Sistema hematopoyetico" ; guide:itemIndex 3 .
+:item_respiratory a guide:SyllabusItem ; guide:syllabusDescription "Sistema respiratorio" ; guide:itemIndex 4 .
+:item_endocrine a guide:SyllabusItem ; guide:syllabusDescription "Sistema endocrino" ; guide:itemIndex 5 .
+:item_renal a guide:SyllabusItem ; guide:syllabusDescription "Sistema Renal" ; guide:itemIndex 6 .
+:item_digestive a guide:SyllabusItem ; guide:syllabusDescription "Sistema digestivo" ; guide:itemIndex 7 .
+:item_immune a guide:SyllabusItem ; guide:syllabusDescription "Sistema inmunológico" ; guide:itemIndex 8 .
+
+# Evaluation System and Trials
+:eval_system_progresiva a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global mediante prueba final." ;
+    guide:hasEvaluationTrial :trial_1p, :trial_2p, :trial_global, :trial_extraordinary .
+
+:trial_1p a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Progresiva" ;
+    guide:trialWeek "10" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "/ 10" ;
+    guide:trialDescription "Examen primer parcial (1P)" ;
+    guide:involvesCompetency :comp_cg01, :comp_ce54, :comp_cg05, :comp_ce49, :comp_ce52, :comp_cg06, :comp_cg11, :comp_cg12, :comp_ce53, :comp_cg02, :comp_ce12 .
+
+:trial_2p a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Progresiva" ;
+    guide:trialWeek "17" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "/ 10" ;
+    guide:trialDescription "Examen segundo parcial (2P)" ;
+    guide:involvesCompetency :comp_ce49, :comp_ce52, :comp_cg06, :comp_cg11, :comp_cg12, :comp_ce53, :comp_cg05, :comp_cg02, :comp_ce12, :comp_cg01, :comp_ce54 .
+
+:trial_global a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Global" ;
+    guide:trialWeek "17" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialDescription "Examen Global (1P+2P)" ;
+    guide:involvesCompetency :comp_cg01, :comp_ce54, :comp_cg05, :comp_ce49, :comp_ce52, :comp_cg06, :comp_cg11, :comp_cg12, :comp_ce53, :comp_cg02, :comp_ce12 .
+
+:trial_extraordinary a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Extraordinaria" ;
+    guide:trialDescription "Examen del contenido total de la asignatura" ;
+    guide:minimumScore "5 / 10" ;
+    guide:involvesCompetency :comp_cg01, :comp_ce54, :comp_cg05, :comp_ce49, :comp_ce52, :comp_cg06, :comp_cg11, :comp_cg12, :comp_ce53, :comp_cg02, :comp_ce12 .
+
+# Activities (from Schedule)
+:act_week1 a guide:Activity ;
+    guide:activityDescription "Introducción/Metabolismo" ;
+    guide:activityDuration 4.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:act_week4_lab a guide:Activity ;
+    guide:activityDescription "Práctica de Laboratorio simulación" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_tortora a guide:DidacticResource ;
+    guide:bibliographyTitle "Tortora, G.H. & Evans, R.L. (2009). Principles of human phisiology" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "básico" .
+
+:res_guyton a guide:DidacticResource ;
+    guide:bibliographyTitle "Guyton, A. C., & Hall, J. E. (2011). Tratado de fisiología médica" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "básico" .
+
+:res_silverthorn a guide:DidacticResource ;
+    guide:bibliographyTitle "Silverthorn, D. U. (2008). Fisiología humana : un enfoque integrado" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "consulta" .
+
+:res_tresguerres a guide:DidacticResource ;
+    guide:bibliographyTitle "Tresguerres, J. A. F., & Ariznavarreta Ruiz, C. (2005). Fisiología humana" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "consulta" .
+
+# Required Knowledge
+:req_knowledge_fisiologia a guide:RequiredKnowledge ;
+    guide:previousCourses "BiologÍa Celular Y Tisular, BioquÍmica Y BiologÍa Molecular" ;
+    guide:previousKnowledge "El plan de estudios Grado en Ingenieria Biomedica no tiene definidos otros conocimientos previos para esta asignatura." .

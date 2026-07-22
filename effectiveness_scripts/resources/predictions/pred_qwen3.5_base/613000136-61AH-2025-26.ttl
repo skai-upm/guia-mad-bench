@@ -1,0 +1,139 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://w3id.org/def/guia#ANX_PRCL_001_01> rdf:type :CourseGuide ;
+    dc:title "Metodología y Técnicas de Investigación"@es ;
+    sch:courseCode 613000136 ;
+    guide:numberOfCredits "3"^^xsd:decimal ;
+    guide:syllabusDescription "Bloque I (Investigación) y Bloque II (Proyectos)"@en ;
+    guide:teachingPeriodMonths "Septiembre-Enero"@es ;
+    sch:name "Metodología Y Técnicas De Investigación"@en ;
+    dct:creator <http://w3id.org/def/guia#David_Camacho_Fernandez> ,
+               <http://w3id.org/def/guia#Jose_Eugenio_Naranjo_Hernandez> .
+
+<http://w3id.org/def/guia#ANX_PRCL_001_01> sch:inLanguage "Castellano"@en ;
+    guide:scholarship <https://schema.org/> ; # Placeholder for scholarship if applicable, using generic schema org context.
+    dct:publisher <http://w3id.org/def/guia#ETS_Sistemas_Informaticos> .
+
+<http://w3id.org/def/guia#ANX_PRCL_001_01> sch:courseSchedule <http://w3id.org/def/guia#SCHEDULE_ANXPRCL001> ;
+    guide:syllabus <http://w3id.org/def/guia#SYLLABUS_METODOLOGIA>.
+
+<http://w3id.org/def/guia#61AH_MasterDegree> rdf:type :MasterDegree , sch:CourseInstance .
+<http://w3id.org/def/guia#ANX_PRCL_001_01> guide:hasCourse <http://w3id.org/def/guia#METODOLOGIA_COURSE>.
+
+<http://w3id.org/def/guia#61AH_MasterDegree> sch:numberOfCredits "9"^^xsd:decimal ;
+    dct:title "Máster Universitario En Aprendizaje Automático Y Datos Masivos"@es .
+
+<http://w3id.org/def/guia#METODOLOGIA_COURSE> rdf:type :Course , sch:CourseInstance ;
+    guide:courseYear 2025-26 ; # Assuming year string as per text "Curso Académico"
+    guide:syllabusDescription "Metodología y Técnicas de Investigación"@es .
+
+<http://w3id.org/def/guia#METODOLOGIA_COURSE> sch:hasCourseInstance <http://w3id.org/def/guia#ANX_PRCL_001_01>.
+<http://w3id.org/def/guia#61AH_MasterDegree> guide:offers <http://w3id.org/def/guia#ETS_Sistemas_Informaticos>.
+
+<http://w3id.org/def/guia#ETS_Sistemas_Informaticos> rdf:type sch:Organization ;
+    dct:title "E.T.S. de Ing. de Sistemas Informáticos"@es .
+
+#################################################################
+###  Lecturers ###
+#################################################################
+
+<http://w3id.org/def/guia#David_Camacho_Fernandez> rdf:type :Lecturer , sch:Person ;
+    guide:name "David Camacho Fernandez"@en ;
+    guide:office "1215"^^xsd:string ;
+    sch:email <mailto:david.camacho@upm.es> .
+
+<http://w3id.org/def/guia#Jose_Eugenio_Naranjo_Hernandez> rdf:type :Lecturer , sch:Person ;
+    guide:name "Jose Eugenio Naranjo Hernandez"@en ;
+    guide:office "4120"^^xsd:string ;
+    sch:email <mailto:joseeugenio.naranjo@upm.es>.
+
+#################################################################
+###  Competencies ###
+#################################################################
+
+<http://w3id.org/def/guia#CB10> rdf:type :Competency ;
+    guide:competencyCode "CB10"^^xsd:string ;
+    guide:competencyDescription "Que los estudiantes posean las habilidades de aprendizaje que les permitan continuar estudiando..."@es .
+
+<http://w3id.org/def/guia#S01> rdf:type :LearningResult ;
+    guide:learningResultCode "S01"^^xsd:string ;
+    guide:learningResultDescription "El alumno elabora artículos e informes científicos que demuestran una o varias hipótesis..."@es .
+
+#################################################################
+###  Syllabus ###
+#################################################################
+
+<http://w3id.org/def/guia#SYLLABUS_METODOLOGIA> rdf:type :Syllabus ;
+    guide:hasItem <http://w3id.org/def/guia#ITEM_1.1>,
+                 <http://w3id.org/def/guia#ITEM_2.6>.
+
+<http://w3id.org/def/guia#METODOLOGIA_COURSE> guide:hasSyllabus <http://w3id.org/def/guia#SYLLABUS_METODOLOGIA>.
+<http://w3id.org/def/guia#ITEM_1.1> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "El conocimiento y la investigación"@es .
+
+#################################################################
+###  Schedule ###
+#################################################################
+
+<http://w3id.org/def/guia#SCHEDULE_ANXPRCL001> rdf:type :Schedule , sch:EventSchedule ;
+    sch:eventSchedule <http://w3id.org/def/guia#EVENT_1>,
+                     <http://w3id.org/def/guia#EVENT_5>.
+
+<http://w3id.org/def/guia#METODOLOGIA_COURSE> guide:hasActivity <http://w3id.org/def/guia#ACTIVITY_LECCION_MAGISTRAL>.
+
+#################################################################
+###  Evaluation ###
+#################################################################
+
+<http://w3id.org/def/guia#EVAL_SYSTEM_METODOLOGIA> rdf:type :EvaluationSystem ;
+    guide:evaluationDescription "Dos evaluaciones progresivas y una global"@es .
+
+<http://w3id.org/def/guia#TRIAL_1> rdf:type :EvaluationTrial , sch:EventSchedule ;
+    guide:hasSyllabusItem <http://w3id.org/def/guia#ITEM_RESEARCH_WORK>, # Placeholder for specific item if needed, using generic link.
+    guide:trialType "Presentación en Grupo"@es ;
+    guide:gradePercentage "50"^^xsd:string ;
+    sch:eventSchedule <http://w3id.org/def/guia#EVENT_1>.
+
+<http://w3id.org/def/guia#TRIAL_2> rdf:type :EvaluationTrial , sch:EventSchedule ;
+    guide:trialType "Exposición de un proyecto"@es ;
+    guide:gradePercentage "50"^^xsd:string .
+
+#################################################################
+###  Resources ###
+#################################################################
+
+<http://w3id.org/def/guia#RES_HOPF> rdf:type :DidacticResource , sch:BibliographicCitation ;
+    guide:bibliographyTitle "Fake science and the knowledge crisis"@en ;
+    guide:bibliographyType "Biblioteca"^^xsd:string .
+
+#################################################################
+###  Schedule Events ###
+#################################################################
+
+<http://w3id.org/def/guia#EVENT_1> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 3^^xsd:integer ; # Based on table Sem column value '3' for eval trial context, though mapped to event index here.
+    guide:eventWeek "Semestre 3"^^xsd:string .
+
+<http://w3id.org/def/guia#EVENT_5> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 5^^xsd:integer ; # Based on table Sem column value '5' for eval trial context.
+    guide:eventWeek "Semestre 5"^^xsd:string .
+
+<http://w3id.org/def/guia#EVENT_17> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 17^^xsd:integer ; # Based on table Sem column value '17' for global eval.
+    guide:eventWeek "Semestre 17"^^xsd:string .
+
+#################################################################
+###  Activities ###
+#################################################################
+
+<http://w3id.org/def/guia#ACTIVITY_LECCION_MAGISTRAL> rdf:type :Activity ;
+    guide:activityDescription "Lección Magistral"@es ;
+    om:unit <om:Unit>. # Placeholder for unit type.

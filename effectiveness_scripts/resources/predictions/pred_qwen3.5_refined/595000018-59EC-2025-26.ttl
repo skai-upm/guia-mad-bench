@@ -1,0 +1,59 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide/GA_59EC_595000018> rdf:type :CourseGuide ;
+    sch:name "Ciencia, Tecnologia Y Sociedad"@en ;
+    dc:title "Guía de Aprendizaje - Ciencia, Tecnología y Sociedad" ;
+    dct:creator "Ivan Pau De La Cruz", "Miguel Angel Valero Duboy" ;
+    guide:numberOfCredits 3^^xsd:decimal ;
+    sch:description "La asignatura pretende promover la reflexión sobre las interacciones entre la sociedad actual y el desarrollo tecnológico."@en .
+
+<http://guia-mad-bench.es/data/degree/GA_59EC> rdf:type :BachelorDegree ;
+    sch:name "Grado En Ingenieria Electronica De Comunicaciones"@en ;
+    guide:hasCourseInstance <http://guia-mad-bench.es/data/course-guide/GA_59EC_595000018> .
+
+<http://guia-mad-bench.es/data/lecturer/IvanPauDeLaCruz> rdf:type :Lecturer ;
+    sch:name "Ivan Pau De La Cruz"@en ;
+    sch:email "ivan.pau@upm.es"^^xsd:string ;
+    guide:sch:director <http://guia-mad-bench.es/data/course-guide/GA_59EC_595000018> .
+
+<http://guia-mad-bench.es/data/lecturer/MiguelAngelValeroDuboy> rdf:type :Lecturer ;
+    sch:name "Miguel Angel Valero Duboy"@en ;
+    sch:email "miguelangel.valero@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CG02> rdf:type :Competency ;
+    guide:competencyCode "CG 02"^^xsd:string ;
+    guide:competencyDescription "Capacidad de búsqueda y selección de información, de razonamiento crítico..."@en .
+
+<http://guia-mad-bench.es/data/learning-result/RA195> rdf:type :LearningResult ;
+    guide:learningResultCode "RA195"^^xsd:string ;
+    guide:learningResultDescription "Podrá contrastar las ideas aportadas por diferentes fuentes"@en .
+
+<http://guia-mad-bench.es/data/syllabus/GA_59EC> rdf:type :Syllabus ;
+    sch:name "Temario de la asignatura" ;
+    guide:syllabusDescription "La asignatura estudia las interacciones entre sociedad y tecnología."@en .
+
+<http://guia-mad-bench.es/data/syllabus-item/SostenibilidadEcológica> rdf:type :SyllabusItem ;
+    sch:name "1. Sostenibilidad ecológica y social" ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "Se estudian las revoluciones científicas y tecnológicas..."@en .
+
+<http://guia-mad-bench.es/data/schedule-event/Sem1> rdf:type :ScheduleEvent ;
+    sch:name "Introducción a la asignatura" ;
+    guide:eventIndex 1^^xsd:integer ;
+    guide:activityDescription "**Introducción a la asignatura**<br>Duración: 02:30"@en .
+
+<http://guia-mad-bench.es/data/evaluation-trial/Tema1> rdf:type :EvaluationTrial ;
+    sch:name "Evaluación contenidos Tema 1" ;
+    guide:trialType "Examen Escrito"^^xsd:string ;
+    guide:gradePercentage "25%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/resource/Kuhn> rdf:type :DidacticResource ;
+    sch:name "La estructura de las revoluciones científicas. T. Kuhn"@en ;
+    guide:bibliographyTitle "La estructura de las revoluciones científicas"^^xsd:string .

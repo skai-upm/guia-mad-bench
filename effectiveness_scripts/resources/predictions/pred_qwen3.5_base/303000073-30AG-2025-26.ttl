@@ -1,0 +1,104 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://w3id.org/def/guia#courseGuide_PRCL001> rdf:type :CourseGuide ;
+    dct:title "ANX-PR/CL/001 - GUÍA DE APRENDIZAJE"@en ;
+    sch:hasSyllabus <http://w3id.org/def/guia#syllabus_PRCL001> ;
+    sch:eventSchedule <http://w3id.org/def/guia#schedule_PRCL001> ;
+    guide:hasEvaluation <http://w3id.org/def/guia#evaluationSystem_PRCL001> ;
+    guide:numberOfCredits "3"^^xsd:decimal ;
+    sch:name "Organizacion De Los Centros Docentes de Enseñanza Secundaria Y De Formacion Profesional"@en ;
+    guide:teachingPeriodMonths "Septiembre-Enero"@en ;
+    guide:inLanguage "Castellano"@en ;
+    dct:creator <http://w3id.org/def/guia#lecturer_RodrigoPardo> ,
+              <http://w3id.org/def/guia#lecturer_OlgaSegovia> .
+
+<http://w3id.org/def/guia#degree_30AG> rdf:type :MasterDegree ;
+    sch:name "MU en Formacion del Profesorado en Eso Bachillerato y Fp (esp Educ Física)"@en ;
+    guide:degreeCode "30AG"@en .
+
+<http://w3id.org/def/guia#course_303000073> rdf:type :Course, sch:Course ;
+    sch:name "Organizacion De Los Centros Docentes de Enseñanza Secundaria Y De Formacion Profesional"@en ;
+    guide:numberOfCredits "3"^^xsd:decimal ;
+    guide:courseYear "1"^^xsd:integer ;
+    guide:semester "Primer semestre"@en .
+
+<http://w3id.org/def/guia#lecturer_RodrigoPardo> rdf:type :Lecturer, sch:Person ;
+    sch:name "Rodrigo Pardo Garcia"@en ;
+    sch:email <mailto:rodrigo.pardo@upm.es> ;
+    guide:office "503"^^xsd:string .
+
+<http://w3id.org/def/guia#lecturer_OlgaSegovia> rdf:type :Lecturer, sch:Person ;
+    sch:name "Olga Segovia Pulido"@en ;
+    sch:email <mailto:olga.segovia@upm.es> .
+
+<http://w3id.org/def/guia#syllabus_PRCL001> rdf:type :Syllabus, sch:Syllabus ;
+    guide:syllabusDescription "MARCO LEGAL Y EVOLUCIÓN DEL SISTEMA EDUCATIVO; ORGANIZACIÓN Y GESTIÓN DE LOS CENTROS ESCOLARES..."@en .
+
+<http://w3id.org/def/guia#syllabusItem_1> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "MARCO LEGAL Y EVOLUCIÓN DEL SISTEMA EDUCATIVO"@en ;
+    guide:itemIndex "1"^^xsd:integer .
+
+<http://w3id.org/def/guia#syllabusItem_2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "ORGANIZACIÓN Y GESTIÓN DE LOS CENTROS ESCOLARES"@en ;
+    guide:itemIndex "2"^^xsd:integer .
+
+<http://w3id.org/def/guia#syllabusItem_3> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "DOCUMENTOS INSTITUCIONALES"@en ;
+    guide:itemIndex "3"^^xsd:integer .
+
+<http://w3id.org/def/guia#schedule_PRCL001> rdf:type :Schedule, sch:Schedule ;
+    sch:eventSchedule <http://w3id.org/def/guia#scheduleEvent_1>,
+                     <http://w3id.org/def/guia#scheduleEvent_2>,
+                     <http://w3id.org/def/guia#scheduleEvent_5> .
+
+<http://w3id.org/def/guia#scheduleEvent_1> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "1"^^xsd:integer ;
+    guide:eventWeek "Semana 1"@en ;
+    guide:hasActivity <http://w3id.org/def/guia#activity_Introduccion>.
+
+<http://w3id.org/def/guia#scheduleEvent_2> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "2"^^xsd:integer ;
+    guide:eventWeek "Semana 2"@en .
+
+<http://w3id.org/def/guia#activity_Introduccion> rdf:type :Activity ;
+    guide:activityDescription "**Introducción asignatura**"@en ;
+    guide:activityDuration "01:30"^^xsd:string ;
+    guide:activityFormat "Lección Magistral"@en .
+
+<http://w3id.org/def/guia#evaluationSystem_PRCL001> rdf:type :EvaluationSystem, sch:EvaluationSystem ;
+    guide:hasEvaluationTrial <http://w3id.org/def/guia#trial_Progresiva>,
+                            <http://w3id.org/def/guia#trial_Global>.
+
+<http://w3id.org/def/guia#trial_Progresiva> rdf:type :EvaluationTrial ;
+    guide:hasScheduleEvent <http://w3id.org/def/guia#scheduleEvent_1>,
+                          <http://w3id.org/def/guia#scheduleEvent_2>,
+                          <http://w3id.org/def/guia#scheduleEvent_5> ;
+    guide:trialDescription "Desafío de la escuela del S. XXI"@en ;
+    guide:trialMode "Presencial"^^xsd:string ;
+    guide:trialType "Trabajo Individual"@en .
+
+<http://w3id.org/def/guia#courseGuide_PRCL001> guide:hasCompetency <http://w3id.org/def/guia#competency_CE05>,
+                                              <http://w3id.org/def/guia#competency_RA63>.
+
+<http://w3id.org/def/guia#competency_CE05> rdf:type :Competency ;
+    guide:competencyCode "CE05"^^xsd:string ;
+    guide:competencyDescription "Conocer los procesos de interacción en el aula y en el centro, abordar y resolver posibles problemas."@en .
+
+<http://w3id.org/def/guia#learningResult_RA63> rdf:type :LearningResult ;
+    guide:learningResultCode "RA63"^^xsd:string ;
+    guide:learningResultDescription "Saber identificar, elaborar y evaluar los diferentes documentos de trabajo relativos a la organización docente en los centros educativos"@en .
+
+<http://w3id.org/def/guia#courseGuide_PRCL001> guide:hasDidacticResource <http://w3id.org/def/guia#resource_Aula>,
+                                              <http://w3id.org/def/guia#resource_Moodle>.
+
+<http://w3id.org/def/guia#resource_Aula> rdf:type :DidacticResource ;
+    guide:bibliographyTitle "Aula"@en .
+
+<http://w3id.org/def/guia#courseGuide_PRCL001> sch:director <http://w3id.org/def/guia#lecturer_RodrigoPardo>.

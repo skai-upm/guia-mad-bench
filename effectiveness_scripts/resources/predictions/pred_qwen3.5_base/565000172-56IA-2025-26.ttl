@@ -1,0 +1,242 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Instance Data for Course Guide GA_56IA_565000172
+#################################################################
+
+<http://guia-mad-bench.es/data/guide/GA_56IA_565000172> a guide:CourseGuide ;
+    dct:title "Sistemas Electronicos Digitales"@en ,
+        "ANX-PR/CL/001-01 GUÍA DE APRENDIZJE"@es ;
+    sch:name "Sistemas Electronicos Digitales" ;
+    guide:numberOfCredits 7.5 ;
+    guide:teachingPeriodMonths "Septiembre-Enero"@en ,
+        "September-January"@en ;
+    guide:inLanguage "Castellano"@en ;
+    dct:description "Esta asignatura, continuación lógica de Electrónica Digital y Microprocesadores..."@es ;
+    sch:courseCode 565000172 ;
+    guide:syllabus <http://guia-mad-bench.es/data/guide/Syllabus_GA_56IA> ,
+        <http://w3id.org/def/guia#Syllabus_Sistemas_Electronicos_Digitales> .
+
+#################################################################
+#    Degree and University Center
+#################################################################
+
+<http://guia-mad-bench.es/data/guide/BachelorDegree_56IA> a guide:BachelorDegree ;
+    rdfs:subClassOf guide:Degree ;
+    sch:name "Grado En Ingenieria Electronica Industrial Y Automatica"@en ,
+        "56IA - Grado en Ingeniería Electrónica..."@es ;
+    dct:description "An undergraduate degree programme that provides foundational higher education in a given field of study."@en .
+
+<http://guia-mad-bench.es/data/guide/UniversityCenter_ETS_ID> a guide:UniversityCenter , sch:Organization ;
+    rdfs:subClassOf sch:Organization ;
+    dct:description "An organizational unit within a university where degree programmes are taught..."@es ;
+    sch:name "E.T.S. de Ingeniería y Diseño Industrial"@en .
+
+#################################################################
+#    Course Instance Linkage
+#################################################################
+
+<http://guia-mad-bench.es/data/guide/Course_565000172> a guide:Course , sch:Course ;
+    rdfs:subClassOf sch:Course ;
+    dct:description "An academic course as defined in the GUIA model..."@en ;
+    sch:name "Sistemas Electronicos Digitales"@en ;
+    guide:numberOfCredits 7.5 ;
+    guide:courseYear 4 , # Cuarto curso (implied from context, though ontology says xsd:integer) .
+
+#################################################################
+#    Lecturers
+#################################################################
+
+<http://guia-mad-bench.es/data/guide/Lecturer_Alberto_Brunete> a guide:Lecturer ;
+    rdfs:subClassOf sch:Person , sch:Coordinator ; # Note: Ontology doesn't define Coordinator class, using Person subclass or just properties. I will use sch:director property on CourseGuide instead for the link to this person if possible? No, `sch:director` links Guide -> Lecturer.
+    dct:title "Alberto Brunete Gonzalez"@en ,
+        "Coordinador/a"@es ;
+    guide:office "C-107"@en ;
+    sch:name "Alberto Brunete Gonzalez" ;
+    sch:email "alberto.brunete@upm.es" .
+
+<http://guia-mad-bench.es/data/guide/Lecturer_Rebeca_Herrero> a guide:Lecturer , sch:Person ;
+    dct:title "Rebeca Herrero Martin"@en ;
+    guide:office "C-108"@en ;
+    sch:name "Rebeca Herrero Martin" ;
+    sch:email "rebeca.herrero@upm.es" .
+
+<http://guia-mad-bench.es/data/guide/Lecturer_Pedro_Castedo> a guide:Lecturer , sch:Person ;
+    dct:title "Pedro Luis Castedo Cepeda"@en ;
+    guide:office "C-204"@en ;
+    sch:name "Pedro Luis Castedo Cepeda" ;
+    sch:email "pedroluis.castedo@upm.es" .
+
+<http://guia-mad-bench.es/data/guide/Lecturer_Ruben_Nunez> a guide:Lecturer , sch:Person ;
+    dct:title "Ruben Nuñez Judez"@en ;
+    guide:office "C-108"@en ;
+    sch:name "Ruben Nuñez Judez" ;
+    sch:email "ruben.nunez@upm.es" .
+
+#################################################################
+#    Competencies and Learning Results
+#################################################################
+
+<http://guia-mad-bench.es/data/guide/Competency_CE_24> a guide:Competency ;
+    dct:title "CE 24"@es ,
+        "Capacidad para diseñar sistemas electrónicos..."@en ;
+    guide:competencyCode "CE 24" .
+
+<http://guia-mad-bench.es/data/guide/Competency_CE_25> a guide:Competency ;
+    dct:title "CE 25"@es ,
+        "Conocimiento y capacidad para el modelado..."@en ;
+    guide:competencyCode "CE 25" .
+
+<http://guia-mad-bench.es/data/guide/Competency_CG_1> a guide:Competency ;
+    dct:title "CG 1"@es ,
+        "Conocer y aplicar los conocimientos..."@en ;
+    guide:competencyCode "CG 1" .
+
+<http://guia-mad-bench.es/data/guide/Competency_CG_3> a guide:Competency ;
+    dct:title "CG 3"@es ,
+        "Aplicar los conocimientos adquiridos..."@en ;
+    guide:competencyCode "CG 3" .
+
+<http://guia-mad-bench.es/data/guide/Competency_CG_4> a guide:Competency ;
+    dct:title "CG 4"@es ,
+        "Comprender el impacto de la ingeniería..."@en ;
+    guide:competencyCode "CG 4" .
+
+<http://guia-mad-bench.es/data/guide/Competency_CG_6> a guide:Competency ;
+    dct:title "CG 6"@es ,
+        "Poseer las habilidades de aprendizaje..."@en ;
+    guide:competencyCode "CG 6" .
+
+<http://guia-mad-bench.es/data/guide/Competency_CG_7> a guide:Competency ;
+    dct:title "CG 7"@es ,
+        "Incorporar las TIC y tecnologías..."@en ;
+    guide:competencyCode "CG 7" .
+
+<http://guia-mad-bench.es/data/guide/Competency_CG_10> a guide:Competency ;
+    dct:title "CG 10"@es ,
+        "Creatividad."@en ;
+    guide:competencyCode "CG 10" .
+
+#################################################################
+#    Learning Results (RA)
+#################################################################
+
+<http://guia-mad-bench.es/data/guide/LearningResult_RA58> a guide:LearningResult ;
+    dct:title "RA58"@es ,
+        "Conocimiento y capacidad para el modelado..."@en ;
+    guide:learningResultCode "RA58" .
+
+<http://guia-mad-bench.es/data/guide/LearningResult_RA234> a guide:LearningResult ;
+    dct:title "RA234"@es ,
+        "Utilizar terminología apropiada..."@en ;
+    guide:learningResultCode "RA234" .
+
+#################################################################
+#    Syllabus and Items
+#################################################################
+
+<http://guia-mad-bench.es/data/guide/Syllabus_GA_56IA> a guide:Syllabus , sch:Syllabus ;
+    dct:title "Sistemas Electronicos Digitales"@en ;
+    rdfs:comment "The structured outline of the course content..."@es .
+
+<http://guia-mad-bench.es/data/guide/SyllabusItem_1_Intro> a guide:SyllabusItem , sch:Event ; # Syllabus items are often topics, mapping to Event-like structure if needed or just Item
+    rdfs:subClassOf sch:Event ;
+    dct:title "Introducción"@es ;
+    guide:syllabusDescription "Introducción a la microelectrónica..."@en ;
+    guide:itemIndex 1 .
+
+<http://guia-mad-bench.es/data/guide/SyllabusItem_2_Diseño> a guide:SyllabusItem , sch:Event ;
+    rdfs:subClassOf sch:Event ;
+    dct:title "Diseño mediante Lenguajes de Descripción Hardware"@es ;
+    guide:syllabusDescription "VHDL. Sintaxis del VHDL..."@en ;
+    guide:itemIndex 2 .
+
+#################################################################
+#    Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/guide/Schedule_GA_56IA> a guide:Schedule , sch:Schedule ;
+    rdfs:subClassOf sch:Schedule ;
+    dct:title "Cronograma de la asignatura"@es .
+
+<http://guia-mad-bench.es/data/guide/Event_Sem1_Tema1> a guide:ScheduleEvent , sch:Event ;
+    rdfs:subClassOf sch:Event ;
+    dct:title "Tema 1 - Lección Magistral"@en ;
+    guide:eventIndex 1 .
+
+<http://guia-mad-bench.es/data/guide/Event_Sem5_Practica> a guide:ScheduleEvent , sch:Event ;
+    rdfs:subClassOf sch:Event ;
+    dct:title "Práctica 1 - Laboratorio"@en ;
+    guide:eventIndex 2 .
+
+#################################################################
+#    Evaluation System and Trials
+#################################################################
+
+<http://guia-mad-bench.es/data/guide/EvaluationSystem_GA_56IA> a guide:EvaluationSystem , sch:EvaluationActivity ; # Note: Ontology has EvaluationTrial, not Activity for system. I will use the class defined in ontology `guide:EvaluationSystem`.
+    rdfs:subClassOf guide:EvaluationSystem .
+
+<http://guia-mad-bench.es/data/guide/EvalTrial_Examen_Parcial> a guide:EvaluationTrial ;
+    dct:title "Examen parcial"@es ,
+        "Sem 11 - Examen Escrito"@en ;
+    sch:courseSchedule <http://w3id.org/def/guia#GA_56IA_565000172> . # Link to Guide? No, property is `guide:hasEvaluationTrial` on System.
+
+<http://guia-mad-bench.es/data/guide/EvalTrial_Examen_Parcial> a guide:EvaluationTrial ;
+    rdfs:subClassOf sch:Event , sch:CourseInstance ; # Using Event for Trial structure if needed, but ontology has EvaluationTrial class. I will use the specific class `guide:EvaluationTrial`.
+    dct:title "Examen parcial"@es .
+
+<http://guia-mad-bench.es/data/guide/EvalTrial_Examen_Parcial> a guide:EvaluationTrial ;
+    sch:courseSchedule <http://w3id.org/def/guia#GA_56IA_565000172> , # Link to ScheduleEvent? No, `guide:hasEvaluation` on Guide. I will link Trial to System via property defined in ontology (`guide:hasEvaluationTrial`).
+    guide:trialType "Examen Escrito"@en ;
+    guide:gradePercentage 25 .
+
+<http://guia-mad-bench.es/data/guide/EvalTrial_Examen_Global> a guide:EvaluationTrial ;
+    dct:title "Examen global"@es ,
+        "Sem 17 - Examen Global"@en ;
+    sch:name "Examen Escrito" ;
+    guide:trialType "Examen Escrito"@en ;
+    guide:gradePercentage 40 .
+
+#################################################################
+#    Didactic Resources
+#################################################################
+
+<http://guia-mad-bench.es/data/guide/Resource_Bibliography_1> a guide:DidacticResource , sch:BibliographicReference ; # Using generic class if not available, but ontology has `guide:DidacticResource`. I will use that.
+    rdfs:subClassOf guide:DidacticResource .
+
+<http://guia-mad-bench.es/data/guide/Resource_Bibliography_1> a guide:DidacticResource ;
+    dct:title "Circuit Design with VHDL, V. A."@en ,
+        "Pedroni 2010"@es ;
+    sch:name "Circuit Design with VHDL" .
+
+<http://guia-mad-bench.es/data/guide/Resource_Moodle> a guide:DidacticResource , sch:Event ; # Web resource often treated as Event-like in schema.org, but ontology has `guide:DidacticResource`. I will use that.
+    rdfs:subClassOf guide:DidacticResource .
+
+<http://guia-mad-bench.es/data/guide/Resource_Moodle> a guide:DidacticResource ;
+    dct:title "Moodle de la asignatura"@es ,
+        "Recursos web"@en ;
+    sch:name "https://moodle.upm.es/titulaciones/oficiales/login/login.php" .
+
+#################################################################
+#    Linking Entities to Course Guide Instance
+#################################################################
+
+<http://guia-mad-bench.es/data/guide/GA_56IA_565000172> guide:hasCourse <http://w3id.org/def/guia#GA_56IA_565000172_CourseInstance> ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/guide/Schedule_GA_56IA> .
+
+<http://guia-mad-bench.es/data/guide/GA_56IA_565000172> guide:syllabus <http://guia-mad-bench.es/data/guide/Syllabus_GA_56IA> ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/guide/Schedule_GA_56IA> .
+
+<http://w3id.org/def/guia#GA_56IA_565000172_CourseInstance> a guide:Course , sch:Course ;
+    rdfs:subClassOf sch:Course ;
+    dct:description "An academic course as defined in the GUIA model..."@en .
+
+<http://w3id.org/def/guia#GA_56IA_565000172_CourseInstance> guide:numberOfCredits 7.5 ;
+    sch:courseCode 565000172 .

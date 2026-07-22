@@ -1,0 +1,170 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+# --- Degree and University Center ---
+
+:degree_09BM rdf:type guide:BachelorDegree ;
+    sch:name "09BM - Grado en Ingenieria Biomedica" ;
+    guide:degreeCode "09BM" ;
+    guide:hasCourse :course_fisica .
+
+:ets_telecom rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" ;
+    guide:offers :degree_09BM .
+
+# --- Course and Course Guide ---
+
+:course_fisica rdf:type guide:Course ;
+    sch:name "95000301 - Física" ;
+    sch:courseCode 95000301 ;
+    guide:courseYear 2025 ;
+    guide:courseType "Básica" ;
+    sch:hasCourseInstance :guide_fisica_2526 .
+
+:guide_fisica_2526 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Física" ;
+    sch:description "Programa de la asignatura que cubre los temas de mecánica clásica, elasticidad, dinámica de fluidos y termodinámica." ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:numberOfCredits 6.0 ;
+    guide:totalHours "150" ; # Estimated based on ECTS (25h per credit)
+    sch:instructor :lecturer_elisa_antolin, :lecturer_simon_svatek ;
+    guide:hasSyllabus :syllabus_fisica ;
+    guide:hasCompetency :comp_CE06, :comp_CE07, :comp_CE10, :comp_CE11, :comp_CG01, :comp_CG04, :comp_CG05, :comp_CG07, :comp_CG08, :comp_CG09, :comp_CG11 ;
+    guide:hasLearningResult :lr_RA31_34, :lr_RA4, :lr_RA30_32, :lr_RA17, :lr_RA55, :lr_RA132, :lr_RA155, :lr_RA212, :lr_RA209, :lr_RA34_41, :lr_RA35_42, :lr_RA33_40, :lr_RA131, :lr_RA150, :lr_RA36_43, :lr_RA37_44 ;
+    guide:hasEvaluation :eval_system_fisica ;
+    guide:hasDidacticResource :res_tipler, :res_sears, :res_kane, :res_burbano, :res_jou, :res_moodle, :res_khan ;
+    sch:courseSchedule :schedule_fisica .
+
+# --- Lecturers ---
+
+:lecturer_elisa_antolin rdf:type guide:Lecturer ;
+    sch:name "Elisa Antolin Fernandez" ;
+    sch:email "elras.antolin@upm.es" ;
+    guide:office "Sin despacho asignado" ;
+    guide:tutorshipsSchedule "Sin horario. Previa petición de cita previa por email." .
+
+:lecturer_simon_svatek rdf:type guide:Lecturer ;
+    sch:name "Simon Aurel Svatek" ;
+    sch:email "simon.svatek@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. Previa petición de cita previa por email." .
+
+:lecturer_miguel_montes rdf:type guide:Lecturer ;
+    sch:name "Miguel Montes Bajo" ;
+    sch:email "miguel.montes@upm.es" .
+
+:lecturer_daniel_fernandez rdf:type guide:Lecturer ;
+    sch:name "Daniel Fernandez Muñoz" ;
+    sch:email "daniel.fernandezm@upm.es" .
+
+:lecturer_pablo_fernandez rdf:type guide:Lecturer ;
+    sch:name "Pablo Fernandez Palacios" ;
+    sch:email "pablo.fpalacios@upm.es" .
+
+# --- Competencies ---
+
+:comp_CE06 rdf:type guide:Competency ;
+    guide:competencyCode "CE06" ;
+    guide:competencyDescription "Comprender y saber calcular el equilibrio y la $\text{dinámica}$ de sistemas mecánicos" .
+
+:comp_CE07 rdf:type guide:Competency ;
+    guide:competencyCode "CE07" ;
+    guide:competencyDescription "Saber aplicar las ecuaciones elementales de la mecánica de fluidos en el cálculo de sistemas de conducción convencionales macroscópicos y en microfluídica." .
+
+:comp_CG04 rdf:type guide:Competency ;
+    guide:competencyCode "CG04" ;
+    guide:competencyDescription "Trabajar de forma adecuada en un laboratorio incluyendo un registro anotado de las actividades y seguridad, manipulación y eliminación de residuos químicos o biológicos." .
+
+# --- Learning Results ---
+
+:lr_RA31_34 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA31-RA34" ;
+    guide:learningResultDescription "Conocer, comprender y dominar los conceptos y principios básicos de la Dinámica de sistemas" .
+
+:lr_RA4 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA4" ;
+    guide:learningResultDescription "Capacidad para emplear con rigor el lenguaje matemático." .
+
+# --- Syllabus ---
+
+:syllabus_fisica rdf:type guide:Syllabus ;
+    guide:hasItem :item_mecánica, :item_elasticidad, :item_fluidos, :item_termodinamica .
+
+:item_mecánica rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Mecánica: Análisis dimensional, Vectores, Dinámica y cinemática de la partícula, Trabajo y energía, Sistemas de partículas y sólido rígido, Equilibrio y estática." .
+
+:item_elasticidad rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Elasticidad: Ley de Hooke, coeficientes elásticos, Flexión y torsión." .
+
+# --- Evaluation System ---
+
+:eval_system_fisica rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva. La nota final se calcula según la realización de pruebas de control, exámenes y prácticas de laboratorio." ;
+    guide:hasEvaluationTrial :trial_exam_control1, :trial_exam_p1, :trial_lab_eval, :trial_exam_final .
+
+:trial_exam_control1 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "5%" ;
+    guide:minimumScore "/ 10" ;
+    guide:eventWeek "4" .
+
+:trial_exam_p1 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "37.5%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:eventWeek "9" .
+
+:trial_lab_eval rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo en Grupo" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "15%" ;
+    guide:eventWeek "14" .
+
+# --- Schedule and Activities ---
+
+:schedule_fisica rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week3, :event_week4 .
+
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_leccion_magistral_1, :act_clase_problemas_1 .
+
+:act_leccion_magistral_1 rdf:type guide:Activity ;
+    guide:activityDescription "Análisis dimensional. Vectores." ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:act_clase_problemas_1 rdf:type guide:Activity ;
+    guide:activityDescription "Análisis dimensional. Vectores. Ejemplos y problemas" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Clase de Problemas" ;
+    guide:attendanceType "Presencial" .
+
+# --- Didactic Resources ---
+
+:res_tipler rdf:type guide:DidacticResource ;
+    sch:name "Tipler, P.A., Mosca, G. 'Física', vol. 1 y 2" ;
+    guide:bibliographyTitle "Física, vol. 1 y 2" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_moodle rdf:type guide:DidacticResource ;
+    sch:name "Moodle UPM" ;
+    guide:bibliographyTitle "http://moodle.upim.es/titulaciones/oficiales/" ;
+    guide:bibliographyType "Recurso Web" .
+
+:res_khan rdf:type guide:DidacticResource ;
+    sch:name "Khan Academy Physics" ;
+    guide:bibliographyTitle "https://www.khanacademy.org/science/physics" ;
+    guide:bibliographyType "Recurso Web" .

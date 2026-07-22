@@ -1,0 +1,160 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+# Course Guide Instance
+_:courseGuide_GeneticaAnimal rdf:type guide:CourseGuide ;
+    sch:name "Genética Animal" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:numberOfCredits 4.0 ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:inpersonHours "Not specified" ;
+    guide:remoteHours "Not specified" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus _:syllabus_GeneticaAnimal ;
+    guide:hasCompetency _:comp_CB01, _:comp_CB03, _:comp_CB05, _:comp_CE18, _:comp_CG02, _:comp_CG07, _:comp_CG11, _:comp_CT04, _:comp_CT11 ;
+    guide:hasLearningResult _:lr_RA271, _:lr_RA273, _:lr_RA82, _:lr_RA272 ;
+    sch:instructor _:lecturer_NoraFormoso ;
+    guide:hasEvaluation _:evalSystem_GeneticaAnimal ;
+    sch:courseSchedule _:schedule_GeneticaAnimal ;
+    sch:description "La mejora genética animal trata de introducir un cambio en las frecuencias de aquellos alelos que condicionan, al menos parcialmente, los caracteres de interés económico." ;
+    sch:activitiesWorkload "26-27 hours per ECTS" .
+
+# Course Instance
+_:course_GeneticaAnimal rdf:type guide:Course ;
+    sch:name "Genética Animal" ;
+    sch:courseCode 205000113 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 2025 ;
+    guide:semester "Séptimo semestre" .
+
+# Degree Instance
+_:degree_Agricola rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Ingenieria Agricola" ;
+    guide:degreeCode "20IG" ;
+    guide:hasCourse _:course_GeneticaAnimal .
+
+# University Center Instance
+_:center_EtsiAgronomica rdf:type guide:UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas" ;
+    guide:offers _:degree_Agricola .
+
+# Lecturer Instance
+_:lecturer_NoraFormoso rdf:type guide:Lecturer ;
+    sch:name "Nora Formoso-Rafferty" ;
+    sch:email "nora.formosorafferty@upm.es" ;
+    guide:office "Campos" ;
+    guide:tutorshipsSchedule "L - 10:00 - 13:00 (contact via email)" .
+
+# Syllabus and Items
+_:syllabus_GeneticaAnimal rdf:type guide:Syllabus ;
+    guide:hasItem _:item_Intro, _:item_PopGen, _:item_Mejora .
+
+_:item_Intro rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a la genética animal" .
+
+_:item_PopGen rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Genética de poblaciones (Medidas de diversidad, Parentesco, Censo efectivo, Programas de conservación)" .
+
+_:item_Mejora rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Mejora (Predicción del mérito genético, Índices de selección, Valoración BLUP, GBLUP y GWAS)" .
+
+# Competencies
+_:comp_CB01 rdf:type guide:Competency ;
+    guide:competencyCode "CB01" ;
+    guide:competencyDescription "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de estudio..."@en .
+
+_:comp_CB03 rdf:type guide:Competency ;
+    guide:competencyCode "CB03" ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes..."@en .
+
+_:comp_CE18 rdf:type guide:Competency ;
+    guide:competencyCode "CE18" ;
+    guide:competencyDescription "Capacidad para conocer, comprender y utilizar los principios de la transferencia de tecnología..."@en .
+
+# Learning Results
+_:lr_RA271 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA271" ;
+    guide:learningResultDescription "Aplicar los principios de la genética a los procedimientos relacionados con la conservación, selección y mejora de especies de interés ganadero."@en .
+
+_:lr_RA273 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA273" ;
+    guide:learningResultDescription "Adquirir una base científica y tecnológica suficiente que le permitirá continuar su formación en estudios de postgrado."@en .
+
+# Evaluation System and Trials
+_:evalSystem_GeneticaAnimal rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación progresiva basado en la asistencia, tareas y pruebas." ;
+    guide:hasEvaluationTrial _:trial_Prog, _:trial_Global .
+
+_:trial_Prog rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "5/10" ;
+    guide:hasScheduleEvent _:event_ExamProg .
+
+_:trial_Global rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "85%" ;
+    guide:minimumScore "5/10" ;
+    guide:hasScheduleEvent _:event_ExamGlobal .
+
+# Schedule and Events
+_:schedule_GeneticaAnimal rdf:type guide:Schedule ;
+    sch:eventSchedule _:event_Lecture1, _:event_TaskSimulacion, _:event_ExamProg, _:event_ExamGlobal .
+
+_:event_Lecture1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity _:act_Lecture1 .
+
+_:act_Lecture1 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1: Introducción" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+_:event_TaskSimulacion rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "3" ;
+    guide:eventIndex 2 ;
+    guide:hasActivity _:act_TaskSimulacion .
+
+_:act_TaskSimulacion rdf:type guide:Activity ;
+    guide:activityDescription "Tarea Simulación Rebaño lechero" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Trabajo Individual" ;
+    guide:attendanceType "No presencial" .
+
+_:event_ExamProg rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "8" ;
+    guide:eventIndex 3 ;
+    guide:hasActivity _:act_ExamProg .
+
+_:act_ExamProg rdf:type guide:Activity ;
+    guide:activityDescription "Prueba de evaluación progresiva" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Prueba Telemática" ;
+    guide:attendanceType "Presencial" .
+
+# Required Knowledge
+_:req_Knowledge rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Producción De Rumiantes, Producción De Monogásticos, Estadística" .
+
+# Didactic Resources
+_:res_Falconer rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Falconer: Introducción a la genética cuantitativa" ;
+    guide:bibliographyType "Bibliografía" .
+
+_:res_Endog rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Endog" ;
+    guide:bibliographyType "Software/Equipamiento" .
+
+_:res_Moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Moodle" ;
+    guide:bibliographyType "Recursos web" .

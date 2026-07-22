@@ -1,0 +1,89 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guide#ANX_PR_CL_001_01> rdf:type :CourseGuide ;
+    sch:name "Design Of Magnetic Components"@en ,
+        "53001640 - Design Of Magnetic Components"@en ;
+    dc:title "Design Of Magnetic Components"@en ;
+    guide:numberOfCredits 3^^xsd:decimal ;
+    dct:creator <http://guia-mad-bench.es/data/guide#ALBERTO_DELGADO_EXPOSITO> .
+
+<http://guia-mad-bench.es/data/guide#Doble_Master_Ind_Elec> rdf:type :MasterDegree ;
+    sch:name "05BI - Doble Master Universitario Ingenieria Industrial - Electronica Industrial"@en .
+
+<http://guia-mad-bench.es/data/guide#ALBERTO_DELGADO_EXPOSITO> rdf:type :Lecturer ,
+        sch:Person ;
+    sch:name "Alberto Delgado Exposito"^^xsd:string ;
+    guide:office "CEI"@en ;
+    sch:email <mailto:a.delgado@upm.es> .
+
+<http://guia-mad-bench.es/data/guide#SYLLABUS_53001640> rdf:type :Syllabus ,
+        sch:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/guide#ITEM_INTRO>,
+                <http://guia-mad-bench.es/data/guide#ITEM_WINDING>,
+                <http://guia-mad-bench.es/data/guide#ITEM_CORES>.
+
+<http://guia-mad-bench.es/data/guide#SYLLABUS_53001640> guide:hasItem <http://guia-mad-bench.es/data/guide#ITEM_THERMAL>,
+                <http://guia-mad-bench.es/data/guide#ITEM_INDUCTORS>.
+
+<http://guia-mad-bench.es/data/guide#SYLLABUS_53001640> guide:hasItem <http://guia-mad-bench.es/data/guide#ITEM_TRANSFORMERS>,
+                <http://guia-mad-bench.es/data/guide#ITEM_LINKS>.
+
+<http://guia-mad-bench.es/data/guide#ANX_PR_CL_001_01> sch:courseSchedule <http://guia-mad-bench.es/data/guide#SCHEDULE_53001640> .
+<http://guia-mad-bench.es/data/guide#SCHEDULE_53001640> rdf:type :Schedule ,
+        sch:Schedule ;
+    guide:eventIndex 1^^xsd:integer,
+                2^^xsd:integer,
+                ...^^xsd:integer .
+
+<http://guia-mad-bench.es/data/guide#SCHEDULE_53001640> sch:eventSchedule <http://guia-mad-bench.es/data/guide#EVENT_SEM1>,
+        <http://guia-mad-bench.es/data/guide#EVENT_SEM2>.
+
+<http://guia-mad-bench.es/data/guide#ANX_PR_CL_001_01> guide:hasCompetency <http://guia-mad-bench.es/data/comp/MUEI_CB06>,
+        <http://guia-mad-bench.es/data/comp/MUII_CE16>.
+
+<http://guia-mad-bench.es/data/guide#ANX_PR_CL_001_01> guide:hasLearningResult <http://guia-mad-bench.es/data/res/Ra48>,
+        <http://guia-mad-bench.es/data/res/RA259>.
+
+<http://guia-mad-bench.es/data/guide#ANX_PR_CL_001_01> guide:hasEvaluationSystem <http://guia-mad-bench.es/data/eval/EVAL_SYSTEM_53001640> .
+<http://guia-mad-bench.es/data/eval/EVAL_SYSTEM_53001640> rdf:type :EvaluationSystem ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial/TRIAL_CAD>,
+        <http://guia-mad-bench.es/data/trial/TRIAL_DESIGN>.
+
+<http://guia-mad-bench.es/data/guide#ANX_PR_CL_001_01> guide:hasDidacticResource <http://guia-mad-bench.es/data/res/RESOURCE_WEB>,
+        <http://guia-mad-bench.es/data/res/RESOURCE_SLIDES>.
+
+<http://guia-mad-bench.es/data/guide#ITEM_INTRO> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Introduction"@en .
+
+<http://guia-mad-bench.es/data/guide#ITEM_WINDING> rdf:type :SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer,
+        guide:syllabusDescription "State of the art in winding technology"@en .
+
+<http://guia-mad-bench.es/data/comp/MUEI_CB06> rdf:type :Competency ;
+    guide:competencyCode "MUEI.CB06"^^xsd:string ,
+        guide:competencyDescription "Poseer y comprender conocimientos que aportan una base u oportunidad de ser originales"@en .
+
+<http://guia-mad-bench.es/data/res/Ra48> rdf:type :LearningResult ;
+    guide:learningResultCode "RA48"^^xsd:string ,
+        guide:learningResultDescription "? RA1 - Comprensión de los principios..."@en .
+
+<http://guia-mad-bench.es/data/trial/TRIAL_CAD> rdf:type :EvaluationTrial ;
+    sch:name "Training CAD Tool"@en,
+        guide:trialMode "No Presencial"^^xsd:string ,
+        guide:gradePercentage 10^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/trial/TRIAL_DESIGN> rdf:type :EvaluationTrial ;
+    sch:name "Practical Design case"@en,
+        guide:trialMode "Presencial"^^xsd:string ,
+        guide:gradePercentage 20^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/res/RESOURCE_WEB> rdf:type :DidacticResource ;
+    guide:bibliographyTitle "General magnetic components information"@en,
+        guide:bibliographyType "Recursos web"^^xsd:string .

@@ -1,0 +1,169 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+:Master_Ciberseguridad rdf:type guide:MasterDegree ;
+    sch:name "09AW - Master Universitario en Ciberseguridad" .
+
+:ETS_Telecomunicacion rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicación" .
+
+:Master_Ciberseguridad guide:hasCourse :Course_Servicios_Seguridad .
+
+# Course and Course Guide
+:Course_Servicios_Seguridad rdf:type guide:Course ;
+    sch:name "93001006 - Servicios de Seguridad en Red" ;
+    sch:courseCode 93001006 ;
+    guide:courseYear 2025 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Primer semestre" ;
+    sch:hasCourseInstance :Guide_Servicios_Seguridad .
+
+:Guide_Servicios_Seguridad rdf:type guide:CourseGuide ;
+    sch:name "93:001006 - Servicios de Seguridad en Red" ;
+    sch:description "La asignatura trata sobre los servicios de seguridad que permiten proteger la información en tránsito a través de las redes de comunicaciones." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:numberOfCredits 3.0 ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :Syllabus_Servicios_Seguridad ;
+    guide:hasCompetency :Comp_CE04, :Comp_CE05, :Comp_CG03 ;
+    guide:hasLearningResult :LR_RA10 ;
+    guide:hasEvaluation :EvalSystem_Servicios_Seguridad ;
+    guide:hasDidacticResource :Res_Moodle ;
+    sch:director :Lecturer_Diego_Rivera ;
+    sch:instructor :Lectera_Diego_Rivera ;
+    guide:totalHours "Estimado según créditos ECTS" ;
+    guide:inpersonHours "Según plan de estudios" ;
+    guide:remoteHours "Según plan de estudios" .
+
+# Faculty
+:Lecturer_Diego_Rivera rdf:type guide:Lecturer ;
+    sch:name "Diego Rivera Pinto" ;
+    sch:email "diego.rivera@upm.es" ;
+    guide:office "C-216" ;
+    guide:tutorshipsSchedule "Sin horario. Concertar cita por correo electrónico." .
+
+:Lecturer_Maria_Bernardos rdf:type guide:Lecturer ;
+    sch:name "María Del Socorro Bernardos Galindo" ;
+    sch:email "sbernardos@fi.upm.es" .
+
+:Lecturer_Hugo_Parada rdf:type guide:Lecturer ;
+    sch:name "Hugo Alexer Parada Gelvez" ;
+    sch:email "hugoalexer.parada@upm.es" .
+
+# Competencies
+:Comp_CE04 rdf:type guide:Competency ;
+    guide:competencyCode "CE04" ;
+    guide:competencyDescription "Capacidad para establecer una categorización de servicios de ciberseguridad para proteger a las infraestructuras conectadas en red." .
+
+:Comp_CE05 rdf:type guide:Competency ;
+    guide:competencyCode "CE05" ;
+    guide:competencyDescription "Capacidad de analizar y diseñar servicios de seguridad de control de acceso, protección de la información en tránsito y protección perimetral" .
+
+:Comp_CG03 rdf:type guide:Competency ;
+    guide:competencyCode "CG03" ;
+    guide:competencyDescription "Dotar al alumno de la capacidad de diseñar e implantar procedimientos de protección de la información asociados con los sistemas de información, las redes y comunicaciones telemáticas y los servicios de Internet, así como en la protección contra el fraude utilizando estos sistemas" .
+
+# Learning Results
+:LR_RA10 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA10" ;
+    guide:learningResultDescription "Analizar y seleccionar los mecanismos adecuados para proteger las comunicaciones" .
+
+# Syllabus
+:Syllabus_Servicios_Seguridad rdf:type guide:Syllabus ;
+    guide:hasItem :SyllabusItem_1, :SyllabusItem_2, :SyllabusItem_3, :SyllabusItem_4, :SyllabusItem_5, :SyllabusItem_6 .
+
+:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Protección de redes telemáticas y sistemas. Infraestructuras de seguridad." .
+
+:SyllabusItem_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Redes Privadas Virtuales (VPN)" .
+
+:SyllabusItem_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Seguridad en nivel de enlace, redes móviles y WiFi" .
+
+:SyllabusItem_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Seguridad en nivel de red: IPSEC" .
+
+:SyllabusItem_5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Seguridad en nivel de transporte: SSL/TLS" .
+
+:SyllabusItem_6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Seguridad en nivel de aplicación: SRTP, S/MIME, PGP" .
+
+# Evaluation System
+:EvalSystem_Servicios_Seguridad rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La asignatura se evaluará mediante un sistema de evaluación progresiva que consiste en la realización de cuatro trabajos prácticos... El resto de la nota final se obtiene a partir de un examen escrito." ;
+    guide:hasEvaluationTrial :Trial_Exam_Teoria, :Trial_Prácticas_Memorias, :Trial_Prácticas_Examen .
+
+:Trial_Exam_Teoria rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "60%" ;
+    guide:minimumScore "3.5 / 10" ;
+    guide:evaluationDuration "01:00" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :Comp_CG03, :Comp_CE04, :Comp_CE05 .
+
+:Trial_Prácticas_Memorias rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo en Grupo" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "3.5 / 10" ;
+    guide:evaluationDuration "01:00" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :Comp_CG03, :Comp_CE04, :Comp_CE05 .
+
+:Trial_Prácticas_Examen rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "3.5 / 10" ;
+    guide:evaluationDuration "01:00" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :Comp_CG03, :Comp_CE04, :Comp_CE05 .
+
+# Schedule and Activities
+:Schedule_Servicios_Seguridad rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week1, :Event_Week2, :Event_Week3, :Event_Week4 .
+
+:Event_Week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :Activity_Tema1, :Activity_Tema2, :Activity_Prácticas_W1, :Activity_Tema3 .
+
+:Activity_Tema1 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Presencial" .
+
+:Activity_Tema2 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 2" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 3.0 ;
+    guide:attendanceType "Presencial" .
+
+:Activity_Prácticas_W1 rdf:type guide:Activity ;
+    guide:activityDescription "Prácticas" ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:activityDuration 3.0 ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:Res_Moodle rdf:type guide:DidacticResource ;
+    sch:name "Recursos web Moodle" ;
+    guide:bibliographyTitle "Presentaciones, enunciados de prácticas, software y material complementario" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Disponibles en la página Moodle de la asignatura." .

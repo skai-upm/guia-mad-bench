@@ -1,0 +1,81 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dct: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> rdf:type :CourseGuide ;
+    dc:title "Laboratorio De Aplicaciones En Salud Digital"@en ;
+    sch:name "Laboratorio De Aplicaciones En Salud Digital" ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer/gema-garcia-saez> ,
+               <http://guia-mad-bench.es/data/lecturer/maria-elena-hernando-perez> ,
+               <http://guia-mad-bench.es/data/lecturer/jose-tapia-galisteo> ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule/lab-aplicaciones-salud-digital> ;
+    guide:numberOfCredits "4"^^xsd:decimal ;
+    guide:teachingPeriodMonths "Febrero-Junio"@en .
+
+<http://guia-mad-bench.es/data/degree/grado-ing-sistemas-datos> rdf:type :Degree ;
+    sch:name "Grado en Ingenieria y Sistemas de Datos" ;
+    dct:title "09ID - Grado En Ingenieria Y Sistemas De Datos"@en .
+
+<http://guia-mad-bench.es/data/course/lab-aplicaciones-salud-digital> rdf:type :Course ;
+    sch:courseCode 95000589^^xsd:integer ;
+    guide:hasCourse <http://guia-mad-bench.es/data/degree/grado-ing-sistemas-datos> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> sch:courseCode 95000589^^xsd:integer ;
+    guide:syllabus <http://guia-mad-bench.es/data/syllabus/lab-aplicaciones-salud-digital> .
+
+<http://guia-mad-bench.es/data/lecturer/gema-garcia-saez> rdf:type :Lecturer , sch:Person ;
+    sch:name "Gema Garcia Saez"@en ;
+    guide:office "B-302.2"^^xsd:string ;
+    sch:email <mailto:gema.garcia.saez@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer/maria-elena-hernando-perez> rdf:type :Lecturer , sch:Person ;
+    sch:name "Maria Elena Hernando Perez"@en ;
+    guide:office "B-316"^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer/jose-tapia-galisteo> rdf:type :Lecturer , sch:Person ;
+    sch:name "Jose Tapia Galisteo"@en ;
+    sch:email <mailto:jose.tapia.galisteo@upm.es> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:syllabusDescription "Laboratorio De Aplicaciones En Salud Digital"^^xsd:string ;
+    sch:inLanguage <https://schema.org/la/>@en .
+
+<http://guia-mad-bench.es/data/syllabus/lab-aplicaciones-salud-digital> rdf:type :Syllabus , sch:Syllabus ;
+    guide:syllabusDescription "Laboratorio De Aplicaciones En Salud Digital"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/cb05> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/learningresult/ra196> ,
+                           <http://guia-mad-bench.es/data/learningresult/ra76> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasCompetency <http://guia-mad-bench.es/data/competency/cb05> ,
+                                                        <http://guia-mad-bench.es/data/competency/ce10> ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/learningresult/ra196> .
+
+<http://guia-mad-bench.es/data/syllabus/lab-aplicaciones-salud-digital> guide:hasItem <http://guia-mad-bench.es/data/syllabusitem/introduccion-usabilidad> ,
+                                                                                       <http://guia-mad-bench.es/data/syllabusitem/gestion-db-relacionales> ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event/entrega-practica-1> .
+
+<http://guia-mad-bench.es/data/schedule/lab-aplicaciones-salud-digital> rdf:type :Schedule , sch:Schedule ;
+    guide:syllabusDescription "Laboratorio De Aplicaciones En Salud Digital"^^xsd:string .
+
+<http://guia-mad-bench.es/data/event/entrega-practica-1> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 4^^xsd:integer ;
+    om:Unit "02:30"^^xsd:gDayTimeDuration ;
+    sch:name "Entrega de memoria de práctica 1"@en .
+
+<http://guia-mad-bench.es/data/event/examen-global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 17^^xsd:integer ;
+    om:Unit "02:00"^^xsd:gDayTimeDuration ;
+    sch:name "Examen GLOBAL"@en .
+
+<http://guia-mad-bench.es/data/evaluationtrial/progresiva> rdf:type :EvaluationTrial , guide:EvaluationSystem ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/event/examen-global> ;
+    sch:name "Evaluación Progresiva"@en .
+
+<http://guia-mad-bench.es/data/evaluationtrial/global> rdf:type :EvaluationTrial , guide:EvaluationSystem ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/event/examen-global> ;
+    sch:name "Evaluación Global"@en .

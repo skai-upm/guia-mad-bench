@@ -1,0 +1,776 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> rdf:type :CourseGuide ;
+    sch:name "Ingenieria Procesos Y Productos"@en ,
+        "55001039 - Ingenieria Procesos y Productos"@en ;
+    dct:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@es ;
+    sch:description "El objetivo de la asignatura es familiarizarse con las distintas etapas necesarias para llevar a cabo el diseño de procesos y productos, de forma que el estudiante sea capaz de realizar un diseño de un proceso y/o producto partiendo de una información acotada."@en ;
+    guide:courseYear 2025-26 ;
+    sch:numberOfCredits "4.5"^^xsd:decimal ;
+    guide:teachingPeriodMonths "Septiembre-Enero"@es ;
+    guide:syllabus <http://guia-mad-bench.es/data/syllabus-anx-pr-cl-001> .
+
+<http://guia-mad-bench.es/data/degree-grado-iq> rdf:type :BachelorDegree ;
+    sch:name "Grado En Ingeniería Química"@es ;
+    guide:degreeCode "05IQ"^^xsd:string ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> .
+
+<http://guia-mad-bench.es/data/lecturer-gonzalez> rdf:type :Lecturer , sch:Person ;
+    sch:name "Maria Gonzalez Miquel"@es ;
+    guide:sch:email <mailto:maria.gonzalezmiquel@upm.es> ;
+    guide:office "Sin horario. Escribir a la profesora para concertar tutoría."^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer-diaz> rdf:type :Lecturer , sch:Person ;
+    sch:name "Francisco Ismael Diaz Moreno"@es ;
+    guide:sch:email <mailto:ismael.diaz@upm.es> ;
+    guide:office "Lab Tec Quimica"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> sch:director :lecturer-gonzalez ;
+    sch:instructor :lecturer-diaz .
+
+#################################################################
+# Competencies and Learning Results
+#################################################################
+
+###  http://w3id.org/def/guia#Competency instances
+<http://guia-mad-bench.es/data/competency-ce-15> rdf:type :Competency ;
+    guide:competencyCode "CE 15"^^xsd:string ;
+    guide:competencyDescription "Conocimientos básicos de los sistemas de producción y fabricación industrial"@es .
+
+<http://guia-mad-bench.es/data/competency-ce-19> rdf:type :Competency ;
+    guide:competencyCode "CE 19"^^xsd:string ;
+    guide:competencyDescription "Conocimientos sobre balances de materia y energía, biotecnología, transferencia de materia..."@es .
+
+<http://guia-mad-bench.es/data/competency-ce-20> rdf:type :Competency ;
+    guide:competencyCode "CE 20"^^xsd:string ;
+    guide:competencyDescription "Capacidad para el análisis, diseño, simulación y optimización de procesos y productos"@es .
+
+<http://guia-mad-bench.es/data/competency-ce-23> rdf:type :Competency ;
+    guide:competencyCode "CE 23 (ETSII)"^^xsd:string ;
+    guide:competencyDescription "Conocimiento de los procesos disponibles para la obtención de productos."@es .
+
+<http://guia-mad-bench.es/data/competency-cg-1> rdf:type :Competency ;
+    guide:competencyCode "CG 1"^^xsd:string ;
+    guide:competencyDescription "Conocer y aplicar los conocimientos de ciencias y tecnologías básicas a la práctica..."@es .
+
+<http://guia-mad-bench.es/data/competency-cg-2> rdf:type :Competency ;
+    guide:competencyCode "CG 2"^^xsd:string ;
+    guide:competencyDescription "Poseer la capacidad para diseñar, desarrollar, implementar..."@es .
+
+<http://guia-mad-bench.es/data/competency-cg-3> rdf:type :Competency ;
+    guide:competencyCode "CG 3"^^xsd:string ;
+    guide:competencyDescription "Aplicar los conocimientos adquiridos para identificar, formular y resolver problemas..."@es .
+
+<http://guia-mad-bench.es/data/competency-cg-4> rdf:type :Competency ;
+    guide:competencyCode "CG 4"^^xsd:string ;
+    guide:competencyDescription "Comprender el impacto de la ingeniería en el medio ambiente..."@es .
+
+<http://guia-mad-bench.es/data/competency-cg-6> rdf:type :Competency ;
+    guide:competencyCode "CG 6"^^xsd:string ;
+    guide:competencyDescription "Poseer las habilidades de aprendizaje que permitan continuar estudiando..."@es .
+
+### Learning Results instances
+<http://guia-mad-bench.es/data/learning-result-ra190> rdf:type :LearningResult ;
+    guide:learningResultCode "RA 1.2"^^xsd:string , "RA190"^^xsd:string ;
+    guide:learningResultDescription "El alumno será capaz de escoger los algoritmos apropiados e implementarlos para la simulación..."@es .
+
+<http://guia-mad-bench.es/data/learning-result-ra301> rdf:type :LearningResult ;
+    guide:learningResultCode "RA 3.1"^^xsd:string , "RA301"^^xsd:string ;
+    guide:learningResultDescription "Capacidad para proyectar, diseñar y desarrollar productos complejos..."@es .
+
+<http://guia-mad-bench.es/data/learning-result-ra302> rdf:type :LearningResult ;
+    guide:learningResultCode "RA 3.2"^^xsd:string , "RA302"^^xsd:string ;
+    guide:learningResultDescription "Capacidad de proyecto utilizando algún conocimiento de vanguardia..."@es .
+
+<http://guia-mad-bench.es/data/learning-result-ra194> rdf:type :LearningResult ;
+    guide:learningResultCode "RA 3.2"^^xsd:string , "RA194"^^xsd:string ;
+    guide:learningResultDescription "El alumno será capaz de realizar un diseño preliminar de un proceso químico"@es .
+
+<http://guia-mad-bench.es/data/learning-result-ra189> rdf:type :LearningResult ;
+    guide:learningResultCode "RA 3.2"^^xsd:string , "RA189"^^xsd:string ;
+    guide:learningResultDescription "El alumno será capaz de desarrollar modelos de unidades de proceso..."@es .
+
+<http://guia-mad-bench.es/data/competency-ce-15> :CourseGuide <http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> guide:hasCompetency ;
+    rdf:type owl:ObjectProperty , rdfs:domain :CourseGuide .
+
+<http://guia-mad-bench.es/data/competency-ce-23> :CourseGuide <http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> guide:hasCompetency ;
+    rdf:type owl:ObjectProperty , rdfs:domain :CourseGuide .
+
+<http://guia-mad-bench.es/data/competency-cg-6> :CourseGuide <http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> guide:hasCompetency ;
+    rdf:type owl:ObjectProperty , rdfs:domain :CourseGuide .
+
+<http://guia-mad-bench.es/data/learning-result-ra302> :CourseGuide <http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> guide:hasLearningResult ;
+    rdf:type owl:ObjectProperty , rdfs:domain :CourseGuide .
+
+<http://guia-mad-bench.es/data/learning-result-ra301> :CourseGuide <http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> guide:hasLearningResult ;
+    rdf:type owl:ObjectProperty , rdfs:domain :CourseGuide .
+
+<http://guia-mad-bench.es/data/learning-result-ra302> :CourseGuide <http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001-01> guide:hasLearningResult ;
+    rdf:type owl:ObjectProperty , rdfs:domain :CourseGuide .
+
+#################################################################
+# Syllabus and Items
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus-anx-pr-cl-001> rdf:type :Syllabus ;
+    guide:syllabusDescription "La asignatura es eminentemente práctica, aunque tiene una base teórica que es importante manejar con soltura."^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus-item-intro> rdf:type :SyllabusItem ;
+    guide:itemIndex 1 , xsd:integer ;
+    guide:syllabusDescription "Introducción. Diagramas de proceso"^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus-item-simulacion> rdf:type :SyllabusItem ;
+    guide:itemIndex 2 , xsd:integer ;
+    guide:syllabusDescription "Simulación estacionaria"^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus-item-diseño-procesos> rdf:type :SyllabusItem ;
+    guide:itemIndex 3 , xsd:integer ;
+    guide:syllabusDescription "Diseño de procesos."^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus-item-costes> rdf:type :SyllabusItem ;
+    guide:itemIndex 4 , xsd:integer ;
+    guide:syllabusDescription "Dimensionamiento y costes."^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus-item-económica> rdf:type :SyllabusItem ;
+    guide:itemIndex 5 , xsd:integer ;
+    guide:syllabusDescription "Evaluación económica"^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus-item-diseño-productos> rdf:type :SyllabusItem ;
+    guide:itemIndex 6 , xsd:integer ;
+    guide:syllabusDescription "Diseño de productos."^^xsd:string .
+
+#################################################################
+# Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> rdf:type :Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-1-intro>,
+        <http://guia-mad-bench.es/data/event-sem-2-diseño-procesos>,
+        <http://guia-mad-bench.es/data/event-sem-3-diseño-procesos>,
+        <http://guia-mad-bench.es/data/event-sem-4-simulación> .
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto>,
+    <http://guia-mad-bench.es/data/event-sem-6-simulación>,
+    <http://guia-mad-bench.es/data/event-sem-7-diseño-productos> .
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-8-examen>,
+    <http://guia-mad-bench.es/data/event-sem-9-proyecto-económico>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/event-sem-15-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/event-sem-17-examen-global-extra>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/eval-trial-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.)
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-9-proyecto-simulación>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-13-proyecto-económico>,
+    <http://guia-mad-bench.es/data/eval-trial-presentación>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-14-presentación>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-15-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-16-proyecto-productos>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-17-examen>,
+    <http://guia-mad-bench.es/data/eval-trial-examen-global>.
+
+#################################################################
+# Schedule Events (Semester 5, etc.) - Data Properties
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule-anx-pr-cl-001> sch:eventSchedule <http://guia-mad-bench.es/data/event-sem-5-proyecto-síntesis>,
+    <http://guia-mad-bench

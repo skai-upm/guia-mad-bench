@@ -1,0 +1,155 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# Course Guide Instance
+guide:GA_10ML_105000127_2S_2025-26
+    rdf:type guide:CourseGuide ;
+    sch:name "Sistemas Operativos" ;
+    guide:courseYear 2025 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    guide:numberOfCredits 6.0 ;
+    guide:inLanguage "Castellano" ;
+    guide:totalHours "138" ; # Calculated based on ECTS (6 * 23)
+    sch:instructor guide:Pablo_T<0xA0>Toharia_Rabasco ;
+    sch:director guide:Fco_Javier_Rosales_Garcia ;
+    guide:hasSyllabus guide:Syllabus_SO ;
+    guide:hasEvaluation guide:EvalSystem_SO ;
+    guide:hasCompetency guide:C1_Comp, guide:C2_Comp, guide:C7_Comp, guide:K4_Comp, guide:S19_Comp, guide:S21_Comp ;
+    guide:hasLearningResult guide:RA20_LR ;
+    guide:hasDidacticResource guide:Res_Moodle, guide:Res_Libro_Stallings ;
+    guide:otherInformation "La información real de implementación se publicará en la página Moodle." .
+
+# Course Instance
+guide:105000127
+    rdf:type guide:Course ;
+    sch:name "Sistemas Operativos" ;
+    sch:courseCode 105000127 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Sexto semestre" ;
+    sch:hasCourseInstance guide:GA_10ML_105000127_2S_202	6-26 .
+
+# Degree Instance
+guide:10ML
+    rdf:type guide:Degree ;
+    sch:name "Grado En Matematicas E Informática" ;
+    guide:degreeCode "10ML" ;
+    guide:hasCourse guide:105000127 .
+
+# University Center Instance
+guide:ETS_Informaticos
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Informáticos" ;
+    guide:offers guide:10ML .
+
+# Lecturer Instances
+guide:Pablo_Toharia_Rabasco
+    rdf:type guide:Lecturer ;
+    sch:name "Pablo Toharia Rabasco" ;
+    sch:email "pablo.toharia@upm.es" ;
+    guide:office "4102" ;
+    guide:tutorshipSchedule "Sin horario." .
+
+guide:Fco_Javier_Rosales_Garcia
+    rdf:type guide:Lecturer ;
+    sch:name "Fco Javier Rosales Garcia" ;
+    sch:email "francisco.rosales@upm.es" ;
+    guide:office "4204" ;
+    guide:tutorshipSchedule "Sin horario. Para tutorías con cualquier profesor, preferiblemente solicite cita previa por correo electrónico." .
+
+guide:Maria_De_Los_Santos_Perez_Hernandez
+    rdf:type guide:Lecturer ;
+    sch:name "Maria De Los Santos Perez Hernandez" ;
+    sch:email "maria.s.perez@upm.es" ;
+    guide:office "4203" .
+
+# Competency Instances
+guide:C1_Comp
+    rdf:type guide:Competency ;
+    guide:competencyCode "C1" ;
+    guide:competencyDescription "Capacidad de resolución de problemas aplicando conocimientos de matemáticas, ciencias e ingeniería." .
+
+guide:C2_Comp
+    rdf:type guide:Competency ;
+    guide:competencyCode "C2" ;
+    guide:competencyDescription "Capacidad para el aprendizaje autónomo y la actualización de conocimientos." .
+
+guide:K4_Comp
+    rdf:type guide:Competency ;
+    guide:competencyCode "K4" ;
+    guide:competencyDescription "Entender el soporte físico (hardware) de los ordenadores desde el punto de vista del soporte lógico (software)." .
+
+# Learning Result Instance
+guide:RA20_LR
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA20" ;
+    guide:learningResultDescription "Los resultados del aprendizaje correspondientes a esta asignatura han quedado defin	ados en el apartado de competencias." .
+
+# Syllabus Instance
+guide:Syllabus_SO
+    rdf:type guide:Syllabus ;
+    guide:hasItem guide:Topic_1, guide:Topic_2, guide:Topic_3, guide:Topic_4, guide:Topic_5 .
+
+guide:Topic_1
+    rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Introducción al SSOO" ;
+    guide:itemIndex 1 .
+
+guide:Topic_2
+    rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "Gestión de Ficheros" ;
+    guide:itemIndex 2 .
+
+# Evaluation System and Trials
+guide:EvalSystem_SO
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación progresiva por parciales y pruebas de evaluación global." .
+
+guide:Trial_ParcialSF
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "12.5%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialDescription "Parcial Tema SF" .
+
+guide:Trial_ModuloLinux
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo Individual" ;
+    guide:trialMode "No presencial" ;
+    guide:gradePercentage "2.5%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialDescription "Módulo Introducción a Linux" .
+
+# Activity Instances (from Schedule)
+guide:Activity_PruebaNivel
+    rdf:type guide:Activity ;
+    guide:activityDescription "Prueba de Nivel" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Examen Escrit" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+guide:Res_Moodle
+    rdf:type guide:DidacticResource ;
+    sch:name "Moodle de la Asignatura" ;
+    guide:bibliographyDescription "https://moodle.upm.es/titulaciones/oficiales/" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:Res_Libro_Stallings
+    rdf:type guide:DidacticResource ;
+    sch:name "Sistemas Operativos 5a edición, William Stallings" ;
+    guide:bibliographyType "Bibliografía" .
+
+# Required Knowledge
+guide:ReqKnow_Unix
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Manejo como usuario en entorno Unix: Línea de mandatos y Shell." .
+
+guide:ReqKnow_C
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Programación C en entorno Unix: compilación separada, manejo de punteros, depuración de programas." .

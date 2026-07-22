@@ -1,0 +1,92 @@
+@prefix : <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guia-ANXPRCL001> rdf:type guide:CourseGuide ;
+    dc:title "Guía de Aprendizaje ANX-PR/CL/001-01"@en ;
+    sch:name "Sistemas De Radiofrecuencia" ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer-izpura> ;
+    guide:numberOfCredits 4.5^^xsd:decimal ;
+    guide:syllabusDescription "Principios Fundamentales de los Sistemas de Radiofrecuencia, Ondas Electromagnéticas, Líneas de Transmisión, Guías de Onda y Antenas"@en ;
+    sch:description "En esta asignatura se estudian los elementos de radiofrecuencia que conforman los sistemas de radiofrecuencia utilizados en el entorno aeronáutico."@en ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course-145005304> ;
+    sch:courseCode 145005304^^xsd:string ;
+    guide:teachingPeriodMonths "Septiembre-Enero"@en ;
+    guide:periodStartingMonth "Septiembre"^^xsd:string ;
+    guide:periodEndingMonth "Enero"^^xsd:string ;
+    sch:inLanguage "Castellano"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course-145005304> rdf:type guide:Course ;
+    sch:name "Sistemas De Radiofrecuencia"@en ;
+    sch:description "Asignatura de Sistemas de Radiofrecuencia para el Grado en Ingeniería Aeroespacial."@en .
+
+<http://guia-mad-bench.es/data/degree-14IA> rdf:type guide:BachelorDegree ;
+    dct:title "Grado En Ingeniería Aeroespacial"@en ;
+    sch:courseCode 14IA^^xsd:string ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course-145005304> .
+
+<http://guia-mad-bench.es/data/lecturer-izpura> rdf:type guide:Lecturer ;
+    sch:name "Jose Ignacio Izpura Torres"@en ;
+    dct:creator <http://w3id.org/def/guia#Lecturer> ;
+    sch:email "joseignacio.izpura@upm.es"^^xsd:string ;
+    guide:office "A-259"^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus-SistemasRF> rdf:type guide:Syllabus ;
+    sch:name "Temario de la asignatura"@en ;
+    guide:syllabusDescription "Principios Fundamentales, Ondas Electromagnéticas, Líneas de Transmisión, Guías de Onda y Antenas"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval-system-SistemasRF> rdf:type guide:EvaluationSystem ;
+    sch:description "Evaluación progresiva (40%, 10%, 50%) o Evaluación Global por Examen Ordinario."@en ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-PEI> .
+
+<http://guia-mad-bench.es/data/eval-system-SistemasRF> rdf:type guide:EvaluationSystem ;
+    sch:description "Evaluación Global por Examen Ordinario (100%)."@en ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-ExamenOrdinario>.
+
+<http://guia-mad-bench.es/data/eval-system-SistemasRF> rdf:type guide:EvaluationSystem ;
+    sch:description "Evaluación Convocatoria Extraordinaria (100%)."@en .
+
+<http://guia-mad-bench.es/data/trial-PEI> rdf:type guide:EvaluationTrial ;
+    sch:name "Primer ejercicio de evaluación progresiva"@en ;
+    guide:trialType "Examen Escrito"^^xsd:string ;
+    guide:trialMode "Presencial"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial-PEI> rdf:type guide:EvaluationTrial ;
+    sch:name "Segundo ejercicio de evaluación progresiva"@en ;
+    guide:trialType "Examen Escrito"^^xsd:string ;
+    guide:trialMode "Presencial"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial-PEI> rdf:type guide:EvaluationTrial ;
+    sch:name "Realización y entrega del informe de prácticas"@en ;
+    guide:trialType "Trabajo en Grupo"^^xsd:string ;
+    guide:trialMode "No Presencial"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial-ExamenOrdinario> rdf:type guide:EvaluationTrial ;
+    sch:name "Examen Ordinario de la Asignatura"@en ;
+    guide:trialType "Examen Escrito"^^xsd:string ;
+    guide:trialMode "Presencial"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial-Extraordinario> rdf:type guide:EvaluationTrial ;
+    sch:name "Examen Extraordinario de la Asignatura"@en ;
+    guide:trialType "Examen Escrito"^^xsd:string ;
+    guide:trialMode "Presencial"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval-system-SistemasRF> rdf:type guide:EvaluationSystem ;
+    sch:description "Evaluación Convocatoria Extraordinaria"@en ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-Extraordinario>.
+
+<http://guia-mad-bench.es/data/eval-system-SistemasRF> rdf:type guide:EvaluationSystem ;
+    sch:description "Evaluación Convocatoria Extraordinaria"@en .
+
+<http://guia-mad-bench.es/data/resource-Moodle> rdf:type guide:DidacticResource ;
+    sch:name "Plataforma MOODLE de la asignatura"^^xsd:string ;
+    sch:bibliographyType "Recursos web"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval-system-SistemasRF> rdf:type guide:EvaluationSystem ;
+    sch:description "Evaluación Convocatoria Extraordinaria"@en .

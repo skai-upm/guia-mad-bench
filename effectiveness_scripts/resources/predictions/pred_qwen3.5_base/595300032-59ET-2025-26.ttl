@@ -1,0 +1,60 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guia/anx-pr-cl-001-01> rdf:type :CourseGuide ;
+    sch:courseCode "595300032"^^xsd:string ,
+        <http://w3id.org/def/guia#hasSyllabus> <http://guia-mad-bench.es/data/syllabus/anx-pr-cl-001-01> ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule/anx-pr-cl-001-01> ,
+        <http://w3id.org/def/guia#hasEvaluation> <http://guia-mad-bench.es/data/evaluation/anx-pr-cl-001-01> ;
+    sch:inLanguage "Castellano"^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus/anx-pr-cl-001-01> rdf:type :Syllabus ,
+        sch:Syllabus ;
+    <http://w3id.org/def/guia#hasItem> [ a :SyllabusItem ;
+            xsd:itemIndex "1"^^xsd:integer ;
+            sch:description "Circuitos realimentados con Amplificador Operacional"@en ] ,
+        [ a :SyllabusItem ;
+            xsd:itemIndex "2"^^xsd:integer ;
+            sch:description "Respuesta en frecuencia de circuitos basados en el Amplificador Operacional"@en ] .
+
+<http://guia-mad-bench.es/data/schedule/anx-pr-cl-001-01> rdf:type :Schedule ,
+        sch:Schedule ;
+    <https://schema.org/eventSchedule> [ a :ScheduleEvent ;
+            xsd:eventIndex "1"^^xsd:integer ;
+            om:activityDurationUnit 30 .
+        ] .
+
+<http://guia-mad-bench.es/data/evaluation/anx-pr-cl-001-01> rdf:type :EvaluationSystem ,
+    sch:EvaluationSystem ;
+    <https://schema.org/description> "Sistema de evaluación distribuida o progresiva"@en .
+
+<http://w3id.org/guia#59ET-doble-grado> rdf:type :BachelorDegree ,
+        guide:Degree ;
+    <http://w3id.org/def/guia#degreeCode> "59ET"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course/595300032> rdf:type :Course ,
+    sch:Course ;
+    guide:numberOfCredits 6.0^^xsd:decimal ;
+    <https://schema.org/name> "Electronica Analogica II"@en .
+
+<http://guia-mad-bench.es/data/lecturer/francisco.martinezm@upm.es> rdf:type :Lecturer ,
+        sch:Person ;
+    <https://schema.org/email> "francisco.martinezmoorez@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CE_EC02> rdf:type :Competency ;
+    guide:competencyCode "CE EC02"^^xsd:string ,
+        <https://schema.org/name> "Capacidad para seleccionar circuitos y dispositivos electrónicos especializados"@en .
+
+<http://guia-mad-bench.es/data/course/anx-pr-cl-001-01> rdf:type :CourseGuide ;
+    guide:hasLearningResult [ a :LearningResult ;
+            <https://schema.org/name> "Comprender e interpretar las especificaciones y parámetros de un amplificador operacional"@en ] .
+
+<http://guia-mad-bench.es/data/lecturer/javier.malo@upm.es> rdf:type :Lecturer ,
+    sch:Person ;
+    <https://schema.org/name> "Javier Malo Gomez"^^xsd:string .

@@ -1,0 +1,141 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:CourseGuide_565000215 a <http://w3id.org/def/guia#CourseGuide> ;
+    sch:name "565000215 - Expresion Grafica Y Diseño Asistido Por Ordenador" ;
+    sch:inLanguage "Castellano" ;
+    <http://w3id.org/def/guia#numberOfCredits> 6.0 ;
+    <http://w3id.org/def/guia#teachingPeriod> "2025-26" ;
+    <http://w3id.org/def/guia#periodStartingMonth> "Septiembre" ;
+    <http://w3id.org/def/guia#periodEndingMonth> "Enero" ;
+    sch:description "La asignatura Expresión Gráfica y DAO es una materia básica del plan de estudios de Grado en Ingeniería que introduce al estudiante en el lenguaje gráfico técnico, fundamental para la comunicación en el ámbito de la ingeniería." ;
+    <http://w3id.org/def/guia#hasCompetency> :Comp_CE5, :Comp_CG1, :Comp_CG10, :Comp_CG5, :Comp_CG6, :Comp_CG7 ;
+    <http://w3id.org/def/guia#hasLearningResult> :LR_RA17 ;
+    <http://w3id.org/def/guia#hasSyllabus> :Syllabus_565000215 ;
+    <http://w3id.org/def/guia#hasEvaluation> :EvalSystem_565000215 ;
+    <http://w3id.org/def/guia#hasDidacticResource> :Res_AutoCAD, :Res_Moodle, :Res_AENOR ;
+    sch:instructor :Lecturer_Rosa_Ocaña, :Lecturer_M_Isabel_Casasola, :Lecturer_Daniel_Martinez ;
+    sch:director :Lecturer_Rosa_Ocaña .
+
+# Course Instance
+:Course_565000215 a <http://w3id.org/def/guia#Course> ;
+    sch:courseCode 565000215 ;
+    <http://w3id.org/def/guia#courseType> "Básica" ;
+    <http://w3id.org/def/guia#semester> "Primer semestre" ;
+    sch:hasCourseInstance :CourseGuide_565000215 .
+
+# Degree Instance
+:Degree_56IE a <http://w3id.org/def/guia#Degree> ;
+    sch:name "56IE - Grado En Ingeniería Eléctrica" ;
+    <http://w3id.org/def/guia#degreeCode> "56IE" ;
+    <http://w3id.org/def/guia#hasCourse> :Course_565000215 .
+
+# University Center Instance
+:UnivCenter_ETSIDI a <http://w3id.org/def/guia#UniversityCenter> ;
+    sch:name "E.T.S. De Ingeniería Y Diseño Industrial" ;
+    <http://w3id.org/def/guia#offers> :Degree_56IE .
+
+# Lecturers
+:Lecturer_Rosa_Ocaña a <http://w3id.org/def/guia#Lecturer> ;
+    sch:name "Rosa Concepcion Ocaña Lopez" ;
+    sch:email "rosa.ocana@upm.es" ;
+    <http://w3id.org/def/guia#office> "A316" ;
+    <http://w3id.org/def/guia#tutorshipsSchedule> "Sin horario. Consultar en web." .
+
+:Lecturer_M_Isabel_Casasola a <http://w3id.org/def/guia#Lecturer> ;
+    sch:name "M. Isabel Casasola Fernandez" ;
+    sch:email "maribel.casasola@upm.es" ;
+    <http://w3id.org/def/guia#office> "A317" ;
+    <http://w3id.org/def/guia#tutorshipsSchedule> "Sin horario." .
+
+:Lecturer_Daniel_Martinez a <http://w3id.org/def/guia#Lecturer> ;
+    sch:name "Daniel Martinez Diaz" ;
+    sch:email "daniel.martinezd@upm.es" ;
+    <http://w3id.org/def/guia#office> "A307" ;
+    <http://w3id.org/def/guia#tutorshipsSchedule> "Sin horario." .
+
+# Competencies
+:Comp_CE5 a <http://w3id.org/def/guia#Competency> ;
+    <http://w3id.org/def/guia#competencyCode> "CE5" ;
+    <http://w3id/def/guia#competencyDescription> "Capacidad de visión espacial y conocimiento de las técnicas de representación gráfica..." .
+
+:Comp_CG1 a <http://w3id.org/def/guia#Competency> ;
+    <http://w3id/def/guia#competencyCode> "CG1" ;
+    <http://w3id/def/guia#competencyDescription> "Conocer y aplicar los conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Industrial" .
+
+:Comp_CG10 a <http://w3id.org/def/guia#Competency> ;
+    <http://w3id/def/guia#competencyCode> "CG10" ;
+    <http://w3id/def/guia#competencyDescription> "Creatividad" .
+
+:Comp_CG5 a <http://w3id.org/def/guia#Competency> ;
+    <http://w3id/def/guia#competencyCode> "CG5" ;
+    <http://w3id/def/guia#competencyDescription> "Comunicar conocimientos y conclusiones..." .
+
+:Comp_CG6 a <http://w3id.org/def/guia#Competency> ;
+    <http://w3id/def/guia#competencyCode> "CG6" ;
+    <http://w3id/def/guia#competencyDescription> "Poseer las habilidades de aprendizaje..." .
+
+:Comp_CG7 a <http://w3id.org/def/guia#Competency> ;
+    <http://w3id/def/guia#competencyCode> "CG7" ;
+    <http://w3id/def/guia#competencyDescription> "Incorporar las TIC y las tecnologías..." .
+
+# Learning Results
+:LR_RA17 a <http://w3id.org/def/guia#LearningResult> ;
+    <http://w3id/def/guia#learningResultCode> "RA17" ;
+    <http://w3id/def/guia#learningResultDescription> "Capacidad para conocer, entender y utilizar los principios de Técnicas de representación, concepción espacial, normalización, diseño asistido por ordenador..." .
+
+# Syllabus
+:Syllabus_565000215 a <http://w3id.org/def/guia#Syllabus> ;
+    <http://w3id/def/guia#hasItem> :SyllabusItem_1, :SyllabusItem_2, :SyllabusItem_3 .
+
+:SyllabusItem_1 a <http://w3id.org/def/guia#SyllabusItem> ;
+    <http://w3id/def/guia#itemIndex> 1 ;
+    <http://w3id/def/guia#syllabusDescription> "Fundamentos de DAO aplicado a la Expresión grafica" .
+
+:SyllabusItem_2 a <http://w3id.org/def/guia#SyllabusItem> ;
+    <http://w3id/def/guia#itemIndex> 2 ;
+    <http://w3id/def/guia#syllabusDescription> "Introducción a la concepción espacial" .
+
+:SyllabusItem_3 a <http://w3id.org/def/guia#SyllabusItem> ;
+    <http://w3id/def/guia#itemIndex> 10 ;
+    <http://w3id/def/guia#syllabusDescription> "Introducción a la normalización industrial" .
+
+# Evaluation System
+:EvalSystem_565000215 a <http://w3id.org/def/guia#EvaluationSystem> ;
+    <http://w3id/def/guia#evaluationDescription> "La asignatura se compone de dos partes que se cursan en paralelo: Concepción Espacial y Normalización, cada una de ellas con un 50% del peso final." ;
+    <http://w3id/def/guia#hasEvaluationTrial> :Trial_Control1_CE, :Trial_Control1_Norm, :Trial_ExamenFinal .
+
+:Trial_Control1_CE a <http://w3id.org/def/guia#EvaluationTrial> ;
+    <http://w3id/def/guia#evaluationType> "Evaluación Progresiva" ;
+    <http://w3id/def/guia#gradePercentage> "15%" ;
+    <http://w3id/def/guia#trialType> "Examen de Prácticas" ;
+    <http://w3id/def/guia#evaluationDuration> "01:00" .
+
+:Trial_Control1_Norm a <http://w3id/def/guia#EvaluationTrial> ;
+    <http://w3id/def/guia#evaluationType> "Evaluación Progresiva" ;
+    <http://w3id/def/guia#gradePercentage> "15%" ;
+    <http://w3id/def/guia#trialType> "Examen de Prácticas" ;
+    <http://w3id/def/guia#evaluationDuration> "02:00" .
+
+:Trial_ExamenFinal a <http://w3id/def/guia#EvaluationTrial> ;
+    <http://w3id/def/guia#evaluationType> "Evaluación Global" ;
+    <http://w3id/def/guia#gradePercentage> "100%" ;
+    <http://w3id/def/guia#trialType> "Examen de Prácticas" ;
+    <http://w3id/def/guia#evaluationDuration> "03:00" ;
+    <http://w3id/def/guia#minimumScore> "5 / 10" .
+
+# Didactic Resources
+:Res_AutoCAD a <http://w3id.org/def/guia#DidacticResource> ;
+    <http://w3id/def/guia#bibliographyTitle> "AutoCAD 2023" ;
+    <http://w3id/def/guia#bibliographyType> "Bibliografía" .
+
+:Res_Moodle a <http://w3id.org/def/guia#DidacticResource> ;
+    <http://w3id/def/guia#bibliographyTitle> "Moodle" ;
+    <http://w3id/def/guia#bibliographyType> "Recursos web" .
+
+:Res_AENOR a <http://w3id.org/def/guia#DidacticResource> ;
+    <http://w3id/def/guia#bibliographyTitle> "AENOR" ;
+    <http://w3id/def/guia#bibliographyType> "Recursos web" .

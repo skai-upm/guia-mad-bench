@@ -1,0 +1,181 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:CourseGuide_595024131
+    rdf:type guide:CourseGuide ;
+    sch:name "Ingenieria de Audio II" ;
+    sch:description "Asignatura destinada al estudio de los equipos que permiten el tratamiento y manipulação de la señal de audio..." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:numberOfCredits 6.0 ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCourse :Course_595024131 ;
+    guide:hasCompetency :Competency_EC01, :Competency_SO01, :Competency_SO02, :Competency_SO05, :Competency_CG02, :Competency_CG04 ;
+    guide:hasLearningResult :LearningResult_RA171, :LearningResult_RA165 ;
+    guide:hasEvaluation :EvaluationSystem_Progresiva ;
+    sch:instructor :Lecturer_Lino, :Lecturer_Daniel, :Lecturer_Maria ;
+    guide:hasDidacticResource :Resource_Apuntes, :Resource_Guiones, :Resource_Software, :Resource_Equipamiento, :Resource_Videos_Web, :Resource_Videos_Mudos .
+
+# Course Instance
+:Course_595024131
+    rdf:type guide:Course ;
+    sch:courseCode 595024131 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Sexto semestre" .
+
+# Degree Instance
+:Degree_59ET
+    rdf:type guide:Degree ;
+    sch:name "Doble Grado En Ing.electronica De Comunicaciones Y En Ing.telematica" ;
+    guide:degreeCode "59ET" ;
+    guide:hasCourse :Course_595024131 .
+
+# University Center Instance
+:UniversityCenter_ETS
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingeniería y Sist. de Telecom." ;
+    guide:offers :Degree_59ET .
+
+# Lecturer Instances
+:Lecturer_Lino
+    rdf:type guide:Lecturing ;
+    sch:name "Lino Pedro Garcia Morales" ;
+    sch:email "lino.garcia@upm.es" ;
+    guide:office "8208" ;
+    guide:tutorshipsSchedule "Sin horario. Consultar horario en Moodle." .
+
+:Lecturer_Daniel
+    rdf:type guide:Lecturer ;
+    sch:name "Daniel De La Prida Caballero" ;
+    sch:email "daniel.prida@upm.es" ;
+    guide:office "D8209" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:Lecturer_Maria
+    rdf:type guide:Lecturer ;
+    sch:name "Maria Larrosa Navarro" ;
+    sch:email "m.larrosa@upm.es" ;
+    guide:office "D8209" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+# Competency Instances
+:Competency_EC01
+    rdf:type guide:Competency ;
+    guide:competencyCode "CE EC01" ;
+    guide:competencyDescription "Capacidad de construir, explotować y gestionar sistemas de captación, transporte, representación, procesado, almacenamiento, gestión y presentación de información multimedia..." .
+
+:Competency_SO01
+    rdf:type guide:Competency ;
+    guide:competencyCode "CE SO01" ;
+    guide:competencyDescription "Capacidad de construir, explotar y gestionar servicios y aplicaciones de telecomunicaciones..." .
+
+:Competency_SO02
+    rdf:type guide:Competency ;
+    guide:competencyCode "CE SO02" ;
+    guide:competencyDescription "Capacidad de analizar, especificar, realizar y mantener sistemas, equipos, cabeceras e instalaciones de televisión, audio y vídeo..." .
+
+:Competency_SO05
+    rdf:type guide:Competency ;
+    guide:competencyCode "CE SO05" ;
+    guide:competencyDescription "Capacidad para crear, codificar, gestionar, difundir y distribuir contenidos multimedia..." .
+
+:Competency_CG02
+    rdf:type guide:Competency ;
+    guide:competencyCode "CG 02" ;
+    guide:competencyDescription "Capacidad de búsqueda y selección de información, de razonamiento crítico y de elaboración y defensa de argumentos dentro del área." .
+
+:Competency_CG04
+    rdf:type guide:Competency ;
+    guide:competencyCode "CG 04" ;
+    guide:competencyDescription "Capacidad de abstracción, de análisis y de síntesis y de resolución de problemas." .
+
+# Learning Result Instances
+:LearningResult_RA171
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA171" ;
+    guide:learningResultDescription "Se concretarán para cada asignatura optativa o para la realización de prácticas en empresas" .
+
+:LearningResult_RA165
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA165" ;
+    guide:learningResultDescription "Conocimiento de la arquitectura multicapa" .
+
+# Evaluation System and Trials
+:EvaluationSystem_Progresiva
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación de la asignatura es del tipo progresiva: suma de todos los controles de clase donde se incluye el control de laboratorio y el proyecto de diseño." ;
+    guide:hasEvaluationTrial :EvaluationTrial_Control1, :EvaluationTrial_Control2, :EvaluationTrial_Control3, :EvaluationTrial_Control4, :EvaluationTrial_Control5 .
+
+:EvaluationTrial_Control1
+    rdf:type guide:EvaluationTrial ;
+    sch:name "Control 1" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "18%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :Competency_EC01, :Competency_SO01, :Competency_SO02, :Competency_SO05, :Competency_CG02, :Competency_CG04 .
+
+:EvaluationTrial_Control2
+    rdf:type guide:EvaluationTrial ;
+    sch:name "Control 2" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "18%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialMode "Presencial" .
+
+# Schedule and Activities
+:Schedule_Course_595024131
+    rdf:type guide:Schedule ;
+    sch:eventSchedule :ScheduleEvent_Week1, :ScheduleEvent_Week2, :ScheduleEvent_Week4 .
+
+:ScheduleEvent_Week1
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :Activity_Tema1_1 .
+
+:Activity_Tema1_1
+    rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1.1 Estaciones de trabajo con audio digital (DAW). Interconexión de señales musicales" ;
+    guide:activityDuration 0.83 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:ScheduleEvent_Week4
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 4" ;
+    guide:eventIndex 4 ;
+    guide:hasActivity :Activity_Control1 .
+
+:Activity_Control1
+    rdf:type guide:Activity ;
+    guide:activityDescription "Control 1" ;
+    guide:activityFormat "Prueba Telemática" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:Resource_Apuntes
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Apuntes propios de todos los temas del curso" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Resource_Guiones
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Guiones propios de todas las prácticas de laboratorio" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Resource_Videos_Web
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Vídeos clasificados" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Vídeos realizados por el profesorado para complementar la docencia en clase." .
+
+# Required Knowledge
+:RequiredKnowledge_Previos
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Fundamentos de Sonido e Imagen" .

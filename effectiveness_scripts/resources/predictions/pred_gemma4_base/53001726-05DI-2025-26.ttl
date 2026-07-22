@@ -1,0 +1,191 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# --- Degree and University Center ---
+
+_:degree_industrial_eng rdf:type guide:BachelorDegree ;
+    sch:name "05DI - D.m.u. en Ingeniería Industrial y en Automática y Robótica" ;
+    guide:degreeCode "05DI" .
+
+_:center_industrials rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Industriales" ;
+    guide:offers _:degree_industrial_eng .
+
+# --- Course and Course Guide ---
+
+_:course_dir_est rdf:type guide:Course ;
+    sch:name "Dirección Estratégica y de la Innovación" ;
+    sch:courseCode 53001726 ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 2025 ;
+    guide:semester "Cuarto semestre" .
+
+_:course_guide_dir_est rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance _:course_dir_est ;
+    sch:name "Guía de Aprendizaje - Dirección Estrের Estratégica y de la Innovación" ;
+    sch:instructor _:lecturer_rafael ;
+    sch:instructor _:lecturer_ebru ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:numberOfCredits 3.0 ;
+    guide:totalHours "78" ; # Calculated based on 26h per credit approx
+    sch:inLanguage "Castellano" ;
+    sch:description "La asignatura tiene como objetivos fundamentales que los alumnos sean capaces de abordar proyectos de innovación en un entorno real mediante trabajo colaborativo y aplicando metodologías como el Design Thinking." ;
+    guide:hasSyllabus _:syllabus_dir_est ;
+    guide:hasCompetency _:comp_bilingue, _:comp_originality, _:comp_problem_solving ;
+    guide:hasLearningResult _:lr_ra87, _:lr_ra88, _:lr_ra89, _:lr_ra90, _:lr_ra9 ;
+    guide:hasEvaluation _:eval_system_dir_est ;
+    guide:hasDidacticResource _:res_moodle, _:res_chatgpt, _:res_book_chesbrough ;
+    sch:courseSchedule _:schedule_dir_est .
+
+# --- Lecturers ---
+
+_:lecturer_rafael rdf:type guide:Lecturer ;
+    sch:name "Rafael Ramos Diaz" ;
+    sch:email "rafael.ramos@upm.es" ;
+    guide:office "-" .
+
+_:lecturer_ebru rdf:type guide:Lecturer ;
+    sch:name "Ebru Susur Donerkan" ;
+    sch:email "ebru.susur@upm.es" ;
+    guide:office "UD Economía" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+_:lecturer_ext_gerardo rdf:type guide:Lecturer ;
+    sch:name "Gerardo Penas García" ;
+    sch:email "gerardo.penas@upm.es" .
+
+_:lecturer_ext_gema rdf:type guide:Lecturer ;
+    sch:name "Gema Cánovas Iniesta" ;
+    sch:email "gemacanovasiniesta@gmail.com" .
+
+# --- Competencies ---
+
+_:comp_bilingue rdf:type guide:Competency ;
+    guide:competencyCode "MUII.(l)" ;
+    guide:competencyDescription "Capacidad de trabajar en un．un entorno bilingüe (inglés/castellano)." .
+
+_:comp_originality rdf:type guide:Competency ;
+    guide:competencyCode "MUAR.CB06" ;
+    guide:competencyDescription "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales en el desarrollo y/o aplicación de ideas." .
+
+_:comp_problem_solving rdf:type guide:Competency ;
+    guide:competencyCode "MUAR.CB07" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos." .
+
+# --- Learning Results ---
+
+_:lr_ra87 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA87" ;
+    guide:learningResultDescription "Aplicar distintas herramientas y metodologías para el diseño y puesta en práctica de estrategias y políticas de innovación en contextos competitivos." .
+
+_:lr_ra88 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA88" ;
+    guide:learningResultDescription "Distinguir y enumerar las fases características de la dinámica de los procesos innovadores." .
+
+# --- Syllabus ---
+
+_:syllabus_dir_est rdf:type guide:Syllabus ;
+    guide:hasItem _:item_taller1, _:item_tema1, _:item_tema2 .
+
+_:item_taller1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "TALLER DE INNOVACIÓN SESIÓN 1: lanzamiento (kick-off) del proyecto y plan de investigación" .
+
+_:item_tema1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "TEMA 1 INNOVACIÓN ESTRATÉGICA, INNOVACIÓN ABIERTA" .
+
+# --- Schedule and Activities ---
+
+_:schedule_dir_est rdf:type guide:Schedule ;
+    sch:eventSchedule _:event_week1, _:event_week2, _:event_week3, _:event_exam .
+
+_:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity _:act_presentation .
+
+_:act_presentation rdf:type guide:Activity ;
+    guide:activityDescription "PRESENTACIÓN DE LA ASIGNATURA: objetivos, programa, metodología didáctica, evaluación, Taller de Innovación" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+_:event_week2 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 2 ;
+    guide:eventWeek "Semana 2" ;
+    guide:hasActivity _:act_workshop1 .
+
+_:act_workshop1 rdf:type guide:Activity ;
+    guide:activityDescription "TALLER DE INNOVACIÓN SESION 1: lanzamiento (kick-off) del proyecto y plan de investigación" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Acciones Cooperativas" ;
+    guide:attendanceType "Presencial" .
+
+_:event_exam rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 17 ;
+    guide:eventWeek "Semana 17" ;
+    guide:hasActivity _:act_global_exam .
+
+_:act_global_exam rdf:type guide:Activity ;
+    guide:activityDescription "PRUEBA GLOBAL" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:attendanceType "Presencial" .
+
+# --- Evaluation System ---
+
+_:eval_system_dir_est rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La asignatura se evaluará de acuerdo a los siguientes criterios: Calificación de la presentación del resultado del Taller de Innovación (60%), Entregas intermedias (20%) y Cuestionarios (15%)." ;
+    guide:hasEvaluationTrial _:trial_workshop_intermed, _:trial_quiz, _:trial_global .
+
+_:trial_workshop_intermed rdf:type guide:EvaluationTrial ;
+    guide:trialType "Entrega intermedia del Taller de Innovación" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "5%" ;
+    guide:minimumScore "5/10" ;
+    guide:evaluationDuration "00:30" ;
+    guide:trialMode "No Presencial" ;
+    guide:involvesCompetency _:comp_bilingue, _:comp_originality .
+
+_:trial_quiz rdf:type guide:EvaluationTrial ;
+    guide:trialType "Cuestionarios de autocomprobación y participación en foros" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "2.5%" ;
+    guide:minimumScore "5/10" ;
+    guide:evaluationDuration "00:30" ;
+    guide:trialMode "No Presencial" .
+
+_:trial_global rdf:type guide:EvaluationTrial ;
+    guide:trialType "PRUEBA GLOBAL" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "60%" ;
+    guide:minimumScore "5/10" ;
+    guide:evaluationDuration "3:00" ;
+    guide:trialMode "Presencial" .
+
+# --- Didactic Resources ---
+
+_:res_moodle rdf:type guide:DidacticResource ;
+    sch:name "Moodle" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Temas, casos, lectemas complementarias, foros de debate, cuestionarios de autoevaluación" .
+
+_:res_chatgpt rdf:type guide:DidacticResource ;
+    sch:name "ChatGPT, Bing, Bard,..." ;
+    guide:bibliographyType "Otros" .
+
+_:res_book_chesbrough rdf:type guide:DidacticResource ;
+    sch:name "William Chesbrough (2003). Open innovation : the new imperative for creating and profiting from technology." ;
+    guide:bibliographyDescription "Bibliografía" ;
+    guide:bibliographyType "Libro" .

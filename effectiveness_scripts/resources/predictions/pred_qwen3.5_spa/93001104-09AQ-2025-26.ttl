@@ -1,0 +1,428 @@
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sch: <https://schema.org/> .
+
+<http://guia-mad-bench.es/data/courseGuide_93001104> rdf:type guide:CourseGuide ;
+    dc:title "Sistemas Electronicos Para Iot"@en ;
+    dct:creator "Alvaro Araujo Pinto" ,
+               "Pedro Jose Malagon Marzo" ;
+    sch:name "Sistemas Electronicos Para Iot" ;
+    guide:numberOfCredits 4^^xsd:decimal ;
+    guide:teachingPeriodMonths "Septiembre - Enero"@en ;
+    sch:inLanguage "Castellano"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/syllabus_93001104> .
+
+<http://guia-mad-bench.es/data/degree_09AQ> rdf:type guide:Degree ;
+    sch:name "Master Universitario En Ingenieria De Telecomunicacion"@en ;
+    guide:degreeCode "09AQ"^^xsd:string ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/courseGuide_93001104> .
+
+<http://guia-mad-bench.es/data/lecturer_alvaro> rdf:type guide:Lecturer ;
+    rdfs:subClassOf sch:Person ;
+    sch:name "Alvaro Araujo Pinto"@en ;
+    office "B-104.1b"^^xsd:string ;
+    sch:email <mailto:alvaro.araujo@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer_pedro> rdf:type guide:Lecturer ;
+    rdfs:subClassOf sch:Person ;
+    sch:name "Pedro Jose Malagon Marzo"@en ;
+    office "B-113"^^xsd:string ;
+    sch:email <mailto:pedro.malagon.marzo@upm.es> .
+
+<http://guia-mad-bench.es/data/courseGuide_93001104> guide:scholarshipDirector <http://guia-mad-bench.es/data/lecturer_alvaro> ;
+    sch:instructor <http://guia-mad-bench.es/data/lecturer_pedro> .
+
+<http://guia-mad-bench.es/data/syllabus_93001104> rdf:type guide:Syllabus ;
+    rdfs:subClassOf sch:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/item_intro>,
+                  <http://guia-mad-bench.es/data/item_hardware>,
+                  <http://guia-mad-bench.es/data/item_software> .
+
+<http://guia-mad-bench.es/data/courseGuide_93001104> guide:hasCompetency <http://guia-mad-bench.es/data/comp_CE12>,
+    <http://guia-mad-bench.es/data/comp_CE15>,
+    <http://guia-mad-bench.es/data/comp_CG2> ;
+
+<http://guia-mad-bench.es/data/courseGuide_93001104> guide:hasLearningResult <http://guia-mad-bench.es/data/res_RA116>,
+    <http://guia-mad-bench.es/data/res_RA218>,
+    <http://guia-mad-bench.es/data/res_RA217>,
+    <http://guia-mad-bench.es/data/res_RA115> .
+
+<http://guia-mad-bench.es/data/comp_CE12> rdf:type guide:Competency ;
+    guide:competencyCode "CE12"^^xsd:string ;
+    guide:competencyDescription "Capacidad para utilizar dispositivos lógicos programables, así como para diseñar sistemas electrónicos avanzados"@en .
+
+<http://guia-mad-bench.es/data/comp_CE15> rdf:type guide:Competency ;
+    guide:competencyCode "CE15"^^xsd:string ;
+    guide:competencyDescription "Capacidad para la integración de tecnologías y sistemas propios de la Ingeniería de Telecomunicación"@en .
+
+<http://guia-mad-bench.es/data/comp_CG2> rdf:type guide:Competency ;
+    guide:competencyCode "CG2"^^xsd:string ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas"@en .
+
+<http://guia-mad-bench.es/data/res_RA116> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA116"^^xsd:string ;
+    guide:learningResultDescription "Diseñar e implementar aplicaciones reales usando plataformas de diseño basadas en procesadores avanzados"@en .
+
+<http://guia-mad-bench.es/data/res_RA218> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA218"^^xsd:string ;
+    guide:learningResultDescription "Analizar y diseñar el software de un sistema electrónico"@en .
+
+<http://guia-mad-bench.es/data/item_intro> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "Introducción a los sistemas empotrados, Aplicaciones, Ejemplo motivante, Proceso de diseño"@en .
+
+<http://guia-mad-bench.es/data/item_hardware> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer ;
+    guide:syllabusDescription "Diseño hardware de sistemas empotrados, Microcontroladores, Arquitectura de memoria, Entrada/Salida"@en .
+
+<http://guia-mad-bench.es/data/item_software> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3^^xsd:integer ;
+    guide:syllabusDescription "Diseño software de sistemas empotrados, Sistemas Operativos, Tareas, Planificación en tiempo real"@en .
+
+<http://guia-mad-bench.es/data/courseGuide_93001104> sch:eventSchedule <http://guia-mad-bench.es/data/schedule_semester1>,
+    <http://guia-mad-bench.es/data/schedule_semester2> ;
+
+<http://guia-mad-bench.es/data/eval_system_93001104> rdf:type guide:EvaluationSystem ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/courseGuide_93001104> .
+
+<http://guia-mad-bench.es/data/schedule_semester1> rdf:type guide:SyllabusItem ; # Using SyllabusItem as placeholder for Schedule content if direct class not available, but ontology has Guide.Schedule. I will use a generic structure based on document data.
+    rdfs:subClassOf sch:EventSchedule .
+
+<http://guia-mad-bench.es/data/schedule_semester1> guide:eventIndex 6^^xsd:integer ; # Week/Sem index from table
+    rdf:type guide:SyllabusItem ; # Using SyllabusItem to represent Schedule Event content for simplicity in mapping without full schema.org event properties defined as classes.
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> rdf:type guide:EvaluationTrial ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/courseGuide_93001104> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/schedule_semester1>,
+    <http://guia-mad-bench.es/data/exam_progresiva> ; # Linking trials to events
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:evaluationType "Evaluación Progresiva"@en ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule_semester1>,
+                      <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:gradePercentage "50"^^xsd:string ; # From table 7.1.2 (Exam) + practices? Table says Exam is 50% in progressive, but Global exam is different.
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:minimumScore "4"^^xsd:string ; # From table 7.1.2 (Practices) or Exam? Table says min score for practices is 5, exam progressive is not explicitly stated but Global requires passing all components.
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Examen para evaluación progresiva"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Examen Escrito"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 6"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialMode "No Presencial"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialType "Prueba Telemática"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialWeek "Semestre 9"^^xsd:string ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule <http://guia-mad-bench.es/data/exam_progresiva> .
+
+<http://guia-mad-bench.es/data/eval_trial_progressive> guide:trialDescription "Práctica 0: Introducción al entorno de desarrollo y placa de diseño"@en ; # From table 7.1.2 row Sem 6
+    sch:eventSchedule

@@ -1,0 +1,547 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> rdf:type :CourseGuide ;
+    dc:title "GUÍA DE APRENDIZAJE"@en ;
+    dct:creator "Andrea Cimmino Arriaga" ,
+                "Covadonga Arias" ,
+                "Joaquín Gayoso Cabada" ,
+                "Juan Cano de Benito" ,
+                "Paola Espinoza Arias" ;
+    rdfs:comment "This ontology defines concepts to represent academic course guides in higher education. It models degrees, courses, teaching roles, learning design, resources, schedules, and evaluation systems, while reusing existing vocabularies such as Schema.org whenever possible."@en ;
+    owl:versionInfo "0.1.1"@en .
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> sch:name "Ingenieria Procesos Y Productos" ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2025-26"@en .
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> sch:description "El objetivo de la asignatura es familiarizarse con las distintas etapas necesarias para llevar a cabo el diseño de procesos y productos, de forma que el estudiante sea capaz de realizar un diseño de un proceso y/o producto partiendo de una información acotada."@en ;
+    guide:periodStartingMonth "Septiembre"@en .
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> sch:hasCourseInstance <http://w3id.org/def/guia#Grado En Ingeniería Química> ;
+    rdfs:subClassOf :Degree .
+
+<http://w3id.org/def/guia#Maria Gonzalez Miquel> rdf:type :Lecturer ;
+    sch:name "Maria Gonzalez Miquel" ;
+    guide:office "" ;
+    sch:email <mailto:maria.gonzalezmiquel@upm.es> .
+
+<http://w3id.org/def/guia#Francisco Ismael Diaz Moreno> rdf:type :Lecturer ;
+    sch:name "Francisco Ismael Diaz Moreno" ;
+    guide:office "Lab Tec Quimica"@en ;
+    sch:email <mailto:ismael.diaz@upm.es> .
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasSyllabus <http://w3id.org/def/guia#Temario Ingenieria Procesos Y Productos> ;
+    sch:courseSchedule <http://w3id.org/def/guia#Cronograma 2025-26>.
+
+<http://w3id.org/def/guia#Grado En Ingeniería Química> rdf:type :BachelorDegree .
+
+<http://w3id.org/def/guia#Temario Ingenieria Procesos Y Productos> rdf:type :Syllabus ;
+    guide:hasItem <http://w3id.org/def/guia#Introduccion Diagramas de proceso> ,
+                 <http://w3id.org/def/guia#Simulacion estacionaria> ,
+                 <http://w3id.org/def/guia#Diseño de procesos> ;
+    guide:hasItem <http://w3id.org/def/guia#Dimensionamiento y costes> .
+
+<http://w3id.org/def/guia#Introduccion Diagramas de proceso> rdf:type :SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Diagramas de proceso"@en .
+
+<http://w3id.org/def/guia#Simulacion estacionaria> rdf:type :SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Simulación estacionaria"@en .
+
+<http://w3id.org/def/guia#Diseño de procesos> rdf:type :SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Dimensionamiento y costes"@en .
+
+<http://w3id.org/def/guia#CE_15> rdf:type :Competency ;
+    guide:competencyCode "CE 15" ;
+    guide:competencyDescription "Conocimientos básicos de los sistemas de producción y fabricación industrial"@en .
+
+<http://w3id.org/def/guia#RA_190> rdf:type :LearningResult ;
+    guide:learningResultCode "RA190" ;
+    guide:learningResultDescription "El alumno será capaz de escoger los algoritmos apropiados e implementarlos para la simulación de los modelos."@en .
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasLearningResult <http://w3id.org/def/guia#RA_190>,
+    <http://w3id.org/def/guia#CE_20>.
+
+<http://w3id.org/def/gusia#ANX-PR/CL/001-01> :hasEvaluationSystem <http://w3id.org/def/guia#Evaluacion Sistema Ingenieria Procesos Y Productos> .
+    sch:courseSchedule <http://w3id.org/def/guia#Cronograma 2025-26>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasDidacticResource <http://w3id.org/def/guia#Notas de clase>,
+    <http://w3id.org/def/guia#Diseño de procesos>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasCompetency <http://w3id.org/def/guia#CE_20>,
+    <http://w3id.org/def/guia#CG_6>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasScheduleEvent <http://w3id.org/def/guia#Semestre 2>,
+    <http://w3id.org/def/guia#Semestre 5>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http://w3id.org/def/guia#Examen Teórico-Práctico>.
+
+<http://w3id.org/def/guia#ANX-PR/CL/001-01> :hasEvaluationTrial <http://w3id.org/def/guia#Entrega Proyecto Diseño de Procesos>,
+    <http

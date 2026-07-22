@@ -1,0 +1,144 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+<http://guia-mad-bench.es/data/DobleGrado_04GD> rdf:type guide:Degree ;
+    sch:name "04GD - Doble Grado En Ingenieria Civil Y Territorial Y En Ade" ;
+    guide:degreeCode "04GD" .
+
+<http://guia-mad-bench.es/data/ETS_Caminos> rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ing. de Caminos Canales y P." ;
+    guide:offers <http://guia-mad-bench.es/data/DobleGrado_04GD> .
+
+# Course
+<http://guia-mad-bench.es/data/Transportes_45000243> rdf:type guide:Course ;
+    sch:name "45000243 - Transportes" ;
+    guide:courseType "Obligatoria" ;
+    sch:numberOfCredits 4.5 ;
+    guide:semester "Séptimo semestre" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:inpersonHours "Not specified" ;
+    guide:remoteHours "Not specified" ;
+    guide:totalHours "Not specified" .
+
+<http://guia-mad-bench.es/data/DobleGrado_04GD> guide:hasCourse <http://guia-mad-bench.es/data/Transportes_45000243> .
+
+# Lecturers
+<http://guia-mad-bench.es/data/NataliaSobrinoVazquez> rdf:type guide:Lecturer ;
+    sch:name "Natalia Sobrino Vazquez" ;
+    sch:email "natalina.sobrino@upm.es" ;
+    guide:office "TRANSyT" ;
+    guide:tutorshipSchedule "M - 10:00 - 11:00, X - 10:00 - 11:00" .
+
+<http://guia-mad-bench.es/data/AnicetoZaragozaRamirez> rdf:type guide:Lecturer ;
+    sch:name "Aniceto Zaragoza Ramirez" ;
+    sch:email "aniceto.zaragoza@upm.es" ;
+    guide:office "transportes" ;
+    guide:tutorshipSchedule "L - 16:00 - 19:00, V - 16:00 - 19:00" .
+
+<http://guia-mad-bench.es/data/MariaEugeniaLopezLambas> rdf:type guide:Lecturer ;
+    sch:name "Maria Eugenia Lopez Lambas" ;
+    sch:email "mariaeugenia.lopez@upm.es" ;
+    guide:office "transyt" ;
+    guide:tutorshipSchedule "L - 09:00 - 11:00, X - 09:00 - 11:00" .
+
+sch:instructor <http://guia-mad-bench.es/data/Transportes_45000243> <http://guia-mad-bench.es/data/MariaEugeniaLopezLambas> .
+sch:director <http://guia-mad-bench.es/data/Transportes_45000243> <http://guia-mad-bench.es/data/MariaEugeniaLopezLambas> .
+
+# Required Knowledge
+<http://guia-mad-bench.es/data/Knowledge_Previa> rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "procedimientos generales de construcción, formacion basica" ;
+    guide:previousCourses "Ingenieria Civil Y Medio Ambiente, Topografia Y Cartografia" .
+
+# Competencies
+<http://guia-mad_bench.es/data/Comp_CM40_2> rdf:type guide:Competency ;
+    guide:competencyCode "04GC. CM40.2" ;
+    guide:competencyDescription "Comprensión del fenómeno urbano y sus factores determinantes (historia, economía, actividad humana, movilidad)." .
+
+<http://guia-mad-bench.es/data/Comp_CM41_1> rdf:type guide:Competency ;
+    guide:competencyCode "04GC. CM41.1" ;
+    guide:competencyDescription "Conocimiento de la influencia de las infraestructuras en la ordenación del territorio..." .
+
+<http://guia-mad-bench.es/data/Comp_CT1> rdf:type guide:Competency ;
+    guide:competencyCode "04GC. CT1" ;
+    guide:competencyDescription "Compromiso y capacidad para aplicar los principios de sostenibilidad en las actuaciones profesionales." .
+
+<http://guia-mad-bench.es/data/Transportes_45000243> guide:hasCompetency <http://guia-mad-bench.es/data/Comp_CM40_2>, 
+                                                            <http://guia-mad-bench.es/data/Comp_CM41_1>, 
+                                                            <http://guia-mad-bench.es/data/Comp_CT1> .
+
+# Learning Results
+<http://guia-mad-bench.es/data/LR_RA180_RA03> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA180 - RA03" ;
+    guide:learningResultDescription "Trabajar de forma autónoma y con iniciativa personal" .
+
+<http://guia-mad-bench.es/data/LR_RA139> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA139" ;
+    guide:learningResultDescription "Analiza y describe las características de la demanda y oferta de transporte en un entorno urbano, con ayuda de modelos." .
+
+<http://guia-mad-bench.es/data/Transportes_45000243> guide:hasLearningResult <http://guia-mad-bench.es/data/LR_RA180_RA03>, 
+                                                                <http://guia-mad-bench.es/data/LR_RA139> .
+
+# Syllabus
+<http://guia-mad-bench.es/data/Syllabus_Transportes> rdf:type guide:Syllabus .
+<http://guia-mad-bench.es/data/Transportes_45000243> guide:hasSyllabus <http://guia-mad-bench.es/data/Syllabus_Transportes> .
+
+<http://guia-mad-bench.es/data/Tema1> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Características y funciones" .
+
+<http://gu_mad_bench.es/data/Tema2> rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Características de los modos de transporte" .
+
+<http://guia-mad-bench.es/data/Syllabus_Transportes> guide:hasItem <http://guia-mad-bench.es/data/Tema1>, 
+                                                                <http://guia-mad-bench.es/data/Tema2> .
+
+# Evaluation System
+<http://guia-mad-bench.es/data/EvalSystem_Transportes> rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación continua mediante tests y exámenes parciales." .
+
+<http://guia-mad-bench.es/data/Trial_Test1> rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación progresiva" ;
+    guide:gradePercentage "2.3%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialDescription "Evaluación progresiva Test tema 1" .
+
+<http://guia-mad-bench.es/data/Trial_ExamenParcial> rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen parcial" ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialDescription "Examen parcial abordará la primera mitad del temario" .
+
+<http://guia-mad-bench.es/data/EvalSystem_Transportes> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/Trial_Test1>, 
+                                                                <http://guia-mad-bench.es/data/Trial_ExamenParcial> .
+
+<http://guia-mad-bench.es/data/Transportes_45000243> guide:hasEvaluation <http://guia-mad-bench.es/data/EvalSystem_Transportes> .
+
+# Schedule and Activities
+<http://guia-mad-bench.es/data/Schedule_Transportes> rdf:type guide:Schedule .
+<http://guia-mad-bench.es/data/Transportes_45000243> sch:courseSchedule <http://guia-mad-bench.es/data/Schedule_Transportes> .
+
+<http://guia-mad-bench.es/data/Event_Week2> rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 2 ;
+    guide:eventWeek "Semana 2" .
+
+<http://guia-mad-bench.es/data/Activity_LM_Tema1> rdf:type guide:Activity ;
+    guide:activityDescription "Lección Magistral Tema 1" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 2.1666 ;
+    guide:attendanceType "Presencial" .
+
+<http://guia-mad-bench.es/data/Event_Week2> guide:hasActivity <http://guia-mad-bench.es/data/Activity_LM_Tema1> .
+
+# Didactic Resources
+<http://guia-mad-bench.es/data/Biblio_Truyols> rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Introducción a la ingeniería del Transporte: Teoría y práctica" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Truyols Mateu, Sebastián et. al. (2009). Editorial Delta." .
+
+<http://guia-mad-bench.es/data/Transportes_45000243> guide:hasDidacticResource <http://guia-mad-bench.es/data/Biblio_Truyols> .

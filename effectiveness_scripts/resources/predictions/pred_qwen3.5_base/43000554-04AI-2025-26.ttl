@@ -1,0 +1,109 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guia#CourseGuide_43000554> rdf:type :CourseGuide ;
+    sch:name "Experimental Structural Analysis"@en ,
+        "43000554 - Experimental Structural Analysis"@en ;
+    dc:title "ANX-PR/CL/001 LEARNING GUIDE"@en ;
+    dct:creator <http://guia-mad-bench.es/data/guia#CarlosMartinDeLaConcha> ,
+        <http://guia-mad-bench.es/data/guia#AntonioJoseMadridRamos> ,
+        <http://guia-mad-bench.es/data/guia#IvanMuñozDiaz> ;
+    guide:numberOfCredits "4.5"^^xsd:decimal ;
+    sch:description "This course deals with the fundamentals and applications of experimental techniques in structural engineering."@en .
+
+<http://guia-mad-bench.es/data/guia#Syllabus_43000554> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/guia#Unit1>,
+        <http://guia-mad-bench.es/data/guia#Unit2>,
+        <http://guia-mad-bench.es/data/guia#Unit3> ,
+        <http://guia-mad-bench.es/data/guia#Unit4>,
+        <http://guia-mad-bench.es/data/guia#Unit5> ;
+    guide:hasSyllabus :CourseGuide_43000554 .
+
+<http://guia-mad-bench.es/data/guia#Unit1> rdf:type :SyllabusItem ;
+    guide:itemIndex "1"^^xsd:integer ;
+    sch:description "Introduction to instrumentation"@en .
+
+<http://guia-mad-bench.es/data/guia#Unit2> rdf:type :SylabusItem ;
+    guide:itemIndex "2"^^xsd:integer ;
+    sch:description "Signal conditioning, Basics of Electrotechnics."@en .
+
+<http://guia-mad-bench.es/data/guia#Unit3> rdf:type :SyllabusItem ;
+    guide:itemIndex "3"^^xsd:integer ;
+    sch:description "Strain measurement, Working principle and configuration of strain gages"@en .
+
+<http://guia-mad-bench.es/data/guia#Unit4> rdf:type :SylabusItem ;
+    guide:itemIndex "4"^^xsd:integer ;
+    sch:description "Load measurement, Load cells, Equipment for load application."@en .
+
+<http://guia-mad-bench.es/data/guia#Unit5> rdf:type :SyllabusItem ;
+    guide:itemIndex "5"^^xsd:integer ;
+    sch:description "Displacement measurement, Potentiometers, Inductive transducers"@en .
+
+<http://guia-mad-bench.es/data/guia#Lecturer_CarlosMartinDeLaConcha> rdf:type :Lecturer ,
+        sch:Person ;
+    guide:Lecturer <http://w3id.org/def/guia#CarlosMartinDeLaConcha> ;
+    sch:name "Carlos Martin De La Concha Renedo"@en ;
+    sch:email "carlos.martindelaconcha@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#Lecturer_AntonioJoseMadridRamos> rdf:type :Lecturer ,
+        sch:Person ;
+    guide:Lecturer <http://w3id.org/def/guia#AntonioJoseMadridRamos> ;
+    sch:name "Antonio Jose Madrid Ramos"@en ;
+    sch:email "antoniojose.madrid@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#Lecturer_IvanMuñozDiaz> rdf:type :Lecturer ,
+        sch:Person ;
+    guide:Lecturer <http://w3id.org/def/guia#IvanMuñozDiaz> ;
+    sch:name "Ivan Muñoz Diaz"@en ;
+    sch:email "ivan.munoz@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#Lecturer_CarlosZanuySanchez> rdf:type :Lecturer ,
+        sch:Person ;
+    guide:Lecturer <http://w3id.org/def/guia#CarlosZanuySanchez> ;
+    sch:name "Carlos Zanuy Sanchez"@en ;
+    sch:email "carlos.zanuy@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#Lecturer_JoseManuelSoriaHerrera> rdf:type :Lecturer ,
+        sch:Person ;
+    guide:Lecturer <http://w3id.org/def/guia#JoseManuelSoriaHerrera> ;
+    sch:name "Jose Manuel Soria Herrera"@en ;
+    sch:email "jm.soria@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#Lecturer_GonzaloSanzDiezDeUlzurrunCasals> rdf:type :Lecturer ,
+        sch:Person ;
+    guide:Lecturer <http://w3id.org/def/guia#GonzaloSanzDiezDeUlzurrunCasals> ;
+    sch:name "Gonzalo Sanz-Diez De Ulzurrun Casals"@en ;
+    sch:email "g.ulzurrun@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#EvaluationSystem_43000554> rdf:type :EvaluationSystem ;
+    guide:hasEvaluation <http://guia-mad-bench.es/data/guia#Trial_FinalExam>,
+        <http://guia-mad-bench.es/data/guia#Trial_ProgressiveAssessment> .
+
+<http://guia-mad-bench.es/data/guia#Trial_FinalExam> rdf:type :EvaluationTrial ;
+    guide:trialDescription "Final exam. Written test."@en ,
+        "Written test"@en ;
+    sch:name "Final Exam"^^xsd:string ;
+    guide:gradePercentage "60.1"^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/guia#Trial_ProgressiveAssessment> rdf:type :EvaluationTrial ;
+    guide:trialDescription "Resolution and submission of assigned tasks (exercises and case-studies)."@en ,
+        "Individual work"@en ;
+    sch:name "Progressive Assessment"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#Competency_MICCPCGP11> rdf:type :Competency ;
+    guide:competencyCode "MICCPCGP11"^^xsd:string ;
+    guide:competencyDescription "Capacidad para el proyecto, ejecución e inspección de estructuras"@en .
+
+<http://guia-mad-bench.es/data/guia#LearningResult_RA121> rdf:type :LearningResult ;
+    guide:learningResultCode "RA121"^^xsd:string ;
+    sch:description "The student knows the fundamentals and applications of the most relevant transducers for instrumentation of structures."@en .
+
+<http://guia-mad-bench.es/data/guia#CourseGuide_43000554> guide:hasLearningResult <http://guia-mad-bench.es/data/guia#Competency_MICCPCGP11>,
+    <http://guia-mad-bench.es/data/guia#LearningResult_RA121> ;
+    sch:name "Experimental Structural Analysis"@en .

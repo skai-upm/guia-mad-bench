@@ -1,0 +1,49 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/45001410-2025-26> rdf:type :CourseGuide ;
+    sch:name "Servicios, Proteccion Del Medio Urbano Y Gestion D"@en ;
+    guide:numberOfCredits 3.0 .
+
+<http://guia-mad-bench.es/data/grado-civil-y-territorial> rdf:type :BachelorDegree ;
+    sch:name "Grado En Ingenieria Civil Y Territorial"@es ;
+    guide:degreeCode "04GC"^^xsd:string .
+
+<http://guia-mad-bench.es/data/servicios-proteccion-medio-urbano> rdf:type :Syllabus ;
+    sch:synopsis "La asignatura estudia los servicios urbanos, centrándose en gestión de residuos y generación de energía"@en .
+
+<http://guia-mad-bench.es/data/item-suelos-contaminados> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    sch:description "SUELOS CONTAMINADOS. Contaminación, legislación, remediación"@es .
+
+<http://guia-mad-bench.es/data/evaluacion-progresiva> rdf:type :EvaluationTrial ;
+    sch:name "Participación en clase y trabajos individuales"@en ;
+    guide:trialType "OT"^^xsd:string ;
+    guide:gradePercentage 2.5 .
+
+<http://guia-mad-bench.es/data/evaluacion-global-ordinaria> rdf:type :EvaluationTrial ;
+    sch:name "EVALUACIÓN GLOBAL (ORDINARIA)"@en ;
+    guide:trialType "EX"^^xsd:string ;
+    guide:gradePercentage 100 .
+
+<http://guia-mad-bench.es/data/competencia-cm37-4> rdf:type :Competency ;
+    sch:name "CM37.4 - Comprensión del fundamento y de los sistemas de utilización de las energías renovables"@en ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/resultado-ra95> .
+
+<http://guia-mad-bench.es/data/sandra-paola-bianucci> rdf:type :Lecturer ;
+    sch:name "Sandra Paola Bianucci"@en ;
+    guide:office "Lab. Sanitaria"^^xsd:string ;
+    sch:email <mailto:paola.bianucci@upm.es> .
+
+<http://guia-mad-bench.es/data/cronograma-45001410> rdf:type :Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/evento-semestre-3> ,
+                     <http://guia-mad-bench.es/data/evaluacion-progresiva> .
+
+<http://guia-mad-bench.es/data/course-guide-has-syllabus> rdf:type :CourseGuide ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/servicios-proteccion-medio-urbano> .

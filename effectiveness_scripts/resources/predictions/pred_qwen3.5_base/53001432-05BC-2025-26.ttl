@@ -1,0 +1,868 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide_ANX_PR_CL_001> rdf:type :CourseGuide ;
+    dc:title "Integración De Procesos Químicos"@en ;
+    sch:name "53001432 - Integración De Procesos Químicos" ;
+    guide:teachingPeriod "Septiembre-Enero" ;
+    guide:numberOfCredits 4.5^^xsd:decimal ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/syllabus_01> ;
+    sch:description "El objetivo fundamental de la asignatura es aprender los fundamentos matemáticos y tecnológicos para mejorar la eficiencia energética másica de procesos químicos industriales."@en ;
+    dct:creator "Manuel Rodriguez Hernandez" ,
+                "Francisco Ismael Diaz Moreno"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/syllabus_01> .
+
+<http://guia-mad-bench.es/data/degree_05BC> rdf:type :MasterDegree ;
+    sch:name "Master Universitario En Ingenieria Quimica" ;
+    guide:degreeCode "05BC"@en ;
+    dct:title "05BC - Master Universitario En Ingenieria Quimica"@en .
+
+<http://guia-mad-bench.es/data/university_center_UPM_EI> rdf:type :UniversityCenter , sch:Organization ;
+    sch:name "E.T.S. de Ingenieros Industriales" ;
+    guide:numberOfCredits 4.5^^xsd:decimal ;
+    dct:title "05 - E.T.S. De Ingenieros Industriales"@en .
+
+<http://guia-mad-bench.es/data/lecturer_manuel_rodriguez_hernandez> rdf:type :Lecturer , sch:Person ;
+    sch:name "Manuel Rodriguez Hernandez" ;
+    guide:office "201"@en ;
+    sch:email <mailto:manuel.rodriguezh@upm.es> ;
+    dct:title "Profesorado implicado en la docencia"@en .
+
+<http://guia-mad-bench.es/data/lecturer_f_ismael_diaz_moreno> rdf:type :Lecturer , sch:Person ;
+    sch:name "Francisco Ismael Diaz Moreno" ;
+    guide:office "207"@en ;
+    sch:email <mailto:ismael.diaz@upm.es> ;
+    dct:title "Coordinador/a"@en .
+
+<http://guia-mad-bench.es/data/syllabus_01> rdf:type :Syllabus , sch:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/ssi_fundamentos>,
+                 <http://guia-mad-bench.es/data/ssi_integracion_energetica>,
+                 <http://guia-mad-bench.es/data/ssi_optimizacion> ;
+    sch:description "Fundamentos, Integración energética y másica"@en .
+
+<http://guia-mad-bench.es/data/syllabus_item_fundamentos> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "Integración de procesos"@en ;
+    sch:description "Fundamentos"@en .
+
+<http://guia-mad-bench.es/data/syllabus_item_integracion_energetica> rdf:type :SylabusItem ;
+    guide:itemIndex 2^^xsd:integer ;
+    guide:syllabusDescription "Integración energética"@en ;
+    sch:description "Programación matemática para la integración energética"@en .
+
+<http://guia-mad-bench.es/data/syllabus_item_optimizacion> rdf:type :SylabusItem ;
+    guide:itemIndex 3^^xsd:integer ;
+    guide:syllabusDescription "Optimización lineal mixta"@en ;
+    sch:description "Programación matemática para la integración energética"@en .
+
+<http://guia-mad-bench.es/data/schedule_01> rdf:type :Schedule , sch:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/seventy_events>,
+                     <http://guia-mad-bench.es/data/evaluation_trial_tareas_ep> .
+
+<http://guia-mad-bench.es/data/schedule_event_1> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 1^^xsd:integer ;
+    guide:eventWeek "Semestre 1"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_fundamentos> .
+
+<http://guia-mad-bench.es/data/schedule_event_2> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 5^^xsd:integer ;
+    guide:eventWeek "Semestre 1"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_energetica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 17^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_energetica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_global> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 17^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_energetica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_masica> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 17^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 5^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ti_17> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_prueba_ti_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_entregas_ot_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-bench.es/data/schedule_event_tareas_ep_17_extra> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Semestre 2"@en ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/ssi_integracion_masica> .
+
+<http://guia-mad-b

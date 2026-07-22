@@ -1,0 +1,98 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix data: <http://guia-mad-bench.es/data/> .
+
+<http://w3id.org/def/guia#CourseGuide_93000798> rdf:type :CourseGuide ;
+    dc:title "Aplicaciones Y Servicios"@en ;
+    sch:name "Aplicaciones y Servicios" ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_93000798> ;
+    guide:hasCourseInstance <data:course_93000798> ;
+    sch:teachingPeriod "2025-26"@en ;
+    guide:numberOfCredits 6.0^^xsd:decimal ;
+    guide:syllabusDescription "Bloque I a VI" .
+
+<http://w3id.org/def/guia#Degree_09AQ> rdf:type :MasterDegree, sch:CourseInstance ;
+    dc:title "Master Universitario En Ingenieria De Telecomunicacion"@en ;
+    sch:name "Master Universitario en Ingenieria de Telecomunicacion" ;
+    guide:degreeCode "09AQ"@en .
+
+<http://w3id.org/def/guia#Lecturer_Felix_Cuadrado> rdf:type :Lecturer, sch:Person ;
+    sch:name "Felix Aurelio Cuadrado Latasa" ;
+    guide:office "C218"^^xsd:string ;
+    sch:email <mailto:felix.cuadrado@upm.es> .
+
+<http://w3id.org/def/guia#Lecturer_David_Rodriguez> rdf:type :Lecturer, sch:Person ;
+    sch:name "David Rodriguez Torrado" ;
+    guide:office "C215"^^xsd:string ;
+    sch:email <mailto:david.rtorrado@upm.es> .
+
+<http://w3id.org/def/guia#Lecturer_Juan_Carlos_Duenas> rdf:type :Lecturer, sch:Person ;
+    sch:name "Juan Carlos Dueñas Lopez" ;
+    guide:tutorshipsSchedule <data:schedule_tutorship_93000798> .
+
+<http://w3id.org/def/guia#Competency_CE6> rdf:type :Competency ;
+    guide:competencyCode "CE6"@en ;
+    sch:description "Capacidad para modelar, diseñar, implantar, gestionar, operar, administrar y mantener redes, servicios y contenidos." .
+
+<http://w3id.org/def/guia#LearningResult_RA4> rdf:type :LearningResult ;
+    guide:learningResultCode "RA4"@en ;
+    sch:description "Conocer los métodos de ingeniería útiles en el desarrollo y operación de aplicaciones y servicios" .
+
+<http://w3id.org/def/guia#Syllabus_93000798> rdf:type :Syllabus, sch:Syllabus ;
+    guide:hasItem <data:syllabus_item_1>, <data:syllabus_item_2>, ..., <data:syllabus_item_24> .
+
+<data:syllabus_item_1> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    sch:description "Bloque I: Dirección de sistemas de información" .
+
+<data:syllabus_item_5> rdf:type :SyllabusItem ;
+    guide:itemIndex 5^^xsd:integer ;
+    sch:description "Tema 6. Lab information systems modeling" .
+
+<http://w3id.org/def/guia#Schedule_93000798> rdf:type :Schedule, sch:Schedule ;
+    sch:eventSchedule <data:schedule_event_1>, ..., <data:schedule_event_24> .
+
+<data:schedule_event_1> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex 1^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    om:Unit "0.33"^^xsd:decimal ; # Approximation based on duration and credits context if needed, but text says 2h per topic roughly. Let's use activityDuration property directly in event or link to Activity.
+    sch:description "Tema1 - Tema2" .
+
+<http://w3id.org/def/guia#EvaluationSystem_93000798> rdf:type :EvaluationSystem ;
+    guide:evaluationDescription "Se supera la asignatura cuando se obtenga una calificación mayor o igual a 5 puntos sobre un total de 10." .
+
+<http://w3id.org/def/guia#Trial_Examen_Parcial_1> rdf:type :EvaluationTrial, sch:Event ;
+    guide:trialType "Examen Escrito"^^xsd:string ;
+    guide:evaluationDescription "Evaluación Progresiva Presencial";
+    om:Unit "0.5"^^xsd:decimal .
+
+<http://w3id.org/def/guia#Trial_Examen_Final> rdf:type :EvaluationTrial, sch:Event ;
+    guide:trialType "Examen Escrito"^^xsd:string ;
+    guide:evaluationDescription "Evaluación Global Presencial";
+    om:Unit "1.0"^^xsd:decimal .
+
+<http://w3id.org/def/guia#DidacticResource_Moodle> rdf:type :DidacticResource, sch:CourseInstance ;
+    guide:bibliographyTitle "Moodle de la asignatura"@en ;
+    guide:bibliographyType <data:moodle_resource_type> ;
+    sch:url <https://moodle.upm.es/titulaciones/oficiales/login/login.php> .
+
+<http://w3id.org/def/guia#DidacticResource_Libro1> rdf:type :DidacticResource, sch:CourseInstance ;
+    guide:bibliographyTitle "Engineering software products"^^xsd:string ;
+    guide:bibliographyType <data:book_resource_type> ;
+    sch:url <https://moodle.upm.es/titulaciones/oficiales/login/login.php#Libro1> .
+
+<http://w3id.org/def/guia#DidacticResource_Libro2> rdf:type :DidacticResource, sch:CourseInstance ;
+    guide:bibliographyTitle "Microservices patterns"^^xsd:string ;
+    guide:bibliographyType <data:book_resource_type> ;
+    sch:url <https://moodle.upm.es/titulaciones/oficiales/login/login.php#Libro2> .
+
+<http://w3id.org/def/guia#RequiredKnowledge_Java> rdf:type :RequiredKnowledge, sch:Event ;
+    guide:previousCourses "Conocimientos de programación en Java"^^xsd:string ;
+    guide:previousKnowledge <data:knowledge_java> .

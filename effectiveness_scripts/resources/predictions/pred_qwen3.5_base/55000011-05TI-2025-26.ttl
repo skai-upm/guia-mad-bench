@@ -1,0 +1,215 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Annotation properties (from reference)
+#################################################################
+
+dc:title rdf:type owl:AnnotationProperty ;
+         rdfs:label "title"@en .
+
+dct:creator rdf:type owl:AnnotationProperty ;
+            rdfs:label "creator"@en .
+
+rdfs:description rdf:type owl:AnnotationProperty ;
+                 rdfs:label "description"@en .
+
+#################################################################
+#    Object Properties (from reference)
+#################################################################
+
+guide:hasSyllabus rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:CourseGuide ;
+                  rdfs:range guide:Syllabus ;
+                  rdfs:comment "Links a course guide to the syllabus that describes the thematic contents of the course."@en .
+
+guide:activityDurationUnit rdf:type owl:ObjectProperty ;
+                           rdfs:domain guide:Activity ;
+                           rdfs:range om:Unit ;
+                           rdfs:label "activity duration unit"@en .
+
+guide:hasActivity rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:ScheduleEvent ;
+                  rdfs:range guide:Activity ;
+                  rdfs:comment "Links a schedule event to an academic activity carried out during that event."@en .
+
+guide:hasCompetency rdf:type owl:ObjectProperty ;
+                    rdfs:domain guide:CourseGuide ;
+                    rdfs:range guide:Competency ;
+                    rdfs:label "has competency"@en .
+
+guide:hasCourse rdf:type owl:ObjectProperty ;
+                rdfs:domain guide:Degree ;
+                rdfs:range guide:Course ;
+                rdfs:comment "Links a degree programme to a course included in its curriculum."@en .
+
+guide:hasDidacticResource rdf:type owl:ObjectProperty ;
+                          rdfs:domain guide:CourseGuide ;
+                          rdfs:range guide:DidacticResource ;
+                          rdfs:label "has didactic resource"@en .
+
+guide:hasEvaluation rdf:type owl:ObjectProperty ;
+                    rdfs:domain guide:CourseGuide ;
+                    rdfs:range guide:EvaluationSystem ;
+                    rdfs:comment "Links a course guide to its evaluation system."@en .
+
+guide:hasLearningResult rdf:type owl:ObjectProperty ;
+                        rdfs:domain guide:CourseGuide ;
+                        rdfs:range guide:LearningResult ;
+                        rdfs:label "has learning result"@en .
+
+sch:eventSchedule rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:Schedule ;
+                  rdfs:range guide:ScheduleEvent ;
+                  rdfs:comment "Links a schedule to one of its schedule events."@en .
+
+guide:tutorshipsSchedule rdf:type owl:ObjectProperty ;
+                         rdfs:domain guide:Lecturer ;
+                         rdfs:label "tutorship schedule"@en .
+
+#################################################################
+#    Data properties (from reference)
+#################################################################
+
+guide:numberOfCredits rdf:type owl:DatatypeProperty ;
+                      rdfs:range xsd:decimal ;
+                      rdfs:comment "States the number of academic credits assigned to a course guide or course offering."@en .
+
+sch:name rdf:type owl:DatatypeProperty ;
+         rdfs:label "name"@en .
+
+guide:syllabusDescription rdf:type owl:DatatypeProperty ;
+                          rdfs:range rdf:langString ;
+                          rdfs:comment "Provides the textual description of a syllabus item or thematic unit."@en .
+
+#################################################################
+#    Classes (from reference)
+#################################################################
+
+###  http://w3id.org/def/guia#CourseGuide
+guide:CourseGuide rdf:type owl:Class ;
+                  rdfs:subClassOf sch:CourseInstance ;
+                  rdfs:label "Course Guide"@en .
+
+###  http://w3id.org/def/guia#Degree
+guide:Degree rdf:type owl:Class ;
+             rdfs:comment "An academic degree programme that structures and groups courses within a formal higher education curriculum."@en .
+
+###  http://w3id.org/def/guia#BachelorDegree
+guide:BachelorDegree rdf:type owl:Class ;
+                     rdfs:subClassOf guide:Degree ;
+                     rdfs:label "Bachelor's Degree"@en .
+
+#################################################################
+#    Instances (Extraction from Document)
+#################################################################
+
+###  Course Guide Instance
+<http://w3id.org/def/guia#course_guide_55000011> rdf:type guide:CourseGuide ;
+                                                    dc:title "ANX-PR/CL/001-01 - Guía de Aprendizaje"@en ;
+                                                    dct:creator <http://w3id.org/def/guia#victor_munoz_villarragut>,
+                                                                                             <http://w3id.org/def/guia#pablo_gomez_mourelo> ,
+                                                                                             "Andrea Cimmino Arriaga" ;
+                                                    dct:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
+                                                    sch:name "55000011 - Ecuaciones Diferenciales"@en ;
+                                                    guide:numberOfCredits 6 ;
+                                                    guide:courseYear 2025 ;
+                                                    guide:syllabusDescription "Los contenidos de esta asignatura se orientan especialmente al estudio de las ecuaciones diferenciales ordinarias así como a problemas de contorno y de valor inicial formulados en términos de ecuaciones en derivadas parciales."@es ;
+                                                    sch:inLanguage <http://w3id.org/def/guia#castellano> .
+
+###  Degree Instance (Bachelor)
+<http://w3id.org/def/guia#degree_05ti> rdf:type guide:BachelorDegree ;
+                                        dct:title "Grado En Ingeniería En Tecnologías Industriales"@es ;
+                                        sch:courseCode 123456789 .
+
+###  University Center Instance
+<http://w3id.org/def/guia#center_upm_industrial> rdf:type guide:UniversityCenter ;
+                                                    dct:title "E.T.S. De Ingenieros Industriales"@es ;
+                                                    sch:name "05 - E.T.S. De Ingenieros Industriales" .
+
+###  Lecturer Instances (from Section 2 & Tables)
+<http://w3id.org/def/guia#victor_munoz_villarragut> rdf:type guide:Lecturer ;
+                                                       sch:name "Victor Muñoz Villarragut"@en ;
+                                                       dct:creator <http://w3id.org/def/guia#course_guide_55000011>,
+                                                                    <http://w3id.org/def/guia#victor_munoz_villarragut> .
+
+<http://w3id.org/def/guia#pablo_gomez_mourelo> rdf:type guide:Lecturer ;
+                                                  sch:name "Pablo Gomez Mourelo"@en ;
+                                                  dct:creator <http://w3id.org/def/guia#course_guide_55000011>,
+                                                               <http://w3id.org/def/guia#pablo_gomez_mourelo> .
+
+<http://w3id.org/def/guia#ana_soledad_merono_moreno> rdf:type guide:Lecturer ;
+                                                        sch:name "Ana Soledad Meroño Moreno"@en ;
+                                                        dct:creator <http://w3id.org/def/guia#course_guide_55000011>,
+                                                                     <http://w3id.org/def/guia#ana_soledad_merono_moreno> .
+
+<http://w3id.org/def/guia#pedro_galan_del_sastre> rdf:type guide:Lecturer ;
+                                                     sch:name "Pedro Galan Del Sastre"@en ;
+                                                     dct:creator <http://w3id.org/def/guia#course_guide_55000011>,
+                                                                  <http://victor_munoz_villarragut> .
+
+###  Competency Instances (from Section 4)
+<http://w3id.org/def/guia#competency_ce1> rdf:type guide:Competency ;
+                                           sch:name "CE1"@en ;
+                                           guide:competencyCode "CE1"^^xsd:string ;
+                                           guide:competencyDescription "Capacidad para la resolución de los problemas matemáticos que puedan plantearse en la ingeniería."@es .
+
+<http://w3id.org/def/guia#competency_cg1> rdf:type guide:Competency ;
+                                            sch:name "CG1"@en ;
+                                            guide:competencyCode "CG1"^^xsd:string ;
+                                            guide:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Industrial."@es .
+
+<http://w3id.org/def/guia#learning_result_ra242> rdf:type guide:LearningResult ;
+                                                   sch:name "RA242"@en ;
+                                                   guide:learningResultCode "RA242"^^xsd:string ;
+                                                   guide:learningResultDescription "Capacidad de abstracción y reconocimiento de conceptos generales en situaciones prácticas."@es .
+
+###  Syllabus Instance (from Section 5)
+<http://w3id.org/def/guia#syllabus_ode> rdf:type guide:Syllabus ;
+                                         sch:name "Temario Ecuaciones Diferenciales"@en ;
+                                         guide:hasSyllabus <http://w3id.org/def/guia#course_guide_55000011> .
+
+###  Syllabus Items (from Section 5)
+<http://w3id.org/def/guia#item_tema1> rdf:type guide:SyllabusItem ;
+                                      sch:name "Ecuaciones diferenciales ordinarias de primer orden"@en ;
+                                      guide:itemIndex 1^^xsd:integer .
+
+###  Schedule Instance (from Section 6)
+<http://w3id.org/def/guia#schedule_55000011> rdf:type guide:Schedule ;
+                                                sch:eventSchedule <http://w3id.org/def/guia#course_guide_55000011>,
+                                                                 <http://w3id.org/def/guia#event_week_17> .
+
+###  Schedule Events (from Section 6)
+<http://w3id.org/def/guia#event_week_17> rdf:type guide:ScheduleEvent ;
+                                          sch:eventIndex 17^^xsd:integer ,
+                                                   <http://w3id.org/def/guia#course_guide_55000011>,
+                                           guide:hasActivity <http://w3id.org/def/guia#activity_exam_final> .
+
+###  Evaluation System Instance (from Section 7)
+<http://w3id.org/def/guia#evaluation_system_progresiva> rdf:type guide:EvaluationSystem ;
+                                                          sch:name "Evaluación Progresiva"@en ;
+                                                          guide:hasEvaluation <http://w3id.org/def/guia#course_guide_55000011>,
+                                                                                   <http://w3id.org/def/guia#evaluation_trial_semester_5> .
+
+###  Evaluation Trial Instances (from Section 7)
+<http://w3id.org/def/guia#evaluation_trial_semester_5> rdf:type guide:EvaluationTrial ;
+                                                         sch:name "Práctica de computación científica"@en ;
+                                                         guide:hasScheduleEvent <http://w3id.org/def/guia#event_week_17>,
+                                                                      <http://w3id.org/def/guia#course_guide_55000011> .
+
+###  Didactic Resources (from Section 8)
+<http://w3id.org/def/guia#resource_sanchez_gonzalez> rdf:type guide:DidacticResource ;
+                                                        sch:name "Sistemas Dinámicos. Una introducción a través de ejercicios"@en ;
+                                                        guide:bibliographyType <http://purl.org/dc/terms/BiblioBook>,
+                                                                     <http://w3id.org/def/guia#course_guide_55000011> .
+
+###  Other Information (from Section 9)
+<http://w3id.org/def/guia#info_other> rdf:type guide:CourseGuide ;
+                                        sch:name "Otra información"@en ;
+                                        dct:description "La modalidad de docencia a impartir se corresponderá en cada momento con lo que establezca la normativa/legislación vigente."@es .

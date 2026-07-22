@@ -1,0 +1,216 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+
+# Course Guide Instance
+:course_guide_615000300_2025_26 rdf:type guide:CourseGuide ;
+    sch:name "Bases De Datos" ;
+    sch:description "En esta asignatura el alumno aprenderá los conceptos fundamentales, tanto teóricos como práctico, necesarios para conocer el funcionamiento de las bases de datos."@en ;
+    guide:teachingPeriod "2025-26" ;
+    guide:numberOfCredits 9.0 ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :syllabus_databases ;
+    guide:hasCompetency :comp_CB01, :comp_CC12, :comp_CC13, :comp_CC7, :comp_CT1, :comp_CT2 ;
+    guide:hasLearningResult :lr_RA1, :lr_RA2, :lr_RA7, :lr_RA6, :lr_RA3, :lr_RA4, :lr_RA5 ;
+    guide:hasEvaluation :eval_system_databases ;
+    sch:instructor :lecturer_fernando_ortega, :lecturer_maria_angeles, :lecturer_santiago, :lecturer_edgar, :lecturer_gema, :lecturer_raul ;
+    guide:hasDidacticResource :res_moodle, :res_ordenador, :res_book_elmasri, :res_book_silberschatz, :res_book_date .
+
+# Degree Instance
+:degree_61CI rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Ingenier	eria De Computadores" ;
+    guide:degreeCode "61CI" .
+
+# Course Instance
+:course_615000300 rdf:type guide:Course ;
+    sch:name "Bases De Datos" ;
+    sch:courseCode 615000300 ;
+    guide:courseYear 2025 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Tercer semestre" ;
+    sch:hasCourseInstance :course_guide_615000300_2025_26 .
+
+# University Center Instance
+:center_ets_sis rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ing. De Sistemas Informáticos" ;
+    guide:offers :degree_61CI .
+
+# Syllabus and Items
+:syllabus_databases rdf:type guide:Syllabus ;
+    guide:hasItem :item_topic_1, :item_topic_2, :item_topic_3, :item_topic_4, :item_topic_5, :item_topic_6, :item_topic_7 .
+
+:item_topic_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción (Introducción a las bases de datos, Tipos de bases de datos, Arquitectura cliente-servidor)"@en .
+
+:item_topic_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Modelado de datos (Modelo entidad-relación)"@en .
+
+:item_topic_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Modelo relacional (Introducción, Transformación, Normalización, Álgebra relacional)"@en .
+
+:item_topic_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "El lenguaje SQL (DML, DDL, DCL, TCL)"@en .
+
+:item_topic_5 rdf:<0xC2>type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Seguridad en bases de datos"@en .
+
+:item_topic_6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Programación contra bases de datos (Drivers, ORM)"@en .
+
+:item_topic_7 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Almacenamiento de información basada en ficheros (CSV, JSON, XML)"@en .
+
+# Competencies
+:comp_CB01 rdf:type guide:Competency ;
+    guide:competencyCode "CB01" ;
+    guide:competencyDescription "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de...”@en .
+
+:comp_CC12 rdf:type guide:Competency ;
+    guide:competencyCode "CC12" ;
+    guide:competencyDescription "Conocimiento y aplicación de las características, funcionalidades y estructura de las bases de datos..."@en .
+
+:comp_CC13 rdf:type guide:Competency ;
+    guide:competencyCode "CC13" ;
+    guide:competencyDescription "Conocimiento y aplicación de las herramientas necesarias para el almacenamiento, procesamiento y acceso a los Sistemas de información..."@en .
+
+:comp_CC7 rdf:type guide:Competency ;
+    guide:competencyCode "CC7" ;
+    guide:competencyDescription "Conocimiento, diseño y utilización de forma eficiente los tipos y estructuras de datos más adecuados..."@en .
+
+:comp_CT1 rdf:type guide:Competency ;
+    guide:competencyCode "CT1" ;
+    guide:competencyDescription "Análisis y síntesis: Descomponer la información en unidades más pequeñas..."@en .
+
+:comp_CT2 rdf:type guide:Competency ;
+    guide:competencyCode "CT2" ;
+    guide:competencyDescription "Resolución de problemas: Identificar, analizar y definir los elementos significativos..."@en .
+
+# Learning Results
+:lr_RA1 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA1" ;
+    guide:learningResultDescription "Conoce y utiliza correctamente las estructuras y tipos de ficheros de datos que conforman un sistema de información."@en .
+
+:lr_RA2 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA2" ;
+    guide:learningResultDescription "Conoce la estructura y utilización de ficheros índices para manejar ficheros de datos"@en .
+
+:lr_RA7 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA7" ;
+    guide:learningResultDescription "Lee un texto un artículo científico de cierta complejidad..."@en .
+
+:lr_RA6 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA6" ;
+    guide:learningResultDescription "Identifica las estructuras y problemas derivados de la integridad referencial en bases de datos"@en .
+
+:lr_RA3 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA3" ;
+    guide:learningResultDescription "Conoce las bases teóricas del modelado conceptual de datos..."@en .
+
+:lr_RA4 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA4" ;
+    guide:learningResultDescription "Conoce los fundamentos de los lenguajes de acceso a bases de datos relaciones..."@en .
+
+:lr_RA5 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA5" ;
+    guide:learningResultDescription "Conoce los fundamentos teóricos del proceso concurrente de transacciones..."@en .
+
+# Evaluation System and Trials
+:eval_system_databases rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación de la asignatura se llevará a cabo mediante dos sistemas: evaluación progresiva y evaluación global."@en ;
+    guide:hasEvaluationTrial :trial_oral_practice, :trial_final_exam, :trial_written_practice .
+
+:trial_oral_practice rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "06:00" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "/ 10" ;
+    guide:involvesCompetency :comp_CT1, :comp_CC12, :comp_CC13, :comp_CC7 .
+
+:trial_final_exam rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:15" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:involvesCompetency :comp_CT1, :comp_CC12, :comp_CC13, :comp_CC7, :comp_CT2, :comp_CB01 .
+
+:trial_written_practice rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "00:15" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:involvesCompetency :comp_CC7, :comp_CC13, :comp_CT1, :comp_CC12 .
+
+# Lecturers
+:lecturer_fernando_ortega rdf:type guide:Lecturer ;
+    sch:name "Fernando Ortega Requena" ;
+    sch:email "fernando.ortega@upm.es" .
+
+:lecturer_maria_angeles rdf:type guide:Lecturer ;
+    sch:name "Maria Angeles Mahillo Garcia" ;
+    sch:email "mariaangeles.mahillo@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario."@en .
+
+:lecturer_santiago rdf:type guide:Lecturer ;
+    sch:name "Santiago Alonso Villaverde" ;
+    sch:email "santiago.alonso@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario."@en .
+
+:lecturer_edgar rdf:type guide:Lecturer ;
+    sch:name "Edgar Talavera Muñoz" ;
+    sch:email "e.talavera@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario."@en .
+
+:lecturer_gema rdf:type guide:Lecturer ;
+    sch:name "Maria Gema Bello Orgaz" ;
+    sch:email "gema.borgaz@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario."@en .
+
+:lecturer_raul rdf:type guide:Lecturer ;
+    sch:name "Raul Lara Cabrera" ;
+    sch:email "raul.lara@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario."@en .
+
+# Didactic Resources
+:res_moodle rdf:type guide:DidacticResource ;
+    sch:name "Moodle" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Material de la asignatura"@en .
+
+:res_ordenador rdf:type guide:DidacticResource ;
+    sch:name "Ordenador" ;
+    guide:bibliographyType "Equipamiento" ;
+    guide:bibliographyDescription "Ordenador para la realización de las prácticas de la asignatura"@en .
+
+:res_book_elmasri rdf:type guide:DidacticResource ;
+    sch:name "Fundamentos de sistemas de bases de datos" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Elmasri, R. A., & Navathe, S. B. (2007). Fundamentos de sistemas de bases de datos"@en .
+
+:res_book_silberschatz rdf:type guide:DidacticResource ;
+    sch:name "Fundamentos de bases de datos" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Silberschatz, A., Korth, H. F., Sudarshan, S., Pérez, F. S., Santiago, A. I., & Sánchez, A. V. (2002)"@en .
+
+:res_book_date rdf:type guide:DidacticResource ;
+    sch:name "Introducción a los sistemas de bases de datos" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Date, C. J. (2001). Introducción a los sistemas de bases de datos. Pearson Educación."@en .

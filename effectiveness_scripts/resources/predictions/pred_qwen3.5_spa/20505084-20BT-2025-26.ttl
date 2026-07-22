@@ -1,0 +1,99 @@
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <https://schema.org/> .
+
+<http://guia-mad-bench.es/data/courseguide/ANX_PR_CL_001> a guide:CourseGuide ;
+    rdfs:label "Guía de Aprendizaje Conceptos De Biología"@en ;
+    guide:numberOfCredits 3.0 ;
+    sch:name "Conceptos De Biología" ;
+    sch:description "Esta asignatura trata los conceptos más importantes de la Biología y cómo se relacionan entre sí..."@es ;
+    sch:inLanguage "@es@" ;
+    guide:syllabus <http://guia-mad-bench.es/data/syllabus/Conceptos_Bio> .
+
+<http://guia-mad-bench.es/data/courseguide/ANX_PR_CL_001> a guide:Lecturer ;
+    sch:director "Pablo Rodriguez Palenzuela"@en ;
+    sch:name "Pablo Rodriguez Palenzuela" ;
+    sch:email <mailto:pablo.rpalenzuela@upm.es> .
+
+<http://guia-mad-bench.es/data/degree/Bachelor20BT> a guide:BachelorDegree, guide:Degree ;
+    rdfs:subClassOf guide:BachelorDegree ;
+    guide:courseYear 2025-26 ;
+    sch:name "Grado En Biotecnología" .
+
+<http://guia-mad-bench.es/data/center/Etsi_Agronomica_Biosistemas> a guide:UniversityCenter, sch:Organization ;
+    rdfs:label "Etsi Agronómica, Aliment. y Biosistemas"@es ;
+    sch:name "20 - Etsi Agronómica, Aliment. Y Biosistemas" .
+
+<http://guia-mad-bench.es/data/center/Etsi_Agronomica_Biosistemas> guide:offers <http://guia-mad-bench.es/data/degree/Bachelor20BT> ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas" .
+
+<http://guia-mad-bench.es/data/syllabus/Conceptos_Bio> a guide:Syllabus ;
+    rdfs:label "Temario Conceptos De Biología"@es ;
+    sch:description "Vida, Energía e Información; Biología Evolutiva..."@en .
+
+<http://guia-mad-bench.es/data/syllabus/Conceptos_Bio> guide:hasItem <http://guia-mad-bench.es/data/item/Vida_Energia_Info> ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Vida, Energía e Información"@es .
+
+<http://guia-mad-bench.es/data/syllabus/Conceptos_Bio> guide:hasItem <http://guia-mad-bench.es/data/item/Biologia_Evolutiva> ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Biología Evolutiva"@es .
+
+<http://guia-mad-bench.es/data/syllabus/Conceptos_Bio> guide:hasItem <http://guia-mad-bench.es/data/item/Bases_Enfermedad> ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Bases Biológicas de la Enfermedad"@es .
+
+<http://guia-mad-bench.es/data/syllabus/Conceptos_Bio> guide:hasItem <http://guia-mad-bench.es/data/item/Naturaleza_Humana> ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Naturaleza Humana"@es .
+
+<http://guia-mad-bench.es/data/competency/CB03> a guide:Competency ;
+    guide:competencyCode "CB03"^^xsd:string ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes..."@es .
+
+<http://guia-mad-bench.es/data/competency/CE05> a guide:Competency ;
+    guide:competencyCode "CE05"^^xsd:string ;
+    guide:competencyDescription "Capacidad para comprender los principales conceptos de Biología y saber relacionarlos..."@es .
+
+<http://guia-mad-bench.es/data/learningresult/RA121> a guide:LearningResult ;
+    guide:learningResultCode "RA121"^^xsd:string ;
+    guide:learningResultDescription "Comprender la dimensión ética y social de la biotecnología"@es .
+
+<http://guia-mad-bench.es/data/learningresult/RA203> a guide:LearningResult ;
+    guide:learningResultCode "RA203"^^xsd:string ;
+    guide:learningResultDescription "Conocimiento profundo de los conceptos fundamentales de la Biología"@es .
+
+<http://guia-mad-bench.es/data/courseguide/ANX_PR_CL_001> a sch:CourseInstance, guide:SyllabusItem ; # Mapping Course Guide to Instance
+    rdfs:type <http://w3id.org/def/guia#CourseGuide> ;
+    guide:scheduleEvent <http://guia-mad-bench.es/data/scheduleevent/Sem_2025_26> .
+
+<http://guia-mad-bench.es/data/activity/Eval_Progresiva_S1> a guide:EvaluationTrial, sch:Event ;
+    rdfs:type "Evaluación en clase"@es ;
+    guide:trialType "OT"^^xsd:string ; # Other techniques evaluativas (mapped from OT) or generic type based on ontology if available. Ontology has trialType as rdf:langString. I will use literal for description.
+    guide:evaluationDescription "Evaluación Progresiva Presencial"@es ;
+    sch:name "Semestre 1 Evaluación" .
+
+<http://guia-mad-bench.es/data/activity/Eval_Progresiva_S2> a guide:EvaluationTrial, sch:Event ;
+    rdfs:type "Evaluación en clase"@es ;
+    guide:trialType "OT"^^xsd:string ;
+    guide:evaluationDescription "Evaluación Progresiva Presencial"@es .
+
+<http://guia-mad-bench.es/data/activity/Eval_Global> a guide:EvaluationTrial, sch:Event ;
+    rdfs:type "prueba evaluación global"@es ;
+    guide:trialType "EX"^^xsd:string ; # Examen Escrito (mapped from EX)
+    guide:evaluationDescription "Examen Global Presencial"@es .
+
+<http://guia-mad-bench.es/data/activity/Clase_Teorica> a guide:Activity, sch:Event ;
+    rdfs:type "Clase teórica participativa"@es ;
+    guide:activityFormat "AIV"^^xsd:string ; # Aula Invertida (mapped from AIV) or generic. Ontology has activityFormat as rdf:langString. I will use literal for description if needed, but ontology says range is langString. So value should be string.
+    sch:name "Clase Teórica Participativa"@es .
+
+<http://guia-mad-bench.es/data/activity/Video_OnLine> a guide:Activity, sch:Event ;
+    rdfs:type "Vídeo on-line"@es ;
+    guide:activityFormat "LM"^^xsd:string ; # Lección Magistral (mapped from LM) or generic. Ontology has activityFormat as rdf:langString. I will use literal for description if needed.
+
+<http://guia-mad-bench.es/data/scheduleevent/Sem_2025_26> a guide:ScheduleEvent, sch:Event ;
+    rdfs:type "Segundo semestre"@es ;
+    guide:eventWeek "Febrero-Junio"^^xsd:string .

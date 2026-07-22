@@ -1,0 +1,180 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+# Degree and University Center
+_:degree_09BM a guide:BachelorDegree ;
+    sch:name "Grado En Ingenieria Biomedica" ;
+    guide:degreeCode "09BM" ;
+    guide:hasCourse _:course_95000317 .
+
+_:center_ets_telecom a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" ;
+    guide:offers _:degree_09BM .
+
+# Course
+_:course_95000317 a guide:Course ;
+    sch:name "Fisiología De Sistemas" ;
+    sch:courseCode 95000317 ;
+    guide:courseType "Obligatoria" ;
+    sch:hasCourseInstance _:guide_95000317 .
+
+# Course Guide
+_:guide_95000317 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Fisiología De Sistemas" ;
+    sch:inLanguage "Castellano" ;
+    teachingPeriod "2025-26" ;
+    guide:numberOfCredits 6.0 ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:totalHours "150" ; # Estimated based on ECTS (6 * 25)
+    sch:instructor _:lecturer_milagros, _:lecturer_daniel ;
+    sch:director _:lecturer_milally ;
+    guide:hasSyllabus _:syllabus_95000317 ;
+    guide:hasCompetency _:comp_CE12, _:comp_CE49, _:comp_CE52, _:comp_CE53, _:comp_CE54, _:comp_CG01, _:comp_CG02, _:comp_CG05, _:comp_CG06, _:comp_CG11, _:comp_CG12 ;
+    guide:hasLearningResult _:lr_RA99, _:lr_RA96, _:lr_RA95, _:lr_RA98, _:lr_RA97 ;
+    guide:hasEvaluation _:eval_system_95000317 ;
+    guide:hasDidacticResource _:res_tortora, _:res_guyton, _:res_silverthorn, _:res_tresguerres .
+
+# Lecturers
+_:lecturer_milagros a guide:Lecturer ;
+    sch:name "Milagros Ramos Gomez" ;
+    sch:email "milagros.ramos@upm.es" ;
+    guide:office "A035" ;
+    guide:tutorshipsSchedule "M - 09:00 - 10:00" .
+
+_:lecturer_daniel a guide:Lecturer ;
+    sch:name "Daniel Gonzalez Nieto" ;
+    sch:email "daniel.gonzalez.nieto@upm.es" ;
+    guide:office "A-035" ;
+    guide:tutorshipsSchedule "M - 10:30 - 11:30" .
+
+_:lecturer_external a guide:Lecturer ;
+    sch:name "Miguel Ramón Rodriguez García" ;
+    sch:email "miguelramon.rodgarcia@ctb.upm.es" .
+
+# Competencies
+_:comp_CE12 a guide:Competency ;
+    guide:competencyCode "CE12" ;
+    guide:competencyDescription "Saber buscar, obtener e interpretar la información de las principales bases de datos biomédicas y bibliográficos." .
+
+_:comp_CE49 a guide:Competency ;
+    guide:competencyCode "CE49" ;
+    guide:competencyDescription "Conocer los sistemas fisiológicos y órganos humanos tanto a nivel estructural como funcional y sus patologías más relevantes." .
+
+_:comp_CE52 a guide:Competency ;
+    guide:competencyCode "CE52" ;
+    guide:competencyDescription "Comprender el funcionamiento de los diferentes órganos y sistemas del cuerpo humano y la regulación de sus funciones para el mantenimiento de la homeostasis." .
+
+_:comp_CE53 a guide:Competency ;
+    guide:competencyCode "CE53" ;
+    guide:competencyDescription "Conocer y comprender las modificaciones fisiológicas y morfológicas que los procesos patológicos más relevantes ocasionan en el organismo humano." .
+
+_:comp_CE54 a guide:Competency ;
+    guide:competencyCode "CE54" ;
+    guide:competencyDescription "Aplicar de manera fundamentada, crítica y argumentada los principios fisiológicos para contribuir al desarrollo tecnológico en el ámbito de la salud." .
+
+_:comp_CG01 a guide:Competency ;
+    guide:competencyCode "CG01" ;
+    guide:competencyDescription "Desarrollar las habilidades de aprendizaje necesarias para emprender actividades o estudios posteriores de forma autónoma y con confianza." .
+
+# Learning Results
+_:lr_RA99 a guide:LearningResult ;
+    guide:learningResultCode "RA99" ;
+    guide:learningResultDescription "Adquirir una participación creativa, como tecnólogos, en el análisis de los problemas biomédicos planteados con el fin de obtener resultados válidos en cuestiones multidisciplinares" .
+
+_:lr_RA96 a guide:LearningResult ;
+    guide:learningResultCode "RA96" ;
+    guide:learningResultDescription "Identificar las funciones de los distintos sistemas fisiológicos y los mecanismos biológicos que permiten el mantenimiento de la homeostasis" .
+
+# Syllabus
+_:syllabus_95000317 a guide:Syllabus ;
+    guide:hasItem _:item_intro, _:item_nervous, _:item_circulatory, _:item_respiratory, _:item_endocrine, _:item_renal, _:item_digestive, _:item_immune .
+
+_:item_intro a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a la fisiología" .
+
+_:item_nervous a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Sistema nervioso" .
+
+# Evaluation System
+_:eval_system_95000317 a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global." ;
+    guide:hasEvaluationTrial _:trial_1P, _:trial_2P, _:trial_global, _:trial_extraordinary .
+
+_:trial_1P a guide:EvaluationTrial ;
+    sch:name "Examen primer parcial (1P)" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5/10" ;
+    guide:involvesCompetency _:comp_CE49, _:comp_CG01 .
+
+_:trial_2P a guide:EvaluationTrial ;
+    sch:name "Examen segundo parcial (2P)" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5/10" .
+
+_:trial_global a guide:EvaluationTrial ;
+    sch:name "Examen Global (1P+2P)" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5/10" .
+
+# Schedule and Activities
+_:schedule_95000317 a guide:Schedule ;
+    sch:eventSchedule _:event_week1, _:event_week4, _:event_week10 .
+
+_:event_week1 a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity _:act_leccion_magistral_1 .
+
+_:act_leccion_magistral_1 a guide:Activity ;
+    guide:activityDescription "Introducción/Metabolismo" ;
+    guide:activityDuration 4.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+_:event_week10 a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 10" ;
+    guide:eventIndex 10 ;
+    guide:hasActivity _:act_exam_1p .
+
+_:act_exam_1p a guide:Activity ;
+    guide:activityDescription "Examen primer parcial (1P)" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+_:res_tortora a guide:DidacticResource ;
+    guide:bibliographyTitle "Principles of human phisiology" ;
+    guide:bibliographyDescription "Tortora, G.H. & Evans, R.L. (2009). Harper and Row. New York. 12ed" ;
+    guide:bibliographyType "Bibliografía básica" .
+
+_:res_guyton a guide:DidacticResource ;
+    guide:bibliographyTitle "Tratado de fisiología médica" ;
+    guide:bibliographyDescription "Guyton, A. C., & Hall, J. E. (2011). Elsevier España" ;
+    guide:bibliographyType "Bibliografía básica" .
+
+_:res_silverthorn a guide:DidacticResource ;
+    guide:bibliographyTitle "Fisiología humana : un enfoque integrado" ;
+    guide:bibliographyDescription "Silverthorn, D. U. (2008). Editorial Médica Panamericana." ;
+    guide:bibliographyType "Bibliografía de consulta" .
+
+_:res_tresguerres a guide:DidacticResource ;
+    guide:bibliographyTitle "Fisiología humana" ;
+    guide:bibliographyDescription "Tresguerres, J. A. F., & Ariznavarreta Ruiz, C. (2005). McGraw-Hill Interamericana de España." ;
+    guide:bibliographyType "Bibliografía de consulta" .

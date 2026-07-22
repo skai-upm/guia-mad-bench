@@ -1,0 +1,115 @@
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix data: <http://guia-mad-bench.es/data/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+data:g_205000060 a guide:CourseGuide ;
+    sch:name "Diseño Y Gestión De Explotaciones Ganaderas"@en ,
+        "205000060"^^xsd:string ;
+    dct:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@es ;
+    guide:numberOfCredits 5.0 ;
+    guide:courseYear 2025 .
+
+data:d_20BI a guide:BachelorDegree , sch:CourseInstance ;
+    dct:title "Grado En Ciencias Agrarias Y Bioeconomia"^^xsd:string ;
+    data:g_205000060 sch:hasCourseInstance .
+
+data:l_antonio_callejo_ramos a guide:Lecturer , sch:Person ;
+    sch:name "Antonio Callejo Ramos"@es ;
+    sch:email <mailto:antonio.callejo@upm.es> ;
+    data:g_205000060 sch:director .
+
+data:l_ismael_ovejero_rubio a guide:Lecturer , sch:Person ;
+    sch:name "Ismael Ovejero Rubio"@es ;
+    sch:email <mailto:Ismael.Ovejero.Rubio@upm.es> .
+
+data:c_cb02 a guide:Competency ;
+    guide:competencyCode "CB02"^^xsd:string ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional y posean las competencias que suelen demostrarse por medio de la elaboración y defensa de argumentos y la resolución de problemas dentro de su área de estudio"@es .
+
+data:c_ce17 a guide:Competency ;
+    guide:competencyCode "CE17"^^xsd:string ;
+    guide:competencyDescription "Conocer y gestionar los principales sistemas de producción de materias primas de origen animal"@es .
+
+data:c_cg07 a guide:Competency ;
+    guide:competencyCode "CG07"^^xsd:string ;
+    guide:competencyDescription "Adquirir la formación profesional necesaria para desarrollar estrategias sostenibles de producción vegetal y animal de forma eficiente y acorde a los recursos disponibles"@es .
+
+data:c_ct03 a guide:Competency ;
+    guide:competencyCode "CT03"^^xsd:string ;
+    guide:competencyDescription "Tener compromiso ético y profesional y respeto por el medio ambiente"@es .
+
+data:r_ra318 a guide:LearningResult ;
+    guide:learningResultCode "RA318"^^xsd:string ;
+    guide:learningResultDescription "Conocer y aplicar el análisis de la estructura de costes a la explotación del ganado vacuno, ovino y caprino para identificar los principales caracteres que determinan la rentabilidad de una explotación ganadera"@es .
+
+data:r_ra163 a guide:LearningResult ;
+    guide:learningResultCode "RA163"^^xsd:string ;
+    guide:learningResultDescription "Aplicar el análisis de la estructura de costes a las explotaciones de monogástricos e identificar los principales factores que determinan su rentabilidad"@es .
+
+data:r_ra171 a guide:LearningResult ;
+    guide:learningResultCode "RA171"^^xsd:string ;
+    guide:learningResultDescription "Aplicar el análisis de la estructura de costes a las explotaciones de rumiantes e identificar los principales factores que determinan la rentabilidad de una explotación ganadera"@es .
+
+data:r_ra336 a guide:LearningResult ;
+    guide:learningResultCode "RA336"^^xsd:string ;
+    guide:learningResultDescription "Aplicar programas de gestión de explotaciones ganaderas y evaluar los resultados según distintos criterios"@es .
+
+data:sy_instalaciones_avicultura_carne a guide:SyllabusItem ;
+    guide:itemIndex 1.0 ,
+        data:g_205000060 sch:hasSyllabus ;
+    guide:syllabusDescription "Instalaciones para avicultura de carne"@es .
+
+data:sy_instalaciones_avicultura_puesta a guide:SyllabusItem ;
+    guide:itemIndex 2.0 ,
+        data:g_205000060 sch:hasSyllabus ;
+    guide:syllabusDescription "Instalaciones para avicultura de puesta"@es .
+
+data:sy_instalaciones_porcino a guide:SyllabusItem ;
+    guide:itemIndex 3.0 ,
+        data:g_205000060 sch:hasSyllabus ;
+    guide:syllabusDescription "Instalaciones para porcino intensivo"@es .
+
+data:sy_instalaciones_vacuno_leche a guide:SyllabusItem ;
+    guide:itemIndex 4.0 ,
+        data:g_205000060 sch:hasSyllabus ;
+    guide:syllabusDescription "Instalaciones para vacuno de leche"@es .
+
+data:sy_instalaciones_vacuno_carne a guide:SyllabusItem ;
+    guide:itemIndex 5.0 ,
+        data:g_205000060 sch:hasSyllabus ;
+    guide:syllabusDescription "Instalaciones para vacuno de carne"@es .
+
+data:sy_instalaciones_pequenos_rumiantes a guide:SyllabusItem ;
+    guide:itemIndex 6.0 ,
+        data:g_205000060 sch:hasSyllabus ;
+    guide:syllabusDescription "Instalaciones para pequeños rumiantes"@es .
+
+data:sy_gestion_explotaciones a guide:SyllabusItem ;
+    guide:itemIndex 8.0 ,
+        data:g_205000060 sch:hasSyllabus ;
+    guide:syllabusDescription "Gestión de Explotaciones Ganaderas"@es .
+
+data:e_eval_progresiva a guide:EvaluationSystem ;
+    dct:title "Evaluación Progresiva"^^xsd:string ;
+    data:g_205000060 sch:hasEvaluation .
+
+data:t_cuestionario_autoevaluacion1 a guide:EvaluationTrial , guide:SyllabusItem ;
+    guide:trialType "Prueba Telemática"@es ;
+    guide:gradePercentage 1.0 ;
+    data:g_205000060 sch:hasEvaluationTrial .
+
+data:t_examen_final_extraordinario a guide:EvaluationTrial , guide:SyllabusItem ;
+    guide:trialType "Examen Escrito"@es ;
+    guide:gradePercentage 70.0 ;
+    data:g_205000060 sch:hasEvaluationTrial .
+
+data:sy_instalaciones_avicultura_carne a guide:SyllabusItem , data:e_eval_progresiva guide:involvesCompetency ;
+    guide:itemIndex 1.0 ,
+        data:c_cb02 guide:hasLearningResult ;
+    guide:syllabusDescription "Instalaciones para avicultura de carne"@es .
+
+data:l_antonio_callejo_ramos a guide:Lecturer , sch:Person ;
+    sch:name "Antonio Callejo Ramos"^^xsd:string ;
+    data:g_205000060 dct:creator .

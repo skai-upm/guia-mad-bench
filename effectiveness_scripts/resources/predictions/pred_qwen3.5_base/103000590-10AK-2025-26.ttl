@@ -1,0 +1,293 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ds: <http://guia-mad-bench.es/data/> .
+
+#################################################################
+#    Annotation properties (reusing ontology)
+#################################################################
+
+dc:title rdf:type owl:AnnotationProperty ;
+         rdfs:label "title"@en .
+
+
+dct:creator rdf:type owl:AnnotationProperty ;
+            rdfs:label "creator"@en .
+
+
+rdfs:description rdf:type owl:AnnotationProperty ;
+                 rdfs:label "description"@en .
+
+#################################################################
+#    Classes (reusing ontology)
+#################################################################
+
+guide:BachelorDegree rdf:type owl:Class ;
+                     rdfs:subClassOf guide:Degree ;
+                     rdfs:comment "An undergraduate degree programme."@en ;
+                     rdfs:label "Bachelor's Degree"@en .
+
+
+guide:Competency rdf:type owl:Class ;
+                 rdfs:comment "A capability, skill, or integrated learning outcome."@en ;
+                 rdfs:label "Competency"@en .
+
+
+guide:CourseGuide rdf:type owl:Class ;
+                  rdfs:subClassOf sch:CourseInstance ;
+                  rdfs:comment "A structured academic document describing a course."@en ;
+                  rdfs:label "Course Guide"@en .
+
+#################################################################
+#    Object Properties (reusing ontology)
+#################################################################
+
+guide:hasSyllabus rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:CourseGuide ;
+                  rdfs:range guide:Syllabus ;
+                  rdfs:comment "Links a course guide to the syllabus."@en .
+
+
+sch:eventSchedule rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:Schedule ;
+                  rdfs:range guide:ScheduleEvent ;
+                  rdfs:label "event schedule"@en .
+
+#################################################################
+#    Data Properties (reusing ontology)
+#################################################################
+
+guide:numberOfCredits rdf:type owl:DatatypeProperty ;
+                      rdfs:domain guide:CourseGuide ;
+                      rdfs:range xsd:decimal ;
+                      rdfs:comment "States the number of academic credits."@en .
+
+
+sch:name rdf:type owl:DatatypeProperty ;
+         rdfs:range rdf:langString ;
+         rdfs:label "name"@en .
+
+#################################################################
+#    Instances (Extraction from Document)
+#################################################################
+
+###  Course Guide Instance ###
+<ds:cg-103000590> a guide:CourseGuide, sch:CourseInstance ;
+                     ds:syllabusDescription "Computer Security"@es ;
+                     dc:title "ANX-PR/CL/001 - Computer Security"@en ;
+                     dct:creator <ds:l-manuel-carro>, <ds:julio-marino> ;
+                     guide:numberOfCredits 4.0 ;
+                     sch:name "Computer Security"@es ;
+                     ds:teachingPeriodMonths "September-January"@en .
+
+###  Degree Instance ###
+<ds:d-10ak> a guide:Degree, sch:CourseInstance ;
+             dc:title "Master Universitario En Software Y Sistemas"@en ;
+             guide:degreeCode "10AK"@es ;
+             ds:syllabusDescription "Software and Systems Engineering Master's Programme"@en .
+
+###  Course Instance ###
+<ds:c-103000590> a guide:Course, sch:CourseInstance ;
+                   dc:title "Computer Security"@en ;
+                   guide:numberOfCredits 4.0 ;
+                   ds:syllabusDescription "Optional/elective course on Computer Security"@es .
+
+###  Link Degree to Course ###
+<ds:d-10ak> :guide:hasCourse <ds:c-103000590> .
+
+
+###  Lecturer Instances (Manuel Carro Liñares - Coordinator, Julio Mariño Carballo) ###
+<ds:l-manuel-carro> a guide:Lecturer ;
+                     sch:name "Manuel Carro Liñares"@en ;
+                     ds:email <mailto:manuel.carro@upm.es> ;
+                     ds:tutorshipsSchedule "M - 13:00 - 15:00, Tu/W - 13:00 - 15:00"^^xsd:string .
+
+
+<ds:julio-marino> a guide:Lecturer ;
+                   sch:name "Julio Mariño Carballo"@en ;
+                   ds:email <mailto:julio.marino@upm.es> ;
+                   ds:tutorshipsSchedule "Tu - 15:00 - 17:00, W - 10:00/15:00"^^xsd:string .
+
+
+###  Link Lecturers to Course Guide ###
+<ds:cg-103000590> :sch:director <ds:l-manuel-carro> ;
+                    sch:instructor <ds:julio-marino> .
+
+#################################################################
+#    Syllabus and Items Instances ###
+#################################################################
+
+###  Syllabus Instance ###
+<ds:s-sy-103000590> a guide:Syllabus, sch:Syllabus ;
+                      ds:hasSyllabus <ds:cg-103000590> .
+
+
+###  Syllabus Items Instances (Section 5.2) ###
+<ds:sy-item-intro> a guide:SyllabusItem ;
+                    ds:itemIndex "1"^^xsd:integer ;
+                    ds:syllabusDescription "Introduction to Security"@en .
+
+<ds:sy-item-network> a guide:SyllabusItem ;
+                      ds:itemIndex "2"^^xsd:integer ;
+                      ds:syllabusDescription "Network and web security"@en .
+
+
+<ds:sy-item-software> a guide:SyllabusItem ;
+                       ds:itemIndex "3"^^xsd:integer ;
+                       ds:syllabusDescription "Software security"@en .
+
+###  Link Syllabus to Course Guide ###
+<ds:cg-103000590> :guide:hasSyllabus <ds:s-sy-103000590> .
+
+
+#################################################################
+#    Schedule and Events Instances (Section 6) ###
+#################################################################
+
+###  Schedule Instance ###
+<ds:s-sch-103000590> a guide:Schedule, sch:Schedule ;
+                       ds:eventIndex "2"^^xsd:integer ; # Assuming index for this specific schedule instance in context of course offering.
+                       ds:courseCode <ds:c-103000590>.
+
+
+###  Schedule Event Instances (Key Weeks) ###
+<ds:s-e-week9> a guide:ScheduleEvent, sch:Event ;
+                ds:eventIndex "9"^^xsd:integer ;
+                ds:eventWeek "Semester 1 Week 9"@en .
+
+<ds:s-e-week17> a guide:ScheduleEvent, sch:Event ;
+                 ds:eventIndex "17"^^xsd:integer ;
+                 ds:eventWeek "Semester 1 Week 17"@en .
+
+
+###  Link Schedule to Events ###
+# Note: Ontology property `sch:eventSchedule` links Schedule -> Event. 
+<ds:s-sch-103000590> :sch:eventSchedule <ds:s-e-week9>, <ds:s-e-week17>.
+
+#################################################################
+#    Activities and Evaluation Instances (Section 6 & 7) ###
+#################################################################
+
+###  Activity Instance: Midterm Exam ###
+<ds:a-midterm-exam> a guide:Activity, sch:EvaluationActivity ;
+                     ds:activityDescription "Midterm exam"^^xsd:string .
+
+
+###  Activity Instance: Global/Second Partial Exam ###
+<ds:a-global-exam> a guide:Activity, sch:EvaluationActivity ;
+                    ds:activityDescription "Global examination / Second partial exam"@en .
+
+#################################################################
+#    Evaluation System and Trial Instances (Section 7) ###
+#################################################################
+
+###  Evaluation System Instance ###
+<ds:e-sys-103000590> a guide:EvaluationSystem ;
+                       ds:evaluationDescription "Two exams: Midterm and Global/Second partial"@en .
+
+
+###  Link Course Guide to Evaluation System ###
+<ds:cg-103000590> :guide:hasEvaluation <ds:e-sys-103000590>.
+
+#################################################################
+#    Evaluation Trial Instances (Section 7) ###
+#################################################################
+
+###  Midterm Exam Trial Instance ###
+<ds:t-midterm-exam> a guide:EvaluationTrial ;
+                     ds:trialDescription "Midterm exam"^^xsd:string .
+
+
+###  Global/Second Partial Exam Trial Instance ###
+<ds:t-global-exam> a guide:EvaluationTrial ;
+                    ds:trialDescription "Global examination / Second partial"@en .
+
+#################################################################
+#    Linking Evaluation Trials to Schedule Events and System ###
+#################################################################
+
+###  Midterm linked to Week 9 Event ###
+<ds:s-e-week9> :guide:hasActivity <ds:a-midterm-exam>.
+
+
+###  Global Exam linked to Week 17 Event (and potentially Second Partial) ###
+<ds:t-global-exam> :guide:evaluationType "Global examination"^^xsd:string ;
+                    ds:trialDescription "Written test, Face-to-face"@en .
+
+# Linking Trial to ScheduleEvent for the week it occurs. 
+# Note: Ontology property `guide:hasScheduleEvent` is on EvaluationTrial -> ScheduleEvent? No, checking ontology...
+# Property found in text list: `guide:hasEvaluationTrial`: Domain guide:EvaluationSystem, Range guide:EvaluationTrial.
+# Wait, I need to check the provided properties again for linking Trial to Event/System properly.
+
+###  Linking System and Trials ###
+<ds:e-sys-103000590> :guide:hasEvaluationTrial <ds:t-midterm-exam>, <ds:t-global-exam>.
+
+
+# Note on ScheduleEvent -> Activity link (Ontology Property `guide:hasActivity`)
+###  Linking Midterm Exam to Week 9 Event ###
+<ds:s-e-week9> :guide:hasActivity <ds:a-midterm-exam>.
+
+#################################################################
+#    Evaluation Trial Properties (Section 7 Data) ###
+#################################################################
+
+###  Midterm Details ###
+<ds:t-midterm-exam> ds:trialType "Written test"^^xsd:string ;
+                     ds:evaluationDuration "02:00"@en .
+
+
+###  Global Exam Details ###
+<ds:t-global-exam> ds:gradePercentage "100%"^^xsd:string ;
+                    ds:minimumScore "5 / 10"^^xsd:string .
+
+#################################################################
+#    Prior Knowledge (Section 3) ###
+#################################################################
+
+###  RequiredKnowledge Instance ###
+<ds:r-k-req> a guide:RequiredKnowledge, sch:CourseInstance ;
+              dc:title "Prior knowledge recommended to take the subject"@en .
+
+
+###  Linking Course Guide to Required Knowledge? 
+# Ontology doesn't explicitly define `guide:hasPreviousKnowledge` on CourseGuide.
+# However, Section 3 mentions skills/outcomes (CG1, CG4...). I will link these as Competencies if possible or just describe them in the guide description context.
+
+###  Learning Result/Competency Instances ###
+<ds:c-gc-1> a guide:Competency ;
+             ds:competencyCode "CG1"^^xsd:string .
+
+
+# Linking Guide to Competencies via `guide:hasLearningResult`? 
+# Ontology Property found: `guide:hasLearningResult`: Domain CourseGuide, Range LearningResult.
+
+###  Learning Result Instances ###
+<ds:l-r-rg> a guide:LearningResult ;
+             ds:learningResultCode "RA12"^^xsd:string .
+
+
+#################################################################
+#    Final Linking (Course Guide to Competencies) ###
+#################################################################
+
+# Mapping the document's mention of Skills and Outcomes. 
+# The ontology has `guide:hasCompetency` on CourseGuide -> Competency? No, Domain is guide:CourseGuide, Range guide:Competency. Yes it exists!
+<ds:cg-103000590> :guide:hasLearningResult <ds:l-r-rg>.
+
+#################################################################
+#    Other Information (Section 8 & 9) ###
+#################################################################
+
+###  Didactic Resource Instance ###
+<ds:d-res-others> a guide:DidacticResource ;
+                   ds:bibliographyType "Others"^^xsd:string .
+
+
+###  Linking Guide to Resources ###
+<ds:cg-103000590> :guide:hasDidacticResource <ds:d-res-others>.

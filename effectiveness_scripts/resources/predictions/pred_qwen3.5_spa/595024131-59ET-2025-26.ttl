@@ -1,0 +1,510 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> a guide:CourseGuide ;
+    sch:name "Ingenieria De Audio II"@en ;
+    dc:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE" ;
+    dct:creator <http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> ; # Placeholder for creator context if needed, but usually person. Let's use lecturers as creators/teachers.
+    guide:numberOfCredits "6"^^xsd:decimal ;
+    sch:description "Asignatura destinada al estudio de los equipos que permiten el tratamiento y manipulación de la señal de audio"@en ;
+    guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización de la señal de audio..."@en ;
+    guide:courseYear 2025-26 ; # Using integer as per ontology range for course year? Ontology says xsd:string or similar. Let's use string to match text "2025/26". Actually `guide:teachingPeriod` is xsd:string, `guide:courseYear` is xsd:integer in some contexts but here it might be better as string based on doc context? Ontology says `xsd:integer`. I will stick to ontology types.
+    guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización de la señal de audio..."@en ; # Reusing description property for content summary if needed or use syllabus class. Let's create a Syllabus instance.
+
+<http://guia-mad-bench.es/data/syllabus/GA_59ET_595024131> a guide:Syllabus ;
+    sch:name "Temario de Ingenieria De Audio II" ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabusItem/Tema_1_Estaciones_DAW>, 
+                 <http://guia-mad-bench.es/data/syllabusItem/Tema_2_Diseño_Estudios> .
+
+<http://guia-mad-bench.es/data/degree/GA_59ET> a guide:Degree ;
+    sch:name "Doble Grado En Ing.Electronica De Comunicaciones Y En Ing.Telematica" ;
+    guide:hasCourse <http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> .
+
+<http://guia-mad-bench.es/data/lecturer/Lino_Pedro_Garcia_Morales> a guide:Lecturer ;
+    sch:name "Lino Pedro Garcia Morales" ;
+    sch:email <mailto:lino.garcia@upm.es> ;
+    guide:scholarshipSchedule "Sin horario. Consultar horario en Moodle." .
+
+<http://guia-mad-bench.es/data/lecturer/Daniel_De_La_Prida_Caballero> a guide:Lecturer ;
+    sch:name "Daniel De La Prida Caballero" ;
+    sch:email <mailto:daniel.prida@upm.es> .
+
+<http://guia-mad-bench.es/data/competency/CE_EC01> a guide:Competency ;
+    guide:competencyCode "CE EC01"@en ;
+    guide:competencyDescription "Capacidad de construir, explotar y gestionar sistemas de captación..."@en .
+
+<http://guia-mad-bench.es/data/learningResult/RA171> a guide:LearningResult ;
+    guide:learningResultCode "RA171"@en ;
+    guide:learningResultDescription "Se concretarán para cada asignatura optativa o para la realización de prácticas en empresas" .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> a guide:CourseGuide ;
+    sch:name "Ingenieria De Audio II" ;
+    guide:numberOfCredits 6 ; # xsd:decimal per ontology
+    guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/competency/CE_EC01>, 
+                       <http://guia-mad-bench.es/data/competency/CE_SO01> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:hasLearningResult <http://guia-mad-bench.es/data/learningResult/RA171>, 
+                                                        <http://guia-mad-bench.es/data/learningResult/RA165> .
+
+<http://guia-mad-bench.es/data/syllabusItem/Tema_1_Estaciones_DAW> a guide:SyllabusItem ;
+    sch:name "Estaciones de trabajo con audio digital (DAW)" ;
+    guide:itemIndex 1 ; # xsd:integer per ontology? Ontology says integer. Doc has numbers like 1, 2...
+    guide:syllabusDescription "Interconexión de señales musicales" .
+
+<http://guia-mad-bench.es/data/schedule/GA_59ET_595024131> a guide:Schedule ;
+    sch:name "Cronograma Ingenieria De Audio II 2S_2025-26" ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/scheduleEvent/Control_1>, 
+                      <http://guia-mad-bench.es/data/scheduleEvent/Practica_Laboratorio> .
+
+<http://guia-mad-bench.es/data/scheduleEvent/Control_1> a guide:ScheduleEvent ;
+    sch:name "Control 1" ;
+    guide:eventIndex 4 ; # Based on table row index or logical order. Let's use ordinal from doc context (Semester 4).
+    guide:trialDescription "Prueba Telemática Evaluación Progresiva Presencial" .
+
+<http://guia-mad-bench.es/data/scheduleEvent/Control_2> a guide:ScheduleEvent ;
+    sch:name "Control 2" ;
+    guide:eventIndex 8 ; # Semester 4? Doc says Sem 8. Let's use doc data.
+    guide:trialDescription "Prueba Telemática Evaluación Progresiva Presencial".
+
+<http://guia-mad-bench.es/data/scheduleEvent/Control_3> a guide:ScheduleEvent ;
+    sch:name "Control 3" ;
+    guide:eventIndex 9 .
+
+<http://guia-mad-bench.es/data/scheduleEvent/Control_4> a guide:ScheduleEvent ;
+    sch:name "Control 4" ;
+    guide:trialDescription "Prueba Telemática Evaluación Progresiva Presencial".
+
+<http://guia-mad-bench.es/data/scheduleEvent/Control_5> a guide:ScheduleEvent ;
+    sch:name "Control 5" ;
+    guide:eventIndex 13 .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluationTrial/Evaluacion_Progresiva>, 
+                                                                    <http://guia-mad-bench.es/data/evaluationTrial/Evaluacion_Global>.
+
+<http://guia-mad-bench.es/data/evaluationTrial/Evaluacion_Progresiva> a guide:EvaluationTrial ;
+    sch:name "Evaluación Progresiva" ;
+    guide:trialType "Prueba Telemática Evaluación Progresiva Presencial"@en ;
+    guide:gradePercentage 18 . # xsd:string or decimal? Ontology says rdf:langString. I will use string literal for percentage weight as per ontology definition `guide:gradePercentage` range is `rdf:langString`.
+
+<http://guia-mad-bench.es/data/evaluationTrial/Evaluacion_Global> a guide:EvaluationTrial ;
+    sch:name "Evaluación Global" ;
+    guide:trialType "Prueba Telemática Evaluación Global Presencial"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> a guide:CourseGuide ;
+    sch:name "Ingenieria De Audio II" ;
+    guide:numberOfCredits 6 ; # xsd:decimal per ontology definition for Course Guide? Ontology says `guide:numberOfCredits` range is `xsd:decimal`. Doc has 6 ECTS.
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:hasDidacticResource <http://guia-mad-bench.es/data/resource/Apuntes_Propios>, 
+                                                                    <http://guia-mad-bench.es/data/resource/Videos_Mudos>.
+
+<http://guia-mad-bench.es/data/resource/Apuntes_Propios> a guide:DidacticResource ;
+    sch:name "Apuntes propios de todos los temas del curso" .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;
+    sch:inLanguage <https://schema.org#Castellano> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_59ET_595024131> guide:syllabusDescription "Estaciones de trabajo con audio digital (DAW), Diseño de Estudios, Digitalización..."@en ;

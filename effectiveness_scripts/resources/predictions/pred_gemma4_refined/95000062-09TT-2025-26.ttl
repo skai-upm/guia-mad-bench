@@ -1,0 +1,186 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Structure
+:course_95000062 a guide:Course ;
+    sch:name "Fabricacion De Equipos Electronicos" ;
+    sch:courseCode 95000062 ;
+    guide:courseType "Optativa" ;
+    guide:numberOfCredits 4.5 ;
+    guide:semester "Séptimo semestre" ;
+    sch:hasCourseInstance :course_guide_GA_09TT_95000062 .
+
+:degree_09TT a guide:Degree ;
+    sch:name "Grado En Ingenieria De Tecnologias Y Servicios De Telecomunicacion" ;
+    guide:degreeCode "09TT" ;
+    guide:hasCourse :course_95000062 .
+
+:university_center_ets a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" ;
+    guide:offers :degree_09TT .
+
+# Course Guide Details
+:course_guide_GA_09TT_95000062 a guide:CourseGuide ;
+    sch:hasCourseInstance :course_95000062 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :lecturer_alvaro ;
+    sch:director :lecturer_alvaro ;
+    guide:hasCompetency :competency_CE_SE1, :competency_CE_SE3, :competency_CE_SE5, :competency_CE_SE9, :competency_CG7, :competency_CG12, :competency_CG13, :competency_CG9 ;
+    guide:hasLearningResult :learning_result_RA732, :learning_result_RA733, :learning_result_RA76, :learning_result_RA734, :learning_result_RA71, :learning_result_RA70, :learning_result_RA74 ;
+    guide:hasEvaluation :eval_system_95000062 ;
+    guide:hasDidacticResource :resource_moodle, :resource_altium, :resource_horno .
+
+# Lecturers
+:lecturer_jorge a guide:Lecturer ;
+    sch:name "Jorge Pedros Ayala" ;
+    sch:email "j.ped:pedros@upm.es" ;
+    guide:office "B-308" ;
+    guide:tutorshipsSchedule "J - 16:00 - 18:00" .
+
+:lecturer_alvaro a guide:Lecturer ;
+    sch:name "Alvaro Araujo Pinto" ;
+    sch:email "alvaro.araujo@upm.es" ;
+    guide:office "B-104.B" ;
+    guide:tutorshipsSchedule "M - 16:00 - 18:00" .
+
+# Competencies
+:competency_CE_SE1 a guide:Competency ;
+    guide:competencyCode "CE-SE1" ;
+    guide:competencyDescription "Capacidad de construir, explotar y gestionar sistemas de captación, transporte, representación, procesado, almacenamiento, gestión y presentación de información multimedia, desde el punto de vista de los sistemas electrónicos" .
+
+:competency_CE_SE3 a guide:Competency ;
+    guide:competencyCode "CE-SE3" ;
+    guide:competencyDescription "Capacidad de realizar la especificación, implementación, documentación y puesta a punto de equipos y sistemas, electrónicos, de instrumentación y de control, considerando tanto los aspectos técnicos como las normativas reguladoras correspondientes" .
+
+:competency_CE_SE5 a guide:Competency ;
+    guide:competencyCode "CE-SE5" ;
+    guide:competencyDescription "Capacidad de diseñar circuitos de electrónica analógica y digital, de conversión analógico-digital y digital analógica, de radiofrecuencia, de alimentación y conversión de energía eléctrica para aplicaciones de telecomunicación y computación" .
+
+:competency_CE_SE9 a guide:Competency ;
+    guide:competencyCode "CE-SE9" ;
+    guide:competencyDescription "Capacidad de analizar y solucionar los problemas de interferencias y compatibilidad electromagnética" .
+
+:competency_CG7 a guide:Competency ;
+    guide:competencyCode "CG7" ;
+    guide:competencyDescription "Trabajo en equipo" .
+
+:competency_CG12 a guide:Competency ;
+    guide:competencyCode "CG12" ;
+    guide:competencyDescription "Organización y planificación" .
+
+:competency_CG13 a guide:Competency ;
+    guide:competencyCode "CG13" ;
+    guide:competencyDescription "Respeto medioambiental" .
+
+:competency_CG9 a guide:Competency ;
+    guide:competencyCode "CG9" ;
+    guide:competencyDescription "Uso de Tecnologías de la Información y de las Comunicaciones" .
+
+# Learning Results
+:learning_result_RA732 a guide:LearningResult ;
+    guide:learningResultCode "RA732" ;
+    guide:learningResultDescription "Diseñar una placa de circuito impreso orientada a fabricación" .
+
+:learning_result_RA733 a guide:LearningResult ;
+    guide:learningResultCode "RA733" ;
+    guide:learning_resultDescription "Distinguir las distintas fases del desarrollo de producto" .
+
+:learning_result_RA76 a guide:LearningResult ;
+    guide:learningResultCode "RA76" ;
+    guide:learningResultDescription "Conocimientos de las normativas reguladoras aplicables a los equipos electrónicos" .
+
+:learning_result_RA734 a guide:LearningResult ;
+    guide:learningResultCode "RA734" ;
+    guide:learningResultDescription "Conocimientos básicos de técnicas de soldadura de sistemas electrónicos" .
+
+:learning_result_RA71 a guide:LearningResult ;
+    guide:learningResultCode "RA71" ;
+    guide:learningResultDescription "Conocimiento de las técnicas de diseño de circuitos electrónicos" .
+
+:learning_result_RA70 a guide:LearningResult ;
+    guide:learningResultCode "RA70" ;
+    guide:learningResultDescription "Conocimientos de dispositivos, circuitos, equipos y sistemas electrónicos" .
+
+:learning_result_RA74 a guide:LearningResult ;
+    guide:learningResultCode "RA74" ;
+    guide:learningResultDescription "Conocimientos de interferencias y compatibilidad electromagnética" .
+
+# Evaluation System
+:eval_system_95000062 a guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación comprobará si los estudiantes han adquirido las competencias de la asignatura." ;
+    guide:hasEvaluationTrial :trial_exam_global, :trial_exam_progresiva .
+
+:trial_exam_global a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:evaluationDuration "03:00" .
+
+:trial_exam_progresiva a guide:EvaluationTrial ;
+    guide:trialType "Presentación en Grupo" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:00" .
+
+# Didactic Resources
+:resource_moodle a guide:DidacticResource ;
+    sch:name "Sitio Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "https://moodle.upm.es/titulaciones/oficiales/" .
+
+:resource_altium a guide:DidacticResource ;
+    sch:name "Altium Designer" ;
+    guide:bibliographyType "Otros" ;
+    guide:bibliographyDescription "Herramientas de diseño electrónico" .
+
+:resource_horno a guide:DidacticResource ;
+    sch:name "Horno de soldadura" ;
+    guide:bibliographyType "Equipamiento" ;
+    guide:bibliographyDescription "Horno de soldadura por calor" .
+
+# Syllabus Items (Partial representation of the structure)
+:syllabus_95000062 a guide:Syllabus ;
+    guide:hasItem :item_intro, :item_materiales, :item_diseno, :item_fabricacion, :item_pruebas .
+
+:item_intro a guide:SyllabusItem ;
+    guide:syllabusDescription "Introducción a la fabricación" ;
+    guide:itemIndex 1 .
+
+:item_materiales a guide:SyllabusItem ;
+    guide:syllabusDescription "Materiales" ;
+    guide:itemIndex 2 .
+
+:item_diseno a guide:SyllabusItem ;
+    guide:syllabusDescription "Diseño orientado a fabricación" ;
+    guide:itemIndex 3 .
+
+:item_fabricacion a guide:SyllabusItem ;
+    guide:syllabusDescription "Aspectos prácticos de fabricación" ;
+    guide:itemIndex 4 .
+
+:item_pruebas a guide:SyllabusItem ;
+    guide:syllabusDescription "Pruebas y fiabilidad" ;
+    guide:itemIndex 5 .
+
+# Activities from Schedule
+:activity_week1 a guide:Activity ;
+    guide:activityDescription "Introducción (1.1, 1.2, 1.3) e Introducción caso práctico (1.4)" ;
+    guide:activityFormat "Lección Magistral / Acciones Cooperativas" ;
+    guide:activityDuration 2.5 .
+
+:activity_week8 a guide:Activity ;
+    guide:activityDescription "Creación de librerías del proyecto" ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:activityDuration 2.0 .
+
+# Required Knowledge
+:knowledge_previo a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Electrónica analógica, Electrónica digital" ;
+    guide:previousCourses "Electronica E Instrumentacion Basicas" .

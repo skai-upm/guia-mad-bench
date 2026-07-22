@@ -1,0 +1,182 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide
+:course_guide_45001410 rdf:type guide:CourseGuide ;
+    sch:name "45001410 - Servicios, Proteccion Del Medio Urbano Y Gestion D" ;
+    guide:numberOfCredits 3.0 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Séptimo semestre" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :lecturer_sandra_bianucci ;
+    sch:director :lecturer_sandra_bianucci ;
+    guide:hasCompetency :comp_CM37_4, :comp_CM3rad_38_1, :comp_CM38_2, :comp_CM39_1, :comp_CM44, :comp_CM45, :comp_CT3, :comp_CT6 ;
+    guide:hasLearningResult :lr_RA95, :lr_RA99, :lr_RA92 ;
+    guide:hasEvaluation :eval_system_continuous ;
+    guide:hasSyllabus :syllabus_45001410 ;
+    sch:courseSchedule :schedule_45001410 ;
+    guide:otherInformation "La asignatura se relaciona con el ODS3, ODS7, ODS9, ODS11, ODS12 y ODS13." .
+
+# Degree and University Center
+:degree_04GC rdf:type guide:Degree ;
+    sch:name "04GC - Grado En Ingenieria Civil Y Territorial" ;
+    guide:degreeCode "04GC" .
+
+:univ_center_etsiccp rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ing. De Caminos Canales Y P." ;
+    guide:offers :degree_04GC .
+
+# Lecturers
+:lecturer_sandra_bianucci rdf:type guide:Lecturer ;
+    sch:name "Sandra Paola Bianucci" ;
+    sch:email "paola.bianucci@upm.es" ;
+    guide:office "Lab. Sanitaria" ;
+    guide:tutorshipsSchedule "L - 11:30 - 13:00, J - 15:30 - 17:00" .
+
+:lecturer_eva_garcia rdf:type guide:Lecturer ;
+    sch:name "Eva Maria Garcia Del Toro" ;
+    sch:email "evamaria.garcia@upm.es" ;
+    guide:office "Lab. Sanitaria" ;
+    guide:tutorshipsSchedule "J - 10:00 - 12:00, J - 15:30 - 17:30" .
+
+:lecturer_ana_garcia rdf:type guide:Lecturer ;
+    sch:name "Ana Garcia Martinez" ;
+    sch:email "ana.garcia@upm.es" ;
+    guide:office "Lab. Sanitaria" ;
+    guide:tutorshipsSchedule "J - 15:30 - 17:30" .
+
+# Required Knowledge
+:req_knowledge_45001410 rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Química, Física de ondas, Ingenieria Sanitaria y de Medio Ambiente" .
+
+# Competencies
+:comp_CM37_4 rdf:type guide:Competency ;
+    guide:competencyCode "CM37.4" ;
+    guide:competencyDescription "Comprensión del fundamento y de los sistemas de utilización de las energías renovables." .
+
+:comp_CM38_1 rdf:type guide:Competency ;
+    guide:competencyCode "CM38.1" ;
+    guide:competencyDescription "Conocimiento y comprensión del funcionamiento de los ecosistemas y de los factores ambientales." .
+
+:comp_CM38_2 rdf:type guide:Competency ;
+    guide:competencyCode "CM38.2" ;
+    guide:competencyDescription "Comprensión y capacidad de aplicación de metodologías de restauración ambiental." .
+
+:comp_CM39_1 rdf:type guide:Competency ;
+    guide:competencyCode "CM39.1" ;
+    guide:competencyDescription "Conocimiento de los proyectos de servicios urbanos relacionados con la distribución de<0xC2>of agua y el saneamiento" .
+
+:comp_CM44 rdf:type guide:Competency ;
+    guide:competencyCode "CM44" ;
+    guide:competencyDescription "Valoración de los efectos histórico, social, económico, ambiental, cultural, político y globalizador de las realizaciones de la ingeniería civil." .
+
+:comp_CM45 rdf:type guide:Competency ;
+    guide:competencyCode "CM45" ;
+    guide:competencyDescription "Comprensión y asunción de los principios de incertidumbre, riesgo y oportunidad en la aplicación de los métodos y modelos de la ingeniería civil." .
+
+:comp_CT3 rdf:type guide:Competency ;
+    guide:competencyCode "CT3" ;
+    guide:competencyDescription "Capacidad de actuar con efectividad como miembro de equipos interdisciplinares." .
+
+:comp_CT6 rdf:type guide:Competency ;
+    guide:competencyCode "CT6" ;
+    guide:competencyDescription "Compromiso y capacidad de aplicación de los estándares de deontología profesional." .
+
+# Learning Results
+:lr_RA95 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA95" ;
+    guide:learningResultDescription "Explica el fundamento y los sistemas de utilización de las energías renovables." .
+
+:lr_RA99 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA99" ;
+    guide:learningResultDescription "Valora los efectos social, económico, ambiental, político y globalizador de las infraestructuras hidráulicas y energéticas." .
+
+:lr_RA92 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA92" ;
+    guide:learningResultDescription "Proyecta y dimensiona sistemas energéticos." .
+
+# Syllabus
+:syllabus_45001410 rdf:type guide:Syllabus ;
+    guide:hasItem :item_suelos, :item_contaminacion, :item_residuos, :item_energias .
+
+:item_suelos rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "SUELOS CONTAMINADOS. Contaminación de suelos. Origen y situación actual. Legislación. Remediación." .
+
+:item_contaminacion rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "CONTAMINACIÓN ACÚSTICA Y ATMOSFÉRICA. Conceptos, legislación e impactos." .
+
+:item_residuos rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "GESTIÓN DE RESIDUOS. Características generales de los RSU, gestión, recogida y tratamiento." .
+
+:item_energias rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "ENERGÍAS RENOVABLES. Solar térmica, fotovoltaica, geotermia, biomasa y eólica." .
+
+# Evaluation System
+:eval_system_continuous rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "El sistema de evaluación continua se valorara de acuerdo a las siguientes pruebas..." ;
+    guide:hasEvaluationTrial :trial_participacion, :trial_parcial1, :trial_trabajo_investigacion, :trial_parcial2, :trial_global .
+
+:trial_participacion rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "OT: Otras técnicas evaluativas" ;
+    guide:gradePercentage "2.5%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "No Presencial" .
+
+:trial_parcial1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "EX: Examen Escrito" ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:trialWeek "8" .
+
+:trial_trabajo_investigacion rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "TG: Trabajo en Grupo" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "No presencial" .
+
+:trial_parcial2 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "EX: Examen Escrito" ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:trialWeek "16" .
+
+:trial_global rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "EX: Examen Escrito" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:trialWeek "17" .
+
+# Schedule and Activities
+:schedule_45001410 rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week8, :event_week16 .
+
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :act_leccion_magistral_1 .
+
+:act_leccion_magistral_1 rdf:type guide:Activity ;
+    guide:activityDescription "TEMAS 1.1, 1.2, 1.3" ;
+    guide:activityDuration 2.16 ;
+    guide:activityFormat "Lección Magistral" .
+
+# Didactic Resources
+:res_moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Área virtual de la ETSICCP (MOODLE)" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_bibliografia rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Bibliografía básica y complementaria" ;
+    guide:bibliographyType "Bibliografía" .

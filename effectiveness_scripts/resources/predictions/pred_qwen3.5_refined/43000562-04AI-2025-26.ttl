@@ -1,0 +1,110 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> rdf:type :CourseGuide ;
+    dct:title "Marine Energies"@en ,
+        "43000562 - Marine Energies"@en ;
+    sch:courseCode 43000562 ;
+    guide:numberOfCredits "4.5"^^xsd:decimal ;
+    guide:teachingPeriodMonths "Febrero-Junio"@en ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer/jose-santos-lopez-gutierrez> ,
+        <http://guia-mad-bench.es/data/lecturer/vicente-negro-valdecantos> ;
+    guide:syllabus <http://guia-mad-bench.es/data/syllabus/anx-pr-cl-001-01-sylbus> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> :hasCourse <http://guia-mad-bench.es/data/degree/doble-master-04ai> ;
+    guide:publishedAt "2025-26"@en .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> :hasEvaluationSystem <http://guia-mad-bench.es/data/evaluation-system/marine-energies-eval-sys> ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/learningresult/ra124>,
+        <http://guia-mad-bench.es/data/learningresult/ra99>,
+        <http://guia-mad-bench.es/data/learningresult/ra60> ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/competency/miccpce27>,
+        <http://guia-mad-bench.es/data/competency/miccpcgp18>.
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> :hasDidacticResource <http://guia-mad-bench.es/data/resource/coastal-engineering-manual>,
+    <http://guia-mad-bench.es/data/resource/esteban-phd-thesis>.
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> :hasSyllabusItem <http://guia-mad-bench.es/data/syllabussitem/unit-1>,
+    <http://guia-mad-bench.es/data/syllabussitem/unit-2>.
+
+<http://guia-mad-bench.es/data/degree/doble-master-04ai> rdf:type :MasterDegree ;
+    guide:courseYear 2 .
+
+<http://guia-mad-bench.es/data/lecturer/vicente-negro-valdecantos> rdf:type sch:Person, :Lecturer ;
+    dct:title "Vicente Negro Valdecantos"@en ;
+    sch:name "Vicente Negro Valdecantos" ;
+    guide:office "Ports Lab"@en ;
+    sch:email <mailto:vicente.negro@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer/jose-santos-lopez-gutierrez> rdf:type :Lecturer, sch:Person ;
+    dct:title "Jose Santos Lopez Gutierrez"@en ;
+    sch:name "Jose Santos Lopez Gutierrez" ;
+    guide:office "Ports Lab"@en ;
+    sch:email <mailto:josesantos.lopez@upm.es> ,
+        :director .
+
+<http://guia-mad-bench.es/data/lecturer/pedro-fernandez-carrasco> rdf:type :Lecturer, sch:Person ;
+    dct:title "Pedro Fernandez Carrasco"@en ;
+    sch:name "Pedro Fernandez Carrasco" ;
+    guide:office "Ports Lab"@en .
+
+<http://guia-mad-bench.es/data/lecturer/maria-dolores-esteban-perez> rdf:type :Lecturer, sch:Person ;
+    dct:title "Maria Dolores Esteban Perez"@en ;
+    sch:name "Maria Dolores Esteban Perez" ;
+    guide:office "Ports Lab"@en .
+
+<http://guia-mad-bench.es/data/competency/miccpce27> rdf:type :Competency ;
+    dct:title "MICCPCE27 - Conocimientos y capacidades..."@es ;
+    guide:competencyCode "MICCPCE27"^^xsd:string .
+
+<http://guia-mad-bench.es/data/learningresult/ra124> rdf:type :LearningResult ;
+    dct:title "RA124 - Explica, conoce y tiene capacidad..."@es ;
+    guide:learningResultCode "RA124"^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus/anx-pr-cl-001-01-sylbus> rdf:type sch:Syllabus ;
+    dct:title "Guía de Aprendizaje - Marine Energies"@en ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabussitem/unit-1>,
+        <http://guia-mad-bench.es/data/syllabussitem/unit-2>.
+
+<http://guia-mad-bench.es/data/syllabussitem/unit-1> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "Introduction. Renewable energies, Marine energies..."@en .
+
+<http://guia-mad-bench.es/data/evaluation-system/marine-energies-eval-sys> rdf:type sch:EvaluationSystem ;
+    dct:title "Evaluation System - Marine Energies"@es ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial/submission-coursework>,
+        <http://guia-mad-bench.es/data/trial/presentation-of-courseworks>.
+
+<http://guia-mad-bench.es/data/evaluation-system/marine-energies-eval-sys> :hasEvaluationTrial <http://guia-mad-bench.es/data/trial/final-exam> .
+
+<http://guia-mad-bench.es/data/scheduleevent/submission-coursework> rdf:type sch:Event, :ScheduleEvent ;
+    guide:eventIndex 15^^xsd:integer ;
+    dct:title "Submission of coursework"@en ;
+    om:Unit "03:30" .
+
+<http://guia-mad-bench.es/data/scheduleevent/final-exam> rdf:type sch:Event, :ScheduleEvent ;
+    guide:eventIndex 17^^xsd:integer ;
+    dct:title "Final exam"@en ;
+    om:Unit "02:30" .
+
+<http://guia-mad-bench.es/data/trial/submission-coursework> rdf:type :EvaluationTrial ;
+    sch:name "Submission of coursework"@en ;
+    guide:trialType "Progresiva"@es ;
+    guide:gradePercentage "50%"^^xsd:string ;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial/final-exam> rdf:type :EvaluationTrial ;
+    sch:name "Final exam"@en ;
+    guide:trialType "Global"@es ;
+    guide:gradePercentage "100%"^^xsd:string ;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/resource/coastal-engineering-manual> rdf:type :DidacticResource, sch:BibliographicWork ;
+    dct:title "COASTAL ENGINEERING MANUAL"@en ;
+    guide:bibliographyType "Bibliografía"@es .

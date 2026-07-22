@@ -1,0 +1,282 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:CourseGuide_565000434
+    rdf:type guide:CourseGuide ;
+    sch:name "Resistencia de Materiales" ;
+    sch:description "En la asignatura se abordará el cálculo de las tensiones y deformaciones que se producen en sólidos elásticos sometidos a diferentes solicitaciones (axil, flexión, cortante torsión) con objeto de evitar que se superen los valores admisibles." ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:inpersonHours "Not specified" ;
+    guide:remoteHours "Not specified" ;
+    sch:inLanguage "Castellano" ;
+    sch:courseSchedule :Schedule_565000434 ;
+    guide:hasSyllabus :Syllabus_565000434 ;
+    guide:hasEvaluation :EvalSystem_565000434 ;
+    guide:hasLearningResult :LR_RA59 ;
+    sch:instructor :Lecturer_RafaelCascon, :Lecturer_RafaelGomez ;
+    sch:activitiesWorkload "26-27 hours per ECTS" .
+
+# Course Instance
+:Course_565000434
+    rdf:type guide:Course ;
+    sch:name "Resistencia de Materiales" ;
+    sch:courseCode 565000434 ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 2025 ;
+    guide:semester "Tercer semestre" ;
+    sch:hasCourseInstance :CourseGuide_565000434 .
+
+# Degree Instance
+:Degree_56IQ
+    rdf:type guide:BachelorDegree ;
+    sch:name "Grado en Ingeniería Química" ;
+    guide:degreeCode "56IQ" ;
+    guide:hasCourse :Course_565000434 .
+
+# University Center Instance
+:UniversityCenter_ETS
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Diseño Industrial" ;
+    guide:offers :Degree_56IQ .
+
+# Lecturers
+:Lecturer_RafaelCascon
+    rdf:type guide:Lecturer ;
+    sch:name "Rafael Cascon Porres" ;
+    sch:email "rafael.cascon@upm.es" ;
+    guide:office "A124-D5" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:Lecturer_RafaelGomez
+    rdf:type guide:Lecturer ;
+    sch:name "Rafael Gomez Rodriguez" ;
+    sch:email "rafael.gomezr@upm.es" ;
+    guide:office "A124-D6" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+# Competencies
+:Competency_CE14
+    rdf:type guide:Competency ;
+    sch:name "CE 14" ;
+    guide:competencyDescription "Conocimiento y utilización de los principios de la resistencia de materiales." .
+
+:Competency_CG1
+    rdf:type guide:Competency ;
+    sch:name "CG 1" ;
+    guide:competencyDescription "Conocer y aplicar los conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Industrial" .
+
+:Competency_CG10
+    rdf:type guide:Competency ;
+    sch:name "CG 10" ;
+    guide:competencyDescription "Creatividad." .
+
+:Competency_CG3
+    rdf:type guide:Competency ;
+    sch:name "CG 3" ;
+    guide:competencyDescription "Aplicar los conocimientos adquiridos para identificar, formular y resolver problemas en contextos amplios, siendo capaces de integrar los trabajando en equipos multidisciplinares" .
+
+:Competency_CG4
+    rdf:type guide:Competency ;
+    sch:name "CG 4" ;
+    guide:competencyDescription "Comprender el impacto de la</em> ingeniería en el medio ambiente, el desarrollo sostenible de la sociedad y la importancia de trabajar en un entorno profesional y responsable" .
+
+:Competency_CG6
+    rdf:type guide:Competency ;
+    sch:name "CG 6" ;
+    guide:competencyDescription "Poseer las habilidades de aprendizaje que permitan continuar estudiando a lo largo de toda la vida para un desarrollo profesional adecuado" .
+
+:Competency_CG7
+    rdf:type guide:Competency ;
+    sch:name "CG 7" ;
+    guide:competencyDescription "Incorporar las TIC y las tecnologías y herramientas de la Ingeniería Industrial en sus actividades profesionales" .
+
+# Learning Results
+:LR_RA59
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA59" ;
+    guide:learningResultDescription "Conocimiento y utilización de los principios de la resistencia de materiales." .
+
+# Syllabus
+:Syllabus_565000434
+    rdf:type guide:Syllabus ;
+    guide:hasItem :SyllabusItem_1, :SyllabusItem_2, :SyllabusItem_3, :SyllabusItem_4, :SyllabusItem_5 .
+
+:SyllabusItem_1
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "INTRODUCCIÓN A LA RESISTENCIA DE MATERIALES" .
+
+:SyllabusItem_2
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "CÁLCULO Y DISEÑO DE ELEMENTOS SOMETIDOS A ESFUERZOS AXILES" .
+
+:SyllabusItem_3
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "CÁLCULO Y DISEÑO DE ELEMENTOS SOMETIDOS A FLEXIÓN" .
+
+:SyllabusItem_4
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "PANDEO" .
+
+:SyllabusItem_5
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "CÁLCULO Y DISEÑO DE ELEMENTOS SOMETIDOS A TORSIÓN" .
+
+# Schedule and Events
+:Schedule_565000434
+    rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_W1, :Event_W2, :Event_W3, :Event_W4, :Event_W5, :Event_W6, :Event_W7, :Event_W8, :Event_W9, :Event_W10, :Event_W11, :Event_W12, :Event_W13, :Event_W14, :Event_W15, :Event_W17 .
+
+:Event_W1
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :Activity_LM_T1 .
+
+:Activity_LM_T1
+    rdf:type guide:Activity ;
+    guide:activityDescription "Explicación teórica tema 1" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+:Event_W2
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "2" ;
+    guide:eventIndex 2 ;
+    guide:hasActivity :Activity_PR_T1 .
+
+:Activity_PR_T1
+    rdf:type guide:Activity ;
+    guide:activityDescription "Resolución problemas tema 1" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "Clase de Problemas" .
+
+:Event_W6
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "6" ;
+    guide:eventIndex 6 ;
+    guide:hasActivity :Activity_OT_Control12 .
+
+:Activity_OT_Control12
+    rdf:type guide:Activity ;
+    guide:activityDescription "Control de los temas 1 y 2" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Otras actividades formativas / Evaluación" .
+
+# Evaluation System
+:EvalSystem_565000434
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Cada una de las actividades puntúa sobre 10 puntos. Para superar la asignatura en la convocatoria ordinaria es necesario obtener una calificación ponderada mínima de 5 puntos sobre 10 y una calificación superior a un 4 en el examen final." ;
+    guide:hasEvaluationTrial :Trial_Control12, :Trial_Control34, :Trial_Control5, :Trial_Memorias, :Trial_Final .
+
+:Trial_Control12
+    rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Control de los temas 1 y 2" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "10%" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "01:00" ;
+    guide:involvesCompetency :Competency_CE14, :Competency_CG1, :Competary_CG3, :Competency_CG4, :Competency_CG6, :Competency_CG10 ;
+    guide:hasScheduleEvent :Event_W6 .
+
+:Trial_Control34
+    rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Control de los temas 3 y 4" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "10%" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "01:00" ;
+    guide:involvesCompetency :Competency_CG3, :Competency_CG4, :Competency_CG6, :Competency_CG10, :Competency_CE14, :Competency_CG1 .
+    
+:Trial_Control5
+    rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Control del tema 5" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "10%" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "01:00" ;
+    guide:involvesCompetency :Competency_CG1, :Competency_CG3, :Competency_CG4, :Competency_CG6, :Competency_CG7, :Competency_CG10, :Competency_CE14 .
+
+:Trial_Memorias
+    rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Memorias de las 5 prácticas" ;
+    guide:evaluationType "Presentación en Grupo" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialMode "No presencial" ;
+    guide:evaluationDuration "05:00" ;
+    guide:involvesCompetency :Competency_CG1, :Competency_CG3, :Competency_CG4, :Competency_CG6, :Competency_CG7, :Competency_CG10, :Competency_CE14 .
+
+:Trial_Final
+    rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Examen final de la asignatura" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "60%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "03:00" ;
+    guide:involvesCompetency :Competency_CG1, :Competency_CG3, :Competency_CG4, :Competency_CG6, :Competency_CG10, :Competency_CE14 .
+
+# Didactic Resources
+:Resource_Vazquez
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "\"Resistencia de Materiales\" Vazquez, M, Ed: Noela" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Resource_Ortiz
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "\"Resistencia de Materiales\" Ortiz Berrocal, L. Ed:McGraw Hill" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Resource_Timoshenko
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "\"Resistencia de Materiales\" Timoshenko, S. Ed:Espasa Calpe" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Resource_Beer
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "\"Mecánica de Materiales\" Beer, F.; Johnston, E.; Russell, Jr. Ed: McGraw Hill" ;
+    guide:bibliographyType "Bibliﺎografía" .
+
+:Resource_Lab_Elasticidad
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Laboratorio de Elasticidad y Resistencia de Materiales" ;
+    guide:bibliographyType "Equipamiento" .
+
+:Resource_Moodle
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "moodle.upm.es" ;
+    guide:bibliographyType "Recursos web" .
+
+# Required Knowledge
+:Knowledge_PhysicsI
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Fisica I" .
+
+:Knowledge_Calculus
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Calculo Infinitesimal" .
+
+:Knowledge_Algebra
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Algebra Lineal" .
+
+:Knowledge_PhysicsII
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "FÍsica Ii" .

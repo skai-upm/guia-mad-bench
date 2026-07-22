@@ -1,0 +1,75 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course_guide_59ET_ANX_PR_CL_001_01> rdf:type :CourseGuide ;
+    sch:name "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en ;
+    dct:creator <http://guia-mad-bench.es/data/course_guide_59ET_ANX_PR_CL_001_01> .
+
+<http://guia-mad-bench.es/data/degree_59ET_Doble_Grado_Electronica_Telecom> rdf:type :Degree ;
+    sch:name "Doble Grado En Ing.Electronica De Comunicaciones Y En Ing.Telematica"@en ;
+    guide:courseYear 2026 .
+
+<http://guia-mad-bench.es/data/course_59ET_ANX_PR_CL_001> rdf:type :Course ;
+    sch:name "Electronica Analogica Ii" ;
+    sch:description "La asignatura Electrónica Analógica II es la continuación natural de las asignaturas..."@en .
+
+<http://guia-mad-bench.es/data/course_guide_59ET_ANX_PR_CL_001_01> guide:hasCourse <http://guia-mad-bench.es/data/course_59ET_ANX_PR_CL_001> ;
+    sch:numberOfCredits 6 .
+
+<http://guia-mad-bench.es/data/lecturer_francisco_martinez_moreno> rdf:type :Lecturer , sch:Person ;
+    sch:name "Francisco Martinez Moreno" ;
+    guide:office "A4210"@en ;
+    sch:email <mailto:francisco.martinezm@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer_javier_malo_gomez> rdf:type :Lecturer , sch:Person ;
+    sch:name "Javier Malo Gomez" ;
+    guide:office "A4215"@en ;
+    sch:email <mailto:javier.malo@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer_ignacio_anton_hernandez> rdf:type :Lecturer , sch:Person ;
+    sch:name "Ignacio Anton Hernandez" ;
+    guide:office "A4220"@en ;
+    sch:email <mailto:i.anton@upm.es> .
+
+<http://guia-mad-bench.es/data/course_guide_59ET_ANX_PR_CL_001_01> sch:director <http://guia-mad-bench.es/data/lecturer_javier_malo_gomez> ;
+    guide:syllabusDescription "Circuitos realimentados con Amplificador Operacional, Respuesta en frecuencia..."@en .
+
+<http://guia-mad-bench.es/data/syllabus_item_1_circuitos_realimentados> rdf:type :SyllabusItem ;
+    sch:description "Circuitos realimentados con Amplificador Operacional" ;
+    guide:itemIndex 1 .
+
+<http://guia-mad-bench.es/data/syllabus_item_2_respuesta_frecuencia> rdf:type :SylabusItem ;
+    sch:description "Respuesta en frecuencia de circuitos basados en el Amplificador Operacional" ;
+    guide:itemIndex 2 .
+
+<http://guia-mad-bench.es/data/evaluation_trial_bt1a> rdf:type :EvaluationTrial ;
+    sch:name "Resolución de ejercicios propuestos (BT1a. Eva-Moodle)" ;
+    guide:trialType "Prueba Telemática"@en ;
+    guide:gradePercentage 3 .
+
+<http://guia-mad-bench.es/data/evaluation_trial_bt2> rdf:type :EvaluationTrial ;
+    sch:name "Resolución de ejercicios propuestos (BT2. Eva-Moodle)" ;
+    guide:trialType "Prueba Telemática"@en ;
+    guide:gradePercentage 3 .
+
+<http://guia-mad-bench.es/data/evaluation_trial_practica_amplificador> rdf:type :EvaluationTrial ;
+    sch:name "Evaluación de informes de la práctica 'amplificador de audio'" ;
+    guide:trialType "Trabajo en Grupo"@en ;
+    guide:gradePercentage 2.25 .
+
+<http://guia-mad-bench.es/data/evaluation_trial_prueba_final> rdf:type :EvaluationTrial ;
+    sch:name "Prueba de evaluación final (parte teórica)" ;
+    guide:trialType "Examen Escrito"@en ;
+    guide:gradePercentage 48 .
+
+<http://guia-mad-bench.es/data/course_guide_59ET_ANX_PR_CL_001_01> sch:courseSchedule <http://guia-mad-bench.es/data/schedule_semestre_2025-26> ;
+    guide:numberOfCredits 6 .
+
+<http://guia-mad-bench.es/data/course_guide_59ET_ANX_PR_CL_001_01> sch:inLanguage "Castellano"@en ;
+    dct:title "Electronica Analogica Ii"@es .

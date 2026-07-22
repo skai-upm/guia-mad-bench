@@ -1,0 +1,250 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:ElectronicaI_CourseGuide rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Electronica I" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    guide:numberOfCredits 6.0 ;
+    guide:inpersonHours "Not specified" ;
+    guide:remoteHours "Not specified" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :ElectronicaI_Syllabus ;
+    guide:hasCompetency :CE_B4, :CE_TEL12, :CG_02, :CG_04, :CG_05 ;
+    guide:hasLearningResult :RA68, :RA69, :RA67, :RA70, :RA71, :RA66 ;
+    guide:hasEvaluation :ElectronicaI_EvalSystem ;
+    sch:instructor :RitaHoganTevesDeAlmeida ;
+    guide:hasDidacticResource :Hambley_Book, :SedraSmith_Book, :Malvino_Book, :Storey_Book, :Moodle_Page ;
+    sch:description "Guía de aprendizaje para la asignatura Electrónica I." .
+
+# Course Instance
+:ElectronicaI_Course rdf:type guide:Course ;
+    sch:name "595000208 - Electronica I" ;
+    sch:courseCode 595000208 ;
+    guide:courseYear 2025 ;
+    guide:courseType "Básica" ;
+    guide:semester "Segundo semestre" .
+
+# Degree Instance
+:IngenieriaTelematica_Degree rdf:type guide:Degree ;
+    sch:name "59TL - Grado En Ingenieria Telematica" ;
+    guide:degreeCode "59TL" .
+
+# University Center Instance
+:ETS_Telecom_Center rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Sist. De Telecom." ;
+    guide:offers :IngenieriaTelematica_Degree .
+
+# Lecturer Instances
+:PedroCobosArribas rdf:type guide:Lecturer ;
+    sch:name "Pedro Cobos Arribas" ;
+    sch:email "pedro.cobos@upm.es" ;
+    guide:office "A4210" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:AgustinRodriguezHerrero rdf:type guide:Lecturer ;
+    sch:name "Agustin Rodriguez Herrero" ;
+    sch:email "agustin.rodriguez@upm.es" ;
+    guide:office "A4214" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:LuisNarvarteFernandez rdf:type guide:Lecturer ;
+    sch:name "Luis Narvarte Fernandez" ;
+    sch:email "luis.narvarte@upm.es" ;
+    guide:office "A4218" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:RitaHoganTevesDeAlmeida rdf:type guide:Lecturer ;
+    sch:name "Rita Hogan Teves De Almeida" ;
+    sch:email "rita.hogan@upm.es" ;
+    guide:office "A4202" ;
+    guide:tutorshipsSchedule "Sin: horario." .
+
+:FranciscoMartinezMoreno rdf:type guide:Lecturer ;
+    sch:name "Francisco Martinez Moreno" ;
+    sch:email "francisco.martinezm@upm.es" ;
+    guide:office "A4210" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:JavierMaloGomez rdf:type guide:Lecturer ;
+    sch:name "Javier Malo Gomez" ;
+    sch:email "javier.malo@upm.es" ;
+    guide:office "A4220" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:JorgeDePongaDelPozo rdf:type guide:Lecturer ;
+    sch:name "Jorge De Ponga Del Pozo" ;
+    sch:email "jorge.deponga@upm.es" ;
+    guide:office "A4220" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:GuidoVallerotto rdf:type guide:Lecturer ;
+    sch:name "Guido Vallerotto" ;
+    sch:email "guido.vallerotto@upm.es" ;
+    guide:office "A4218" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+# Competencies
+:CE_B4 rdf:type guide:Competency ;
+    guide:competencyCode "CE B4" ;
+    guide:competencyDescription "Comprensión y dominio de los conceptos básicos de sistemas lineales y las funciones y transformadas relacionadas, teoría de circuitos eléctricos, circuitos electrónicos, principio físico de los semiconductores y familias lógicas, dispositivos electrónicos y fotónicos, tecnología de materiales y su aplicación para la resolución de problemas propios de la ingeniería." .
+
+:CE_TEL12 rdf:type guide:Competency ;
+    guide:competencyCode "CE TEL12" ;
+    guide:competencyDescription "Capacidad de utilizar distintas fuentes de energía y en especial la solar fotovoltaica y térmica, así como los fundamentos de la electrotecnia y de la electrónica de potencia." .
+
+:CG_02 rdf:type guide:Competency ;
+    guide:competencyCode "CG 02" ;
+    guide:competencyDescription "Capacidad de búsqueda y selección de información, de razonamiento crítico y de elaboración y defensa de argumentos dentro del área." .
+
+:CG_04 rdf:type guide:Competency ;
+    guide:competencyCode "CG 04" ;
+    guide:competencyDescription "Capacidad de abstracción, de análisis y de síntesis y de resolución de problemas." .
+
+:CG_05 rdf:type guide:Competency ;
+    guide:competencyCode "CG 05" ;
+    guide:competencyDescription "Capacidad de trabajo en equipo y en entornos multidisciplinares." .
+
+# Learning Results
+:RA68 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA68" ;
+    guide:learningResultDescription "Entender el diagrama de bloques de sistemas electrónicos sencillos aplicados en el sector de las telecomunicaciones" .
+
+:RA69 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA6<0xC2>9" ;
+    guide:learningResultDescription "Conocer la función y características básicas de los componentes electrónicos pasivos (Resistencia, condensador y bobina). Conocer sus propiedades básicas." .
+
+:RA67 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA67" ;
+    guide:learningResultDescription "Entender las características principales de los bloques funcionales que componen un sistema electrónico básico (amplificador, atenuador, alimentación, ADC, DAC)." .
+
+:RA70 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA70" ;
+    guide:learningResultDescription "Entender el modelo y las propiedades básicas de los amplificadores y su implementación con amplificadores operacionales ideales." .
+
+:RA71 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA71" ;
+    guide:learningResultDescription "Conocer la función y características básicas de los componentes electrónicos activos (diodo, transistor bipolar y unipolar)." .
+
+:RA66 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA66" ;
+    guide:learningResultDescription "Entender la nomenclatura y propiedades básicas de las señales elementales que se utilizan en los circuitos electrónicos" .
+
+# Syllabus
+:ElectronicaI_Syllabus rdf:type guide:Syllabus ;
+    guide:hasItem :SyllabusItem_1, :SyllabusItem_2, :SyllabusItem_3, :SyllabusItem_4 .
+
+:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a los sistemas electrónicos" .
+
+:SyllableItem_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Componentes y dispositivos electrónicos" .
+
+:SyllabusItem_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Subsistemas electrónicos integrados" .
+
+:SyllabusItem_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Prácticas" .
+
+# Evaluation System and Trials
+:ElectronicaI_EvalSystem rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva con exámenes parciales y globales." ;
+    guide:hasEvaluationTrial :ExamenGrupo1, :ExamenParcial1, :ExamenGlobalLab, :ExamenGrupo2, :ExamenGlobalTeoria, :ExamenExtraordinario .
+
+:ExamenGrupo1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "4%" ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "0 / 10" .
+
+:ExamenParcial1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "0 / 10" .
+
+:ExamenGlobalLab rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "12%" ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:trialMode "Pres．encial" ;
+    guide:minimumScore "0 / 10" .
+
+:ExamenGrupo2 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "4%" ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "0 / 10" .
+
+:ExamenGlobalTeoria rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "60%" ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "4 / 10" .
+
+:ExamenExtraordinario rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Extraordinaria" ;
+    guide:gradePercentage "88%" ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "4.5 / 10" .
+
+# Didactic Resources
+:Hambley_Book rdf:type guide:DidacticResource ;
+    sch:name "Hambley: Electrónica, 2ª ed. Prentice Hall, 2001." ;
+    guide:bibliographyType "Bibliografía" .
+
+:SedraSmith_Book rdf:type guide:DidacticResource ;
+    sch:name "Sedra y Smith: Circuitos Microelectrónicos, 5ª ed. McGraw-Hill" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Malvino_Book rdf:type guide:DidacticResource ;
+    sch:name "Malvino: Principios de electrónica, 7ª ed. McGraw-Hill, 2007." ;
+    guide:bibliographyType "Bibliografía" .
+
+:Storey_Book rdf:type guide:DidacticResource ;
+    sch:name "Storey: Electrónica, de los sistemas a los componentes, Addison-Wesley Iberoamericana, 1995" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Moodle_Page rdf:type guide:DidacticResource ;
+    sch:name "Página de la asignatura en Moodle" ;
+    guide:bibliographyType "Recursos web" .
+
+# Activities (from Cronograma)
+:Activity_Week1 rdf:type guide:Activity ;
+    guide:activityDescription "Presentación de la asignatura. Señales. Potencia. Unidades logarítmicas." ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" ;
+    guide:activityDuration 4.0 .
+
+:Activity_Week2 rdf:type guide:Activity ;
+    guide:activityDescription "Señales en el dominio de la frecuencia. Espectro. Ruido." ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" ;
+    guide:activityDuration 4.0 .
+
+:Lab_Practice_1 rdf:type guide:Activity ;
+    guide:activityDescription "Práctica 1: Señales y sistemas." ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:attendanceType "Presencial" ;
+    guide:activityDuration 2.0 .
+
+# Required Knowledge
+:AnalisisCircuitosI rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Analisis De Circuitos I" .
+
+:TalleresIngenieria rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Talleres De Iniciacion A La Ingenieria" .

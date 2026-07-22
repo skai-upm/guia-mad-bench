@@ -1,0 +1,161 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guide-ANX-PRCL001-01> rdf:type guide:CourseGuide ;
+    sch:name "93000798 - Aplicaciones Y Servicios"@en ;
+    dc:title "Guía de Aprendizje 2025/26"@en ;
+    dct:creator <http://guia-mad-bench.es/data/person-FelixCuadrado> ,
+               <http://guia-mad-bench.es/data/person-DavidRodriguez> ,
+               <http://guia-mad-bench.es/data/Person-JuanCarlosDueñasLopez> ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course-93000798> ;
+    sch:numberOfCredits "6"^^xsd:decimal ;
+    guide:syllabusDescription "Bloque I a VI, Temas 1 a 24"@en ;
+    guide:teachingPeriodMonths "Septiembre-Enero"@en ;
+    guide:periodStartingMonth "Septiembre"@en ,
+                              "Enero"@en ;
+    sch:description "Guía de aprendizaje para la asignatura Aplicaciones Y Servicios en el Master Universitario En Ingenieria De Telecomunicacion."@en .
+
+<http://guia-mad-bench.es/data/degree-09AQ> rdf:type guide:MasterDegree ,
+                                                    owl:Thing ;
+    sch:name "Master Universitario En Ingenieria De Telecomunicacion"@es ;
+    guide:numberOfCredits "6"^^xsd:decimal ;
+    dct:title "09AQ - Master Universitario En Ingenieria De Telecomunicacion"@en .
+
+<http://guia-mad-bench.es/data/course-93000798> rdf:type guide:Course ,
+                                                          sch:CourseInstance ;
+    sch:name "Aplicaciones Y Servicios"@es ;
+    guide:numberOfCredits "6"^^xsd:decimal ;
+    guide:syllabusDescription "La asignatura tiene como objetivo que el alumno conozca los tipos principales de tecnologías de software y servicios, y su contexto de uso en el ámbito empresarial."@en .
+
+<http://guia-mad-bench.es/data/schedule-93000798> rdf:type guide:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event-Sem1-Tema1>,
+                      <http://guia-mad-bench.es/data/event-Sem2-ExamenParcial1>,
+                      <http://guia-mad-bench.es/data/event-Sem8-ExamenFinal> ;
+    guide:courseSchedule <http://guia-mad-bench.es/data/guide-ANX-PRCL001-01> .
+
+<http://guia-mad-bench.es/data/syllabus-GA_09AQ_93000798> rdf:type guide:Syllabus ;
+    sch:name "Temario de la asignatura"@es ;
+    guide:hasItem <http://guia-mad-bench.es/data/item-Tema1>,
+                  <http://guia-mad-bench.es/data/item-Tema24>.
+
+<http://guia-mad-bench.es/data/syllabus-GA_09AQ_93000798> guide:hasItem <http://guia-mad-bench.es/data/item-BloqueI>,
+                                      <http://guia-mad-bench.es/data/item-BloqueII>.
+
+<http://guia-mad-bench.es/data/syllabus-GA_09AQ_93000798> guide:hasItem <http://guia-mad-bench.es/data/item-RA1>,
+                                      <http://guia-mad-bench.es/data/item-CE6>.
+
+<http://guia-mad-bench.es/data/syllabus-GA_09AQ_93000798> guide:hasItem <http://guia-mad-bench.es/data/resource-Moodle>,
+                                      <http://guia-mad-bench.es/data/resource-Libro1>.
+
+<http://guia-mad-bench.es/data/item-Tema1> rdf:type guide:SyllabusItem ;
+    sch:name "Tema 1. Economía digital"@es ;
+    guide:itemIndex "1"^^xsd:integer .
+
+<http://guia-mad-bench.es/data/item-BloqueI> rdf:type guide:SyllabusItem ;
+    sch:name "Bloque I: Dirección de sistemas de información"@en ;
+    guide:syllabusDescription "Economía digital, Modelos de negocios, Dirección IT."@es .
+
+<http://guia-mad-bench.es/data/item-RA1> rdf:type guide:SyllabusItem ;
+    sch:name "Resultado 1: Conocer estándares y protocolos"@en ;
+    guide:syllabusDescription "Conocer estándares y protocolos utilizados en el desarrollo de aplicaciones orientadas a servicios."@es .
+
+<http://guia-mad-bench.es/data/item-CE6> rdf:type guide:SyllabusItem ;
+    sch:name "Competencia 6: Capacidad para modelar redes"@en ;
+    guide:syllabusDescription "Capacidad para modelar, diseñar, implantar, gestionar, operar, administrar y mantener redes."@es .
+
+<http://guia-mad-bench.es/data/event-Sem1-Tema1> rdf:type guide:ScheduleEvent ,
+                                                      sch:Event ;
+    sch:eventIndex "1"^^xsd:integer ;
+    guide:activityDurationUnit om:Hour ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity-LM-02>.
+
+<http://guia-mad-bench.es/data/event-Sem8-ExamenFinal> rdf:type guide:EvaluationTrial ,
+                                                                 sch:Event ;
+    sch:eventIndex "17"^^xsd:integer ;
+    guide:trialType "EX"@en ;
+    guide:gradePercentage "50%"^^xsd:string ;
+    guide:minimumScore "4 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/activity-LM-02> rdf:type guide:Activity ,
+                                                      sch:EventSchedule ;
+    sch:name "Lección Magistral"@es ;
+    guide:activityDescription "Actividad del tipo Lección Magistral"@en ;
+    guide:attendanceType "Presencial"@en .
+
+<http://guia-mad-bench.es/data/resource-Moodle> rdf:type guide:DidacticResource ,
+                                                       sch:CourseInstance ;
+    sch:name "Moodle de la asignatura"@es ;
+    guide:bibliographyTitle "https://moodle.upm.es/titulaciones/oficiales/login.php"^^xsd:string .
+
+<http://guia-mad-bench.es/data/resource-Libro1> rdf:type guide:DidacticResource ,
+                                                         sch:BibliographicWork ;
+    sch:name "Engineering software products, I."@en ;
+    guide:bibliographyTitle "Sommerville, Pearson 2020"^^xsd:string .
+
+<http://guia-mad-bench.es/data/resource-Libro2> rdf:type guide:DidacticResource ,
+                                                         sch:BibliographicWork ;
+    sch:name "Microservices patterns"@en ;
+    guide:bibliographyTitle "C. Richardson, Manning 2019"^^xsd:string .
+
+<http://guia-mad-bench.es/data/person-FelixCuadrado> rdf:type guide:Lecturer ,
+                                                          owl:Thing ;
+    sch:name "Felix Aurelio Cuadrado Latasa"@es ;
+    sch:email "felix.cuadrado@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/person-DavidRodriguez> rdf:type guide:Lecturer ,
+                                                          owl:Thing ;
+    sch:name "David Rodriguez Torrado"@es ;
+    sch:email "david.rtorrado@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/Person-JuanCarlosDueñasLopez> rdf:type guide:Lecturer ,
+                                                                 owl:Thing ;
+    sch:name "Juan Carlos Dueñas Lopez"@es ;
+    sch:email "juancarlos.duenas@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/person-JuanCarlosYelmo> rdf:type guide:Lecturer ,
+                                                               owl:Thing ;
+    sch:name "Juan Carlos Yelmo Garcia"@es ;
+    sch:email "juancarlos.yelmo@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/person-JoseMariaDelAlamo> rdf:type guide:Lecturer ,
+                                                                owl:Thing ;
+    sch:name "Jose Maria Del Alamo Ramiro"@es ;
+    sch:email "jm.delalamo@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/person-PascualAdan> rdf:type guide:Lecturer ,
+                                                          owl:Thing ;
+    sch:name "Pascual Adan, Hugo"@es ;
+    sch:email "hugo.pascual.adan@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency-CE6> rdf:type guide:Competency ,
+                                                         owl:Thing ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/result-Ra1>,
+                            <http://guia-mad-bench.es/data/result-Ce7>.
+
+<http://guia-mad-bench.es/data/competency-CE6> guide:competencyCode "CE6"^^xsd:string ;
+    sch:description "Capacidad para modelar, diseñar, implantar, gestionar, operar, administrar y mantener redes."@es .
+
+<http://guia-mad-bench.es/data/result-Ra1> rdf:type guide:LearningResult ,
+                                                    owl:Thing ;
+    guide:learningResultCode "RA1"^^xsd:string ;
+    sch:description "Conocer estándares y protocolos utilizados en el desarrollo de aplicaciones orientadas a servicios."@es .
+
+<http://guia-mad-bench.es/data/result-Ce7> rdf:type guide:LearningResult ,
+                                                   owl:Thing ;
+    guide:learningResultCode "CE7"^^xsd:string ;
+    sch:description "Capacidad para realizar la planificación, toma de decisiones y empaquetamiento de redes."@es .
+
+<http://guia-mad-bench.es/data/competency-CT4> rdf:type guide:Competency ,
+                                                      owl:Thing ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/result-Ra1>.
+
+<http://guia-mad-bench.es/data/competency-CE7> rdf:type guide:Competency ,
+                                                     owl:Thing ;
+    sch:description "Capacidad para realizar la planificación, toma de decisiones y empaquetamiento de redes."@es .

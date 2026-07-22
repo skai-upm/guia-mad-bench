@@ -1,0 +1,118 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide_ANX_PR_CL_001_01> rdf:type :CourseGuide ;
+    rdfs:subClassOf sch:CourseInstance ;
+    dc:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer_david_camacho_fernandez> ,
+              <http://guia-mad-bench.es/data/lecturer_jose_eugenio_naranjo_hernandez> ;
+    guide:numberOfCredits "3"^^xsd:decimal ;
+    sch:name "Metodología Y Técnicas de Investigación"@en .
+
+<http://guia-mad-bench.es/data/course_613000136> rdf:type :Course ;
+    rdfs:subClassOf sch:Course ;
+    guide:courseYear 2025^^xsd:integer ;
+    sch:hasCourseInstance <http://guia-mad-bench.es/data/courseguide_ANX_PR_CL_001_01> .
+
+<http://guia-mad-bench.es/data/degree_MasterDegree_61AH> rdf:type :MasterDegree ;
+    rdfs:subClassOf :Degree ;
+    sch:name "Máster Universitario En Aprendizaje Automático Y Datos Masivos"@en ;
+    guide:degreeCode "61AH"^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer_david_camacho_fernandez> rdf:type :Lecturer ;
+    rdfs:subClassOf sch:Person ;
+    sch:name "David Camacho Fernandez"@en ;
+    guide:tutorshipsSchedule "Sin horario. Las tutorías serán concertadas vía correo electrónico."^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer_jose_eugenio_naranjo_hernandez> rdf:type :Lecturer ;
+    rdfs:subClassOf sch:Person ;
+    sch:name "Jose Eugenio Naranjo Hernandez"@en ;
+    guide:tutorshipsSchedule "Sin horario. Las tutorías serán concertadas vía correo electrónico."^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus_613000136> rdf:type :Syllabus ;
+    rdfs:subClassOf sch:Syllabus ;
+    guide:syllabusDescription "Bloque I (Investigación) y Bloque II (Proyectos)"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule_613000136> rdf:type :Schedule ;
+    rdfs:subClassOf sch:Schedule ;
+    guide:eventWeek "Primer semestre"^^xsd:string .
+
+<http://guia-mad-bench.es/data/activity_block_I_1> rdf:type :Activity ;
+    guide:activityDurationUnit om:Hour ;
+    guide:activityDescription "Bloque I: 1.1. El conocimiento y la investigación"@en ;
+    sch:name "Lección Magistral"^^xsd:string .
+
+<http://guia-mad-bench.es/data/activity_block_I_2> rdf:type :Activity ;
+    guide:activityDurationUnit om:Hour ;
+    guide:activityDescription "Bloque I: 1.3. Redacción y presentación de trabajos científicos"@en ;
+    sch:name "Clase de Problemas"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule_event_1> rdf:type :ScheduleEvent ;
+    rdfs:subClassOf sch:Event ;
+    guide:eventIndex 1^^xsd:integer ;
+    guide:eventWeek "Primer semestre"^^xsd:string ;
+    sch:name "Bloque I: 1.1"@en .
+
+<http://guia-mad-bench.es/data/schedule_event_2> rdf:type :ScheduleEvent ;
+    rdfs:subClassOf sch:Event ;
+    guide:eventIndex 3^^xsd:integer ;
+    guide:eventWeek "Primer semestre"^^xsd:string ;
+    sch:name "Bloque I: 1.3"@en .
+
+<http://guia-mad-bench.es/data/schedule_event_5> rdf:type :ScheduleEvent ;
+    rdfs:subClassOf sch:Event ;
+    guide:eventIndex 7^^xsd:integer ;
+    guide:eventWeek "Primer semestre"^^xsd:string ;
+    sch:name "Bloque II: 3.1"@en .
+
+<http://guia-mad-bench.es/data/schedule_event_6> rdf:type :ScheduleEvent ;
+    rdfs:subClassOf sch:Event ;
+    guide:eventIndex 8^^xsd:integer ;
+    guide:eventWeek "Primer semestre"^^xsd:string ;
+    sch:name "Bloque II: 3.2"@en .
+
+<http://guia-mad-bench.es/data/schedule_event_7> rdf:type :ScheduleEvent ;
+    rdfs:subClassOf sch:Event ;
+    guide:eventIndex 9^^xsd:integer ;
+    guide:eventWeek "Primer semestre"^^xsd:string ;
+    sch:name "Bloque II: 3.4"@en .
+
+<http://guia-mad-bench.es/data/schedule_event_8> rdf:type :ScheduleEvent ;
+    rdfs:subClassOf sch:Event ;
+    guide:eventIndex 10^^xsd:integer ;
+    guide:eventWeek "Primer semestre"^^xsd:string ;
+    sch:name "Bloque II: 3.5"@en .
+
+<http://guia-mad-bench.es/data/schedule_event_9> rdf:type :ScheduleEvent ;
+    rdfs:subClassOf sch:Event ;
+    guide:eventIndex 17^^xsd:integer ;
+    guide:eventWeek "Primer semestre"^^xsd:string ;
+    sch:name "Presentación de un trabajo y proyecto"@en .
+
+<http://guia-mad-bench.es/data/evaluation_trial_3> rdf:type :EvaluationTrial ;
+    rdfs:subClassOf sch:Event ;
+    guide:trialDescription "Presentación de un trabajo de investigación"^^xsd:string ;
+    guide:gradePercentage "50%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluation_trial_17> rdf:type :EvaluationTrial ;
+    rdfs:subClassOf sch:Event ;
+    guide:trialDescription "Presentación de un trabajo y proyecto"^^xsd:string ;
+    guide:gradePercentage "100%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency_CB6> rdf:type :Competency ;
+    guide:competencyCode "CB6"^^xsd:string ;
+    guide:competencyDescription "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales..."^^rdf:langString .
+
+<http://guia-mad-bench.es/data/learning_result_S01> rdf:type :LearningResult ;
+    guide:learningResultCode "S01"^^xsd:string ;
+    guide:learningResultDescription "El alumno elabora artículos e informes científicos que demuestran una o varias hipótesis..."^^rdf:langString .
+
+<http://guia-mad-bench.es/data/resource_1> rdf:type :DidacticResource ;
+    sch:name "Hopf, H., Krief, A. et al."^^xsd:string ;
+    guide:bibliographyType "Bibliografía"^^xsd:string .

@@ -1,0 +1,166 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Information
+guide:Course_135004529 a guide:Course ;
+    sch:name "Ampliación De Sistemas De Información Geográfica" ;
+    sch:courseCode 135004529 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Octavo semestre" ;
+    sch:numberOfCredits 3.0 .
+
+guide:CourseGuide_135004529 a guide:CourseGuide ;
+    sch:hasCourseInstance guide:Course_135004529 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:inLanguage "Castellano" ;
+    guide:numberOfCredits 3.0 ;
+    guide:totalHours "26-27 hours per ECTS" ;
+    sch:description "Los contenidos de la asignatura permiten el uso de los Sistemas de Información Geográfica (SIG) como herramienta para poder aplicar los conocimientos adquirados previamente..." ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" .
+
+guide:Degree_13MP a guide:Degree ;
+    sch:name "Grado En Ingenieria Del Medio Natural" ;
+    guide:degreeCode "13MP" ;
+    guide:hasCourse guide:Course_135004529 .
+
+guide:UnivCenter_ETSI a guide:UniversityCenter ;
+    sch:name "E.T.S.I. Montes, Forestal Y Medio Natur." ;
+    guide:offers guide:Degree_13MP .
+
+# Faculty Information
+guide:Lecturer_Emilio a guide:Lecturer ;
+    sch:name "Emilio Ortega Perez" ;
+    sch:email "emilio.ortega.perez@upm.es" ;
+    guide:office "07B.01.004.0" ;
+    guide:tutorshipsSchedule "L - 09:30 - 12:30, J - 09:30 - 12:30" .
+
+guide:Lecturer_Rodrigo a guide:Lecturer ;
+    sch:name "Cuevas Wizner, Rodrigo" ;
+    sch:email "r.cuevers@upm.es" .
+
+# Competencies and Learning Results
+guide:Competency_CB02 a guide:Competency ;
+    sch:name "CB02" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional y posean las competencias que suelen demostrarse por medio de la elaboración y defensa de argumentos y la resolución de problemas dentro de su área de estudio" .
+
+guide:Competency_CE101 a guide:Competency ;
+    sch:name "CE 1.01" ;
+    guide:competencyDescription "Conocer los campos de aplicación de la Ingeniería del Medio Natural, y tener una apreciación de la necesidad de poseer unos conocimientos técnicos profundos en ciertas áreas de aplicación" .
+
+guide:LearningResult_RA204 a guide:LearningResult ;
+    sch:name "RA204" ;
+    guide:learningResultDescription "Capacidad para integrar en un Sistemas de Información Geográfica información espacial y alfanumérica de diferentes fuentes" .
+
+guide:LearningResult_RA206 a guide:LearningResult ;
+    sch:name "RA206" ;
+    guide:learningResultDescription "El alumno será capaz de realizar proyectos de gestión ambiental mediante los Sistemas de Información Geográfica" .
+
+guide:LearningResult_RA207 a guide:LearningResult ;
+    sch:name "RA207" ;
+    guide:learningResultDescription "El alumno será capaz de manejar con destreza herramientas para aplicar los conocimientos adquiridos previamente sobre planificación territorial, evaluación de impacto ambiental, parques y jardines, paisajismo, ordenación de montes, hidrología, incendios forestales o cálculos de volúmenes de tierras" .
+
+guide:LearningResult_RA203 a guide:LearningResult ;
+    sch:name "RA203" ;
+    guide:learningResultDescription "Capacidad para adquirir, procesar y analizar datos geográficos" .
+
+guide:LearningResult_RA205 a guide:LearningResult ;
+    sch:name "RA205" ;
+    guide:learningResultDescription "El alumno/a conocerá las herramientas disponibles en los Sistemas de Información Geográfica con aplicaciones en el campo de la gestión forestal y ambiental y de los recursos naturales" .
+
+# Syllabus
+guide:Syllabus_135004529 a guide:Syllabus ;
+    guide:hasItem guide:SyllabusItem_1, guide:SyllabusItem_2, guide:SyllabusItem_3, guide:SyllabusItem_4, guide:SyllabusItem_5, guide:SyllabusItem_6, guide:SyllabusItem_7, guide:SyllabusItem_8, guide:SyllabusItem_9, guide:SyllabusItem_10, guide:SyllabusItem_11, guide:SyllabusItem_12 .
+
+guide:SyllabusItem_1 a guide:SyllabusItem ; guide:syllabusDescription "Herramientas avanzadas de análisis vectorial y ráster" ; guide:itemIndex 1 .
+guide:SyllabusItem_2 a guide:SyllabusItem ; guide:syllabusDescription "Hidrología" ; guide:itemIndex 2 .
+guide:SyllabusItem_3 a guide:SyllabusItem ; guide:syllabusDescription "Ordenación de montes" ; guide:itemIndex 3 .
+guide:SyllabusItem_4 a guide:SyllabusItem ; guide:syllabusDescription "MDT" ; guide:itemIndex 4 .
+guide:SyllabusItem_5 a guide:SyllabusItem ; guide:syllabusDescription "Análisis de redes (Network analyst)" ; guide:itemIndex 5 .
+guide:SyllabusItem_6 a guide:SSyllabusItem ; guide:syllabusDescription "Procesado de datos LIDAR" ; guide:itemIndex 6 .
+guide:SyllabusItem_7 a guide:SyllabusItem ; guide:syllabusDescription "Tratamiento de imágenes" ; guide:itemIndex 7 .
+guide:SyllabusItem_8 a guide:SyllabusItem ; guide:syllabusDescription "Modelos digitales 3D" ; guide:itemIndex 8 .
+guide:SyllabusItem_9 a guide:SyllabusItem ; guide:syllabusDescription "Conversión de formatos" ; guide:itemIndex 9 .
+guide:SyllabusItem_10 a guide:SyllabusItem ; guide:syllabusDescription "Topología" ; guide:itemIndex 10 .
+guide:SyllabusItem_11 a guide:SyllabusItem ; guide:syllabusDescription "Programación de procesos" ; guide:itemIndex 11 .
+guide:SyllabusItem_12 a guide:SyllabusItem ; guide:syllabusDescription "Cartografía temática" ; guide:itemIndex 12 .
+
+# Evaluation System and Trials
+guide:EvalSystem_135004529 a guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación se realizará de acuerdo a la normativa de la UPM. Se valorará el empleo de conocimientos previos, planteamiento adecuado y claridad en la exposición." ;
+    guide:hasEvaluationTrial guide:Trial_TP_Intermedia, guide:Trial_Final_Work, guide:Trial_Exam_T, guide:Trial_Exam_EF .
+
+guide:Trial_TP_Intermedia a guide:EvaluationTrial ;
+    sch:name "Entrega trabajo práctico intermedia" ;
+    guide:evaluationType "Trabajo en Grupo" ;
+    guide:gradePercentage "0%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:eventWeek "Semana 10" .
+
+guide:Trial_Final_Work a guide:EvaluationTrial ;
+    sch:name "Entrega y Exposición del trabajo final" ;
+    guide:evaluationType "Presentación en Grupo" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:eventWeek "Semana 15" .
+
+guide:Trial_Exam_T a guide:EvaluationTrial ;
+    sch:name "Examen teórico/práctico (T)" ;
+    guide:evaluationType "Examen de Prácticas" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:eventWeek "Semana 16" .
+
+guide:Trial_Exam_EF a guide:EvaluationTrial ;
+    sch:name "Examen teórico/práctico (EF)" ;
+    guide:evaluationType "Examen de Prácticas" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:eventWeek "Semana 17" .
+
+# Activities and Schedule
+guide:Schedule_135004529 a guide:Schedule ;
+    sch:eventSchedule guide:Event_Week1, guide:Event_Week5, guide:Event_Week10, guide:Event_Week15, guide:Event_Week16, guide:Event_Week17 .
+
+guide:Event_Week1 a guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity guide:Activity_LM_W1, guide:Activity_PL_W1 .
+
+guide:Activity_LM_W1 a guide:Activity ;
+    guide:activityDescription "Herramientas avanzadas de análisis vectorial y raster" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+guide:Activity_PL_W1 a guide:Activity ;
+    guide:activityDescription "Herramientas avanzadas de análisis vectorial y raster" ;
+    guide:activityDuration 1.5 ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+guide:Resource_Moodle a guide:DidacticResource ;
+    sch:name "Plataforma Moodle de la UPM" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:Resource_ArcGIS a guide:DidacticResource ;
+    sch:name "ArcGIS" ;
+    guide:bibliographyDescription "Los estudiantes dispondrán de una licencia de ArcGIS durante todo el curso." ;
+    guide:bibliographyType "Software" .
+
+# Required Knowledge
+guide:Knowledge_Topography a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Topografia Y Sistemas De Informacion Geografica" .
+
+guide:Knowledge_Planning a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Planificación territorial" .
+
+# Other Information
+guide:CourseGuide_135004529 guide:otherInformation "La asignatura se relaciona con el ODS15: Gestionar sosteniblemente los bosques, luchar contra la desertificación..." .

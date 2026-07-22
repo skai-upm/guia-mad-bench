@@ -1,0 +1,181 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Classes (Ontology)
+#################################################################
+
+###  http://w3id.org/def/guia#Activity
+guide:Activity rdf:type owl:Class ;
+               rdfs:comment "A teaching or learning activity carried out as part of the course, such as lectures, labs, seminars, tutorials, or independent work."@en .
+
+
+#################################################################
+#    Classes (Instances) - Data Extraction
+#################################################################
+
+###  http://guia-mad-bench.es/data/course_guide_65001024
+:courseGuide_65001024 rdf:type :CourseGuide ;
+                       sch:name "Teoria De Estructuras Y Procedimientos de Construc" ;
+                       guide:numberOfCredits 4.5 .
+
+
+###  http://guia-mad-bench.es/data/degree_06TM
+:degree_06TM rdf:type :BachelorDegree ;
+             dct:title "Grado En Ingenieria En Tecnologia Minera"@en ;
+             sch:name "Grado en Ingeniería en Tecnología Minera" .
+
+
+###  http://guia-mad-bench.es/data/course_65001024
+:course_65001024 rdf:type :Course ;
+                  dct:title "Teoria De Estructuras Y Procedimientos de Construc"@en ;
+                  sch:name "65001024 - Teoria De Estructuras y Procedimientos de Construccion" .
+
+
+###  http://guia-mad-bench.es/data/syllabus_65001024
+:syllabus_65001024 rdf:type :Syllabus ;
+                    sch:name "Guía de Aprendizaje - Teoria De Estructuras y Procedimientos de Construccion"@en .
+
+
+###  http://guia-mad-bench.es/data/schedule_65001024
+:schedule_65001024 rdf:type :Schedule ;
+                    sch:name "Cronograma - Teoria De Estructuras y Procedimientos de Construccion"@en .
+
+
+###  http://guia-mad-bench.es/data/eval_system_65001024
+:evalSystem_65001024 rdf:type :EvaluationSystem ;
+                      sch:name "Sistema de Evaluación - Teoria De Estructuras y Procedimientos de Construccion"@en .
+
+
+#################################################################
+#    Object Properties (Ontology)
+#################################################################
+
+###  http://w3id.org/def/guia#hasCourseInstance
+sch:hasCourseInstance rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Course ;
+                      rdfs:range :CourseGuide ;
+                      rdfs:comment "Links a course to a concrete course guide or offering for a given academic period."@en .
+
+
+###  http://w3id.org/def/guia#hasSyllabus
+guide:hasSyllabus rdf:type owl:ObjectProperty ;
+                  rdfs:domain :CourseGuide ;
+                  rdfs:range :Syllabus ;
+                  rdfs:comment "Links a course guide to the syllabus that describes the thematic contents of the course."@en .
+
+
+###  http://w3id.org/def/guia#hasScheduleEvent
+guide:hasScheduleEvent rdf:type owl:ObjectProperty ;
+                       rdfs:domain :EvaluationTrial ;
+                       rdfs:range :ScheduleEvent ;
+                       rdfs:comment "Links an evaluation trial to the schedule event in which it takes place."@en .
+
+
+#################################################################
+#    Data Properties (Ontology)
+#################################################################
+
+###  http://w3id.org/def/guia#numberOfCredits
+guide:numberOfCredits rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :CourseGuide ;
+                      rdfs:range xsd:decimal .
+
+
+#################################################################
+#    Instances - Lecturers (Data Extraction)
+#################################################################
+
+###  http://guia-mad-bench.es/data/lecturer_anastasio_santos_yanguas
+:lecturer_anastasio_santos_yanguas rdf:type :Lecturer ;
+                                   sch:name "Anastasio Pedro Santos Yanguas" ;
+                                   guide:tutorshipsSchedule "M - 12:00 - 14:00<br>X - 11:00 - 13:00<br>J - 12:00 - 14:00"@en .
+
+
+###  http://guia-mad-bench.es/data/lecturer_maria_chiquito_nieto
+:lecturer_maria_chiquito_nieto rdf:type :Lecturer ;
+                                sch:name "Maria Chiquito Nieto" ;
+                                guide:tutorshipsSchedule "M - 12:00 - 14:00<br>X - 11:00 - 13:00<br>J - 12:00 - 14:00"@en .
+
+
+###  http://guia-mad-bench.es/data/lecturer_covadonga_alarcon_reyero
+:lecturer_covadonga_alarcon_reyero rdf:type :Lecturer ;
+                                    sch:name "M. Covadonga Alarcon Reyero" ;
+                                    guide:tutorshipsSchedule "M - 12:00 - 14:00<br>X - 12:00 - 14:00<br>J - 12:00 - 14:00"@en .
+
+
+###  http://guia-mad-bench.es/data/lecturer_rogelio_de_la_vega_panizo
+:lecturer_rogelio_de_la_vega_panizo rdf:type :Lecturer ;
+                                     sch:name "Rogelio De La Vega Panizo" ;
+                                     guide:tutorshipsSchedule "M - 11:00 - 14:00<br>X - 11:00 - 14:00"@en .
+
+
+#################################################################
+#    Instances - Competencies (Data Extraction)
+#################################################################
+
+###  http://guia-mad-bench.es/data/competency_cg_1
+:c_g_1 rdf:type :Competency ;
+       guide:competencyCode "CG 1" ;
+       sch:description "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Tecnología Minera." .
+
+
+###  http://guia-mad-bench.es/data/learning_result_ra_120
+:r_a_120 rdf:type :LearningResult ;
+         guide:competencyCode "RA120" ;
+         sch:description "Aplicar las herramientas para el cálculo de estructuras." .
+
+
+#################################################################
+#    Instances - Syllabus Items (Data Extraction)
+#################################################################
+
+###  http://guia-mad-bench.es/data/syllabus_item_1
+:sy_item_1 rdf:type :SyllabusItem ;
+           guide:hasItem <http://w3id.org/def/guia#> .
+
+
+###  http://guia-mad-bench.es/data/schedule_event_sem8_eval1
+:se_semeval1 rdf:type :ScheduleEvent ;
+              sch:eventIndex "8"^^xsd:string ;
+              guide:syllabusDescription "Prueba evaluación continua 1"@en .
+
+
+#################################################################
+#    Instances - Evaluation Trials (Data Extraction)
+#################################################################
+
+###  http://guia-mad-bench.es/data/eval_trial_semeval1
+:ev_trial_1 rdf:type :EvaluationTrial ;
+            sch:name "Prueba evaluación continua 1" ;
+            guide:trialType "Examen Escrito"@en .
+
+
+#################################################################
+#    Instances - Didactic Resources (Data Extraction)
+#################################################################
+
+###  http://guia-mad-bench.es/data/resource_bibliografia_olmeda
+:r_res_olmeda rdf:type :DidacticResource ;
+              sch:name "Principios básicos de estructuras metálicas" .
+
+
+#################################################################
+#    Triples - Relationships (Data Extraction)
+#################################################################
+
+:courseGuide_65001024 guide:hasCourseInstance <http://w3id.org/def/guia#> ;
+                      sch:director :lecturer_maria_chiquito_nieto .
+
+
+:syllabus_65001024 rdf:type owl:ObjectProperty ;
+                    rdfs:domain :SyllabusItem ;
+                    guide:itemIndex "xsd:string"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course_guide_65001024> sch:courseSchedule <http://w3id.org/def/guia#schedule_65001024>.

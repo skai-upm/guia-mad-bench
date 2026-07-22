@@ -1,0 +1,73 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/elements/1.1> ;
+@prefix dc:title : "GUIA ontology"@en ;
+@prefix owl: <http://w3id.org/def/guia#ontology>;
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://guia-mad-bench.es/data/courseguide/GA_09AR_93000877> a :CourseGuide ;
+    sch:name "Redes Neuronales Y Aprendizaje Estadístico"@en ;
+    guide:numberOfCredits 3^^xsd:decimal ;
+    guide:sch:description "Se presentan diferentes tipos de problemas (definidos según los objetivos planteados y los recursos disponibles) que se pueden abordar mediante técnicas de aprendizaje estadístico."@en ;
+    sch:courseCode "93000877"^^xsd:string ;
+    guide:teachingPeriodMonths "Febrero-Junio"@en .
+
+<http://guia-mad-bench.es/data/lecturer/PedroJoseZufiria> a :Lecturer ;
+    sch:name "Pedro Jose Zufiria Zatarain"@en ;
+    sch:email <mailto:pedro.zufiria@upm.es> ;
+    guide:office "A-306"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CE1> a :Competency ;
+    guide:competencyCode "CE1"@en ;
+    rdfs:label "Adquisición de una formación sólida y rigurosa en temas avanzados..."@en .
+
+<http://guia-mad-bench.es/data/courseguide/GA_09AR_93000877> guide:hasCompetency <http://guia-mad-bench.es/data/competency/CE1> ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/result/RA54> .
+
+<http://guia-mad-bench.es/data/syllabusitem/SI_01> a :SyllabusItem ;
+    sch:name "Introducción: tipos de problemas; aprendizaje automático y aprendizaje estadístico..."@en ;
+    guide:syllabusDescription "Se presentan diferentes tipos de problemas (definidos según los objetivos planteados y los recursos disponibles) que se pueden abordar mediante técnicas de aprendizaje estadístico."@en .
+
+<http://guia-mad-bench.es/data/syllabusitem/SI_02> a :SyllabusItem ;
+    sch:name "Fundamentos matemáticos: dinámica de sistemas; teoría de optimización..."@en ;
+    guide:syllabusDescription "Partiendo de los fundamentos de la dinámica de sistemas, la teoría de la optimización y la inferencia estadística..."@en .
+
+<http://guia-mad-bench.es/data/syllabusitem/SI_03> a :SyllabusItem ;
+    sch:name "Aprendizaje supervisado: regresión y clasificación; modelos neuronales..."@en ;
+    guide:syllabusDescription "Se implementan diferentes máquinas de aprendizaje, basadas en modelos neuronales básicos..."@en .
+
+<http://guia-mad-bench.es/data/syllabusitem/SI_04> a :SyllabusItem ;
+    sch:name "Otros tipos de problemas: aprendizaje en entornos dinámicos, aprendizaje por refuerzo..."@en ;
+    guide:syllabusDescription "Se estudian y caracterizan los modelos más empleados para abordar los diferentes tipos de problemas."@en .
+
+<http://guia-mad-bench.es/data/syllabusitem/SI_05> a :SyllabusItem ;
+    sch:name "Aplicaciones prácticas: tratamiento de señal, optimización de funciones tipo caja negra..."@en ;
+    guide:syllabusDescription "Finalmente, se ilustra su utilidad mediante la resolución de algunos problemas prácticos."@en .
+
+<http://guia-mad-bench.es/data/syllabusitem/SI_06> a :SyllabusItem ;
+    sch:name "Modelos alternativos/avanzados para aprendizaje supervisado y no supervisado..."@en ;
+    guide:syllabusDescription "Se presentan diferentes tipos de problemas (definidos según los objetivos planteados y los recursos disponibles) que se pueden abordar mediante técnicas de aprendizaje estadístico."@en .
+
+<http://guia-mad-bench.es/data/evaluationtrial/GT_01> a :EvaluationTrial ;
+    sch:name "Ejercicios realizados en plataforma Moodle"@es ;
+    guide:trialType "Prueba Telemática"^^xsd:string ;
+    guide:gradePercentage 10^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/evaluationtrial/GT_02> a :EvaluationTrial ;
+    sch:name "Trabajo final"@es ;
+    guide:trialType "Examen Escrito"^^xsd:string ;
+    guide:gradePercentage 30^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/evaluationtrial/GT_03> a :EvaluationTrial ;
+    sch:name "Evaluación Global"@es ;
+    guide:trialType "Trabajo Individual"^^xsd:string ;
+    guide:gradePercentage 100^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/resource/RES_01> a :DidacticResource ;
+    sch:name "E. Alpaydin, Introduction to Machine Learning"@en ;
+    guide:bibliographyType "Bibliografía"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/GA_09AR_93000877> a :CourseGuide ;
+    sch:director <http://guia-mad-bench.es/data/lecturer/PedroJoseZufiria> ;
+    guide:sch:description "La asignatura hace hincapié en los fundamentos y trata de vincular diferentes perspectivas..."@en .

@@ -1,0 +1,203 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+# Course Guide Instance
+:CourseGuide_Sostenibilidad_40 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Sostenibilidad 4.0" ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:numberOfCredits 3.0 ;
+    guide:hasSyllabus :Syllabus_Sostenibilidad_40 ;
+    guide:hasCompetency :Comp_CB03, :Comp_CB04, :Comp_CB05, :Comp_CG13, :Comp_CT1 ;
+    guide:hasLearningResult :LR_RA577, :LR_RA575, :LR_RA578, :LR_RA576, :LR_RA579 ;
+    guide:hasEvaluation :EvalSystem_Sostenibilidad_40 ;
+    guide:hasDidacticResource :Res_EcoVadis, :Res_Datamaran, :Res_Climact, :Res_GRI_Tool, :Res_SASB_Finder, :Res_Eccles_Krzus, :Res_Elkington ;
+    sch:instructor :Lecturer_M_Carmen_Aviles ;
+    sch:courseSchedule :Schedule_Sostenibilidad_40 .
+
+# Course Instance
+:Course_Sostenibilidad_40 rdf:type guide:Course ;
+    sch:name "135004815 - Sostenibilidad 4.0: Integración De Taxonomía, Esg" ;
+    sch:courseCode 135004815 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 2025 ;
+    guide:semester "Octavo semestre" .
+
+# Degree Instance
+:Degree_Ingenieria_Forestal rdf:type guide:Degree ;
+    sch:name "13IG - Grado En Ingenieria Forestal" ;
+    guide:degreeCode "13IG" ;
+    guide:hasCourse :Course_Sostenibilidad_40 .
+
+# University Center Instance
+:UniversityCenter_ETSI rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S.I. Montes, Forestal y Medio Natur." .
+
+# Lecturer Instance
+:Lecturer_M_Carmen_Aviles rdf:type guide:Lecturer ;
+    sch:name "M. Carmen Aviles Palacios" ;
+    sch:email "carmen.aviles@upm.es" ;
+    guide:office "treeNNOVA Ed.B4" ;
+    guide:tutorshipsSchedule "L - 13:00 - 14:00" .
+
+# Competencies
+:Comp_CB03 rdf:type guide:Competency ;
+    guide:competencyCode "CB03" ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes para emitir juicios que incluyan una reflexión sobre temas relevantes de índole social, científica - ética" .
+
+:Comp_CB04 rdf:type guide:Competency ;
+    guide:competencyCode "CB04" ;
+    guide:competencyDescription "Que los estudiantes puedan transmitir información, ideas, problemas y soluciones a un público tanto especializado como no especializado" .
+
+:Comp_CB05 rdf:type guide:Competency ;
+    guide:competencyCode "CB05" ;
+    guide:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía" .
+
+:Comp_CG13 rdf:type guide:Competency ;
+    guide:competencyCode "CG13" ;
+    guide:competencyDescription "Capacidad para diseñar, dirigir, elaborar, implementar e interpretar proyectos y planes, así como para redactar informes técnicos, memorias de reconocimiento, valoraciones, peritajes y tasaciones." .
+
+:Comp_CT1 rdf:type guide:Competency ;
+    guide:competencyCode "CT1" ;
+    guide:competencyDescription "Comunicación oral y escrita. Concluir aportaciones por escrito, desarrollando la capacidad de síntesis y presentación de las ideas propias en un grupo de trabajo y en exposición pública." .
+
+# Learning Results
+:LR_RA577 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA577" ;
+    guide:learningResultDescription "Diseñar un informe ESG adaptado al sector forestal o ambiental." .
+
+:LR_RA575 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA575" ;
+    guide:learningResultDescription "Comprender el marco legal y normativo actual en sostenibilidad (Taxonomía, SFDR, GRI, ESRS)." .
+
+:LR_RA578 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA578" ;
+    guide:learningResultDescription "Manejar plataformas y metodologías digitales orientadas a la sostenibilidad 4.0." .
+
+:LR_RA576 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA576" ;
+    guide:learningResultDescription "Identificar y aplicar los indicadores clave de sostenibilidad en proyectos reales." .
+
+:LR_RA579 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA579" ;
+    guide:learningResultDescription "Analizar y evaluar la doble materialidad en el contexto de cambio climático." .
+
+# Syllabus
+:Syllabus_Sostenibilidad_40 rdf:type guide:Syllabus ;
+    guide:hasItem :SyllabusItem_1, :SyllabusItem_2, :SyllabusItem_3, :SyllabusItem_4, :SyllabusItem_5, :SyllabusItem_6, :SyllabusItem_7 .
+
+:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a la Sostenibilidad 4.0" .
+
+:SyllabusItem_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Taxonomía de la UE: objetivos y aplicación" .
+
+:SyllabusItem_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "ESG: indicadores, riesgos y oportunidades" .
+
+:SyllabusItem_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Marcos de reporte no financiero (GRI, ESRS, SFDR)" .
+
+:SyllabusItem_5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Evaluación de la sostenibilidad y gestión de riesgos climáticos" .
+
+:SyllabusItem_6 rdf:<0xC2>type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Herramientas digitales para sostenibilidad y reporting" .
+
+:SyllabusItem_7 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Análisis de informes y estudios de caso sectoriales" .
+
+# Evaluation System and Trials
+:EvalSystem_Sostenibilidad_40 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación progresiva y global." ;
+    guide:hasEvaluationTrial :Trial_Intermediate, :Trial_Final .
+
+:Trial_Intermediate rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "Semana 8" ;
+    guide:trialMode "Presencial" ;
+    guide:trialDescription "Evaluación intermedia (presentación de avances del informe) ESG" .
+
+:Trial_Final rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "75%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "Semana 16" ;
+    guide:trialMode "Presencial" ;
+    guide:trialDescription "Entrega y defensa de informe ESG corregido" .
+
+# Schedule and Events
+:Schedule_Sostenibilidad_40 rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week1, :Event_Week8, :Event_Week16 .
+
+:Event_Week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :Act_LM_Intro .
+
+:Act_LM_Intro rdf:type guide:Activity ;
+    guide:activityDescription "Introducción: sostenibilidad y contexto normativo" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+:Event_Week8 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 8" ;
+    guide:hasActivity :Act_Eval_Intermediate .
+
+:Act_Eval_Intermediate rdf:type guide:Activity ;
+    guide:activityDescription "Evaluación intermedia (presentación de avances del informe) ESG" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Presentación en Grupo" .
+
+:Event_Week16 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 16" ;
+    guide:hasActivity :Act_Eval_Final .
+
+:Act_Eval_Final rdf:type guide:Activity ;
+    guide:activityDescription "Entrega y defensa de informe ESG corregido" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Presentación en Grupo" .
+
+# Didactic Resources
+:Res_EcoVadis rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "EcoVadis" ;
+    guide:bibliographyType "Recurso web" .
+
+:Res_Datamaran rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Datamaran" ;
+    guide:bibliographyType "Recurso web" .
+
+:Res_Climact rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Climact" ;
+    guide:bibliographyType "Recurso web" .
+
+:Res_GRI_Tool rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "GRI Digital Reporting Tool" ;
+    guide:bibliographyType "Recurso web" .
+
+:Res_SASB_Finder rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "SASB Materiality Finder" ;
+    guide:bibliographyType "Recurso web" .
+
+:Res_Eccles_Krzus rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "The Integrated Reporting Movement" ;
+    guide:bibliographyDescription "Eccles, R. & Krzus, M. (2018)" ;
+    guide:bibliographyType "Bibliografía recomendada" .
+
+:Res_Elkington rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Green Swans: The Coming Boom in Regenerative Capitalism" ;
+    guide:bibliographyDescription "Elkington, J. (2020)" ;
+    guide:bibliographyType "Bibliografía recomendada" .

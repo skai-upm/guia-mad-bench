@@ -1,0 +1,157 @@
+@prefix data: <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3id.org/2001/XMLSchema#> .
+
+#################################################################
+#    Degree Instance (Grado En Ingenieria En Tecnologia Minera)
+#################################################################
+
+data:BachelorDegree_06TM rdf:type guide:BachelorDegree ;
+                          data:degreeCode "06TM"@en ;
+                          sch:name "Grado en Ingeniería en Tecnología Minera" .
+
+
+#################################################################
+#    Course Instance (Laboreo De Minas I)
+#################################################################
+
+data:Course_65001030 rdf:type guide:Course, sch:Course ;
+                      data:numberOfCredits 4.5^^xsd:decimal ;
+                      data:courseYear "2025"^^xsd:string .
+
+
+#################################################################
+#    Course Guide Instance (ANX-PR/CL/001-01)
+#################################################################
+
+data:CourseGuide_ANX_PR_CL_001_01 rdf:type guide:CourseGuide, sch:CourseInstance ;
+                                   data:numberOfCredits 4.5^^xsd:decimal ;
+                                   dc:title "Guía de Aprendizaje - Laboreo De Minas I"@en ;
+                                   dct:creator <http://guia-mad-bench.es/data/lecturer/juan-herrera-herbert> ,
+                                             <http://guia-mad-bench.es/data/lecturer/carlos-lopez-jimeno>,
+                                             <http://guia-mad-bench.es/data/lecturer/jesus-caceres-jimeno> ;
+                                   sch:courseSchedule data:CourseGuide_ANX_PR_CL_001_01_schedule .
+
+
+#################################################################
+#    Syllabus Instance (Temario)
+#################################################################
+
+data:Syllabus_Laboreo_Minas rdf:type guide:Syllabus, sch:Syllabus ;
+                             guide:syllabusDescription "Introducción al conjunto de la industria minera actual, sus funciones, procesos y tecnologías"@en .
+
+
+#################################################################
+#    Syllabus Items (Temario)
+#################################################################
+
+data:Item_B1T1 rdf:type guide:SyllabusItem ;
+                data:itemIndex 1^^xsd:integer ;
+                sch:name "BLOQUE 1: LA INDUSTRIA MINERA. CONCEPTOS BÁSICOS" .
+
+
+data:Item_B2T1 rdf:type guide:SyllabusItem ;
+                data:itemIndex 3^^xsd:integer ;
+                sch:name "BLOQUE 2: INTRODUCCIÓN A LAS TÉCNICAS DE ARRANQUE DE ROCAS" .
+
+#################################################################
+#    Lecturers (Profesorado)
+#################################################################
+
+data:Lecturer_Juan_Herrera rdf:type guide:Lecturer, sch:Person ;
+                            data:sch:name "Juan Herrera Herbert"@en ,
+                                      "Coordinador/a"@en ;
+                            data:office "208 y/o 218"^^xsd:string ;
+                            sch:email <mailto:juan.herrera@upm.es> .
+
+
+data:Lecturer_Carlos_Lopez rdf:type guide:Lecturer, sch:Person ;
+                           data:sch:name "Carlos Lopez Jimeno"@en ;
+                           data:office "211"^^xsd:string ;
+                           sch:email <mailto:carlos.lopezj@upm.es> .
+
+
+#################################################################
+#    Competencies (CG)
+#################################################################
+
+data:Competency_CG_1 rdf:type guide:Competency, sch:Thing ;
+                      data:competencyCode "CG 1"@en ;
+                      data:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Tecnología Minera."@es .
+
+
+#################################################################
+#    Learning Results (RA)
+#################################################################
+
+data:LearningResult_RA_294 rdf:type guide:LearningResult, sch:Thing ;
+                            data:learningResultCode "RA 294"@en ;
+                            data:learningResultDescription "Conocer la naturaleza de la industria minera, su situación actual y el marco de desarrollo."@es .
+
+
+#################################################################
+#    Schedule Instance (Cronograma)
+#################################################################
+
+data:CourseGuide_ANX_PR_CL_001_01_schedule rdf:type guide:Schedule, sch:Schedule ;
+                                             data:eventIndex 1^^xsd:integer .
+
+
+#################################################################
+#    Evaluation Trials (Evaluación)
+#################################################################
+
+data:EvaluationTrial_Final rdf:type guide:EvaluationTrial, sch:Event ;
+                           data:trialType "Prueba Telemática"@en ,
+                                     "Presencial"^^xsd:string ;
+                           data:mininumScore 5.0^^xsd:decimal .
+
+
+#################################################################
+#    Didactic Resources (Recursos)
+#################################################################
+
+data:Resource_Herrera_2017 rdf:type guide:DidacticResource, sch:BibliographicWork ;
+                            data:bibliographyTitle "Introducción a la Minería"@en ,
+                                                  "(2ª Edición)" .
+
+
+#################################################################
+#    Links (Properties)
+#################################################################
+
+data:CourseGuide_ANX_PR_CL_001_01 rdf:type guide:CourseGuide, sch:CourseInstance ;
+                                   data:syllabusDescription "Temario de la asignatura"^^xsd:string ;
+                                   guide:hasSyllabus data:Syllabus_Laboreo_Minas .
+
+
+data:CourseGuide_ANX_PR_CL_001_01 rdf:type guide:CourseGuide, sch:CourseInstance ;
+                                    guide:hasCompetency data:Competency_CG_1 ,
+                                                        data:Competency_CG_2 .
+
+#################################################################
+#    Evaluation System & Trials Links (Simplified)
+#################################################################
+
+data:EvaluationTrial_Final rdf:type guide:EvaluationTrial, sch:Event ;
+                           guide:trialDescription "Evaluación Final"^^xsd:string ;
+                           guide:gradePercentage 10.0^^xsd:decimal .
+
+
+#################################################################
+#    Schedule Events & Activities (Cronograma)
+#################################################################
+
+data:ScheduleEvent_Sem_7 rdf:type guide:ScheduleEvent, sch:Event ;
+                          data:eventIndex 7^^xsd:integer ;
+                          data:trialWeek "Semestre 7"^^xsd:string .
+
+
+data:EvaluationTrial_Final rdf:type guide:EvaluationTrial, sch:Event ;
+                           guide:hasEvaluationTrial <http://guia-mad-bench.es/data/evaluation/final> .

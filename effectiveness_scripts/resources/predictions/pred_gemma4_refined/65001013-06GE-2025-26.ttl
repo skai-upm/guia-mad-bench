@@ -1,0 +1,168 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+:Grado_Ingenieria_Geologica rdf:type guide:Degree ;
+    sch:name "06GE - Grado En Ingenier ica Geologica" ;
+    guide:degreeCode "06GE" ;
+    guide:hasCourse :Electrotecnia .
+
+:ETS_Minas_Energia rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Minas y Energía" ;
+    guide:offers :Grado_Ingenieria_Geologica .
+
+# Course and Course Guide
+:Electrotecnia rdf:type guide:Course ;
+    sch:name "65001013 - Electrotecnia" ;
+    sch:courseCode 65001013 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Cuarto semestre" ;
+    sch:hasCourseInstance :Electrotecnia_Guide .
+
+:Electrotecnia_Guide rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Electrotecnia" ;
+    sch:description "Esta asignatura tiene como finalidad proporcionar al alumno los conocimientos básicos sobre instalaciones eléctricas y las herramientas necesarias para su dimensionamiento y cálculo." ;
+    guide:numberOfCredits 6.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :Electrotecnia_Syllabus ;
+    guide:hasEvaluation :Electrotecnia_EvalSystem ;
+    guide:hasLearningResult :RA74, :RA75, :RA74, :RA76, :RA77, :RA78, :RA79 ;
+    guide:hasCompetency :CG1, :CG2, :CG3, :CG6, :CG7, :F17 ;
+    guide:hasDidacticResource :Res_FraileMora_2023, :Res_Alexander_Sadiku ;
+    sch:director :Eduardo_Conde_Lazaro .
+
+# Lecturers
+:Luis_Javier_San_Jose_Gallego rdf:type guide:Lecturer ;
+    sch:name "Luis Javier San Jose Gallego" ;
+    sch:email "luisjavier.sanjose@upm.es" ;
+    guide:office "516" ;
+    guide:tutorshipsSchedule "M - 16:30 - 19:30, V - 13:00 - 16:00" .
+
+:Daniel_Serrano_Jimenez rdf:type guide:Lecturer ;
+    sch:name "Daniel Serrano Jimenez" ;
+    sch:email "daniel.serrano.jimenez@upm.es" ;
+    guide:office "501" ;
+    guide:tutorshipsSchedule "M - 08:00 - 10:00, X - 08:00 - 10:00, J - 08:00 - 10:00" .
+
+:Eduardo_Conde_Lazaro rdf:type guide:Lecturer ;
+    sch:name "Eduardo Conde Lazaro" ;
+    sch:email "eduardo.conde@upm.es" ;
+    guide:office "517" ;
+    guide:tutorshipsSchedule "L - 12:00 - 14:00, M - 12:00 - 14:00, J - 12:00 - 14:00" .
+
+# Competencies
+:CG1 rdf:type guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Geológica." .
+
+:CG2 rdf:type guide:Competency ;
+    guide:competencyCode "CG2" ;
+    guide:competencyDescription "Poseer capacidad para diseñar, desarrollar, implementar, gestionar y mejorar productos, sistemas y procesos en los distintos ámbitos geológicos..." .
+
+:CG3 rdf:type guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Aplicar los conocimientos adquiridos para identificar, formular y resolver problemas dentro de contextos amplios y multidisciplinarios..." .
+
+:CG6 rdf:type guide:Competency ;
+    guide:competencyCode "CG6" ;
+    guide:competencyDescription "Poseer habilidades de aprendizaje que permitan continuar estudiando a lo largo de la vida para su adecuado desarrollo profesional." .
+
+:CG7 rdf:type guide:Competency ;
+    guide:competencyCode "CG7" ;
+    guide:competencyDescription "Incorporar nuevas tecnologías y herramientas de la Ingeniería Geológica en sus actividades profesionales." .
+
+:F17 rdf:type guide:Competency ;
+    guide:competencyCode "F17" ;
+    guide:competencyDescription "Conocimientos fundamentales sobre el sistema eléctrico de potencia..." .
+
+# Learning Results
+:RA74 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA74" ;
+    guide:learningResultDescription "Comprender los fundamentos del sistema eléctrico de potencia" .
+
+:RA75 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA75" ;
+    guide:learningResultDescription "Plantear las ecuaciones de los sistemas eléctricos y resolverlas en diversos regímenes de funcionamiento" .
+
+:RA76 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA76" ;
+    guide:learningResultDescription "Calcular flujos de potencia y energía de circuitos eléctricos en régimen armónico senoidal" .
+
+:RA77 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA77" ;
+    guide:learningResultDescription "Comprender el funcionamiento y la aplicación de las máquinas eléctricas: transformadores y motores" .
+
+:RA78 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA78" ;
+    guide:learningResultDescription "Seleccionar las características idóneas de máquinas eléctricas y elementos eléctricos (canalizaciones y protecciones) de un circuito" .
+
+:RA79 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA79" ;
+    guide:learningResultDescription "Interpretar y utilizar esquemas eléctricos" .
+
+# Syllabus
+:Electrotecnia_Syllabus rdf:type guide:Syllabus ;
+    guide:hasItem :SyllabusItem_1, :SyllabusItem_2, :SyllabusItem_3, :SyllabusItem_4, :SyllabusItem_5 .
+
+:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Componentes de los circuitos" .
+
+:SyllableItem_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Circuitos en corriente alterna" .
+
+:SyllabusItem_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Circuitos trifásicos" .
+
+:SyllabusItem_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Transformadores" .
+
+:SyllabusItem_5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Generación, transporte y distribución y utilización de la energía eléctrica" .
+
+# Evaluation System
+:Electrotecnia_EvalSystem rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global mediante cuestionarios, laboratorio y examen final." ;
+    guide:hasEvaluationTrial :Trial_Cuestionario1, :Trial_Cuestionario2, :Trial_Cuestionario3, :Trial_Cuestionario4, :Trial_Laboratorio, :Trial_ExamenFinal .
+
+:Trial_Cuestionario1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "7.5%" ;
+    guide:trialWeek "Semana 5" ;
+    guide:trialMode "No presencial" .
+
+:Trial_Laboratorio rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen de Prácticas" ;
+    guide:gradePercentage "10%" ;
+    guide:trialWeek "Semana 13" ;
+    guide:trialMode "Presencial" .
+
+:Trial_ExamenFinal rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "45%" ;
+    guide:trialWeek "Semana 17" ;
+    guide:trialMode "Presencial" .
+
+# Didactic Resources
+:Res_FraileMora_2023 rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "FRAILE MORA, Electrotecnia para ingenieros, IBERGARCETA PUBLICACIONES, 2023." ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_Alexander_Sadiku rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "FUNDAMENTOS DE CIRCUITOS ELECTRICOS (7ª ED.) CHARLES ALEXANDER y MATTHEW N.O. SADIKU" ;
+    guide:bibliographyType "Bibliografía" .
+
+# Required Knowledge
+:Knowledge_Previa rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Calculo II, Electromagnetismo, Calculo I" .

@@ -1,0 +1,79 @@
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guide#ANX_PR_CL_001_01> rdf:type guide:CourseGuide ;
+    dct:title "Laboreo De Minas I"@en ;
+    sch:name "65001030 - Laboreo de Minas I" ;
+    guide:numberOfCredits 4.5^^xsd:decimal ;
+    guide:courseYear 2025^^xsd:integer ;
+    guide:syllabusDescription "BLOQUE 1: LA INDUSTRIA MINERA... BLOQUE 6: MÉTODOS ESPECIALES"@en .
+
+<http://guia-mad-bench.es/data/guide#Grado_En_Ingenieria_Tecnologia_Minera> rdf:type guide:BachelorDegree ;
+    sch:name "06TM - Grado En Ingenieria En Tecnologia Minera" ;
+    guide:degreeCode "06TM"@en .
+
+<http://guia-mad-bench.es/data/guide#Laboreo_Minas_I_Course> rdf:type guide:Course ;
+    sch:name "Laboreo De Minas I" ;
+    sch:courseCode 65001030^^xsd:integer ;
+    guide:syllabusDescription "Introducción al conjunto de la industria minera actual..."@en .
+
+<http://guia-mad-bench.es/data/guide#Juan_Herrera_Herbert> rdf:type guide:Lecturer ;
+    sch:name "Juan Herrera Herbert" ;
+    sch:email <mailto:juan.herrera@upm.es> ;
+    guide:office "208 y/o 218"@en ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00; X - 12:00 - 14:00; J - 10:00 - 12:00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guide#Carlos_Lopez_Jimeno> rdf:type guide:Lecturer ;
+    sch:name "Carlos Lopez Jimeno" ;
+    sch:email <mailto:carlos.lopezj@upm.es> ;
+    guide:office "211"@en .
+
+<http://guia-mad-bench.es/data/guide#Jesus_Caceres_Jimeno> rdf:type guide:Lecturer ;
+    sch:name "Jesus Caceres Jimeno" ;
+    sch:email <mailto:jesus.caceres@upm.es> ;
+    guide:tutorshipsSchedule "Sin horario. A concertar por correo electrónico"@en .
+
+<http://guia-mad-bench.es/data/guide#CG_1> rdf:type guide:Competency ;
+    guide:competencyCode "CG 1"^^xsd:string ;
+    sch:description "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Tecnología Minera." .
+
+<http://guia-mad-bench.es/data/guide#F29> rdf:type guide:Competency ;
+    guide:competencyCode "F29"^^xsd:string ;
+    sch:description "Diseño, planificación y dirección de explotaciones mineras." .
+
+<http://guia-mad-bench.es/data/guide#RA162> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA162"^^xsd:string ;
+    sch:description "Conocer los distintos métodos de explotación de los recursos minerales"@en .
+
+<http://guia-mad-bench.es/data/guide#Syllabus_06TM> rdf:type guide:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/guide#B1T1>, <http://guia-mad-bench.es/data/guide#B2T1>.
+
+<http://guia-mad-bench.es/data/guide#B1T1> rdf:type guide:SyllabusItem ;
+    sch:description "El abastecimiento de materias primas"@en .
+
+<http://guia-mad-bench.es/data/guide#Schedule_06TM> rdf:type guide:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/guide#Sem1_Activity>, <http://guia-mad-bench.es/data/guide#Eval_Bloque1>.
+
+<http://guia-mad-bench.es/data/guide#Sem1_Activity> rdf:type guide:ScheduleEvent ;
+    sch:eventIndex 1^^xsd:integer .
+
+<http://guia-mad-bench.es/data/guide#Eval_Bloque1> rdf:type guide:EvaluationTrial ;
+    guide:trialType "Prueba Telemática"@en ;
+    guide:gradePercentage "25"^^xsd:string ;
+    sch:description "Evaluación de Bloques 1 y 2".
+
+<http://guia-mad-bench.es/data/guide#Evaluation_System_06TM> rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La calificación final se expresa en una cifra numérica entre 0 y 10"@en .
+
+<http://guia-mad-bench.es/data/guide#Resource_Biblio_2006> rdf:type guide:DidacticResource ;
+    sch:name "Introducción a los Fundamentos de la Tecnología Minera" ;
+    guide:bibliographyTitle "HERRERA HERBERT, J. (2006). Introducción..." .
+
+<http://guia-mad-bench.es/data/guide#UniversityCenter> rdf:type sch:Organization ;
+    sch:name "E.T.S. de Ingenieros de Minas y Energía" .

@@ -1,0 +1,669 @@
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix data: <http://guia-mad-bench.es/data/> .
+
+data:data-course-guide-105000107 rdf:type guide:CourseGuide ;
+    sch:name "Matematica Discreta II"@en ;
+    guide:numberOfCredits 6.0^^xsd:decimal ;
+    guide:title "Matematica Discreta Ii"@es ;
+    guide:syllabusDescription "Teoría de Grafos, algoritmos y modelización@"es ;
+    sch:description "La asignatura Matemática Discreta II complementa la asignatura Matemática Discreta I del primer semestre. En ella se estudia principalmente la Teoría de Grafos..."@en ;
+    guide:inLanguage "Castellano"@es ;
+    guide:teachingPeriodMonths "Febrero-Junio"^^xsd:string ;
+    sch:courseSchedule data:data-schedule-105000107 .
+
+data:data-degree-10ML rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Matematicas e Informática"@es ;
+    dct:title "10ML - Grado En Matematicas E Informática"^^xsd:string .
+
+data:data-course-105000107 rdf:type guide:Course, sch:Course ;
+    sch:name "Matematica Discreta Ii"@en ;
+    guide:numberOfCredits 6.0^^xsd:decimal ;
+    guide:courseYear 2025^^xsd:integer ;
+    guide:semester "Segundo semestre"^^xsd:string .
+
+data:data-syllabus-105000107 rdf:type guide:Syllabus, sch:Syllabus ;
+    guide:hasSyllabus data:data-course-guide-105000107 ;
+    dct:title "Temario de la asignatura"@es .
+
+data:sy-item-1 rdf:type guide:SyllabusItem ;
+    rdfs:label "Nociones básicas de grafos y digrafos"^^xsd:string ;
+    sch:description "Representación de grafos, sucesión de grados, isomorfismo..."@en ;
+    guide:itemIndex 1 .
+
+data:sy-item-2 rdf:type guide:SyllabusItem ;
+    rdfs:label "Árboles: Búsquedas y optimización"^^xsd:string ;
+    sch:description "Algoritmos de Boruvka, Kruskal y Prim..."@en ;
+    guide:itemIndex 2 .
+
+data:sy-item-3 rdf:type guide:SyllabusItem ;
+    rdfs:label "Distancias y caminos mínimos. Conectividad"^^xsd:string ;
+    sch:description "Algoritmos de Dijkstra, Bellman-Ford..."@en ;
+    guide:itemIndex 3 .
+
+data:data-schedule-105000107 rdf:type guide:Schedule, sch:Schedule ;
+    sch:eventSchedule data:sch-event-exam-final , data:sch-event-moodle-test .
+
+data:sch-event-exam-final rdf:type guide:ScheduleEvent, sch:Event ;
+    rdfs:label "Examen final"^^xsd:string ;
+    guide:eventIndex 16 ;
+    om:activityDurationUnit "03:00"^^xsd:gDayTime ;
+    sch:description "Segundo examen parcial y recuperación del primer parcial"@en .
+
+data:sch-event-moodle-test rdf:type guide:ScheduleEvent, sch:Event ;
+    rdfs:label "Cuestionario Moodle"^^xsd:string ;
+    guide:eventIndex 6 ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba telemática"@en .
+
+data:data-evaluation-system-1 rdf:type guide:EvaluationSystem, owl:Thing ;
+    rdfs:label "Evaluación Progresiva y Global"@es ;
+    guide:evaluationDescription "Sistema mediante pruebas de evaluación progresiva... Se considera superada la asignatura con una nota mayor o igual a 5 sobre 10."@en .
+
+data:data-eval-trial-1 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Examen final"^^xsd:string ;
+    sch:name "Segundo examen parcial y recuperación del primer parcial"@es ;
+    guide:hasEvaluationTrial data:data-evaluation-system-1 ;
+    om:activityDurationUnit "03:00"^^xsd:gDayTime ;
+    guide:gradePercentage 85.0^^xsd:decimal ;
+    sch:description "Examen Escrito, Presencial"@en .
+
+data:data-eval-trial-2 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-3 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-4 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-5 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Examen extraordinario"^^xsd:string ;
+    om:activityDurationUnit "03:00"^^xsd:gDayTime ;
+    sch:description "Respuesta larga"@en .
+
+data:data-eval-trial-6 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-7 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-8 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-9 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-10 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-11 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Examen extraordinario"^^xsd:string ;
+    om:activityDurationUnit "03:00"^^xsd:gDayTime ;
+    sch:description "Respuesta larga"@en .
+
+data:data-eval-trial-12 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Examen final (Segundo examen parcial y recuperación del primer parcial)"^^xsd:string ;
+    om:activityDurationUnit "03:00"^^xsd:gDayTime ;
+    sch:description "Evaluación Global"@en .
+
+data:data-eval-trial-13 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-14 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-15 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-16 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-17 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-18 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-19 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-20 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-21 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-22 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-23 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-24 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-25 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-26 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-27 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-28 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-29 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-30 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-31 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-32 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-33 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-34 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-35 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-36 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-37 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-38 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-39 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-40 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-41 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-42 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-43 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-44 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-45 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-46 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-47 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-48 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-49 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-50 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-51 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-52 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-53 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-54 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-55 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-56 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-57 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-58 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-59 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-60 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-61 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-62 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-63 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-64 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-65 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-66 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-67 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-68 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-69 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-70 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-71 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-72 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-73 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-74 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-75 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-76 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-77 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-78 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-79 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-80 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-81 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-82 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-83 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-84 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-85 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-86 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-87 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-88 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-89 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-90 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-91 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-92 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-93 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-94 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-95 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-96 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-97 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-98 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-99 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-100 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-101 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-102 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-103 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-104 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-105 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-106 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-107 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-108 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-109 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-110 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-111 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-112 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-113 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-114 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-115 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-116 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-117 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Cuestionario Moodle (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "01:00"^^xsd:gDayTime ;
+    sch:description "Prueba Telemática"@en .
+
+data:data-eval-trial-118 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Trabajo (actividad no recuperable)"^^xsd:string ;
+    om:activityDurationUnit "00:00"^^xsd:gDayTime ;
+    sch:description "Otras técnicas evaluativas"@en .
+
+data:data-eval-trial-119 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Primer examen parcial (actividad recuperable)"^^xsd:string ;
+    om:activityDurationUnit "02:00"^^xsd:gDayTime ;
+    sch:description "Examen Escrito"@en .
+
+data:data-eval-trial-120 rdf:type guide:EvaluationTrial, owl:Thing ;
+    rdfs:label "Segundo examen parcial (actividad no recuperable

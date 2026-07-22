@@ -1,0 +1,145 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+guide:MatematicaDiscretaII_Guide rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Matemática Discreta II" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    guide:numberOfCredits 6.0 ;
+    guide:inpersonHours "Not specified" ;
+    guide:remoteHours "Not specified" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus guide:MatematicaDiscretaII_Syllabus ;
+    guide:hasEvaluation guide:MatematicaDiscretaII_EvalSystem ;
+    guide:hasCompetency guide:C1, guide:C10, guide:C13, guide:C2, guide:C3, guide:C4, guide:C5 ;
+    guide:hasLearningResult guide:RA35, guide:RA19, guide:RA26, guide:RA33, guide:RA31 ;
+    sch:instructor guide:M_Del_Carmen_Escribano_Iglesias, guide:Luis_Magdalena_Layos ;
+    sch:description "La asignatura Matemática Discreta II complementa la asignatura Matemática Discreta I del primer semestre. En ella se estudia principalmente la Teoría de Grafos..." .
+
+# Course Instance
+guide:MatematicaDiscretaII rdf:type guide:Course ;
+    sch:name "10500_Matematica Discreta II" ;
+    sch:courseCode 105000107 ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 2025 ;
+    guide:semester "Segundo semestre" .
+
+# Degree Instance
+guide:Grado_Matematicas_Informatica rdf:type guide:Degree ;
+    sch:name "10ML - Grado En Matematicas E Informática" ;
+    guide:degreeCode "10ML" ;
+    guide:hasCourse guide:MatematicaDiscretaII .
+
+# University Center Instance
+guide:ETS_Ingenieros_Informaticos rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Informáticos" ;
+    guide:offers guide:Grado_Matematicas_Informatica .
+
+# Lecturers
+guide:M_Del_Carmen_Escribano_Iglesias rdf:type guide:Lecturer ;
+    sch:name "M. Del Carmen Escribano Iglesias" ;
+    sch:email "mariadelcarmen.escribano@upm.es" ;
+    rdfs:comment "Coordinador/a" .
+
+guide:Luis_Magdalena_Layos rdf:type guide:Lecturer ;
+    sch:name "Luis Magdalena Layos" ;
+    sch:email "luis.magdalena@upm.es" ;
+    guide:office "1307" ;
+    guide:tutorshipsSchedule "Sin horario. consultar página de la asignatura en moodle" .
+
+# Competencies
+guide:C1 rdf:type guide:Competency ; sch:name "C1 - Capacidad de resolución de．．．" .
+guide:C10 rdf:type guide:Competency ; sch:name "C10 - Capacidad para usar las tecnologías..." .
+guide:C13 rdf:type guide:Competency ; sch:name "C13 - Capacidad de elegir y usar los métodos..." .
+guide:C2 rdf:type guide:Competency ; sch:name "C2 - Capacidad para el aprendizaje autónomo..." .
+guide:C3 rdf:type guide:Competency ; sch:name "C3 - Saber trabajar en situaciones carentes..." .
+guide:C4 rdf:type guide:Competency ; sch:name "C4 - Capacidad de gestión de la información" .
+guide:C5 rdf:type guide:Competency ; sch:name "C5 - Capacidad de abstracción, análisis y síntesis" .
+
+# Learning Results
+guide:RA35 rdf:type guide:LearningResult ; guide:learningResultCode "RA35" ; guide:learningResultDescription "Utilizar diversas técnicas para la resolución de problemas con ayuda de software matemático" .
+guide:RA19 rdf:type guide:LearningResult ; guide:learning．learningResultCode "RA19" ; guide:learningResultDescription "Modelizar matemáticamente problemas reales y conocer las técnicas para resolverlos" .
+guide:RA26 rdf:type guide:LearningResult ; guide:learningResultCode "RA26" ; guide:learningResultDescription "Adquirir destreza en la aplicación de los diferentes métodos de demostración" .
+guide:RA33 rdf:type guide:LearningResult ; guide:learningResultCode "RA33" ; guide:learningResultDescription "Comprender las nociones de complejidad de un algoritmo y de complejidad de un problema" .
+guide:RA31 rdf:type guide:LearningResult ; guide:learningResultCode "RA31" ; guide:learningResultDescription "Conocer, comprender y aplicar los conceptos, técnicas y algoritmos básicos de la teoría de grafos" .
+
+# Syllabus
+guide:MatematicaDiscretaII_Syllabus rdf:type guide:Syllabus ;
+    guide:hasItem guide:Unit1, guide:Unit2, guide:Unit3, guide:Unit4, guide:Unit5, guide:Unit6, guide:Unit7 .
+
+guide:Unit1 rdf:type guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "Nociones básicas de grafos y digrafos" .
+guide:Unit2 rdf:type guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "Árboles: Búsquedas y optimización. Orientabilidad." .
+guide:Unit3 rdf:type guide:SyllabusItem ; guide:itemIndex 3 ; guide:syllabusDescription "Distancias y caminos mínimos. Conectividad." .
+guide:Unit4 rdf:type guide:SyllabusItem ; guide:itemIndex 4 ; guide:syllabusDescription "Flujos en redes. Emparejamientos. Recubrimientos." .
+guide:Unit5 rdf:type guide:SyllabusItem ; guide:itemIndex 5 ; guide:syllabusDescription "Recorridos en grafos" .
+guide:Unit6 rdf:type guide:SyllabusItem ; guide:itemIndex 6 ; guide:syllabusDescription "Planaridad. Coloración de grafos." .
+guide:Unit7 rdf:type guide:SyllabusItem ; guide:itemIndex 7 ; guide:syllabusDescription "Complejidad de algoritmos" .
+
+# Evaluation System
+guide:MatematicaDiscretaII_EvalSystem rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema mediante pruebas de evaluación progresiva y prueba de evaluación global." ;
+    guide:hasEvaluationTrial guide:Trial_CuestionarioMoodle, guide:Trial_ExamenParcial1, guide:Trial_Trabajo, guide:Trial_ExamenFinal .
+
+guide:Trial_CuestionarioMoodle rdf:type guide:EvaluationTrial ;
+    sch:name "Cuestionario Moodle" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "5%" ;
+    guide:trialMode "Presencial" ;
+    guide:trialWeek "6" .
+
+guide:Trial_ExamenParcial1 rdf:type guide:EvaluationTrial ;
+    sch:name "Primer examen parcial" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "42.5%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:trialWeek "8" .
+
+guide:Trial_Trabajo rdf:type guide:EvaluationTrial ;
+    sch:name "Trabajo" ;
+    guide:evaluationType "Otras técnicas evaluativas" ;
+    guide:gradePercentage "5%" ;
+    guide:trialMode "No presencial" ;
+    guide:trialWeek "13" .
+
+guide:Trial_ExamenFinal rdf:type guide:EvaluationTrial ;
+    sch:name "Examen final" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "85%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:trialWeek "16" .
+
+# Schedule and Activities
+guide:MatematicaDiscretaII_Schedule rdf:type guide:Schedule ;
+    sch:eventSchedule guide:Event_Week1, guide:Event_Week8 .
+
+guide:Event_Week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity guide:Act_LeccionMagistral_W1 .
+
+guide:Act_LeccionMagintral_W1 rdf:type guide:Activity ;
+    guide:activityDescription "Explicación de contenidos teóricos" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+guide:Resource_Biggs rdf:type guide:DidacticResource ;
+    sch:name "N. Biggs: Discrete Mathematics, 2nd ed. Oxford Univ. Press, 2002" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Referencia básica" .
+
+guide:Resource_Rosen rdf:type guide:DidacticResource ;
+    sch:name "K. H. Rosen: Matemática Discreta y sus aplicaciones. (8ª edición). McGraw-Hill, 2019." ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Referencia básica" .
+
+guide:Resource_Moodle rdf:type guide:DidacticResource ;
+    sch:name "Sitio Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "https://moodle.upm.es/titulaciones/oficiales/" .

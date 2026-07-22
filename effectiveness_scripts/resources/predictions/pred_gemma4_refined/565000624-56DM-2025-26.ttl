@@ -1,0 +1,162 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://guia-mad-bench.es/data#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+<http://guia-mad-bench.es/data/univCenterETSIDI> 
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Diseño Industrial" .
+
+<http://gu:mad-bench.es/data/degree56DM> 
+    rdf:type guide:Degree ;
+    sch:name "56DM - Doble Grado Ing En Diseño Industrial Y Desarrollo Producto Y En Ing Mecanic" ;
+    guide:degreeCode "56DM" .
+
+<http://guia-mad-bench.es/data/univCenterETSIDI> 
+    guide:offers <http://guia-mad-bench.es/data/degree56DM> .
+
+# Course
+<http://guia-mad-bench.es/data/courseInformatica> 
+    rdf:type guide:Course ;
+    sch:name "565000624 - Informática" ;
+    guide:courseType "Básica" ;
+    guide:semester "Segundo semestre" ;
+    sch:numberOfCredits 6.0 .
+
+<http://guia-mad-bench.es/data/degree56DM> 
+    guide:hasCourse <http://guia-mad-bench.es/data/courseInformatica> .
+
+# Course Guide
+<http://guia-mad-bench.es/data/guideInformatica> 
+    rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Informática" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:numberOfCredits 6.0 ;
+    sch:description "Es una asignatura que desarrolla los elementos básicos de la programación estructurada, para lo que utiliza el lenguaje C como herramienta de programación." ;
+    guide:otherInformation "Debido al elevado componente práctico de la asignatura, es fundamental un trabajo personal constante por parte del alumno." .
+
+<http://guia-mad-bench.es/data/courseInformatica> 
+    sch:hasCourseInstance <http://guia-mad-bench.es/data/guideInformatica> .
+
+# Lecturer
+<http://guia-mad-bench.es/data/lecturerMercedes> 
+    rdf:type guide:Lecturer ;
+    sch:name "Mercedes Bermejo Solera" ;
+    sch:email "mercedes.bermejo@upm.es" ;
+    guide:office "B249" ;
+    guide:tutorshipsSchedule "Sin horario. Publicadas en la web de ETSIDI" .
+
+<http://guia-mad-bench.es/data/guideInformatica> 
+    sch:instructor <http://guia-mad-bench.es/data/lecturerMercedes> .
+
+# Competencies
+<http://guia-mad-bench.es/data/compIMCE03> 
+    rdf:type guide:Competency ;
+    guide:competencyCode "IM.CE 03" ;
+    guide:competencyDescription "Conocimientos básicos sobre el uso y programación de los ordenadores, sistemas operativos, bases de datos y programas informáticos con aplicación en ingeniería." .
+
+<http://guia-mad-bench.es/data/compIMCG10> 
+    rdf:type guide:Competency ;
+    guide:competencyCode "IM.CG 10" ;
+    guide:competencyDescription "Creatividad." .
+
+<http://guia-mad-bench.es/data/guideInformatica> 
+    guide:hasCompetency <http://guia-mad-bench.es/data/compIMCE03> ,
+                        <http://guia-mad-bench.es/data/compIMCG10> .
+
+# Learning Results
+<http://guia-md-bench.es/data/lrRA142> 
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA142" ;
+    guide:learningResultDescription "Conocimientos y capacidades de pensamiento y razonamiento necesarios para el análisis, enfoque y resolución de problemas concretos." .
+
+<http://guia-mad-bench.es/data/guideInformatica> 
+    guide:hasLearningResult <http://guia-md-bench.es/data/lrRA142> .
+
+# Syllabus
+<http://guia-mad-bench.es/data/syllabusInformatica> 
+    rdf:type guide:Syllabus .
+
+<http://guia-mad-bench.es/data/guideInformatica> 
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabusInformatica> .
+
+<http://guia-mad-bench.es/data/syllabusItem1> 
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción. Estructura funcional de un ordenador. Representación de la información." .
+
+<http://guia-mad-bench.es/data/syllabusInformatica> 
+    guide:hasItem <http://guia-mad-bench.es/data/syllabusItem1> .
+
+# Evaluation System and Trials
+<http://guia-mad-bench.es/data/evalSystemInformatica> 
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La calificación final de la convocatoria ordinaria según la modalidad Progresiva, será la media ponderada de las calificaciones de las pruebas anteriormente descritas." .
+
+<http://guia-mad-bench.es/data/guideInformatica> 
+    guide:hasEvaluation <http://guia-mad-bench.es/data/evalSystemInformatica> .
+
+<http://guia-mad-bench.es/data/trialProgresiva8> 
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen de Prácticas" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "/ 10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" .
+
+<http://guia-mad-bench.es/data/evalSystemInformatica> 
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trialProgresiva8> .
+
+# Schedule and Activities
+<http://guia-mad-bench.es/data/scheduleInformatica> 
+    rdf:type guide:Schedule .
+
+<http://guia-mad-bench.es/data/guideInformatica> 
+    sch:courseSchedule <http://guia-mad-bench.es/data/scheduleInformatica> .
+
+<http://guia-mad-bench.es/data/eventWeek1> 
+    rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" .
+
+<http://guia-mad-bench.es/data/scheduleInformatica> 
+    sch:eventSchedule <http://guia-mad-bench.es/data/eventWeek1> .
+
+<http://guia-mad-bench.es/data/activityTeoria> 
+    rdf:type guide:Activity ;
+    guide:activityDescription "Teoría" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+<http://guia-mad-bench.es/data/resKerningan> 
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "El lenguaje de programación C" ;
+    guide:bibliographyDescription "Libro de referencia del Lenguaje C, escrito por sus creadores." ;
+    guide:bibliographyType "Bibliografía" .
+
+<http://guia-mad-bench.es/data/resWebCplusplus> 
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "https://cplusplus.com/" ;
+    guide:bibliographyDescription "Incluye descripciones de las funciones y objetos importantes del lenguaje C." ;
+    guide:bibliographyType "Recursos web" .
+
+<http://guia-mad-bench.es/data/guideInformatica> 
+    guide:hasDidacticResource <http://guia-mad-bench.es/data/resKerningan>,
+                               <http://guia-mad-bench.es/data/resWebCplusplus> .
+
+# Required Knowledge
+<http://guia-mad-bench.es/data/reqKnowledgeInformatica> 
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Conocer la estructura de los equipos informáticos y su sistema operativo." .
+
+<http://guia-mad-bench.es/data/guideInformatica> 
+    guide:hasLearningResult <http://guia-md-bench.es/data/lrRA142> .

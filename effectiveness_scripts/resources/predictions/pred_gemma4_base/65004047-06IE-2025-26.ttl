@@ -1,0 +1,205 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:course_65004047 a guide:Course ;
+    sch:name "Ingenieria De Fluidos" ;
+    sch:courseCode 65004047 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 2025 ;
+    guide:semester "Quinto semestre" ;
+    sch:hasCourseInstance :guide_65004047_2025_26 .
+
+:degree_06IE a guide:BachelorDegree ;
+    sch:name "Grado En Ingenieria De La Energia" ;
+    guide:degreeCode "06IE" .
+
+:center_ETS_Minas a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Minas y Energía" ;
+    guide:offers :degree_06IE .
+
+:prof_jorge_duenas a guide:Lecturer ;
+    sch:name "Jorge Dueñas Pamplona" ;
+    sch:email "jorge.duenas.pamplona@upm.es" ;
+    guide:office "10" ;
+    guide:tutorshipsSchedule "Sin horario. Contactar previamente con el profesor vía correo electrónico." .
+
+:guide_65004047_2025_26 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Ingeniería de Fluidos 2025-26" ;
+    sch:instructor :prof_jorge_duenas ;
+    sch:director :prof_j_duenas_coord ; # Assuming him as coordinator based on text
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:numberOfCredits 4.5 ;
+    guide:inpersonHours "Not specified" ;
+    guide:remoteHours "Not specified" ;
+    guide:totalHours "Not specified" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :syllabus_fluid_mechanics ;
+    guide:hasCompetency :comp_CE11, :comp_CE19, :comp_CE23, :comp_CG1, :comp_CG5, :comp_CG6, :comp_CG7 ;
+    guide:hasLearningResult :lr_RA324, :lr_RA325, :lr_RA323, :lr_RA326, :lr_RA327, :lr_RA328, :lr_RA150 ;
+    guide:hasEvaluation :eval_system_fluid_mechanics ;
+    guide:hasDidacticResource :res_libro_crespo, :res_ejercicios_web ;
+    sch:activitiesWorkload "Estimación de 26-27 horas por crédito ECTS" .
+
+:prof_j_duenas_coord a guide:Lecturer ;
+    sch:name "Jorge Dueñas Pamplona" ;
+    rdfs:comment "Coordinador de la asignatura" .
+
+:syllabus_fluid_mechanics a guide:Syllabus ;
+    guide:hasItem :sym_unit_1, :sym_unit_2, :sym_unit_3, :sym_unit_4, :sym_unit_5, :sym_unit_6 .
+
+:sym_unit_1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Leyes de conservación" .
+
+:sym_unit_2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Conservación de la masa" .
+
+:sym_unit_3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Conservación del momento" .
+
+:sym_unit_4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Conservación de la energía" .
+
+:sym_unit_5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Flujo compresible e ideal" .
+
+:sym_unit_6 a guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Aerodinámica" .
+
+:eval_system_fluid_mechanics a guide:EvaluationSystem ;
+    guide:evaluationDescription "Existen dos opciones: evaluación progresiva, o evaluación global." ;
+    guide:hasEvaluationTrial :trial_PEP1, :trial_PEP2, :trial_final .
+
+:trial_PEP1 a guide:EvaluationTrial ;
+    sch:name "Prueba de evaluación progresiva 1" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:trialWeek "7" ;
+    guide:trialMode "Presencial" ;
+    guide:trialType "Examen Escrito" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:evaluationDuration "02:00" ;
+    guide:hasScheduleEvent :event_pep1 ;
+    guide:involvesCompetency :comp_CG5, :comp_CG1, :comp_CG6, :comp_CE23, :comp_CE11, :comp_CE19, :comp_CG7 .
+
+:trial_PEP2 a guide:EvaluationTrial ;
+    sch:name "Prueba de evaluación progresiva 2" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:trialWeek "17" ;
+    guide:trialMode "Presencial" ;
+    guide:trialType "Examen Escrito" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:evaluationDuration "02:00" ;
+    guide:hasScheduleEvent :event_pep2 ;
+    guide:involvesCompetency :comp_CG1, :comp_CG5, :comp_CG6, :comp_CG7, :comp_CE11, :comp_CE19, :comp_CE23 .
+
+:trial_final a guide:EvaluationTrial ;
+    sch:name "Examen final" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:trialWeek "17" ;
+    guide:trialMode "Presencial" ;
+    guide:trialType "Examen Escrito" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:30" ;
+    guide:hasScheduleEvent :event_final ;
+    guide:involvesCompetency :comp_CG1, :comp_CG5, :comp_CG6, :comp_CG7, :comp_CE11, :comp_CE19, :comp_CE23 .
+
+:event_pep1 a guide:ScheduleEvent ;
+    guide:eventIndex 7 ;
+    guide:eventWeek "Semana 7" .
+
+:event_pep2 a guide:ScheduleEvent ;
+    guide:eventIndex 17 ;
+    guide:eventWeek "Semuna 17" .
+
+:event_final a guide:ScheduleEvent ;
+    guide:eventIndex 17 ;
+    guide:eventWeek "Semana 17" .
+
+:comp_CE11 a guide:Competency ;
+    guide:competencyCode "CE11" ;
+    guide:competencyDescription "Comprender las leyes generales de la mecánica y aplicarlas a la resolución de problemas propios de la ingeniería." .
+
+:comp_CE19 a guide:Competency ;
+    guide:competencyCode "CE19" ;
+    guide:competencyDescription "Comprender los principios de mecánica de fluidos e hidráulica y aplicarlos en la Ingeniería de la Energía." .
+
+:comp_CE23 a guide:Competency ;
+    guide:competencyCode "CE23" ;
+    guide:competencyDescription "Aplicar los conceptos básicos de la transferencia de calor y materia en la Ingeniería de la Energía." .
+
+:comp_CG1 a guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería de la Energía." .
+
+:comp_CG5 a guide:Competency ;
+    guide:competencyCode "CG5" ;
+    guide:competencyDescription "Saber comunicar los conocimientos y conclusiones, tanto de forma oral, escrita y gráfica, a públicos especializados y no especializados de un modo claro y sin ambigüedades." .
+
+:comp_CG6 a guide:Competency ;
+    guide:competencyCode "CG6" ;
+    guide:competencyDescription "Poseer habilidades de aprendizaje que permitan continuar estudiando a lo
+
+    lo largo de la vida para su adecuado desarrollo profesional." .
+
+:comp_CG7 a guide:Competency ;
+    guide:competencyCode "CG7" ;
+    guide:competencyDescription "Incorporar nuevas tecnologías y herramientas de la Ingeniería Energética en sus actividades profesionales." .
+
+:lr_RA324 a guide:LearningResult ;
+    guide:learningResultCode "RA324" ;
+    guide:learningResultDescription "Poseer capacidad para diseñar, desarrollar, implementar, gestionar y mejorar productos, sistemas y procesos en los distintos ámbitos industriales, usando técnicas analíticas, computacionales o experimentales apropiadas." .
+
+:lr_RA325 a guide:LearningResult ;
+    guide:learningResultCode "RA325" ;
+    guide:learningResultDescription "Aplicar los conocimientos adquiridos para identificar, formular y resolver problemas dentro de contextos amplios y multidisciplinarios, siendo capaces de integrar conocimientos, trabajando en equipos multidisciplinarios" .
+
+:lr_RA323 a guide:LearningResult ;
+    guide:learningResultCode "RA323" ;
+    guide:learningResultDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Energética." .
+
+:lr_RA326 a guide:LearningResult ;
+    guide:learningResultCode "RA326" ;
+    guide:learningResultDescription "Comprender el impacto de la ingeniería en su rama energética sobre el medio ambiente, el desarrollo sostenible de la sociedad y la importancia de trabajar en un entorno profesional y responsable." .
+
+:lr_RA327 a guide:LearningResult ;
+    guide:learningResultCode "RA327" ;
+    guide:learningResultDescription "Poseer habilidades de aprendizaje que permitan continuar estudiando a lo largo de la vida para su adecuado desarrollo profesional." .
+
+:lr_RA328 a guide:LearningResult ;
+    guide:learningResultCode "RA328" ;
+    guide:learningResultDescription "Incorporar nuevas tecnologías y herramientas de la Ingeniería Energética en sus actividades profesionales." .
+
+:lr_RA150 a guide:LearningResult ;
+    guide:learningResultCode "RA150" ;
+    guide:learningResultDescription "Capacidad para caracterizar y comprender el comportamiento de los fluidos en distintas situaciones de interés para el ingeniero industrial de la especialidad de Técnicas Energéticas" .
+
+:res_libro_crespo a guide:DidacticResource ;
+    sch:name "Libro 'Mecánica de Fluidos', A. Crespo" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Bibliografía básica" .
+
+:res_ejercicios_web a guide:DidacticResource ;
+    sch:name "Colección de ejercicios y exámenes resueltos" ;
+    guide:bibliographyType "Recursos web" .
+
+:req_knowledge_fluid_mechanics a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Ecuaciones Diferenciales, Mecanica De Fluidos E Hidraulica, Mecanica, Algebra, Termodinamica, Conocimientos básicos de programación (Matlab u otros)" .
+
+:course_65004047 guide:hasRequiredKnowledge :req_knowledge_fluid_mechanics .

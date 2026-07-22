@@ -1,0 +1,204 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@base <http://guia-mad-bench.es/data/> .
+
+# --- University Center ---
+guide:ETSIDI_Industrial rdf:type guide:UniversityCenter ;
+    sch:name "56 - E.T.S. De Ingeniería Y Diseño Industrial" ;
+    guide:offers guide:Degree_56IE .
+
+# --- Degree ---
+guide:Degree_56IE rdf:type guide:BachelorDegree ;
+    sch:name "56IE - Grado En Ingeniería Eléctrica" ;
+    guide:degreeCode "56IE" .
+
+# --- Course ---
+guide:Course_565000215 rdf:type guide:Course ;
+    sch:name "565000215 - Expresion Grafica Y Diseño Asistido Por Ordenador" ;
+    sch:courseCode 565000215 ;
+    guide:courseType "Básica" ;
+    guide:courseYear 2025 ;
+    guide:semester "Primer semestre" ;
+    sch:hasCourseInstance guide:CourseGuide_565000215 .
+
+# --- Course Guide ---
+guide:CourseGuide_565000215 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Expresion Grafica Y Diseño Asistido Por Ordenador" ;
+    sch:inLanguage "Castellano" ;
+    guide:numberOfCredits 6.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:instructor guide:Lecturer_MIsabelCasasola, 
+                   guide:Lecturer_DanielMartinez, 
+                   guide:Lecturer_RosaOcaña, 
+                   guide:Lecturer_FernandoBlaya,
+                   guide:Lecturer_RafaelPerez;
+    guide:hasSyllabus guide:Syllabus_565000215 ;
+    guide:hasCompetency guide:Competency_CE5, guide:Competency_CG1, guide:Competency_CG10, guide:Competency_CG5, guide:Competency_CG6, guide:Competency_CG7 ;
+    guide:hasLearningResult guide:LearningResult_RA17 ;
+    guide:hasEvaluation guide:EvalSystem_565000215 ;
+    guide:hasDidacticResource guide:Res_Moodle, guide:Res_AENOR, guide:Res_AutoCAD ;
+    sch:courseSchedule guide:Schedule_565000215 .
+
+# --- Lecturers ---
+guide:Lecturer_MIsabelCasasola rdf:type guide:Lecturer ;
+    sch:name "M. Isabel Casasola Fernandez" ;
+    sch:email "maribel.casasola@upm.es" ;
+    guide:office "A317" .
+
+guide:Lecturer_DanielMartinez rdf:type guide:Lecturer ;
+    sch:name "Daniel Martinez Diaz" ;
+    sch:email "daniel.martinezd@upm.es" ;
+    guide:office "A307" .
+
+guide:Lecturer_RosaOcaña rdf:type guide:Lecturer ;
+    sch:name "Rosa Concepcion Ocaña Lopez" ;
+    sch:email "rosa.ocana@upm.es" ;
+    guide:office "A316" .
+
+guide:Lecturer_FernandoBlaya rdf:type guide:Lecturer ;
+    sch:name "Fernando Blaya Haro" ;
+    sch:email "fernando.blaya@upm.es" ;
+    guide:office "A309" .
+
+guide:Lecturer_RafaelPerez rdf:type guide:Lecturer ;
+    sch:name "Rafael Manuel Perez Chamizo" ;
+    sch:email "rafaelmanuel.perez@upm.es" ;
+    guide:office "A314" .
+
+# --- Competencies ---
+guide:Competency_CE5 rdf:type guide:Competency ;
+    guide:competencyCode "CE5" ;
+    guide:competencyDescription "Capacidad de visión espacial y conocimiento de las técnicas de representación gráfica..."@en .
+
+guide:Competency_CG1 rdf:type guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Conocer y aplicar los conocimientos de ciencias y tecnologías básicas a la...”@en .
+
+guide:Competency_CG10 rdf:type guide:Competency ;
+    guide:competencyCode "CG10" ;
+    guide:competencyDescription "Creatividad"@en .
+
+guide:Competency_CG5 rdf:type guide:Competency ;
+    guide:competencyCode "CG5" ;
+    guide:competencyDescription "Comunicar conocimientos y conclusiones..."@en .
+
+guide:Competency_CG6 rdf:type guide:Competency ;
+    guide:competencyCode "CG6" ;
+    guide:competencyDescription "Poseer las habilidades de aprendizaje..."@en .
+
+guide:Competency_CG7 rdf:type guide:Competency ;
+    guide:competencyCode "CG7" ;
+    guide:competencyDescription "Incorporar las TIC y las tecnologías..."@en .
+
+# --- Learning Results ---
+guide:LearningResult_RA17 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA17" ;
+    guide:learningResultDescription "Capacidad para conocer, entender y utilizar los principios de Técnicas de representación..."@en .
+
+# --- Syllabus ---
+guide:Syllabus_565000215 rdf:type guide:Syllabus ;
+    guide:hasItem guide:SyllabusItem_Topic1, guide:SyllabusItem_Topic2, guide:SyllabusItem_Topic3, guide:SyllabusItem_Topic10, guide:SyllabusItem_Topic15 .
+
+guide:SyllabusItem_Topic1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Fundamentos de DAO aplicado a la Expresión grafica"@en .
+
+guide:SyllableItem_Topic2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Introducción a la concepción espacial"@en .
+
+guide:SyllabusItem_Topic3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Paralelismo y perpendicularidad"@en .
+
+guide:SyllabusItem_Topic10 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 10 ;
+    guide:syllabusDescription "Introducción a la normalización industrial"@en .
+
+guide:SyllabusItem_Topic15 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 15 ;
+    guide:syllabusDescription "Simbología en las representaciónes"@en .
+
+# --- Evaluation System ---
+guide:EvalSystem_565000215 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y examen global."@en ;
+    guide:hasEvaluationTrial guide:Trial_Control1_Concepcion, guide:Trial_Control1_Normalizacion, guide:Trial_ExamenFinal .
+
+guide:Trial_Control1_Concepcion rdf:type guide:EvaluationTrial ;
+    sch:name "Control 1 - Concepción Espacial" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "15%" ;
+    guide:trialWeek "7" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "4/10" .
+
+guide:Trial_Control1_Normalizacion rdf:type guide:EvaluationTrial ;
+    sch:name "Control 1 - Normalización" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "15%" ;
+    guide:trialWeek "8" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "4/10" .
+
+guide:Trial_ExamenFinal rdf:type guide:EvaluationTrial ;
+    sch:name "Examen final" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "100%" ;
+    guide:trialWeek "15" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "5/10" .
+
+# --- Schedule & Activities ---
+guide:Schedule_565000215 rdf:type guide:Schedule ;
+    sch:eventSchedule guide:Event_Week1, guide:Event_Week7, guide:Event_Week15 .
+
+guide:Event_Week1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity guide:Activity_Bienvenida, guide:Activity_Tema1_Prac .
+
+guide:Activity_Bienvenida rdf:type guide:Activity ;
+    guide:activityDescription "Bienvenida y presentación de la asignatura"@en ;
+    guide:activityDuration 0.33 ;
+    guide:attendanceType "Presencial" .
+
+guide:Activity_Tema1_Prac rdf:type guide:Activity ;
+    guide:activityDescription "Prácticas tema 1"@en ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "Presencial" .
+
+guide:Event_Week7 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 7 ;
+    guide:eventWeek "Semana 7" ;
+    guide:hasActivity guide:Activity_Control1_Concepcion .
+
+guide:Activity_Control1_Concepcion rdf:type guide:Activity ;
+    guide:activityDescription "Control 1 - Concepción Espacial"@en ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "Presencial" .
+
+# --- Didactic Resources ---
+guide:Res_Moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Moodle" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "https://moodle.upm.es/..."@en .
+
+guide:Res_AENOR rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "AENOR" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Acceso a Normas UNE"@en .
+
+guide:Res_AutoCAD rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "AutoCAD 2023" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Antonio Manuel Reyes Rodríguez, Madrid Anaya Multimedia"@en .

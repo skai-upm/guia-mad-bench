@@ -1,0 +1,811 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/#93000965> rdf:type :CourseGuide ;
+    dc:title "Modelado De Sistemas Biomédicos"@en ;
+    sch:name "Modelado de Sistemas Biomédicos" ;
+    guide:courseYear 2025-26 ;
+    guide:numberOfCredits "3.0"^^xsd:decimal ;
+    guide:sylbususDescription "Introduction to the mathematical modelling of physiological systems."@en ;
+    sch:description "Model construction, Mathematical modelling techniques (Compartmental, data-driven), Applications in MATLAB and Simulink"@en .
+
+<http://guia-mad-bench.es/data/#09AU> rdf:type :MasterDegree ;
+    guide:degreeCode "09AU"^^xsd:string ;
+    sch:name "Master Universitario En Ingenieria Biomedica" ;
+    sch:description "Postgraduate degree programme corresponding to advanced academic or professional specialization"@en .
+
+<http://guia-mad-bench.es/data/#course-guide-2025> rdf:type :Schedule ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/#syllabus-modelado-sistemas>;
+    sch:eventSchedule <http://guia-mad-bench.es/data/#event-week1>,<http://guia-mad-bench.es/data/#event-week2> .
+
+<http://guia-mad-bench.es/data/#93000965> guide:hasCourseInstance <http://guia-mad-bench.es/data/#course-guide-2025>.
+<http://guia-mad-bench.es/data/#syllabus-modelado-sistemas> rdf:type :Sylbusus ;
+    sch:name "Temario de la asignatura" .
+
+<http://guia-mad-bench.es/data/#event-week1> rdf:type :ScheduleEvent ;
+    guide:hasActivity <http://guia-mad-bench.es/data/#activity-intro>;
+    om:Unit 2.0 ;
+    sch:eventIndex "1";
+    guide:sylbususDescription "Introduction to the modelling of physiological systems"@en .
+
+<http://guia-mad-bench.es/data/#event-week2> rdf:type :ScheduleEvent ;
+    guide:hasActivity <http://guia-mad-bench.es/data/#activity-model-construction>;
+    om:Unit 2.0 ;
+    sch:eventIndex "2";
+    guide:sylbususDescription "Model construction, Compartmental modelling"@en .
+
+<http://guia-mad-bench.es/data/#event-week3> rdf:type :ScheduleEvent ;
+    guide:hasActivity <http://guia-mad-bench.es/data/#activity-compartmental>;
+    om:Unit 2.0 ;
+    sch:eventIndex "3";
+    guide:sylbususDescription "Compartmental modelling"@en .
+
+<http://guia-mad-bench.es/data/#event-week4> rdf:type :ScheduleEvent ;
+    guide:hasActivity <http://guia-mad-bench.es/data/#activity-data-models>;
+    om:Unit 2.0 ;
+    sch:eventIndex "4";
+    guide:sylbususDescription "Data models"@en .
+
+<http://guia-mad-bench.es/data/#event-week5> rdf:type :ScheduleEvent ;
+    guide:hasActivity <http://guia-mad-bench.es/data/#activity-rythmic>;
+    om:Unit 2.0 ;
+    sch:eventIndex "5";
+    guide:sylbususDescription "Rythmic models"@en .
+
+<http://guia-mad-bench.es/data/#event-week6> rdf:type :ScheduleEvent ;
+    guide:hasActivity <http://guia-mad-bench.es/data/#activity-applications>;
+    om:Unit 2.0 ;
+    sch:eventIndex "6";
+    guide:sylbususDescription "Applications"@en .
+
+<http://guia-mad-bench.es/data/#event-week7> rdf:type :ScheduleEvent ;
+    guide:hasActivity <http://guia-mad-bench.es/data/#activity-presentations>;
+    om:Unit 2.0 ;
+    sch:eventIndex "7";
+    guide:sylbususDescription "Students' presentations"@en .
+
+<http://guia-mad-bench.es/data/#event-week14> rdf:type :ScheduleEvent ;
+    guide:hasActivity <http://guia-mad-bench.es/data/#activity-exam>;
+    om:Unit 2.0 ;
+    sch:eventIndex "17";
+    guide:sylbususDescription "**Exam**"@en .
+
+<http://guia-mad-bench.es/data/#competency-CB06> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CB06"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA13>;
+    sch:name "CB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA14>;
+    sch:name "CB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB11> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB11"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB01> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB01"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB02> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB02"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB05> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB05"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB06> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB06"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB10> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB12> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB12"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB03> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB03"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB04> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB04"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB07> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB07"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB08> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB08"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB09> rdf:type :Competency ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/#learning-result-RA15>;
+    sch:name "CG-MIB09"^^xsd:string .
+
+<http://guia-mad-bench.es/data/#competency-CG-MIB1

@@ -1,0 +1,98 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide-algebra-linear> a :CourseGuide ;
+    dct:title "615001001 - álgebra Lineal"@en ;
+    sch:name "álgebra Lineal" ;
+    guide:numberOfCredits 6.0^^xsd:decimal ;
+    guide:courseYear 2025-26^^xsd:string ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer-anaisabel-lias> .
+
+<http://guia-mad-bench.es/data/course-guide-algebra-linear> sch:description "Guía de Aprendizaje para la asignatura álgebra Lineal en el Grado En Ciencia De Datos E Inteligencia Artificial"@en ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus-615001001> .
+
+<http://guia-mad-bench.es/data/lecturer-anaisabel-lias> a :Lecturer ;
+    sch:name "Ana Isabel Lias Quintero" ;
+    guide:office "2006"@en ;
+    sch:email <mailto:anaisabel.lias@upm.es> .
+
+<http://guia-mad-bench.es/data/competency-cb01> a :Competency ;
+    dct:title "CB01" ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/lr-ra28>, <http://guia-mad-bench.es/data/lr-ra40>.
+
+<http://guia-mad-bench.es/data/competency-ce01> a :Competency ;
+    dct:title "CE01" .
+
+<http://guia-mad-bench.es/data/competency-cg06> a :Competency ;
+    dct:title "CG06".
+
+<http://guia-mad-bench.es/data/course-guide-algebra-linear> guide:hasLearningResult <http://guia-mad-bench.es/data/lr-ra28>, <http://guia-mad-bench.es/data/lr-ra10>, <http://guia-mad-bench.es/data/lr-ra40>.
+
+<http://guia-mad-bench.es/data/syllabus-615001001> a :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/ssi-algebra>, <http://guia-mad-bench.es/data/ssi-vectorial>.
+
+<http://guia-mad-bench.es/data/si-tema1> a :SyllabusItem ;
+    sch:description "Álgebra matricial. Sistemas de ecuaciones lineales." .
+
+<http://guia-mad-bench.es/data/si-tema2> a :SyllabusItem ;
+    sch:description "Espacios vectoriales".
+
+<http://guia-mad-bench.es/data/ssi-vectorial> guide:hasItem <http://guia-mad-bench.es/data/si-espacio>, <http://guia-mad-bench.es/data/si-aplicacion>.
+    sch:description "Aplicaciones lineales".
+
+<http://guia-mad-bench.es/data/ssi-vectorial> guide:hasItem <http://guia-mad-bench.es/data/si-diagonalizacion>, <http://guia-mad-bench.es/data/si-euclideo>.
+    sch:description "Diagonalización".
+
+<http://guia-mad-bench.es/data/ssi-vectorial> guide:hasItem <http://guia-mad-bench.es/data/si-svd>.
+    sch:description "Descomposición en valores singulares (SVD)".
+
+<http://guia-mad-bench.es/data/lr-ra28> a :LearningResult ;
+    dct:title "RA28" .
+
+<http://guia-mad-bench.es/data/lr-ra10> a :LearningResult ;
+    dct:title "RA10".
+
+<http://guia-mad-bench.es/data/lr-ra40> a :LearningResult ;
+    dct:title "RA40" .
+
+<http://guia-mad-bench.es/data/eval-trial-ep1> a :EvaluationTrial ;
+    sch:description "Examen primer parcial. Temas 1 y 2." ;
+    guide:evaluationType "Progresiva"@en ;
+    guide:gradePercentage 0.2^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/eval-trial-ep2> a :EvaluationTrial ;
+    sch:description "Examen Segundo Parcial. Temas 3 y 4." ;
+    guide:evaluationType "Progresiva"@en ;
+    guide:gradePercentage 0.25^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/eval-trial-ep3> a :EvaluationTrial ;
+    sch:description "Examen Tercer parcial. Temas 5, 6 y 7." ;
+    guide:evaluationType "Progresiva"@en ;
+    guide:gradePercentage 0.45^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/eval-trial-global> a :EvaluationTrial ;
+    sch:description "Examen de evaluación global" ;
+    guide:trialMode "Presencial"@en ;
+    guide:evaluationType "Global"@en ;
+    guide:gradePercentage 1.0^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/eval-system> a :EvaluationSystem ;
+    sch:description "Evaluación progresiva y global" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/eval-trial-ep1>, <http://guia-mad-bench.es/data/eval-trial-ep2>, <http://guia-mad-bench.es/data/eval-trial-ep3>.
+
+<http://guia-mad-bench.es/data/course-guide-algebra-linear> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/eval-system>.
+    sch:description "Evaluación progresiva y global" .
+
+<http://guia-mad-bench.es/data/didactic-resource-lay> a :DidacticResource ;
+    dct:title "Linear Algebra and its Applications. Fifth Edition." ;
+    guide:bibliographyType "Básica"@en .
+
+<http://guia-mad-bench.es/data/didactic-resource-strang-web> a :DidacticResource ;
+    sch:description "Curso de Álgebra Lineal en inglés impartido por G. Strang" ;
+    guide:activityFormat "Recursos web"@en .

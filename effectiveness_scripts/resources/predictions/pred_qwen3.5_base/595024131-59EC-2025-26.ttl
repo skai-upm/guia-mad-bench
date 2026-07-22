@@ -1,0 +1,228 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide_59EC_595024131> rdf:type :CourseGuide ;
+    sch:name "Ingenieria De Audio Ii"@en ,
+        "595024131 - Ingenieria de Audio II"@es ;
+    dc:title "Guía de Aprendizaje: 595024131 - Ingenieria De Audio Ii"@es ;
+    sch:description "Asignatura destinada al estudio de los equipos que permiten el tratamiento y manipulación de la señal de audio."@en ;
+    guide:numberOfCredits "6"^^xsd:decimal ;
+    guide:teachingPeriodMonths "Febrero-Junio"@es ;
+    guide:periodStartingMonth "Febrero"@es ,
+        "Junio"@es ;
+    sch:inLanguage "Castellano"@es ;
+    dct:creator "Lino Pedro Garcia Morales"^^xsd:string,
+                "Daniel De La Prida Caballero"^^xsd:string,
+                "Maria Larrosa Navarro"^^xsd:string ;
+    guide:syllabus <http://guia-mad-bench.es/data/syllabus_59EC_595024131> .
+
+<http://guia-mad-bench.es/data/courseguide_59EC_595024131> sch:courseSchedule <http://guia-mad-bench.es/data/schedule_59EC_595024131> ;
+    guide:syllabusDescription "Temario de la asignatura"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide_59EC_595024131> sch:director <http://guia-mad-bench.es/data/lecturer_garcia_morales> ;
+    guide:syllabusDescription "Temario de la asignatura"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide_59EC_595024131> sch:instructor <http://guia-mad-bench.es/data/lecturer_prida_caballero>,
+    <http://guia-mad-bench.es/data/lecturer_larrosa_navarro> .
+
+<http://guia-mad-bench.es/data/courseguide_59EC_595024131> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluation_system_progressive>.
+<http://guia-mad-bench.es/data/courseguide_59EC_595024131> sch:eventSchedule <http://guia-mad-bench.es/data/schedule_59EC_595024131> .
+
+#################################################################
+#    Degree and Course Instances
+#################################################################
+
+<http://w3id.org/guia-mad-bench/es/bachelor_59EC> rdf:type :BachelorDegree ;
+    sch:name "Grado En Ingenieria Electronica De Comunicaciones"@es ;
+    guide:degreeCode "59EC"^^xsd:string .
+
+#################################################################
+#    Course Instance (Linking Degree to Guide)
+#################################################################
+
+<http://w3id.org/guia-mad-bench/es/course_59EC_595024131> rdf:type :Course ;
+    sch:name "Ingenieria De Audio Ii"@es ,
+        "595024131 - Ingenieria de Audio II"^^xsd:string ;
+    guide:courseYear 3^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/es/course_59EC_595024131> sch:hasCourseInstance <http://guia-mad-bench.es/data/courseguide_59EC_595024131>.
+<http://w3id.org/guia-mad-bench/es/bachelor_59EC> guide:hasCourse <http://w3id.org/guia-mad-bench/es/course_59EC_595024131>.
+
+#################################################################
+#    Syllabus and Items
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus_59EC_595024131> rdf:type :Syllabus ;
+    sch:name "Temario de Ingenieria De Audio Ii"@es .
+
+<http://guia-mad-bench.es/data/tema_estaciones_daw> rdf:type :SyllabusItem ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus_59EC_595024131>,
+        "Tema 1. Estaciones de trabajo con audio digital (DAW)"^^xsd:string .
+
+<http://guia-mad-bench.es/data/tema_diseño_estudios> rdf:type :SyllabusItem ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus_59EC_595024131>,
+        "Tema 2. Diseño de Estudios"^^xsd:string .
+
+<http://guia-mad-bench.es/data/tema_digitalizacion> rdf:type :SyllabusItem ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus_59EC_595024131>,
+        "Tema 3. Digitalización de la señal de audio"^^xsd:string .
+
+<http://guia-mad-bench.es/data/tema_soportes> rdf:type :SyllabusItem ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus_59EC_595024131>,
+        "Tema 4. Soportes de almacenamiento de audio"^^xsd:string .
+
+<http://guia-mad-bench.es/data/tema_almacenamiento> rdf:type :SyllabusItem ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus_59EC_595024131>,
+        "Tema 5. Almacenamiento y reproducción de la señal de audio"^^xsd:string .
+
+<http://guia-mad-bench.es/data/tema_codificacion> rdf:type :SyllabusItem ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus_59EC_595024131>,
+        "Tema 6. Codificación perceptual"^^xsd:string .
+
+#################################################################
+#    Lecturers
+#################################################################
+
+<http://guia-mad-bench.es/data/lecturer_garcia_morales> rdf:type :Lecturer ;
+    sch:name "Lino Pedro Garcia Morales"@es ,
+        "(Coordinador/a)"^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer_prida_caballero> rdf:type :Lecturer ;
+    sch:name "Daniel De La Prida Caballero"^^xsd:string ;
+    guide:office "D8209"@es ,
+        "Despacho 8209"@en .
+
+<http://guia-mad-bench.es/data/lecturer_larrosa_navarro> rdf:type :Lecturer ;
+    sch:name "Maria Larrosa Navarro"^^xsd:string ;
+    guide:office "D8209"@es ,
+        "Despacho 8209"@en .
+
+#################################################################
+#    Schedule and Events
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule_59EC_595024131> rdf:type :Schedule ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/courseguide_59EC_595024131>.
+
+<http://guia-mad-bench.es/data/event_week1_tema1> rdf:type :ScheduleEvent ;
+    guide:eventWeek "Semana 1"^^xsd:string ,
+        "Tema 1. Estaciones de trabajo con audio digital (DAW)"^^xsd:string .
+
+<http://guia-mad-bench.es/data/activity_leccion_magistral_05> rdf:type :Activity ;
+    guide:activityDescription "Lección Magistral"^^xsd:string ,
+        "Duración: 00:50"@es ;
+    sch:name "Tema 1. Estaciones de trabajo con audio digital (DAW)"@en .
+
+<http://guia-mad-bench.es/data/event_week2_tema1> rdf:type :ScheduleEvent ;
+    guide:eventWeek "Semana 2"^^xsd:string ,
+        "Práctica 1. Puesto de laboratorio"@es .
+
+<http://guia-mad-bench.es/data/activity_practicas_lab_05> rdf:type :Activity ;
+    guide:activityDescription "Prácticas de Laboratorio"^^xsd:string ,
+        "Duración: 02:00"@es ;
+    sch:name "Tema 1. Estaciones de trabajo con audio digital (DAW)"@en .
+
+<http://guia-mad-bench.es/data/event_week4_control_1> rdf:type :ScheduleEvent ;
+    guide:eventWeek "Semana 4"^^xsd:string ,
+        "Control 1"@es .
+
+#################################################################
+#    Evaluation System and Trials
+#################################################################
+
+<http://guia-mad-bench.es/data/evaluation_system_progressive> rdf:type :EvaluationSystem ;
+    sch:name "Evaluación Progresiva"@en ;
+    guide:evaluationDescription "Suma de todos los controles de clase donde se incluye el control de laboratorio y el proyecto de diseño."^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial_control_1> rdf:type :EvaluationTrial ;
+    sch:name "Control 1"@es ,
+        "Prueba Telemática"^^xsd:string ;
+    guide:trialType "Evaluación Progresiva Presencial"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial_control_2> rdf:type :EvaluationTrial ;
+    sch:name "Control 2"@es ,
+        "Prueba Telemática"^^xsd:string ;
+    guide:trialType "Evaluación Progresiva Presencial"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial_control_3> rdf:type :EvaluationTrial ;
+    sch:name "Control 3"@es ,
+        "Prueba Telemática"^^xsd:string ;
+    guide:trialType "Evaluación Progresiva Presencial"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial_control_4> rdf:type :EvaluationTrial ;
+    sch:name "Control 4"@es ,
+        "Prueba Telemática"^^xsd:string ;
+    guide:trialType "Evaluación Progresiva Presencial"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial_control_5> rdf:type :EvaluationTrial ;
+    sch:name "Control 5"@es ,
+        "Prueba Telemática"^^xsd:string ;
+    guide:trialType "Evaluación Progresiva Presencial"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial_project_session_1> rdf:type :EvaluationTrial ;
+    sch:name "Presentación de proyectos. Sesión 1"@es ,
+        "Prueba Telemática"^^xsd:string ;
+    guide:trialType "Evaluación Progresiva y Global Presencial"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial_project_session_2> rdf:type :EvaluationTrial ;
+    sch:name "Presentación de proyectos. Sesión 2"@es ,
+        "Prueba Telemática"^^xsd:string ;
+    guide:trialType "Evaluación Progresiva y Global Presencial"^^xsd:string .
+
+<http://guia-mad-bench.es/data/trial_exam_global> rdf:type :EvaluationTrial ;
+    sch:name "La evaluación de la asignatura es del tipo progresiva"@es ,
+        "Prueba Telemática"^^xsd:string ;
+    guide:trialType "Evaluación Global Presencial"^^xsd:string .
+
+#################################################################
+#    Competencies and Learning Results
+#################################################################
+
+<http://guia-mad-bench.es/data/competency_ce_ec01> rdf:type :Competency ;
+    sch:name "Capacidad de construir, explotar y gestionar sistemas..."@es ,
+        "CE EC01"^^xsd:string .
+
+<http://guia-mad-bench.es/data/result_ra170> rdf:type :LearningResult ;
+    sch:name "Comprensión y manejo de las señales de audio y video"@es ,
+        "RA170"^^xsd:string .
+
+#################################################################
+#    Links between Guide and Competencies/Results/Evaluation
+#################################################################
+
+<http://guia-mad-bench.es/data/courseguide_59EC_595024131> guide:hasCompetency <http://guia-mad-bench.es/data/competency_ce_ec01>,
+    <http://guia-mad-bench.es/data/competency_ce_sc01>.
+
+<http://guia-mad-bench.es/data/courseguide_59EC_595024131> guide:hasLearningResult <http://guia-mad-bench.es/data/result_ra170>,
+    <http://guia-mad-bench.es/data/result_ra408>.
+
+<http://guia-mad-bench.es/data/courseguide_59EC_595024131> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial_control_1>,
+    <http://guia-mad-bench.es/data/trial_project_session_1>.
+
+#################################################################
+#    Evaluation Trial Properties (Weight, Duration)
+#################################################################
+
+<http://guia-mad-bench.es/data/trial_control_1> guide:gradePercentage "18"^^xsd:string ;
+    guide:minimumScore "4 / 10"@es .
+
+<http://guia-mad-bench.es/data/trial_project_session_2> guide:gradePercentage "0"^^xsd:string ,
+        "Presentación de proyectos. Sesión 2"^^xsd:string .
+
+#################################################################
+#    Didactic Resources (Excerpt)
+#################################################################
+
+<http://guia-mad-bench.es/data/resource_apuntes> rdf:type :DidacticResource ;
+    sch:name "Apuntes propios de todos los temas del curso"@es ,
+        "Bibliografía"^^xsd:string .
+
+<http://guia-mad-bench.es/data/resource_videos_mudos> rdf:type :DidacticResource ;
+    sch:name "Vídeos mudos para practicar conocimientos"@es ,
+        "Recursos web"^^xsd:string .

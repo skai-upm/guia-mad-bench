@@ -1,0 +1,148 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:CourseGuide_63000140 rdf:type guide:CourseGuide ;
+    sch:name "63000140 - Gestion Avanzada de Combustibles III: Gestion y Pl" ;
+    guide:numberOfCredits 3.0 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Tercer semestre" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :Lecturer_LuisFelipe, :Lecturer_EnriqueQuerol ;
+    sch:director :Lecturer_LuisFelipe ;
+    guide:hasCompetency :Comp_CB09, :Comp_CE06, :Comp_CE08, :Comp_CG01, :Comp_CG02, :Comp_CG03, :Comp_CG08, :Comp_CG12, :Comp_CG18, :Comp_CT02, :Comp_CT04, :Comp_CT05, :Comp_CT06 ;
+    guide:hasLearningResult :LR_RA22, :LR_RA23, :LR_RA21, :LR_RA61, :LR_RA135, :LR_RA57, :LR_RA56, :LR_RA60 ;
+    guide:hasSyllabus :Syll_63000140 ;
+    guide:hasEvaluation :EvalSys_63000140 ;
+    guide:hasDidacticResource :Res_Apuntes ;
+    sch:courseSchedule :Sched_63000140 ;
+    guide:otherInformation "La asignatura propone realizar y desarrollar proyectos relacionados con Ingeniería Energética." .
+
+# Course Instance
+:Course_63000140 rdf:type guide:Course ;
+    sch:courseCode 63000140 ;
+    guide:courseYear 2025 ;
+    sch:hasCourseInstance :CourseGuide_63000140 .
+
+# Degree Instance
+:Degree_06AF rdf:type guide:MasterDegree ;
+    sch:name "Máster Universitario En Ingeniería De Minas" ;
+    guide:degreeCode "06AF" ;
+    guide:hasCourse :Course_63000140 .
+
+# University Center Instance
+:UnivCenter_ETS rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Minas y Energía" ;
+    guide:offers :Degree_06AF .
+
+# Lecturer Instances
+:Lecturer_LuisFelipe rdf:type guide:Lecturer ;
+    sch:name "Luis Felipe Mazadiente Martinez" ;
+    guide:office "416" ;
+    sch:email "luisfelipe.mazadiego@upm.es" ;
+    guide:tutorshipsSchedule "M - 16:00 - 18:00" .
+
+:Lecturer_EnriqueQuerol rdf:type guide:Lecturer ;
+    sch:name "Enrique Querol Aragon" ;
+    guide:office "418" ;
+    sch:email "enrique.querol@upm.es" ;
+    guide:tutorshipsSchedule "M - 16:00 - 18:00" .
+
+# Competency Instances (Sample)
+:Comp_CB09 rdf:type guide:Competency ;
+    guide:competencyCode "CB09" ;
+    guide:competencyDescription "Que los estudiantes sepan comunicar sus conclusiones y los conocimientos y razones últimas que las sustentan a públicos especializados y no especializados de un modo claro y sin ambigüedades" .
+
+:Comp_CE06 rdf:type guide:Competency ;
+    guide:competencyCode "CE06" ;
+    guide:competencyDescription "Capacidad para planificar y gestionar recursos energéticos, incluyendo generación, transporte, distribución y utilización" .
+
+:Comp_CG01 rdf:<0xC2>                
+    guide:competencyCode "CG01" ;
+    guide:competencyDescription "Capacitación científico-técnica y metodológica para el reciclaje continuo de conocimientos..." .
+
+# Learning Result Instances (Sample)
+:LR_RA22 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA22" ;
+    guide:learningResultDescription "Proyectar instalaciones de generación, transporte y distribución de combustibles" .
+
+:LR_RA23 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA23" ;
+    guide:learningResultDescription "Proyectar y gestionar instalaciones de transporte, distribución y almacenamiento." .
+
+# Syllabus Instance
+:Syll_63000140 rdf:type guide:Syllabus ;
+    guide:hasItem :SyllItem_1, :SyllItem_2, :SyllItem_3 .
+
+:SyllItem_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Estrategias para la planificación, control y seguimiento de proyectos de infraestructuras de combustibles." .
+
+:SyllItem_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Análisis de Inversiones y Financiación de proyectos de infraestructuras de combustibles." .
+
+:SyllItem_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project, CAYRA, etc.) a la planificación de proyectos..." .
+
+# Evaluation System and Trials
+:EvalSys_63000140 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación continua y prueba final" ;
+    guide:hasEvaluationTrial :Trial_Prog_W1, :Trial_FinalExam .
+
+:Trial_Prog_W1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "5%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "1" ;
+    guide:involvesCompetency :Comp_CE06, :Comp_CG01 .
+
+:Trial_FinalExam rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:involvesCompetency :Comp_CB09, :Comp_CG03, :Comp_CT06 .
+
+# Schedule and Events
+:Sched_63000140 rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_W1, :Event_W3, :Event_W4 .
+
+:Event_W1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :Act_W1 .
+
+:Act_W1 rdf:type guide:Activity ;
+    guide:activityDescription "Presentación de la asignatura. Objetivos y Metodología." ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:Event_W3 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 3 ;
+    guide:eventWeek "3" ;
+    guide:hasActivity :Act_W3 .
+
+:Act_W3 rdf:type guide:Activity ;
+    guide:activityDescription "Ejercicios con Excel relacionados con la materia explicada" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:attendanceType "No presencial" .
+
+# Didactic Resource
+:Res_Apuntes rdf:type guide:DidacticResource ;
+    sch:name "Apuntes de la asignatura realizados por los profesores" ;
+    guide:bibliographyDescription "Se proporcionarán a través de moodle" ;
+    guide:bibliographyType "Bibliografía" .
+
+# Required Knowledge
+:ReqKnow_Prev rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Gestion Avanzada De Combustibles Ii: Logistica" .

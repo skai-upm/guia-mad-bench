@@ -1,0 +1,226 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+# Course Guide Instance
+guide:GA_61CD_615001001
+    rdf:type guide:CourseGuide ;
+    sch:name "álgebra Lineal" ;
+    sch:description "El contenido de esta asignatura es, principalmente, el estándar de un Álgebra Lineal de primer curso de cualquier ingeniería..." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:numberOfCredits 6.0 ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus guide:Syllabus_AlgebraLineal ;
+    guide:hasCompetency guide:CB01, guide:CE01, guide:CG06 ;
+    guide:hasLearningResult guide:RA28_9, guide:RA10_8, guide:RA40 ;
+    sch:instructor guide:AnaIsabelLiasQuintero ;
+    guide:hasEvaluation guide:EvalSystem_AlgebraLineal ;
+    guide:hasDidacticResource guide:Res_Lay, guide:Res_Nicholson, guide:Res_deBurgos, guide:Res_Strang, guide:Res_Ricardo, guide:Res_Trefethen, guide:Res_Moodle, guide:Res_MATEX ;
+    sch:courseSchedule guide:Schedule_AlgebraLineal ;
+    guide:totalHours "150"^^xsd:langString ; # Estimated based on ECTS 6 * 25
+    guide:inpersonHours "100%"^^xsd:langString ;
+    guide:remoteHours "0%"^^xsd:langString .
+
+# Course Instance
+guide:Course_615001001
+    rdf:type guide:Course ;
+    sch:name "álgebra Lineal" ;
+    sch:courseCode 615001001 ;
+    guide:courseYear 2025 ;
+    guide:courseType "Básica" ;
+    guide:semester "Primer semestre" ;
+    sch:hasCourseInstance guide:GA_61CD_615001001 .
+
+# Degree Instance
+guide:Degree_61CD
+    rdf:type guide:Degree ;
+    sch:name "Grado En Ciencia De Datos E Inteligencia Artificial" ;
+    guide:degreeCode "61CD" ;
+    guide:hasCourse guide:Course_615001001 .
+
+# University Center Instance
+guide:E_T_S_Systems
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ing. de Sistemas Informáticos" ;
+    guide:offers guide:Degree_61CD .
+
+# Lecturer Instance
+guide:AnaIsabelLiasQuintero
+    rdf:type guide:Lecturer ;
+    sch:name "Ana Isabel Lias Quintero" ;
+    sch:email "anaisabel.lias@upm.es" ;
+    guide:office "2006" ;
+    guide:tutorshipsSchedule "Sin horario. Se publicarán en el Moodle de la asignatura y en la web de la Escuela" .
+
+# Competencies
+guide:CB01
+    rdf:type guide:Competency ;
+    sch:name "CB01" ;
+    guide:competencyDescription "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de estudio..." .
+
+guide:CE01
+    rdf:type guide:Competency ;
+    sch:name "CE01" ;
+    guide:competencyDescription "Capacidad para utilizar con destreza los conceptos y métodos matemáticos que subyacen a los problemas de la ciencia de datos y la inteligencia artificial..." .
+
+guide:CG06
+    rdf:type guide:Competency ;
+    sch:name "CG06" ;
+    guide:competencyDescription "Identificar y utilizar las tecnologías de la información y las comunicaciones más adecuadas en el ámbito de la ingeniería." .
+
+# Learning Results
+guide:RA28_9
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA28-9" ;
+    guide:learningResultDescription "Resolver problemas con ayuda de software matemático" .
+
+guide:RA10_8
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA10-8" ;
+    guide:learningResultDescription "Modelizar matemáticamente problemas reales y conocer técnicas para resolverlos." .
+
+guide:RA40
+    rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA40" ;
+    guide:learningResultDescription "Conocer y manejar ecuaciones lineales, matrices, geometría del plano y del espacio y espacios vectoriales." .
+
+# Syllabus and Items
+guide:Syllabus_AlgebraLineal
+    rdf:type guide:Syllabus ;
+    guide:hasItem guide:Topic_1, guide:Topic_2, guide:Topic_3, guide:Topic_4, guide:Topic_5, guide:Topic_6, guide:Topic_7 .
+
+guide:Topic_1
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Álgebra matricial. Sistemas de ecuaciones lineales." .
+
+guide:Topic_2
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Espacios vectoriales" .
+
+guide:Topic_3
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Aplicaciones lineales" .
+
+guide:Topic_4
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Diagonalización" .
+
+guide:Topic_5
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Espacio vectorial euclídeo" .
+
+guide:Topic_6
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Aplicaciones lineales entre espacio vectoriales euclideos" .
+
+guide:Topic_7
+    rdf:type guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Descomposición en valores singulares (SVD)" .
+
+# Evaluation System and Trials
+guide:EvalSystem_AlgebraLineal
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación continua o progresiva se realizará mediante las siguientes actividades..." ;
+    guide:hasEvaluationTrial guide:Exam_EP1, guide:Exam_EP2, guide:Exam_EP3, guide:Exam_Global .
+
+guide:Exam_EP1
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen parcial" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "3/10" ;
+    guide:trialWeek "Semana 7" .
+
+guide:Exam_EP2
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen parcial" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "3/10" ;
+    guide:trialWeek "Semana 10" .
+
+guide:Exam_EP3
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen parcial" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "45%" ;
+    guide:minimumScore "3/10" ;
+    guide:trialWeek "Semana 17" .
+
+guide:Exam_Global
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen de evaluación global" ;
+    guide:evaluationType "global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialWeek "Semana 17" .
+
+# Schedule and Activities
+guide:Schedule_AlgebraLineal
+    rdf:type guide:Schedule ;
+    sch:eventSchedule guide:Event_W1, guide:Event_W2, guide:Event_W6, guide:Event_W7, guide:Event_W9, guide:Event_W10, guide:Event_W17 .
+
+guide:Event_W1
+    rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity guide:Act_Lecture_1, guide:Act_ProblemSolving_1 .
+
+guide:Act_Lecture_1
+    rdf:type guide:Activity ;
+    guide:activityDescription "Lección Magistral - Tema 1" ;
+    guide:activityFormat "Presencial" ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "Presencial" .
+
+guide:Act_ProblemSolving_1
+    rdf:type guide:Activity ;
+    guide:activityDescription "Resolución de ejercicios y problemas" ;
+    guide:activityFormat "Clase de Problemas" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Presencial" .
+
+# Required Knowledge
+guide:ReqKnowledge_Algebra
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Entender una demostración matemática sencilla, Calcular raíces de polinomios de grados 2 y 3 (Rufini), operar con matrices (suma, producto), cálculo de determinantes y resolución de sistemas de ecuaciones lineales" .
+
+# Didactic Resources
+guide:Res_Lay
+    rdf:type guide:DidacticResource ;
+    sch:name "Linear Algebra and its Applications" ;
+    guide:bibliographyTitle "Lay, D.C.; Lay, S.R.; McDonald, J.: Linear Algebra and its Applications" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Básica." .
+
+guide:Res_Nicholson
+    rdf:type guide:DidacticResource ;
+    sch:name "Álgebra lineal con aplicaciones" ;
+    guide:bibliographyTitle "Nicholson, W.K.: Álgebra lineal con aplicaciones" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Básica." .
+
+guide:Res_Moodle
+    rdf:type guide:DidacticResource ;
+    sch:name "Espacio Moodle de la asignatura" ;
+    guide:bibliographyTitle "https://moodle.upm.es/titulaciones/oficiales" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Sitio con Información, material de apoyo y test de autoevaluación." .
+
+guide:Res_MATEX
+    rdf:type guide:DidacticResource ;
+    sch:name "MATEX" ;
+    guide:bibliographyTitle "http://personales.unican.es/gonzaleof/ " ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Cursos de apoyo para estudiantes de nuevo ingreso." .

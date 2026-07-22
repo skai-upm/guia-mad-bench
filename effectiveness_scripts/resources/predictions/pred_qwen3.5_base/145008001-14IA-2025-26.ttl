@@ -1,0 +1,497 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/#ANX_PR_CL_001_01> rdf:type guide:Syllabus ;
+    sch:name "Inglés Profesional Y Académico"@en ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> .
+
+<http://guia-mad-bench.es/data/#14IA> rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Ingeniería Aeroespacial"@en ;
+    guide:degreeCode "14IA"^^xsd:string ;
+    guide:numberOfCredits 6.0 .
+
+<http://guia-mad-bench.es/data/#Etsi_Aeronautica_Espacio> rdf:type sch:Organization, guide:UniversityCenter ;
+    sch:name "E.T.S.I Aeronáutica y del Espacio"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:CourseGuide, sch:CourseInstance ;
+    dc:title "Inglés Profesional Y Académico"^^xsd:string ;
+    dct:creator <http://guia-mad-bench.es/data/#Dulcinea_Tomas_Camara>, <http://guia-mad-bench.es/data/#Mairin_Kelly>, <http://guia-mad-bench.es/data/#Oana_Alexandra_Parlea> ;
+    guide:hasCourse <http://guia-mad-bench.es/data/14IA#ANX_PR_CL_001_01> ;
+    sch:name "Inglés Profesional Y Académico"^^xsd:string ;
+    guide:numberOfCredits 6.0 ;
+    dct:license <http://purl.org/NET/rdflicense/cc-by4.0> .
+
+<http://guia-mad-bench.es/data/#Dulcinea_Tomas_Camara> rdf:type sch:Person, guide:Lecturer ;
+    sch:name "Dulcinea Tomas Camara"^^xsd:string ;
+    sch:email <mailto:dulcinea.tomas@upm.es> .
+
+<http://guia-mad-bench.es/data/#Mairin_Kelly> rdf:type sch:Person, guide:Lecturer ;
+    sch:name "Mairin Kelly"^^xsd:string ;
+    sch:office "A-265"^^xsd:string ;
+    sch:email <mailto:mairin.kelly@upm.es> .
+
+<http://guia-mad-bench.es/data/#Oana_Alexandra_Parlea> rdf:type sch:Person, guide:Lecturer ;
+    sch:name "Oana Alexandra Parlea"^^xsd:string ;
+    sch:office "B-106"^^xsd:string ;
+    sch:email <mailto:alexandra.parlea@upm.es> .
+
+<http://guia-mad-bench.es/data/#Dulcinea_Tomas_Camara#ANX_PR_CL_001_01> rdf:type guide:Lecturer, sch:Person ;
+    sch:name "Dulcinea Tomas Camara"^^xsd:string ;
+    sch:director <http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> .
+
+<http://guia-mad-bench.es/data/#CG2> rdf:type guide:Competency ;
+    guide:competencyCode "CG2"^^xsd:string ;
+    sch:description "Uso de la lengua inglesa"@en .
+
+<http://guia-mad-bench.es/data/#CG4> rdf:type guide:Competency ;
+    guide:competencyCode "CG4"^^xsd:string ;
+    sch:description "Capacidad para integrarse y formar parte activa de equipos de trabajo. Trabajo en equipo"@en .
+
+<http://guia-mad-bench.es/data/#CG7> rdf:type guide:Competency ;
+    guide:competencyCode "CG7"^^xsd:string ;
+    sch:description "Comunicación oral y escrita"@en .
+
+<http://guia-mad-bench.es/data/#CG9> rdf:type guide:Competency ;
+    guide:competencyCode "CG9"^^xsd:string ;
+    sch:description "Razonamiento crítico y capacidad de asociación que posibilitan el aprendizaje continuo"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> guide:hasCompetency <http://guia-mad-bench.es/data/#CG2>, <http://guia-mad-bench.es/data/#CG4>, <http://guia-mad-bench.es/data/#CG7>, <http://guia-mad-bench.es/data/#CG9> ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01_RA147>, <http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01_RA145> ;
+    guide:hasDidacticResource <http://guia-mad-bench.es/data/#Airbus_Flying_into_the_future>, <http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01_Module0> ;
+    guide:hasEvaluationSystem <http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01_Evaluation_System>.
+
+<http://guia-mad-bench.es/data/#Airbus_Flying_into_the_future> rdf:type guide:DidacticResource ;
+    sch:name "Airbus. Flying into the future"^^xsd:string ;
+    guide:bibliographyType "Bibliografía"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01_RA147> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA147"^^xsd:string ;
+    sch:description "Puede producir textos claros y detallados sobre temas diversos así como defender un punto de vista"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01_RA145> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA145"^^xsd:string ;
+    sch:description "Es capaz de entender las ideas principales de textos complejos que traten de temas tanto concretos como abstractos"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01_RA02> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA02"^^xsd:string ;
+    sch:description "Puede relacionarse con hablantes nativos con un grado suficiente de fluidez y naturalidad"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01_RA01> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA01"^^xsd:string ;
+    sch:description "Es capaz de entender las ideas principales de textos complejos que traten de temas tanto concretos como abstractos"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01_Module0> rdf:type guide:SyllabusItem ;
+    sch:name "Module 0. Critical Thinking Lab"^^xsd:string ;
+    guide:itemIndex 0 .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01_Module1> rdf:type guide:SyllabusItem ;
+    sch:name "Module 1. Academic and Professional Writing"^^xsd:string ;
+    guide:itemIndex 1 .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01_Module2> rdf:type guide:SyllabusItem ;
+    sch:name "Module 2. Technical English"^^xsd:string ;
+    guide:itemIndex 2 .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01_Module3> rdf:type guide:SyllabusItem ;
+    sch:name "Module 3. Professional Communication"^^xsd:string ;
+    guide:itemIndex 3 .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01_Module4> rdf:type guide:SyllabusItem ;
+    sch:name "Module 4. Professional English"^^xsd:string ;
+    guide:itemIndex 4 .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001_01> rdf:type guide:Syllabus, sch:CourseInstance ;
+    guide:syllabusDescription "Inglés Profesional Y Académico"@en .
+
+<http://guia-mad-bench.es/data/145008001#ANX_PR_CL_001

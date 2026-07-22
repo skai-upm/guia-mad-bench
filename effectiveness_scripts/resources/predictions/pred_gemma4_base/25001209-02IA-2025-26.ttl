@@ -1,0 +1,166 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:etsi_center a guide:UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas"@en ;
+    guide:offers :agroambiental_degree .
+
+:agroambiental_degree a guide:BachelorDegree ;
+    sch:name "Grado En Ingenier<0xC2>s Agroambiental"@en ;
+    guide:degreeCode "02IA" ;
+    guide:hasCourse :botanica_course .
+
+:botanica_course a guide:Course ;
+    sch:courseCode 25001209 ;
+    guide:courseYear 2025 ;
+    guide:courseType "Obligatoria"@en ;
+    sch:numberOfCredits 4.0 ;
+    guide:hasCourseInstance :botanica_guide .
+
+:botanica_guide a guide:CourseGuide ;
+    sch:name "Botanica Agricola Y Flora"@en ;
+    sch:description "La asignatura se estructura en torno al objetivo establecido en la Orden CIN 323/2009 relativo a la adquisición de la capacidad de conocer, comprender y utilizar los principios de la identificación y caracterización de especies vegetales."@en ;
+    guide:teachingPeriod "2025-26"@en ;
+    guide:periodStartingMonth "Febrero"@en ;
+    guide:periodEndingMonth "Junio"@en ;
+    guide:numberOfCredits 4.0 ;
+    guide:totalHours "104"@en ; # Calculated based on ECTS (4 * 26)
+    sch:inLanguage "Castellano"@en ;
+    sch:instructor :prof_dolores, :prof_aguado ;
+    sch:director :prof_agustin ;
+    guide:hasSyllabus :botanica_syllabus ;
+    guide:hasCompetency :comp_ce15, :comp_cg16, :comp_cg3, :comp_cg5, :comp_cg7 ;
+    guide:hasLearningResult :lr_ra47, :lr_ra48, :lr_ra49, :lr_ra50, :lr_ra45, :lr_ra46 ;
+    guide:hasEvaluation :botanica_eval_system ;
+    sch:courseSchedule :botanica_schedule ;
+    guide:hasDidacticResource :res_library, :res_web, :res_herbario .
+
+:prof_dolores a guide:Lecturer ;
+    sch:name "M. Dolores Curt Fernandez De La Mellora"@en ;
+    sch:email "md.curt@upm.es"@en ;
+    guide:office "UD Bot.Agricola"@en ;
+    guide:tutorshipsSchedule "Sin horario. La fecha y horario de tutorías se acuerda entre el estudiante y el profesor, previa solicitud por e-mail"@en .
+
+:prof_aguado a guide:Lecturer ;
+    sch:name "Pedro Luis Aguado Cortijo"@en ;
+    sch:email "pl.aguado@upm.es"@en ;
+    guide:office "UD Bot.Agricola"@en ;
+    guide:tutorshipsSchedule "Sin horario. La fecha y horario de tutorías se acuerda entre el estudiante y el profesor, previa solicitud por e-mail"@en .
+
+:prof_agustin a guide:Lecturer ;
+    sch:name "Agustin Garzon Hidalgo"@en ;
+    sch:email "agustin.garzon@upm.es"@en ;
+    sch:role "Coordinador"@en .
+
+:comp_ce15 a guide:Competency ;
+    guide:competencyCode "CE15" ;
+    guide:competencyDescription "Capacidad para aplicar los principios de la botánica en la identificación y caracterion de especies vegetales..."@en .
+
+:comp_cg16 a guide:Competency ;
+    guide:competencyCode "CG16" ;
+    guide:competencyDescription "Aplicar conocimientos adquiridos a la práctica de la ingeniería agraria"@en .
+
+:comp_cg3 a guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes..."@en .
+
+:comp_cg5 a guide:Competency ;
+    guide:competencyCode "CG5" ;
+    guide:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía"@en .
+
+:comp_cg7 a guide:Competency ;
+    guide:competencyCode "CG7" ;
+    guide:competencyDescription "Compromiso ético y profesional y respeto por el medio ambiente y la diversidad"@en .
+
+:lr_ra47 a guide:LearningResult ;
+    guide:learningResultCode "RA47" ;
+    guide:learningResultDescription "Reconocer y caracterizar las principales especies vegetales de interés en los campos de la agronomía y la flora española"@en .
+
+:lr_ra48 a guide:LearningResult ;
+    guide:learningResultCode "RA48" ;
+    guide:learningResultDescription "Relacionar caracteres botánicos con las aplicaciones de las especies vegetales y sus requerimientos de hábitat"@en .
+
+:botanica_syllabus a guide:Syllabus ;
+    guide:hasItem :item_1, :item_2, :item_3, :item_4, :item_5, :item_6, :item_7, :item_8, :item_9, :item_10, :item_11, :item_12, :item_13, :item_14 .
+
+:item_1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Principios generales"@en .
+
+:item_2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Terminología"@en .
+
+:item_3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Gimnospermas de interés agrícola y medioambiental"@en .
+
+:botanica_eval_system a guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación progresiva y global."@en ;
+    guide:hasEvaluationTrial :trial_prog_1, :trial_prog_2, :trial_global_theory, :trial_global_practice .
+
+:trial_prog_1 a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito"@en ;
+    guide:trialWeek "7"@en ;
+    guide:evaluationType "Evaluación Progresiva"@en ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial"@en ;
+    guide:hasScheduleEvent :event_week7_exam .
+
+:trial_prog_2 a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito"@en ;
+    guide:trialWeek "17"@en ;
+    guide:evaluationType "Evaluación Progresiva"@en ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial"@en .
+
+:trial_global_theory a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito"@en ;
+    guide:trialWeek "17"@en ;
+    guide:evaluationType "Evaluación Global"@en ;
+    guide:gradePercentage "75%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial"@en .
+
+:botanica_schedule a guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week2, :event_week3, :event_week4, :event_week5, :event_week6, :event_week7, :event_week8, :event_week9, :event_week10, :event_week11, :event_week12, :event_week13, :event_week14, :event_week15 .
+
+:event_week1 a guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "1"@en ;
+    guide:hasActivity :act_leccion_magistral_1 .
+
+:act_leccion_magistral_1 a guide:Activity ;
+    guide:activityDescription "Tema 1"@en ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral"@en ;
+    guide:attendanceType "Presencial"@en .
+
+:event_week7_exam a guide:ScheduleEvent ;
+    guide:eventIndex 7 ;
+    guide:eventWeek "7"@en .
+
+:res_library a guide:DidacticResource ;
+    sch:name "Biblioteca de Botánica"@en ;
+    guide:bibliographyType "Bibliografía"@en ;
+    guide:bibliographyDescription "Biblioteca de consulta en las instalaciones de la unidad de Botánica Agrícola."@en .
+
+:res_web a guide:DidacticResource ;
+    sch:name "Recursos web"@en ;
+    guide:bibliographyType "Recursos web"@en ;
+    guide:bibliographyDescription "http://www.mobot.org/MOBOT/research/APWeb/ ..."@en .
+
+:res_herbario a guide:DidacticResource ;
+    sch:name "Herbario"@en ;
+    guide:bibliographyType "Otros"@en ;
+    guide:bibliographyDescription "Colección de Herbarios docentes de la U.D. Botánica Agrícola"@en .

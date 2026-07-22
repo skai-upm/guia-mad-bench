@@ -1,0 +1,187 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Course Instance
+:course_595000115 a guide:Course ;
+    sch:name "Redes Y Servicios De Telecomunicacion" ;
+    sch:numberOfCredits 6.0 ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 2025 ;
+    sch:courseCode 595000115 .
+
+# Degree Instance
+:degree_59SO a guide:Degree ;
+    sch:name "Grado En Ingenieria De Sonido E Imagen" ;
+    guide:degreeCode "59SO" ;
+    guide:hasCourse :course_595000115 .
+
+# University Center Instance
+:center_ETS_Telecom a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Sist. De Telecom." ;
+    guide:offers :degree_59SO .
+
+# Course Guide Instance
+:cg_595000115 a guide:CourseGuide ;
+    sch:courseInstanceOf :course_59_instance ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCompetency :comp_TEL01, :comp_TEL06, :comp_TEL13, :comp_TEL14, :comp_TEL15 ;
+    guide:hasLearningResult :lr_RA1295, :lr_RA1296, :lr_RA242, :lr_RA244, :lr_RA245, :lr_RA1118, :lr_RA1075, :lr_RA1073, :lr_RA1119, :lr_RA243, :lr_RA1074, :lr_RA1120, :lr_RA1122, :lr_RA1294, :lr_RA1297 ;
+    guide:hasEvaluation :eval_system_progressive, :eval_system_global, :eval_system_extraordinary ;
+    guide:hasDidacticResource :res_kurose, :res_stallings, :res_halsall, :res_bellamy, :res_moodle .
+
+# Course Guide specific instance for the period
+:course_59_instance a sch:CourseInstance ;
+    sch:courseInstanceOf :course_595000115 .
+
+# Lecturers
+:lecturer_sury a guide:Lecturer ;
+    sch:name "Sury Bravo Lasprilla" ;
+    sch:email "sury.bravo@upm.es" ;
+    guide:office "A4413" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:lecturer_miguel a guide:Lecturer ;
+    sch:name "Miguel Angel Valero Duboy" ;
+    sch:email "miguelangel.valero@upm.es" ;
+    guide:office "A4422" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:lecturer_javier a guide:Lecturer ;
+    sch:name "Javier Espejo Garrido" ;
+    sch:email "j.espejo@upm.es" ;
+    guide:office "A4404" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:lecturer_lucas a guide:Lecturer ;
+    sch:name "Lucas Gonzalo Elvira Martin" ;
+    sch:email "lucas.elvira@upm.es" ;
+    guide:office "A4422" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:lecturer_juana a guide:Lecturer ;
+    sch:name "Juana Maria Gutierrez Arriola" ;
+    sch:email "juana.gutierrez.arriola@upm.es" ;
+    guide:office "A7008" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+# Competencies
+:comp_TEL01 a guide:Competency ;
+    guide:competencyCode "CE TEL01" ;
+    guide:competencyDescription "Capacidad para aprender de manera autónoma nuevos conocimientos y técnicas adecuados para la concepción, el desarrollo o la explotación de sistemas y servicios de telecomunicación." .
+
+:comp_TEL06 a guide:Competency ;
+    guide:competencyCode "CE TEL06" ;
+    guide:competencyDescription "Capacidad de concebir, desplegar, organizar y gestionar redes, sistemas, servicios e infraestructuras de telecomunicación en contextos residenciales (hogar, ciudad y comunidades digitales), empresariales o institucionales responsabilizándose de su puesta en marcha y mejora continua, así como conocer su impacto económico y social." .
+
+:comp_TEL13 a guide:Competency ;
+    guide:competencyCode "CE TEL13" ;
+    guide:competencyDescription "Conocimiento y utilización de los conceptos de arquitectura de red, protocolos e interfaces de comunicaciones." .
+
+:comp_TEL14 a guide:Competency ;
+    guide:competencyCode "CE TEL14" ;
+    guide:competencyDescription "Capacidad de diferenciar los conceptos de redes de acceso y transporte, redes de conmutación de circuitos y de paquetes, redes fijas y móviles, así como los sistemas y aplicaciones de red distribuidos, servicios de voz, datos, audio, video y servicios interactivos y multimedia." .
+
+:comp_TEL15 a guide:Competency ;
+    guide:competencyCode "CE TEL15" ;
+    guide:competencyDescription "Conocimiento de los métodos de interconexión de redes y encaminamiento, así como los fundamentos de la planificación, dimensionado de redes en función de parámetros de tráfico." .
+
+# Learning Results
+:lr_RA1295 a guide:LearningResult ;
+    guide:learningResultCode "RA1295" ;
+    guide:learningResultDescription "Enumerar los medios físicos para el despliegue de redes de área local." .
+
+:lr_RA1296 a guide:LearningResult ;
+    guide:learningResultCode "RA1296" ;
+    guide:learningResultDescription "Describir las características y el modo de funcionamiento de Ethernet." .
+
+:lr_RA242 a guide:LearningResult ;
+    guide:learningResultCode "RA242" ;
+    guide:learningResultDescription "Capacidad de aprender de manera autónoma nuevos conocimientos y técnicas para la concepción de sistemas y servicios de telecomunicación, entre ellos los basados en Internet." .
+
+# Evaluation Systems and Trials
+:eval_system_progressive a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva" ;
+    guide:hasEvaluationTrial :trial_p1_p2_ud1_ud2, :trial_p3_p4_ud3_ud4_ud5 .
+
+:eval_system_global a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación global" ;
+    guide:hasEvaluationTrial :trial_exam_global .
+
+:eval_system_extraordinary a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación convocatoria extraordinaria" ;
+    guide:hasEvaluationTrial :trial_exam_extraordinary .
+
+:trial_p1_p2_ud1_ud2 a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "50%" ;
+    guide:eventWeek "Semana 9" ;
+    guide:involvesCompetency :comp_TEL01, :comp_TEL06, :comp_TEL13, :comp_TEL14 .
+
+:trial_p3_p4_ud3_ud4_ud5 a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "50%" ;
+    guide:eventWeek "Semana 17" ;
+    guide:involvesCompetency :comp_TEL01, :comp_TEL06, :comp_TEL13, :comp_TEL14, :comp_TEL15 .
+
+:trial_exam_global a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:eventWeek "Semana 17" .
+
+:trial_exam_extraordinary a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:evaluationDuration "04:00" ;
+    guide:gradePercentage "100%" ;
+    guide:involvesCompetency :comp_TEL01, :comp_TEL06, :comp_TEL13, :comp_TEL14, :comp_TEL15 .
+
+# Didactic Resources
+:res_kurose a guide:DidacticResource ;
+    guide:bibliographyTitle "Redes de computadoras: un enfoque descendente" ;
+    guide:bibliographyDescription "James F. Kurose. Pearson, 2017" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_stallings a guide:DidacticResource ;
+    guide:bibliographyTitle "Comunicaciones y Redes de Ordenadores" ;
+    guide:bibliographyDescription "Stallings, W. Prentice-Hall International, 2004." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_halsall a guide:DidacticResource ;
+    guide:bibliographyTitle "Redes de computadores e Internet" ;
+    guide:bibliographyDescription "Halsall, Fred. Pearson Addison-Wesley, 2006" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_bellamy a guide:DidacticResource ;
+    guide:bibliographyTitle "Digital Telephony" ;
+    guide:bibliographyDescription "J.C. Bellamy. Ed. Willey-Interamine Publications John Willey and sons, 2000" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_moodle a guide:DidacticResource ;
+    sch:name "Plataforma Moodle UPM" ;
+    guide:bibliographyType "Equipamiento" .
+
+# Required Knowledge
+:req_knowledge_java a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Conocimientos del lenguaje de programación Java como para desarrollar una aplicación de mediana complejidad." .
+
+:req_courses_prog2 a guide:RequiredKnowledge ;
+    guide:previousCourses "Programación II" .
+
+# Syllabus Items (Units)
+:unit_1 a guide:SyllabusItem ;
+    guide:syllabusDescription "UNIDAD 1: INTRODUCCIÓN A LAS REDES DE TELECOMUNICACIÓN" .
+
+:unit_2 a guide:SyllabusItem ;
+    guide:syllabusDescription "UNIDAD 2: ARQUITECTURAS DE COMUNICACIÓN ESTRATIFICADAS EN NIVELES" .
+
+:unit_3 a guide:SyllabusItem ;
+    guide:syllabusDescription "UNIDAD 3: LA CAPA DE ENLACE Y REDES DE ÁREA LOCAL" .
+
+:unit_4 a guide:SyllabusItem ;
+    guide:syllabusDescription "UNIDAD 4: LA CAPA DE RED" .
+
+:unit_5 a guide:SyllabusItem ;
+    guide:syllabusDescription "UNIDAD 5: INTRODUCCIÓN A LAS APLICACIONES Y SERVICIOS DE INTERNET" .

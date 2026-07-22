@@ -1,0 +1,466 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide-95000301> rdf:type guide:CourseGuide ;
+    dc:title "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@en ;
+    dct:creator <http://guia-mad-bench.es/data/persona-elisa-antolin>, <http://guia-mad-bench.es/data/persona-simon-aurel> , <http://guia-mad-bench.es/data/curso-fisica>;
+    guide:numberOfCredits "6"^^xsd:decimal ;
+    guide:courseYear 2025 .
+
+<http://guia-mad-bench.es/data/courseguide-95000301> sch:name "Física"@en ;
+    sch:description "Asignatura de Física para Grado en Ingeniería Biomedica."@en ;
+    guide:hasCourse <http://guia-mad-bench.es/data/curso-fisica>;
+
+<http://guia-mad-bench.es/data/courseguide-95000301> sch:director <http://guia-mad-bench.es/data/persona-elisa-antolin> ;
+    guide:syllabusDescription "Mecánica, Elasticidad, Fluidos y Termodinámica."@en .
+
+<http://guia-mad-bench.es/data/curso-fisica> rdf:type sch:Course , guide:BachelorDegree ;
+    dct:title "95000301 - Física"@en ;
+    guide:numberOfCredits 6 ;
+    guide:courseYear 2025 .
+
+<http://guia-mad-bench.es/data/persona-elisa-antolin> rdf:type guide:Lecturer , sch:Person ;
+    sch:name "Elisa Antolin Fernandez"@en ;
+    sch:email <mailto:elisa.antolin@upm.es> ;
+    guide:tutorshipsSchedule "Previa petición de cita previa por email." .
+
+<http://guia-mad-bench.es/data/persona-simon-aurel> rdf:type guide:Lecturer , sch:Person ;
+    sch:name "Simon Aurel Svatek"@en ;
+    sch:email <mailto:simon.svatek@upm.es> ;
+    guide:tutorshipsSchedule "Previa petición de cita previa por email." .
+
+<http://guia-mad-bench.es/data/persona-miguel-montes> rdf:type guide:Lecturer , sch:Person ;
+    sch:name "Miguel Montes Bajo"@en ;
+    sch:email <mailto:miguel.montes@upm.es> ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+<http://guia-mad-bench.es/data/curso-fisica> guide:hasCompetency <http://guia-mad-bench.es/data/competencia-ce06>, <http://guia-mad-bench.es/data/competencia-cg11>;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/resultado-ra31> .
+
+<http://guia-mad-bench.es/data/curso-fisica> sch:name "Grado En Ingenieria Biomedica"@en ;
+    rdf:type guide:BachelorDegree;
+    dct:creator <http://w3id.org/def/guia#>.
+
+<http://guia-mad-bench.es/data/persona-elisa-antolin> sch:director <http://guia-mad-bench.es/data/courseguide-95000301>;
+    guide:syllabusDescription "Coordinador/a."@en .
+
+<http://guia-mad-bench.es/data/competencia-ce06> rdf:type guide:Competency ;
+    guide:competencyCode "CE06"@en ;
+    sch:description "Comprender y saber calcular el equilibrio y la dinámica de sistemas mecánicos"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competencia-cg11> rdf:type guide:Competency ;
+    guide:competencyCode "CG11"@en ;
+    sch:description "Elaborar y defender argumentos y resolver los problemas de forma efectiva y creativa."^^xsd:string .
+
+<http://guia-mad-bench.es/data/curso-fisica> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus-95000301>;
+    sch:name "Temario de la asignatura"@en ;
+    dct:title "Guía de Aprendizaje" .
+
+<http://guia-mad-bench.es/data/curso-fisica> guide:hasDidacticResource <http://guia-mad-bench.es/data/recursos-tipler>, <http://guia-mad-bench.es/data/recursos-sears>;
+    sch:name "Recursos didácticos"@en .
+
+<http://guia-mad-bench.es/data/syllabus-95000301> rdf:type guide:Syllabus ;
+    dct:title "Temario de la asignatura"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-elasticidad>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica, Elasticidad, Fluidos y Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-elasticidad>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-fluidos>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-termo>, <http://guia-mad-bench.es/data/item-fluidos>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Elasticidad"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Termodinámica"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Fluidos"^^xsd:string;
+    guide:hasItem <http://guia-mad-bench.es/data/item-meccanica>, <http://guia-mad-bench.es/data/item-termo>;
+
+<http://guia-mad-bench.es/data/syllabus-95000301> sch:name "Mecánica"^^xsd:string

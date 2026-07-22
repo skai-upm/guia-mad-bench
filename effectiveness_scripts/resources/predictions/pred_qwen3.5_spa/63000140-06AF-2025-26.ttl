@@ -1,0 +1,367 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide-63000140> rdf:type :CourseGuide ;
+    dc:title "Gestión Avanzada De Combustibles Iii"@en ;
+    dct:creator <http://w3id.org/def/guia#Luis Felipe Mazadiego Martinez>, <http://w3id.org/def/guia#Enrique Querol Aragon> ;
+    sch:name "63000140 - Gestion Avanzada De Combustibles Iii: Gestion Y Pl"@en ;
+    guide:numberOfCredits 3^^xsd:decimal ;
+    guide:courseYear 2025^^xsd:integer ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/syllabus-1> ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> ;
+    guide:hasEvaluation <http://guia-mad-bench.es/data/eval-system-63000140> ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/competency-CB09>, <http://guia-mad-bench.es/data/competency-CE06>, <http://guia-mad-bench.es/data/competency-CE08> ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/result-Ra22>, <http://guia-mad-bench.es/data/result-Ra23> ;
+    sch:inLanguage "Castellano"@en .
+
+<http://w3id.org/def/guia#Luis Felipe Mazadiego Martinez> rdf:type :Lecturer ;
+    sch:name "Luis Felipe Mazadiego Martinez" ;
+    guide:office "416"^^xsd:string ;
+    sch:email <mailto:luisfelipe.mazadiego@upm.es> .
+
+<http://w3id.org/def/guia#Enrique Querol Aragon> rdf:type :Lecturer ;
+    sch:name "Enrique Querol Aragon" ;
+    guide:office "418"^^xsd:string ;
+    sch:email <mailto:enrique.querol@upm.es> .
+
+<http://guia-mad-bench.es/data/degree-06AF> rdf:type :MasterDegree ;
+    dct:title "Máster Universitario En Ingeniería De Minas"@es ;
+    guide:degreeCode "06AF"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course-gestion-combustibles> rdf:type :Course ;
+    sch:name "Gestión Avanzada De Combustibles Iii" ;
+    sch:courseCode 63000140^^xsd:integer ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/syllabus-1> .
+
+<http://w3id.org/def/guia#scholarship-gestion-combustibles-i2> rdf:type :Course ;
+    sch:name "Gestión Avanzada De Combustibles Ii" ;
+    guide:courseYear 2024^^xsd:integer .
+
+<http://guia-mad-bench.es/data/syllabus-1> rdf:type :Syllabus ;
+    dc:title <http://w3id.org/def/guia#63000140 - Gestion Avanzada De Combustibles Iii>@en ;
+    guide:hasItem <http://guia-mad-bench.es/data/syll-item-1>, <http://guia-mad-bench.es/data/syll-item-2> .
+
+<http://w3id.org/def/guia#syllabus-description-strategy> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Estrategias para la planificación, control y seguimiento de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/def/guia#syllabus-description-investment> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Análisis de Inversiones y Financiación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 2^^xsd:integer .
+
+<http://w3id.org/def/guia#syllabus-description-software> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-63000140> rdf:type :Schedule ;
+    sch:name "Cronograma Gestión Avanzada De Combustibles Iii" ;
+    guide:eventWeek <http://w3id.org/def/guia#Septiembre-Enero>@en .
+
+<http://guia-mad-bench.es/data/schedule-event-1> rdf:type :ScheduleEvent ;
+    sch:name "Presentación de la asignatura. Objetivos y Metodología" ;
+    guide:eventIndex 1^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://guia-mad-bench.es/data/eval-system-63000140> rdf:type :EvaluationSystem ;
+    guide:evaluationDescription "Evaluación continua y prueba final"^^xsd:string ;
+    sch:name <http://w3id.org/def/guia#ANX-PR/CL/001-01>@en .
+
+<http://guia-mad-bench.es/data/trial-progressive> rdf:type :EvaluationTrial ;
+    guide:trialDescription "Evaluación Progresiva"^^xsd:string ;
+    sch:name <http://w3id.org/def/guia#Estudio de mercado a través de encuestas>@en ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/schedule-event-1> .
+
+<http://guia-mad-bench.es/data/trial-final-exam> rdf:type :EvaluationTrial ;
+    guide:trialDescription "Examen Evaluación Final (No Continua)"^^xsd:string ;
+    sch:name <http://w3id.org/def/guia#EXAMEN FINAL>@en ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/schedule-event-17> .
+
+<http://guia-mad-bench.es/data/result-Ra22> rdf:type :LearningResult ;
+    guide:learningResultCode "RA22"^^xsd:string ;
+    sch:description "Proyectar instalaciones de generación, transporte y distribución de combustibles"@en .
+
+<http://w3id.org/def/guia#competency-CB09> rdf:type :Competency ;
+    guide:competencyCode "CB09"^^xsd:string ;
+    sch:name <http://w3id.org/def/guia#Que los estudiantes sepan comunicar sus conclusiones>@en .
+
+<http://guia-mad-bench.es/data/syll-item-1> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Estrategias para la planificación, control y seguimiento de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-2> rdf:type :ScheduleEvent ;
+    sch:name "Revisión del Proyecto realizado en la asignatura Gestión Avanzada de Combustibles (II)" ;
+    guide:eventIndex 2^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-event-17> rdf:type :ScheduleEvent ;
+    sch:name "Examen para alumnos que han optado por la Evaluación Solo Examen Final" ;
+    guide:eventIndex 17^^xsd:integer ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-63000140> .
+
+<http://w3id.org/def/guia#syllabus-description-software-apps2> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Aplicación de programas informáticos (Microsoft Project ®, CAYRA ®, etc.) a la planificación de proyectos de infraestructuras de combustibles"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/s

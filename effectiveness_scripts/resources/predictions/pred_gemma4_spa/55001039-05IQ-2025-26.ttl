@@ -1,0 +1,201 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:CourseGuide_55001039
+    rdf:type guide:CourseGuide ;
+    sch:name "Ingenieria Procesos Y Productos" ;
+    sch:description "El objetivo de la asignatura es familiarizarse con las distintas etapas necesarias para llevar a cabo el diseño de procesos y productos, de forma que el estudiante sea capaz de realizar un diseño de un proceso y/o producto partiendo de una información acotada." ;
+    guide:numberOfCredits 4.5 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Séptimo semestre" ;
+    guide:teachingPeriodMonths "Septiembre-Eral" ;
+    guide:teachingPeriod "2025-26" ;
+    sch:instructor :MariaGonzalezMiquel ;
+    sch:director :MariaGonzalezMiquel ;
+    guide:hasCompetency :CE15, :CE19, :CE20, :CE23_ETSII, :CG1, :CG2, :CG3, :CG4, :CG6 ;
+    guide:hasLearningResult :RA190, :RA193, :RA194, :RA191, :RA192, :RA302, :RA301, :RA303, :RA300, :RA189 ;
+    guide:hasSyllabus :Syllabus_55001039 ;
+    guide:hasEvaluation :EvalSystem_55001039 ;
+    guide:hasDidacticResource :Res_Notes, :Res_Dimian, :Res_Cussler, :Res_Seider, :Res_Towler, :Res_Smith ;
+    sch:courseSchedule :Schedule_55_55001039 .
+
+# Course Instance
+:Course_55001039
+    rdf:type guide:Course ;
+    sch:courseCode 55001039 ;
+    sch:hasCourseInstance :CourseGuide_55001039 .
+
+# Degree Instance
+:Degree_05IQ
+    rdf:type guide:Degree ;
+    sch:name "Grado En Ingeniería Química" ;
+    guide:degreeCode "05IQ" .
+
+# University Center Instance
+:ETSII
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Industriales" ;
+    guide:offers :Degree_05IQ .
+
+# Lecturer Instances
+:MariaGonzalezMiquel
+    rdf:type guide:Lecturer ;
+    sch:name "Maria Gonzalez Miquel" ;
+    sch:email "maria.gonzalezmiquel@upm.es" .
+
+:FranciscoIsmaelDiazMoreno
+    rdf:type guide:Lecturer ;
+    sch:name "Francisco Ismal Diaz Moreno" ;
+    sch:email "ismael.diaz@upm.es" ;
+    guide:office "Lab Tec Quimica" .
+
+# Competencies
+:CE15 rdf:type guide:Competency ;
+    guide:competencyCode "CE 15" ;
+    guide:competencyDescription "Conocimientos básicos de los sistemas de producción y fabricación industrial" .
+
+:CE19 rdf:type guide:Competency ;
+    guide:competencyCode "CE 19" ;
+    guide:competencyDescription "Conocimientos sobre balances de materia y energía, biotecnología, transferencia de materia, operaciones de separación, ingeniería de la reacción química, diseño de reactores, y valoración y transformación de materias primas y recursos energéticos" .
+
+:CE20 rdf:type guide:Competency ;
+    guide:competencyCode "CE 20" ;
+    guide:competencyDescription "Capacidad para el análisis, diseño, simulación y optimización de procesos y productos" .
+
+:CE23_ETSII rdf:type guide:Competency ;
+    guide:competencyCode "CE 23 (ETSII)" ;
+    guide:competencyDescription "Conocimiento de los procesos disponibles para la obtención de productos" .
+
+:CG1 rdf:type guide:Competency ;
+    guide:competencyCode "CG 1" ;
+    guide:competencyDescription "Conocer y aplicar los conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Industria" .
+
+:CG2 rdf:type guide:Competency ;
+    guide:competencyCode "CG 2" ;
+    guide:competencyDescription "Poseer la capacidad para diseñar, desarrollar, implementar, gestionar y mejorar productos, sistemas y procesos en los distintos ámbitos industriales, usando técnicas analíticas, computacionales o experimentales apropiadas" .
+
+:CG3 rdf:type guide:Competency ;
+    guide:competencyCode "CG 3" ;
+    guide:competencyDescription "Aplicar los conocimientos adquiridos para identificar, formular y resolver problemas en contextos amplios, siendo capaces de integrar los trabajando en equipos multidisciplinares" .
+
+:CG4 rdf:type guide:Competency ;
+    guide:competencyCode "CG 4" ;
+    guide:competency .
+
+:CG6 rdf:type guide:Competency ;
+    guide:competencyCode "CG 6" ;
+    guide:competencyDescription "Poseer las habilidades de aprendizaje que permitan continuar estudiando a lo largo de toda la vida para un desarrollo profesional adecuado" .
+
+# Learning Results
+:RA190 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA190" ;
+    guide:learningResultDescription "El alumno será capaz de escoger los algoritmos apropiados e implementarlos para la simulación de los modelos." .
+
+:RA193 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA193" ;
+    guide:learningResultDescription "El alumno será capaz de formular un problema genérico de optimización y realizar la resolución y análisis de casos particulares como optimización lineal." .
+
+:RA194 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA194" ;
+    guide:learningResultDescription "El alumno será capaz de realizar un diseño preliminar de un proceso químico" .
+
+:RA189 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA189" ;
+    guide:learningResultDescription "El alumno será capaz de desarrollar modelos de unidades de proceso y procesos de ingeniería química basados en ecuaciones y principios físicos." .
+
+# Syllabus
+:Syllabus_55001039
+    rdf:type guide:Syllabus ;
+    guide:hasItem :SyllabusItem_1, :SyllabusItem_2, :SyllabusItem_3, :SyllabusItem_4, :SyllabusItem_5, :SyllabusItem_6 .
+
+:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción. Diagramas de proceso" .
+
+:SylllabusItem_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Simulación estacionaria" .
+
+:SyllabusItem_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Diseño de procesos" .
+
+# Evaluation System
+:EvalSystem_55001039
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La nota final de la asignatura tiene distintas contribuciones: la nota del Proyecto de Diseño de Procesos dividida en subentregas, la nota del Proyecto de Diseño de Productos, la nota de la Presentación de los Proyectos de Diseño y la nota del Examen Teórico-Práctico." ;
+    guide:hasEvaluationTrial :Trial_Week5, :Trial_Week9, :Trial_Week13, :Trial_Week14, :Trial_Week15, :Trial_Week16, :Trial_Week17 .
+
+:Trial_Week5
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Entrega Proyecto Diseño de Procesos (Síntesis del proceso)" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "15%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "No presencial" ;
+    guide:hasScheduleEvent :Event_Week5 .
+
+:Trial_Week15
+    rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Teórico-Práctico" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" ;
+    guide:hasScheduleEvent :Event_Week15 .
+
+# Schedule and Activities
+:Schedule_55_55001039
+    rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week5, :Event_Week15 .
+
+:Event_Week5
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "5" ;
+    guide:hasActivity :Act_ProjectSynthesis .
+
+:Act_ProjectSynthesis
+    rdf:type guide:Activity ;
+    guide:activityDescription "Entrega Proyecto Diseño de Procesos (Sínthesis del proceso)" ;
+    guide:activityFormat "Trabajo en Grupo" ;
+    guide:attendanceType "No presencial" .
+
+:Event_Week15
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "15" ;
+    guide:hasActivity :Act_Exam .
+
+:Act_Exam
+    rdf:type guide:Activity ;
+    guide:activityDescription "Examen Teórico-Práctico" ;
+    guide:activityFormat "Examen de Prácticas" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:Res_Dimian
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Integrated design and simulation of chemical processes" ;
+    guide:bibliographyDescription "Dimian, A. C." ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_Cussler
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Chemical Product Design" ;
+    guide:bibliographyDescription "Cussler and Moggridge (2nd ed.), 2011, Cambridge." ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_Notes
+    rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Notas de clase" ;
+    guide:bibliographyDescription "Transparencias y ejemplos de la asignatura" ;
+    guide:bibliographyType "Recursos web" .
+
+# Required Knowledge
+:RequiredKnowledge_55001039
+    rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Operaciones De Separacion I, Reactores Quimicos, Principio De Procesos Quimicos, Operaciones De Separacion Ii" .

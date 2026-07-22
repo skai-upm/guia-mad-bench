@@ -1,0 +1,168 @@
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix data: <http://guia-mad-bench.es/data/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+data:course_guide_103000843 a guide:CourseGuide ;
+    sch:name "Introduction To Technology Watch And Competitive I" ;
+    sch:description "To provide students with some conceptual and practical tools to understand the possible evolution of technologies for specific purposes." ;
+    guide:numberOfCredits 1.0 ;
+    guide:teachingPeriod "2: 2025-26" ;
+    guide:periodStartingMonth "February" ;
+    guide:periodEndingMonth "June" ;
+    guide:inpersonHours "26/27 hours" ;
+    guide:remoteHours "0" ;
+    sch:inLanguage "English" ;
+    sch:hasCourseInstance data:course_103000843_subject ;
+    guide:hasSyllabus data:syllabus_103000843 ;
+    guide:hasCompetency data:comp_CB07, data:comp_CB08, data:comp_CB09, data:comp_CEEIT03, data:comp_CG01, data:comp_CG03, data:comp_CG07, data:comp_CG08, data:comp_CG09 ;
+    guide:hasLearningResult data:lr_RA104 ;
+    sch:instructor data:lecturer_alberto ;
+    guide:hasEvaluation data:eval_system_103000843 ;
+    guide:hasDidacticResource data:res_cotec, data:res_georghiou, data:res_muehrle ;
+    sch:activitiesWorkload "26/27 hours of student face-to-face contact and independent study time" .
+
+data:course_103000843_subject a guide:Course ;
+    sch:name "103000843 - Introduction To Technology Watch And Competitive I" ;
+    guide:courseType "Compulsory" ;
+    guide:semester "Semester 2" ;
+    sch:courseCode 103000843 .
+
+data:degree_10AZ a guide:MasterDegree ;
+    sch:name "10AZ - Master Universitario en Innovación Digital" ;
+    guide:hasCourse data:course_103000843_subject .
+
+data:center_10 a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Informáticos" ;
+    guide:offers data:degree_10AZ .
+
+data:lecturer_alberto a guide:Lecturer ;
+    sch:name "Alberto Tejero Lopez" ;
+    sch:email "alberto.tejero@upm.es" ;
+    guide:office "Office D5215" ;
+    guide:tutorshipsSchedule "W - 09:00 - 10:00, W - 14:00 - 15:00" .
+
+data:comp_CB07 a guide:Competency ;
+    guide:competencyCode "CB07" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos dentro de contextos más amplios (o multidisciplinares) relacionados con su área de estudio" .
+
+data:comp_CB08 a guide:Competency ;
+    guide:competencyCode "CB08" ;
+    guide:competencyDescription "Que los estudiantes sean capaces de integrar conocimientos y enfrentarse a la complejidad de formular juicios a partir de una información que, siendo incompleta o limitada, incluya reflexiones sobre las responsabilidades sociales y éticas vinculadas a la aplicación de sus conocimientos y juicios" .
+
+data:comp_CB09 a guide:Competency ;
+    guide:competencyCode "CB09" ;
+    guide:competencyDescription "Que los estudiantes sepan comunicar sus conclusiones y los conocimientos y razones últimas que las sustentan a públicos especializados y no especializados de un modo claro y sin ambigüedades" .
+
+data:comp_CEEIT03 a guide:Competency ;
+    guide:competencyCode "CE-EIT03" ;
+    guide:competencyDescription "Capacidad para identificar el nivel de$\\text{madurez}$ de una tecnología y desarrollar e interpretar un roadmap tecnológico seleccionando la mejor manera de proteger esa tecnología dependiendo de su tipo, nivel de madurez y las restricciones geográficas, y entendiendo las consecuencias de acceder a ella y comercializarla." .
+
+data:comp_CG01 a guide:Competency ;
+    guide:competencyCode "CG01" ;
+    guide:competencyDescription "Que los estudiantes sean capaces de predecir y controlar la evolución de situaciones complejas mediante el desarrollo de nuevas e innovadoras metodologías de trabajo adaptadas al ámbito científico/investigador, tecnológico o profesional concreto, en general multidisciplinar, en el que se desarrolle su actividad." .
+
+data:comp_CG03 a guide:Competency ;
+    guide:competencyCode "CG03" ;
+    guide:competencyDescription "La capacidad de usar la lengua inglesa de manera competente, es decir, con capacitación para tareas complejas de trabajo y estudio." .
+
+data:comp_CG07 a guide:Competency ;
+    guide:competencyCode "CG07" ;
+    guide:competencyDescription "Capacidad de trabajar y comunicarse también en contextos internacionales." .
+
+data:comp_CG08 a guide:Competency ;
+    guide:competencyCode "CG08" ;
+    guide:competencyDescription "La capacidad de traducir innovaciones en soluciones comerciales factibles." .
+
+data:comp_CG09 a guide:Competency ;
+    guide:competencyCode "CG09" ;
+    guide:competencyDescription "La capacidad de transformar las experiencias prácticas en problemas y desafíos de investigación." .
+
+data:lr_RA104 a guide:LearningResult ;
+    guide:learningResultCode "RA104" ;
+    guide:learningResultDescription "In depth understanding the basics of technology watch and transfer" .
+
+data:syllabus_1030008$a guide:Syllabus ;
+    guide:hasItem data:item_welcome, data:item_tw_basics, data:item_tw_purpose, data:item_tw_report_critical, data:item_tw_report_sci, data:item_tw_report_market, data:item_tw_report_analysis .
+
+data:item_welcome a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Welcome session" .
+
+data:item_tw_basics a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Technology watch basics" .
+
+data:item_tw_purpose a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Definition of the technology watch purpose" .
+
+data:item_tw_report_critical a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "TW Report - Critical watch factors" .
+
+data:item_tw_report_sci a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "TW Report - Scientific-technological information" .
+
+data:item_tw_report_market a guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "TW Report - Market and industry information" .
+
+data:item_tw_report_analysis a guide:SyllabusItem ;
+    guide:imIndex 7 ;
+    guide:syllabusDescription "TW Report - Analysis of information" .
+
+data:eval_system_103000843 a guide:EvaluationSystem ;
+    guide:evaluationDescription "Progressive assessment and Global examination" ;
+    guide:hasEvaluationTrial data:trial_exam_5, data:trial_presentation_6, data:trial_global_17 .
+
+data:trial_exam_5 a guide:EvaluationTrial ;
+    guide:trialType "Written test" ;
+    guide:evaluationType "Progressive assessment" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:00" ;
+    guide:trialMode "Face-to-face" ;
+    guide:involvesCompetency data:comp_CB07, data:comp_CB08, data:comp_CG01 .
+
+data:trial_presentation_6 a guide:EvaluationTrial ;
+    guide:trialType "Group presentation" ;
+    guide:evaluationType "Progressive assessment" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:00" ;
+    guide:trialMode "Face-to-face" ;
+    guide:involvesCompetency data:comp_CB07, data:comp_CG08 .
+
+data:trial_global_17 a guide:EvaluationTrial ;
+    guide:trialType "Global assessment test and Technology Watch Report (individual)" ;
+    guide:evaluationType "Global examination" ;
+    guide:gradePercentage "70%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:00" ;
+    guide:trialMode "Face-to-face" .
+
+data:res_cotec a guide:DidacticResource ;
+    guide:bibliographyTitle "COTEC (1999). Pautas Metodológicas en Gestión de la Tecnología y de la Innovación para Empresas TEMAGUIDE." ;
+    guide:bibliographyType "Bibliography" .
+
+data:res_georghiou a guide:DidacticResource ;
+    guide:bibliographyTitle "Georghiou, L., et al. (2008). The Handbook of technology foresight. Concepts and practice?." ;
+    guide:bibliographyType "Bibliography" .
+
+data:res_muehrle a guide:DidacticResource ;
+    guide:bibliographyTitle "Moehrle, M., Isenmann, R. Phaal, R. (Edts.) (2013). Technology roadmapping for strategy and innovation." ;
+    guide:bibliographyType "Bibliography" .
+
+data:activity_welcome a guide:Activity ;
+    guide:activityDescription "Welcome session and groups creation" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lecture" ;
+    guide:attendanceType "Presential" .
+
+data:event_week_1 a guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "1" ;
+    guide:hasActivity data:activity_welcome .

@@ -1,0 +1,204 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.app.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+
+:ETS_Ing_Caminos a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ing. De Caminos Canales Y P." .
+
+:Master_Estructuras_Cimentaciones a guide:MasterDegree ;
+    sch:name "04AM - Master Universitario Ingenieria De Estructuras, Cimentaciones Y Materiales" ;
+    guide:degreeCode "04AM" .
+
+:ETS_Ing_Caminos guide:offers :Master_Estructuras_Cimentaciones .
+
+:Course_43000434 a guide:Course ;
+    sch:name "43000434 - Fiabilidad y Modelos Geotécnicos" ;
+    sch:courseCode 43000434 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 2025 ;
+    guide:semester "Segundo semestre" .
+
+:Master_Estructuras_Cimentaciones guide:hasCourse :Course_43000434 .
+
+:CourseGuide_43000434 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Fiabilidad y Modelos Geot ​técnicos" ;
+    sch:hasCourseInstance :Course_43000434 ;
+    sch:description "El curso pretende familiarizar a los alumnos con aspectos avanzados del comportamiento de los suelos (modelos de estado crítico, suelos parcialmente saturados, medios granulares, etc.), así como con la caracterización y efectos de las incertidumbres asociadas al proyecto geotécnico." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    guide:numberOfCredits 4.5 ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :Syllabus_43000434 ;
+    guide:hasCompetency :CB10, :CB9, :CE8, :CG1, :CG4, :CT1 ;
+    guide:hasLearningResult :RA2, :RA1, :RA3, :RA4 ;
+    guide:hasEvaluation :EvalSystem_43000434 ;
+    sch:instructor :Enrique_Asanza_Izquierdo, :Rafael_Jimenez_Rodriguez, :Ignacio_Gonzalez_Tejada ;
+    sch:courseSchedule :Schedule_43000434 ;
+    guide:hasDidacticResource :Biblio_ANG_1975, :Biblio_Attkinson_1978, :Biblio_Baecher_2003, :Biblio_Cundall_1979, :Biblio_Lade_2005, :Biblio_Schofield_1969, :Biblio_Wong_1974 .
+
+:Enrique_Asanza_Izquierdo a guide:Lecturer ;
+    sch:name "Enrique Asanza Izquierdo" ;
+    sch:email "enrique.asanza@upm.es" ;
+    guide:office "Laboratorio" ;
+    guide:tutorshipsSchedule "L - 15:15 - 17:15, J - 15:15 - 17:15" .
+
+:Rafael_Jimenez_Rodriguez a guide:Lecturer ;
+    sch:name "Rafael Jimenez Rodriguez" ;
+    sch:email "rafael.jimenez@upm.es" ;
+    guide:office "Laboratorio" ;
+    guide:tutorshipsSchedule "M - 09:00 - 14:00" .
+
+:Ignacio_Gonzalez_Tejada a guide:Lecturer ;
+    sch:name "Ignacio Gonzalez Tejada" ;
+    sch:email "ignacio.gtejada@upm.es" ;
+    guide:office "Laboratorio" ;
+    guide:tutorshipsSchedule "M - 09:00 - 12:00, V - 09:00 - 12:00" .
+
+:CB10 a guide:Competency ;
+    guide:competencyCode "CB10" ;
+    guide:competencyDescription "Que los estudiantes posean las habilidades de aprendizaje que les permitan continuar estudiando de un modo que habrá de ser en gran medida autodirigido o autónomo." .
+
+:CB9 a guide:Competency ;
+    guide:competencyCode "CB9" ;
+    guide:competencyDescription "Que los estudiantes sepan comunicar sus conclusiones y los conocimientos y razones últimas que las sustentan a públicos especializados y no especializados de un modo claro y sin ambigüedades" .
+
+:CE8 a guide:Competency ;
+    guide:competencyCode "CE8" ;
+    guide:competencyDescription "Capacidad para la participación en actividades de I+D+i mediante la utilización de recursos de modelización predictiva en Fiabilidad de modelos geotécnicos." .
+
+:CG1 a guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Polivalencia para extender a ámbitos afines las competencias generales adquiridas en el ámbito temático del título." .
+
+:CG4 a guide:Competency ;
+    guide:competencyCode "CG4" ;
+    guide:competencyDescription "Capacidad de comunicación académica de contenido técnico y científico, oral y escrita en lengua inglesa." .
+
+:CT1 a guide:Competency ;
+    guide:competencyCode "CT1" ;
+    guide:competencyDescription "Capacidad de preparar y presentar comunicaciones orales, escritas y gráficas, estructurada y argumentadamente." .
+
+:RA2 a guide:LearningResult ;
+    guide:learningResultCode "RA2" ;
+    guide:learningResultDescription "Presenta comunicaciones orales, escritas y gráficas, estructurada y argumentadamente, en lengua española e inglesa" .
+
+:RA1 a guide:LearningResult ;
+    guide:learningResultCode "RA1" ;
+    guide:learningResultDescription "Utiliza con eficacia, autonomía y polivalencia recursos de modelización predictiva en la temática de la materia" .
+
+:RA3 a guide:LearningResult ;
+    guide:learningResultCode "RA3" ;
+    guide:learningResultDescription "Interioriza los principios de deontología profesional para actividades de I+D+i" .
+
+:RA4 a guide:LearningResult ;
+    guide:learningResultCode "RA4" ;
+    guide:learningResultDescription "Utiliza con eficacia recursos de información y comunicación" .
+
+:Syllabus_43000434 a guide:Syllabus ;
+    guide:hasItem :Topic_1, :Topic_2, :Topic_3, :Topic_4, :Topic_5, :Topic_6 .
+
+:Topic_1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Presentación" .
+
+:Topic_2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Revisión del comportamiento básico del suelo. Teorías de estado crítico." .
+
+:Topic_3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Suelos no saturados" .
+
+:Topic_4 a guide:SyllabusItem ;
+    guide:item_index 4 ;
+    guide:syllabusDescription "Modelos constitutivos" .
+
+:Topic_5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Modelos de partículas" .
+
+:Topic_6 a guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Análisis de fiabilidad" .
+
+:EvalSystem_43000434 a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y evaluación global." ;
+    guide:hasEvaluationTrial :Trial_Progressive, :Trial_Final .
+
+:Trial_Progressive a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "progresiva" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "00:10" ;
+    guide:hasScheduleEvent :Event_Week1 .
+
+:Trial_Final a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "final" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:30" ;
+    guide:hasScheduleEvent :Event_Week17 .
+
+:Schedule_43000434 a guide:Schedule ;
+    sch:eventSchedule :Event_Week1, :Event_Week17 .
+
+:Event_Week1 a guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :Activity_Dummy .
+
+:Activity_Dummy a guide:Activity ;
+    guide:activityDescription "Actividad Dummy para validación de la Guía" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 30.0 ;
+    guide:attendanceType "Presencial" .
+
+:Event_Week17 a guide:ScheduleEvent ;
+    guide:eventIndex 17 ;
+    guide:eventWeek "Semana 17" .
+
+:Biblio_ANG_1975 a guide:DidacticResource ;
+    sch:name "ANG A.H.S y TANG W. (1975)" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Probability concepts in Engineering planning and design. Vol 1. John Wiley and Sons." .
+
+:Biblio_Attkinson_1978 a guide:DidacticResource ;
+    sch:name "Attkinson, J.H. & Bransby, P.L. (1978)" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "The Mechanics of Soils. An Introduction to Critical State Soil Mechanics?. Mc Graw Hill. London, 375 p." .
+
+:Biblio_Baecher_2003 a guide:DidacticResource ;
+    sch:name "BAECHER G y CHRISTIAN J. (2003)" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Reliability and Statistics in Geotechnical Engineering. Wiley." .
+
+:Biblio_Cundall_1979 a guide:DidacticResource ;
+    sch:name "Cundall PA, Strack ODL." ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "A discrete numerical model for granular assemblies. Geotechnique 1979;29(1):47-65." .
+
+:Biblio_Lade_2005 a guide:DidacticResource ;
+    sch:name "Lade, P. (2005)" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Overview of Constitutive Models for Soils. En Soil Constitutive Models. Evaluation, Selection and Calibration. Geotechnical Special Publication No 123. ASCE." .
+
+:Biblio_Schofield_1969 a guide:DidacticResource ;
+    sch:name "Schofield, A.N. & Wroth, C.P. (1969)" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Critical State Soil Mechanics?. Mc Graw Hill. London." .
+
+:Biblio_Wong_1974 a guide:DidacticResource ;
+    sch:name "Wong, K. S. & Duncan, J.M. (1974)" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Hyperbolic stress-strain parameters for nonlinear finite element analyses of stress and movements in soil masses?. Report no. TE 74-3. University of California." .

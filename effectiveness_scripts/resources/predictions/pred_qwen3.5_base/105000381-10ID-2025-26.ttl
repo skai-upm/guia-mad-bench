@@ -1,0 +1,183 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Instance Data Extraction (Course Guide 105000381)
+#################################################################
+
+<guide:CourseGuide_105000381> rdf:type guide:CourseGuide ;
+                                sch:name "Estructura De Computadores"@en ;
+                                dct:title "ANX-PR/CL/001-01 Guía de Aprendizaje"@es ;
+                                guide:numberOfCredits 6.0^^xsd:decimal ;
+                                guide:teachingPeriod "2025-26"^^xsd:string ;
+                                guide:periodStartingMonth "Septiembre"^^rdf:langString ;
+                                guide:periodEndingMonth "Enero"^^rdf:langString ;
+                                sch:inLanguage "Castellano"@en ;
+                                guide:syllabusDescription "Introducción a los computadores, Programación en Ensamblador, Procesador, Aritmética del computador y Periféricos."@es .
+
+<guide:Syllabus_105000381> rdf:type guide:Syllabus ;
+                             sch:courseSchedule <guide:CourseGuide_105000381> ;
+                             guide:hasSyllabus <guide:CourseGuide_105000381> .
+
+<guide:EvaluationSystem_105000381> rdf:type guide:EvaluationSystem ;
+                                    sch:description "Evaluación progresiva y global. Dos partes: teoría (parciales) y proyecto."@es ;
+                                    guide:hasEvaluation <guide:EvaluationTrial_Primer_Parcial>,
+                                                        <guide:EvaluationTrial_Examen_Final>.
+
+<guide:Lecturer_Rafael_Sautua> rdf:type guide:Lecturer ;
+                                sch:name "Rafael Sautua Ruiz"@en ;
+                                guide:office "4107"^^xsd:string ;
+                                sch:email "rafael.sautua@upm.es"^^xsd:string .
+
+<guide:Lecturer_Antonio_Garcia> rdf:type guide:Lecturer ;
+                                 sch:name "Antonio Garcia Dopico"@en ;
+                                 guide:office "4202"^^xsd:string ;
+                                 sch:email "antonio.garcia.dopico@upm.es"^^xsd:string .
+
+<guide:Lecturer_Jose_Luis_Pedraza> rdf:type guide:Lecturer ;
+                                    sch:name "Jose Luis Pedraza Dominguez"@en ;
+                                    guide:office "4105"^^xsd:string ;
+                                    sch:email "joseluis.pedraza@upm.es"^^xsd:string .
+
+<guide:Lecturer_Manuel_Maria_Nieto> rdf:type guide:Lecturer ;
+                                     sch:name "Manuel Maria Nieto Rodriguez"@en ;
+                                     guide:office "4106"^^xsd:string ;
+                                     sch:email "m.nieto@upm.es"^^xsd:string .
+
+<guide:Lecturer_Maria_Luisa_Cordoba> rdf:type guide:Lecturer ;
+                                       sch:name "Maria Luisa Cordoba Cabeza"@en ;
+                                       guide:office "4106"^^xsd:string ;
+                                       sch:email "marialuisa.cordoba@upm.es"^^xsd:string .
+
+<guide:Lecturer_Maria_Isabel_Garcia> rdf:type guide:Lecturer ;
+                                      sch:name "Maria Isabel Garcia Clemente"@en ;
+                                      guide:office "4105"^^xsd:string ;
+                                      sch:email "mariaisabel.garciac@upm.es"^^xsd:string .
+
+<guide:Lecturer_Santiago_Rodriguez> rdf:type guide:Lecturer, guide:DegreeCoordinator ;
+                                     sch:name "Santiago Rodriguez De La Fuente"@en ;
+                                     guide:tutorshipsSchedule "Sin horario. Se debe concertar cita por correo electrónico."@es ;
+                                     sch:email "santiago.rodriguez@upm.es"^^xsd:string .
+
+<guide:Lecturer_Angel_Grover_Perez> rdf:type guide:Lecturer ;
+                                    sch:name "Angel Grover Perez Muñoz"@en ;
+                                    guide:tutorshipsSchedule "Sin horario. Se debe concertar cita por correo electrónico."@es ;
+                                    sch:email "angel.perez.munoz@upm.es"^^xsd:string .
+
+<guide:Degree_10ID> rdf:type guide:BachelorDegree, guide:Degree ;
+                    sch:name "Doble Grado En Ingenieria Informatica Y En Ade"@en ;
+                    guide:degreeCode "10ID"^^xsd:string ;
+                    guide:hasCourse <guide:Course_Estructura_Computadores>.
+
+<guide:UniversityCenter_UPM> rdf:type guide:UniversityCenter, sch:Organization ;
+                             sch:name "E.T.S. de Ingenieros Informáticos"@en .
+
+#################################################################
+#    Competencies and Learning Results
+#################################################################
+
+<guide:Competency_10II-CE05> rdf:type guide:Competency ;
+                              guide:competencyCode "10II-CE05"^^xsd:string ;
+                              sch:description "Capacidad de diseñar y realizar experimentos apropiados, interpretar los datos y extraer conclusiones."@en .
+
+<guide:Competency_10II-CE07> rdf:type guide:Competency ;
+                             guide:competencyCode "10II-CE07"^^xsd:string ;
+                             sch:description "Entender el soporte físico (hardware) de los ordenadores desde el punto del vista del soporte lógico."@es .
+
+<guide:Competency_10II-CG22> rdf:type guide:Competency ;
+                              guide:competencyCode "10II-CG22"^^xsd:string ;
+                              sch:description "Capacidad de aplicar sus conocimientos e intuición para diseñar el hardware/software que cumple unos requisitos especificados."@es .
+
+<guide:LearningResult_RA103> rdf:type guide:LearningResult ;
+                             guide:learningResultCode "RA103"^^xsd:string ;
+                             sch:description "Utilizar eficientemente los recursos básicos del computador mediante el lenguaje nativo del mismo."@en .
+
+#################################################################
+#    Course and Schedule Events
+#################################################################
+
+<guide:Course_Estructura_Computadores> rdf:type guide:Course, sch:CourseInstance ;
+                                        sch:name "105000381 - Estructura De Computadores"@es ;
+                                        guide:syllabus <guide:Syllabus_105000381>,
+                                                  guide:EvaluationSystem_105000381 .
+
+<guide:Schedule_Estructura_Computadores> rdf:type guide:Schedule, sch:CourseInstance ;
+                                          sch:eventSchedule <guide:ScheduleEvent_Semana_1>.
+
+#################################################################
+#    Schedule Events (Sample)
+#################################################################
+
+<guide:ScheduleEvent_Semana_1> rdf:type guide:ScheduleEvent ;
+                               sch:name "Explicación de contenidos teóricos del Tema 1"^^xsd:string ;
+                               guide:eventWeek "Semestre 5, Semana 1"^^rdf:langString ;
+                               om:activityDurationUnit <om:hour>,
+                                         xsd:decimal(4.0) .
+
+<guide:ScheduleEvent_Semana_2> rdf:type guide:ScheduleEvent ;
+                               sch:name "Resolución de problemas del Tema 1 y Explicación teórica Tema 2"^^xsd:string ;
+                               om:activityDurationUnit <om:hour>, xsd:decimal(5.0) .
+
+<guide:EvaluationTrial_Primer_Parcial> rdf:type guide:EvaluationTrial, sch:EventSchedule ;
+                                       sch:name "Realización de primer examen parcial"@es ;
+                                       guide:trialType "Examen Escrito"^^xsd:string ;
+                                       guide:evaluationDuration <om:hour>, xsd:decimal(2.0) .
+
+<guide:EvaluationTrial_Examen_Final> rdf:type guide:EvaluationTrial, sch:EventSchedule ;
+                                      sch:name "Examen final de teoría"@es ;
+                                      guide:trialType "Examen Escrito"^^xsd:string ;
+                                      guide:evaluationDuration <om:hour>, xsd:decimal(4.0) .
+
+#################################################################
+#    Evaluation System Details
+#################################################################
+
+<guide:EvaluationSystem_105000381> rdf:type guide:EvaluationSystem, sch:EventSchedule ;
+                                    sch:description "Evaluación progresiva y global."@es ;
+                                    guide:hasEvaluationTrial <guide:EvaluationTrial_Primer_Parcial>,
+                                                          <guide:EvaluationTrial_Examen_Final>.
+
+<guide:EvaluationTrial_Primer_Parcial> rdf:type guide:EvaluationTrial, sch:EventSchedule ;
+                                        guide:trialType "Examen Escrito"^^xsd:string ;
+                                        guide:evaluationDuration <om:hour>, xsd:decimal(2.0) .
+
+#################################################################
+#    Syllabus Items (Sample)
+#################################################################
+
+<guide:SyllabusItem_Intro_Computadores> rdf:type guide:SyllabusItem, sch:EventSchedule ;
+                                         sch:name "Introducción a los computadores"^^xsd:string ;
+                                         guide:itemIndex 1 .
+
+<guide:SyllabusItem_Programacion_Ensambador> rdf:type guide:SyllabusItem, sch:EventSchedule ;
+                                                sch:name "Programación en Ensamblador"@es ;
+                                                guide:itemIndex 2 .
+
+#################################################################
+#    Didactic Resources (Sample)
+#################################################################
+
+<guide:DidacticResource_Libro_Miguel> rdf:type guide:DidacticResource, sch:BibliographicWork ;
+                                       sch:name "Fundamentos de los computadores"^^xsd:string ;
+                                       guide:bibliographyType "Biblioteca"@es .
+
+<guide:DidacticResource_Web_Pagina> rdf:type guide:DidacticResource, sch:EventSchedule ;
+                                     sch:description "Página web de la asignatura: http://www.datsi.fi.upm.es/docencia/Estructura_09/"^^xsd:string ;
+                                     guide:bibliographyType "Recursos Web"@es .
+
+#################################################################
+#    Links between Entities (Course Guide to Degree, etc.)
+#################################################################
+
+<guide:Degree_10ID> rdf:type guide:BachelorDegree, sch:Organization ;
+                    guide:hasCourse <guide:Course_Estructura_Computadores>.
+
+<guide:Lecturer_Santiago_Rodriguez> rdf:type guide:Lecturer, sch:EventSchedule ;
+                                     sch:name "Santiago Rodriguez De La Fuente"@en ;
+                                     guide:syllabusDescription "Coordinador/a de la asignatura."@es .

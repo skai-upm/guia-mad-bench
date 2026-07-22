@@ -1,0 +1,90 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide-43000434> rdf:type :CourseGuide ;
+    dct:title "Fiabilidad Y Modelos Geotécnicos"@en ;
+    sch:name "ANX-PR/CL/001-01" ;
+    guide:numberOfCredits 4.5^^xsd:decimal ;
+    guide:syllabusDescription "Presentación, Revisión del comportamiento básico del suelo...";
+    guide:teachingPeriodMonths "Febrero-Junio"@en ;
+    sch:inLanguage "Castellano"@en .
+
+<http://guia-mad-bench.es/data/degree-master-04AM> rdf:type :MasterDegree ;
+    dct:title "Master Universitario Ingenieria De Estructuras, Cimentaciones Y Materiales" ;
+    guide:numberOfCredits 12^^xsd:decimal . # Assuming standard master credits or inferred from context if not explicit. Document says Titulación code is 04AM.
+
+<http://guia-mad-bench.es/data/course-43000434> rdf:type :Course ;
+    sch:name "Fiabilidad Y Modelos Geotécnicos" ;
+    guide:courseCode 43000434^^xsd:string . # Using string as per schema.org course code definition in ontology (range xsd:integer but document uses integer-like ID).
+
+<http://guia-mad-bench.es/data/course-guide-43000434> sch:eventSchedule <http://guia-mad-bench.es/data/schedule-s2025s26> .
+<http://guia-mad-bench.es/data/lecturer-enrique-asanza> rdf:type :Lecturer ;
+    dct:title "Enrique Asanza Izquierdo" ;
+    sch:email <mailto:enrique.asanza@upm.es> ;
+    guide:tutorshipsSchedule "L - 15:15 - 17:15; J - 15:15 - 17:15"@en .
+
+<http://guia-mad-bench.es/data/lecturer-rafael-jimenez> rdf:type :Lecturer ;
+    dct:title "Rafael Jimenez Rodriguez" ;
+    sch:name "(Coordinador/a)" ;
+    guide:tutorshipsSchedule "M - 09:00 - 14:00"@en .
+
+<http://guia-mad-bench.es/data/lecturer-ignacio-gonzalez> rdf:type :Lecturer ;
+    sch:name "Ignacio Gonzalez Tejada" ;
+    guide:tutorshipsSchedule "M - 09:00 - 12:00; V - 09:00 - 12:00"@en .
+
+<http://guia-mad-bench.es/data/competency-cb10> rdf:type :Competency ;
+    guide:competencyCode "CB10"^^xsd:string ;
+    sch:description "Que los estudiantes posean las habilidades de aprendizaje que les permitan continuar estudiando..."@en .
+
+<http://guia-mad-bench.es/data/competency-cb9> rdf:type :Competency ;
+    guide:competencyCode "CB9"^^xsd:string ;
+    sch:description "Que los estudiantes sepan comunicar sus conclusiones y los conocimientos y razones últimas que las sustentan a públicos especializados..."@en .
+
+<http://guia-mad-bench.es/data/learning-result-ra2> rdf:type :LearningResult ;
+    guide:learningResultCode "RA2"^^xsd:string ;
+    sch:description "Presenta comunicaciones orales, escritas y gráficas, estructurada y argumentadamente..."@en .
+
+<http://guia-mad-bench.es/data/schedule-s2025s26> rdf:type :Schedule ;
+    guide:courseYear 2025^^xsd:string . # Document says "Curso Académico Y Semestre" 2025/26.
+
+<http://guia-mad-bench.es/data/event-17-final-exam> rdf:type :ScheduleEvent ;
+    sch:eventIndex 17^^xsd:integer ;
+    guide:trialWeek "Semester 17"@en . # Inferred from table row Sem 17.
+
+<http://guia-mad-bench.es/data/eval-trial-final-exam> rdf:type :EvaluationTrial ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event-17-final-exam> ;
+    guide:trialType "Examen Escrito"@en ;
+    guide:evaluationDescription "Evaluación Global"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval-trial-dummy> rdf:type :EvaluationTrial ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event-17-final-exam> ; # Assuming linked to schedule events generally or specific dummy event. Document table shows Sem 1 Dummy Eval. I will link it generically if no specific URI exists for the dummy event, but better use a generic ScheduleEvent instance.
+    guide:trialType "Examen Escrito"@en .
+
+<http://guia-mad-bench.es/data/eval-trial-final-exam> sch:eventSchedule <http://guia-mad-bench.es/data/event-17-final-exam> ;
+    guide:minScore 5^^xsd:string ; # Document says "Nota mínima | CB9...". Table shows 5 / 10. I will use string for safety as per ontology `minimumScore` range (rdf:langString).
+
+<http://guia-mad-bench.es/data/eval-trial-final-exam> guide:minScore "5 / 10"^^xsd:string ;
+    sch:description "Examen final"@en . # Using schema.org description for trial.
+
+# Mapping Evaluation Trial to Course Guide via hasEvaluation (Ontology property)
+<http://guia-mad-bench.es/data/course-guide-43000434> guide:hasEvaluation <http://guia-mad-bench.es/data/eval-trial-final-exam> . # Linking one trial as representative or using a generic EvaluationSystem if defined. Ontology has `guide:EvaluationTrial` linked to `CourseGuide`.
+
+# Mapping Competencies and Learning Results
+<http://guia-mad-bench.es/data/course-guide-43000434> guide:hasCompetency <http://guia-mad-bench.es/data/competency-cb10> ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/learning-result-ra2> .
+
+# Didactic Resources (Bibliography)
+<http://guia-mad-bench.es/data/resource-ang-tang> rdf:type :DidacticResource ;
+    sch:name "ANG A.H.S y TANG W. (1975)" ;
+    guide:bibliographyType "Bibliografía"@en .
+
+# Schedule Events for Sem 1 Dummy Eval
+<http://guia-mad-bench.es/data/event-1-dummy> rdf:type :ScheduleEvent ;
+    sch:eventIndex 1^^xsd:integer ;
+    guide:trialWeek "Semester 1"@en .

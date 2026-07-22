@@ -1,0 +1,241 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> rdf:type :CourseGuide ;
+    sch:name "Modelado De Sistemas Biomédicos"@en ,
+        "93000965 - Modelado de Sistemas Biomédicos"@es ;
+    dct:title "Guía de Aprendizje 2025/26"@en ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course/master-ingenieria-biomedica> ;
+    sch:numberOfCredits "3"^^xsd:decimal ;
+    guide:courseYear "2025"^^xsd:integer ;
+    guide:syllabusDescription "Modelado de Sistemas Biomédicos - Temario 1S_2025-26"@en ;
+    dct:description "Introduction to the mathematical modelling of physiological systems. Model construction, Mathematical modelling techniques (Compartmental, data-driven), Applications."@es .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus/modelado-sistemas-biomedicos> ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/93000965_2025-26> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluation/modelado-sistemas-biomedicos-system> ;
+    sch:description "Evaluación progresiva y global con trabajos prácticos, presentaciones y examen escrito."@es .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasDidacticResource <http://guia-mad-bench.es/data/resource/matlab>,
+    <http://guia-mad-bench.es/data/resource/cobelli-modeling>;
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasLearningResult <http://guia-mad-bench.es/data/learningresult/RA13>,
+    <http://guia-mad-bench.es/data/learningresult/RA14>;
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasCompetency <http://guia-mad-bench.es/data/competency/CB06>,
+    <http://guia-mad-bench.es/data/competency/CG-MIB11>;
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> sch:teachingPeriodMonths "Septiembre-Enero"@en ;
+    guide:periodStartingMonth "Septiembre"^^xsd:string .
+
+#################################################################
+# Degree Instance
+#################################################################
+
+<http://guia-mad-bench.es/data/course/master-ingenieria-biomedica> rdf:type :MasterDegree, sch:CourseInstance ;
+    dct:title "09AU - Master Universitario En Ingenieria Biomedica"@en ;
+    guide:degreeCode "09AU"^^xsd:string .
+
+#################################################################
+# University Center Instance (E.T.S. de Ingenieros de Telecomunicacion)
+#################################################################
+
+<http://guia-mad-bench.es/data/center/upm-ets-tel> rdf:type sch:Organization ;
+    dct:title "09 - E.T.S. De Ingenieros De Telecomunicacion"@en .
+
+#################################################################
+# Lecturers Instances
+#################################################################
+
+<gema-garcia-saez> rdf:type :Lecturer, sch:Person ;
+    sch:name "Gema Garcia Saez"^^xsd:string ;
+    guide:office "B-317"^^xsd:string ;
+    sch:email <mailto:gema.garcia.saez@upm.es> .
+
+<maria-elena-hernando-perez> rdf:type :Lecturer, sch:Person ;
+    sch:name "Maria Elena Hernando Perez"@en ,
+        "(Coordinador/a)"^^xsd:string ;
+    guide:office "B-316"^^xsd:string ;
+    sch:email <mailto:mariaelena.hernando@upm.es> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> sch:director gema-garcia-saez, maria-elena-hernando-perez ;
+    guide:sch:name "Modelado De Sistemas Biomédicos"@en ,
+        "93000965 - Modelado de Sistemas Biomédicos"@es .
+
+#################################################################
+# Syllabus Instance
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/modelado-sistemas-biomedicos> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/learningresult/item1>,
+        <http://guia-mad-bench.es/data/learningresult/item2>;
+
+#################################################################
+# Syllabus Items Instances (from Section 4.2)
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/modelado-sistemas-biomedicos> guide:hasItem <http://guia-mad-bench.es/data/learningresult/item1>;
+    rdf:type :Syllabus ;
+    guide:itemIndex "1"^^xsd:integer .
+
+<http://guia-mad-bench.es/data/syllabus/modelado-sistemas-biomedicos> guide:hasItem <http://guia-mad-bench.es/data/learningresult/item2>;
+    rdf:type :Syllabus ;
+    guide:itemIndex "2"^^xsd:integer .
+
+<http://guia-mad-bench.es/data/syllabus/modelado-sistemas-biomedicos> guide:hasItem <http://guia-mad-bench.es/data/learningresult/item3>;
+    rdf:type :Syllabus ;
+    guide:itemIndex "3"^^xsd:integer .
+
+<http://guia-mad-bench.es/data/syllabus/modelado-sistemas-biomedicos> guide:hasItem <http://guia-mad-bench.es/data/learningresult/item4>;
+    rdf:type :Syllabus ;
+    guide:itemIndex "4"^^xsd:integer .
+
+<http://guia-mad-bench.es/data/syllabus/modelado-sistemas-biomedicos> guide:hasItem <http://guia-mad-bench.es/data/learningresult/item5>;
+    rdf:type :Syllabus ;
+    guide:itemIndex "5"^^xsd:integer .
+
+<http://guia-mad-bench.es/data/syllabus/modelado-sistemas-biomedicos> guide:hasItem <http://guia-mad-bench.es/data/learningresult/item6>;
+    rdf:type :Syllabus ;
+    guide:itemIndex "6"^^xsd:integer .
+
+#################################################################
+# Syllabus Items (Content)
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/modelado-sistemas-biomedicos> guide:syllabusDescription "1. Introduction to the modelling of physiological systems"@en ;
+    rdf:type :SyllabusItem .
+
+<http://guia-mad-bench.es/data/learningresult/item2> guide:hasLearningResult <http://guia-mad-bench.es/data/syllabus/modelado-sistemas-biomedicos>;
+    rdf:type :Syllabus ;
+    guide:syllabusDescription "Model construction"@en .
+
+<http://guia-mad-bench.es/data/learningresult/item3> guide:hasLearningResult <http://guia-mad-bench.es/data/syllabus/modelado-sistemas-biomedicos>;
+    rdf:type :Syllabus ;
+    guide:syllabusDescription "Mathematical modelling techniques"@en .
+
+<http://guia-mad-bench.es/data/learningresult/item4> guide:hasLearningResult <http://guia-mad-bench.es/data/syllabus/modelado-sistemas-biomedicos>;
+    rdf:type :Syllabus ;
+    guide:syllabusDescription "Compartmental modelling"@en .
+
+<http://guia-mad-bench.es/data/learningresult/item5> guide:hasLearningResult <http://guia-mad-bench.es/data/syllabus/modelado-sistemas-biomedicos>;
+    rdf:type :Syllabus ;
+    guide:syllabusDescription "Applications"@en .
+
+#################################################################
+# Schedule Instance (from Section 5)
+#################################################################
+
+<http://guia-mad-bench.es/data/schedule/93000965_2025-26> rdf:type :Schedule ;
+    sch:courseCode <http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01>;
+
+#################################################################
+# Schedule Events Instances (from Section 5)
+#################################################################
+
+<event-week-1> rdf:type :ScheduleEvent, sch:Event;
+    guide:eventIndex "1"^^xsd:integer ;
+    guide:scheduleDescription "Course presentation. Introduction to modelling"@en .
+
+<http://guia-mad-bench.es/data/schedule/93000965_2025-26> sch:eventSchedule <event-week-1>;
+    rdf:type :Syllabus ;
+    guide:syllabusDescription "Model construction"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/93000965_2025-26> sch:eventSchedule <event-week-1>;
+    rdf:type :Syllabus ;
+    guide:syllabusDescription "Model construction"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/93000965_2025-26> sch:eventSchedule <event-week-1>;
+    rdf:type :Syllabus ;
+    guide:syllabusDescription "Model construction"^^xsd:string .
+
+#################################################################
+# Activities Instances (from Section 5)
+#################################################################
+
+<activity-lec-magistral-wk1> rdf:type :Activity, sch:CourseInstance;
+    guide:hasScheduleEvent <event-week-1>;
+    guide:activityDescription "Introduction to modelling"@en ;
+    guide:activityDurationUnit om:Hour .
+
+<http://guia-mad-bench.es/data/schedule/93000965_2025-26> sch:eventSchedule <event-week-1>;
+    rdf:type :Syllabus ;
+    guide:syllabusDescription "Model construction"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/93000965_2025-26> sch:eventSchedule <event-week-1>;
+    rdf:type :Syllabus ;
+    guide:syllabusDescription "Model construction"^^xsd:string .
+
+#################################################################
+# Evaluation System Instance (from Section 6)
+#################################################################
+
+<http://guia-mad-bench.es/data/evaluation/modelado-sistemas-biomedicos-system> rdf:type :EvaluationSystem;
+    sch:description "Evaluación progresiva y global con trabajos prácticos, presentaciones y examen escrito."@es ;
+    guide:evaluationDescription "La evaluación consta de una parte progresiva (prácticas) y una prueba final. Se penaliza la entrega tardía en un 15% del valor total."^^xsd:string .
+
+#################################################################
+# Evaluation Trials Instances (from Section 6)
+#################################################################
+
+<trial-progresiva> rdf:type :EvaluationTrial;
+    guide:hasScheduleEvent <event-week-2>;
+    sch:name "Practical results"@en ;
+    guide:evaluationType "Progresiva"^^xsd:string .
+
+<trial-global-exam> rdf:type :EvaluationTrial;
+    guide:hasScheduleEvent <event-week-17>;
+    sch:name "Exam"@en ;
+    guide:trialType "Examen Escrito"^^xsd:string ;
+    guide:gradePercentage "20%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluation/modelado-sistemas-biomedicos-system> guide:hasEvaluationTrial <trial-progresiva>, <trial-global-exam>;
+    rdf:type :Syllabus ;
+    guide:syllabusDescription "Model construction"^^xsd:string .
+
+#################################################################
+# Competencies Instances (from Section 3)
+#################################################################
+
+<cb06> rdf:type :Competency;
+    guide:competencyCode "CB06"^^xsd:string ;
+    guide:competencyDescription "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales en el desarrollo"@es .
+
+<cg-mib11> rdf:type :Competency;
+    guide:competencyCode "CG-MIB11"^^xsd:string ;
+    guide:competencyDescription "Seleccionar y aplicar métodos avanzados de modelado para el diseño y simulación de sistemas biomédicos."@es .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasCompetency <cb06>, <cg-mib11>;
+    rdf:type :Syllabus ;
+    guide:syllabusDescription "Model construction"^^xsd:string .
+
+#################################################################
+# Learning Results Instances (from Section 3)
+#################################################################
+
+<ra15> rdf:type :LearningResult;
+    guide:learningResultCode "RA15"^^xsd:string ;
+    guide:learningResultDescription "Aplicar los fundamentos del modelado matemático de sistemas fisiológicos, siendo capaz de expresar las ecuaciones que rigen los fenómenos físicos y químicos más sencillos."@es .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasLearningResult <ra15>;
+    rdf:type :Syllabus ;
+    guide:syllabusDescription "Model construction"^^xsd:string .
+
+#################################################################
+# Didactic Resources Instances (from Section 7)
+#################################################################
+
+<resource-cobelli-modeling> rdf:type :DidacticResource;
+    sch:name "Introduction to Modeling in Physiology and Medicine. C Cobelli, ER Carson"@en ;
+    guide:bibliographyTitle "Cobelli & Carson - Introduction to Modeling"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> guide:hasDidacticResource <resource-cobelli-modeling>;
+    rdf:type :Syllabus ;
+    guide:syllabusDescription "Model construction"^^xsd:string .

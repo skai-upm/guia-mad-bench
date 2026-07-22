@@ -1,0 +1,214 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+
+# Course Guide Instance
+:ga_05iq_55001039_1s_2025_26 a guide:CourseGuide ;
+    sch:name "GA_05IQ_55001039 1S_202	5-26" ;
+    sch:description "Guía de Aprendizaje - Ingenieria Procesos Y Productos" ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:numberOfCredits 4.5 ;
+    guide:totalHours "106.5 to 118.5" ; # Calculated based on ECTS * 26/27
+    sch:activitiesWorkload "Entre 26 y 27 horas de trabajo presencial y no presencial por cada crédito ECTS" ;
+    guide:hasSyllabus :syllabus_ingenieria_procesos ;
+    guide:hasEvaluation :eval_system_ingenieria_procesos ;
+    guide:hasLearningResult :ra190, :ra193, :ra194, :ra191, :ra192, :ra302, :ra301, :ra303, :ra300, :ra189 ;
+    guide:hasCompetency :ce_15, :ce_19, :ce_20, :ce_23_etsii, :cg_1, :cg_2, :cg_3, :cg_4, :cg_6 ;
+    guide:hasDidacticResource :res_notas_clase, :res_dimian, :res_cussler, :res_seider, :res_towler, :res_smith ;
+    sch:courseSchedule :schedule_ingenieria_procesos ;
+    sch:instructor :maria_gonzalez_miquel, :francisco_ismael_diaz_moreno .
+
+# Course Instance
+:ingenieria_procesos_y_productos a guide:Course ;
+    sch:name "55001039 - Ingenieria Procesos Y Productos" ;
+    sch:courseCode 55001039 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Séptimo semestre" ;
+    sch:hasCourseInstance :ga_05iq_55001039_1s_2025_26 .
+
+# Degree Instance
+:grado_en_ingenieria_quimica a guide:BachelorDegree ;
+    sch:name "05IQ - Grado En Ingeniería Química" ;
+    guide:degreeCode "05IQ" ;
+    guide:hasCourse :ingenieria_procesos_y_productos .
+
+# University Center Instance
+:ets_de_ingenieros_industriales a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Industriales" ;
+    guide:offers :grado_en_ingenieria_quimica .
+
+# Lecturers
+:maria_gonzalez_miquel a guide:Lecturer ;
+    sch:name "Maria Gonzalez Miquel" ;
+    sch:email "maria.gonzalezmiquel@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. Escribir a la profesora para concertar tutoría." .
+
+:francisco_ismael_diaz_moreno a guide:Lecturer ;
+    sch:name "Francisco Ismael Diaz Moreno" ;
+    sch:email "ismael.diaz@upm.es" ;
+    guide:office "Lab Tec Quimica" ;
+    guide:tutorshipsSchedule "Sin horario. Escribir al profesor para concertar tutoría." .
+
+# Prerequisites (Required Knowledge)
+:req_knowledge_ingenieria_procesos a guide:RequiredKnowledge ;
+    guide:previousCourses "Operaciones De Separacion I, Reactores Quimicos, Principios De Procesos Quimicos, Operaciones De Separacion Ii" .
+
+# Competencies
+:ce_15 a guide:Competency ; guide:competencyCode "CE 15" ; guide:competencyDescription "Conocimientos básicos de los sistemas de producción y fabricación industrial" .
+:ce_19 a guide:Competency ; guide:competencyCode "CE 19" ; guide:competencyDescription "Conocimientos sobre balances de materia y energía, biotecnología, transferencia de materia, operaciones de separación, ingeniería de la reacción química, diseño de reactores, y valoración y transformación de materias primas y recursos energéticos" .
+:ce_20 a guide:Competency ; guide:competencyCode "CE 20" ; guide:competencyDescription "Capacidad para el análisis, diseño, simulación y optimización de procesos y productos" .
+:ce_23_etsii a guide:Competency ; guide:competencyCode "CE 23 (ETSII)" ; guide:competencyDescription "Conocimiento de los procesos disponibles para la obtención de productos" .
+:cg_1 a guide:Competency ; guide:competencyCode "CG 1" ; guide:competencyDescription "Conocer y aplicar los conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Industria" .
+:cg_2 a guide:Competency ; guide:competencyCode "CG 2" ; guide:competencyDescription "Poseer la capacidad para diseñar, desarrollar, implementar, gestionar y mejorar productos, sistemas y procesos..." .
+:cg_3 a guide:Competency ; guide:competencyCode "CG 3" ; guide:competencyDescription "Aplicar los conocimientos adquiridos para identificar, formular y resolver problemas en contextos amplios..." .
+:cg_4 a guide:Competency ; guide:competencyCode "CG 4" ; guide:competencyDescription "Comprender el impacto de la$\\text{ingeniería}$ en el medio ambiente, el desarrollo sostenible..." .
+:cg_6 a guide:Competency ; guide:competencyCode "CG 6" ; guide:competencyDescription "Poseer las habilidades de aprendizaje que permitan continuar estudiando a lo largo de toda la vida..." .
+
+# Learning Results
+:ra190 a guide:LearningResult ; guide:learningResultCode "RA190" ; guide:learningResultDescription "El alumno será capaz de escoger los algoritmos apropiados e implementarlos para la simulación de los modelos." .
+:ra193 a guide:LearningResult ; guide:learningResultCode "RA193" ; guide:learningResultDescription "El alumno será capaz de formular un problema genérico de optimización y realizar la resolución y análisis de casos particulares como optimización lineal." .
+:ra194 a guide:LearningResult ; guide:rag_learningResultCode "RA194" ; guide:learningResultDescription "El alumno será capaz de realizar un diseño preliminar de un proceso químico" .
+:ra191 a guide:LearningResult ; guide:learningResultCode "RA191" ; guide:learningResultDescription "El alumno conocerá y será capaz de trabajar con simuladores comerciales" .
+:ra192 a guide:LearningResult ; guide:learningResultCode "RA192" ; guide:learningResultDescription "El alumno será capaz de emplear herramientas de simulación para estudiar y analizar un proceso (o unidad de operación)" .
+:ra302 a guide:LearningResult ; guide:learningResultCode "RA302" ; guide:learningResultDescription "Capacidad de proyecto utilizando algún conocimiento de vanguardia de su especialidad de ingeniería." .
+:ra301 a guide:LearningResult ; guide:learningResultCode "RA301" ; guide:learningResultDescription "Capacidad para proyectar, diseñar y desarrollar productos complejos..." .
+:ra303 a guide:LearningResult ; guide:learningResultCode "RA303" ; guide:learningResultDescription "Ideas generales sobre cuestiones económicas, de organización y de gestión..." .
+:ra300 a guide:LearningResult ; guide:learningResultCode "RA300" ; guide:learningResultDescription "Conocimiento y comprensión de las disciplinas de ingeniería propias de su especialidad..." .
+:ra189 a guide:LearningResult ; guide:learningResultCode "RA189" ; guide:learningResultDescription "El alumno será capaz de desarrollar modelos de unidades de proceso y procesos de$\\text{ingeniería}$ química basados en ecuaciones y principios físicos." .
+
+# Syllabus
+:syllabus_ingenieria_procesos a guide:Syllabus ;
+    guide:hasItem :item_1, :item_2, :item_3, :item_4, :item_5, :item_6 .
+
+:item_1 a guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "Introducción. Diagramas de proceso" .
+:item_2 a guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "Simulación estacionaria" .
+:item_3 a guide:SyllabusItem ; guide:itemIndex 3 ; guide:syllabusDescription "Diseño de procesos." .
+:item_4 a guide:SyllabusItem ; guide:itemIndex 4 ; guide:syllabusDescription "Dimensionamiento y costes." .
+:item_5 a guide:SyllabusItem ; guide:itemIndex 5 ; guide:syllabusDescription "Evaluación económica" .
+:item_6 a guide:SyllabusItem ; guide:itemIndex 6 ; guide:syllabusDescription "Diseño de productos" .
+
+# Evaluation System and Trials
+:eval_system_ingenieria_procesos a guide:EvaluationSystem ;
+    guide:evaluationDescription "La nota final tiene distintas contribuciones: Proyecto Diseño Procesos (3 subentregas), Proyecto Diseño Productos, Presentación Proyectos y Examen Te……” ;
+    guide:hasEvaluationTrial :trial_week_5, :trial_week_9, :trial_week_13, :trial_week_14, :trial_week_15, :trial_week_16, :trial_global_17 .
+
+:trial_week_5 a guide:EvaluationTrial ;
+    guide:trialType "Entrega Proyecto Diseño de Procesos (Síntesis del proceso)" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "15%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "Semana 5" ;
+    guide:involvesCompetency :cg_1, :cg_3, :cg_6, :ce_15, :ce_19, :ce_23_etsii .
+
+:trial_week_9 a guide:EvaluationTrial ;
+    guide:trialType "Entrega Proyecto Diseño de Procesos (Simulación del proceso)" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "15%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "Semana 9" ;
+    guide:involvesCompetency :cg_1, :cg_2, :cg_3, :cg_6, :ce_15, :ce_19, :ce_20, :ce_23_etsii .
+
+:trial_week_13 a guide:EvaluationTrial ;
+    guide:trialType "Entrega Proyecto Diseño de Proceso (Evaluación económica)" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "15%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "Semana 13" ;
+    guide:involvesCompetency :cg_1, :cg_2, :cg_3, :cg_4, :cg_6, :ce_19, :ce_20 .
+
+:trial_week_14 a guide:EvaluationTrial ;
+    guide:trialType "Presentación Proyectos de Diseño" ;
+    guide:evaluationType "Evaluación Progrersiva" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "Semana 14" ;
+    guide:involvesCompetency :cg_1, :cg_3, :ce_15, :ce_19, :ce_20, :ce_23_etsii .
+
+:trial_week_15 a guide:EvaluationTrial ;
+    guide:trialType "Examen Teórico-Práctico" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "Semana 15" ;
+    guide:involvesCompetency :cg_1, :ce_20 .
+
+:trial_week_16 a guide:EvaluationTrial ;
+    guide:trialType "Entrega Proyecto Diseño de Productos" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "15%" ;
+    guide:minimum\_score "5 / 10" ;
+    guide:trialWeek "Semana 16" ;
+    guide:involvesCompetency :cg_2, :cg_3, :cg_6, :ce_23_etsii .
+
+:trial_global_17 a guide:EvaluationTrial ;
+    guide:trialType "Examen Teórico-Práctico" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "Semana 17" ;
+    guide:involvesCompetency :cg_1, :ce_20 .
+
+# Schedule
+:schedule_ingenieria_procesos a guide:Schedule ;
+    sch:eventSchedule :event_week_1, :event_week_5, :event_week_9, :event_week_13, :event_week_14, :event_week_15, :event_week_16, :event_week_17 .
+
+:event_week_1 a guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_leccion_magistral_1 .
+
+:act_leccion_magistral_1 a guide:Activity ;
+    guide:activityDescription "Introducción. Diagramas de proceso" ;
+    guide:activityDuration 3.25 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:event_week_5 a guide:ScheduleEvent ;
+    guide:eventIndex 5 ;
+    guide:eventWeek "Semana 5" ;
+    guide:hasActivity :act_entrega_proyecto_5 .
+
+:act_entrega_proyecto_5 a guide:Activity ;
+    guide:activityDescription "Entrega Proyecto Diseño de Procesos (Síntesis del proceso)" ;
+    guide:activityDuration 0.0 ;
+    guide:activityFormat "Trabajo en Grupo" ;
+    guide:attendanceType "No presencial" .
+
+# Didactic Resources
+:res_notas_clase a guide:DidacticResource ;
+    sch:name "Notas de clase" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Transparencias y ejemplos de la asignatura" .
+
+:res_dimian a guide:DidacticResource ;
+    sch:name "Diseño de procesos" ;
+\_guide:bibliographyTitle "Integrated design and simulation of chemical processes. Computer-aided chemical engineering, 2003, Elsevier." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_cussler a guide:DidacticResource ;
+    sch:name "Diseño de productos" ;
+    guide:bibliographyTitle "Cussler and Moggridge. Chemical Product Design (2nd ed.), 2011, Cambridge." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_seider a guide:DidacticResource ;
+    sch:name "Diseño de procesos y productos" ;
+    guide:bibliographyTitle "Seider W.D., Seader J. D., Lewin D.R., Widagdo S. Product and Process Design Principles: Synthesis, Analysis and Design (3rd ed.) 2010, Wiley." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_towler a guide:DidacticResource ;
+    sch:name "Diseño y evaluación económica de procesos" ;
+    guide:bibliographyTitle "Towler G. and Sinnott R. Chemical Engineering Design: Principles, Practice and Economics of Plant and Process Design (2nd ed.), 2012, Butterworth-Heineman." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_smith a guide:DidacticResource ;
+    sch:name "Diseño e integración de procesos" ;
+    guide:bibliographyTitle "Smith R. Chemical Process: Design and Integration (2nd ed.), 2016, Wiley." ;
+    guide:bibliographyType "Bibliografía" .

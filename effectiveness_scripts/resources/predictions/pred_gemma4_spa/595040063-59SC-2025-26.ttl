@@ -1,0 +1,173 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Instance and Guide
+:course_595040063 a guide:Course ;
+    sch:name "Programación De Clientes Web Ligeros" ;
+    guide:courseCode 595040063 ;
+    guide:courseType "Optativa" ;
+    sch:numberOfCredits 6.0 ;
+    guide:semester "Sexto semestre" .
+
+:guide_595040063 a guide:CourseGuide ;
+    sch:courseInstance :course_595040063 ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:instructor :lecturer_vicente, :lecturer_carlos ;
+    sch:director :lecturer_vicente ;
+    guide:hasSyllabus :syllabus_595040063 ;
+    guide:hasCompetency :comp_CE_B2, :comp_CE_SC01 ;
+    guide:hasLearningResult :lr_RA1239, :lr_RA1240, :lr_RA1238, :lr_RA1241, :lr_RA1242 ;
+    guide:hasEvaluation :eval_system_progresiva ;
+    guide:hasDidacticResource :res_apuntes, :res_web, :res_equip_lab, :res_equip_pc, :res_book_fullstack, :res_book_webprog, :res_book_architecture, :res_book_jquery ;
+    guide:otherInformation "Esta asignatura puede contribuir a los Objetivos de Desarrollo Sostenible (ODS) 4 y 9 de Naciones Unidas." .
+
+# Degree and University Center
+:degree_59SC a guide:Degree ;
+    sch:name "Grado En Ingenieria De Sistemas De Telecomunicacion" ;
+    guide:degreeCode "59SC" ;
+    guide:hasCourse :course_595040063 .
+
+:center_59 a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Sist. De Telecom." ;
+    guide:offers :degree_59SC .
+
+# Lecturers
+:lecturer_vicente a guide:Lecturer ;
+    sch:name "Vicente Hernandez Diaz" ;
+    sch:email "vicente.hernamente@upm.es" ;
+    guide:office "A4412" ;
+    guide:tutorshipsSchedule "Sin horario. A determinar" .
+
+:lecturer_carlos a guide:Lecturer ;
+    sch:name "Carlos Carrillo Sanchez" ;
+    sch:email "carlos.carrillo@upm.es" ;
+    guide:office "A4401" ;
+    guide:tutorshipsSchedule "Sin horario. A determinar" .
+
+# Competencies
+:comp_CE_B2 a guide:Competency ;
+    guide:competencyCode "CE B2" ;
+    guide:competencyDescription "Conocimientos básicos sobre el uso y programación de los ordenadores, sistemas operativos, bases de datos y programas informáticos con aplicación en ingeniería." .
+
+:comp_CE_SC01 a guide:Competency ;
+    guide:competencyCode "CE SC01" ;
+    guide:competencyDescription "Capacidad para construir, explotar y gestionar las redes, servicios, procesos y aplicaciones de telecomunicaciones..." .
+
+# Learning Results
+:lr_RA1239 a guide:LearningResult ;
+    guide:learningResultCode "RA1239" ;
+    guide:learningResultDescription "Identificar, comprender y aplicar la sintaxis y semántica de lenguajes para el desarrollo de aplicaciones web actuales" .
+
+:lr_RA1240 a guide:LearningResult ;
+    guide:learningResultCode "RA1240" ;
+    guide:learningResultDescription "Utiliza entornos y herramientas de desarrollo para la programación de aplicaciones con interfaces en línea de comandos e interfaces gráficas" .
+
+:lr_RA1238 a guide:LearningResult ;
+    guide:learningResultCode "RA1238" ;
+    guide:learningResultDescription "Implementa, prueba y verifica soluciones atendiendo a criterios de eficacia, legibilidad y documentación" .
+
+:lr_RA1241 a guide:LearningResult ;
+    guide:learningResultCode "RA1241" ;
+    guide:learningResultDescription "Desarrolla soluciones con tecnologías Web" .
+
+:lr_RA1242 a guide:LearningResult ;
+    guide:learningResultCode "RA1242" ;
+    guide:learningResultDescription "Utilizar adecuadamente los entornos de desarrollo con herramientas de libre distribución." .
+
+# Syllabus and Items
+:syllabus_595040063 a guide:Syllabus ;
+    guide:hasItem :item_topic1, :item_topic2, :item_topic3, :item_topic4, :item_topic5 .
+
+:item_topic1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a la asignatura" .
+
+:item_topic2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Arquitectura de la WEB (Introducción, Modelo cliente-servidor, URL y HTTP)" .
+
+:item_topic3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Tecnologías WEB básicas (Diseño de páginas WEB: HTML, CSS; JavaScript)" .
+
+:item_topic4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Tecnologías WEB avanzadas (jQuery, Single Page Applications, Mapas interactivos)" .
+
+:item_topic5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Temas avanzados (Terminales móviles: aplicaciones híbridas y nativas; React)" .
+
+# Evaluation System and Trials
+:eval_system_progresiva a guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación progresiva con tres actividades de evaluación." ;
+    guide:hasEvaluationTrial :trial_exam1, :trial_exam2, :trial_prac3 .
+
+:trial_exam1 a guide:EvaluationTrial ;
+    sch:name "Examen Primer Parcial" ;
+    guide:evaluationType "Examen Escrito" ;
+
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:eventWeek "8" ;
+    guide:evaluationDuration "02:00" .
+
+:trial_exam2 a guide:EvaluationTrial ;
+    sch:name "Examen Segundo Parcial" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:eventWeek "17" ;
+    guide:evaluationDuration "01:45" .
+
+:trial_prac3 a guide:EvaluationTrial ;
+    sch:name "Evaluación Práctica 3" ;
+    guide:evaluationType "Examen de Prácticas" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:eventWeek "13" ;
+    guide:evaluationDuration "02:00" .
+
+# Activities (Schedule Events)
+:act_leccion_magistral_1 a guide:Activity ;
+    guide:activityDescription "Tema 1. Introducción a la asignatura" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+:act_practica_1 a guide:Activity ;
+    guide:activityDescription "Práctica 1. Familiarización con entorno de trabajo" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Prácticas de Laboratorio" .
+
+# Didactic Resources
+:res_apuntes a guide:DidacticResource ;
+    sch:name "Apuntes de la asignatura" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Diapositivas disponibles en la sede Moodle de la asignatura" .
+
+:res_web a guide:DidacticResource ;
+    sch:name "Documentación disponible en Internet" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "https://developer.mozilla.org, https://www.w3schools.com, etc." .
+
+:res_equip_lab a guide:DidacticResource ;
+    sch:name "Laboratorio con acceso a Internet" ;
+    guide:bibliographyType "Equipamiento" .
+
+:res_book_fullstack a guide:DidacticResource ;
+    sch:name "The Full Stack Web Development" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Autor: Eduonix. Vídeo publicado por Packt Publishing 2017" .
+
+# Required Knowledge
+:req_knowledge_595040063 a guide:RequiredKnowledge ;
+    guide:previousCourses "Programacion I, Programacion II, Redes Y Servicios De Telecomunicacion" .

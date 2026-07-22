@@ -1,0 +1,138 @@
+@prefix data: <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+data:Degree_02IA rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Ingenieria Agroambiental" ;
+    guide:degreeCode "02IA" .
+
+data:Center_ETSIAB rdf:type guide:UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas" .
+
+data:Center_ETSIAB guide:offers data:Degree_02IA .
+
+# Course
+data:Course_25001209 rdf:type guide:Course ;
+    sch:name "Botanica Agricola Y Flora" ;
+    sch:courseCode 25001209 ;
+    guide:courseType "Obligatoria" ;
+    sch:numberOfCredits 4.0 .
+
+data:Degree_02IA guide:hasCourse data:Course_25001209 .
+
+# Course Guide
+data:Guide_25001209 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Botanica Agricola Y Flora" ;
+    sch:hasCourseInstance data:Course_25001209 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:semester "Cuarto semestre" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus data:Syllabus_25001209 ;
+    guide:hasEvaluation data:EvalSystem_25001209 ;
+    guide:hasLearningResult data:LR_RA47, data:LR_RA48, data:LR_RA49, data:LR_RA50, data:LR_RA45, data:LR_RA46 ;
+    guide:hasCompetency data:Comp_CE15, data:Comp_CG16, data:Comp_CG3, data:Comp_CG5, data:Comp_CG7 ;
+    guide:hasDidacticResource data:Res_Biblio_Botanica, data:Res_Web_Mobot, data:Res_Herbario .
+
+# Lecturers
+data:Lecturer_Dolores rdf:type guide:Lecturer ;
+    sch:name "M. Dolores Curt Fernandez De La Mora" ;
+    sch:email "md.curt@upm.es" ;
+    guide:office "UD Bot.Agricola" .
+
+data:Lecturer_Pedro rdf:type guide:Lecturer ;
+    sch:name "Pedro Luis Aguado Cortijo" ;
+    sch:email "pl.aguado@upm.es" ;
+    guide:office "UD Bot.Agricola" .
+
+data:Lecturer_Agustin rdf:type guide:Lecturer ;
+    sch:name "Agustin Garzon Hidalgo" ;
+    sch:email "agustin.garzon@upm.es" .
+
+sch:instructor data:Guide_25001209 data:Lecturer_Dolores, data:Lecturer_Pedro, data:Lecturer_Agustin .
+
+# Competencies
+data:Comp_CE15 rdf:type guide:Competency ;
+    guide:competencyCode "CE15" ;
+    guide:competencyDescription "Capacidad para aplicar los principios de la botánica en la identificación y caracterización de especies vegetales..." .
+
+data:Comp_CG16 rdf:type guide:Competency ;
+    guide:competencyCode "CG16" ;
+    guide:competencyDescription "Aplicar conocimientos adquiridos a la práctica de la ingeniería agraria" .
+
+data:Comp_CG3 rdf:type guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes..." .
+
+data:Comp_CG5 rdf:type guide:Competency ;
+    guide:competencyCode "CG5" ;
+    guide:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias..." .
+
+data:Comp_CG7 rdf:type guide:Competency ;
+    guide:competencyCode "CG7" ;
+    guide:competencyDescription "Compromiso ético y profesional y respeto por el medio ambiente y la diversidad" .
+
+# Learning Results
+data:LR_RA47 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA47" ;
+    guide:learningResultDescription "Reconocer y caracterizar las principales especies vegetales de interés en los campos de la agronomía y la flora española" .
+
+data:LR_RA48 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA48" ;
+    guide:learningResultDescription "Relacionar caracteres botánicos con las aplicaciones de las especies vegetales y sus requerimientos de hábitat" .
+
+# Syllabus
+data:Syllabus_25001209 rdf:type guide:Syllabus .
+
+data:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Principios generales" .
+
+data:SyllabusItem_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Terminología" .
+
+# Evaluation System and Trials
+data:EvalSystem_25001209 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación progresiva y global." .
+
+data:Trial_Prog1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:trialType "Evaluación Progresiva" ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "7" .
+
+data:Trial_Global_Exam rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:trialType "Evaluación Global" ;
+    guide:gradePercentage "75%" ;
+    guide:minimumScore "5 / 10" .
+
+# Activities (from Schedule)
+data:Act_Tema1 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 1.0 .
+
+data:Act_Pr1 rdf:type guide:Activity ;
+    guide:activityDescription "Pr 1: Morfología hojas" ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:activityDuration 1.0 .
+
+# Resources
+data:Res_Biblio_Botanica rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Biblioteca de Botánica" ;
+    guide:bibliographyDescription "Biblioteca de consulta en las instalaciones de la unidad de Botánica Agrícola." .
+
+data:Res_Web_Mobot rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Recursos web" ;
+    guide:bibliographyDescription "http://www.mobot.org/MOBOT/research/APWeb/" .
+
+data:Res_Herbario rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Herbario" ;
+    guide:bibliographyType "Otros" .

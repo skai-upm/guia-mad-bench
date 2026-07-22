@@ -1,0 +1,130 @@
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guide/GA_02IA_25001404> rdf:type guide:CourseGuide ;
+    dc:title "ANALISIS DE ECOSISTEMAS"@en ;
+    dct:creator <http://w3id.org/def/guia#Santiago_Moreno_Vazquez>, <http://w3id.org/def/guia#Elena_Carrio_Gonzalez> ;
+    guide:numberOfCredits "4"^^xsd:decimal ;
+    sch:name "Analisis De Ecosistemas"@en ;
+    dct:description "La asignatura se compone de cuatro partes..."@en .
+
+<http://w3id.org/def/guia#Santiago_Moreno_Vazquez> rdf:type guide:Lecturer, sch:Person ;
+    sch:name "Santiago Moreno Vazquez" ;
+    sch:title "(Coordinador/a)" ;
+    sch:email <mailto:santiago.moreno@upm.es> .
+
+<http://w3id.org/def/guia#Elena_Carrio_Gonzalez> rdf:type guide:Lecturer, sch:Person ;
+    sch:name "Elena Carrio Gonzalez" ;
+    sch:title "" ;
+    sch:email <mailto/elena.carrio@upm.es> .
+
+<http://w3id.org/def/guia#Santiago_Moreno_Vazquez> guide:sch:director <http://guia-mad-bench.es/data/guide/GA_02IA_25001404> ;
+    sch:tutorshipSchedule "X - 10:00 - 13:00<br>J - 10:00 - 13:00" .
+
+<http://w3id.org/def/guia#Elena_Carrio_Gonzalez> guide:sch:instructor <http://guia-mad-bench.es/data/guide/GA_02IA_25001404> ;
+    sch:tutorshipSchedule "Sin horario.<br>A concertar<br>mediante correo electrónico al profesor" .
+
+<http://w3id.org/def/guia#Santiago_Moreno_Vazquez> guide:office <mailto:santiago.moreno@upm.es> ;
+    rdf:type om:Unit, sch:BachelorDegree .
+
+<http://guia-mad-bench.es/data/guide/GA_02IA_25001404> guide:hasCourse <http://w3id.org/def/guia#Grado_Ingenieria_Agroambiental> ;
+    sch:courseCode "25001404"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guide/GA_02IA_25001404> guide:sch:hasSyllabus <http://w3id.org/def/guia#Temario_Analisis_Ecosistemas> ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule/Semestre_2025-26>.
+
+<http://w3id.org/def/guia#Grado_Ingenieria_Agroambiental> rdf:type guide:Degree, guide:BachelorDegree ;
+    sch:name "Grado En Ingenieria Agroambiental" .
+
+<http://guia-mad-bench.es/data/schedule/Semestre_2025-26> rdf:type guide:Schedule ;
+    dct:description "Primer semestre 2025/26"@en .
+
+<http://w3id.org/def/guia#Temario_Analisis_Ecosistemas> rdf:type guide:Syllabus, sch:Syllabus ;
+    rdfs:comment "Sección 1. Muestreo en campo sobre la abundancia de especies biológicas..."@en .
+
+<http://guia-mad-bench.es/data/schedule/Semestre_2025-26> guide:sch:eventSchedule <http://w3id.org/def/guia#Semana_1>, <http://w3id.org/def/guia#Semana_2>.
+
+<http://guia-mad-bench.es/data/schedule/Semestre_2025-26> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_1>, <http://guia-mad-bench.es/data/syllibus/Tema_3>.
+
+<http://w3id.org/def/guia#Semana_1> rdf:type guide:ScheduleEvent ;
+    sch:eventIndex "1"^^xsd:integer .
+
+<http://w3id.org/def/guia#Semana_2> rdf:type guide:ScheduleEvent ;
+    sch:eventIndex "2"^^xsd:integer .
+
+<http://guia-mad-bench.es/data/syllibus/Tema_1> rdf:type guide:SyllabusItem, sch:Event ;
+    guide:syllabusDescription "Muestreo en campo sobre la abundancia de especies biológicas"@en ;
+    guide:itemIndex "1"^^xsd:integer .
+
+<http://guia-mad-bench.es/data/syllibus/Tema_3> rdf:type guide:SyllabusItem, sch:Event ;
+    guide:syllabusDescription "Análisis de datos sobre la abundancia de especies"@en ;
+    guide:itemIndex "5"^^xsd:integer .
+
+<http://guia-mad-bench.es/data/guide/GA_02IA_25001404> guide:hasCompetency <http://w3id.org/def/guia#CE14>, <http://w3id.org/def/guia#CE17>.
+
+<http://guia-mad-bench.es/data/guide/GA_02IA_25001404> guide:hasLearningResult <http://w3id.org/def/guia#RA519>, <http://w3id.org/def/guia#RA228>.
+
+<http://guia-mad-bench.es/data/guide/GA_02IA_25001404> guide:hasEvaluationTrial <http://w3id.org/def/guia#Eval_Progresiva>, <http://w3id.org/def/guia#Eval_Global>.
+
+<http://guia-mad-bench.es/data/schedule/Semestre_2025-26> rdf:type guide:ScheduleEvent ;
+    sch:eventIndex "1"^^xsd:integer .
+
+<http://w3id.org/def/guia#Semana_1> guide:sch:hasActivity <http://guia-mad-bench.es/data/activity/Metodos_floristicos>.
+
+<http://w3id.org/def/guia#Metodos_floristicos> rdf:type guide:ScheduleEvent, sch:Event ;
+    sch:eventIndex "1"^^xsd:integer .
+
+<http://w3id.org/def/guide/GA_02IA_25001404> guide:sch:hasSyllabus <http://guia-mad-bench.es/data/syllibus/Tema_1>.
+    
+    <http://w3id.org/def/guia#CE14> rdf:type guide:Competency ;
+        sch:name "Conocimiento de los conceptos básicos de Ecología"@en .
+
+<http://guia-mad-bench.es/data/schedule/Semestre_2025-26> guide:sch:eventSchedule <http://w3id.org/def/guia#Semana_1>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_1>, <http://guia-mad-bench.es/data/syllibus/Tema_3>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_7>, <http://guia-mad-bench.es/data/syllibus/Tema_8>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_9>, <http://guia-mad-bench.es/data/syllibus/Tema_10>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_11>, <http://guia-mad-bench.es/data/syllibus/Tema_12>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_13>, <http://guia-mad-bench.es/data/syllibus/Tema_14>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_15>, <http://guia-mad-bench.es/data/syllibus/Tema_16>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_17>, <http://guia-mad-bench.es/data/syllibus/Tema_18>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_19>, <http://guia-mad-bench.es/data/syllibus/Tema_20>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_21>, <http://guia-mad-bench.es/data/syllibus/Tema_22>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_23>, <http://guia-mad-bench.es/data/syllibus/Tema_24>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_25>, <http://guia-mad-bench.es/data/syllibus/Tema_26>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_27>, <http://guia-mad-bench.es/data/syllibus/Tema_28>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_29>, <http://guia-mad-bench.es/data/syllibus/Tema_30>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_31>, <http://guia-mad-bench.es/data/syllibus/Tema_32>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_33>, <http://guia-mad-bench.es/data/syllibus/Tema_34>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_35>, <http://guia-mad-bench.es/data/syllibus/Tema_36>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_37>, <http://guia-mad-bench.es/data/syllibus/Tema_38>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_39>, <http://guia-mad-bench.es/data/syllibus/Tema_40>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_41>, <http://guia-mad-bench.es/data/syllibus/Tema_42>.
+    
+    <http://w3id.org/def/guide/GA_02IA_25001404> guide:hasSyllabusItem <http://guia-mad-bench.es/data/syllibus/Tema_43>, <http://guia-mad-bench.es/data/syllibus/Tema_44>.
+    
+    <http://w3id.org/def/guide/GA_02IA_250014

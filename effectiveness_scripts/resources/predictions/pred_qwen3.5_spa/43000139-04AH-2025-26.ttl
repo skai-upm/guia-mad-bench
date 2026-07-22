@@ -1,0 +1,91 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sch: <https://schema.org/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+
+<http://guia-mad-bench.es/data/course-43000139> rdf:type guide:CourseGuide ;
+    dc:title "Guía de Aprendizaje"@en ;
+    sch:name "Ingenieria Ferroviaria" ;
+    guide:numberOfCredits 4.5^^xsd:decimal ;
+    guide:teachingPeriod "2025-26" ;
+    guide:syllabusDescription "Contempla el ciclo completo de vía de un proyecto ferroviario desde su concepción hasta su puesta en servicio"@en .
+
+<http://guia-mad-bench.es/data/degree-master-sistemas-civil> rdf:type guide:MasterDegree ;
+    sch:name "Master Universitario En Sistemas De Ingenieria Civil" ;
+    guide:degreeCode "04AH"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course-43000139> sch:hasCourseInstance <http://guia-mad-bench.es/data/curso-guia-43000139> ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus-ingenieria-ferroviaria> .
+
+<http://guia-mad-bench.es/data/course-43000139> sch:eventSchedule <http://guia-mad-bench.es/data/planificacion-cronograma> ;
+    guide:hasEvaluationSystem <http://guia-mad-bench.es/data/sistema-evaluacion-ingenieria-ferroviaria> .
+
+<http://guia-mad-bench.es/data/course-43000139> sch:name "Ingenieria Ferroviaria" ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/competencia-CB10>, <http://guia-mad-bench.es/data/competencia-CE-A1>, <http://guia-mad-bench.es/data/competencia-RA96> ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/resultado-Ra103>.
+
+<http://guia-mad-bench.es/data/syllabus-ingenieria-ferroviaria> rdf:type guide:Syllabus .
+
+<http://guia-mad-bench.es/data/temario-item-1> rdf:type guide:SyllabusItem ;
+    sch:name "El proyecto ferroviario" ;
+    guide:syllabusDescription "Fundamentos y normativa, Proyectos de trazado, Proyectos de instalaciones"@en ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://guia-mad-bench.es/data/temario-item-2> rdf:type guide:SyllabusItem ;
+    sch:name "Comportamiento de la vía ferroviaria" ;
+    guide:syllabusDescription "Esfuerzos estáticos, Dinámica de la vía"@en ;
+    guide:itemIndex 2^^xsd:integer .
+
+<http://guia-mad-bench.es/data/temario-item-3> rdf:type guide:SyllabusItem ;
+    sch:name "Mantenimiento ferroviario" ;
+    guide:syllabusDescription "El confort, Calidad de la vía, Auscultación"@en ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://guia-mad-bench.es/data/planificacion-cronograma> rdf:type guide:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/evento-1>, <http://guia-mad-bench.es/data/evento-control-4>.
+
+<http://guia-mad-bench.es/data/sistema-evaluacion-ingenieria-ferroviaria> rdf:type guide:EvaluationSystem ;
+    sch:name "Evaluación Progresiva y Global" .
+
+<http://guia-mad-bench.es/data/evaluacion-control-sem4> rdf:type guide:EvaluationTrial ;
+    sch:hasScheduleEvent <http://guia-mad-bench.es/data/evento-1>, <http://guia-mad-bench.es/data/evento-control-7>.
+
+<http://guia-mad-bench.es/data/evaluacion-examen-parcial-sem9> rdf:type guide:EvaluationTrial ;
+    sch:hasScheduleEvent <http://guia-mad-bench.es/data/evento-1>, <http://guia-mad-bench.es/data/evento-control-7>.
+
+<http://guia-mad-bench.es/data/evaluacion-examen-global-sem17> rdf:type guide:EvaluationTrial ;
+    sch:hasScheduleEvent <http://guia-mad-bench.es/data/evento-1>, <http://guia-mad-bench.es/data/evento-control-7>.
+
+<http://guia-mad-bench.es/data/evaluacion-examen-extraordinario> rdf:type guide:EvaluationTrial ;
+    sch:hasScheduleEvent <http://guia-mad-bench.es/data/evento-1>, <http://guia-mad-bench.es/data/evento-control-7>.
+
+<http://guia-mad-bench.es/data/evaluacion-examen-global-sem17> guide:trialType "Examen Escrito" ;
+    sch:name "Examen ordinario" .
+
+<http://guia-mad-bench.es/data/syllabus-ingenieria-ferroviaria> rdf:type guide:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/temario-item-1>, <http://guia-mad-bench.es/data/temario-item-2>.
+
+<http://guia-mad-bench.es/data/course-43000139> sch:name "Ingenieria Ferroviaria" ;
+    guide:hasDidacticResource <http://guia-mad-bench.es/data/recursos-web>, <http://guia-mad-bench.es/data/biblioteca-manuales>.
+
+<http://guia-mad-bench.es/data/lecturer-carlos-romero> rdf:type guide:Lecturer ;
+    sch:name "Carlos Romero Morales" ;
+    sch:director true .
+
+<http://guia-mad-bench.es/data/lecturer-juan-gomez-sanchez> rdf:type guide:Lectutor ;
+    sch:name "Juan Gomez Sanchez" ;
+    sch:instructor <http://guia-mad-bench.es/data/course-43000139>.
+
+<http://guia-mad-bench.es/data/lecturer-luis-esteras> rdf:type guide:Lecturer ;
+    sch:name "Luis Esteras Aldea" .
+
+<http://guia-mad-bench.es/data/recursos-web> rdf:type guide:DidacticResource ;
+    sch:name "Moodle" ;
+    sch:bibliographyType "Recursos web".
+
+<http://guia-mad-bench.es/data/biblioteca-manuales> rdf:type guide:DidacticResource ;
+    sch:name "Documentación bibliográfica ferroviaria"@en .

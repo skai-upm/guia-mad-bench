@@ -1,0 +1,135 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Degree and Course Relationship
+:Master_07AB rdf:type guide:MasterDegree ;
+    sch:name "Master Universitario En Tecnicas De Lucha Contra Incendios Forestales" ;
+    guide:degreeCode "07AB" ;
+    guide:hasCourse :Course_73000039 .
+
+:Course_73000039 rdf:type guide:Course ;
+    sch:name "Prevencion De Incendios" ;
+    sch:courseCode 73000039 ;
+    guide:courseType "Obligatoria" ;
+    sch:hasCourseInstance :Guide_73000039 .
+
+# University Center
+:Center_ETSI rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S.I. Montes, Forestal y Medio Natur." ;
+    guide:offers :Master_07AB .
+
+# Course Guide Details
+:Guide_73000039 rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance :Course_73000039 ;
+    guide:numberOfCredits 5.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCompetency :Comp_CE12, :Comp_CE21, :Comp_CG5, :Comp_CG6 ;
+    guide:hasLearningResult :LR_RA45, :LR_RA43, :LR_RA41, :LR_RA44, :LR_RA42 ;
+    guide:hasEvaluation :EvalSys_Progresiva, :EvalSys_Global ;
+    guide:hasDidacticResource :Res_ArcMap, :Res_Blog, :Res_YoutubeUPM ;
+    sch:description "La prevención es un campo amplio que aborda muchas disciplinas..." .
+
+# Lecturers
+:Lecturer_Carolina rdf:type guide:Lecturer ;
+    sch:name "Carolina Martinez Santa-Maria" ;
+    sch:email "carintina.martinez@upm.es" ;
+    guide:office "Hidráulica" ;
+    guide:tutorshipsSchedule "L - 10:00 - 13:00, M - 16:00 - 19:00" .
+
+:Lecturer_Javier rdf:type guide:Lecturer ;
+    sch:name "Javier Madrigal Olmo" ;
+    sch:email "javier.madrigal@upm.es" ;
+    guide:office "Defensa" ;
+    guide:tutorshipsSchedule "M - 16:00 - 20:00" .
+
+:Lecturer_Ruben rdf:type guide:Lecturer ;
+    sch:name "Ruben Laina Relaño" ;
+    sch:email "ruben.laina@upm.es" ;
+    guide:office "Defensa Monte" ;
+    guide:tutorshipsSchedule "M - 09:30 - 11:30, X - 13:00 - 15:00, J - 17:30 - 19:00" .
+
+# Competencies
+:Comp_CE12 rdf:type guide:Competency ;
+    guide:competencyCode "CE 1.2" ;
+    guide:competencyDescription "Capacidad para empre．emprender acciones relacionadas con la gestión forestal" .
+
+:Comp_CE21 rdf:type guide:Competency ;
+    guide:competencyCode "CE 2.1" ;
+    guide:competencyDescription "Capacidad para diseñar, redactar y gestionar planes y políticas de prevención y detección de incendios" .
+
+:Comp_CG5 rdf:type guide:Competency ;
+    guide:competencyCode "CG 5" ;
+    guide:competencyDescription "Búsqueda bibliográfica, análisis de documentación y tratamiento de la información..." .
+
+:Comp_CG6 rdf:type guide:Competency ;
+    guide:competencyCode "CG 6" ;
+    guide:competencyDescription "Perfeccionar el conocimiento oral y escrito de la lengua inglesa" .
+
+# Learning Results
+:LR_RA45 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA45" ;
+    guide:learning .learningResultDescription "Que los estudiantes tengan conocimientos para crear e interpretar cartografía temática..." .
+
+:LR_RA43 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA43" ;
+    guide:learningResultDescription "Capacidad para poner en práctica técnicas de selvicultura preventiva y de reducción del combustible en el monte" .
+
+# Evaluation System and Trials
+:EvalSys_Progresiva rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva" ;
+    guide:hasEvaluationTrial :Trial_Tendencias, :Trial_Normativa, :Trial_Evidencias, :Trial_Indices, :Trial_Analisis, :Trial_Selvicultura, :Trial_Hidraulica, :Trial_Interfaz, :Trial_BasicWildfires, :Trial_Zonificacion, :Trial_Trabajo, :Trial_Defensa .
+
+:Trial_Tendencias rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "5%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "01:00" ;
+    guide:trialMode "No presencial" .
+
+:Trial_Trabajo rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Trabajo Individual" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "20:00" ;
+    guide:trialMode "No presencial" .
+
+# Schedule and Activities
+:Event_Sem1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :Act_Presentacion, :Act_Tendencias, :Act_Normativa .
+
+:Act_Presentacion rdf:type guide:Activity ;
+    guide:activityDescription "Presentación" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+:Act_Tendencias rdf:type guide:Activity ;
+    guide:activityDescription "Tendencias de la prevención" ;
+    guide:activityDuration 0.5 ;
+    guide:activityFormat "Lección Magistral" .
+
+# Didactic Resources
+:Res_ArcMap rdf:type guide:DidacticResource ;
+    sch:name "Software ArcMap" ;
+    guide:bibliographyType "Equipamiento" ;
+    guide:bibliographyDescription "SIG" .
+
+:Res_Blog rdf:type guide:DidacticResource ;
+    sch:name "Blog Aprovechamientos forestales e incendios" ;
+    guide:bibliographyType "Recursos web" .
+
+:Res_YoutubeUPM rdf:type guide:Did．didacticResource ;
+    sch:name "Canal vídeos UPM" ;
+    guide:bibliographyType "Recursos web" .
+
+# Required Knowledge
+:ReqKnow_Fire rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Comportamiento Del Fuego. Teledeteccion" .
+
+:ReqKnow_Ecology rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Ecologia Del Fuego E Impacto Ambiental De Los Ince" .

@@ -1,0 +1,124 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Entity
+:Curso_Ampliacion_Expresion_Grafica rdf:type guide:Course ;
+    sch:name "565000566 - Ampliación De Expresión Gráfica" ;
+    sch:courseCode 565000566 ;
+    guide:courseType "Obligatoria" ;
+    sch:hasCourseInstance :Guia_Aprendizaje_Ampliacion_Expresion_Grafica .
+
+# Course Guide Entity
+:Guia_Aprendizaje_Ampliacion_Expresion_Grafica rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Ampliación De Expresión Gráfica" ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:semester "Segundo semestre" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:instructor :Lucia_Garijo_Alonso, :Pedro_Jose_Lorca_Hernando ;
+    guide:hasSyllabus :Syllabus_Ampliacion_Expresion_Grafica ;
+    guide:hasCompetency :Comp_CE5, :Comp_CG1, :Comp_CG10, :Comp_CG2, :Comp_CG3, :Comp_CG5, :Comp_CG6, :Comp_CG7, :Comp_CG9 ;
+    guide:hasLearningResult :LR_RA36, :LR_RA37 ;
+    guide:hasEvaluation :Sistema_Evaluacion_Ampliacion_Expresion_Grafica ;
+    guide:hasDidacticResource :Recurso_Moodle, :Recurso_Bibliografia_Geometria .
+
+# Degree and University Center
+:Grado_Ingenieria_Diseno_Industrial rdf:type guide:Degree ;
+    sch:name "56DD - Grado Ingenieria En Diseño Industrial Y Desarrollo De Producto" ;
+    guide:degreeCode "56DD" ;
+    guide:hasCourse :Curso_Ampliacion_Expresion_Grafica .
+
+:ETS_Ingenieria_Diseno_Industrial rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingeniería y Diseño Industrial" ;
+    guide:offers :Grado_Ingenieria_Diseno_Industrial .
+
+# Lecturers
+:Lucia_Garijo_Alonso rdf:type guide:Lecturer ;
+    sch:name "Lucia Garijo Alonso" ;
+    sch:email "lucia.garijo@upm.es" .
+
+:Pedro_Jose_Lorca_Hernando rdf:type guide:Lecturer ;
+    sch:name "Pedro Jose Lorca Hernando" ;
+    sch:email "pedrojose.lorca@upm.es" .
+
+# Competencies
+:Comp_CE5 rdf:type guide:Competency ;
+    guide:competencyCode "CE5" ;
+    guide:competencyDescription "Capacidad de visión espacial y conocimiento de las técnicas de representación gráfica..." .
+
+:Comp_CG1 rdf:type guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Conocer y aplicar los conocimientos de ciencias y tecnologías básicas." .
+
+:Comp_CG10 rdf:type guide:Competency ;
+    guide:competencyCode "CG10" ;
+    guide:competencyDescription "Creatividad." .
+
+# Learning Results
+:LR_RA36 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA36" ;
+    guide:learningResultDescription "Comprender y aplicar las propiedades de las curvas técnicas y de las superficies..." .
+
+:LR_RA37 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA37" ;
+    guide:learningResultDescription "Ser capaz de elaborar e interpretar información gráfica, posibilitando el trabajo y la comunicación entre técnicos." .
+
+# Syllabus
+:Syllabus_Ampliacion_Expresion_Grafica rdf:type guide:Syllabus ;
+    guide:hasItem :SyllabusItem_Tema1, :SyllabusItem_Tema2, :SyllabusItem_Tema3, :SyllabusItem_Tema4, :SyllabusItem_Tema5, :SyllabusItem_Tema6, :SyllabusItem_Tema7, :SyllabusItem_Tema8, :SyllabusItem_Tema9, :SyllabusItem_Tema10 .
+
+:SyllabusItem_Tema1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Curvas planas y alabeadas" .
+
+:SyllabusItem_Tema2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Estudio proyectivo de las cónicas" .
+
+# Evaluation System and Trials
+:Sistema_Evaluacion_Ampliacion_Expresion_Grafica rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La asignatura cuenta con una prueba de evaluación progresiva y una prueba global." ;
+    guide:hasEvaluationTrial :Trial_Progresivo, :Trial_Global .
+
+:Trial_Progresivo rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen de Prácticas" ;
+    guide:trialWeek "8" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialMode "Presencial" .
+
+:Trial_Global rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen de Prácticas" ;
+    guide:trialWeek "17" ;
+    guide:gradePercentage "70%" ;
+    guide:minimumScore "5/10" ;
+    guide:trialMode "Presencial" .
+
+# Didactic Resources
+:Recurso_Moodle rdf:type guide:DidacticResource ;
+    sch:name "Moodle" ;
+    guide:bibliographyType "Recursos web" .
+
+:Recurso_Bibliografia_Geometria rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Geometría de Curvas y Superficies" ;
+    guide:bibliographyDescription "Vicario López, José. Madrid, 2012" ;
+    guide:bibliographyType "Bibliografía" .
+
+# Schedule Events / Activities (Sample from Chronogram)
+:Actividad_Leccion_Magistral_Semana1 rdf:type guide:Activity ;
+    guide:activityDescription "Temas 1 y 2 - Lección Magistral" ;
+    guide:activityDuration 1.5 ;
+    guide:activityFormat "LM" .
+
+:Actividad_Practicas_Semana1 rdf:type guide:Activity ;
+    guide:activityDescription "Prácticas de Laboratorio" ;
+    guide:activityDuration 1.5 ;
+    guide:activityFormat "PL" .
+
+# Prerequisites
+:Requisitos_Previos_Asignatura rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Expresion Grafica y Diseño Asistido por Ordenador" .

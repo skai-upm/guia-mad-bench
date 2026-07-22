@@ -1,0 +1,858 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://w3id.org/guia-mad-bench/data/courseguide/anx-pr-cl-001-01> rdf:type :CourseGuide ;
+    sch:name "Informática"@es ,
+        "565000624 - Informática"@en ;
+    guide:courseYear 2025 ;
+    guide:numberOfCredits "6"^^xsd:decimal ;
+    guide:syllabusDescription "Desarrollo de elementos básicos de programación estructurada utilizando el lenguaje C."@es ,
+        "Development of basic elements of structured programming using the C language"@en ;
+    sch:description "Es una asignatura que desarrolla los elementos básicos de la programación estructurada, para lo que utiliza el lenguaje C como herramienta de programación. El objetivo fundamental es diseñar y codificar algoritmos científicos utilizando el lenguaje de programación C."@es ,
+        "It is a subject that develops the basic elements of structured programming, using the C language as a tool for programming. The main objective is to design and code scientific algorithms using the C programming language"@en ;
+    guide:teachingPeriodMonths "Febrero-Junio"^^xsd:string ;
+    sch:inLanguage "Castellano"^^rdf:langString .
+
+<http://w3id.org/guia-mad-bench/data/degree/doble-grado-56dm> rdf:type :Degree ,
+        owl:Thing ;
+    guide:numberOfCredits 0 ; # Degree credits not explicitly summed, course has it.
+    sch:name "Doble Grado Ing en Diseño Industrial Y Desarrollo Producto Y En Ing Mecanic"@es .
+
+<http://w3id.org/guia-mad-bench/data/lecturer/mercedes-bermejo> rdf:type :Lecturer ,
+        owl:Thing ;
+    sch:name "Mercedes Bermejo Solera"^^xsd:string ;
+    guide:office "B249"^^xsd:string ;
+    sch:email <mailto:mercedes.bermejo@upm.es> .
+
+<http://w3id.org/guia-mad-bench/data/competency/im-ce-03> rdf:type :Competency ,
+        owl:Thing ;
+    guide:competencyCode "IM.CE 03"^^xsd:string ;
+    sch:description "Conocimientos básicos sobre el uso y programación de los ordenadores, sistemas operativos, bases de datos y programas informáticos con aplicación en ingeniería."@es .
+
+<http://w3id.org/guia-mad-bench/data/competency/im-cg-02> rdf:type :Competency ,
+        owl:Thing ;
+    guide:competencyCode "IM.CG 02"^^xsd:string ;
+    sch:description "Poseer la capacidad para diseñar, desarrollar, implementar, gestionar y mejorar productos, sistemas y procesos en los distintos ámbitos industriales..."@es .
+
+<http://w3id.org/guia-mad-bench/data/competency/im-cg-06> rdf:type :Competency ,
+        owl:Thing ;
+    guide:competencyCode "IM.CG 06"^^xsd:string ;
+    sch:description "Poseer las habilidades de aprendizaje que permitan continuar estudiando a lo largo de toda la vida para un desarrollo profesional adecuado."@es .
+
+<http://w3id.org/guia-mad-bench/data/learningresult/ra142> rdf:type :LearningResult ,
+        owl:Thing ;
+    guide:learningResultCode "RA142"^^xsd:string ;
+    sch:description "Conocimientos y capacidades de pensamiento y razonamiento necesarios para el análisis, enfoque y resolución de problemas concretos."@es .
+
+<http://w3id.org/guia-mad-bench/data/learningresult/ra151> rdf:type :LearningResult ,
+        owl:Thing ;
+    guide:learningResultCode "RA151"^^xsd:string ;
+    sch:description "Capacidad para diseñar y programar algoritmos modularles en lenguaje C que resuelven problemas relacionados con la ingeniería."@es .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem ,
+        owl:Thing ;
+    guide:itemIndex 1^^xsd:integer ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/lang-c> rdf:type :SyllabusItem ,
+        owl:Thing ;
+    guide:itemIndex 2^^xsd:integer ;
+    sch:description "El lenguaje C. Programas básicos, estructura de un código en C."@es .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week1> rdf:type :ScheduleEvent ,
+        owl:Thing ;
+    guide:eventWeek "Semestre 2 - Semana 1"^^xsd:string ;
+    sch:name "Teoría"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent ,
+        owl:Thing ;
+    guide:eventWeek "Semestre 2 - Semana 8"^^xsd:string ;
+    sch:name "Prueba de evaluación progresiva"@es .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent ,
+        owl:Thing ;
+    guide:eventWeek "Semestre 2 - Semana 15"^^xsd:string ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es .
+
+<http://w3id.org/guia-mad-bench/data/evaluationtrial/trial-progressive-8> rdf:type :EvaluationTrial ,
+        owl:Thing ;
+    guide:trialType "Examen de Prácticas"@en ;
+    sch:name "Prueba 1 (conocimientos básicos)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/evaluationtrial/trial-progressive-8> rdf:type :EvaluationTrial ,
+        owl:Thing ;
+    guide:gradePercentage "30"^^xsd:string ;
+    sch:description "Prueba de evaluación progresiva. Presencial."@es .
+
+<http://w3id.org/guia-mad-bench/data/evaluationtrial/trial-global-15> rdf:type :EvaluationTrial ,
+        owl:Thing ;
+    guide:gradePercentage "40"^^xsd:string ; # Weight in progressive, 100% if global. Document says 40% for progressive final or 100% for global. I will use the weight mentioned as primary context.
+    sch:description "Prueba de evaluación (Convocatoria Ordinaria)"@es .
+
+<http://w3id.org/guia-mad-bench/data/evaluationtrial/trial-global-15> rdf:type :EvaluationTrial ,
+        owl:Thing ;
+    guide:mininumScore "5 / 10"^^xsd:string ; # Note: property name is minimumScore in ontology.
+
+<http://w3id.org/guia-mad-bench/data/evaluationtrial/trial-global-17> rdf:type :EvaluationTrial ,
+        owl:Thing ;
+    guide:mininumScore "5 / 10"^^xsd:string .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/syllabusitem/intro> rdf:type :SyllabusItem,
+        owl:Thing ;
+    sch:description "Introducción. Estructura funcional de un ordenador."@es ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week8-exam1> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación progresiva"@en ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/scheduleevent/week15-exam-global> rdf:type :ScheduleEvent,
+        owl:Thing ;
+    sch:name "Prueba de evaluación global (Convocatoria Ordinaria)"@es ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://w3id.org/guia-mad-bench/data/s

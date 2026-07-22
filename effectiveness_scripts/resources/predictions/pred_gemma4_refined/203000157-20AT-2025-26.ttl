@@ -1,0 +1,211 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Course Guide
+guide:course_203000157 a guide:Course ;
+    sch:name "Nuevas Tecnologías De Envasado De Alimentos" ;
+    sch:courseCode 203000157 ;
+    guide:courseType "Optativa" ;
+    sch:hasCourseInstance guide:guide_203000157 .
+
+guide:guide_203000157 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje: Nuevas Tecnologías De Envas<0xC2>ado De Alimentos" ;
+    guide:numberOfCredits 4.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus guide:syllabus_203000157 ;
+    guide:hasCompetency guide:comp_CB8, guide:comp_CG1, guide:comp_CG3, guide:comp_CG8 ;
+    guide:hasLearningResult guide:lr_RA7_RA16, guide:lr_RA2, guide:lr_RA50, guide:lr_RA51, guide:lr_RA53, guide:lr_RA52, guide:lr_RA49 ;
+    guide:hasEvaluation guide:eval_system_203000157 ;
+    sch:instructor guide:lecturer_fernando, guide:lecturer_eva, guide:lecturer_felipe ;
+    sch:director guide:lecturer_fernando ;
+    sch:courseSchedule guide:schedule_203000157 ;
+    guide:hasDidacticResource guide:res_baaghan, guide:res_barros, guide:res_brc, guide:res_coles, guide:res_crosby, guide:res_embleni, guide:res_duncan, guide:res_jongwhan, guide:res_han, guide:res_magnuson, guide:res_mapa, guide:res_palling, guide:res_roney, guide:res_schaefer, guide:res_simon, guide:res_reg_1895, guide:res_reg_321, guide:res_reg_282, guide:res_dir_852, guide:res_ley_722, guide:res_rd_891, guide:res_rd_847, guide:res_rd_126, guide:res_rd_1021, guide:res_rd_1055, guide:res_rec_84, guide:res_rec_794, guide:res_reg_1935, guide:reg_ce_2023, guide:reg_ce_450, guide:reg_ue_10, guide:reg_ue_1169, guide:reg_ue_2283, guide:reg_ue_848, guide:reg_ue_1381, guide:reg_ue_1245, guide:reg_ue_858, guide:reg_ue_351, guide:une_en_15593, guide:aimplas_link, guide:europarl_link, guide:jrc_ref, guide:foodpackagingforum_link, guide:mapa_link .
+
+# Degree and University Center
+guide:degree_20AT a guide:MasterDegree ;
+    sch:name "Master Universitario En Ingenieria Alimentaria Aplicada A La Salud" ;
+    guide:degreeCode "20AT" ;
+    guide:hasCourse guide:course_203000157 .
+
+guide:univ_center_etsi a guide:UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas" ;
+    guide:offers guide:degree_20AT .
+
+# Lecturers
+guide:lecturer_fernando a guide:Lecturer ;
+    sch:name "Fernando Calderon Fernandez" ;
+    sch:email "fernando.calderon@upm.es" ;
+    guide:office "02A.01.021" ;
+    guide:tutorshipsSchedule "M - 10:30 - 12:30, X - 10:30 - 12:30" .
+
+guide:lecturer_eva a guide:Lecturer ;
+    sch:name "Eva Navascues Lopez-Cordon" ;
+    sch:email "eva.navascues@upm.es" ;
+    guide:office "02A-01.021" ;
+    guide:tutorshipsSchedule "M - 10:30 - 12:00, J - 12:30 - 14:00" .
+
+guide:lecturer_felipe a guide:Lecturer ;
+    sch:name "Filipe Palomero Rodriguez" ;
+    sch:email "felipe.palomero@upm.es" ;
+    guide:office "02.01.039.1" ;
+    guide:tutorshipsSchedule "M - 10:30 - 12:30, X - 10:30 - 12:30" .
+
+# Competencies
+guide:comp_CB8 a guide:Competency ;
+    guide:competencyCode "CB8" ;
+    guide:competencyDescription "Que los estudiantes sean capaces de integrar conocimientos y enfrentarse a la complejidad de formular juicios..." .
+
+guide:comp_CG1 a guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Capacidad de observación, generación de hipótesis y planteamiento de problemas experimentales..." .
+
+guide:comp_CG3 a guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Capacidad para evaluar los sistemas de control de la cadena alimentaria..." .
+
+guide:comp_CG8 a guide:Competency ;
+    guide:competencyCode "CG8" ;
+    guide:competencyDescription "Resolver con eficacia y eficiencia problemas relacionados con la alimentación..." .
+
+# Learning Results
+guide:lr_RA7_RA16 a guide:LearningResult ;
+    guide:learningResultCode "RA7 - RA16" ;
+    guide:learningResultDescription "Evaluar resultados analíticos y su repercusión en el contexto alimentación/salud" .
+
+guide:lr_RA2 a guide:LearningResult ;
+    guide:learningResultCode "RA2" ;
+    guide:learningResultDescription "RA1-RA68" .
+
+guide:lr_RA50 a guide:LearningResult ;
+    guide:learningResultCode "RA50" ;
+    guide:learningResultDescription "Conocer los avances en materiales tradicionales de envasado" .
+
+guide:lr_RA51 a guide:LearningResult ;
+    guide:learningResultCode "RA51" ;
+    guide:learningResultDescription "Conocer los avances en nuevos materiales y técnicas de envasado" .
+
+guide:lr_RA53 a guide:LearningResult ;
+    guide:learningResultCode "RA53" ;
+    guide:learningResultDescription "Conocer los nuevos sistemas de gestión ambiental de envases" .
+
+guide:lr_RA52 a guide:reg_ce_450 ; # Reusing logic for mapping if needed, but keeping it as LR
+    guide:learningResultCode "RA52" ;
+    guide:learningResultDescription "Conocer y aplicar la legislación sobre envasado de alimentos y salud" .
+
+guide:lr_RA49 a guide:LearningResult ;
+    guide:learningResultCode "RA49" ;
+    guide:learningResultDescription "Aquirir conocimientos sobre la relación ingeniería del envasado y salud" .
+
+# Syllabus
+guide:syllabus_203000157 a guide:Syllabus ;
+    guide:hasItem guide:item_topic1, guide:item_topic2, guide:item_topic3, guide:item_topic4, guide:item_topic5, guide:item_topic6 .
+
+guide:item_topic1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción" .
+
+guide:item_topic2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Avances en materiales de envasado tradicionales" .
+
+guide:item_topic3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Nuevos materiales de envasado" .
+
+guide:item_topic4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Tecnologías de envasado emergentes" .
+
+guide:item_topic5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Etiquetado. Información al consumidor. Avances" .
+
+guide:item_topic6 a guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Aspectos medioambientales del envasado de alimentos" .
+
+# Evaluation System and Trials
+guide:eval_system_203000157 a guide:EvaluationSystem ;
+    guide:evaluationDescription "Dos pruebas de seguimiento escritas... Trabajo en grupo..." ;
+    guide:hasEvaluationTrial guide:trial_exam_7, guide:trial_pres_13, guide:trial_exam_15, guide:trial_global_17 .
+
+guide:trial_exam_7 a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:evaluationDuration "01:00" ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialWeek "7" ;
+    guide:trialMode "Presencial" .
+
+guide:trial_pres_13 a guide:EvaluationTrial ;
+    guide:evaluationType "Presentación en Grupo" ;
+    guide:evaluationDuration "01:00" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialWeek "13" ;
+    guide:trialMode "Presencial" .
+
+guide:trial_exam_15 a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:evaluationDuration "01:00" ;
+    guide:gradePercentage "35%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:trialWeek "15" ;
+    guide:trialMode "Presencial" .
+
+guide:trial_global_17 a guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:evaluationDuration "02:30" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:trialMode "Presencial" .
+
+# Schedule and Activities
+guide:schedule_203000157 a guide:Schedule ;
+    sch:eventSchedule guide:event_week1, guide:event_week2, guide:event_week3, guide:event_week4, guide:event_week5, guide:event_week6, guide:event_week7, guide:event_week8, guide:event_week9, guide:event_week10, guide:event_week11, guide:event_week12, guide:event_week13, guide:event_week14, guide:event_week15, guide:event_week17 .
+
+guide:event_week1 a guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "1" ;
+    guide:hasActivity guide:act_lm_topic1 .
+
+guide:act_lm_topic1 a guide:Activity ;
+    guide:activityDescription "Tema 1 - Lección Magistral" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+guide:event_week7 a guide:ScheduleEvent ;
+    guide:eventIndex 7 ;
+    guide:eventWeek "7" ;
+    guide:hasActivity guide:act_exam_7 .
+
+guide:act_exam_7 a guide:Activity ;
+    guide:activityDescription "Prueba de seguimiento. Temas 1-3" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources (Samples)
+guide:res_baaghan a guide:DidacticResource ;
+    guide:bibliographyTitle "Food Packaging Law in the United States" ;
+    guide:bibliographyDescription "Baaghan, J.S. and D. Attwood... 2022." .
+
+guide:res_barros a guide:DidacticResource ;
+    guide:bibliographyTitle "Antimicrobial Food Packaging" ;
+    guide:bibliographyDescription "Barros, J. (Ed.) 4th Edition - 2020" .
+
+guide:res_reg_1895 a guide:DidacticResource ;
+    guide:bibliographyTitle "COMMISSION REGULATION (EC) No 1895/2005" ;
+    guide:bibliographyDescription "Restriction of use of certain epoxy derivatives..." .
+
+# Required Knowledge
+guide:req_knowledge_tech a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Tecnología del envasado de alimentos" .

@@ -1,0 +1,224 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# Course Guide Instance
+:course_guide_105000439 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - El Arte De Programar" ;
+    sch:description "Guía de aprendizaje para la asignatura El Arte De Programar."@en ;
+    guide:teachingPeriod "2025-26" ;
+    guide:numberOfCredits 6.0 ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:totalHours "150" ; # Estimated based on 6 ECTS * 25h
+    guide:inpersonHours "75" ;
+    guide:remoteHours "75" ;
+    sch:inLanguage "Castellano" ;
+    sch:courseSchedule :schedule_105000439 ;
+    guide:hasSyllabus :syllabus_105000439 ;
+    guide:hasEvaluation :eval_system_105000439 ;
+    guide:hasLearningResult :lr_ra278 ;
+    guide:hasCompetency :comp_cg1_21, :comp_cg2_ce45, :comp_cg3_4, :comp_cg6, :comp_cg7_10_16_17, :comp_ce19_20 ;
+    guide:hasDidacticResource :res_skiena_1, :res_skiena_2, :res_knuth_1, :res_knuth_2, :res_laaksonen ;
+    sch:instructor :prof_larsake, :prof_julio, :prof_clara, :prof_santiago ;
+    sch:director :prof_santiago ;
+    sch:activitiesWorkload "Trabajo presencial y no presencial según plan de estudios" ;
+    guide:otherInformation "La asignatura se relaciona con el ODS4. Metodología: Aprendizaje Basado en Problemas."@en .
+
+# Course Instance
+:course_105000439 a guide:Course ;
+    sch:name "El Arte De Programar" ;
+    sch:courseCode 105000439 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 3 ;
+    guide:semester "Quinto semestre" ;
+    sch:hasCourseInstance :course_guide_105000439 .
+
+# Degree Instance
+:degree_10II a guide:BachelorDegree ;
+    sch:name "Grado En Ingenieria Informatica" ;
+    guide:degreeCode "10II" ;
+    guide:hasCourse :course_105000439 .
+
+# University Center Instance
+:center_ets_ii a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Informáticos" ;
+    guide:offers :degree_10II .
+
+# Lecturers
+:prof_larsake a guide:Lecturer ;
+    sch:name "Lars-ake Fredlund" ;
+    sch:email "larsake.fredlund@upm.es" ;
+    guide:office "D2309" ;
+    guide:tutorshipsSchedule "Sin horario. https://upm365-my.sharepoint.com/..."@en .
+
+:prof_julio a guide:Lecturer ;
+    sch:name "Julio Mariño Carballo" ;
+    sch:email "julio.marino@upm.es" ;
+    guide:office "D2308" ;
+    guide:tutorshipsSchedule "Sin horario. https://upm365-my.sharepoint.com/..."@en .
+
+:prof_clara a guide:Lecturer ;
+    sch:name "Clara Benac Earle" ;
+    sch:email "clara.benac@upm.es" ;
+    guide:office "D2302" ;
+    guide:tutorshipsSchedule "Sin horario. https://upm365-my.sharepoint.com/..."@en .
+
+:prof_santiago a guide:Lecturer ;
+    sch:name "Santiago Tapia Fernandez" ;
+    sch:email "santiago.tapia@upm.es" ;
+    guide:office "D2307" ;
+    guide:tutorshipsSchedule "Sin horario. https://upm365-my.sharepoint.com/..."@en .
+
+# Competencies
+:comp_cg1_21 a guide:Competency ;
+    guide:competencyCode "CG-1/21" ;
+    guide:competencyDescription "Capacidad de resolución de problemas aplicando conocimientos de matemáticas, ciencias e ingeniería."@en .
+
+:comp_cg2_ce45 a guide:Competency ;
+    guide:competencyCode "CG-2/CE45" ;
+    guide:competencyDescription "Capacidad para el aprendizaje autónomo y la actualización de conocimientos, y reconocimiento de su necesidad en el área de la informática."@en .
+
+:comp_cg3_4 a guide:Competency ;
+    guide:competencyCode "CG-3/4" ;
+    guide:competencyDescription "Saber trabajar en situaciones carentes de información y bajo presión, teniendo nuevas ideas, siendo creativo."@en .
+
+:comp_cg6 a guide:Competency ;
+    guide:competencyCode "CG-6" ;
+    guide:competencyDescription "Capacidad de abstracción, análisis y síntesis"@en .
+
+:comp_cg7_10_16_17 a guide:Competency ;
+    guide:competencyCode "CG-7:10/16/17" ;
+    guide:competencyDescription "Capacidad para trabajar dentro de un equipo, organizando, planificando, tomando decisiones, negociando y resolviendo conflictos..."@en .
+
+:comp_ce19_20 a guide:Competency ;
+    guide:competencyCode "Ce 19/20" ;
+    guide:competencyDescription "Conocimiento de los tipos apropiados de soluciones, y comprensión de la complejidad de los problemas informáticos..."@en .
+
+# Learning Results
+:lr_ra278 a guide:LearningResult ;
+    guide:learningResultCode "RA278" ;
+    guide:learningResultDescription "Desarrollar la solución matemática y algorítmica mas apropiada a un problema informático que requiera un tratamiento especialmente complejo, analizando y exponiendo su viabilidad."@en .
+
+# Syllabus
+:syllabus_105000439 a guide:Syllabus ;
+    guide:hasItem :item_intro, :item_efficiency, :item_basic_tech, :item_design_tech .
+
+:item_intro a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción. Presentación de la asignatura. Programación competitiva. Familiarización con el entorno de trabajo. Jueces."@en .
+
+:item_efficiency a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Eficiencia y complejidad de algoritmos. Análisis de tiempo, Notación O(), Tratabilidad, Reducciones."@en .
+
+:item_basic_tech a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Técnicas básicas. Cadenas alfanuméricas, Estructuras de datos, Algoritmos sobre árboles y grafos."@en .
+
+:item_design_tech a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Técnicas de diseño de algoritmos. Divide y vencerás, Voraces, Backtracking, Heurística, Programación dinámica."@en .
+
+# Evaluation System
+:eval_system_105000439 a guide:EvaluationSystem ;
+    guide:evaluationDescription "La nota de evaluación progresiva se calcula como 0,3 * (Test de Teoría) + 0,7 * (Nota Concursos). La evaluación global es similar para la recuperación."@en ;
+    guide:hasEvaluationTrial :trial_concursos, :trial_ada_byron, :trial_test_teoria, :trial_examen_practico .
+
+:trial_concursos a guide:EvaluationTrial ;
+    guide:trialType "Concursos de Programación" ;
+    guide:trialMode "Presencial" ;
+    guide:trialWeek "6-15" ;
+    guide:gradePercentage "7%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:involvesCompetency :comp_cg1_21, :comp_cg2_ce45, :comp_cg3_4, :comp_cg6, :comp_cg7_10_16_17, :comp_ce19_20 .
+
+:trial_ada_byron a guide:EvaluationTrial ;
+    guide:trialType "Fase Local Ada Byron" ;
+    guide:trialMode "Presencial" ;
+    guide:trialWeek "11" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:involvesCompetency :comp_cg1_21, :comp_cg2_ceelle45, :comp_cg3_4, :comp_cg6, :comp_cg7_10_16_17, :comp_ce19_20 .
+
+:trial_test_teoria a guide:EvaluationTrial ;
+    guide:trialType "Test teoría" ;
+    guide:trialMode "Presencial" ;
+    guide:trialWeek "15" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:involvesCompetency :comp_cg2_ce45, :comp_cg3_4, :comp_cg6, :comp_ce19_20 .
+
+:trial_examen_practico a guide:EvaluationTrial ;
+    guide:trialType "Examen Práctico" ;
+    guide:trialMode "Presural" ;
+    guide:trialWeek "17" ;
+    guide:gradePercentage "70%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:involvesCompetency :comp_cg1_21, :comp_cg2_ce45, :comp_cg3_4, :comp_cg6, :comp_cg7_10_16_17, :comp_ce19_20 .
+
+# Schedule
+:schedule_105000439 a guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week6, :event_week11, :event_week15 .
+
+:event_week1 a guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_teoria_1 .
+
+:act_teoria_1 a guide:Activity ;
+    guide:activityDescription "Clase de Teoría" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:event_week6 a guide:ScheduleEvent ;
+    guide:eventIndex 6 ;
+    guide:eventWeek "Semana 6" ;
+    guide:hasActivity :act_concursos .
+
+:act_concursos a guide:Activity ;
+    guide:activityDescription "Concursos de Programación" ;
+    guide:activityDuration 0.0 ;
+    guide:activityFormat "Trabajo en Grupo" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_skiena_1 a guide:DidacticResource ;
+    sch:name "The Algorithm Design Manual" ;
+    guide:bibliographyTitle "The Algorithm Design Manual" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Steven S. Skiena. Springer, London, 2008."@en .
+
+:res_skiena_2 a guide:DidacticResource ;
+    sch:name "Programming Challenges" ;
+    guide:bibliographyTitle "Programming Challenges: The Programming Contest Training Manual" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Steven S. Skiena and Miguel Revilla. Springer-Verlag, 2003."@en .
+
+:res_knuth_1 a guide:DidacticResource ;
+    sch:name "The Art of Computer Programming, Vol 3" ;
+    guide:bibliographyTitle "The Art of Computer Programming, Volume 3: (2nd Ed.) Sorting and Searching" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Donald E. Knuth. Addison Wesley Longman, 1998."@en .
+
+:res_knuth_2 a guide:DidacticResource ;
+    sch:name "The Art of Computer Programming, Part 1" ;
+    guide:bibliographyTitle "The Art of Computer Programming: Combinatorial Algorithms, Part 1" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Donald E. Knuth. Addison-Wesley Professional, 2011."@en .
+
+:res_laaksonen a guide:DidacticResource ;
+    sch:name "Guide to Competitive Programming" ;
+    guide:bibliographyTitle "Guide to Competitive Programming: Learning and Improving Algorithms Through Contests" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Antti Laaksonen. Springer Verlag, 2017."@en .
+
+# Prerequisites
+:req_knowledge_1 a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Programación II, Algoritmos Y Estructura De Datos, Programación I"@en .

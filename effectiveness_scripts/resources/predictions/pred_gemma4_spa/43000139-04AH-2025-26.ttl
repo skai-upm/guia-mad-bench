@@ -1,0 +1,185 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Instance
+:course_43000139 rdf:type guide:Course ;
+    sch:name "43000139 - Ingenieria Ferroviaria" ;
+    sch:courseCode 43000139 ;
+    guide:courseType "Optativa" ;
+    sch:numberOfCredits 4.5 ;
+    guide:semester "Primer semestre" ;
+    guide:teachingPeriod "2_025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" .
+
+# Course Guide Instance
+:guide_43000139 rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance :course_43000139 ;
+    guide:hasSyllabus :syllabus_ferroviaria ;
+    guide:hasEvaluation :eval_system_ferroviaria ;
+    guide:hasCompetency :comp_cb10, :comp_ce_a1, :comp_ce_a2, :comp_ce_a5, :comp_ce_a6, :comp_ce_a7 ;
+    guide:hasLearningResult :lr_ra10, :lr_ra103, :lr_ra109, :lr_ra97, :lr_ra20, :lr_ra98, :lr_ra96, :lr_ra95, :lr_ra13, :lr_ra65, :lr_ra12, :lr_ra113, :lr_ra14, :lr_ra63 ;
+    guide:hasDidacticResource :res_moodle, :res_doc_ferroviaria, :res_lopez_pita, :res_losada ;
+    guide:otherInformation "La asignatura se alinea con los ODS 9, 11 y 13." .
+
+# Degree Instance
+:degree_04ah rdf:type guide:MasterDegree ;
+    sch:name "04AH - Master Universitario En Sistemas De Ingenier<0xC2>ia Civil" ;
+    guide:degreeCode "04AH" .
+
+# University Center Instance
+:center_ets rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ing. de Caminos Canales y P." ;
+    guide:offers :degree_04ah .
+
+# Lecturer Instances
+:lecturer_luis rdf:type guide:Lecturer ;
+    sch:name "Luis Esteras Aldea" ;
+    sch:email "luis.esteras@upm.es" ;
+    guide:office "Planta 5" ;
+    guide:tutorshipsSchedule "Sin horario. Las tutorías se realizarán previa petición por email." .
+
+:lecturer_juan_jose rdf:type guide:Lecturer ;
+    sch:name "Juan Jose Alvarez Gonzalez" ;
+    sch:email "juanjose.alvarez@upm.es" ;
+    guide:office "Planta 5" ;
+    guide:tutorshipsSchedule "Sin horario. Las tutorías se realizarán previa petición por email." .
+
+:lecturer_carlos rdf:type guide:Lecturer ;
+    sch:name "Carlos Romero Morales" ;
+    sch:email "carlos.romeromorales@upm.es" ;
+    guide:office "Planta 5" ;
+    sch:director :guide_43000139 .
+
+:lecturer_juan_gomez rdf:type guide:Lecturer ;
+    sch:name "Juan Gomez Sanchez" ;
+    sch:email "juan.gomez.sanchez@upm.es" ;
+    guide:office "TRANSyT" .
+
+:lecturer_clara rdf:type guide:Lecturer ;
+    sch:name "Clara Isabel Zamorano Martin" ;
+    sch:email "clara.zamorano@upm.es" ;
+    guide:office "Planta 5" ;
+    guide:tutorshipsSchedule "Sin horario. Las tutorías se realizarán previa petición por email." .
+
+# Competencies
+:comp_cb10 rdf:type guide:Competency ;
+    guide:competencyCode "CB10" ;
+    guide:competencyDescription "Que los estudiantes posean las habilidades de aprendizaje que les permitan continuar estudiando de un modo que habrá de ser en gran medida autodirigido o autónomo." .
+
+:comp_ce_a1 rdf:type guide:Competency ;
+    guide:competencyCode "CE-A1" ;
+    guide:competencyDescription "Capacitación científico-técnica y metodológica suficiente para el proyecto, análisis, planificación, explotación y mantenimiento de obras civiles..." .
+
+:comp_ce_a2 rdf:type guide:Competency ;
+    guide:competencyCode "CE-A2" ;
+    guide:competencyDescription "Conocimiento y capacidad para proyectar y dimensionar obras e instalaciones de ingeniería civil" .
+
+:comp_ce_a5 rdf:type guide:Competency ;
+    guide:competencyCode "CE-A5" ;
+    guide:competencyDescription "Conocimiento de la influencia de las infraestructuras en la ordenación del territorio." .
+
+:comp_ce_a6 rdf:type guide:Competency ;
+    guide:competencyCode "CE-A6" ;
+    guide:competencyDescription "Conocimiento del marco de regulación de los sistemas de ingeniería civil" .
+
+:comp_ce_a7 rdf:type guide:Competency ;
+    guide:competencyCode "CE-A7" ;
+    guide:competencyDescription "Conocimiento y capacidad para idear soluciones innovadoras en sistemas de ingeniería civil" .
+
+# Learning Results
+:lr_ra10 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA10" ;
+    guide:learningResultDescription "Argumenta la resolucion de los problemas de gestion mediante logica cientifica y aplicando una metodologia razonada." .
+
+:lr_ra103 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA103" ;
+    guide:learningResultDescription "Aplica técnicas de optimización a la resolución de problemas de sistemas de ingeniería civil" .
+
+:lr_ra97 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA97" ;
+    guide:learningResultDescription "Capacidad de plantear una metodología de investigación basada en el estado del arte." .
+
+# Syllabus
+:syllabus_ferroviaria rdf:type guide:Syllabus ;
+    guide:hasItem :item_tema1, :item_tema2, :item_tema3 .
+
+:item_tema1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "El proyecto ferroviario: Fundamentos y normativa, Proyectos de trazado, Proyectos de instalaciones, Material móvil, Métodos constructivos" .
+
+:item_tema2 rdf:type guide:SylabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Comportamiento de la vía ferroviaria: Esfuerzos estáticos, Dinámica de la vía" .
+
+# Evaluation System and Trials
+:eval_system_ferroviaria rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación continua y prueba final." ;
+    guide:hasEvaluationTrial :trial_control4, :trial_examen_9, :trial_examen_17 .
+
+:trial_control4 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "10%" ;
+    guide:evaluationDuration "00:15" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "0 / 10" ;
+    guide:involvesCompetency :comp_cb10, :comp_ce_a1 .
+
+:trial_examen_9 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "35%" ;
+    guide:evaluationDuration "01:45" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "4 / 10" ;
+    guide:involvesCompetency :comp_ce_a2, :comp_ce_a1 .
+
+:trial_examen_17 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "100%" ;
+    guide:evaluationDuration "03:00" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "5 / 10" ;
+    guide:involvesCompetency :comp_ce_a2, :comp_ce_a5 .
+
+# Schedule and Activities
+:schedule_ferroviaria rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week4 .
+
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :activity_tema1 .
+
+:activity_tema1 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1" ;
+    guide:activityDuration 3.25 ;
+    guide:activityFormat "Lección Magistral" .
+
+:event_week4 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 4" ;
+    guide:eventIndex 4 ;
+    guide:hasActivity :activity_control4 .
+
+:activity_control4 rdf:type guide:Activity ;
+    guide:activityDescription "Control" ;
+    guide:activityDuration 0.25 ;
+    guide:activityFormat "Evaluación" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Moodle" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Toda la información del curso estará disponible en la plataforma Moodle" .
+
+:res_lopez_pita rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "López Pita, A.: 'Infraestructuras ferroviarias'. 2ºed. Barcelona, 2010" ;
+    guide:bibliographyType "Bibliografía" .
+
+# Required Knowledge
+:req_knowledge_ferroviaria rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "Transportes, Geología" .

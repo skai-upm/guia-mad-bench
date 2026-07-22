@@ -1,0 +1,195 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:course_595040506 rdf:type guide:Course ;
+    sch:courseCode 595040506 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 3 ;
+    guide:semester "Sexto semestre" ;
+    sch:hasCourseInstance :guide_595040506 .
+
+:guide_595040506 rdf:type guide:CourseGuide ;
+    dc:title "Bases de Datos Relacionales y Datos Estructurados" ;
+    sch:name "595040506 - Bases de Datos Relacionales y Datos Estructurados" ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:numberOfCredits 6.0 ;
+    guide:totalHours "Estimación basada en créditos ECTS" ;
+    sch:description "En esta asignatura se estudian conceptos teóricos y prácticos del diseño, definición y explotación de bases de datos relacionales." ;
+    sch:instructor :lecturer_sara_lana_serrano ;
+    sch:director :lecturer_sara_lana_serrano ;
+    guide:hasSyllabus :syllabus_595040506 ;
+    guide:hasCompetency :comp_ce_b2, :comp_ce_tel01, :comp_ce_tel02, :comp_comp_ce_tel03, :comp_ce_tel07, :comp_cg_03, :comp_cg_10 ;
+    guide:hasLearningResult :lr_ra1463, :lr_ra1462, :lr_ra1464 ;
+    guide:hasEvaluation :eval_system_595040506 ;
+    sch:courseSchedule :schedule_595040506 ;
+    guide:hasDidacticResource :res_moodle, :res_libro1, :res_libro2 .
+
+:degree_59so rdf:type guide:BachelorDegree ;
+    sch:name "59SO - Grado en Ingenieria de Sonido e Imagen" ;
+    guide:degreeCode "59SO" .
+
+:center_etsist rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Sist. De Telecom." ;
+    guide:offers :degree_59so .
+
+:lecturer_mario_san_emeterio rdf:type guide:Lecturer ;
+    sch:name "Mario San Emeterio De La Parte" ;
+    sch:email "mario.sanemeterio@upm.es" ;
+    guide:office "A4417" ;
+    guide:tutorshipsSchedule "Sin horario disponible en la Web de la ETSIST" .
+
+:lecturer_sara_lana_serrano rdf:type guide:Lecturer ;
+    sch:name "Sara Lana Serrano" ;
+    sch:email "sara.lana@upm.es" ;
+    guide:office "A4424" ;
+    guide:tutorshipsSchedule "Sin horario disponible en la Web de la ETSIST" .
+
+:comp_ce_b2 rdf:type guide:Competency ;
+    guide:competencyCode "CE B2" ;
+    guide:competencyDescription "Conocimientos básicos sobre el uso y programación de los ordenadores, sistemas operativos, bases de datos y programas informáticos con aplicación en ingeniería." .
+
+:comp_ce_tel01 rdf:type guide:Competency ;
+    guide:competencyCode "CE TEL01" ;
+    guide:competencyDescription "Capacidad para aprender de manera autónoma nuevos conocimientos y técnicas adecuados para la concepción, el desarrollo o la explotación de sistemas y servicios de telecomunicación." .
+
+:comp_ce_tel02 rdf:type guide:Competency ;
+    guide:competencyCode "CE TEL02" ;
+    guide:competencyDescription "Capacidad de utilizar aplicaciones de comunicación e informáticas para apoyar el desarrollo y explotación de redes, servicios y aplicaciones de telecomunicación y electrónica." .
+
+:comp_comp_ce_tel03 rdf:type guide:Competency ;
+    guide:competencyCode "CE TEL03" ;
+    guide:competencyDescription "Capacidad para utilizar herramientas informáticas de búsqueda de recursos bibliográficos o de información relacionada con las telecomunicaciones y la electrónica." .
+
+:comp_ce_tel07 rdf:type guide:Competency ;
+    guide:competencyCode "CE TEL07" ;
+    guide:competencyDescription "Conocimiento y utilización de los fundamentos de la programación en redes, sistemas y servicios de telecomunicación." .
+
+:comp_cg_03 rdf:type guide:Competency ;
+    guide:competencyCode "CG 03" ;
+    guide:competencyDescription "Capacidad para expresarse correctamente de forma oral y escrita y transmitir información mediante documentos y exposiciones en público." .
+
+:comp_cg_10 rdf:type guide:Competency ;
+    guide:competencyCode "CG 10" ;
+    guide:competencyDescription "Capacidad para manejar especificaciones, reglamentos y normativas y la aplicación de las mismas en el desarrollo de la profesión." .
+
+:lr_ra1463 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA1463" ;
+    guide:learningResultDescription "Entender cómo realizar un modelado de datos de cualquier aspecto de la realidad e implementarlo sobre diversas tecnologías de bases de datos relacionales" .
+
+:lr_ra1462 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA1462" ;
+    guide:learningResultDescription "Dominar los principios de una arquitectura basada en servicios para darles soporte y aplicar los elementos técnicos necesarios para implantarla..." .
+
+:lr_ra1464 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA1464" ;
+    guide:learningResultDescription "Construir modelos y transformaciones a estos modelos para su aplicación en el desarrollo y operación de los servicios..." .
+
+:syllabus_595040506 rdf:type guide:Syllabus ;
+    guide:hasItem :item_tema0, :item_tema1, :item_tema2, :item_tema3, :item_tema4, :item_tema5, :item_tema6, :item_tema7 .
+
+:item_tema0 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 0 ;
+    guide:syllabusDescription "Introducción y contextualización a las Bases de Datos Relacionales" .
+
+:item_tema1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Modelado Conceptual y Modelos de Datos Semánticos" .
+
+:item_tema2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Modelo de Datos Relacional y Bases de Datos Relacionales" .
+
+:item_tema3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Diseño de Base de Datos Relacionales" .
+
+:item_tema4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Lenguaje SQL y Sistemas de Gestión de Bases de Datos Relacionales" .
+
+:item_tema5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Aplicaciones y Servicios con Bases de Datos Relacionales" .
+
+:item_tema6 rdf:template_item_6 ; # Placeholder for brevity in complex structure
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Introducción al modelado y limpieza de los datos para su procesado" .
+
+:item_tema7 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Introducción a las bases de datos temporales, espaciales y multimedia" .
+
+:eval_system_5950405<0xC2>06 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva, global y extraordinaria." ;
+    guide:hasEvaluationTrial :trial_ef, :trial_pep1, :trial_epep2, :trial_pep3, :trial_epep4, :trial_efeg, :trial_epeg, :trial_extraordinario .
+
+:trial_ef rdf:type guide:EvaluationTrial ;
+    sch:name "EF - Examen Final" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "76%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:evaluationDuration "02:00" .
+
+:trial_pep1 rdf:type guide:EvaluationTrial ;
+    sch:name "PEP1 - Práctica 1" ;
+    guide:evaluationType "Trabajo Individual" ;
+    guide:trialMode "No Presencial" ;
+    guide:gradePercentage "6%" ;
+    guide:minimumScore "2 / 10" .
+
+:trial_epep2 rdf:type guide:EvaluationTrial ;
+    sch:name "EPEP2 - Práctica 2" ;
+    guide:evaluationType "Examen de Prácticas" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "6%" ;
+    guide:minimumScore "2 / 10" .
+
+:trial_efeg rdf:type guide:EvaluationTrial ;
+    sch:name "EFEG - Examen Global" ;
+    guide:evaluationType "Exlamen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "76%" ;
+    guide:minimumScore "5 / 10" .
+
+:schedule_595040506 rdf:type guide:Schedule ;
+    sch:eventSchedule :event_tema0, :event_tema1, :event_tema2 .
+
+:event_tema0 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity :act_lm_tema0 .
+
+:act_lm_tema0 rdf:type guide:Activity ;
+    guide:activityDescription "Lección Magistral Tema 0" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Presencial" .
+
+:res_moodle rdf:type guide:DidacticResource ;
+    sch:name "Sitio Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "https://moodle.upm.es/" .
+
+:res_libro1 rdf:type guide:DidacticResource ;
+    sch:name "Sistemas de Bases de Datos - Elmasri / Navathe" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_libro2 rdf:type guide:DidacticResource ;
+    sch:name "Fundamentos de Bases de Datos - Silverschatz / Korth / Sudarshan" ;
+    guide:bibliographyType "Bibliografía" .
+
+:req_knowledge_previas rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Programacion I, Microprocesadores, Programacion II" ;
+    guide:previousKnowledge "Se recomienda haber cursado la asignatura optativa 'Programación Multiparregma para Sistemas de Datos'" .

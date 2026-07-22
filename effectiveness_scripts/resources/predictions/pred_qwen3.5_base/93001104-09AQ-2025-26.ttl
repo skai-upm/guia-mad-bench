@@ -1,0 +1,180 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix data: <http://guia-mad-bench.es/data/> .
+
+<http://w3id.org/def/guia#> rdf:type owl:Ontology ;
+                             dc:title "GUIA ontology"@en ;
+                             dct:creator "Andrea Cimmino Arriaga" ,
+                                         "Covadonga Arias" ,
+                                         "Joaquín Gayoso Cabada" ,
+                                         "Juan Cano de Benito" ,
+                                         "Paola Espinoza Arias" ;
+                             dct:license <http://purl.org/NET/rdflicense/cc-by4.0> .
+
+#################################################################
+#    Instance Data Extraction
+#################################################################
+
+###  Course Guide Instance
+<http://guia-mad-bench.es/data/course/ga_09aq_93001104> rdf:type :CourseGuide ;
+                                                        sch:name "Sistemas Electronicos Para Iot"@en ;
+                                                        dc:title "Guía de Aprendizaje - Sistemas Electronicos para Iot"@es ;
+                                                        dct:creator "E.T.S. Ingenieros Telecomunicacion"@es ;
+                                                        guide:numberOfCredits 4^^xsd:decimal ;
+                                                        sch:description "Este curso contempla dos aspectos de manera simultánea: computación y restricciones."@en ;
+                                                        guide:syllabusDescription "Introducción a los sistemas empotrados, diseño hardware/software, sistemas en tiempo real, seguridad."@es .
+
+###  Degree Instance (Master)
+<http://guia-mad-bench.es/data/course/master_ingenieria_telecomunicacion> rdf:type :Degree ;
+                                                                            sch:name "09AQ - Master Universitario En Ingenieria De Telecomunicacion"@en ;
+                                                                            guide:degreeCode "09AQ"^^xsd:string .
+
+###  Link Degree to Course Guide (via hasCourse)
+<http://guia-mad-bench.es/data/course/ga_09aq_93001104> :hasCourse <http://guia-mad-bench.es/data/course/master_ingenieria_telecomunicacion> .
+
+###  Lecturers Instances
+<http://guia-mad-bench.es/data/person/alvaro_araujo_pinto> rdf:type sch:Person ;
+                                                            guide:Lecturer ;
+                                                            rdfs:subClassOf :Lecturer ;
+                                                            sch:name "Alvaro Araujo Pinto"@en ;
+                                                            dc:title "(Coordinador/a)"@es ;
+                                                            guide:office "B-104.1b"^^xsd:string ;
+                                                            sch:email <mailto:alvaro.araujo@upm.es> .
+
+<http://guia-mad-bench.es/data/person/pedro_malagon_marzo> rdf:type sch:Person ;
+                                                              guide:Lecturer ;
+                                                              rdfs:subClassOf :Lecturer ;
+                                                              sch:name "Pedro Jose Malagon Marzo"@en ;
+                                                              dc:title ""@es ;
+                                                              guide:office "B-113"^^xsd:string .
+
+###  Link Lecturers to Course Guide (director/instructor)
+<http://guia-mad-bench.es/data/course/ga_09aq_93001104> sch:director <http://guia-mad-bench.es/data/person/alvaro_araujo_pinto> ;
+                                                        sch:instructor <http://guia-mad-bench.es/data/person/pedro_malagon_marzo> .
+
+###  Syllabus Instance and Items
+<http://guia-mad-bench.es/data/course/ga_09aq_93001104> :hasSyllabus <http://guia-mad-bench.es/data/syllabus/93001104_sistemas_iot> .
+
+###  Syllabus Item Instances (Temario)
+<http://guia-mad-bench.es/data/course/ga_09aq_93001104>:hasItem <http://guia-mad-bench.es/data/syllabus_item/1_intro_sistemas_empotrados> .
+
+###  Syllabus Item: Introduction
+<http://guia-mad-bench.es/data/syllabus_item/1_intro_sistemas_empotrados> rdf:type :SyllabusItem ;
+                                                                            guide:Syllabus <http://guia-mad-bench.es/data/course/ga_09aq_93001104>:hasSyllabus .
+
+###  Syllabus Item: Hardware Design (2.1)
+<http://guia-mad-bench.es/data/syllabus_item/2_diseño_hardware> rdf:type :SyllabusItem ;
+                                                                   guide:Syllabus <http://guia-mad-bench.es/data/course/ga_09aq_93001104>:hasSyllabus .
+
+###  Syllabus Item: Software Design (3.2)
+<http://guia-mad-bench.es/data/syllabus_item/3_software_os> rdf:type :SyllabusItem ;
+                                                              guide:Syllabus <http://guia-mad-bench.es/data/course/ga_09aq_93001104>:hasSyllabus .
+
+###  Syllabus Item: Real-Time Systems (4.2)
+<http://guia-mad-bench.es/data/syllabus_item/4_sistemas_tiempo_real> rdf:type :SyllabusItem ;
+                                                                       guide:Syllabus <http://guia-mad-bench.es/data/course/ga_09aq_93001104>:hasSyllabus .
+
+###  Syllabus Item: Testing Environment (5.2)
+<http://guia-mad-bench.es/data/syllabus_item/5_entorno_pruebas> rdf:type :SyllabusItem ;
+                                                                   guide:Syllabus <http://guia-mad-bench.es/data/course/ga_09aq_93001104>:hasSyllabus .
+
+###  Syllabus Item: Security (6.2)
+<http://guia-mad-bench.es/data/syllabus_item/6_seguridad> rdf:type :SyllabusItem ;
+                                                            guide:Syllabus <http://guia-mad-bench.es/data/course/ga_09aq_93001104>:hasSyllabus .
+
+###  Schedule Instance (Cronograma)
+<http://guia-mad-bench.es/data/schedule/2025-26_primer_semestre> rdf:type :Schedule ;
+                                                                    sch:courseSchedule <http://guia-mad-bench.es/data/course/ga_09aq_93001104> .
+
+###  Schedule Event Instances (Cronograma)
+<http://guia-mad-bench.es/data/schedule_event/sem1_leccion_magistral> rdf:type :ScheduleEvent ;
+                                                                        sch:eventSchedule <http://guia-mad-bench.es/data/schedule/2025-26_primer_semestre> .
+
+###  Schedule Event: Sem 1 Activity (Semester)
+<http://guia-mad-bench.es/data/schedule_event/sem1_leccion_magistral> guide:eventWeek "Primer semestre"^^xsd:string ;
+                                                                        sch:name "Introducción y conceptos básicos"@en ;
+                                                                        om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+###  Evaluation System Instance (Progresiva)
+<http://guia-mad-bench.es/data/evaluation_system/progresiva_93001104> rdf:type :EvaluationSystem ;
+                                                                         sch:name "Evaluación Progresiva"@en ;
+                                                                         guide:evaluationDescription "La asignatura se aprobará cuando se obtenga una calificación mayor o igual a 5 puntos sobre un total de 10."@es .
+
+###  Evaluation Trial Instances (Progresiva)
+<http://guia-mad-bench.es/data/eval_trial/practica_0> rdf:type :EvaluationTrial ;
+                                                        guide:hasEvaluation <http://guia-mad-bench.es/data/evaluation_system/progresiva_93001104> .
+
+###  Evaluation Trial: Practice 0 (Semester)
+<http://guia-mad-bench.es/data/eval_trial/practica_0> guide:trialType "Prueba Telemática"^^xsd:string ;
+                                                        sch:name "Práctica 0: Introducción al entorno de desarrollo"@en ;
+                                                        guide:gradePercentage "5%"^^xsd:string .
+
+###  Evaluation Trial: Exam (Semester)
+<http://guia-mad-bench.es/data/eval_trial/examen_progresiva> rdf:type :EvaluationTrial ;
+                                                               guide:hasEvaluation <http://guia-mad-bench.es/data/evaluation_system/progresiva_93001104> .
+
+###  Evaluation Trial: Exam (Semester)
+<http://guia-mad-bench.es/data/eval_trial/examen_progresiva> sch:name "Examen para evaluación progresiva"@en ;
+                                                        guide:trialType "Examen Escrito"^^xsd:string ;
+                                                        guide:gradePercentage "50%"^^xsd:string .
+
+###  Evaluation System Instance (Global)
+<http://guia-mad-bench.es/data/evaluation_system/global_93001104> rdf:type :EvaluationSystem ;
+                                                                      sch:name "Evaluación Global"@en ;
+                                                                      guide:evaluationDescription "El 70% de la calificación se otorgará en función de una única prueba final."@es .
+
+###  Evaluation Trial Instances (Global)
+<http://guia-mad-bench.es/data/eval_trial/examen_global> rdf:type :EvaluationTrial ;
+                                                           guide:hasEvaluation <http://guia-mad-bench.es/data/evaluation_system/global_93001104> .
+
+###  Evaluation Trial: Exam (Global)
+<http://guia-mad-bench.es/data/eval_trial/examen_global> sch:name "Examen global"@en ;
+                                                           guide:trialType "Examen Escrito"^^xsd:string ;
+                                                           guide:gradePercentage "70%"^^xsd:string .
+
+###  Evaluation Trial: Practice (Global)
+<http://guia-mad-bench.es/data/eval_trial/practica_4> rdf:type :EvaluationTrial ;
+                                                        guide:hasEvaluation <http://guia-mad-bench.es/data/evaluation_system/global_93001104> .
+
+###  Evaluation Trial: Practice (Global)
+<http://guia-mad-bench.es/data/eval_trial/practica_4> sch:name "Práctica 4: Programación sobre máquina desnuda"@en ;
+                                                        guide:trialType "Prueba Telemática"^^xsd:string ;
+                                                        guide:gradePercentage "15%"^^xsd:string .
+
+###  Competencies & Learning Results (Linked to Guide)
+<http://guia-mad-bench.es/data/course/ga_09aq_93001104> :hasCompetency <http://w3id.org/def/guia#CE12> ;
+                                                        guide:competencyCode "CE12"^^xsd:string .
+
+###  Competency Instance (CE12)
+<http://guia-mad-bench.es/data/course/ga_09aq_93001104>:hasCompetency <http://w3id.org/def/guia#CE12> ;
+                                                                        guide:competencyDescription "Capacidad para utilizar dispositivos lógicos programables, así como para diseñar sistemas electrónicos avanzados."@es .
+
+###  Learning Results (Linked to Guide)
+<http://guia-mad-bench.es/data/course/ga_09aq_93001104> :hasLearningResult <http://w3id.org/def/guia#RA116> ;
+                                                        guide:learningResultCode "RA116"^^xsd:string .
+
+###  Learning Result Instance (RA116)
+<http://guia-mad-bench.es/data/course/ga_09aq_93001104>:hasLearningResult <http://w3id.org/def/guia#RA116> ;
+                                                                        guide:learningResultDescription "Diseñar e implementar aplicaciones reales usando plataformas de diseño basadas en procesadores avanzados."@es .
+
+###  Didactic Resources (Linked to Guide)
+<http://guia-mad-bench.es/data/course/ga_09aq_93001104> :hasDidacticResource <http://w3id.org/def/guia#Moodle_asignatura> ;
+                                                        guide:didacticResourceType "Recursos web"^^xsd:string .
+
+###  Didactic Resource Instance (Book)
+<http://guia-mad-bench.es/data/course/ga_09aq_93001104>:hasDidacticResource <http://w3id.org/def/guia#LeeSeshia> ;
+                                                                        guide:bibliographyTitle "Introduction to Embedded Systems"@en .
+
+###  Other Information (SDGs)
+<http://guia-mad-bench.es/data/course/ga_09aq_93001104> :otherInformation "Esta asignatura está alineada con las estrategia de implantación de la Universidad Politécnica de Madrid de los ODS en la Agenda 2030."@es .
+
+###  Teaching Period
+<http://guia-mad-bench.es/data/course/ga_09aq_93001104> guide:teachingPeriod "Septiembre-Enero"^^xsd:string ;
+                                                        sch:name "Primer semestre"@en .

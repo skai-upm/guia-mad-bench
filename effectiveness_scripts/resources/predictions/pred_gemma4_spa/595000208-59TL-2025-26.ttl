@@ -1,0 +1,151 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+# Course Guide Instance
+:CourseGuide_Electronica_I a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Electronica I" ;
+    sch:description "Guía de aprendizaje para la asignatura Electrónica I del Grado en Ingeniería Telemática." ;
+    guide:numberOfCredits 6.0 ;
+    guide:courseType "Básica" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCourse :Course_Electronica_I ;
+    guide:hasCompetency :Competency_CE_B4, :Competency_CE_TEL12, :Competency_CG_02, :Competency_CG_04, :Competency_CG_05 ;
+    guide:hasLearningResult :LR_RA68, :LR_RA69, :LR_RA67, :LR_RA70, :LR_RA71, :LR_RA66 ;
+    guide:hasEvaluation :EvalSystem_Electronica_I ;
+    guide:hasDidacticResource :Res_Hambley, :Res_Sedra_Smith, :Res_Malvino, :Res_Storey, :Res_Apuntes, :Res_Moodle ;
+    sch:instructor :Lecturer_Rita_Hogan .
+
+# Course Instance
+:Course_Electronica_I a guide:Course ;
+    sch:name "595000208 - Electronica I" ;
+    sch:courseCode 595000208 ;
+    guide:semester "Segundo semestre" ;
+    sch:hasCourseInstance :CourseGuide_Electronica_I .
+
+# Degree Instance
+:Degree_59TL a guide:Degree ;
+    sch:name "5lag 59TL - Grado En Ingenieria Telematica" ;
+    guide:degreeCode "59TL" ;
+    guide:hasCourse :Course_Electronica_I .
+
+# University Center Instance
+:UnivCenter_ETS a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingeniería y Sist. de Telecom." ;
+    guide:offers :Degree_59TL .
+
+# Lecturers
+:Lecturer_Pedro_Cobos a guide:Lecturer ;
+    sch:name "Pedro Cobos Arribas" ;
+    sch:email "pedro.cobos@upm.es" ;
+    guide:office "A4210" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:Lecturer_Agustin_Rodriguez a guide:Lecturer ;
+    sch:name "Agustin Rodriguez Herrero" ;
+    sch:email "agustin.rodriguez@upm.es" ;
+    guide:office "A4214" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+:Lecturer_Rita_Hogan a guide:Lecturer ;
+    sch:name "Rita Hogan Teves De Almeida" ;
+    sch:email "rita.hogan@upm.es" ;
+    guide:office "A4202" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+# Competencies
+:Competency_CE_B4 a guide:Competency ;
+    guide:competencyCode "CE B4" ;
+    guide:competencyDescription "Comprensión y dominio de los conceptos básicos de sistemas lineales y las funciones y transformadas relacionadas, teoría de circuitos eléctricos, circuitos electrónicos, principio físico de los semiconductores y familias lógicas, dispositivos electrónicos y fotónicos, tecnología de materiales y su aplicación para la resolución de problemas propios de la ingeniería." .
+
+:Competency_CE_TEL12 a guide:Competency ;
+    guide:competencyCode "CE TEL12" ;
+    guide:competencyDescription "Capacidad de utilizar distintas fuentes de energía y en especial la solar fotovoltaica y térmica, así como los fundamentos de la electrotecnia y de la electrónica de potencia." .
+
+:Competency_CG_02 a guide:Competency ;
+    guide:competencyCode "CG 02" ;
+    guide:competencyDescription "Capacidad de búsqueda y selección de<0xC2>ación, de razonamiento crítico y de elaboración y defensa de argumentos dentro del área." .
+
+# Learning Results
+:LR_RA68 a guide:LearningResult ;
+    guide:learningResultCode "RA68" ;
+    guide:learningResultDescription "Entender el diagrama de bloques de sistemas electrónicos sencillos aplicados en el sector de las telecomunicaciones" .
+
+:LR_RA69 a guide:LearningResult ;
+    guide:learningResultCode "RA69" ;
+    guide:learningResultDescription "Conocer la función y características básicas de los componentes electrónicos pasivos (Resistencia, condensador y bobina). Conocer sus propiedades básicas." .
+
+# Evaluation System and Trials
+:EvalSystem_Electronica_I a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva con exámenes parciales y globales." ;
+    guide:hasEvaluationTrial :Trial_Examen_Grupo_1, :Trial_Ex_Parcial_1, :Trial_Ex_Global_Lab, :Trial_Ex_Global_Teoria .
+
+:Trial_Examen_Grupo_1 a guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "4%" ;
+    guide:minimumScore "0" ;
+    guide:trialWeek "6" .
+
+:Trial_Ex_Parcial_1 a guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "0" ;
+    guide:trialWeek "7" .
+
+:Trial_Ex_Global_Lab a guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "12%" ;
+    guide:minimumScore "0" ;
+    guide:trialWeek "12" .
+
+:Trial_Ex_Global_Teoria a guide:EvaluationTrial ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "60%" ;
+    guide:minimumScore "4" ;
+    guide:trialWeek "17" .
+
+# Didactic Resources
+:Res_Hambley a guide:DidacticResource ;
+    guide:bibliographyTitle "Hambley: Electrónica, 2ª ed. Prentice Hall, 2001." ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_Sedra_Smith a guide:DidacticResource ;
+    guide:bibliographyTitle "Sedra y Smith: Circuitos Microelectrónicos, 5ª ed. McGraw-Hill" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_Moodle a guide:DidacticResource ;
+    guide:bibliographyTitle "Página de la asignatura en Moodle" ;
+    guide:bibliographyType "Recursos web" .
+
+# Syllabus Items (Topics)
+:Syllabus_Electronica_I a guide:Syllabus ;
+    guide:hasItem :SyllabusItem_1, :SyllabusItem_2 .
+
+:SyllabusItem_1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a los sistemas electrónicos" .
+
+:SyllabusItem_2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Componentes y dispositivos electrónicos" .
+
+# Required Knowledge
+:ReqKnow_Circuitos a guide:RequiredKnowledge ;
+    guide:previousCourses "Analisis De Circuitos I" .
+
+# Activities (from Schedule)
+:Act_Leccion_Magistral_Sem1 a guide:Activity ;
+    guide:activityDescription "Presentación de la asignatura. Señales. Potencia. Unidades logarítmicass." ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+:Act_Práctica_Lab_1 a guide:Activity ;
+    guide:activityDescription "Práctica 1: Señales y sistemas." ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Prácticas de Laboratorio" .

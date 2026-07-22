@@ -1,0 +1,598 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Classes (Subset for validity)
+#################################################################
+
+###  http://w3id.org/def/guia#CourseGuide
+guide:CourseGuide rdf:type owl:Class ;
+                  rdfs:subClassOf sch:CourseInstance ;
+                  rdfs:comment "A structured academic document that describes a course, including objectives, contents, methodology, resources, schedule, and evaluation."@en .
+
+###  http://w3id.org/def/guia#Degree
+guide:Degree rdf:type owl:Class ;
+             rdfs:label "Degree"@en .
+
+###  http://w3id.org/def/guia#BachelorDegree
+guide:BachelorDegree rdf:type owl:Class ;
+                     rdfs:subClassOf guide:Degree ;
+                     rdfs:comment "An undergraduate degree programme that provides foundational higher education in a given field of study."@en .
+
+###  http://w3id.org/def/guia#Lecturer
+guide:Lecturer rdf:type owl:Class ;
+               rdfs:subClassOf sch:Person ;
+               rdfs:comment "A teaching person responsible for delivering, coordinating, or supporting a course within an academic programme."@en .
+
+###  http://w3id.org/def/guia#Competency
+guide:Competency rdf:type owl:Class ;
+                 rdfs:label "Competency"@en .
+
+###  http://w3id.org/def/guia#LearningResult
+guide:LearningResult rdf:type owl:Class ;
+                     rdfs:comment "A specific and assessable statement of what a student is expected to know, understand, or be able to do after completing the course."@en .
+
+#################################################################
+#    Instance Data Extraction
+#################################################################
+
+###  Course Guide Instance (59ID - Ciencia Tecnología y Sociedad)
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001/> rdf:type guide:CourseGuide ;
+                                                           dc:title "Ciencia, Tecnología Y Sociedad"@en ;
+                                                           sch:name "Ciencia, Tecnología y Sociedad" ;
+                                                           dct:description "La asignatura pretende promover la reflexión sobre las interacciones entre la sociedad actual y el desarrollo tecnológico."@es ;
+                                                           guide:numberOfCredits 3.0 ;
+                                                           guide:teachingPeriodMonths "Febrero-Junio"@en ;
+                                                           sch:eventSchedule <http://guia-mad-bench.es/data/schedule-2S_2025/> ;
+                                                           guide:syllabusDescription "Temario de la asignatura con temas sobre sostenibilidad, revoluciones tecnológicas y ética."@es .
+
+###  Degree Instance (Grado En Ingenieria Y Sistemas De Datos)
+<http://guia-mad-bench.es/data/degree-59ID/> rdf:type guide:Degree ;
+                                              sch:name "Grado En Ingenieria Y Sistemas de Datos" ;
+                                              rdfs:subClassOf guide:BachelorDegree .
+
+###  Lecturer Instances (Ivan Pau, Miguel Valero)
+<http://guia-mad-bench.es/data/lecturer-ivan-pau/> rdf:type guide:Lecturer ;
+                                                     sch:name "Ivan Pau De La Cruz" ;
+                                                     dct:creator <http://w3id.org/def/guia#> .
+
+###  Lecturer Instance (Miguel Valero)
+<http://guia-mad-bench.es/data/lecturer-valero/> rdf:type guide:Lecturer ;
+                                                   sch:name "Miguel Angel Valero Duboy" ;
+                                                   guide:office "A4422"@en .
+
+###  Course Guide - Lecturers Link (Director)
+<http://guia-mad-bench.es/data/course-guide-ANXPRCL001/> sch:director <http://guia-mad-bench.es/data/lecturer-ivan-pau/> ;
+                                                           sch:instructor <http://guia-mad-bench.es/data/lecturer-valero/> .
+
+###  Syllabus Instance (Temario)
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> rdf:type guide:Syllabus ;
+                                                       sch:name "Guía de Aprendizaje - Temario" ;
+                                                       guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ,
+                                                                   <http://guia-mad-bench.es/data/tema2-revoluciones/> ,
+                                                                   <http://guia-mad-bench.es/data/tema3-etica/> .
+
+###  Syllabus Item Instances (Temario)
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1)
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-bench.es/data/tema1-sostenibilidad/> ;
+                                                       rdf:type owl:ObjectProperty .
+
+###  Syllabus Item Instance (Tema 1) - Data
+<http://guia-mad-bench.es/data/syllabus-59ID_2025/> guide:hasItem <http://guia-mad-b

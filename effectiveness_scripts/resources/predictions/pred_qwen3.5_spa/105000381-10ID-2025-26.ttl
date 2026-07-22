@@ -1,0 +1,81 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide-105000381> rdf:type :CourseGuide ;
+    dct:title "ANX-PR/CL/001-01 Guía de Aprendizaje"@en ;
+    sch:name "Estructura De Computadores" ;
+    guide:numberOfCredits 6.0 ;
+    guide:courseYear "Tercero curso"@es ;
+    guide:syllabusDescription "Introducción a los computadores, Programación en Ensamblador, Procesador..."@en .
+
+<http://guia-mad-bench.es/data/degree-10ID> rdf:type :Degree , sch:CourseInstance ;
+    dct:title "Doble Grado En Ingenieria Informatica Y En Ade"@es ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course-guide-105000381> .
+
+<http://guia-mad-bench.es/data/syllabus-105000381> rdf:type :Syllabus ;
+    sch:name "Temario de la asignatura" ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus-item-1> ,
+                 <http://guia-mad-bench.es/data/syllabus-item-2> .
+
+<http://guia-mad-bench.es/data/course-guide-105000381> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus-105000381> ;
+    sch:description "La asignatura describe la arquitectura von Neumann..."@en .
+
+<http://guia-mad-bench.es/data/lecturer-santiago-rodriguez-de-la-fuente> rdf:type :Lecturer , sch:Person ;
+    sch:name "Santiago Rodriguez De La Fuente" ;
+    guide:tutorshipsSchedule "Sin horario. Se debe concertar cita por correo electrónico"@es .
+
+<http://guia-mad-bench.es/data/lecturer-rafael-sautua> rdf:type :Lecturer , sch:Person ;
+    sch:name "Rafael Sautua Ruiz" ;
+    guide:tutorshipsSchedule "Sin horario. Se debe concertar cita por correo electrónico"@es .
+
+<http://guia-mad-bench.es/data/competency-10II-CG05> rdf:type :Competency ;
+    guide:competencyCode "10II-CG05" ;
+    guide:competencyDescription "Capacidad de gestión de la información."@en .
+
+<http://guia-mad-bench.es/data/learning-result-RA103> rdf:type :LearningResult ;
+    guide:learningResultCode "RA103" ;
+    guide:learningResultDescription "Utilizar eficientemente los recursos básicos del computador mediante el lenguaje nativo del mismo."@en .
+
+<http://guia-mad-bench.es/data/schedule-event-1> rdf:type :ScheduleEvent , sch:Event ;
+    sch:eventIndex 1 ;
+    sch:description "Explicación de contenidos teóricos del Tema 1" ;
+    guide:activityDurationUnit om:Hour ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity-lesson> .
+
+<http://guia-mad-bench.es/data/schedule-event-2> rdf:type :ScheduleEvent , sch:Event ;
+    sch:eventIndex 17 ;
+    sch:description "Examen parcial y recuperación del primer parcial" ;
+    guide:trialType "EX: Técnica del tipo Examen Escrito"@es .
+
+<http://guia-mad-bench.es/data/evaluation-system-105000381> rdf:type :EvaluationSystem ;
+    sch:name "Evaluación Progresiva y Global" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-examen-parcial>,
+                            <http://guia-mad-bench.es/data/trial-final-teoria> .
+
+<http://guia-mad-bench.es/data/course-guide-105000381> guide:hasEvaluation <http://guia-mad-bench.es/data/evaluation-system-105000381> ;
+    sch:description "La asignatura consta de dos partes: teoría y proyecto..."@en .
+
+<http://guia-mad-bench.es/data/syllabus-item-1> rdf:type :SyllabusItem , sch:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a los computadores" ;
+    <http://w3id.org/def/guia#hasLearningResult> <http://guia-mad-bench.es/data/learning-result-RA104> .
+
+<http://guia-mad-bench.es/data/schedule-event-6> rdf:type :ScheduleEvent , sch:Event ;
+    sch:eventIndex 6 ;
+    guide:trialType "EX: Técnica del tipo Examen Escrito"@es ;
+    guide:gradePercentage "20%"@xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus-item-5> rdf:type :SylabusItem , sch:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Periféricos" ;
+    <http://w3id.org/def/guia#hasLearningResult> <http://guia-mad-bench.es/data/learning-result-RA104> .
+
+<http://guia-mad-bench.es/data/schedule-event-7> rdf:type :ScheduleEvent , sch:Event ;
+    guide:trialType "EX: Técnica del tipo Examen Escrito"@es ;
+    guide:gradePercentage "80%"@xsd:string .

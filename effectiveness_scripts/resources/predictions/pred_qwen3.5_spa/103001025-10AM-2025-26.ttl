@@ -1,0 +1,77 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course_guide_10AM> rdf:type <http://w3id.org/def/guia#CourseGuide> ;
+    rdfs:label "E-health: Promoting Active And Healthy Ageing"@en ;
+    sch:name "103001025 - E-Health: Promoting Active And Healthy Ageing" ;
+    guide:numberOfCredits 4.0^^xsd:decimal ;
+    <http://w3id.org/def/guia#hasSyllabus> <http://guia-mad-bench.es/data/syllabus_10AM> .
+
+<http://guia-mad-bench.es/data/course_guide_10AM> sch:name "E-health: Promoting Active And Healthy Ageing"@en ;
+    guide:numberOfCredits 4.0^^xsd:decimal ;
+    <http://w3id.org/def/guia#hasLearningResult> <http://guia-mad-bench.es/data/lr_cg18>, <http://guia-mad-bench.es/data/lr_ra90>.
+
+<http://guia-mad-bench.es/data/course_guide_10AM> sch:director <http://guia-mad-bench.es/data/lecturer_elena_villalba>;
+    guide:syllabusDescription "Active and Health Ageing"@en ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/def/guia#CourseGuide> rdf:type <http://www.w3.org/2002/07/owl#Class>.
+
+### Degree Instance
+<http://guia-mad-bench.es/data/degree_master_software> rdf:type <http://w3id.org/def/guia#MasterDegree> ;
+    sch:name "10AM - Master Universitario En Ingenieria Del Software" ;
+    guide:degreeCode "10AM"@en .
+
+### Course Instance
+<http://guia-mad-bench.es/data/course_ehealth_103001025> rdf:type <http://w3id.org/def/guia#Course> ;
+    sch:name "E-health: Promoting Active And Healthy Ageing" ;
+    guide:courseYear 2026^^xsd:integer .
+
+### Lecturer Instances (Coordinator)
+<http://guia-mad-bench.es/data/lecturer_elena_villalba> rdf:type <http://w3id.org/def/guia#Lecturer> ;
+    sch:name "Elena Villalba Mora" ;
+    guide:office "5110"@en ;
+    sch:email "elena.villalba@upm.es"@en .
+
+<http://guia-mad-bench.es/data/lecturer_cristian_moral> rdf:type <http://w3id.org/def/guia#Lecturer> ;
+    sch:name "Cristian Moral Martos" ;
+    guide:office "5110"@en ;
+    sch:email "cristian.moral@upm.es"@en .
+
+### Syllabus Instance
+<http://guia-mad-bench.es/data/syllabus_10AM> rdf:type <http://w3id.org/def/guia#Syllabus> ;
+    guide:syllabusDescription "Active and Health Ageing, Clinical perspective, Political perspective"@en .
+
+### Syllabus Item Instances (Weeks 1-6)
+<http://guia-mad-bench.es/data/sy_item_1> rdf:type <http://w3id.org/def/guia#SyllabusItem> ;
+    guide:itemIndex 1^^xsd:integer ;
+    sch:description "Active and Health Ageing" .
+
+### Schedule Event Instances (Weeks)
+<http://guia-mad-bench.es/data/schedule_event_week5> rdf:type <http://w3id.org/def/guia#ScheduleEvent> ;
+    guide:eventIndex 5^^xsd:integer ;
+    sch:description "Assignment of political and technological perspective" .
+
+### Evaluation Trial Instances (Assessments)
+<http://guia-mad-bench.es/data/eval_trial_week5> rdf:type <http://w3id.org/def/guia#EvaluationTrial> ;
+    guide:trialDescription "Assignment of political and technological perspective"@en ;
+    sch:name "Week 5 Assessment" ;
+    guide:gradePercentage 0.3^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/eval_trial_week16> rdf:type <http://w3id.org/def/guia#EvaluationTrial> ;
+    guide:trialDescription "Final Exam: Assessment: AHA project"@en ;
+    sch:name "Week 16 Final Exam" ;
+    guide:gradePercentage 0.2^^xsd:decimal .
+
+### Learning Result Instances (CG, RA)
+<http://guia-mad-bench.es/data/lr_cg18> rdf:type <http://w3id.org/def/guia#LearningResult> ;
+    sch:name "Capacidad de trabajar y comunicarse en contextos internacionales"@en .
+
+### Didactic Resource Instances (Bibliography)
+<http://guia-mad-bench.es/data/res_bousquet_2015> rdf:type <http://w3id.org/def/guia#DidacticResource> ;
+    sch:name "Operational definition of Active and Healthy Ageing" .
+
+### Evaluation System Instance (Progressive)
+<http://guia-mad-bench.es/data/eval_sys_progressive> rdf:type <http://w3id.org/def/guia#EvaluationSystem> ;
+    guide:evaluationDescription "The evaluation is based on a progressive evaluation system"@en .

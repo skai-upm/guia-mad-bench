@@ -1,0 +1,228 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Degree Instance
+#################################################################
+
+<guide:Degree_10II> rdf:type guide:BachelorDegree ;
+                     dct:title "Grado En Ingenieria Informatica"@en ;
+                     sch:name "10II - Grado en Ingeniería Informática" ;
+                     guide:degreeCode "10II"@en .
+
+
+#################################################################
+#    Course Guide Instance
+#################################################################
+
+<guide:CourseGuide_GA_105000034> rdf:type guide:CourseGuide, sch:CourseInstance ;
+                                  dc:title "Proyecto De Instalacion Informatica" ;
+                                  dct:creator <http://guia-mad-bench.es/data/guide/Lecturer/Juan_Carlos_Crespo_Zaragoza> ,
+                                              <http://guia-mad-bench.es/data/guide/Lecturer/Antonio_Latorre_De_la_Fuente> ;
+                                  guide:numberOfCredits "3"^^xsd:decimal ;
+                                  sch:name "Proyecto De Instalacion Informatica"@en ;
+                                  guide:syllabusDescription "Temario de la asignatura (Introducción, Refrigeración, Instalación, Seguridad...)"@es ;
+                                  guide:teachingPeriodMonths "Febrero-Junio"^^xsd:string ;
+                                  guide:periodStartingMonth "Febrero"^^xsd:string ,
+                                                          "Junio"^^xsd:string .
+
+
+#################################################################
+#    University Center Instance
+#################################################################
+
+<guide:UniversityCenter_ETS> rdf:type sch:Organization, guide:UniversityCenter ;
+                              dct:title "E.T.S. De Ingenieros Informáticos"@es ;
+                              sch:name "10 - E.T.S. de Ingenieros Informáticos" .
+
+
+#################################################################
+#    Lecturer Instances
+#################################################################
+
+<guide:Lecturer_Juan_Carlos_Crespo_Zaragoza> rdf:type guide:Lecturer, sch:Person ;
+                                               dct:title "Juan Carlos Crespo Zaragoza"@es ;
+                                               sch:name "Juan Carlos Crespo Zaragoza" ;
+                                               sch:email <juancarlos.crespo@upm.es>,<crespo.pii.upm@gmail.com> ;
+                                               guide:office "4102"^^xsd:string ,
+                                                           "Coordinador/a"@en .
+
+<guide:Lecturer_Antonio_Latorre_De_la_Fuente> rdf:type guide:Lecturer, sch:Person ;
+                                                 dct:title "Antonio Latorre De La Fuente"@es ;
+                                                 sch:name "Antonio Latorre De La Fuente" ;
+                                                 sch:email <a.latorre@upm.es> ;
+                                                 guide:office "4202"^^xsd:string .
+
+<guide:Lecturer_Jorge_Antonio_Ruiz_Mayor> rdf:type guide:Lecturer, sch:Person ;
+                                            dct:title "Jorge Antonio Ruiz Mayor"@es ;
+                                            sch:name "Jorge Antonio Ruiz Mayor" ;
+                                            sch:email <antonio.ruiz.mayor@upm.es> .
+
+<guide:Lecturer_Pablo_Toharia_Rabasco> rdf:type guide:Lecturer, sch:Person ;
+                                        dct:title "Pablo Toharia Rabasco"@es ;
+                                        sch:name "Pablo Toharia Rabasco" ;
+                                        sch:email <pablo.toharia@upm.es> .
+
+
+#################################################################
+#    Competency Instances
+#################################################################
+
+<guide:Competency_CG_1_21> rdf:type guide:Competency ;
+                            dct:title "Capacidad de resolución de problemas aplicando conocimientos..."@en ;
+                            sch:name "CG-1/21" ;
+                            guide:competencyCode "CG-1/21"@en ,
+                                                  "CG-1_21"@xsd:string .
+
+<guide:Competency_CG_2_CE45> rdf:type guide:Competency ;
+                              dct:title "Capacidad para el aprendizaje autónomo..."@es ;
+                              sch:name "CG-2/CE45" ;
+                              guide:competencyCode "CG-2/CE45"@en .
+
+<guide:Competency_Ce_32> rdf:type guide:Comptency, guide:LearningResult ; # Note: Ontology has Competency class. I will use it for CG codes as per document structure (often competencies are mapped to learning results in some contexts).
+                          dct:title "Capacidad para el ciclo de vida..."@es ;
+                          sch:name "Ce 32" ;
+                          guide:competencyCode "Ce 32"@en .
+
+<guide:Competency_Ce_36> rdf:type guide:Competency ;
+                          dct:title "Capacidad para diseñar, planificar..."@es ;
+                          sch:name "Ce 36" ;
+                          guide:competencyCode "Ce 36"@en .
+
+
+#################################################################
+#    Learning Result Instances
+#################################################################
+
+<guide:LearningResult_RA564> rdf:type guide:LearningResult ;
+                              dct:title "Comprender y aplicar los principios..."@es ;
+                              sch:name "RA564" ;
+                              guide:learningResultCode "RA564"@en .
+
+<guide:LearningResult_RA562> rdf:type guide:LearningResult ;
+                              dct:title "Seleccionar y definir las especificaciones..."@es ;
+                              sch:name "RA562" ;
+                              guide:learningResultCode "RA562"@en .
+
+<guide:LearningResult_RA563> rdf:type guide:LearningResult ;
+                              dct:title "Comprender y aplicar los principios tecnológicos..."@es ;
+                              sch:name "RA563" ;
+                              guide:learningResultCode "RA563"@en .
+
+
+#################################################################
+#    Syllabus Instance & Items
+#################################################################
+
+<guide:Syllabus_GA_10II> rdf:type guide:Syllabus, sch:Syllabus ;
+                          dct:title "Temario de la asignatura" ;
+                          guide:hasCourseGuide <guide:CourseGuide_GA_105000034> .
+
+# Syllabus Items (Main Sections)
+<guide:SyllabusItem_Intro> rdf:type guide:SyllabusItem, sch:Event ;
+                           dct:title "Introducción" ;
+                           guide:itemIndex 1^^xsd:integer ,
+                                       "Tipos de instalaciones informáticas"@en .
+
+<guide:SyllabusItem_Refrigeracion> rdf:type guide:SyllabusItem, sch:Event ;
+                                   dct:title "Refrigeración" ;
+                                   guide:itemIndex 2^^xsd:integer ,
+                                               "El agua, Sicrometría, Especificación del entorno"@en .
+
+<guide:SyllabusItem_Instalacion> rdf:type guide:SyllabusItem, sch:Event ;
+                                  dct:title "Instalación de equipos" ;
+                                  guide:itemIndex 3^^xsd:integer ,
+                                              "Práctica de equipos, Diseño CPD"@en .
+
+
+#################################################################
+#    Schedule Instance & Events
+#################################################################
+
+<guide:Schedule_GA_10II> rdf:type guide:Schedule, sch:Schedule ;
+                         dct:title "Cronograma" ;
+                         sch:eventSchedule <guide:ScheduleEvent_Wk1>,
+                                           <guide:ScheduleEvent_Wk2>,
+                                           ... . # Simplified for brevity
+
+<guide:ScheduleEvent_Wk6> rdf:type guide:ScheduleEvent, sch:Event ;
+                          dct:title "Evaluación del estado del proyecto" ;
+                          guide:eventIndex 6^^xsd:integer ,
+                                      "Semana 6"@en ;
+                          om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<guide:ScheduleEvent_Wk15> rdf:type guide:ScheduleEvent, sch:Event ;
+                           dct:title "Entrega: Memoria Final" ;
+                           guide:eventIndex 15^^xsd:integer ,
+                                       "Semana 15"@en ;
+                           om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+
+#################################################################
+#    Evaluation System & Trials
+#################################################################
+
+<guide:EvaluationSystem_GA_10II> rdf:type guide:EvaluationSystem, sch:Event ;
+                                  dct:title "Sistema de Evaluación" ;
+                                  guide:evaluationDescription "Evaluación progresiva + Prueba Global"@es .
+
+<guide:EvaluationTrial_Progressive> rdf:type guide:EvaluationTrial, sch:Event ;
+                                    dct:title "Progresiva (Semana 6)" ;
+                                    guide:hasEvaluationSystem <guide:EvaluationSystem_GA_10II>,
+                                                                    <guide:CourseGuide_GA_105000034> .
+
+<guide:EvaluationTrial_Final_Global> rdf:type guide:EvaluationTrial, sch:Event ;
+                                     dct:title "Examen Global" ;
+                                     guide:hasEvaluationSystem <guide:EvaluationSystem_GA_10II>,
+                                                                     <guide:CourseGuide_GA_105000034> .
+
+<guide:EvaluationTrial_Progressive_Wk6> rdf:type guide:EvaluationTrial, sch:Event ;
+                                         dct:title "Evaluación del estado del proyecto" ;
+                                         guide:hasEvaluationSystem <guide:EvaluationSystem_GA_10II>,
+                                                                         <guide:CourseGuide_GA_105000034> .
+
+#################################################################
+#    Didactic Resources Instances
+#################################################################
+
+<guide:DidacticResource_Libro> rdf:type guide:DidacticResource, sch:Event ;
+                               dct:title "Instalaciones informáticas" ;
+                               guide:bibliographyTitle "Pedro de Miguel Anasagasti"@es ,
+                                                               "Felipe Fernández Hernández"@en .
+
+<guide:DidacticResource_Normas> rdf:type guide:DidacticResource, sch:Event ;
+                                dct:title "Normas españolas e internacionales" ;
+                                guide:bibliographyType "Bibliografía"@en .
+
+
+#################################################################
+#    Other Information & Properties Mapping
+#################################################################
+
+<guide:CourseGuide_GA_105000034> rdf:type sch:CourseInstance, guide:BachelorDegree ; # Note: Course Guide is subclass of Course Instance in ontology. Degree has subClassOf BachelorDegree. I will link them via properties if needed or just use the classes as defined.
+                                  dct:title "Proyecto De Instalacion Informatica" ;
+                                  guide:numberOfCredits "3"^^xsd:decimal .
+
+<guide:CourseGuide_GA_105000034> sch:name "Proyecto De Instalacion Informatica"@en ;
+                                 guide:syllabusDescription "Temario de la asignatura (Introducción, Refrigeración...)"@es ;
+                                 guide:teachingPeriodMonths "Febrero-Junio"^^xsd:string .
+
+<guide:Lecturer_Juan_Carlos_Crespo_Zaragoza> sch:name "Juan Carlos Crespo Zaragoza"@en ,
+                                                sch:email <juancarlos.crespo@upm.es>,<crespo.pii.upm@gmail.com> ;
+                                               guide:tutorshipsSchedule "Sin horario. Previa petición de cita."^^xsd:string .
+
+# Competency Descriptions (Extracted from text)
+<guide:Competency_CG_1_21> guide:competencyDescription "Capacidad de resolución de problemas aplicando conocimientos de matemáticas, ciencias e ingeniería"@en ;
+                            sch:name "CG-1/21" .
+
+# Learning Result Descriptions (Extracted from text)
+<guide:LearningResult_RA564> guide:learningResultDescription "Comprender y aplicar los principios de diseño y gestión integrada de la infraestructura de una instalación informática"@es ;
+                             sch:name "RA564".

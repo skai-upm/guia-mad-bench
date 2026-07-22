@@ -1,0 +1,217 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# Degree and University Center
+:degree_08MA rdf:type guide:BachelorDegree ;
+    sch:name "Grado en Ingeniería Marítima" ;
+    guide:degreeCode "0AS-08MA" .
+
+:ets_navales rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Navales" ;
+    guide:offers :degree_08MA .
+
+# Course
+:course_85004612 rdf:type guide:Course ;
+    sch:name "Turbomáquinas Térmicas para Aplicaciones Navales" ;
+    sch:courseCode 85004612 ;
+    guide:courseYear 4 ;
+    guide:semester "Séptimo semestre" ;
+    guide:courseType "Obligatoria" .
+
+# Course Guide
+:guide_85004612 rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance :course_85004612 ;
+    sch:instructor :prof_rodrigo, :prof_maria ;
+    sch:director :prof_rodrigo ;
+    sch:inLanguage "Castellano" ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:totalHours "Estimación de 26-27 horas por crédito ECTS" ;
+    guide:hasSyllabus :syllabus_85004612 ;
+    guide:hasCompetency :comp_CB2, :comp_CB5, :comp_CE13, :comp_CE19, :comp_CE23, :comp_CE7, :comp_CG3 ;
+    guide:hasLearningResult :lr_RA32, :lr_RA33 ;
+    guide:hasEvaluation :eval_system_85004612 ;
+    guide:hasDidacticResource :res_coates, :res_kostyuk, :res_munoz1, :res_munoz2, :res_boyce, :res_schegliaiev, :res_woodward ;
+    sch:courseSchedule :schedule_85004612 ;
+    sch:activitiesWorkload "Cálculo basado en 26-27 horas por crédito ECTS" .
+
+# Professors
+:prof_rodrigo rdf:type guide:Lecturer ;
+    sch:name "Rodrigo Perez Fernandez" ;
+    sch:email "rodegro.perez.fernandez@upm.es" ;
+    guide:office "Motores" ;
+    guide:tutorshipsSchedule "J - 17:30 - 21:00, V - 17:30 - 21:00" .
+
+:prof_maria rdf:type guide:Lecturer ;
+    sch:name "Maria Del Carmen Rodriguez Hidalgo" ;
+    sch:email "mariadelcarmen.rodriguez.hidalgo@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+# Competencies
+:comp_CB2 rdf:type guide:Competency ;
+    guide:competencyCode "CB2" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional y posean las competencias que suelen demostrarse por medio de la elaboración y defensa de argumentos y la resolución de problemas dentro de su área de estudio" .
+
+:comp_CB5 rdf:type guide:Competency ;
+    guide:competencyCode "CB5" ;
+    guide:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía" .
+
+:comp_CE13 rdf:type guide:Competency ;
+    guide:competencyCode "CE13" ;
+    guide:competencyDescription "Conocimiento de la mecánica y de los componentes de maquinas" .
+
+:comp_CE19 rdf:type guide:Competency ;
+    guide:competencyCode "CE19" ;
+    guide:competencyDescription "Conocimiento de los motores diesel marinos, turbinas de gas y plantas de vapor" .
+
+:comp_CE23 rdf:type guide:Competency ;
+    guide:competencyCode "CE23" ;
+    guide:competencyDescription "Conocimiento de los métodos de proyecto de los sistemas de propulsión naval" .
+
+:comp_CE7 rdf:type guide:Competency ;
+    guide:competencyCode "CE7" ;
+    guide:competencyDescription "Conocimiento de los conceptos fundamentales de la mecánica de fluidos y de su aplicación a las carenas de buques y artefactos, y a las máquinas, equipos y sistemas navales" .
+
+:comp_CG3 rdf:type guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Capacidad para el aprendizaje de nuevos métodos y teorías, y en la versatilidad para adaptarse a nuevas situaciones basándose en los conocimientos adquiridos en materias básicas y tecnológicas propias de la Ingeniería Marítima" .
+
+# Learning Results
+:lr_RA32 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA32" ;
+    guide:learningResultDescription "Comprender los conceptos básicos de la Termodinámica y aplicarlos a problemas de<0xC2> interés en ingeniería." .
+
+:lr_RA33 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA33" ;
+    guide:learningResultDescription "Conocer y aplicar los Principios de la Termodinámica a procesos térmicos." .
+
+# Syllabus
+:syllabus_85004612 rdf:type guide:Syllabus ;
+    guide:hasItem :item_1, :item_2, :item_3, :item_4, :item_5, :item_6, :item_7, :item_8, :item_9, :item_10, :item_11, :item_12, :item_13, :item_14, :item_15, :item_16, :item_17, :item_18, :item_19 .
+
+:item_1 rdf:type guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "Tema 1. Características Generales." .
+:item_2 rdf:type guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "Tema 2. Análisis de Ciclos Termodinámicos." .
+:item_3 rdf:<0xC2>08MA rdf:type guide:SyllabusItem ; guide:itemIndex 3 ; guide:syllabusDescription "Tema 3. Toberas y Difusores." .
+:item_4 rdf:type guide:SyllabusItem ; guide:itemIndex 4 ; guide:syllabusDescription "Tema 4. Paleteado, consideraciones geométricas y aerodinámicas. Perdidas energéticas." .
+:item_5 rdf:type guide:SyllabusItem ; guide:itemIndex 5 ; guide:syllabusDescription "Tema 5. La Turbina de Acción. Transformación energética. Diagrama de velocidades." .
+:item_6 rdf:type guide:SyllabusItem ; guide:itemIndex 6 ; guide:syllabusDescription "Tema 6. La Turbina de Reacción. Transformación energética. Diagrama de velocidades." .
+:item_7 rdf:type guide:SyllabusItem ; guide:itemIndex 7 ; guide:syllabusDescription "Tema 7. Elementos estructurales. Paleteados. Rotores. Carcasas. Tubuladuras de escape. Válvulas. Cojinetes. Sistemas de lubricación. Cierres." .
+:item_8 rdf:type guide:SyllabusItem ; guide:itemIndex 8 ; guide:syllabusDescription "Tema 8. Turbinas de vapor multietápicas. Funcionamiento. Proceso de expansión. Factor de recalentamiento. Curva de condición." .
+:item_9 rdf:type guide:SyllabusItem ; guide:itemIndex 9 ; guide:syllabusDescription "Tema 9. Pérdidas en Turbinas. Conceptos generales. Perdidas internas. Perdidas externas." .
+:item_10 rdf:type guide:SyllabusItem ; guide:itemIndex 10 ; guide:syllabusDescription "Tema 10. Vibraciones en la Turbina. Vibraciones en el rotor. Vibraciones en el paleteado. Problemas debidos a la admisión parcial." .
+:item_11 rdf:type guide:SyllabusItem ; guide:itemIndex 11 ; guide:syllabusDescription "Tema 11. Regulación y Operación de las Turbinas. Variación de la carga. Etapa de regulación." .
+:item_12 rdf:type guide: …” ; guide:itemIndex 12 ; guide:syllabusDescription "Tema 12. Ciclos de la Turbina de Gas. Ciclo simple ideal. Ciclo simple regenerativo. Ciclos compuestos. Pérdidas." .
+:item_13 rdf:type guide:SyllabusItem ; guide:itemIndex 13 ; guide:syllabusDescription "Tema 13. Compresor centrífugo. Descripción y partes fundamentales. Esquema de funcionamiento. Trabajo. Pérdidas. Rendimiento." .
+:item_14 rdf:type guide:SyllabusItem ; guide:itemIndex 14 ; guide:syllabusDescription "Tema 14. Compresor axial. Descripción y partes fundamentales. Etapas. Rendimientos, total y de etapa y Grado de reacción." .
+:item_15 rdf:type guide:SyllabusItem ; guide:itemIndex 15 ; guide:syllabusDescription "Tema 15. Cámara de combustión. Descripción y esquema de funcionamiento. Inyección del combustible." .
+:item_16 rdf:type guide:SyllabusItem ; guide:itemIndex 16 ; guide:syllabusDescription "Tema 16. Elementos principales. Gobierno y Operación. La planta de ciclo combinado." .
+:item_17 rdf:type guide:SyllabusItem ; guide:itemIndex 17 ; guide:syllabusDescription "Tema 17. (No detailed description in text)" .
+:item_18 rdf:type guide:SyllabusItem ; guide:itemIndex 18 ; guide:syllabusDescription "Tema 18. (No detailed description in text)" .
+:item_19 rdf:type guide:SyllabusItem ; guide:itemIndex 19 ; guide:syllabusDescription "Tema 19. (No detailed description in text)" .
+
+# Schedule and Activities
+:schedule_85004612 rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week2, :event_week3, :event_week4, :event_week5, :event_week6, :event_week7, :event_week8, :event_week9, :event_week10, :event_week11, :event_week12, :event_week13, :event_week14, :event_week15, :event_week16, :event_week17 .
+
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :act_lm_1 .
+
+:act_lm_1 rdf:type guide:Activity ;
+    guide:activityDescription "Características Generales. Definiciones básicas. Evolución histórica. Tipos y clasificación. Elementos principales." ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:event_week4 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "4" ;
+    guide:eventIndex 4 ;
+    guide:hasActivity :act_lm_4, :act_pr_4 .
+
+:act_lm_4 rdf:type guide:Activity ;
+    guide:activityDescription "Paleteado, consideraciones geométricas y aerodinámicas. Perdidas energéticas. Definiciones. Características geométricas." ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistlos" ;
+    guide:attendanceType "Presencial" .
+
+:act_pr_4 rdf:type guide:Activity ;
+    guide:activityDescription "Lectura de teoría, realización de ejemplos y resolución de problemas." ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Clase de Problemas" ;
+    guide:attendanceType "Presencial" .
+
+# Evaluation System
+:eval_system_85004612 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global." ;
+    guide:hasEvaluationTrial :trial_8, :trial_16, :trial_final .
+
+:trial_8 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialWeek "8" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4/10" ;
+    guide:evaluationDuration "2:00" ;
+    guide:trialMode "Presencial" ;
+    guide:trialDescription "Prueba de evaluación continua Turbinas de Vapor." ;
+    guide:involvesCompetency :comp_CB2, :comp_CB5, :comp_CG3, :comp_CE7, :comp_CE13, :comp_CE19, :comp_CE23 .
+
+:trial_16 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialWeek "16" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4/10" ;
+    guide:evaluationDuration "2:00" ;
+    guide:trialMode "Presencial" ;
+    guide:trialDescription "Prueba de evaluación continua Turbinas de Gas." ;
+    guide:involvesCompetency :comp_CB2, :comp_CB5, :comp_CG3, :comp_CE7, :comp_CE13, :comp_CE19, :comp_CE23 .
+
+:trial_final rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialWeek "17" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "100%" ;
+<0xA0>   guide:minimumScore "5/10" ;
+    guide:evaluationDuration "2:00" ;
+    guide:trialMode "Presencial" ;
+    guide:trialDescription "Examen Final en la fecha fijada por el calendario oficial." ;
+    guide:involvesCompetency :comp_CB2, :comp_CB5, :comp_CG3, :comp_CE7, :comp_CE13, :comp_CE19 .
+
+# Didactic Resources
+:res_coates rdf:type guide:DidacticResource ;
+    sch:name "Coates R. 'Marine Steam Turbines' 1975. IMAREST. Londres." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_kostyuk rdf:type guide:DidacticResource ;
+    sch:name "Kostyuk A.; Frolov V. 'Steam and Gas Turbines' 1985 MIR, Moscu." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_munoz1 rdf:type guide:DidacticResource ;
+    sch:name "Muñoz M.; Valdes M.; Muñoz Domínguez M. 'Turbomáquinas Térmicas' 2001 ETSII, Madrid." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_munoz2 rdf:type guide:DidacticResource ;
+    sch:name "Muñoz Rodríguez M. y Otros 'Turbomáquinas Térmicas' 1999 PUZ, Zaragoza." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_boyce rdf:type guide:DidacticResource ;
+    sch:name "Meherwan P. Boyce 'Gas Turbine Engineering Handbook' 2006 Elseiver, Oxford." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_schegliaiev rdf:type guide:DidacticResource ;
+    sch:name "Schegliaiev A V 'Turbinas de Vapor', 1978 MIR, Moscu." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_woodward rdf:type guide:DidacticResource ;
+    sch:name "Woodward JB 'Marine Gas Turbines' 1975 John Wiley& Sons, New York." ;
+    guide:bibliographyType "Bibliografía" .

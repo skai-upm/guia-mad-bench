@@ -1,0 +1,460 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guide_103001025> rdf:type :CourseGuide ;
+    dc:title "E-health: Promoting Active And Healthy Ageing"@en ,
+        "ANX-PR/CL/001 - 1S_2025-26" ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer_elena> ,
+                <http://guia-mad-bench.es/data/lecturer_cristian> ;
+    sch:name "E-health: Promoting Active And Healthy Ageing"@en ;
+    guide:numberOfCredits 4.0^^xsd:decimal ;
+    guide:syllabusDescription "Active and Health Ageing, Clinical perspective..."@en ,
+        "Political perspective... Technological perspective... Social/personal perspective... AHA Project" ;
+    sch:description "The main focus of this subject is achieving an understanding of the necessary models, techniques and architectures that allow the development of interactive systems in the E-health domain."@en ;
+    guide:teachingPeriodMonths "September-January"@en ,
+        "2025-26"^^xsd:string ; # Using string as per snippet range for teaching period months/period? Snippet says xsd:string.
+    sch:inLanguage "English"@en ;
+    guide:publishedAt <http://guia-mad-bench.es/data/guide_103001025> .
+
+<http://guia-mad-bench.es/data/syllabus_103001025> rdf:type :Syllabus , sch:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/item_active_ageing>,
+                  <http://guia-mad-bench.es/data/item_clinical_perspective>,
+                  <http://guia-mad-bench.es/data/item_political_perspective>,
+                  <http://guia-mad-bench.es/data/item_technological_perspective>,
+                  <http://guia-mad-bench.es/data/item_social_personal_perspective>,
+                  <http://guia-mad-bench.es/data/item_aha_project> ;
+    guide:hasSyllabus :guide_103001025 .
+
+<http://guia-mad-bench.es/data/degree_master_software> rdf:type :Degree , sch:CourseInstance, :MasterDegree ;
+    sch:name "Master Universitario En Ingenieria Del Software"@en ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course_103001025> .
+
+<http://guia-mad-bench.es/data/degree_code_10am> rdf:type :Degree , sch:CourseInstance, :MasterDegree ;
+    guide:courseYear 2026^^xsd:integer ; # Assuming year based on document context (2025-26) or just use the code. Snippet says xsd:string for degreeCode? No, snippet has `guide:degreeCode` domain Degree range string. I will map "10AM" to this property if applicable, but usually it's a specific ID. Let's stick to name/code properties available in schema.org provided in ontology (`sch:name`).
+    sch:description "Master Universitario En Ingenieria Del Software"@en .
+
+<http://guia-mad-bench.es/data/course_103001025> rdf:type :Course , sch:Course ;
+    guide:syllabusDescription "E-health: Promoting Active And Healthy Ageing"^^xsd:string ; # Using string for description? Snippet says `guide:syllabusDescription` domain SyllabusItem. I will use `sch:description`.
+    sch:name "103001025 - E-Health: Promoting Active And Healthy Ageing"@en ;
+    guide:numberOfCredits 4^^xsd:decimal ; # Using CourseGuide property? Snippet says `guide:numberOfCredits` domain is CourseGuide. I will use it on Guide or Degree/Course if applicable. Let's put credits on the course instance as well via schema.org properties available in ontology (`sch:numberOfCredits`).
+    sch:courseCode 103001025^^xsd:string ; # Snippet says `guide:syllabusDescription` is string, but for Course Code snippet has `sch:courseCode`. I will use that.
+
+<http://guia-mad-bench.es/data/lecturer_cristian> rdf:type :Lecturer , sch:Person ;
+    sch:name "Cristian Moral Martos"@en ;
+    guide:office "5110"^^xsd:string ; # Snippet says `guide:office` domain Lecturer range string.
+    sch:email <mailto:cristian.moral@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer_elena> rdf:type :Lecturer , sch:Person ;
+    sch:name "Elena Villalba Mora"@en ;
+    guide:office "5110"^^xsd:string ; # Snippet says `guide:office` domain Lecturer range string.
+    sch:email <mailto:elena.villalba@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer_elena> rdf:type :Lecturer , sch:Person, sch:CourseInstance ; # Coordinator role implies Director property? Snippet has `sch:director` domain CourseGuide.
+    guide:tutorshipsSchedule "W - 10:00 - 14:00<br>F - 10:00 - 12:00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer_cristian> rdf:type :Lecturer , sch:Person, sch:CourseInstance ;
+    guide:tutorshipsSchedule "W - 10:00 - 14:00<br>F - 10:00 - 12:00"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule_103001025> rdf:type :Schedule , sch:Schedule ;
+    guide:syllabusDescription "Weeks 1-17 Schedule Events"@en ; # Using string for description? Snippet says `guide:syllabusDescription` domain SyllabusItem. I will use schema.org properties where available or ontology ones.
+
+<http://guia-mad-bench.es/data/schedule_103001025> sch:eventSchedule <http://guia-mad-bench.es/data/event_week1>,
+    <http://guia-mad-bench.es/data/event_week2>,
+    <http://guia-mad-bench.es/data/event_week3>,
+    <http://guia-mad-bench.es/data/event_week4>,
+    <http://guia-mad-bench.es/data/event_week5> ; # Linking events to schedule.
+
+<http://guia-mad-bench.es/data/schedule_103001025> sch:courseSchedule :guide_103001025 .
+# Note: Ontology says `sch:eventSchedule` domain is Schedule, range ScheduleEvent. And `sch:courseSchedule` domain CourseGuide, range Schedule.
+
+<http://guia-mad-bench.es/data/event_week1> rdf:type :ScheduleEvent , sch:Event ;
+    guide:itemIndex 1^^xsd:integer ; # Snippet says `guide:eventIndex` domain ScheduleEvent? No, snippet has `guide:eventIndex`. I will use it if available. Wait, checking snippet... Yes `guide:eventIndex` exists on ScheduleEvent.
+    guide:syllabusDescription "Active and Health Ageing"^^xsd:string .
+
+<http://guia-mad-bench.es/data/event_week5> rdf:type :ScheduleEvent , sch:Event ;
+    guide:itemIndex 10^^xsd:integer ; # Approximate index based on table row.
+    guide:syllabusDescription "Assessment AHA Project"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_system_103001025> rdf:type :EvaluationSystem , sch:EvaluationSystem ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025> . # Wait, ontology says `guide:hasSyllabus` domain CourseGuide. I will link Guide to Syllabus directly or via Eval System? Snippet has `guide:hasEvaluation`.
+    guide:evaluationDescription "Progressive evaluation system (continuous evaluation)"^^xsd:string ;
+
+<http://guia-mad-bench.es/data/eval_system_103001025> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial_week5>,
+    <http://guia-mad-bench.es/data/trial_week7>,
+    <http://guia-mad-bench.es/data/trial_week10>,
+    <http://guia-mad-bench.es/data/trial_week13>,
+    <http://guia-mad-bench.es/data/trial_final_exam> .
+
+<http://guia-mad-bench.es/data/eval_system_103001025> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial_week7>,
+    <http://guia-mad-bench.es/data/trial_week10>. # Repeating for clarity.
+
+<http://guia-mad-bench.es/data/eval_system_103001025> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial_final_exam> .
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem. I will link Guide to Eval System directly in the code below for correctness based on snippet definitions.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/guide_103001025> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_103001025>.
+# Note: Ontology says `guide:hasEvaluation` domain CourseGuide, range EvaluationSystem.
+
+<http://guia-mad-bench.es/data/g

@@ -1,0 +1,159 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://guia-mad-bench.es/data/CourseGuide-PRCL001> rdf:type guide:CourseGuide ;
+    sch:name "Inglés Profesional Y Académico"@en ;
+    guide:numberOfCredits 6^^xsd:decimal ;
+    guide:teachingPeriodMonths "Febrero-Junio" ;
+    guide:inLanguage "Inglés/Castellano" ;
+    guide:syllabus <http://guia-mad-bench.es/data/Sylbusus-PRCL001> .
+
+<http://guia-mad-bench.es/data/BachelorDegree-14IA> rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Ingeniería Aeroespacial"@en ;
+    guide:degreeCode "14IA"^^xsd:string ;
+    guide:sch:courseInstance <http://guia-mad-bench.es/data/CourseGuide-PRCL001> .
+
+<http://guia-mad-bench.es/data/Lecturer-Dulcinea-Tomas-Camara> rdf:type guide:Lecturer, sch:Person ;
+    sch:name "Dulcinea Tomas Camara"@en ;
+    sch:email <mailto:dulcinea.tomas@upm.es> ;
+    guide:office "B-106" .
+
+<http://guia-mad-bench.es/data/Lecturer-Mairin-Kelly> rdf:type guide:Lecturer, sch:Person ;
+    sch:name "Mairin Kelly"@en ;
+    sch:email <mailto:mairin.kelly@upm.es> .
+
+<http://guia-mad-bench.es/data/Lecturer-Oana-Parlea> rdf:type guide:Lecturer, sch:Person ;
+    sch:name "Oana Alexandra Parlea Parlea"@en ;
+    sch:email <mailto:alexandra.parlea@upm.es> .
+
+<http://guia-mad-bench.es/data/Competency-CG2> rdf:type guide:Competency ;
+    guide:competencyCode "CG2"^^xsd:string ;
+    guide:competencyDescription "Uso de la lengua inglesa"@en .
+
+<http://guia-mad-bench.es/data/Competency-CG4> rdf:type guide:Competency ;
+    guide:competencyCode "CG4"^^xsd:string ;
+    guide:competencyDescription "Capacidad para integrarse y formar parte activa de equipos de trabajo. Trabajo en equipo"@en .
+
+<http://guia-mad-bench.es/data/Competency-CG7> rdf:type guide:Competency ;
+    guide:competencyCode "CG7"^^xsd:string ;
+    guide:competencyDescription "Comunicación oral y escrita"@en .
+
+<http://guia-mad-bench.es/data/Competency-CG9> rdf:type guide:Competency ;
+    guide:competencyCode "CG9"^^xsd:string ;
+    guide:competencyDescription "Razonamiento crítico y capacidad de asociación que posibilitan el aprendizaje continuo"@en .
+
+<http://guia-mad-bench.es/data/LearningResult-RA147> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA147"^^xsd:string ;
+    guide:learningResultDescription "Puede producir textos claros y detallados sobre temas diversos así como defender un punto de vista sobre temas generales indicando los pros y los contras de las distintas opciones"@en .
+
+<http://guia-mad-bench.es/data/LearningResult-RA145> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA145"^^xsd:string ;
+    guide:learningResultDescription "Es capaz de entender las ideas principales de textos complejos que traten de temas tanto concretos como abstractos, incluso si son de carácter técnico dentro su campo de especialización"@en .
+
+<http://guia-mad-bench.es/data/LearningResult-RA146> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA146"^^xsd:string ;
+    guide:learningResultDescription "Puede relacionarse con hablantes nativos con un grado suficiente de fluidez y naturalidad de modo que la comunicación se realice sin esfuerzo por parte ninguno de los interlocutores"@en .
+
+<http://guia-mad-bench.es/data/Sylbusus-PRCL001> rdf:type guide:Sylbusus ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/Schedule-Semester2025_26> ;
+    guide:hasItem <http://guia-mad-bench.es/data/Module-0>,
+                 <http://guia-mad-bench.es/data/Module-1>,
+                 <http://guia-mad-bench.es/data/Module-2>,
+                 <http://guia-mad-bench.es/data/Module-3>,
+                 <http://guia-mad-bench.es/data/Module-4> .
+
+<http://guia-mad-bench.es/data/Schedule-Semester2025_26> rdf:type guide:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/ScheduleEvent-W1>,
+                     <http://guia-mad-bench.es/data/ScheduleEvent-W4>,
+                     <http://guia-mad-bench.es/data/ScheduleEvent-W7>,
+                     <http://guia-mad-bench.es/data/ScheduleEvent-W10>,
+                     <http://guia-mad-bench.es/data/ScheduleEvent-W13> .
+
+<http://guia-mad-bench.es/data/Module-0> rdf:type guide:SylbususItem ;
+    sch:itemIndex 0^^xsd:integer ;
+    guide:syllabusDescription "Critical Thinking Lab"@en .
+
+<http://guia-mad-bench.es/data/Module-1> rdf:type guide:SylbususItem ;
+    sch:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "Academic and Professional Writing"@en .
+
+<http://guia-mad-bench.es/data/Module-2> rdf:type guide:SylbususItem ;
+    sch:itemIndex 2^^xsd:integer ;
+    guide:syllabusDescription "Technical English"@en .
+
+<http://guia-mad-bench.es/data/Module-3> rdf:type guide:SylbususItem ;
+    sch:itemIndex 3^^xsd:integer ;
+    guide:syllabusDescription "Professional Communication"@en .
+
+<http://guia-mad-bench.es/data/Module-4> rdf:type guide:SylbususItem ;
+    sch:itemIndex 4^^xsd:integer ;
+    guide:syllabusDescription "Professional English"@en .
+
+<http://guia-mad-bench.es/data/ScheduleEvent-W1> rdf:type guide:ScheduleEvent, sch:Event ;
+    sch:eventWeek "Semestre 2025-26"^^rdf:langString ;
+    sch:name "Presentación: Descripción de módulos"@en .
+
+<http://guia-mad-bench.es/data/ScheduleEvent-W4> rdf:type guide:ScheduleEvent, sch:Event ;
+    sch:eventWeek "Semestre 2025-26"^^rdf:langString ;
+    sch:name "Actividad evaluable (Módulo 1)"@en .
+
+<http://guia-mad-bench.es/data/ScheduleEvent-W7> rdf:type guide:ScheduleEvent, sch:Event ;
+    sch:eventWeek "Semestre 2025-26"^^rdf:langString ;
+    sch:name "Actividad evaluable (Módulo 2)"@en .
+
+<http://guia-mad-bench.es/data/ScheduleEvent-W10> rdf:type guide:ScheduleEvent, sch:Event ;
+    sch:eventWeek "Semestre 2025-26"^^rdf:langString ;
+    sch:name "Actividad evaluable (Módulo 3)"@en .
+
+<http://guia-mad-bench.es/data/ScheduleEvent-W13> rdf:type guide:ScheduleEvent, sch:Event ;
+    sch:eventWeek "Semestre 2025-26"^^rdf:langString ;
+    sch:name "Actividad evaluable (Módulo 4)"@en .
+
+<http://guia-mad-bench.es/data/EvaluationSystem> rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación Progresiva y Examen Final"@en ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/Trial-Ordinario>,
+                            <http://guia-mad-bench.es/data/Trial-Progresivo> .
+
+<http://guia-mad-bench.es/data/EvaluationSystem> rdf:type guide:EvaluationSystem ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/Schedule-Semester2025_26> .
+
+<http://guia-mad-bench.es/data/Trial-Ordinario> rdf:type guide:EvaluationTrial, sch:Event ;
+    sch:eventWeek "Semestre 17"^^rdf:langString ;
+    guide:trialType "Examen Final Ordinario"@en ;
+    guide:gradePercentage 0.5 .
+
+<http://guia-mad-bench.es/data/Trial-Progresivo> rdf:type guide:EvaluationTrial, sch:Event ;
+    sch:eventWeek "Semestre 4"^^rdf:langString ;
+    guide:trialType "Actividad evaluable (Módulo 1)"@en ;
+    guide:gradePercentage 0.25 .
+
+<http://guia-mad-bench.es/data/DidacticResource-Airbus> rdf:type guide:DidacticResource, sch:Book ;
+    guide:bibliographyTitle "Airbus. Flying into the future"@en ;
+    guide:bibliographyDescription "Editor: Philip Butterworth Hayes"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/DidacticResource-YouTube> rdf:type guide:DidacticResource, sch:CreativeWork ;
+    guide:bibliographyTitle "Video: Testing a dream"@en ;
+    guide:bibliographyDescription "URL: http://www.youtube.com/watch?v=BBmxFWfX1YQ"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/DidacticResource-Edutopia> rdf:type guide:DidacticResource, sch:CreativeWork ;
+    guide:bibliographyTitle "Engineering success"@en ;
+    guide:bibliographyDescription "From: http://www.edutopia.org/engineering-success.aviation-pbl-video"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/DidacticResource-Bamford> rdf:type guide:DidacticResource, sch:Book ;
+    guide:bibliographyTitle "Dialogue within Discourse Communities"@en ;
+    guide:bibliographyDescription "Bamford, Julia & Bondi, Marina (eds) 2005"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/DidacticResource-Banks> rdf:type guide:DidacticResource, sch:Book ;
+    guide:bibliographyTitle "The Development of Scientific Writing"@en ;
+    guide:bibliographyDescription "Banks, David 2008"^^rdf:langString .
+
+<http://guia-mad-bench.es/data/RequiredKnowledge-B1> rdf:type guide:LearningResult ;
+    sch:name "Nivel B1 del CFRL"@en ;
+    guide:syllabusItem <http://guia-mad-bench.es/data/Sylbusus-PRCL001>.
+
+<http://guia-mad-bench.es/data/RequiredKnowledge-B2> rdf:type guide:LearningResult ;
+    sch:name "Nivel B2 en Lengua Inglesa"@en .

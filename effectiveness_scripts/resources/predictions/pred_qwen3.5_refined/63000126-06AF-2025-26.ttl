@@ -1,0 +1,175 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> rdf:type :CourseGuide ;
+    dc:title "63000126 - Diseño Integral Y Planificacion Minera"@en ;
+    dct:creator <http://w3id.org/def/guia#Juan Herrera Herbert> ;
+    guide:numberOfCredits "4.5"^^xsd:decimal ;
+    sch:name "Diseño Integral y Planificación Minera"@es .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> :hasSyllabus <http://guia-mad-bench.es/data/syllabus/63000126-anx-pr-cl-001-01> ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule/anx-pr-cl-001-01> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> :hasCourseInstance <http://guia-mad-bench.es/data/degree/master-universitario-ing-minas-06af> ;
+    sch:director <http://w3id.org/def/guia#Juan Herrera Herbert> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> :hasEvaluation <http://guia-mad-bench.es/data/evaluationsystem/diseño-integral-minera-eval-sys> ;
+    guide:teachingPeriod "2025/6 - Primer semestre"@en .
+
+<http://w3id.org/def/guia#Juan Herrera Herbert> rdf:type :Lecturer , sch:Person ;
+    sch:name "Juan Herrera Herbert"@es ;
+    sch:email <mailto:juan.herrera@upm.es> ;
+    guide:office "208"@en .
+
+<http://guia-mad-bench.es/data/degree/master-universitario-ing-minas-06af> rdf:type :MasterDegree , :Degree ;
+    sch:name "Máster Universitario En Ingeniería De Minas"@es ;
+    guide:courseCode 12345 .
+
+<http://guia-mad-bench.es/data/syllabus/63000126-anx-pr-cl-001-01> rdf:type :Syllabus , sch:Syllabus ;
+    dct:title "Temario de Diseño Integral y Planificación Minera"@es .
+
+<http://guia-mad-bench.es/data/syllabussitem/1> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    sch:description "EL PROYECTO MINERO (MINING PROJECT)"@en .
+
+<http://guia-mad-bench.es/data/syllabussitem/2> rdf:type :SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer ;
+    sch:description "PLANIFICACIÓN MINERA (MINE PLANNING)"@es .
+
+<http://guia-mad-bench.es/data/syllabussitem/3> rdf:type :SyllabusItem ;
+    guide:itemIndex 3^^xsd:integer ;
+    sch:description "COSTES E INGRESOS MINEROS (MINE REVENUES AND COSTS)"@es .
+
+<http://guia-mad-bench.es/data/syllabussitem/4> rdf:type :SyllabusItem ;
+    guide:itemIndex 4^^xsd:integer ;
+    sch:description "ANÁLISIS Y EVALUACIÓN ECONÓMICA DE PROYECTOS MINEROS"@es .
+
+<http://guia-mad-bench.es/data/syllabussitem/5> rdf:type :SyllabusItem ;
+    guide:itemIndex 5^^xsd:integer ;
+    sch:description "EVALUACIÓN DE ASPECTOS SOCIALES Y AMBIENTALES"@es .
+
+<http://guia-mad-bench.es/data/syllabussitem/6> rdf:type :SyllabusItem ;
+    guide:itemIndex 6^^xsd:integer ;
+    sch:description "FINANCIACIÓN DE PROYECTOS MINEROS (MINE PROJECT FINANCING)"@es .
+
+<http://guia-mad-bench.es/data/syllabussitem/7> rdf:type :SyllabusItem ;
+    guide:itemIndex 7^^xsd:integer ;
+    sch:description "OREBODY DEFINITION AND ASSESSMENT"@en .
+
+<http://guia-mad-bench.es/data/syllabussitem/8> rdf:type :SyllabusItem ;
+    guide:itemIndex 8^^xsd:integer ;
+    sch:description "DISEÑO DE MINA A CIELO ABIERTO (OPEN PIT MINE DESIGN)"@en .
+
+<http://guia-mad-bench.es/data/schedule/anx-pr-cl-001-01> rdf:type :Schedule , sch:Schedule ;
+    guide:eventIndex 1^^xsd:integer .
+
+<http://guia-mad-bench.es/data/evaluationsystem/diseño-integral-minera-eval-sys> rdf:type :EvaluationSystem ;
+    dct:title "Sistema de Evaluación Diseño Integral Minera"@es ;
+    sch:description "Evaluación progresiva y examen final"@en .
+
+<http://guia-mad-bench.es/data/evaluationtrial/bloques-1-y-2-eval> rdf:type :EvaluationTrial , sch:CourseInstance ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/scheduleevent/semana5-seminario> .
+
+<http://guia-mad-bench.es/data/evaluationtrial/bloques-1-y-2-eval> rdf:type :EvaluationTrial , sch:Event ;
+    guide:gradePercentage "25"^^xsd:string ;
+    guide:minimumScore "5 / 10"@en .
+
+<http://guia-mad-bench.es/data/scheduleevent/semana5-seminario> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 5^^xsd:integer ;
+    guide:syllabusDescription "Evaluación de Bloques 1 y 2"@es .
+
+<http://guia-mad-bench.es/data/evaluationtrial/examen-final-eval> rdf:type :EvaluationTrial , sch:CourseInstance ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/scheduleevent/semana17-examen> .
+
+<http://guia-mad-bench.es/data/evaluationtrial/examen-final-eval> rdf:type :EvaluationTrial , sch:Event ;
+    guide:gradePercentage "100"^^xsd:string ;
+    guide:minimumScore "5 / 10"@en .
+
+<http://guia-mad-bench.es/data/scheduleevent/semana17-examen> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 17^^xsd:integer ;
+    guide:syllabusDescription "Examen final para aquellos alumnos que no superan la evaluación progresiva"@es .
+
+<http://guia-mad-bench.es/data/evaluationtrial/bloques-3-y-4-eval> rdf:type :EvaluationTrial , sch:Event ;
+    guide:gradePercentage "25"^^xsd:string ;
+    guide:minimumScore "5 / 10"@en .
+
+<http://guia-mad-bench.es/data/resource/la-gestion-de-derechos-mineros-y-hidrocarburos> rdf:type :DidacticResource , sch:BibliographicWork ;
+    guide:bibliographyTitle "La gestión de derechos mineros y de hidrocarburos"@es ;
+    guide:competencyCode "CE01"@en .
+
+<http://guia-mad-bench.es/data/resource/la-gestion-de-derechos-mineros-y-hidrocarburos> rdf:type :DidacticResource , sch:BibliographicWork ;
+    guide:bibliographyType "Biblioteca"^^xsd:string ;
+    om:Unit 1 .
+
+<http://guia-mad-bench.es/data/resource/ingenieria-y-fases-de-un-proyecto-minero> rdf:type :DidacticResource , sch:BibliographicWork ;
+    guide:bibliographyTitle "Ingeniería y fases de un proyecto minero"@es ;
+    om:Unit 1 .
+
+<http://guia-mad-bench.es/data/resource/diseño-y-contruccion-de-instalaciones-de-residuos-mineros> rdf:type :DidacticResource , sch:BibliographicWork ;
+    guide:bibliographyTitle "Diseño y contrucción de instalaciones de residuos mineros"@es .
+
+<http://guia-mad-bench.es/data/resource/neumaticos-mineros-criterios-de-seleccion-y-utilizacion> rdf:type :DidacticResource , sch:BibliographicWork ;
+    guide:bibliographyTitle "Neumáticos Mineros. Criterios de selección y Utilización"@es .
+
+<http://guia-mad-bench.es/data/resource/introduccion-al-drenaje-minero> rdf:type :DidacticResource , sch:BibliographicWork ;
+    guide:bibliographyTitle "Introducción al Drenaje Minero"@es .
+
+<http://guia-mad-bench.es/data/competency/ce01> rdf:type :Competency ;
+    guide:competencyCode "CE01"^^xsd:string ;
+    sch:description "Capacidad para abordar y resolver problemas matemáticos avanzados de ingeniería..."@en .
+
+<http://guia-mad-bench.es/data/competency/ce02> rdf:type :Competency ;
+    guide:competencyCode "CE02"^^xsd:string ;
+    sch:description "Conocimiento adecuado de aspectos científicos y tecnológicos de mecánica de fluidos..."@en .
+
+<http://guia-mad-bench.es/data/competency/ce03> rdf:type :Competency ;
+    guide:competencyCode "CE03"^^xsd:string ;
+    sch:description "Conocimiento adecuado de evaluación de proyectos y análisis de riesgo. Dirección..."@en .
+
+<http://guia-mad-bench.es/data/competency/ce04> rdf:type :Competency ;
+    guide:competencyCode "CE04"^^xsd:string ;
+    sch:description "Conocimiento adecuado de modelización, evaluación y gestión de recursos geológicos..."@en .
+
+<http://guia-mad-bench.es/data/competency/ce05> rdf:type :Competency ;
+    guide:competencyCode "CE05"^^xsd:string ;
+    sch:description "Conocimiento adecuado de la tecnología de explotación de recursos minerales."@es .
+
+<http://guia-mad-bench.es/data/competency/ce06> rdf:type :Competency ;
+    guide:competencyCode "CE06"^^xsd:string ;
+    sch:description "Capacidad para planificar y gestionar recursos energéticos..."@en .
+
+<http://guia-mad-bench.es/data/competency/ce07> rdf:type :Competency ;
+    guide:competencyCode "CE07"^^xsd:string ;
+    sch:description "Capacidad para la realización de estudios de gestión del territorio y espacios subterráneos..."@en .
+
+<http://guia-mad-bench.es/data/competency/cg01> rdf:type :Competency ;
+    guide:competencyCode "CG01"^^xsd:string ;
+    sch:description "Capacitación científico-técnica y metodológica para el reciclaje continuo de conocimientos..."@es .
+
+<http://guia-mad-bench.es/data/competency/cg02> rdf:type :Competency ;
+    guide:competencyCode "CG02"^^xsd:string ;
+    sch:description "Comprensión de los múltiples condicionamientos de carácter técnicos, legal y de la propiedad..."@es .
+
+<http://guia-mad-bench.es/data/learningresult/rA144> rdf:type :LearningResult ;
+    guide:learningResultCode "RA144"^^xsd:string ;
+    sch:description "Capacidad para comprender la complejidad de las inversiones en proyectos mineros..."@es .
+
+<http://guia-mad-bench.es/data/learningresult/rA145> rdf:type :LearningResult ;
+    guide:learningResultCode "RA145"^^xsd:string ;
+    sch:description "Capacidad para idear, diseñar, proyectar y evaluar explotaciones que maximicen el aprovechamiento..."@es .
+
+<http://guia-mad-bench.es/data/learningresult/rA124> rdf:type :LearningResult ;
+    guide:learningResultCode "RA124"^^xsd:string ;
+    sch:description "Capacidad para zonificar el territorio con criterios de ordenación..."@es .
+
+<http://guia-mad-bench.es/data/learningresult/rA54> rdf:type :LearningResult ;
+    guide:learningResultCode "RA54"^^xsd:string ;
+    sch:description "Aplicar las técnicas de planificación, diseño y gestión a instalaciones de procesado..."@es .
+
+<http://guia-mad-bench.es/data/learningresult/rA10> rdf:type :LearningResult ;

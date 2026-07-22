@@ -1,0 +1,126 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide/GA_02IA_25001404> rdf:type :CourseGuide ;
+    sch:name "Analisis De Ecosistemas"@en ,
+        "ANX-PR/CL/001-01"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/GA_02IA_25001404> :hasCourseInstance <http://guia-mad-bench.es/data/course/25001404> ;
+    sch:courseCode 25001404 .
+
+<http://guia-mad-bench.es/data/courses/BachelorDegree_02IA> rdf:type :BachelorDegree , sch:Course ;
+    dct:title "Grado En Ingenieria Agroambiental"@en ;
+    guide:numberOfCredits 4.0 .
+
+<http://guia-mad-bench.es/data/courseguide/GA_02IA_25001404> :hasSyllabus <http://guia-mad-bench.es/data/syllabus/analisis-de-ecosistemas> ;
+    guide:courseYear 2026 .
+
+<http://guia-mad-bench.es/data/courseguide/GA_02IA_25001404> :hasEvaluation <http://guia-mad-bench.es/data/evaluation-system/progresiva-y-global> ;
+    guide:teachingPeriod "Septiembre-Enero"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/GA_02IA_25001404> :hasDidacticResource <http://guia-mad-bench.es/data/resource/vegetacion-1>,
+    <http://guia-mad-bench.es/data/resource/factores-ambientales-sig-teledeteccion-6> ;
+    guide:inLanguage "Castellano"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/GA_02IA_25001404> :hasLearningResult <http://guia-mad-bench.es/data/learning-result/RA519>,
+    <http://guia-mad-bench.es/data/learning-result/RA230> ;
+    guide:publishedAt "https://www.upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseguide/GA_02IA_25001404> :hasCompetency <http://guia-mad-bench.es/data/competency/CE14>,
+    <http://guia-mad-bench.es/data/competency/CG7> ;
+    guide:numberOfCredits 4.0 .
+
+<http://guia-mad-bench.es/data/courseguide/GA_02IA_25001404> :hasScheduleEvent <http://guia-mad-bench.es/data/schedule-event/P01>,
+    <http://guia-mad-bench.es/data/schedule-event/GlobalExam> ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/course-schedule/GA_02IA_25001404>.
+
+<http://guia-mad-bench.es/data/courses/BachelorDegree_02IA> :hasCourseInstance <http://guia-mad-bench.es/data/course/25001404> ;
+    guide:courseYear 2026 .
+
+<http://guia-mad-bench.es/data/syllabus/analisis-de-ecosistemas> rdf:type sch:Syllabus , :Syllabus ;
+    dct:title "Temario de la asignatura"@en ;
+    rdfs:comment "Sección 1. Muestreo en campo sobre la abundancia de especies biológicas; Sección 2. Fitosociología..."@en .
+
+<http://guia-mad-bench.es/data/syllabus/analisis-de-ecosistemas> :hasItem <http://guia-mad-bench.es/data/syllabus-item/Tema1>,
+    <http://guia-mad-bench.es/data/syllabus-item/Fitosociologia>;
+
+<http://guia-mad-bench.es/data/course/25001404> rdf:type :Course ;
+    sch:name "Analisis De Ecosistemas"@en .
+
+<http://guia-mad-bench.es/data/courses/BachelorDegree_02IA> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus/analisis-de-ecosistemas>.
+
+<http://guia-mad-bench.es/data/courseguide/GA_02IA_25001404> :director <http://guia-mad-bench.es/data/person/Santiago_Moreno_Vazquez>,
+    <http://guia-mad-bench.es/data/lecturer/Elena_Carrio_Gonzalez>.
+
+<http://guia-mad-bench.es/data/courseguide/GA_02IA_25001404> :hasCourseInstance <http://guia-mad-bench.es/data/course/25001404>;
+    guide:teachingPeriod "Septiembre-Enero"^^xsd:string ;
+    sch:description "La asignatura se compone de cuatro partes..."@en .
+
+<http://guia-mad-bench.es/data/syllabus-item/Tema1> rdf:type :SyllabusItem ;
+    dct:title "Muestreo en campo sobre la abundancia de especies biológicas"@en ;
+    guide:syllabusDescription "Sección 1. Muestreo en campo..."@en .
+
+<http://guia-mad-bench.es/data/syllabus-item/Fitosociologia> rdf:type :SyllabusItem ;
+    dct:title "Fitosociología"^^xsd:string ;
+    guide:syllabusDescription "Sección 2. Fitosociología clásica y dinámica..."@en .
+
+<http://guia-mad-bench.es/data/schedule-event/P01> rdf:type :ScheduleEvent , sch:Event ;
+    dct:title "Evaluación de asistencia y participación en P02"@es ;
+    guide:trialType "OT"^^xsd:string ;
+    om:activityDurationUnit <http://www.ontology-of-units-of-measure.org/resource/om-2/hour> .
+
+<http://guia-mad-bench.es/data/schedule-event/P01> :hasActivity <http://guia-mad-bench.es/data/activity/LM_P01>;
+    guide:trialWeek "Semana 2"^^xsd:string ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/course-schedule/GA_02IA_25001404>.
+
+<http://guia-mad-bench.es/data/schedule-event/GlobalExam> rdf:type :ScheduleEvent , sch:Event ;
+    dct:title "Prueba de evaluación global"@es ;
+    guide:trialType "EX"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course-schedule/GA_02IA_25001404> rdf:type :Schedule , sch:CourseInstance;
+    dct:title "Cronograma de la asignatura"@en ;
+    guide:eventIndex 16 .
+
+<http://guia-mad-bench.es/data/evaluation-system/progresiva-y-global> rdf:type :EvaluationSystem ;
+    rdfs:comment "La evaluación progresiva aporta el 50% y la global el otro 50%"@en ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial/P01>,
+        <http://guia-mad-bench.es/data/trial/GlobalExam>.
+
+<http://guia-mad-bench.es/data/person/Santiago_Moreno_Vazquez> rdf:type :Lecturer , sch:Person ;
+    dct:title "Santiago Moreno Vazquez"@en .
+
+<http://guia-mad-bench.es/data/person/Santiago_Moreno_Vazquez> guide:tutorshipsSchedule "X - 10:00 - 13:00"^^xsd:string;
+    sch:email "santiago.moreno@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer/Elena_Carrio_Gonzalez> rdf:type :Lecturer , sch:Person ;
+    dct:title "Elena Carrio Gonzalez"@en;
+    guide:tutorshipsSchedule "Sin horario. A concertar mediante correo electrónico al profesor"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CE14> rdf:type :Competency ;
+    guide:competencyCode "CE14"^^xsd:string;
+    guide:competencyDescription "Conocimiento de los conceptos básicos de Ecología..."@en.
+
+<http://guia-mad-bench.es/data/learning-result/RA519> rdf:type :LearningResult ;
+    guide:learningResultCode "RA519"^^xsd:string;
+    guide:learningResultDescription "Utilizar organismos bioindicadores para conocer el estado de los ecosistemas"@en.
+
+<http://guia-mad-bench.es/data/resource/vegetacion-1> rdf:type :DidacticResource ;
+    sch:name "Vegetación 1"^^xsd:string;
+    guide:bibliographyTitle "Terrestrial plant ecology."@es .
+
+<http://guia-mad-bench.es/data/course-schedule/GA_02IA_25001404> :hasScheduleEvent <http://guia-mad-bench.es/data/schedule-event/P03>,
+    <http://guia-mad-bench.es/data/schedule-event/GlobalExam>.
+
+<http://guia-mad-bench.es/data/trial/P01> rdf:type :EvaluationTrial ;
+    guide:trialDescription "Devolución de informe evaluado de P01"@es;
+    sch:name "Informe Individual PO1"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CG7> rdf:type :Competency ;
+    guide:competencyCode "CG7"^^xsd:string;
+    guide:competencyDescription "Compromiso ético y profesional..."@en.

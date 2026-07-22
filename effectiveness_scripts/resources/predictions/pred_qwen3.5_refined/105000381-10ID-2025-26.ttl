@@ -1,0 +1,92 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sch: <https://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://guia-mad-bench.es/data/course-guide-estructura-computadores> a :CourseGuide ;
+    dc:title "Estructura De Computadores"@en ;
+    dct:creator <http://w3id.org/guia/rafael-sautua-ruiz>,
+                <http://w3id.org/guia/antonio-garcia-dopico> ,
+                <http://w3id.org/guia/jose-luis-pedraza-dominguez> ;
+    sch:name "Estructura De Computadores"@en ;
+    guide:hasCourse <http://guia-mad-bench.es/data/double-degree-informatica-ade> ;
+    guide:numberOfCredits 6^^xsd:decimal ;
+    guide:teachingPeriod "2025-26"^^xsd:string ;
+    sch:inLanguage "Castellano"@en .
+
+<http://guia-mad-bench.es/data/double-degree-informatica-ade> a :Degree ;
+    dct:title "Doble Grado En Ingenieria Informatica Y En Ade"@en ;
+    guide:hasCourse <http://w3id.org/guia/105000381>.
+
+<http://guia-mad-bench.es/data/double-degree-informatica-ade> a :BachelorDegree .
+
+<http://w3id.org/guia/rafael-sautua-ruiz> a :Lecturer ;
+    sch:name "Rafael Sautua Ruiz"@en ;
+    guide:office "4107"^^xsd:string ;
+    sch:email <mailto:rafael.sautua@upm.es>.
+
+<http://w3id.org/guia/antonio-garcia-dopico> a :Lecturer ;
+    sch:name "Antonio Garcia Dopico"@en ;
+    guide:office "4202"^^xsd:string ;
+    sch:email <mailto:antonio.garcia.dopico@upm.es>.
+
+<http://w3id.org/guia/jose-luis-pedraza-dominguez> a :Lecturer ;
+    sch:name "Jose Luis Pedraza Dominguez"@en ;
+    guide:office "4105"^^xsd:string ;
+    sch:email <mailto:joseluis.pedraza@upm.es>.
+
+<http://w3id.org/guia/manuel-maria-nieto-rodriguez> a :Lecturer ;
+    sch:name "Manuel Maria Nieto Rodriguez"@en ;
+    guide:office "4106"^^xsd:string ;
+    sch:email <mailto:m.nieto@upm.es>.
+
+<http://w3id.org/guia/maria-luisa-cordoba-cabeza> a :Lecturer ;
+    sch:name "Maria Luisa Cordoba Cabeza"@en ;
+    guide:office "4106"^^xsd:string ;
+    sch:email <mailto:marialuisa.cordoba@upm.es>.
+
+<http://w3id.org/guia/maria-isabel-garcia-clemente> a :Lecturer ;
+    sch:name "Maria Isabel Garcia Clemente"@en ;
+    guide:office "4105"^^xsd:string ;
+    sch:email <mailto:mariaisabel.garciac@upm.es>.
+
+<http://w3id.org/guia/santiago-rodriguez-de-la-fuente> a :Lecturer ;
+    sch:name "Santiago Rodriguez De La Fuente"@en ;
+    guide:tutorshipsSchedule "Sin horario. Se debe concertar cita por correo electrónico"^^xsd:string .
+
+<http://w3id.org/guia/angel-grover-perez-munoz> a :Lecturer ;
+    sch:name "Angel Grover Perez Muñoz"@en ;
+    guide:office "4202"^^xsd:string ;
+    sch:email <mailto:angel.perez.munoz@upm.es>.
+
+<http://guia-mad-bench.es/data/competency-1> a :Competency ;
+    guide:competencyCode "10II-CE05"@en .
+
+<http://guia-mad-bench.es/data/competency-2> a :Competency ;
+    guide:competencyCode "10II-CG06"^^xsd:string .
+
+<http://w3id.org/guia/course-guide-estructura-computadores> guide:hasCompetency <http://guia-mad-bench.es/data/competency-1>,
+                                                        <http://guia-mad-bench.es/data/competency-2>.
+
+<http://guia-mad-bench.es/data/result-103> a :LearningResult ;
+    guide:learningResultCode "RA103"^^xsd:string .
+
+<http://w3id.org/guia/course-guide-estructura-computadores> guide:hasLearningResult <http://guia-mad-bench.es/data/result-103>.
+
+<http://guia-mad-bench.es/data/syllabus-item-intro> a :SyllabusItem ;
+    sch:name "Introducción a los computadores"@en .
+
+<http://w3id.org/guia/course-guide-estructura-computadores> guide:hasSyllabus <http://guia-mad-bench.es/data/105000381>.
+
+<http://guia-mad-bench/es/data/schedule-event-1> a :ScheduleEvent ;
+    sch:eventIndex 1^^xsd:integer .
+
+<http://w3id.org/guia/course-guide-estructura-computadores> guide:syllabusDescription "Introducción a los computadores"@en.
+
+<http://guia-mad-bench.es/data/eval-trial-1> a :EvaluationTrial ;
+    sch:name "Realización de primer examen parcial"^^xsd:string .
+
+<http://w3id.org/guia/course-guide-estructura-computadores> guide:hasEvaluation <http://w3id.org/guia/EvaluationSystem>.

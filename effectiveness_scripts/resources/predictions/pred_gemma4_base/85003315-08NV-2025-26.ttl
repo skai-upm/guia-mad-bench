@@ -1,0 +1,168 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Instance
+:course_85003315 rdf:type guide:Course ;
+    sch:courseCode 85003315 ;
+    sch:name "Termodinámica" ;
+    guide:courseYear 2025 ;
+    guide:courseType "Obligatoria" ;
+    sch:hasCourseInstance :guide_85003315_2025_26 .
+
+# Course Guide Instance
+:guide_85003315_2025_26 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Termodinámica" ;
+    sch:description "La asignatura Termodinámica forma parte de las materias obligatorias comunes a los grados GIM y GAN impartidos en la ETSI Navales de la UPM." ;
+    guide:numberOfCredits 6.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :syllabus_85003315 ;
+    guide:hasCompetency :comp_CB1, :comp_CB5, :comp_CE14, :comp_CG3 ;
+    guide:hasLearningResult :lr_RA192, :lr_RA193, :lr_RA190, :lr_RA189, :lr_RA188, :lr_RA191 ;
+    guide:hasEvaluation :eval_system_thermo ;
+    sch:instructor :lecturer_rafael, :lecturer_teresa, :lecturer_vladimir ;
+    sch:courseSchedule :schedule_thermo ;
+    guide:hasDidacticResource :res_wark, :res_moran, :res_cengel, :res_web_moodle ;
+    sch:activitiesWorkload "26-27 horas de trabajo presencial y no presencial por cada crédito ECTS" .
+
+# Degree Instance
+:degree_08NV rdf:type guide:BachelorDegree ;
+    sch:name "Grado En Arquitectura Naval" ;
+    guide:degreeCode "0ESS-08NV" ;
+    guide:hasCourse :course_85003315 .
+
+# University Center Instance
+:center_etsin rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros Navales" ;
+    guide:offers :degree_08NV .
+
+# Lecturers
+:lecturer_rafael rdf:type guide:Lecturer ;
+    sch:name "Rafael Federico D'amore Domenech" ;
+    sch:email "r.damore@upm.es" ;
+    guide:office "Despacho" .
+
+:lecturer_teresa rdf:type guide:Lecturer ;
+    sch:name "Teresa De Jesus Leo Mena" ;
+    sch:email "teresa.leo.mena@upm.es" ;
+    guide:office "Despacho" .
+
+:lecturer_vladimir rdf:type guide:Lecturer ;
+    sch:name "Vladimir Luis Meca Lopez" ;
+    sch:email "vl.meca@upm.es" ;
+    guide:office "Despacho" .
+
+# Competencies
+:comp_CB1 rdf:type guide:Competency ;
+    guide:competencyCode "CB1" ;
+    guide:competencyDescription "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de estudio..." .
+
+:comp_CB5 rdf:type guide:Competency ;
+    guide:competencyCode "CB5" ;
+    guide:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía" .
+
+:comp_CE14 rdf:type guide:Competency ;
+    guide:competencyCode "CE 14" ;
+    guide:competencyDescription "Conocimiento de la termodinámica aplicada y de la transmisión del calor" .
+
+:comp_CG3 rdf:type guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Capacidad para el aprendizaje de nuevos métodos y teorías, y en la versatilidad para adaptarse a nuevas situaciones..." .
+
+# Learning Results
+:lr_RA192 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA192" ;
+    guide:learningResultDescription "Conocer los ciclos termodinámicos" .
+
+:lr_RA193 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA193" ;
+    guide:learningResultDescription "Comprender y aplicar el concepto de rendimiento de los dispositivos" .
+
+:lr_RA190 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA190" ;
+    guide:learningResultDescription "Conocer la formulación de los Principios Primero y Segundo de la Termodinámica en sistemas abiertos y cerrados" .
+
+:lr_RA189 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA189" ;
+    guide:learningResultDescription "Conocer y comprender el comportamiento termodinámico de las sustancias puras" .
+
+:lr_RA188 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA188" ;
+    guide:learningResultDescription "Conocer la composición del aire húmedo y el diagrama psicrométrico" .
+
+:lr_RA191 rdf:<0xE2><0x80><0x89>type guide:LearningResult ;
+    guide:learningResultCode "RA191" ;
+    guide:learningResultDescription "Conocer los distintos mecanismos de transferencia de calor" .
+
+# Syllabus
+:syllabus_85003315 rdf:type guide:Syllabus ;
+    guide:hasItem :item_tema1, :item_tema2, :item_tema3, :item_tema4, :item_tema5, :item_tema6, :item_tema7, :item_tema8, :item_tema9, :item_tema10, :item_tema11 .
+
+:item_tema1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Tema 1. Conceptos básicos y definiciones" .
+
+:item_tema2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Tema 2. Primer Principio de la Termodinámica. Energía" .
+
+:item_tema3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Tema 3. Segundo Principio de la Termodinámica. Entropía" .
+
+# Evaluation System
+:eval_system_thermo rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "El alumno podrá participar en la evaluación progresiva y/o en la prueba global." ;
+    guide:hasEvaluationTrial :trial_lab1_q, :trial_exam_final .
+
+:trial_lab1_q rdf:type guide:EvaluationTrial ;
+    guide:trialType "Cuestionario eliminatorio guión Practica de Laboratorio 1" ;
+    guide:evaluationType "Prueba Telemática" ;
+    guide:gradePercentage "0.75%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "No presencial" .
+
+:trial_exam_final rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Final ordinario" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "95%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+# Schedule
+:schedule_thermo rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week3_lab1, :event_week8_exam_theory .
+
+:event_week3_lab1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 3" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :act_lab1 .
+
+:act_lab1 rdf:type guide:Activity ;
+    guide:activityDescription "Práctica Termometría" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_wark rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "'Thermodynamics', K. Wark, 6th Ed.: McGraw-Hill. 1999." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_moran rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "'Fundamentals of Engineering Thermodynamics', M.J. Moran et al., 9th ed., 2018." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_cengel rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Çengel, Y.A., Boles, M.A. y Kanoglu, M., 2019. Termodinámica. 9ª ed." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_web_moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Página web de la asignatura http://moodle.upm.es" ;
+    guide:bibliographyType "Recursos web" .

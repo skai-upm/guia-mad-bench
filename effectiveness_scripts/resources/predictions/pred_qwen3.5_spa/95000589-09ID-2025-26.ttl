@@ -1,0 +1,72 @@
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sch: <https://schema.org/> .
+
+<http://guia-mad-bench.es/data/course-guide-95000589> rdf:type guide:CourseGuide ;
+    dc:title "Laboratorio De Aplicaciones En Salud Digital"@en ;
+    dct:creator "Gema Garcia Saez" ,
+              "Maria Elena Hernando Perez" ;
+    guide:numberOfCredits 4.0 ;
+    guide:sylbususDescription "Introducción al diseño de interfaces, Gestión de bases de datos relacionales..."@es ;
+    sch:name "Laboratorio De Aplicaciones En Salud Digital"@en .
+
+<http://guia-mad-bench.es/data/degree-09id> rdf:type guide:Degree ;
+    dct:title "Grado en Ingenieria Y Sistemas de Datos" ;
+    guide:courseYear 2025 ;
+    sch:name "Grado En Ingenieria Y Sistemas De Datos"@en .
+
+<http://guia-mad-bench.es/data/course-guide-95000589> guide:hasCourse <http://guia-mad-bench.es/data/degree-09id> ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-2S_2025-26> .
+
+<http://guia-mad-bench.es/data/course-guide-95000589> guide:hasCompetency <http://guia-mad-bench.es/data/competency-cb05> ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/result-ra196> .
+
+<http://guia-mad-bench.es/data/syllabus-95000589> rdf:type guide:Sylbusus ;
+    sch:name "Temario Laboratorio De Aplicaciones En Salud Digital"@en ;
+    guide:hasItem <http://guia-mad-bench.es/data/item-introduccion-usabilidad> .
+
+<http://guia-mad-bench.es/data/schedule-2S_2025-26> rdf:type guide:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event-week1> ,
+                     <http://guia-mad-bench.es/data/event-week4> .
+
+<http://guia-mad-bench.es/data/lecturer-gema> rdf:type guide:Lecturer ;
+    sch:name "Gema Garcia Saez" ;
+    sch:email "gema.garcia.saez@upm.es"@en ;
+    guide:office "B-302.2"@es .
+
+<http://guia-mad-bench.es/data/competency-cb05> rdf:type guide:Competency ;
+    guide:competencyCode "CB05"^^xsd:string ;
+    sch:description "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía"@en .
+
+<http://guia-mad-bench.es/data/result-ra196> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA196"^^xsd:string ;
+    sch:description "Conocimientos teóricos y habilidades prácticas en tecnologías necesarias para el desarrollo e integración de servicios de telemedicina"@en .
+
+<http://guia-mad-bench.es/data/syllabus-95000589> guide:hasItem <http://guia-mad-bench.es/data/item-introduccion-usabilidad> ;
+    guide:hasItem <http://guia-mad-bench.es/data/item-gestion-db-relacionales> .
+
+<http://guia-mad-bench.es/data/syllabus-95000589> guide:hasItem <http://guia-mad-bench.es/data/item-intro-desarrollo-web> ;
+    guide:hasItem <http://guia-mad-bench.es/data/item-aplicacion-gestion-pacientes> .
+
+<http://guia-mad-bench.es/data/syllabus-95000589> guide:hasItem <http://guia-mad-bench.es/data/item-aplicacion-profesionales> ;
+    guide:hasItem <http://guia-mad-bench.es/data/item-aplicacion-pacientes> .
+
+<http://guia-mad-bench.es/data/event-week1> rdf:type guide:SylbususEvent ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-2S_2025-26> ;
+    guide:activityDescription "Introducción a la asignatura"@en .
+
+<http://guia-mad-bench.es/data/event-week4> rdf:type guide:SylbususEvent ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/schedule-2S_2025-26> ;
+    guide:hasActivity <http://guia-mad-bench.es/data/activity-practica1-deliverable> .
+
+<http://guia-mad-bench.es/data/evaluation-system-progresiva> rdf:type guide:EvaluationSystem ;
+    sch:description "La calificación se obtendrá a partir de la calificación de las entregas..."@es ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial-practica1-deliverable> .
+
+<http://guia-mad-bench.es/data/course-guide-95000589> guide:hasEvaluationSystem <http://guia-mad-bench.es/data/evaluation-system-progresiva> ;
+    sch:description "Evaluación Progresiva"@en .

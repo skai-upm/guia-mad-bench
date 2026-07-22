@@ -1,0 +1,184 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+# Course and Degree Information
+:course_133000050 a guide:Course ;
+    sch:name "133000050 - Actividades Deportivas Acuaticas En La Naturaleza." ;
+    guide:courseYear 2025 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Segundo semestre" ;
+    sch:hasCourseInstance :course_guide_133000050 .
+
+:course_guide_133000050 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Actividades Deportivas Acuaticas En La Naturaleza." ;
+    sch:description "Contenidos teóricos y prácticos alineados con la agenda 2030 sobre el Desarrollo Sostenible de la ONU." ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :syllabus_133000050 ;
+    guide:hasCompetency :comp_CB7, :comp_CE1, :comp_CG3, :comp_CT6 ;
+    guide:hasLearningResult :lr_RA57 ;
+    guide:hasEvaluation :eval_system_133000050 ;
+    sch:instructor :lecturer_vicente, :lecturer_lazaro ;
+    sch:director :lecturer_vicente ;
+    guide:hasDidacticResource :res_moodle, :res_material_practicas .
+
+:degree_13AM a guide:MasterDegree ;
+    sch:name "13AM - Master Universitario El Agua En El Medio Natural. Us $\text{o}$s Y Gestion." ;
+    guide:hasCourse :course_133000050 .
+
+:univ_center_etsi a guide:UniversityCenter ;
+    sch:name "E.T.S.I. Montes, Forestal y Medio Natur." ;
+    guide:offers :degree_13AM .
+
+# Lecturers
+:lecturer_vicente a guide:Lecturer ;
+    sch:name "Vicente Felipe Gomez Encinas" ;
+    sch:email "v.gencinas@upm.es" ;
+    guide:office "702" ;
+    guide:tutorshipsSchedule "M - 14:00 - 17:00, J - 14:00 - 17:00" .
+
+:lecturer_lazaro a guide:Lecturer ;
+    sch:name "Lazaro Mediavilla Saldaña" ;
+    sch:email "lazaro.mediavilla@upm.es" ;
+    guide:office "503" ;
+    guide:tutorshipsSchedule "J - 12:00 - 15:00, V - 10:00 - 13:00" .
+
+# Competencies
+:comp_CB7 a guide:Competency ;
+    guide:competencyCode "CB7" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquirimos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos dentro de contextos más amplios (o multidisciplinares) relacionados con su área de estudio" .
+
+:comp_CE1 a guide:Competency ;
+    guide:competencyCode "CE1" ;
+    guide:competencyDescription "Conocer los fundamentos de la Limnología" .
+
+:comp_CG3 a guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Capacidad para participar en proyectos de investigación, desarrollo e innovación vinculados con el uso sostenible de los recursos hídricos" .
+
+:comp_CT6 a guide:Competency ;
+    guide:competencyCode "CT6" ;
+    guide:competencyDescription "Liderar equipos de trabajo de diversa índole, con actitud proactiva y motivadora, comunicando con claridad los objetivos y las tareas de cada componente del equipo." .
+
+# Learning Results
+:lr_RA57 a guide:LearningResult ;
+    guide:learningResultCode "RA57" ;
+    guide:learningResultDescription "Desarrollo de un trabajo original en el ámbito del uso y gestión del agua en el medio natural." .
+
+# Syllabus
+:syllabus_133000050 a guide:Syllabus ;
+    guide:hasItem :item_topic1, :item_topic2, :item_topic3, :item_topic4, :item_topic5, :item_topic6, :item_topic7 .
+
+:item_topic1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Conceptos y fundamentos del Ocio, Tiempo Libre y la Recreación Deportiva" .
+
+:item_topic2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Demanda de actividades físicas y deportivas en el tiempo libre y de ocio" .
+
+:item_topic3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Dimensiones y manifestaciones actuales del ocio" .
+
+:item_topic4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Actividades deportivas y recreativas fluviales. Clasificación." .
+
+:item_topic5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Diseño de programas de actividades acuáticas en la naturaleza" .
+
+:item_topic6 a guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Experiencia práctica de piragüismo. Maniobras básicas de paleo para el descenso de aguas bravas" .
+
+:item_topic7 a guide:SyllabusItem ;
+    guide:itemIndex 7 ;
+    guide:syllabusDescription "Gestión del riesgo en actividades fluviales y barrancos" .
+
+# Evaluation System and Trials
+:eval_system_133000050 a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva, global (convocatoria ordinaria) y extraordinaria." ;
+    guide:hasEvaluationTrial :trial_work_analysis_3, :trial_design_intervention_6, :trial_exam_written_17, :trial_practical_exam_7, :trial_presentation_17, :trial_defense_extraordinary .
+
+:trial_work_analysis_3 a guide:EvaluationTrial ;
+    guide:trialType "Trabajo - Ficha de análisis de contenidos" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "3" ;
+    guide:trialMode "Presencial" .
+
+:trial_design_intervention_6 a guide:EvaluationTrial ;
+    guide:trialType "Trabajo - Diseño de Intervención" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "6" ;
+    guide:trialMode "Presencial" .
+
+:trial_exam_written_17 a guide:EvaluationTrial ;
+    guide:trialType "Examen escrito" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:trialMode "Presencial" .
+
+:trial_practical_exam_7 a guide:EvaluationTrial ;
+    guide:trialType "Examen práctico" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "7" ;
+    guide:trialMode "Presencial" .
+
+:trial_presentation_17 a guide:EvaluationTrial ;
+    guide:trialType "Presentación Diseño de Intervención" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "60%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:trialMode "Presencial" .
+
+:trial_defense_extraordinary a guide:EvaluationTrial ;
+    guide:trialType "Defensa de trabajos realizados" ;
+    guide:evaluationType "Extraordinaria" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+# Schedule Events and Activities
+:event_week3 a guide:ScheduleEvent ;
+    guide:eventIndex 3 ;
+    guide:eventWeek "Semana 3" ;
+    guide:hasActivity :activity_work_analysis .
+
+:activity_work_analysis a guide:Activity ;
+    guide:activityDescription "TRABAJO - Ficha de análisis de contenidos" ;
+    guide:activityFormat "Trabajo Individual" ;
+    guide:activityDuration 1.0 ;
+    guide:attendanceType "Presencial" .
+
+# Required Knowledge
+:req_knowledge_outdoor a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Gusto por la vida al Aire Libre" .
+
+# Didactic Resources
+:res_moodle a guide:DidacticResource ;
+    guide:bibliographyTitle "Información y recursos" ;
+    guide:bibliographyType "Otros" ;
+    guide:bibliographyDescription "Documentación se facilitará através de la plataforma Moodle" .
+
+:res_material_practicas a guide:DidacticResource ;
+    guide:bibliographyTitle "Material para las prácticas" ;
+    guide:bibliographyType "Equipamiento" .

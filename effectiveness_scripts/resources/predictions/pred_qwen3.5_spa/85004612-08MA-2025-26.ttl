@@ -1,0 +1,726 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guide/GA_08MA_85004612> rdf:type :CourseGuide ;
+    dct:title "Guía de Aprendizaje ANX-PR/CL/001-01"@en ;
+    sch:name "Turbomáquinas Térmicas Para Aplicaciones Navales" ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus/GA_08MA_85004612> ;
+    guide:hasEvaluation <http://guia-mad-bench.es/data/evalsystem/GA_08MA_85004612> ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule/GA_08MA_85004612> ;
+    guide:numberOfCredits "4.5"^^xsd:decimal ;
+    guide:syllabusDescription "Temario de la asignatura con 19 temas"@en ;
+    sch:description "Objetivo que el alumno obtenga un conocimiento suficiente de los procesos de la termodinámica y mecánica de fluidos"@en .
+
+<http://guia-mad-bench.es/data/degree/BachelorDegree_08MA> rdf:type :BachelorDegree, owl:Class ;
+    sch:name "Grado En Ingenieria Maritima" ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course/GA_08MA_85004612> .
+
+<http://guia-mad-bench.es/data/org/EtsIngenierosNavales> rdf:type sch:Organization, owl:Class ;
+    dct:title "E.T.S. De Ingenieros Navales" ;
+    guide:offers <http://guia-mad-bench.es/data/degree/BachelorDegree_08MA> .
+
+<http://guia-mad-bench.es/data/course/GA_08MA_85004612> rdf:type sch:Course, owl:Class ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/competency/CB2>, <http://guia-mad-bench.es/data/competency/CB5>, <http://guia-mad-bench.es/data/competency/CE13> ,<http://guia-mad-bench.es/data/competency/CE19>, <http://guia-mad-bench.es/data/competency/CE23>, <http://guia-mad-bench.es/data/competency/CB7>;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/result/Ra32>,<http://guia-mad-bench.es/data/result/Ra33> ;
+    sch:name "85004612 - Turbomáquinas Térmicas Para Aplicaciones Navales" ;
+    guide:courseYear 2025 .
+
+<http://guia-mad-bench.es/data/lecturer/RodrigroPerezFernandez> rdf:type :Lecturer, sch:Person ;
+    dct:title "Rodrigo Perez Fernandez (Coordinador/a)" ;
+    sch:name "Rodrigo Perez Fernandez" ;
+    guide:office "Motores"@en ;
+    sch:email "rodrigo.perez.fernandez@upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer/MariaDelCarmenRodriguezHidalgo> rdf:type :Lecturer, sch:Person ;
+    dct:title "Maria Del Carmen Rodriguez Hidalgo"@en ;
+    sch:name "Maria Del Carmen Rodriguez Hidalgo" ;
+    guide:tutorshipsSchedule "Sin horario."^^xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus/GA_08MA_85004612> rdf:type :Syllabus, owl:Class ;
+    sch:name "Temario de la asignatura" ;
+    guide:syllabusDescription "Características Generales. Análisis de Ciclos Termodinámicos..."@en .
+
+<http://guia-mad-bench.es/data/schedule/GA_08MA_85004612> rdf:type :Schedule, owl:Class ;
+    sch:name "Cronograma" ;
+    guide:syllabusDescription "Semestre 1 a Semestre 17"@en .
+
+<http://guia-mad-bench.es/data/evalsystem/GA_08MA_85004612> rdf:type :EvaluationSystem, owl:Class ;
+    sch:name "Sistema de Evaluación" ;
+    guide:evaluationDescription "Proceso progresivo y evaluación global"@en .
+
+<http://guia-mad-bench.es/data/competency/CB2> rdf:type :Competency, owl:Class ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus/GA_08MA_85004612>;
+    guide:competencyCode "CB2"^^xsd:string ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional"@en .
+
+<http://guia-mad-bench.es/data/competency/CB5> rdf:type :Competency, owl:Class ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus/GA_08MA_85004612>;
+    guide:competencyCode "CB5"^^xsd:string ;
+    guide:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores"@en .
+
+<http://guia-mad-bench.es/data/competency/CB7> rdf:type :Competency, owl:Class ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus/GA_08MA_85004612>;
+    guide:competencyCode "CB7"^^xsd:string ;
+    guide:competencyDescription "Capacidad para el aprendizaje de nuevos métodos y teorías"@en .
+
+<http://guia-mad-bench.es/data/competency/CB13> rdf:type :Competency, owl:Class ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus/GA_08MA_85004612>;
+    guide:competencyCode "CE13"^^xsd:string ;
+    guide:competencyDescription "Conocimiento de la mecánica y de los componentes de maquinas"@en .
+
+<http://guia-mad-bench.es/data/competency/CB19> rdf:type :Competency, owl:Class ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus/GA_08MA_85004612>;
+    guide:competencyCode "CE19"^^xsd:string ;
+    guide:competencyDescription "Conocimiento de los motores diesel marinos, turbinas de gas y plantas de vapor"@en .
+
+<http://guia-mad-bench.es/data/competency/CB23> rdf:type :Competency, owl:Class ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus/GA_08MA_85004612>;
+    guide:competencyCode "CE23"^^xsd:string ;
+    guide:competencyDescription "Conocimiento de los métodos de proyecto de los sistemas de propulsión naval"@en .
+
+<http://guia-mad-bench.es/data/result/Ra32> rdf:type :LearningResult, owl:Class ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus/GA_08MA_85004612>;
+    guide:learningResultCode "RA32"^^xsd:string ;
+    guide:learningResultDescription "Comprender los conceptos básicos de la Termodinámica y aplicarlos a problemas de interés en ingeniería"@en .
+
+<http://guia-mad-bench.es/data/result/Ra33> rdf:type :LearningResult, owl:Class ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus/GA_08MA_85004612>;
+    guide:learningResultCode "RA33"^^xsd:string ;
+    guide:learningResultDescription "Conocer y aplicar los Principios de la Termodinámica a procesos térmicos"@en .
+
+<http://guia-mad-bench.es/data/syllabusItem/Tema1> rdf:type :SyllabusItem, owl:Class ;
+    sch:name "Tema 1. Características Generales" ;
+    guide:syllabusDescription "Características Generales. Definiciones básicas."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas de Vapor" ;
+    guide:eventWeek 1730-2459^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/Event_Sem_8> rdf:type :ScheduleEvent, owl:Class ;
+    sch:name "Prueba de evaluación continua Turbinas

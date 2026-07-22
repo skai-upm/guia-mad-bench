@@ -1,0 +1,148 @@
+@prefix gmb: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix guide: <http://w3id.org/def/guia#> .
+
+# Course and Degree Information
+gmb:Course_145005304 a guide:Course ;
+    sch:name "Sistemas De Radiofrecuencia" ;
+    sch:courseCode 145005304 ;
+    guide:courseType "Obligatoria" ;
+    sch:numberOfCredits 4.5 ;
+    guide:semester "Quinto semestre" .
+
+gmb:Degree_14IA a guide:BachelorDegree ;
+    sch:name "Grado En Ingeniería Aeroespacial" ;
+    guide:degreeCode "14IA" ;
+    guide:hasCourse gmb:Course_145005304 .
+
+gmb:UniversityCenter_ETSI a guide:UniversityCenter ;
+    sch:name "E.T.S.I. Aeronáumentica Y Del Espacio" ;
+    guide:offers gmb:Degree_14IA .
+
+# Course Guide
+gmb:CourseGuide_145005304 a guide:CourseGuide ;
+    sch:instructor gmb:Lecturer_JoseIgnacio ;
+    sch:inLanguage "Castellano" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:semester "Quinto semestre" ;
+    guide:hasSyllabus gmb:Syllabus_RF ;
+    guide:hasCompetency gmb:Comp_CE71, gmb:Comp_CG3, gmb:Comp_CG9 ;
+    guide:hasLearningResult gmb:LR_RA119 ;
+    guide:hasEvaluation gmb:EvalSystem_RF ;
+    guide:hasDidacticResource gmb:Res_Maneev, gmb:Res_Liao, gmb:Res_Benson, gmb:Res_Smith, gmb:Res_Kraus .
+
+# Lecturer
+gmb:Lecturer_JoseIgnacio a guide:Lecturer ;
+    sch:name "Jose Ignacio Izpura Torres" ;
+    sch:email "joseignace.izpura@upm.es" ;
+    guide:office "A-259" ;
+    guide:tutorshipsSchedule "L - 11:00 - 12:00, X - 18:15 - 19:15, V - 11:00 - 12:00" .
+
+# Competencies
+gmb:Comp_CE71 a guide:Competency ;
+    guide:competencyCode "CE71" ;
+    guide:competencyDescription "Conocimiento aplicado de: Transmisores y receptores; Línguas de transmisión y sistemas radiantes de señales para la navegación aérea; Sistemas de navegación; Instalaciones eléctricas en el sector tierra y sector aire; Mecánica del Vuelo; Cartografía; Cosmografía; Meteorología; Distribución, gestión y economía del transporte aéreo." .
+
+gmb:Comp_CG3 a guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Capacidad para identificar y resolver problemas aplicando, con creatividad, los conocimientos adquiridos" .
+
+gmb:Comp_CG9 a guide:Competency ;
+    guide:competencyCode "CG9" ;
+    guide:competencyDescription "Razonamiento crítico y capacidad de asociación que posibiliten el aprendizaje continuo" .
+
+# Learning Results
+gmb:LR_RA119 a guide:LearningResult ;
+    guide:learningResultCode "RA119" ;
+    guide:learningResultDescription "Comprensión, aplicación, análisis y síntesis de las Líneas de Transmisión, Guías de Ondas, Fibra Óptica, Antenas y Redes de antenas, aplicadas a los dispositivos que forman parte de los equipos que conforman el Sistema de Navegación Aérea." .
+
+# Syllabus
+gmb:Syllabus_RF a guide:Syllabus ;
+    guide:hasItem gmb:Topic_1, gmb:Topic_2, gmb:Topic_3, gmb:Topic_4, gmb:Topic_5, gmb:Topic_6 .
+
+gmb:Topic_1 a guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "PRINCIPIOS FUNDAMENTAL DE LOS SISTEMAS DE RADIOFRECUENCIA" .
+gmb:Topic_2 a guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "ONDAS ELECTROMAGNÉTICAS: NATURALEZA Y PROPAGACIÓN" .
+gmb:Topic_3 a guide:SyllabusItem ; guide:itemIndex 3 ; guide:syllabusDescription "LINEAS DE TRANSMISION" .
+gmb:Topic_4 a guide:SyllabusItem ; guide:itemIndex 4 ; guide:syllabusDescription "GUIAS DE ONDA" .
+gmb:Topic_5 a guide:SyllabusItem ; guide:itemIndex 5 ; guide:syllabusDescription "ANTENAS" .
+gmb:Topic_6 a guide:SyllabusItem ; guide:itemIndex 6 ; guide:syllabusDescription "TIPOS Y REDES DE ANTENAS" .
+
+# Evaluation System and Trials
+gmb:EvalSystem_RF a guide:EvaluationSystem ;
+    guide:evaluationDescription "La asignatura puede ser aprobada por evaluación progresiva o por prueba final." ;
+    guide:hasEvaluationTrial gmb:Trial_Prog_7, gmb:Trial_Informe_11, gmb:Trial_Prog_16, gmb:Trial_Ord_16, gmb:Trial_Extr_17 .
+
+gmb:Trial_Prog_7 a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Progresiva" ;
+<0xC2>    guide:gradePercentage "40%" ;
+    guide:minimumScore "2.5 / 10" ;
+    guide:trialWeek "7" ;
+    guide:involvesCompetency gmb:Comp_CE71, gmb:Comp_CG3, gmb:Comp_CG9 .
+
+gmb:Trial_Informe_11 a guide:EvaluationTrial ;
+    guide:trialType "Trabajo en Grupo" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "10%" ;
+    guide:trialWeek "11" .
+
+gmb:Trial_Prog_16 a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "2.5 / 10" ;
+    guide:trialWeek "16" ;
+    guide:involvesCompetency gmb:Comp_CE71, gmb:Comp_CG3, gmb:Comp_CG9 .
+
+gmb:Trial_Ord_16 a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "16" .
+
+gmb:Trial_Extr_17 a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" .
+
+# Activities (Schedule Events)
+gmb:Activity_T1 a guide:Activity ;
+    guide:activityDescription "Clases teóricas y prácticas del Tema 1" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+gmb:Activity_Lab_Report a guide:Activity ;
+    guide:activityDescription "Realización y entrega del informe de prácticas de Laboratorio" ;
+    guide:activityDuration 4.0 ;
+    guide:activityFormat "Trabajo en Grupo" ;
+    guide:attendanceType "No presencial" .
+
+# Required Knowledge
+gmb:ReqKnowledge_RF a guide:RequiredKnowledge ;
+    guide:previousKnowledge "FÍsica Ii, Electronica Y Automatica, Ingenieria Electrica, Manejo fluido de números complejos." .
+
+# Didactic Resources
+gmb:Res_Maneev a guide:DidacticResource ;
+    guide:bibliographyTitle "Fundamentos de la radioelectrónica" ;
+    guide:bibliographyType "Bibliografía" .
+
+gmb:Res_Liao a guide:DidacticResource ;
+    guide:bibliographyTitle "Engineering applications of electromagnetic theory" ;
+    guide:bibliographyType "Bibliografía" .
+
+gmb:Res_Benson a guide:DidacticResource ;
+    guide:bibliographyTitle "Fields waves and transmission lines" ;
+    guide:bibliographyType "Bibliografía" .
+
+gmb:Res_Smith a guide:DidacticResource ;
+    guide:bibliographyTitle "Radio Frequency Principles and Applications" ;
+    guide:bibliographyType "Bibliografía" .
+
+gmb:Res_Kraus a guide:DidacticResource ;
+    guide:bibliographyTitle "Antennas" ;
+    guide:bibliographyType "Bibliografía" .

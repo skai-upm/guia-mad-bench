@@ -1,0 +1,135 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+:Master_Software_Systems rdf:type guide:MasterDegree ;
+    sch:name "10AK - Master Universitario en Software y Sistemas" ;
+    guide:degreeCode "10AK" .
+
+:ETS_Informaticos rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Informáticos" ;
+    guide:offers :Master_Software_Systems .
+
+# Course
+:Computer_Security_Course rdf:type guide:Course ;
+    sch:name "103000590 - Computer Security" ;
+    sch:courseCode 103000590 ;
+    guide:courseType "Optional/elective" ;
+    guide:courseYear 2025 ;
+    guide:semester "Semester 1" ;
+    sch:hasCourseInstance :Computer_Security_Guide .
+
+# Course Guide
+:Computer_Security_Guide rdf:type guide:CourseGuide ;
+    sch:name "Learning Guide - Computer Security" ;
+    sch:description "This course will focus on providing the students with a global view of the field of computer security."@en ;
+    sch:inLanguage "English"@en ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "September" ;
+    guide:periodEndingMonth "January" ;
+    guide:numberOfCredits 4.0 ;
+    guide:totalHours "26/27 hours of student face-to-face contact and independent study time" ;
+    guide:hasSyllabus :Computer_Security_Syllabus ;
+    guide:hasEvaluation :Computer_Security_EvalSystem ;
+    guide:hasCompetency :CG1, :CG13, :CG4, :CG8, :CG9, :CGI20, :CGI23 ;
+    guide:hasLearningResult :RA12, :RA112 ;
+    sch:instructor :Manuel_Carro_Linares ;
+    sch:courseSchedule :Computer_Security_Schedule ;
+    guide:hasDidacticResource :Various_Resources .
+
+# Faculty
+:Julio_Marino_Carballo rdf:type guide:Lecturer ;
+    sch:name "Julio Mariño Carballo" ;
+    sch:email "julio.marino@upm.es" ;
+    guide:office "D-2308" ;
+    guide:tutorshipsSchedule "Tu - 15:00 - 17:00, W - 10:00 - 12:00, W - 15:00 - 17:00" .
+
+:Manuel_Carro_Linares rdf:type guide:Lecturer ;
+    sch:name "Manuel Carro Liñares" ;
+    sch:email "manuel.carro@upm.es" ;
+    guide:office "2303" ;
+    guide:tutorshipsSchedule "M - 13:00 - 15:00, Tu - 13:00 - 15:00, W - 13:00 - 15:00" .
+
+:Juan_Caballero rdf:type guide:Lecturer ;
+    sch:name "Juan Caballero" ;
+    sch:email "Juan.caballero@imdea.org" .
+
+:Srdjan_Matic rdf:type guide:Lecturer ;
+    sch:name "Srdjan Matic" ;
+    sch:email "srdjan.matic@imdea.org" .
+
+:Alessandra_Gorla rdf:type guide:Lecturer ;
+    sch:name "Alessandra Gorla" ;
+    sch:email "alessandra.gorla@imdea.org" .
+
+# Competencies
+:CG1 rdf:type guide:Competency ; guide:competencyCode "CG1" ; guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de...”@en .
+:CG13 rdf:type guide:Competency ; guide:competencyCode "CG13" ; guide:competencyDescription "Apreciación de los límites del conocimiento actual..."@en .
+:CG4 rdf:type guide:Competency ; guide:competencyCode "CG4" ; guide:competencyDescription "Que los estudiantes posean las habilidades de aprendizaje..."@en .
+:CG8 rdf:type guide:Competency ; guide:competencyCode "CG8" ; guide:competencyDescription "Planteamiento y resolución de problemas también en áreas nuevas..."@en .
+:CG9 rdf:type guide:Competency ; guide:competencyCode "CG9" ; guide:competencyDescription "Aplicación de los métodos de resolución de problemas más recientes..."@en .
+:CGI20 rdf:type guide:Competency ; guide:competencyCode "CGI20" ; guide:competencyDescription "Adquirir conocimientos científicos avanzados del campo de la informática..."@en .
+:CGI23 rdf:type guide:Competency ; guide:competencyCode "CGI23" ; guide:competencyDescription "Capacidad de leer y comprender publicaciones dentro de su ámbito..."@en .
+
+# Learning Results
+:RA12 rdf:type guide:LearningResult ; guide:learningResultCode "RA12" ; guide:learningResultDescription "Be familiar with examples of real applications and research trends and lines"@en .
+:RA112 rdf:type guide:LearningResult ; guide:learningResultCode "RA112" ; guide:learningResultDescription "Identify computer security threats and decide the best proactive and reactive measures against them"@en .
+
+# Syllabus
+:Computer_Security_Syllabus rdf:type guide:Syllabus ;
+    guide:hasItem :Syllabus_Intro, :Syllabus_Network, :Syllabus_Software .
+
+:Syllabus_Intro rdf:type guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "Introduction to Security" .
+:Syllabus_Network rdf:type guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "Network and web security" .
+:Syllabus_Software rdf:type guide:SyllabusItem ; guide:itemIndex 3 ; guide:syllabusDescription "Software security" .
+
+# Schedule & Activities
+:Computer_Security_Schedule rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week1, :Event_Week9, :Event_Week17 .
+
+:Event_Week1 rdf:type guide:ScheduleEvent ; guide:eventWeek "1" ; guide:hasActivity :Activity_Intro .
+:Activity_Intro rdf:type guide:Activity ; guide:activityDescription "Course Introduction" ; guide:activityDuration 2.0 ; guide:activityFormat "Lecture" .
+
+:Event_Week9 rdf:type guide:ScheduleEvent ; guide:eventWeek "9" ; guide:hasActivity :Activity_Midterm_Exam .
+:Activity_Midterm_Exam rdf:type guide:Activity ; guide:activityDescription "Midterm exam" ; guide:activityDuration 2.0 ; guide:activityFormat "Written test" .
+
+:Event_Week17 rdf:type guide:ScheduleEvent ; guide:eventWeek "17" ; guide:hasActivity :Activity_Global_Exam .
+:Activity_Global_Exam rdf:type guide:Activity ; guide:activityDescription "Global exam" ; guide:activityDuration 2.0 ; guide:activityFormat "Written test" .
+
+# Evaluation System
+:Computer_Security_EvalSystem rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "The evaluation will be based on two exams: mid-term and final."@en ;
+    guide:hasEvaluationTrial :Midterm_Trial, :Global_Trial .
+
+:Midterm_Trial rdf:type guide:EvaluationTrial ;
+    guide:trialType "Written test" ;
+    guide:evaluationType "Progressive assessment" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "2 / 10" ;
+    guide:trialWeek "9" ;
+    guide:hasScheduleEvent :Event_Week9 ;
+    guide:involvesCompetency :CG4, :CG8, :CG9, :CG1, :CG13, :CGI2:20, :CGI23 .
+
+:Global_Trial rdf:type guide:EvaluationTrial ;
+    guide:trialType "Written test" ;
+    guide:evaluationType "Global examination" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "17" ;
+    guide:hasScheduleEvent :Event_Week17 ;
+    guide:involvesCompetency :CG4, :CG8, :CG9, :CG1, :CG13, :CGI20, :CGI23 .
+
+# Resources
+:Various_Resources rdf:type guide:DidacticResource ;
+    sch:name "Various" ;
+    guide:bibliographyType "Others" ;
+    guide:bibliographyDescription "Will be decided based on the selected topics."@en .
+
+# Prior Knowledge
+:Prior_Knowledge_Security rdf:type guide:RequiredKnowledge ;
+    guide:previousKnowledge "An undergraduate level course on computer security is desired but not required. Some demonstrable knowledge on the basic principles of computer security is necessary."@en .

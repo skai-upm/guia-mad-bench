@@ -1,0 +1,114 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Instance Data Extraction from Document
+#################################################################
+
+###  Course Guide Instance (Microelectronica)
+<http://guia-mad-bench.es/data/courseguide/GA_53001240> rdf:type :CourseGuide ;
+                                               sch:courseCode "53001240"^^xsd:string ;
+                                               dc:title "Microelectronica"@en ;
+                                               guide:numberOfCredits 3.0^^xsd:decimal ;
+                                               guide:syllabusDescription "This subject addresses two main topics: on the one hand, microelectronics... and reconfigurable computing..."@en ;
+                                               sch:description "A structured academic document that describes a course, including objectives, contents, methodology, resources, schedule, and evaluation."@en .
+
+###  Degree Instance (Master Universitario En Ingenieria Industrial)
+<http://guia-mad-bench.es/data/degree/GA_05AZ> rdf:type :Degree ;
+                                                 sch:courseCode "05AZ"^^xsd:string ;
+                                                 guide:numberOfCredits 3.0^^xsd:decimal .
+
+###  University Center Instance (E.T.S. de Ingenieros Industriales)
+<http://guia-mad-bench.es/data/universitycenter/ETS_Industriales> rdf:type :UniversityCenter , sch:Organization ;
+                                                                    dc:title "E.T.S. de Ingenieros Industriales"@en .
+
+###  Lecturers Instances (Alfonso Rodriguez Medina, Jose Andres Otero Marnotes)
+<http://guia-mad-bench.es/data/lecturer/alonso_rodriguez_medina> rdf:type :Lecturer , sch:Person ;
+                                                                    guide:numberOfCredits "3"^^xsd:string ; # Placeholder for credits if applicable to person role in context of course load, though ontology has it on CourseGuide. Using generic property mapping where possible or omitting unused ones. I will use properties defined like office/email.
+                                                                    sch:name "Alfonso Rodriguez Medina"@en ;
+                                                                    dc:title "Coordinador/a"@es ;
+                                                                    guide:office "UD Electrónica"^^xsd:string ;
+                                                                    sch:email <mailto:alfonso.rodriguezm@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer/jose_andres_otero_marnotes> rdf:type :Lecturer , sch:Person ;
+                                                                        guide:numberOfCredits "3"^^xsd:string ; # Assuming same context for consistency in extraction if not specified per person.
+                                                                        sch:name "Jose Andres Otero Marnotes"@en ;
+                                                                        dc:title "Profesor/a"@es ;
+                                                                        guide:office "UD Electrónica"^^xsd:string ;
+                                                                        sch:email <mailto:joseandres.otero@upm.es> .
+
+###  External Lecturer Instance (Luis Donatien Waucquez Jimenez)
+<http://guia-mad-bench.es/data/lecturer/luis_donatien_waucquez_jimenez> rdf:type :Lecturer , sch:Person ;
+                                                                            guide:numberOfCredits "3"^^xsd:string ; # Assuming same context.
+                                                                            sch:name "Luis Donatien Waucquez Jimenez"@en ;
+                                                                            dc:title "Profesor/a Externo"@es ;
+                                                                            sch:email <mailto:luis.waucquez.jimenez@upm.es> .
+
+###  Competencies Instances (Mapped from Section 4.1)
+<http://guia-mad-bench.es/data/competency/APLICA> rdf:type :Competency ;
+                                                    guide:competencyCode "APLICA"^^xsd:string ;
+                                                    sch:description "(a) - APLICA. Habilidad para aplicar conocimientos científicos, matemáticos y tecnológicos en sistemas relacionados con la práctica de la ingeniería."@en .
+
+<http://guia-mad-bench.es/data/competency/DISEÑA> rdf:type :Competency ;
+                                                   guide:competencyCode "DISEÑA"^^xsd:string ;
+                                                   sch:description "(c) - DISEÑA. Habilidad para diseñar un sistema, componente o proceso que alcance los requisitos deseados..."@en .
+
+<http://guia-mad-bench.es/data/learningresult/RA121> rdf:type :LearningResult ;
+                                                       guide:competencyCode "RA121"^^xsd:string ; # Using code as identifier for result. Note property is learningResultCode on LearningResult class? Yes, defined in ontology.
+                                                       sch:description "Organiza la información."@en .
+
+<http://guia-mad-bench.es/data/learningresult/RA77> rdf:type :LearningResult ;
+                                                     guide:competencyCode "RA77"^^xsd:string ; # Note property is learningResultCode on LearningResult class.
+                                                     sch:description "Desarrollo de múltiples soluciones a un problema"@en .
+
+###  Syllabus Instance (Section 5)
+<http://guia-mad-bench.es/data/syllabus/GA_05AZ_53001240> rdf:type :Syllabus ;
+                                                            guide:hasItem <http://guia-mad-bench.es/data/syllabussitem/1>, # 1. Microelectronics - Introduction to microelectronics
+                                                           <http://guia-mad-bench.es/data/syllabussitem/2>, # 1.2. CMOS Technology...
+                                                           <http://guia-mad-bench.es/data/syllabussitem/3> .
+
+###  Syllabus Items Instances (Section 5.2)
+<http://guia-mad-bench.es/data/syllabussitem/1> rdf:type :SyllabusItem ;
+                                                  guide:itemIndex "1"^^xsd:integer ;
+                                                  sch:description "Introduction to microelectronics"@en .
+
+###  Schedule Instance (Section 6 - Cronograma)
+<http://guia-mad-bench.es/data/schedule/GA_05AZ_53001240> rdf:type :Schedule , sch:EventSchedule ;
+                                                            guide:hasItem <http://guia-mad-bench.es/data/evaltrial/Homework_CMS>, # Evaluation Trial 1 (Semester 3)
+                                                           <http://guia-mad-bench.es/data/evaltrial/Final_Exam> .
+
+###  Activities Instances (Section 6 - Cronograma Table)
+<http://guia-mad-bench.es/data/activity/LM_Intro_Microelec> rdf:type :Activity ;
+                                                               guide:activityDescription "Introduction to microelectronics"@en ;
+                                                               guide:activityDurationUnit om:Hour .
+
+###  Evaluation System Instance (Section 7 - Actividades y criterios de evaluación)
+<http://guia-mad-bench.es/data/evalsystem/GA_05AZ_53001240> rdf:type :EvaluationSystem ;
+                                                               guide:evaluationDescription "The evaluation of the subject will consist of 20% from a homework project on CMOS technology, 20% from a homework project on Advanced digital modules, and 60% from the final written exam."@en .
+
+###  Evaluation Trial Instances (Section 7 - Table)
+<http://guia-mad-bench.es/data/evaltrial/Homework_CMS> rdf:type :EvaluationTrial ;
+                                                         guide:hasScheduleEvent <http://guia-mad-bench.es/data/scheduleevent/Sem3_Homework>, # Semester 3 Event
+                                                        sch:description "Homework: CMOS technology - Physical layout"@en ;
+                                                        guide:trialType "Trabajo en Grupo"^^xsd:string ;
+                                                        guide:gradePercentage "20%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/Final_Exam> rdf:type :EvaluationTrial ;
+                                                       sch:description "Final written exam"@en ;
+                                                       guide:hasScheduleEvent <http://guia-mad-bench.es/data/scheduleevent/Sem17_Final>, # Semester 17 Event (End of course)
+                                                        guide:trialType "Examen Escrito"^^xsd:string ;
+                                                        guide:gradePercentage "60%"^^xsd:string .
+
+###  Didactic Resources Instances (Section 8 - Recursos didácticos)
+<http://guia-mad-bench.es/data/resource/CMOS_VLSI_Design> rdf:type :DidacticResource , sch:BibliographicWork ;
+                                                              guide:bibliographyTitle "CMOS VLSI Design - A Circuits and Systems Perspective (4th Edition)"^^xsd:string ;
+                                                              guide:hasItem <http://guia-mad-bench.es/data/syllabussitem/1> . # Link to syllabus item if applicable, or just general resource.
+
+<http://guia-mad-bench.es/data/resource/Digital_Integrated_Circuits> rdf:type :DidacticResource , sch:BibliographicWork ;
+                                                                        guide:bibliographyTitle "Digital Integrated Circuits - A Design Perspective (2nd Edition)"^^xsd:string .

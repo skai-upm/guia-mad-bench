@@ -1,0 +1,213 @@
+@prefix data: <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Degree
+data:Degree_04GC rdf:type guide:Degree ;
+    sch:name "04GC - Grado En Ingenieria Civil Y Territorial" ;
+    guide:degreeCode "04GC" ;
+    guide:hasCourse data:Course_45001203 .
+
+# University Center
+data:UniversityCenter_ETS rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ing. De Caminos Canales Y P." ;
+    guide:offers data:Degree_04GC .
+
+# Course
+data:Course_45001203 rdf:type guide:Course ;
+    sch:name "45001203 - Inglés" ;
+    sch:courseCode "45001203" ;
+    guide:courseType "Compulsory" ;
+    sch:hasCourseInstance data:CourseGuide_45001203 .
+
+# Course Guide
+data:CourseGuide_45001203 rdf:type guide:CourseGuide ;
+    sch:description "This course, related to EPAC (English for Academic and Professional Communication), is designed to equip Civil Engineering students with a fundamental command of English tailored to academic and professional contexts." ;
+    guide:numberOfCredits 6.0 ;
+    guide:teachingPeriod "2025-26" ;
+    sch:inLanguage "English" ;
+    sch:instructor data:Lecturer_Slavka ;
+    sch:director data:Lecturer_Slavka ;
+    guide:hasSyllabus data:Syllabus_Ingles ;
+    guide:hasCompetency data:Competency_CT4, data:Competency_CT5, data:Competency_CT7, data:Competency_CT8 ;
+    guide:hasLearningResult data:LearningResult_RA243, data:LearningResult_RA53, data:LearningResult_RA36, data:LearningResult_RA219, data:LearningResult_RA220 ;
+    guide:hasEvaluation data:EvaluationSystem_Ingles ;
+    guide:hasDidacticResource data:Resource_Textbooks, data:Resource_Videos ;
+    sch:courseSchedule data:Schedule_Ingles .
+
+# Lecturer
+data:Lecturer_Slavka rdf:type guide:Lecturer ;
+    sch:name "Slavka Madarova" ;
+    sch:email "s.madarova@upm.es" ;
+    guide:office "476" ;
+    guide:tutorshipsSchedule "Sin horario. Tutoring schedule available at the start of the semester; appointments should be requested via email." .
+
+# Competencies
+data:Competency_CT4 rdf:type guide:Competency ;
+    guide:competencyCode "CT4" ;
+    guide:competencyDescription "Capacidad de preparar y presentar con efectividad comunicaciones orales, escritas y gráficas." .
+
+data:Competency_CT5 rdf:type guide:Competency ;
+    guide:competencyCode "CT5" ;
+    guide:competencyDescription "Polivalencia y capacidad de aprendizaje autónomo." .
+
+data:Competency_CT7 rdf:type guide:Competency ;
+    guide:competencyCode "CT7" ;
+    guide:competencyDescription "Comprensión y capacidad de utilización de los servicios de información y comunicación que ofrece INTERNET." .
+
+data:Competency_CT8 rdf:type guide:Competency ;
+    guide:competencyCode "CT8" ;
+    guide:competencyDescription "Capacidad de comunicación técnica oral y escrita en lengua inglesa, con acreditación previa del nivel B2." .
+
+# Learning Results
+data:LearningResult_RA243 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA243" ;
+    guide:learningResultDescription "Interactúa correctamente en registros formales utilizando el inglés especializado." .
+
+data:LearningResult_RA53 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA5	53" ;
+    guide:learningResultDescription "Se comunica de forma oral y escrita en lengua inglesa, empleando fluidamente la terminología profesional y académica de la ingeniería civil." .
+
+data:LearningResult_RA36 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA36" ;
+    guide:learningResultDescription "Prepara y presenta exposiciones orales y escritas." .
+
+data:LearningResult_RA219 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA219" ;
+    guide:learningResultDescription "Elabora y redacta correctamente informes y resúmenes sobre contenidos de ingeniería civil en inglés." .
+
+data:LearningResult_RA220 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA220" ;
+    guide:learningResultDescription "Elabora y redacta correctamente cartas de solicitud de empleo y CVs adecuados a su preparación académica en ingeniería civil." .
+
+# Syllabus
+data:Syllabus_Ingles rdf:type guide:Syllabus ;
+    guide:hasItem data:SyllabusItem_1, data:SyllabusItem_2, data:SyllabusItem_3, data:SyllabusItem_4, data:SyllabusItem_5, data:SyllabusItem_6 .
+
+data:SyllabusItem_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Reading skills in academic and professional English for civil engineering" .
+
+data:SyllabusItem_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Writing skills in academic and professional English for civil engineering" .
+
+data:SyllabusItem_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Listening skills in academic and professional English for civil engineering" .
+
+data:SyllabusItem_4 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Speaking skills in academic and professional English for civil engineering" .
+
+data:SyllabusItem_5 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Translation skills in academic and professional English for civil engineering" .
+
+data:SyllabusItem_6 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "English terminology in academic and professional English for civil engineering" .
+
+# Evaluation System
+data:EvaluationSystem_Ingles rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "The evaluation system is progressive, based on the assessments specified. Students must complete all five mandatory partial assessments with a minimum grade of 5." ;
+    guide:hasEvaluationTrial data:Trial_Week4, data:Trial_Week7, data:Trial_Week10, data:Trial_Week12, data:Trial_Week14, data:Trial_Global .
+
+# Evaluation Trials and Schedule Events
+data:Trial_Week4 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Progressive assessment" ;
+    guide:trialDescription "Write an abstract/essay" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:hasScheduleEvent data:Event_Week4 ;
+    guide:involvesCompetency data:Competency_CT5, data:Competency_CT7, data:Competency_CT8 .
+
+data:Trial_Week7 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Progressive assessment" ;
+    guide:trialDescription "Oral presentations" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:hasScheduleEvent data:Event_Week7 ;
+    guide:involvesCompetency data:Competency_CT4, data:Competency_CT7, data:Competency_CT8 .
+
+data:Trial_Week10 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Progressive assessment" ;
+    guide:trialDescription "Write an Engineering report" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:hasScheduleEvent data:Event_Week10 ;
+    guide:involvesCompetency data:Competency_CT5, data:Competency_CT7, data:Competency_CT8 .
+
+data:Trial_Week12 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Progressive assessment" ;
+    guide:trialDescription "Civil Engineering Vocabulary test" ;
+    guide:gradePercentage "20%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:hasScheduleEvent data:Event_Week12 ;
+    guide:involvesCompetency data:Competency_CT5, data:Competency_CT7, data:Competency_CT8 .
+
+data:Trial_Week14 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Progressive assessment" ;
+    guide:trialDescription "Write a cover letter" ;
+    guide:gradePercentage "2:0%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:hasScheduleEvent data:Event_Week14 ;
+    guide:involvesCompetency data:Competency_CT5, data:Competency_CT7, data:Competency_CT8 .
+
+data:Trial_Global rdf:type guide:EvaluationTrial ;
+    guide:trialType "Global examination" ;
+    guide:trialDescription "Global Evaluation Test (January exam call)" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:hasScheduleEvent data:Event_Week17 ;
+    guide:involvesCompetency data:Competency_CT4, data:Competency_CT5, data:Competency_CT7, data:Competency_CT8 .
+
+# Schedule Events and Activities
+data:Event_Week4 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 4 ;
+    guide:eventWeek "4" ;
+    guide:hasActivity data:Activity_Abstract .
+
+data:Activity_Abstract rdf:type guide:Activity ;
+    guide:activityDescription "Write an abstract/essay" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Face-to<0xC2>face" ;
+    guide:activityFormat "Individual presentation" .
+
+data:Event_Week7 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 7 ;
+    guide:eventWeek "7" ;
+    guide:hasActivity data:Activity_OralPres .
+
+data:Activity_OralPres rdf:type guide:Activity ;
+    guide:activityDescription "Oral presentations" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Face-to-face" ;
+    guide:activityFormat "Group work" .
+
+data:Event_Week17 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 17 ;
+    guide:eventWeek "17" ;
+    guide:hasActivity data:Activity_GlobalExam .
+
+data:Activity_GlobalExam rdf:type guide:Activity ;
+    guide:activityDescription "Global Evaluation Test" ;
+    guide:activityDuration 3.0 ;
+    guide:attendanceType "Face-to-face" ;
+    guide:activityFormat "Written test" .
+
+# Schedule
+data:Schedule_Ingles rdf:type guide:Schedule ;
+    sch:eventSchedule data:Event_Week4, data:Event_Week7, data:Event_Week10, data:Event_Week12, data:Event_Week14, data:Event_Week17 .
+
+# Didactic Resources
+data:Resource_Textbooks rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Textbooks, CDs, Dictionaries" ;
+    guide:bibliographyType "Bibliography" ;
+    guide:bibliographyDescription "The Linguistics Department offers access to a library containing books on linguistic theory, textbooks, exercise materials, and dictionaries." .
+
+data:Resource_Videos rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Videos and Specialised Texts" ;
+    guide:bibliographyType "Web resource" ;
+    guide:bibliographyDescription "Students engage in tasks such as writing summaries and providing commentary on specialised videos." .

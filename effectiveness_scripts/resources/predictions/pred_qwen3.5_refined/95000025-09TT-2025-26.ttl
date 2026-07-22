@@ -1,0 +1,158 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course_guide_95000025> rdf:type :CourseGuide ;
+    dct:title "Circuitos Electronicos"@en ;
+    guide:numberOfCredits 3.0^^xsd:decimal ;
+    sch:name "ANX-PR/CL/001-01 - GUÍA DE APRENDIZAJE" ;
+    guide:courseYear 3^^xsd:string ; # Tercero curso (mapped to string as per ontology range for course year in text, though datatype is integer) -> Text says "Tercero curso", I will use xsd:string or map logic. Ontology defines `guide:courseYear` with range `xsd:integer`. The document implies 3rd year.
+    guide:syllabusDescription "Esta es una asignatura que sigue un esquema de aprendizaje basado en proyecto (PBL). El objetivo es aprender la metodología para el diseño de un prototipo consistente en un sistema electrónico analógico-digital partiendo de una descripción y unas especificaciones básicas..."@en ;
+    sch:inLanguage "Castellano"@en .
+
+<http://guia-mad-bench.es/data/degree_09TT> rdf:type :BachelorDegree ;
+    dct:title "Grado En Ingenieria De Tecnologias Y Servicios De Telecomunicacion" ;
+    guide:numberOfCredits 3.0^^xsd:decimal . # Assuming credits from course context
+
+<http://guia-mad-bench.es/data/ets_telecom> rdf:type :UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecommunication" ;
+    dct:title "Centro responsable de la titulación".
+
+# Lecturers (Director and Instructor)
+<http://guia-mad-bench.es/data/lecturer_luis_dharo> rdf:type :Lecturer ;
+    sch:name "Luis Fernando D'haro Enrichz" ;
+    guide:office "B-108"@en ;
+    sch:email <mailto:luisfernando.dharo@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer_miguel_sanchez> rdf:type :Lecturer ;
+    sch:name "Miguel Angel Sanchez Garcia" ;
+    guide:office "B-107"@en ;
+    sch:email <mailto:miguelangel.sanchez@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer_octavio_nieto> rdf:type :Lecturer ;
+    sch:name "Octavio Nieto-Taladriz Garcia" ;
+    guide:office "C-228"@en ;
+    sch:email <mailto:octavio.nieto-taladriz@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer_alvaro_guzman> rdf:type :Lecturer ;
+    sch:name "Alvaro De Guzman Fernandez Gonzalez" ;
+    guide:office "B-112"@en ;
+    sch:email <mailto:alvarodeguzman.fernandez@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer_alberto_bosca> rdf:type :Lecturer ;
+    sch:name "Alberto Bosca Mojena" ;
+    guide:office "C-206"@en ;
+    sch:email <mailto:alberto.bosca@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer_samuel_lopez> rdf:type :Lecturer ;
+    sch:name "Samuel Lopez Asuncion" ;
+    guide:office "C-203"@en ;
+    sch:email <mailto:samuel.lopez.asuncion@upm.es> .
+
+# Links from Course Guide to Lecturers (Director/Instructor)
+<http://guia-mad-bench.es/data/course_guide_95000025> guide:sch:director :lecturer_alvaro_guzman ; # Coordinator is Director per text "Coordinador/a"
+    sch:instructor :lecturer_luis_dharo, :lecturer_miguel_sanchez, :lecturer_octavio_nieto, :lecturer_alberto_bosca, :lecturer_samuel_lopez .
+
+# Competencies (Course Guide -> Competency)
+<http://guia-mad-bench.es/data/comp_ce_se3> rdf:type :Competency ;
+    guide:competencyCode "CE-SE3"@en ;
+    sch:description "Capacidad de realizar la especificación, implementación, documentación y puesta a punto de equipos y sistemas..."@en .
+
+<http://guia-mad-bench.es/data/comp_ce_se5> rdf:type :Competency ;
+    guide:competencyCode "CE-SE5"@en ;
+    sch:description "Capacidad de diseñar circuitos de electrónica analógica y digital, de conversión..."@en .
+
+<http://guia-mad-bench.es/data/comp_ce_se8> rdf:type :Competency ;
+    guide:competencyCode "CE-SE8"@en ;
+    sch:description "Capacidad para especificar y utilizar instrumentación electrónica y sistemas de medida"@en .
+
+<http://guia-mad-bench.es/data/comp_cg10> rdf:type :Competency ;
+    guide:competencyCode "CG10"@en ;
+    sch:name "Creatividad"@en .
+
+<http://guia-mad-bench.es/data/comp_cg12> rdf:type :Competency ;
+    guide:competencyCode "CG12"@en ;
+    sch:description "Organización y planificación"@en .
+
+<http://guia-mad-bench.es/data/comp_cg8> rdf:type :Competency ;
+    guide:competencyCode "CG8"@en ;
+    sch:name "Comunicación oral y escrita"@en .
+
+# Links from Course Guide to Competencies
+<http://guia-mad-bench.es/data/course_guide_95000025> :guide:hasCompetency <http://guia-mad-bench.es/data/comp_ce_se3>, <http://guia-mad-bench.es/data/comp_ce_se5>, <http://guia-mad-bench.es/data/comp_ce_se8>,
+    <http://guia-mad-bench.es/data/comp_cg10>, <http://guia-mad-bench.es/data/comp_cg12>, <http://guia-mad-bench.es/data/comp_cg8> .
+
+# Learning Results (Course Guide -> LearningResult)
+<http://guia-mad-bench.es/data/res_ra70> rdf:type :LearningResult ;
+    guide:learningResultCode "RA70"@en ;
+    sch:description "Conocimientos de dispositivos, circuitos, equipos y sistemas electrónicos."@en .
+
+<http://guia-mad-bench.es/data/res_ra210> rdf:type :LearningResult ;
+    guide:learningResultCode "RA210"@en ;
+    sch:name "Realizar una documentación técnica completa..."@en .
+
+# Links from Course Guide to Learning Results (Partial list)
+<http://guia-mad-bench.es/data/course_guide_95000025> :guide:hasLearningResult <http://guia-mad-bench.es/data/res_ra70>, <http://guia-mad-bench.es/data/res_ra210>.
+
+# Evaluation System
+<http://guia-mad-bench.es/data/eval_system_95000025> rdf:type :EvaluationSystem ;
+    guide:evaluationDescription "La evaluación progresiva tendrá en cuenta el seguimiento del desarrollo del proyecto por parte del profesor."@en .
+
+# Links from Course Guide to Evaluation System
+<http://guia-mad-bench.es/data/course_guide_95000025> :guide:hasEvaluation <http://guia-mad-bench.es/data/eval_system_95000025>.
+
+# Evaluation Trials (System -> Trial) and Properties
+# 1. Presentation TG (Semester 12, Weight 20%)
+<http://guia-mad-bench.es/data/trial_presentation> rdf:type :EvaluationTrial ;
+    guide:trialType "Trabajo en Grupo"@en ; # Based on text description of type
+    sch:name "Presentación de la documentación técnica y medidas del circuito completo"@en ;
+    guide:gradePercentage 20^^xsd:string .
+
+# Link Trial to System (Note: Ontology has `guide:EvaluationSystem` -> `guide:hasEvaluationTrial`)
+<http://guia-mad-bench.es/data/eval_system_95000025> :guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial_presentation>.
+
+# 2. Validation EP (Semester 13, Weight 30%)
+<http://guia-mad-bench.es/data/trial_validation_ep> rdf:type :EvaluationTrial ;
+    guide:trialType "Examen de Prácticas"@en ; # Based on text description of type
+    sch:name "Prueba de validación del funcionamiento del circuito"@en ;
+    guide:gradePercentage 30^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_system_95000025> :guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial_validation_ep>.
+
+# 3. Written Exam EX (Semester 17, Weight 50%)
+<http://guia-mad-bench.es/data/trial_written_exam> rdf:type :EvaluationTrial ;
+    guide:trialType "Examen Escrito"@en ; # Based on text description of type
+    sch:name "Examen escrito"@en ;
+    guide:minScore 3^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval_system_95000025> :guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial_written_exam>.
+
+# Links from Evaluation Trials to Competencies (involvesCompetency)
+<http://guia-mad-bench.es/data/trial_presentation> guide:involvesCompetency <http://guia-mad-bench.es/data/comp_cg10>, <http://guia-mad-bench.es/data/comp_cg12>.
+
+# Schedule (Course Guide -> Schedule)
+<http://guia-mad-bench.es/data/schedule_95000025> rdf:type :Schedule ;
+    sch:courseCode 3^^xsd:string . # Assuming course code is used for schedule identification in context of document. Document says "Curso" (Year).
+
+# Links from Course Guide to Schedule
+<http://guia-mad-bench.es/data/course_guide_95000025> :sch:courseSchedule <http://guia-mad-bench.es/data/schedule_95000025>.
+
+# Syllabus (Course Guide -> Syllabus)
+<http://guia-mad-bench.es/data/syllabus_95000025> rdf:type :Syllabus ;
+    sch:description "1. Descripción del sistema electrónico a diseñar, 2. Desarrollo de la parte analógica..."@en .
+
+# Links from Course Guide to Syllabus
+<http://guia-mad-bench.es/data/course_guide_95000025> :guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_95000025>.
+
+# Didactic Resources (Course Guide -> Resource)
+<http://guia-mad-bench.es/data/res_moodle_web> rdf:type :DidacticResource ;
+    sch:name "Pagina web de Moodle de la asignatura"@en ;
+    guide:bibliographyType "Recursos web"@en .
+
+# Link to Course Guide (Generic link for resources)
+<http://guia-mad-bench.es/data/course_guide_95000025> :guide:hasDidacticResource <http://guia-mad-bench.es/data/res_moodle_web>.

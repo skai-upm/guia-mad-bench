@@ -1,0 +1,169 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree
+:course_113000033 a guide:Course ;
+    sch:name "Redaccion Técnica De Inglés Aplicada A La Actividad Fisica Y El Deporte" ;
+    sch:courseCode 113000033 ;
+    guide:courseType "Obligatoria" ;
+    sch:hasCourseInstance :guide_113000033 .
+
+:degree_11AB a guide:MasterDegree ;
+    sch:name "Master Universitario En Ciencias De La Actividad Fisica Y Del Deporte" ;
+    guide:degreeCode "11AB" ;
+    guide:hasCourse :course_113000033 .
+
+# Course Guide
+:guide_113000033 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Redaccion Técnica De Inglés Aplicada A La Actividad Fisica Y El Deporte" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:semester "Primer semestre" ;
+    guide:inLanguage "Castellano" ;
+    guide:numberOfCredits 3.0 ;
+    sch:instructor :lecturer_maria ;
+    guide:hasSyllabus :syllabus_113000033 ;
+    guide:hasEvaluation :eval_system_113000033 ;
+    guide:hasLearningResult :res_RA94, :res_RA91, :res_RA96, :res_RA19, :res_RA95 ;
+    guide:hasCompetency :comp_CB10, :comp_CG5, :comp_CG6, :comp_T2, :comp_T3, :comp_T6 ;
+    sch:description "This module supports students whose first language is not English over a semester of academic study, and helps them to refine their writing through extensive language input, practice and feedback." .
+
+# Lecturer
+:lecturer_maria a guide:Lecturer ;
+    sch:name "Maria Jose Gomez Ortiz" ;
+    sch:email "maria.gomez.ortiz@upm.es" ;
+    guide:office "403" ;
+    guide:tutorshipsSchedule "M - 10:00 - 12:00, X - 10:00 - 14:00" .
+
+# University Center
+:center_facultad a guide:UniversityCenter ;
+    sch:name "Facultad CC. Actividad Fisica y Deporte" ;
+    guide:offers :degree_11AB .
+
+# Competencies
+:comp_CB10 a guide:Competency ;
+    guide:competencyCode "CB10" ;
+    guide:competencyDescription "Que los estudiantes posean las habilidades de aprendizaje que les permitan continuar estudiando de un modo que habrá de ser en gran medida autodirigido o autónomo" .
+
+:comp_CG5 a guide:Competency ;
+    guide:competencyCode "CG5" ;
+    guide:competencyDescription "Desarrollo de la habilidades humanas necesarias para el trabajo en equipo y de ese $e$ asumir el compromiso de la investigación científica con valores humanos que favorezcan la sana convivencia." .
+
+:comp_CG6 a guide:Competency ;
+    guide:competencyCode "CG6" ;
+    guide:competencyDescription "Capacidad para comunicarse y relacionarse en un ámbito científico en la lengua inglesa." .
+
+:comp_T2 a guide:Competency ;
+    guide:competencyCode "T2" ;
+    guide:competencyDescription "Capacidad para el aprendizaje autónomo y la actualización de conocimientos, y reconocimiento de su necesidad en el área de las Ciencias de la Actividad Física y del Deporte." .
+
+:comp_T3 a guide:Competency ;
+    guide:competencyCode "T3" ;
+    guide:competencyDescription "Capacidad para trabajar dentro de un equipo, organizado, planificado, tomando decisiones, negociando y resolviendo conflictos, relacionándose y criticando y haciendo autocrítica." .
+
+:comp_T6 a guide:Competency ;
+    guide:competencyCode "T6" ;
+    guide:competencyDescription "Capacidad para usar las tecnologías de la información y la comunicación." .
+
+# Learning Results
+:res_RA94 a guide:LearningResult ;
+    guide:learningResultCode "RA94" ;
+    guide:learningResultDescription "Mejorar la calidad de la escritura técnica en inglés beneficiándose de herramientas digitales y sus sugerencias en tiempo real sobre corrección de spelling, grammar y punctuation." .
+
+:res_RA91 a guide:LearningResult ;
+    guide:learningResultCode "RA91" ;
+    guide:learningResultDescription "Write a Research Article in English" .
+
+:res_RA96 a guide:LearningResult ;
+    guide:learningResultCode "RA94" ; # Note: Document repeats RA94/RA96 logic, mapping as provided.
+    guide:learningResultDescription "Redactar en inglés con claridad, precisión y cohesión cuidando la gramática." .
+
+:res_RA19 a guide:LearningResult ;
+    guide:learningResultCode "RA19" ;
+    guide:learningResultDescription "El objetivo principal del curso es dotar al estudiante de las herramientas y estrategias necesarias para afrontar de forma autónoma y satisfactoria la redacción de artículos de investigación en inglés." .
+
+:res_RA95 a guide:LearningResult ;
+    guide:learningResultCode "RA95" ;
+    guide:learningResultDescription "Expandir el vocabulario académico y la terminología específica en inglés de las ciencias de la actividad física y el deporte." .
+
+# Syllabus
+:syllabus_113000033 a guide:Syllabus ;
+    guide:hasItem :item_1, :item_2 .
+
+:item_1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Structure of a Research Article (Introduction, Method, Results, Discussion and Conclusions)" .
+
+:item_2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "How to write a good abstract and get published." .
+
+# Evaluation System and Trials
+:eval_system_113000033 a guide:EvaluationSystem ;
+    guide:evaluationDescription "Progressive assessment and compulsory attendance in a 75%" ;
+    guide:hasEvaluationTrial :trial_vocab, :trial_writing, :trial_test, :trial_abstract, :trial_global .
+
+:trial_vocab a guide:EvaluationTrial ;
+    guide:trialType "TI" ;
+    guide:trialDescription "Academic Vocabulary Exercise" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:00" .
+
+:trial_writing a guide:EvaluationTrial ;
+    guide:trialType "TG" ;
+    guide:trialDescription "Effective writing and common mistakes exercise" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:00" .
+
+:trial_test a guide:EvaluationTrial ;
+    guide:trialType "TI" ;
+    guide:trialDescription "Academic writing test" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:00" .
+
+:trial_abstract a guide:EvaluationTrial ;
+    guide:trialType "EP" ;
+    guide:trialDescription "Write an abstract" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "04:00" .
+
+:trial_global a guide:EvaluationTrial ;
+    guide:trialType "EX" ;
+    guide:trialDescription "Global exercise: Use of academic vocabulary, Write parts of research article, Use grammar" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "03:00" .
+
+# Schedule Events and Activities
+:event_week4 a guide:ScheduleEvent ;
+    guide:eventIndex 4 ;
+    guide:eventWeek "4" ;
+    guide:hasActivity :act_vocab_exercise .
+
+:act_vocab_exercise a guide:Activity ;
+    guide:activityDescription "Academic Vocabulary Exercise" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_moodle a guide:DidacticResource ;
+    guide:bibliographyTitle "Moodle" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_drive a guide:DidacticResource ;
+    guide:bibliographyTitle "Google Drive, Teams, Zoom" ;
+    guide:bibliographyType "Recursos web" .
+
+# Required Knowledge
+:req_knowledge_eng a guide:RequiredKnowledge ;
+    guide:previousKnowledge "High level of English (C1) recommended" .
+
+# Other Information
+:info_sustainability a guide:CourseGuide ;
+    guide:otherInformation "THIS SUBJECT INCLUDES CONTENT RELATED TO SUSTAIN<0xC2>ABILITY IN SPORT." .

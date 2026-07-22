@@ -1,0 +1,188 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+_:courseGuide a guide:CourseGuide ;
+    sch:name "Ingeniería en Cooperación para el Desarrollo (Icd)" ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus _:syllabus ;
+    guide:hasCompetency _:compCG13, _:compCG2, _:compCG3, _:compCG7 ;
+    guide:hasLearningResult _:lrRA357, _:lrRA354, _:lrRA45, _:lrRA355, _:lrRA356 ;
+    guide:hasEvaluation _:evalSystem ;
+    guide:hasDidacticResource _:res1, _:res2, _:res3, _:res4, _:res5, _:res6, _:res7, _:res8, _:res9 ;
+    sch:instructor _:profManuel, _:profSantiago, _:profMaria, _:profLaura ;
+    sch:director _:profCarlos ;
+    sch:description "La asignatura pretende dar una visión al alumnado de los fundamentos de cooperación para el desarrollo y del papel de la ingeniería en entornos de bajo nivel de desarrollo." .
+
+_:course a guide:Course ;
+    sch:name "95000092 - Ingeniería en Cooperación para el Desarrollo (Icd)" ;
+    guide:courseYear 3 ;
+    guide:semester "Sexto semestre" ;
+    guide:courseType "Optativa" ;
+    sch:hasCourseInstance _:courseGuide .
+
+_:degree a guide:Degree ;
+    sch:name "09TT - Grado en Ingenieria de Tecnologias y Servicios de Telecomunicacion" ;
+    guide:degreeCode "09TT" ;
+    guide:hasCourse _:course .
+
+_:uniCenter a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros De Telecomunicacion" ;
+    guide:offers _:degree .
+
+_:profManuel a guide:Lecturer ;
+    sch:name "Manuel Sierra Castañer" ;
+    guide:office "C-410" ;
+    sch:email "manuel.sierra@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. Concertar cita por correo electrónico" .
+
+_:profSantiago a guide:Lecturer ;
+    sch:name "Santiago Iglesias Pradas" ;
+    guide:office "A.127" ;
+    sch:email "s.iglesias@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. Concertar cita por correo electrónico" .
+
+_:profMaria a guide:Lecturer ;
+    sch:name "Maria Jesus Ledesma Carbayo" ;
+    guide:office "C-201" ;
+    sch:email "mj.ledesma@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. Concertar cita por correo electrónico" .
+
+_:profCarlos a guide:Lecturer ;
+    sch:name "Carlos Del Cañizo Nadal" ;
+    guide:office "IES-102" ;
+    sch:email "carlos.canizo@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. Concertar cita por correo electrónico" .
+
+_:profLaura a guide:Lecturer ;
+    sch:name "Laura Del Rio Carazo" ;
+    guide:office "A127" ;
+    sch:email "laura.delrio@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. Concertar cita por correo electrónico" .
+
+_:profExternal a guide:Lecturer ;
+    sch:name "Iñigo Ramiro González" ;
+    sch:email "i.ramiro@upm.es" .
+
+_:compCG13 a guide:Competency ;
+    guide:competencyCode "CG13" ;
+    guide:competencyDescription "Respeto medioambiental" .
+
+_:compCG2 a guide:Competency ;
+    guide:competencyCode "CG2" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional..." .
+
+_:compCG3 a guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes..." .
+
+_:compCG7 a guide:Competency ;
+    guide:competencyCode "CG7" ;
+    guide:competencyDescription "Trabajo en equipo" .
+
+_:lrRA357 a guide:LearningResult ;
+    guide:learningResultCode "RA3157" ;
+    guide:learningResultDescription "Concreción de los conocimientos en aplicaciones prácticas en los ámbitos de las TIC, y la electrificación rural" .
+
+_:lrRA354 a guide:LearningResult ;
+    guide:learningResultCode "RA354" ;
+    guide:learningResultDescription "Adquisición de una visión objetiva y amplia de los actuales desequilibrios sociales y medioambientales" .
+
+_:lrRA45 a guide:LearningResult ;
+    guide:learningResultCode "RA45" ;
+    guide:learningResultDescription "Conocimientos y habilidades de las temáticas científico tecnológicas desarrolladas en las asignaturas ofertadas" .
+
+_:lrRA355 a guide:LearningResult ;
+    guide:learningResultCode "RA355" ;
+    guide:learningResultDescription "Conocimiento de la estructura y los instrumentos de la cooperación internacional para el desarrollo" .
+
+_:lrRA356 a guide:LearningResult ;
+    guide:learningResultCode "RA356" ;
+    guide:learningResultDescription "Conocimiento y aplicación de metodologías de planificación e intervención en proyectos de desarrollo con componente tecnológica" .
+
+_:syllabus a guide:Syllabus ;
+    guide:hasItem _:item1, _:item2, _:item3, _:item4, _:item5 .
+
+_:item1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Tema 1: El mundo en que vivimos" .
+
+_:item2 a guide:SylabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Tema 2: Estrategias de la cooperación para el desarrollo" .
+
+_:item3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Tema 3: Metodología de proyectos en cooperación" .
+
+_:item4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Tema 4: Aplicaciones TIC para el Desarrollo" .
+
+_:item5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Tema 5: Aplicaciones de electrificación rural" .
+
+_:evalSystem a guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación progresiva está basada en la participación activa, análisis de libro, proyecto y examen final." ;
+    guide:hasEvaluationTrial _:trialExamFinal, _:trialBookAnalysis, _:trialProject .
+
+_:trialExamFinal a guide:EvaluationTrial ;
+    guide:evaluationType "Examen final" ;
+    guide:trialType "Examen Escrito" ;
+    guide:gradePercentage "25%" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "01:30" .
+
+_:trialBookAnalysis a guide:EvaluationTrial ;
+    guide:evaluationType "Análisis de un libro" ;
+    guide:gradePercentage "20%" ;
+    guide:trialMode "Presencial" .
+
+_:trialProject a guide:EvaluationTrial ;
+    guide:evaluationType "Proyecto de cooperación" ;
+    guide:gradePercentage "35%" ;
+    guide:trialMode "Presencial" .
+
+_:res1 a guide:DidacticResource ;
+    guide:bibliographyTitle "Introducción a la cooperación al desarrollo para las ingenierías..." ;
+    guide:bibliographyType "Bibliografía" .
+
+_:res2 a guide:DidacticResource ;
+    guide:bibliographyTitle "La era del desarrollo sostenible, J. Sachs" ;
+    guide:bibliographyType "Bibliografía" .
+
+_:res3 a guide:DidacticResource ;
+    guide:bibliographyTitle "Cómo evitar un desastre climático, B. Gates" ;
+    guide:bibliographyType "Bibliografía" .
+
+_:res4 a guide:DidacticResource ;
+    guide:bibliographyTitle "Por qué fracasan los países, D. Acemoglu y J.A. Robinson" ;
+    guide:bibliographyType "Bibliografía" .
+
+_:res5 a guide:DidacticResource ;
+    guide:bibliographyTitle "Repensar la pobreza, E. Duflo y A. Banerjee" ;
+    guide:bibliographyType "Bibliografía" .
+
+_:res6 a guide:DidacticResource ;
+    guide:bibliographyTitle "Lo que sí funciona, B. Lomborg" ;
+    guide:bibliographyType "Bibliografía" .
+
+_:res7 a guide:DidacticResource ;
+    guide:bibliographyTitle "El enfoque del marco lógico" ;
+    guide:bibliographyType "Bibliografía" .
+
+_:res8 a guide:DidacticResource ;
+    guide:bibliographyTitle "Evaluación de Proyectos de Ayuda al Desarrollo" ;
+    guide:bibliographyType "Bibliografía" .
+
+_:res9 a guide:DidacticResource ;
+    guide:bibliographyTitle "Tecnologías para el desarrollo humano..." ;
+    guide:bibliographyType "Bibliencia" .

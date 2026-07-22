@@ -1,0 +1,37 @@
+```turtle
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+# --- Degree and University Center ---
+
+guide:degree_56DD rdf:type guide:BachelorDegree ;
+    sch:name "Grado Ingenieria En Diseño Industrial Y Desarrollo De Producto" ;
+    guide:degreeCode "56DD" .
+
+guide:center_56 rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Diseño Industrial" ;
+    guide:offers guide:degree_56DD .
+
+# --- Course ---
+
+guide:course_565000566 rdf:type guide:Course ;
+    sch:name "Ampliacion de Expresion Grafica" ;
+    sch:courseCode 565000566 ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 3 ;
+    guide:semester "Sexto semestre" .
+
+# --- Course Guide (The Document) ---
+
+guide:guide_565000566 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Ampliación de Expresión Gráfica" ;
+    sch:hasCourseInstance guide:course_565000566 ;
+    sch:instructor guide:lecturer_lucia, guide:lecturer_pedro ;
+    sch:director guide:lecturer_lucia ;
+    guide:numberOfCredits 4.5 ;
+    guide:teachingPeriod "2****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************

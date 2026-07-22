@@ -1,0 +1,161 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+guide:univ_center_navales a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Navales" .
+
+guide:degree_08MA a guide:Degree ;
+    sch:name "Grado en Ingenieria Maritima" ;
+    guide:degreeCode "08MA" ;
+    guide:hasCourse guide:course_85004612 .
+
+guide:course_85004612 a guide:Course ;
+    sch:name "Turbomáquinas Térmicas para Aplicaciones Navales" ;
+    sch:courseCode 85004612 ;
+    guide:courseType "Obligatoria" ;
+    sch:hasCourseInstance guide:course_guide_85004612 .
+
+guide:course_guide_85004612 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Turbomáquinas Térmicas para Aplicaciones Navales" ;
+    guide:numberOfCredits 4.5 ;
+    guide:semester "Séptimo semestre" ;
+    guide:teachingPeriod "Septiembre-E0nero" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor guide:lecturer_rodrigo, guide:lecturer_maria ;
+    guide:hasSyllabus guide:syllabus_85004612 ;
+    guide:hasCompetency guide:comp_CB2, guide:comp_CB5, guide:comp_CE13, guide:comp_CE19, guide:comp_CE23, guide:comp_CE7, guide:comp_CG3 ;
+    guide:hasLearningResult guide:lr_RA32, guide:lr_RA33 ;
+    guide:hasEvaluation guide:eval_system_85004612 ;
+    guide:hasDidacticResource guide:res_coates, guide:res_kostyuk, guide:res_munoz, guide:res_muñoz_rodriguez, guide:res_boyce, guide:res_schegliaiev, guide:res_woodward .
+
+guide:lecturer_rodrigo a guide:Lecturer ;
+    sch:name "Rodrigo Perez Fernandez" ;
+    sch:email "rodrigo.perez.fernandez@upm.es" ;
+    guide:office "Motores" ;
+    guide:tutorshipsSchedule "J - 17:30 - 21:00, V - 17:30 - 21:00" .
+
+guide:lecturer_maria a guide:Lecturer ;
+    sch:name "Maria Del Carmen Rodriguez Hidalgo" ;
+    sch:email "mariadelcarmen.rodriguez.hidalgo@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+guide:comp_CB2 a guide:Competency ;
+    guide:competencyCode "CB2" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional..." .
+
+guide:comp_CB5 a guide:Competency ;
+    guide:competencyCode "CB5" ;
+    guide:competencyDescription "Que los estudiantes hayan desarrollado aquellas habilidades de aprendizaje necesarias para emprender estudios posteriores con un alto grado de autonomía" .
+
+guide:comp_CE13 a guide:Competency ;
+    guide:competencyCode "CE13" ;
+    guide:competencyDescription "Conocimiento de la mecánica y de los componentes de maquinas" .
+
+guide:comp_CE19 a guide:Competency ;
+    guide:competencyCode "CE19" ;
+    guide:competencyDescription "Conocimiento de los motores diesel marinos, turbinas de gas y plantas de vapor" .
+
+guide:comp_CE23 a guide:Competency ;
+    guide:competencyCode "CE23" ;
+    guide:competencyDescription "Conocimiento de los métodos de proyecto de los sistemas de propulsión naval" .
+
+guide:comp_CE7 a guide:Competency ;
+    guide:competencyCode "CE7" ;
+    guide:competencyDescription "Conocimiento de los conceptos fundamentales de la mecánica de fluidos y de su aplicación..." .
+
+guide:comp_CG3 a guide:Competency ;
+    guide:competencyCode "CG3" ;
+    guide:competencyDescription "Capacidad para el aprendizaje de nuevos métodos y teorías, y en la versatilidad para adaptarse a nuevas situaciones..." .
+
+guide:lr_RA32 a guide:LearningResult ;
+    guide:learningResultCode "RA32" ;
+    guide:learningResultDescription "Comprender los conceptos básicos de la Termodinámica y aplicarlos a problemas de interés en ingeniería." .
+
+guide:lr_RA33 a guide:LearningResult ;
+    guide:learningResultCode "RA33" ;
+    guide:learningResultDescription "Conocer y aplicar los Principios de la Termodinámica a procesos térmicos." .
+
+guide:syllabus_85004612 a guide:Syllabus ;
+    guide:hasItem guide:item_tema1, guide:item_tema2, guide:item_tema3, guide:item_tema4, guide:item_tema5, guide:item_tema6, guide:item_tema7, guide:item_tema8, guide:item_tema9, guide:item_tema10, guide:item_tema11, guide:item_tema12, guide:item_tema13, guide:item_tema14, guide:item_tema15, guide:item_tema16, guide:item_tema17, guide:item_tema18, guide:item_tema19 .
+
+guide:item_tema1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Tema 1. Características Generales." .
+
+guide:item_tema2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Tema 2. Análisis de Ciclos Termodinámicos." .
+
+guide:item_tema3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Tema 3. Toberas y Difusores." .
+
+guide:eval_system_85004612 a guide:EvaluationSystem ;
+    guide:evaluationDescription "Sistema de evaluación progresiva y global." ;
+    guide:hasEvaluationTrial guide:trial_vapor, guide:trial_gas, guide:trial_final .
+
+guide:trial_vapor a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:eventWeek "Semana 8" ;
+    guide:trialMode "Presencial" .
+
+guide:trial_gas a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:eventWeek "Semana 16" ;
+    guide:trialMode "Presencial" .
+
+guide:trial_final a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:eventWeek "Semana 17" ;
+    guide:trialMode "Presencial" .
+
+guide:res_coates a guide:DidacticResource ;
+    guide:bibliographyTitle "Coates R. 'Marine Steam Turbines' 1975. IMAREST. Londres." ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:res_kostyuk a guide:DidacticResource ;
+    guide:bibliographyTitle "Kostyuk A.; Frolov V. 'Steam and Gas Turbines' 1985 MIR, Moscu." ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:res_munoz a guide:DidacticResource ;
+    guide:bibliographyTitle "Muñoz M.; Valdes M.; Muñoz Domínguez M. 'Turbomáquinas Térmicas' 2001 ETSII, Madrid." ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:res_muñoz_rodriguez a guide:DidacticResource ;
+    guide:bibliographyTitle "Muñoz Rodríguez M. y Otros 'Turbomáquinas Térmicas' 1999 PUZ, Zaragoza." ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:res_boyce a guide:DidacticResource ;
+    guide:bibliographyTitle "Meherwan P. Boyce 'Gas Turbine Engineering Handbook' 2006 Elseiver, Oxford" ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:res_schegliaiev a guide:DidacticResource ;
+    guide:bibliographyTitle "Schegliaiev A V 'Turbinas de Vapor', 1978 MIR, Moscu." ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:res_woodward a guide:DidacticResource ;
+    guide:bibliographyTitle "Woodward JB 'Marine Gas Turbines' 1975 John Wiley& Sons, New York" ;
+    guide:bibliographyType "Bibliografía" .
+
+guide:activity_week1 a guide:Activity ;
+    guide:activityDescription "Características Generales. Definiciones básicas. Evolución histórica. Tipos y clasificación. Elementos principales." ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+guide:activity_week4_pr a guide:Activity ;
+    guide:activityDescription "Lectura de teoría, realización de ejemplos y resolución de problemas." ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Clase de Problemas" .

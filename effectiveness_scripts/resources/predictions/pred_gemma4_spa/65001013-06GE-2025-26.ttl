@@ -1,0 +1,125 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Degree and Course Structure
+:degree_06GE a guide:Degree ;
+    sch:name "Grado en Ingenieria Geologica" ;
+    guide:degreeCode "06GE" ;
+    guide:hasCourse :course_electrotecnia .
+
+:course_electrotecnia a guide:Course ;
+    sch:name "Electrotecnia" ;
+    guide:courseCode "65001013" ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Cuarto semestre" ;
+    sch:hasCourseInstance :course_guide_electrotecnia .
+
+:course_guide_electrotecnia a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Electrotecnia" ;
+    guide:numberOfCredits 6.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Feagero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    sch:director :lecturer_eduardo ;
+    sch:instructor :lecturer_luis, :lecturer_daniel ;
+    guide:hasSyllabus :syllabus_electrotecnia ;
+    guide:hasEvaluation :eval_system_electrotecnia ;
+    guide:hasLearningResult :lr_ra74, :lr_ra75, :lr_ra76, :lr_ra77, :lr_ra78, :lr_ra79 ;
+    guide:hasCompetency :comp_cg1, :comp_ag2, :comp_cg3, :comp_cg6, :comp_cg7, :comp_f17 ;
+    guide:hasDidacticResource :res_fraile_mora, :res_moodle ;
+    guide:otherInformation "La calculadora científica es una herramienta que debe usar el alumno de forma habitual en el aula." .
+
+# University Center
+:center_minas_energia a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Minas y Energía" ;
+    guide:offers :degree_06GE .
+
+# Lecturers
+:lecturer_luis a guide:Lecturer ;
+    sch:name "Luis Javier San Jose Gallego" ;
+    sch:email "luisjavier.sanjose@upm.es" ;
+    guide:office "516" ;
+    guide:tutorshipsSchedule "M - 16:30 - 19:30, V - 13:00 - 16:00" .
+
+:lecturer_daniel a guide:Lecturer ;
+    sch:name "Daniel Serrano Jimenez" ;
+    sch:email "daniel.serrano.jimenez@upm.es" ;
+    guide:office "501" ;
+    guide:tutorshipsSchedule "M - 08:00 - 10:00, X - 08:00 - 10:00, J - 08:00 - 10:00" .
+
+:lecturer_eduardo a guide:Lecturer ;
+    sch:name "Eduardo Conde Lazaro" ;
+    sch:email "eduardo.conde@upm.es" ;
+    guide:office "517" ;
+    guide:tutorshipsSchedule "L - 12:00 - 14:00, M - 12:00 - 14:00, J - 12:00 - 14:00" .
+
+# Competencies
+:comp_cg1 a guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Ingeniería Geológica." .
+
+:comp_cg2 a guide:Competency ;
+    guide:competencyCode "CG2" ;
+    guide:competencyDescription "Poseer capacidad para diseñar, desarrollar, implementar, gestionar y mejorar productos, sistemas y procesos en los distintos ámbitos geológicos..." .
+
+:comp_f17 a guide:Competency ;
+    guide:competencyCode "F17" ;
+    guide:competencyDescription "Conocimientos fundamentales sobre el sistema eléctrico de potencia: generación de energía, red de transporte, reparto y distribución..." .
+
+# Learning Results
+:lr_ra74 a guide:LearningResult ;
+    guide:learningResultCode "RA74" ;
+    guide:learningResultDescription "Comprender los fundamentos del sistema eléctrico de potencia" .
+
+:lr_ra75 a guide:LearningResult ;
+    guide:learningResultCode "RA75" ;
+    guide:learningResultDescription "Plantear las ecuaciones de los sistemas eléctricos y resolverlas en diversos regímenes de funcionamiento" .
+
+# Syllabus
+:syllabus_electrotecnia a guide:Syllabus ;
+    guide:hasItem :item_1_1, :item_2_1, :item_3_1, :item_4_1, :item_5_1 .
+
+:item_1_1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Componentes de los circuitos: Variables eléctricas fundamentales. Simbología." .
+
+:item_2_1 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Circuitos en corriente alterna: Ecuaciones en régimen estacionario senoidal. Cálculo simbólico." .
+
+# Evaluation System and Trials
+:eval_system_electrotecnia a guide:EvaluationSystem ;
+    guide:evaluationDescription "La nota por global se calcula como N=0,45*T+0,45*P+0,1*L..." ;
+    guide:hasEvaluationTrial :trial_cuestionario_1, :trial_lab_exam .
+
+:trial_cuestionario_1 a guide:EvaluationTrial ;
+    sch:name "Cuestionario tema 1 (circuitos continua)" ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:gradePercentage "7.5%" ;
+    guide:evaluationDuration "00:30" ;
+    guide:trialMode "No presencial" ;
+    guide:involvesCompetency :comp_cg1, :comp_cg2 .
+
+:trial_lab_exam a guide:EvaluationTrial ;
+    sch:name "Examen Laboratorio" ;
+    guide:evaluationType "Examen de Prácticas" ;
+    guide:gradePercentage "10%" ;
+    guide:evaluationDuration "00:30" ;
+    guide:trialMode "Presencial" ;
+    guide:involvesCompetency :comp_cg1, :comp_cg6 .
+
+# Didactic Resources
+:res_fraile_mora a guide:DidacticResource ;
+    sch:name "FRAILE MORA, Electrotecnia para ingenieros, IBERGARCETA PUBLICACIONES, 2023." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_moodle a guide:DidacticResource ;
+    sch:name "Plataforma educativa Moodle (UPM)" ;
+    guide:bibliographyType "Recursos web" .
+
+# Required Knowledge
+:req_knowledge_electrotecnia a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Calculo II, Electromagnetismo, Calculo I" .

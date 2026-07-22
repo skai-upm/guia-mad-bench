@@ -1,0 +1,65 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> rdf:type :CourseGuide ;
+    sch:name "ANX-PR/CL/001 - LEARNING GUIDE"@en ;
+    dct:creator <http://w3id.org/def/guia#Andrea Cimmino Arriaga>, <http://w3id.org/def/guia#Covadonga Arias> .
+
+<http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> sch:courseSchedule <http://guia-mad-bench.es/data/schedule/challenges-accessible-computing-schedule> ;
+    guide:numberOfCredits "4"^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/course/103000877> rdf:type :Course ;
+    sch:name "Challenges For Accessible Computing For People Wit"@en ;
+    sch:courseCode 103000877^^xsd:integer .
+
+<http://guia-mad-bench.es/data/course/103000877> guide:hasCourseInstance <http://guia-mad-bench.es/data/courseguide/anx-pr-cl-001-01> ;
+    sch:description "This course provides a specialization about the accessibility of information and communication technologies (ICT) for persons with functional diversity."@en .
+
+<http://guia-mad-bench.es/data/degree/master-innovation-digital> rdf:type :MasterDegree ;
+    dct:title "Master Universitario En Innovación Digital"@en ;
+    guide:hasCourse <http://guia-mad-bench.es/data/course/103000877> .
+
+<http://guia-mad-bench.es/data/schedule/challenges-accessible-computing-schedule> rdf:type :Schedule, sch:Schedule ;
+    sch:eventSchedule [ a :ScheduleEvent ;
+        guide:eventIndex 1^^xsd:integer ;
+        sch:name "Course introduction"@en ] .
+
+<http://guia-mad-bench.es/data/schedule/challenges-accessible-computing-schedule> sch:eventSchedule [ a :ScheduleEvent ;
+    guide:eventIndex 2^^xsd:integer ;
+    sch:name "Individual presentation of personas"@en ] .
+
+<http://guia-mad-bench.es/data/lecturer/jose-luis-fuertes-castro> rdf:type :Lecturer, sch:Person ;
+    dct:title "Jose Luis Fuertes Castro (Subject coordinator)"@en ;
+    guide:tutorshipsSchedule <http://dlsiis.fi.upm.es/tutorias-2526>@en .
+
+<http://guia-mad-bench.es/data/lecturer/jose-luis-fuertes-castro> sch:email "joseluis.fuertes@upm.es"@en ;
+    guide:office <http://w3id.org/def/guia#D4307>@en .
+
+<http://guia-mad-bench.es/data/syllabus/challenges-accessible-computing-syllabus> rdf:type :Syllabus, sch:Syllabus ;
+    dct:title "Challenges For Accessible Computing Syllabus"@en .
+
+<http://guia-mad-bench.es/data/evalsystem/challenges-accessible-eval-system> rdf:type :EvaluationSystem ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial/test-1>, <http://guia-mad-bench.es/data/trial/exercise-delivery-4>.
+
+<http://guia-mad-bench.es/data/evalsystem/challenges-accessible-eval-system> guide:hasEvaluationTrial [ a :EvaluationTrial ;
+    sch:name "Test 2"@en ;
+    guide:trialType <https://schema.org/#type>"@en , xsd:string ] .
+
+<http://guia-mad-bench.es/data/trial/test-1> rdf:type :EvaluationTrial, sch:Event ;
+    dct:title "Written test (Progressive)"@en ;
+    guide:gradePercentage 10^^xsd:decimal ;
+    guide:trialType <https://schema.org/#type>"@en , xsd:string .
+
+<http://guia-mad-bench.es/data/trial/exercise-delivery-4> rdf:type :EvaluationTrial, sch:Event ;
+    dct:title "Delivery of exercise 4"@en ;
+    guide:gradePercentage 15^^xsd:decimal ;
+    guide:trialType <https://schema.org/#type>"@en , xsd:string .
+
+<http://guia-mad-bench.es/data/syllabus/challenges-accessible-computing-syllabus> guide:hasItem [ a :SyllabusItem, sch:SyllabusItem ;
+    dct:title "Functional diversity, accessibility and design for all"@en ] .

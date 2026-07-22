@@ -1,0 +1,149 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Entity
+guide:course_53001726_guide rdf:type guide:CourseGuide ;
+    sch:name "Dirección Estratégica y de la Innovación" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:numberOfCredits 3.0 ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus guide:syllabus_53001726 ;
+    guide:hasCompetency guide:comp_MUII_l, guide:comp_MUAR_CB06, guide:comp_MUAR_CB07, guide:comp_MUAR_CB08, guide:comp_MUAR_CB09, guide:comp_MUAR_CB10 ;
+    guide:hasLearningResult guide:lr_RA87, guide:lr_RA88, guide:lr_RA89, guide:lr_RA90, guide:lr_RA9 ;
+    guide:hasEvaluation guide:eval_system_53001726 ;
+    guide:hasDidacticResource guide:res_moodle, guide:res_chatgpt, guide:res_book_chesbrough ;
+    sch:instructor guide:lecturer_rafael_ramos_diaz, guide:lecturer_ebru_susur_donerkan ;
+    sch:director guide:lecturer_rafael_ramos_diaz ;
+    sch:courseSchedule guide:schedule_53001726 .
+
+# Course Entity
+guide:course_53001726 rdf:type guide:Course ;
+    sch:name "Dirección Estratégica y de la Innovación" ;
+    guide:courseYear 2025 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Cuarto semestre" .
+
+# Degree Entity
+guide:degree_05DI rdf:type guide:Degree ;
+    sch:name "05DI - D.m.<0xC2>. en Ingeniería Industrial y en Automática y Robótica" ;
+    guide:degreeCode "05DI" ;
+    guide:hasCourse guide:course_53001726 .
+
+# University Center Entity
+guide:center_ets_industriales rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Industriales" ;
+    guide:offers guide:degree_05DI .
+
+# Lecturers
+guide:lecturer_rafael_ramos_diaz rdf:type guide:Lecturer ;
+    sch:name "Rafael Ramos Diaz" ;
+    sch:email "rafael.ramos@upm.es" .
+
+guide:lecturer_ebru_susur_donerkan rdf:type guide:Lecturer ;
+    sch:name "Ebru Susur Donerkan" ;
+    sch:email "ebru.susur@upm.es" ;
+    guide:office "UD Economía" .
+
+guide:lecturer_gerardo_penas_garcia rdf:type guide:Lecturer ;
+    sch:name "Gerardo Penas García" ;
+    sch:email "gerardo.penas@upm.es" .
+
+# Competencies
+guide:comp_MUII_l rdf:type guide:Competency ;
+    guide:competencyCode "MUII.(l)" ;
+    guide:competencyDescription "Capacidad de trabajar en un entorno bilingüe (inglés/castellano)." .
+
+guide:comp_MUAR_CB06 rdf:type guide:Competency ;
+    guide:competencyCode "MUAR.CB06" ;
+    guide:competencyDescription "Poseer y comprender conocimientos que aportament una base u oportunidad de ser originales en el desarrollo y/o aplicación de ideas." .
+
+guide:comp_MUAR_CB07 rdf:type guide:Competency ;
+    guide:competencyCode "MUAR.CB07" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos." .
+
+# Learning Results
+guide:lr_RA87 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA87" ;
+    guide:learningResultDescription "Aplicar distintas herramientas y metodologías para el diseño y puesta en práctica de estrategias y políticas de innovación en contextos competitivos." .
+
+guide:lr_RA88 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA88" ;
+    guide:learningResultDescription "Distinguir y enumerar las fases características de la dinámica de los procesos innovadores." .
+
+# Syllabus
+guide:syllabus_53001726 rdf:type guide:Syllabus ;
+    guide:hasItem guide:item_tema1, guide:item_tema2, guide:item_tema3, guide:item_tema4, guide:item_tema5, guide:item_tema6 .
+
+guide:item_tema1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "TEMA 1 INNOVACIÓN ESTRATÉCA, INNOVACIÓN ABIERTA" .
+
+guide:item_tema2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "TEMA 2 INNOVACIÓN EN EL MODELO DE NEGOCIO" .
+
+# Schedule and Events
+guide:schedule_53001726 rdf:type guide:Schedule ;
+    sch:eventSchedule guide:event_week1, guide:event_week2, guide:event_week3, guide:event_week4, guide:event_week5, guide:event_week6, guide:event_week7, guide:event_week8, guide:event_week9, guide:event_week10, guide:event_week11, guide:event_week12, guide:event_week13, guide:event_week14, guide:event_week17 .
+
+guide:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity guide:act_presentation .
+
+guide:act_presentation rdf:type guide:Activity ;
+    guide:activityDescription "PRESENTACIÓN DE LA ASIGNATURA: objetivos, programa, metodología didáctica, evaluación, Taller de Innovación" ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+guide:event_week2 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "2" ;
+    guide:hasActivity guide:act_taller_1 .
+
+guide:act_taller_1 rdf:type guide:Activity ;
+    guide:activityDescription "TALLER DE INNOVACIÓN SESIÓN 1: lanzamiento (kick-off) del proyecto y plan de investigación" ;
+    guide:activityFormat "Acciones Cooperativas" .
+
+# Evaluation System
+guide:eval_system_53:001726 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La asignatura se evaluará de acuerdo a los siguientes criterios: Calificación de la presentación del resultado del Taller de Innovación: 60%; Calificación de las entregas intermedias del Taller de Innovación: 20%; Calificación de los cuestionarios de autocomprobación: 15%" ;
+    guide:hasEvaluationTrial guide:trial_entrega_intermedia, guide:trial_cuestionarios, guide:trial_prueba_global .
+
+guide:trial_entrega_intermedia rdf:type guide:EvaluationTrial ;
+    guide:trialType "Entrega intermedia del Taller de Innovación" ;
+    guide:gradePercentage "5%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "00:30" ;
+    guide:trialMode "No Presencial" .
+
+guide:trial_cuestionarios rdf:type guide:EvaluationTrial ;
+    guide:trialType "Cuestionarios de autocomprobación y participación en foros" ;
+    guide:gradePercentage "2.5%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "00:30" ;
+    guide:trialMode "No Presencial" .
+
+guide:trial_prueba_global rdf:type guide:EvaluationTrial ;
+    guide:trialType "PRUEBA GLOBAL" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "03:00" ;
+    guide:trialMode "Presencial" .
+
+# Didactic Resources
+guide:res_moodle rdf:type guide:DidacticResource ;
+    sch:name "Moodle" ;
+    guide:bibliographyType "Recursos web" .
+
+guide:res_chatgpt rdf:type guide:DidacticResource ;
+    sch:name "ChatGPT, Bing, Bard,..." ;
+    guide:bibliographyType "Otros" .
+
+guide:res_book_chesbrough rdf:type guide:DidacticResource ;
+    sch:name "William Chesbrough (2003). Open innovation" ;
+    guide:bibliographyDescription "Open innovation : the new imperative for creating and profiting from technology. Harvard Business School Press." ;
+    guide:bibliographyType "Bibliografía" .

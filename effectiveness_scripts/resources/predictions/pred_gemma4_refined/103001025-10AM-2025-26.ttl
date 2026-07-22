@@ -1,0 +1,203 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:CourseGuide_103001025 a guide:CourseGuide ;
+    sch:name "103001025 - E-health: Promoting Active And Healthy Ageing" ;
+    sch:description "The main focus of this subject is achieving an understanding of the necessary models, techniques and architectures that allow the development of interactive systems in the E-health domain." ;
+    guide:numberOfCredits 4.0 ;
+    guide:courseType "Optional/elective" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:semester "Semester 1" ;
+    sch:inLanguage "English" ;
+    guide:hasSyllabus :Syllabus_103001025 ;
+    guide:hasCompetency :Competency_CG1, :Competency_CG18, :Competency_CG8 ;
+    guide:hasLearningResult :LearningResult_RA90, :LearningResult_RA93, :LearningResult_RA91, :LearningResult_RA92 ;
+    guide:hasEvaluation :EvaluationSystem_103001025 ;
+    guide:hasDidacticResource :Resource_AHA_Framework, :Resource_Political_Context, :Resource_Age_Friendly_Cities, :Resource_mHealth_Mapping, :Resource_mHealth_Review, :Resource_Inspection_Methods, :Resource_Design_Guidelines ;
+    sch:instructor :Lecturer_Elena_Villalba_Mora ;
+    sch:director :Lecturer_Elena_Villalba_Mora .
+
+# Course Instance
+:Course_103001025 a guide:Course ;
+    sch:name "103001025 - E-health: Promoting Active And Healthy Ageing" ;
+    sch:courseCode 103001025 ;
+    guide:courseYear 2025 ;
+    guide:courseType "Optional/elective" ;
+    sch:hasCourseInstance :CourseGuide_103001025 .
+
+# Degree Instance
+:Degree_10AM a guide:MasterDegree ;
+    sch:name "10AM - Master Universitario En Ingenieria Del Software" ;
+    guide:degreeCode "10AM" ;
+    guide:hasCourse :Course_103001025 .
+
+# University Center Instance
+:UniversityCenter_ETS a guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Informáticos" ;
+    guide:offers :Degree_10AM .
+
+# Lecturer Instances
+:Lecturer_Cristian_Moral_Martos a guide:Lecturer ;
+    sch:name "Cristian Moral Martulos" ;
+    sch:email "cristian.moral@upm.es" ;
+    guide:office "5110" ;
+    guide:tutorshipsSchedule "W - 10:00 - 14:00, F - 10:00 - 12:00" .
+
+:Lecturer_Elena_Villalba_Mora a guide:Lecturer ;
+    sch:name "Elena Villalba Mora" ;
+    sch:email "elena.villalba@upm.es" ;
+    guide:office "5110" ;
+    guide:tutorshipsSchedule "M - 10:00 - 12:00, W - 10:00 - 12:00, F - 10:00 - 12:00" .
+
+# Competency Instances
+:Competency_CG1 a guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos dentro de contextos más amplios (o multidisciplinares) relacionados con su área de estudio (RD)" .
+
+:Competency_CG18 a guide:Competency ;
+    guide:competencyCode "CG18" ;
+    guide:competencyDescription "Capacidad de trabajar y comunicarse también en contextos internacionales" .
+
+:Competency_CG8 a guide:Competency ;
+    guide:competencyCode "CG8" ;
+    guide:competencyDescription "Planteamiento y resolución de problemas también en áreas nuevas y emergentes de su disciplina" .
+
+# Learning Result Instances
+:LearningResult_RA90 a guide:LearningResult ;
+    guide:learningResultCode "RA90" ;
+    guide:learningResultDescription "Apply techniques for designing and implementing prototypes of different fidelity levels" .
+
+:LearningResult_RA93 a guide:LearningResult ;
+    guide:learningResultCode "RA93" ;
+    guide:learningResultDescription "Evaluate the usability of prototypes" .
+
+:LearningResult_RA91 a guide:LearningResult ;
+    guide:learningResultCode "RA91" ;
+    guide:learningResultDescription "Apply techniques for modelling the context of use" .
+
+:LearningResult_RA92 a guide:LearningResult ;
+    guide:learningResultCode "RA92" ;
+    guide:learningResultDescription "Understand how user-centred design methods are used in non-academic environments" .
+
+# Syllabus Instance
+:Syllabus_103001025 a guide:Syllabus ;
+    guide:hasItem :SyllabusItem_1, :SyllabusItem_2, :SyllabusItem_3, :SLLabusItem_4, :SyllabusItem_5, :SyllabusItem_6 .
+
+:SyllabusItem_1 a guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Active and Health Ageing" .
+
+:SyllabusItem_2 a guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Clinical perspective. Intrinsic capacity and frailty" .
+
+:SyllabusItem_3 a guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Political perspective" .
+
+:SyllabusItem_4 a guide:SyllabusItem ;
+    guide:itemIndex 4 ;
+    guide:syllabusDescription "Technological perspective" .
+
+:SyllabusItem_5 a guide:SyllabusItem ;
+    guide:itemIndex 5 ;
+    guide:syllabusDescription "Social and personal perspective" .
+
+:SyllabusItem_6 a guide:SyllabusItem ;
+    guide:itemIndex 6 ;
+    guide:syllabusDescription "Active and Healthy Ageing Project" .
+
+# Evaluation System Instance
+:EvaluationSystem_103001025 a guide:EvaluationSystem ;
+    guide:evaluationDescription "The evaluation of this course is based on a progressive evaluation system (continuous evaluation), which grades the active participation of the student during the iterative development of an interactive project carried out in groups, following the human-centred design process." ;
+    guide:hasEvaluationTrial :Trial_Assignment_5, :Trial_Assessment_7, :Trial_Assessment_10, :Trial_Assessment_13, :Trial_FinalExam .
+
+# Evaluation Trial Instances
+:Trial_Assignment_5 a guide:EvaluationTrial ;
+    guide:trialType "Assignment" ;
+    guide:evaluationDuration "06:00" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "No Presential" ;
+    guide:involvesCompetency :Competency_CG18, :Competency_CG1 .
+
+:Trial_Assessment_7 a guide:EvaluationTrial ;
+    guide:trialType "Assessment" ;
+    guide:evaluationDuration "02:00" ;
+    guide:gradePercentage "10%" ;
+    guide:trialMode "No Presential" ;
+    guide:involvesCompetency :Competency_CG18, :Competency_CG1 .
+
+:Trial_Assessment_10 a guide:EvaluationTrial ;
+    guide:trialType "Assessment" ;
+    guide:evaluationDuration "08:00" ;
+    guide:gradePercentage "20%" ;
+    guide:trialMode "No Presential" ;
+    guide:involvesCompetency :Competency_CG18, :Competency_CG1 .
+
+:Trial_Assessment_13 a guide:EvaluationTrial ;
+    guide:trialType "Assessment" ;
+    guide:evaluationDuration "03:00" ;
+    guide:gradePercentage "20%" ;
+    guide:trialMode "No Presential" ;
+    guide:involvesCompetency :Competency_CG8, :Competency_CG18, :Competency_CG1 .
+
+:Trial_FinalExam a guide:EvaluationTrial ;
+    guide:trialType "Final Exam" ;
+    guide:evaluationDuration "03:00" ;
+    guide:gradePercentage "20%" ;
+    guide:trialMode "Face-to-face" ;
+    guide:involvesCompetency :Competency_CG8, :Competency_CG18, :Competency_CG1 .
+
+# Activity Instances (from Schedule)
+:Activity_Week1 a guide:Activity ;
+    guide:activityDescription "Course introduction 1.2. Definitions and frameworks" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lecture" ;
+    guide:eventWeek "1" .
+
+:Activity_Week2 a guide:Activity ;
+    guide:activityDescription "Clinical perspective" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lecture" ;
+    guide:eventWeek "2" .
+
+# Didactic Resource Instances
+:Resource_AHA_Framework a guide:DidacticResource ;
+    guide:bibliographyTitle "Operational definition of Active and Healthy Ageing (AHA): A conceptual framework" ;
+    guide:bibliographyType "Bibliography" ;
+    guide:bibliographyDescription "Paper: Bousquet, Jean, et al. (2015)" .
+
+:Resource_Political_Context a guide:DidacticResource ;
+    guide:bibliographyTitle "Political context" ;
+    guide:bibliographyType "Bibliography" ;
+    guide:bibliographyDescription "Beard et al. (2016). The World Report on ageing and health" .
+
+:Resource_Age_Friendly_Cities a guide:DidacticResource ;
+    guide:bibliographyTitle "Age Friendly Cities" ;
+    guide:bibliographyType "Bibliography" ;
+    guide:bibliographyDescription "OMS. Global age-friendly cities: a guide (2017)" .
+
+:Resource_mHealth_Mapping a guide:DidacticResource ;
+    guide:bibliographyTitle "mHealth" ;
+    guide:bibliographyType "Bibliography" ;
+    guide:bibliographyDescription "Mapping mHealth research: a decade of evolution. Fiordelli et al. (2013)" .
+
+:Resource_mHealth_Review a guide:DidacticResource ;
+    guide:bibliographyTitle "mHealth review" ;
+    guide:bibliographyType "Bibliography" ;
+    guide:bibliographyDescription "From Personal to Mobile Healthcare: Challenges and Opportunities Villalba-Mora et al. (2016)" .
+
+:Resource_Inspection_Methods a guide:DidacticResource ;
+    guide:bibliographyTitle "Inspection Methods" ;
+    guide:bibliographyType "Bibliography" ;
+    guide:bibliographyDescription "Usability Inspection Methods. Edited by Jakob Nielsen and Robert L. Mack (1994)" .
+
+:Resource_Design_Guidelines a guide:DidacticResource ;
+    guide:bibliographyTitle "Design Guidelines of Mobile Apps for Older Adults: Systematic Review and Thematic Analysis" ;
+    guide:bibliographyType "Bibliography" ;
+    guide:bibliographyDescription "Paper by Gomez-Hernandez, M., Ferre, X., Moral, C., & Villalba-Mora, E. (2023)" .

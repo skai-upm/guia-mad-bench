@@ -1,0 +1,188 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3id.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Classes (Selected for use in instances)
+#################################################################
+
+###  http://w3id.org/def/guia#Activity
+guide:Activity rdf:type owl:Class ;
+               rdfs:comment "A teaching or learning activity carried out as part of the course, such as lectures, labs, seminars, tutorials, or independent work."@en .
+
+
+###  http://www.w3id.org/def/guia#BachelorDegree
+guide:BachelorDegree rdf:type owl:Class ;
+                     rdfs:subClassOf guide:Degree ;
+                     rdfs:comment "An undergraduate degree programme that provides foundational higher education in a given field of study."@en .
+
+
+###  http://w3id.org/def/guia#Competency
+guide:Competency rdf:type owl:Class ;
+                 rdfs:comment "A capability, skill, or integrated learning outcome that students are expected to develop through the course."@en .
+
+
+###  http://www.w3id.org/def/guia#Course
+guide:Course rdf:type owl:Class ;
+             rdfs:subClassOf sch:Course ;
+             rdfs:comment "An academic course as defined in the GUIA model, typically described through its content, teaching organization, assessment, and related course guide."@en .
+
+
+###  http://w3id.org/def/guia#Degree
+guide:Degree rdf:type owl:Class ;
+             rdfs:comment "An academic degree programme that structures and groups courses within a formal higher education curriculum."@en .
+
+
+###  http://www.w3id.org/def/guia#EvaluationSystem
+guide:EvaluationSystem rdf:type owl:Class ;
+                       rdfs:comment "The overall framework that defines how student learning is assessed in a course, including criteria, components, and grading structure."@en .
+
+
+###  http://w3id.org/def/guia#LearningResult
+guide:LearningResult rdf:type owl:Class ;
+                     rdfs:comment "A specific and assessable statement of what a student is expected to know, understand, or be able to do after completing the course."@en .
+
+
+###  http://www.w3id.org/def/guia#Lecturer
+guide:Lecturer rdf:type owl:Class ;
+               rdfs:subClassOf sch:Person ;
+               rdfs:comment "A teaching person responsible for delivering, coordinating, or supporting a course within an academic programme."@en .
+
+
+###  http://www.w3id.org/def/guia#MasterDegree
+guide:MasterDegree rdf:type owl:Class ;
+                   rdfs:subClassOf guide:Degree ;
+                   rdfs:comment "A postgraduate degree programme corresponding to advanced academic or professional specialization."@en .
+
+
+###  http://w3id.org/def/guia#RequiredKnowledge
+guide:RequiredKnowledge rdf:type owl:Class ;
+                        rdfs:comment "Prior knowledge, skills, or academic background expected from students before taking a course."@en .
+
+
+###  http://www.w3id.org/def/guia#ScheduleEvent
+guide:ScheduleEvent rdf:type owl:Class ;
+                    rdfs:subClassOf sch:Event ;
+                    rdfs:comment "A dated or timed element within a course schedule, such as a class session, deadline, exam, or planned activity."@en .
+
+
+###  http://w3id.org/def/guia#SyllabusItem
+guide:SyllabusItem rdf:type owl:Class ;
+                   rdfs:comment "A single element of a syllabus, representing a topic, unit, lesson, or other content component within the course structure."@en .
+
+
+###  http://w3id.org/def/guia#UniversityCenter
+guide:UniversityCenter rdf:type owl:Class ;
+                       rdfs:subClassOf sch:Organization ;
+                       rdfs:description "An organizational unit within a university where degree programmes are taught, such as a faculty, school, or institute responsible for academic delivery."@en .
+
+
+#################################################################
+#    Data Instances (Using http://guia-mad-bench.es/data/ URIs)
+#################################################################
+
+###  Course Guide Instance: ANX-PR/CL/001-01
+<http://guia-mad-bench.es/data/course-guide-anx-pr-cl-001> rdf:type guide:CourseGuide ;
+                                                               sch:name "Redaccion Técnica De Inglés Aplicada A La Actividad Fisica Y El Deporte" ,
+                                                                     dc:title "ANX-PR/CL/001 - Guía de Aprendizaje"@en ;
+                                                               dct:publisher <http://guia-mad-bench.es/data/university-center-upm> ;
+                                                               guide:teachingPeriod "2025/26"@en ;
+                                                               sch:description "This module supports students whose first language is not English over a semester of academic study, and helps them to refine their writing through extensive language input, practice and feedback."@en .
+
+
+###  Degree Instance: Master Universitario En Ciencias De la Actividad Fisica Y Del Deporte (11AB)
+<http://guia-mad-bench.es/data/degree-11ab> rdf:type guide:MasterDegree ;
+                                              sch:name "Master Universitario en Ciencias de la Actividad Física y del Deporte" ,
+                                                  dct:title "11AB"@en .
+
+
+###  Course Instance: Code 123 - Redaccion Técnica...
+<http://guia-mad-bench.es/data/course-123> rdf:type guide:Course ;
+                                             sch:name "Redacción Técnica de Inglés Aplicada a la Actividad Física y el Deporte" ,
+                                                 dct:title "113000033"@en .
+
+
+###  Lecturer Instance: Maria Jose Gomez Ortiz (Coordinator)
+<http://guia-mad-bench.es/data/lecturer-mar-jose-gomez-ortiz> rdf:type guide:Lecturer ;
+                                                                sch:name "Maria Jose Gomez Ortiz" ,
+                                                                    dct:title "(Coordinador/a)"@en ;
+                                                                sch:email <mailto:maria.gomez.ortiz@upm.es> .
+
+
+###  Competency Instances (CB10, CG5, etc.)
+<http://guia-mad-bench.es/data/competency-cb10> rdf:type guide:Competency ;
+                                                  guide:competencyCode "CB10"@en ,
+                                                      sch:description "Que los estudiantes posean las habilidades de aprendizaje que les permitan continuar estudiando de un modo que habrá de ser en gran medida autodirigido o autónomo" .
+
+
+<http://guia-mad-bench.es/data/competency-cg5> rdf:type guide:Competency ;
+                                                 guide:competencyCode "CG5"@en ,
+                                                     sch:description "Desarrollo de la habilidades humanas necesarias para el trabajo en equipo y de ese modo asumir el compromiso de la investigación científica con valores humanos que favorezcan la sana convivencia." .
+
+
+<http://guia-mad-bench.es/data/competency-cg6> rdf:type guide:Competency ;
+                                                 guide:competencyCode "CG6"@en ,
+                                                     sch:description "Capacidad para comunicarse y relacionarse en un ámbito científico en la lengua inglesa." .
+
+
+###  Learning Result Instances (RA94, etc.)
+<http://guia-mad-bench.es/data/learning-result-ra94> rdf:type guide:LearningResult ;
+                                                       guide:learningResultCode "RA94"@en ,
+                                                           sch:description "Mejorar la calidad de la escritura técnica en inglés beneficiándose de herramientas digitales y sus sugerencias en tiempo real sobre corrección de 'spelling', 'grammar' y 'punctuation'." .
+
+
+<http://guia-mad-bench.es/data/learning-result-ra91> rdf:type guide:LearningResult ;
+                                                       guide:learningResultCode "RA91"@en ,
+                                                           sch:description "Write a Research Article in English" .
+
+
+###  Syllabus Instance (Section 5.2)
+<http://guia-mad-bench.es/data/syllabus-anx-pr-cl-001> rdf:type guide:Syllabus ;
+                                                          dct:title "Temario de la asignatura"@en ,
+                                                              sch:description "Structure of a Research Article, How to write a good abstract and get published."@en .
+
+
+###  Syllabus Item Instances (Section 5.2)
+<http://guia-mad-bench.es/data/syllabus-item-1> rdf:type guide:SyllabusItem ;
+                                                  sch:description "Structure of a Research Article" ,
+                                                      guide:itemIndex "1"@xsd:integer .
+
+
+###  Schedule Instance (Section 6)
+<http://guia-mad-bench.es/data/schedule-course-guide-anx-pr-cl-001> rdf:type guide:Schedule ;
+                                                                        sch:eventSchedule <http://guia-mad-bench.es/data/activity-introduction-01> ,
+                                                                                                    <http://guia-mad-bench.es/data/activity-types-texts-02> .
+
+
+###  Schedule Event Instances (Section 6)
+<http://guia-mad-bench.es/data/activity-introduction-01> rdf:type guide:ScheduleEvent ;
+                                                           sch:eventIndex "1"@xsd:integer ,
+                                                               sch:description "**General Introduction. Academic vocabulary**" ,
+                                                               om:Unit <http://www.w3id.org/def/guia#Hour>,
+                                                                   guide:activityDuration "2.00",
+                                                                       rdf:type xsd:string .
+
+
+###  Evaluation System Instance (Section 7)
+<http://guia-mad-bench.es/data/evaluation-system-anx-pr-cl-01> rdf:type guide:EvaluationSystem ;
+                                                                  sch:description "**ASSESSMENT and EVALUATION**" ,
+                                                                      dct:title "Evaluación Progresiva y Global"@en .
+
+
+###  Evaluation Trial Instances (Section 7)
+<http://guia-mad-bench.es/data/trial-academic-vocabulary-01> rdf:type guide:EvaluationTrial ;
+                                                               sch:trialType "**Academic Vocabulary Exercise**" ,
+                                                                   om:Unit <http://www.w3id.org/def/guia#Hour>,
+                                                                       guide:activityDuration "2.00",
+                                                                           rdf:type xsd:string .
+
+
+###  Didactic Resource Instances (Section 8)
+<http://guia-mad-bench.es/data/resource-google-drive-01> rdf:type guide:DidacticResource ;
+                                                            sch:bibliographyTitle "**Google Drive**" ,
+                                                                sch:description "Online tutoring resources"@en .

@@ -1,0 +1,179 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.string/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+:degree_59ID rdf:type guide:BachelorDegree ;
+    sch:name "Grado en Ingeniería y Sistemas de Datos" ;
+    guide:degreeCode "59ID" .
+
+:center_ETS_Telecom rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingeniería Y Sist. De Telecom." ;
+    guide:offers :degree_59ID .
+
+# Course
+:course_595044117 rdf:type guide:Course ;
+    sch:name "Ciencia, Tecnología y Sociedad" ;
+    sch:courseCode 595044117 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 2025 ;
+    guide:semester "Séptimo semestre Octavo semestre" ;
+    sch:hasCourseInstance :courseGuide_595044117 .
+
+:degree_59ID guide:hasCourse :course_595044	117 .
+
+# Course Guide
+:courseGuide_595044117 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Ciencia, Tecnología y Sociedad" ;
+    sch:description "La asignatura pretende promover la reflexión sobre las interacciones entre la sociedad actual y el desarrollo tecnológico."@en ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    guide:numberOfCredits 3.0 ;
+    guide:totalHours "78" ; # Calculated based on ECTS (approx 26h per credit)
+    sch:inLanguage "Castellano" ;
+    sch:instructor :lecturer_ivan, :lecturer_miguel ;
+    guide:hasSyllabus :syllabus_595044117 ;
+    guide:hasCompetency :comp_CB02, :comp_CB03, :comp_CE21, :comp_CG02, :comp_CG03, :comp_CG05, :comp_CG06, :comp_CG07, :comp_CG08, :comp_CG09, :comp_CG10, :comp_CG11 ;
+    guide:hasLearningResult :lr_RA027, :lr_RA028, :lr_RA031, :lr_RA047, :lr_RA061, :lr_RA112, :lr_RA098, :lr_RA111, :lr_RA057, :lr_RA032, :lr_RA113, :lr_RA115, :lr_RA123, :lr_RA125, :lr_RA126, :lr_RA127 ;
+    guide:hasEvaluation :evalSystem_595044117 ;
+    guide:hasDidacticResource :res_kuhn, :res_notes, :res_ieee_ethics ;
+    sch:courseSchedule :schedule_595044117 .
+
+# Lecturers
+:lecturer_ivan rdf:type guide:Lecturer ;
+    sch:name "Ivan Pau De La	la Cruz" ;
+    sch:email "ivan.pau@upm.es" .
+
+:lecturer_miguel rdf:type guide:Lecturer ;
+    sch:name "Miguel Angel Valero Duboy" ;
+    sch:email "miguelangel.valero@upm.es" ;
+    guide:office "A4422" .
+
+# Competencies
+:comp_CB02 rdf:type guide:Competency ; guide:competencyCode "CB02" ; guide:competencyDescription "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional..."@en .
+:comp_CB03 rdf:type guide:Competency ; guide:competencyCode "CB03" ; guide:competencyDescription "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes..."@en .
+:comp_CE21 rdf:type guide:Competency ; guide:competencyCode "CE21" ; guide:competencyDescription "Que los estudiantes sean capaces de aplicar de manera adecuada la normativa, legislación y regulaciones..."@en .
+:comp_CG02 rdf:type guide:Competency ; guide:competencyCode "CG02" ; guide:competencyDescription "Desarrollar la capacidad de trabajar en equipo empleando metod．metodologías ágiles..."@en .
+:comp_CG03 rdf:type guide:Competency ; guide:competencyCode "CG03" ; guide:competencyDescription "Ser capaz de explicar de forma oral o escrita las soluciones planteadas..."@en .
+:comp_CG05 rdf:type guide:Competency ; guide:competencyCode "CG05" ; guide:competencyDescription "Tener la capacidad de concebir y proponer soluciones creativas..."@en .
+:comp_CG06 rdf:type guide:Competency ; guide:competencyCode "CG06" ; guide:competencyDescription "Poseer lala habilidad para liderar equipos multidisciplinares..."@en .
+:comp_CG07 rdf:type guide:Competency ; guide:competencyCode "CG07" ; guide:competencyDescription "Saber cómo organizar, planificar y gestionar proyectos de ingeniería..."@en .
+:comp_CG08 rdf:type guide:Competency ; guide:competencyCode "CG08" ; guide:competencyDescription "Ser capaz de analizar el impacto medioambiental y social de un proyecto..."@en .
+:comp_CG09 rdf:type guide:Competency ; guide:competencyCode "CG09" ; guide:competencyDescription "Desarrollar la capacidad de aprendizaje a lo largo de la vida..."@en .
+:comp_CG10 rdf:type guide:Competency ; guide:competencyCode "CG10" ; guide:competencyDescription "Desarrollar la capacidad de proponer e implementar soluciones y proyectos orientados a retos sociales..."@en .
+:comp_CG11 rdf:type guide:Competency ; guide:competencyCode "CG11" ; guide:competencyDescription "Ser capaz de trabajar respetando de manera responsable el marco ético..."@en .
+
+# Learning Results
+:lr_RA027 rdf:type guide:LearningResult ; guide:learningResultCode "RA027" ; guide:learning．learningResultDescription "Comprender las implicaciones éticas asociadas al tratamiento de datos y la gestión de la Información."@en .
+:lr_RA028 rdf:type guide:LearningResult ; guide:learningResultCode "RA028" ; guide:learningResultDescription "Entender el marco legal en el que desarrolla su actividad el ingeniero de datos."@en .
+:lr_RA031 rdf:type guide:LearningResult ; guide:learningResultCode "RA031" ; guide:learningResultDescription "Comprender el impacto de la tecnología y los procesos de transformación digital..."@en .
+:lr_RA047 rdf:type guide:LearningResult ; guide:learningResultCode "RA047" ; guide:learningResultDescription "Conocer los sistemas de comunicaciones inteligentes con capacidad de monitorización..."@en .
+:lr_RA061 rdf:type guide:LearningResult ; guide:learningResultCode "RA061" ; guide:learningResultDescription "Diseñar e implementar una solución completa a un caso de uso."@en .
+:lr_RA112 rdf:type guide:LearningResult ; guide:learningResultCode "RA112" ; guide:learningResultDescription "Analizar las tecnologías necesarias para implementar un caso de estudio."@en .
+:lr_RA098 rdf:type guide:LearningResult ; guide:learningResultCode "RA098" ; guide:learningResultDescription "Entender la problemática específica de casos de estudio seleccionados..."@en .
+:lr_RA111 rdf:type guide:LearningResult ; guide:learningResultCode "RA111" ; guide:learningResultDescription "Diseñar una solución para un caso de．de estudio en ingeniería de datos y sistemas..."@en .
+:lr_RA057 rdf:type guide:LearningResult ; guide:learningResultCode "RA057" ; guide:learningResultDescription "Comprender los retos y problemas de un análisis de Big Data."@en .
+:lr_RA032 rdf:type guide:LearningResult ; guide:learningResultCode "RA032" ; guide:learningResultDescription "Conocer herramientas para analizar y diseñar modelos de negocio basados en el dato."@en .
+:lr_RA113 rdf:type guide:LearningResult ; guide:learningResultCode "RA113" ; guide:learningResultDescription "Evaluar y diseñar los aspectos económicos para hacer la solución viable."@．en .
+:lr_RA115 rdf:type guide:LearningResult ; guide:learningResultCode "RA115" ; guide:learningResultDescription "Dominar la terminología propia de la Ingeniería de datos."@en .
+:lr_RA123 rdf:type guide:LearningResult ; guide:learningResultCode "RA123" ; guide:learningResultDescription "Redactar en tiempo y forma una memoria ejecutiva con los resultados..."@en .
+:lr_RA125 rdf:type guide:LearningResult ; guide:learningResultCode "RA125" ; guide:learningResultDescription "Comunicar de manera efectiva en forma oral y escrita el contexto y los resultados..."@en .
+:lr_RA126 rdf:type guide:LearningResult ; guide:learningResultCode "RA126" ; guide:learningResultDescription "Valorar el impacto social, económico y medioambiental de un proyecto..."@en .
+:lr_RA127 rdf:type guide:LearningResult ; guide:learningResultCode "RA127" ; guide:learningResultDescription "Participar en proyectos de forma activa, aportando ideas y soluciones."@en .
+
+# Syllabus
+:syllabus_595044117 rdf:type guide:Syllabus ;
+    guide:hasItem :item_topic1, :item_topic2, :item_topic3, :item_topic4 .
+
+:item_topic1 rdf:type guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "Sostenibilidad ecológica y social" .
+:item_topic2 rdf:type guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "Las revoluciones tecnológicas" .
+:item_topic3 rdf:．type guide:SyllabusItem ; guide:itemIndex 3 ; guide:syllabusDescription "TIC, ética y derechos humanos" .
+:item_topic4 rdf:type guide:SyllabusItem ; guide:itemIndex 4 ; guide:syllabusDescription "Casos de uso de tecnología social. Evaluación Voluntaria" .
+
+# Evaluation System
+:evalSystem_595044117 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La evaluación progresiva libera cada tema a partir de una nota de 3 sobre 10. Se aprueba la asignatura por evaluación progresiva si se tiene más de un 3 en los tres temas y la media ponderada es 5 o más."@en ;
+    guide:hasEvaluationTrial :trial_theme1, :trial_theme2, :trial_theme3, :trial_project, :trial_final_exam .
+
+:trial_theme1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:trialWeek "4" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialMode "Presencial" .
+
+:trial_theme2 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:trialWeek "9" ;
+    guide:gradePercentage "25%" ;
+．guide:minimumScore "3 / 10" ;
+    guide:trialMode "Presencial" .
+
+:trial_theme3 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Presentación en Grupo" ;
+    guide:trialWeek "13" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialMode "Presencial" .
+
+:trial_project rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Trabajo en Grupo" ;
+    guide:trialWeek "14" ;
+    guide:gradePercentage "25%" ;
+    guide:minimumScore "3 / 10" ;
+    guide:trialMode "Presencial" .
+
+:trial_final_exam rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Examen Escrito" ;
+    guide:trialWeek "17" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+# Schedule and Activities
+:schedule_595044117 rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week4, :event_week9, :event_week13, :event_week14, :event_week17 .
+
+:event_week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :act_intro .
+
+:act_intro rdf:type guide:Activity ;
+    guide:activityDescription "Introducción a la asignatura y Sostenibilidad ecológica y social" ;
+    guide:activityDuration 3.5 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:event_week4 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "4" ;
+．guide:hasActivity :act_eval_theme1 .
+
+:act_eval_theme1 rdf:type guide:Activity ;
+    guide:activityDescription "Evaluación contenidos Tema 1" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_kuhn rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "La estructura de las revoluciones científicas. T. Kuhn" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Clásico libro de Thomas Kuhn sobre las revoluciones científicas" .
+
+:res_notes rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Apuntes de clase" ;
+    guide:bibliographyType "Otros" ;
+    guide:bibliographyDescription "Descargables de MOODLE" .
+
+:res_ieee_ethics rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "IEEE Ethics and Member Conduct" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "http://www.ieee.org/about/ethics.html" .

@@ -1,0 +1,941 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_10AZ_103000843> rdf:type :CourseGuide ;
+    sch:name "ANX-PR/CL/001 LEARNING GUIDE"@en ;
+    dct:creator <http://w3id.org/def/guia#Andrea_Cimmino_Arriaga>,<http://w3id.org/def/guia#Covadonga_Arias> ,<http://w3id.org/def/guia#Joaquín_Gayosso_Cabada> ;
+    sch:courseCode 103000843 ;
+    guide:numberOfCredits "1"^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/course/GA_10AZ_103000843> rdf:type :Course , sch:Course ;
+    sch:name "Introduction To Technology Watch And Competitive I"@en ;
+    guide:numberOfCredits "1"^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/degree/MasterUniversitarioEnInnovacionDigital> rdf:type :MasterDegree , :Degree ;
+    dct:title "Master Universitario En Innovación Digital"@en .
+
+<http://guia-mad-bench.es/data/syllabus/GA_10AZ_103000843> rdf:type sch:Syllabus ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/courseGuide/GA_10AZ_103000843> .
+
+<http://guia-mad-bench.es/data/scheduleevent/WelcomeSession> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex "1"^^xsd:integer ;
+    guide:syllabusDescription "Contents, grading processes and groups creation"@en ;
+    sch:name "Welcome session".
+
+<http://guia-mad-bench.es/data/scheduleevent/TechWatchBasics> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex "2"^^xsd:integer ;
+    guide:syllabusDescription "Technology watch basic concepts, procedure and tools"@en .
+
+<http://guia-mad-bench.es/data/competency/CB07> rdf:type :Competency ;
+    guide:learningResultCode "CB07"^^xsd:string ;
+    sch:description "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos"@en .
+
+<http://guia-mad-bench.es/data/competency/CB08> rdf:type :Competency ;
+    guide:learningResultCode "CB08"^^xsd:string ;
+    sch:description "Que los estudiantes sean capaces de integrar conocimientos y enfrentarse a la complejidad"@en .
+
+<http://guia-mad-bench.es/data/competency/CB09> rdf:type :Competency ;
+    guide:learningResultCode "CB09"^^xsd:string ;
+    sch:description "Que los estudiantes sepan comunicar sus conclusiones y los conocimientos y razones últimas"@en .
+
+<http://guia-mad-bench.es/data/competency/CB_EIT_03> rdf:type :Competency ;
+    guide:learningResultCode "CE-EIT03"^^xsd:string ;
+    sch:description "Capacidad para identificar el nivel de madurez de una tecnología y desarrollar e interpretar un roadmap tecnológico"@en .
+
+<http://guia-mad-bench.es/data/competency/CB_CG_01> rdf:type :Competency ;
+    guide:learningResultCode "CG01"^^xsd:string ;
+    sch:description "Que los estudiantes sean capaces de predecir y controlar la evolución de situaciones complejas"@en .
+
+<http://guia-mad-bench.es/data/competency/CB_CG_03> rdf:type :Competency ;
+    guide:learningResultCode "CG03"^^xsd:string ;
+    sch:description "La capacidad de usar la lengua inglesa de manera competente"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_10AZ_103000843> :hasCompetency <http://guia-mad-bench.es/data/competency/CB07>,
+    <http://guia-mad-bench.es/data/competency/CB08>,<http://guia-mad-bench.es/data/competency/CB09>,
+    <http://guia-mad-bench.es/data/competency/CB_EIT_03> ,<http://guia-mad-bench.es/data/competency/CB_CG_01>,
+    <http://guia-mad-bench.es/data/competency/CB_CG_07>,<http://guia-mad-bench.es/data/competency/CB_CG_08> ,<http://guia-mad-bench.es/data/competency/CB_CG_09>.
+
+<http://guia-mad-bench.es/data/courseGuide/GA_10AZ_103000843> sch:courseSchedule <http://guia-mad-bench.es/data/schedule/Semester2_Schedule> .
+    
+    <http://guia-mad-bench.es/data/lecturer/alberto_tejero_lopez> rdf:type :Lecturer , sch:Person ;
+        dct:title "Alberto Tejero Lopez"@en ;
+        guide:office "Office D5215"^^xsd:string ;
+        sch:name "Alberto Tejero Lopez"@en .
+
+<http://guia-mad-bench.es/data/scheduleevent/IndividualExam> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex "5"^^xsd:integer ;
+    guide:syllabusDescription "Individual exam"@en ;
+    sch:name "Individual exam".
+
+<http://guia-mad-bench.es/data/scheduleevent/TechWatchReport> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex "6"^^xsd:integer ;
+    guide:syllabusDescription "Technology Watch Report"@en .
+
+<http://guia-mad-bench.es/data/evaltrial/IndividualExamTrial> rdf:type :EvaluationTrial ;
+    guide:trialType "Written test"^^xsd:string ;
+    sch:name "Individual exam";
+    guide:gradePercentage "30%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportTrial> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/GlobalAssessmentTest> rdf:type :EvaluationTrial ;
+    sch:name "Global assessment test and Technology Watch Report (individual)";
+    guide:gradePercentage "70%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :EvaluationTrial ;
+    sch:name "Technology Watch Report";
+    guide:gradePercentage "40%"^^xsd:string;
+    guide:minScore "5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaltrial/TechWatchReportGroup> rdf:type :Evaluation

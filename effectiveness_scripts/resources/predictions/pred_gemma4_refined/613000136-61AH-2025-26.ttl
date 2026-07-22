@@ -1,0 +1,168 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course and Degree Information
+:Course_613000136 rdf:type guide:Course ;
+    sch:name "Metodología y Técnicas de Investigación" ;
+    sch:courseCode 613000136 ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 2025 ;
+    guide:semester "Primer semestre" .
+
+:Master_61AH rdf:type guide:MasterDegree ;
+    sch:name "Máster Universitario En Aprendizaje Automático Y Datos Masivos" ;
+    guide:degreeCode "61AH" .
+
+:ETS_Sistemas rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ing. de Sistemas Informáticos" ;
+    guide:offers :Master_61AH .
+
+# Course Guide
+:Guide_613000136 rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance :Course_613000136 ;
+    sch:name "Guía de Aprendizaje - Metodología y Técnicas de Investigación" ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor :Lecturer_David_Camacho ;
+    sch:director :Lecturer_David_Camacho ;
+    guide:hasSyllabus :Syllabus_613000136 ;
+    guide:hasCompetency :Competency_CB10, :Competency_CB6, :Competency_CB7, :Competency_CB8, :Competency_CB9, :Competency_CE01, :Competency_CG1, :Competency_CG2, :Competency_CG3, :Competency_CG4, :Competency_CG5, :Competency_CT1, :Competency_CT2, :Competency_CT3, :Competency_CT4, :Competency_CT5, :Competency_S01 ;
+    guide:hasLearningResult :LR_RA50, :LR_RA51, :LR_RA52, :LR_RA53, :LR_RA54, :LR_RA55 ;
+    guide:hasEvaluation :EvalSystem_613000136 ;
+    guide:hasDidacticResource :Res_Hopf, :Res_Jones, :Res_Lukic, :Res_Reynolds, :Res_Kothari, :Res_Vakkari, :Res_Dodig, :Res_Gregar, :Res_Theocharis, :Res_Web_JCR .
+
+# Lecturers
+:Lecturer_David_Camacho rdf:type guide:Lecturer ;
+    sch:name "David Camacho Fernandez" ;
+    sch:email "david.camacho@upm.es" ;
+    guide:office "1215" .
+
+:Lecturer_Jose_Eugenio_Naranjo rdf:type guide:Lecturer ;
+    sch:name "Jose Eugenio Naranjo Hernandez" ;
+    sch:email "joseeugenio.naranjo@upm.es" ;
+    guide:office "4120" .
+
+# Competencies
+:Competency_CB10 rdf:type guide:Competency ;
+    guide:competencyCode "CB10" ;
+    guide:competencyDescription "Que los estudiantes posean las habilidades de aprendizaje que les permitan continuar estudiando de un modo que habrá de ser en gran medida autodirigido o autónomo." .
+
+:Competency_CB6 rdf:type guide:Competency ;
+    guide:competencyCode "CB6" ;
+    guide:competencyDescription "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales en el desarrollo y/o aplicación de ideas, a menudo en un contexto de investigación" .
+
+:Competency_CE01 rdf:type guide:Competency ;
+    guide:competencyCode "CE01" ;
+    guide:competencyDescription "Emplear resultados de aprendizaje automático, adaptados al tratamiento de datos masivos, como fundamento para métodos avanzados de predicción y clasificación." .
+
+:Competency_CG1 rdf:type guide:Competency ;
+    guide:competencyCode "CG1" ;
+    guide:competencyDescription "Capacidad para aplicar el método científico y saber organizar y planificar experimentos con rigor metodológico en el ámbito del aprendizaje automático y los datos masivos" .
+
+:Competency_CT1 rdf:type guide:Competency ;
+    guide:competencyCode "CT1" ;
+    guide:competencyDescription "Creatividad" .
+
+:Competency_S01 rdf:type guide:Competency ;
+    guide:competencyCode "S01" ;
+    guide:competencyDescription "El alumno elabora artículos e informes científicos que demuestran una o varias hipótesis mediante los resultados obtenidos a partir de experimentos" .
+
+# Learning Results
+:LR_RA50 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA50" ;
+    guide:learningResultDescription "Buscar bibliografía científica, herramientas software y recursos para validación de resultados" .
+
+:LR_RA51 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA51" ;
+    guide:learningResultDescription "Abordar y plantear un tema de investigación de interés" .
+
+:LR_RA52 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA52" ;
+    guide:learningResultDescription "Conocer y aplicar la metodología científica en ciencia e ingeniería" .
+
+# Syllabus
+:Syllabus_613000136 rdf:type guide:Syllabus ;
+    guide:hasItem :SyllabusItem_BlockI, :SyllabusItem_BlockII .
+
+:SyllabusItem_BlockI rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Bloque I (INVESTIGACIÓN): El conocimiento y la investigación; Impacto y diseminación de la ciencia; Redacción y presentación de trabajos científicos; Malas prácticas en investigación; La Tesis Doctoral y la Carrera investigadora" .
+
+:SyllabusItem_BlockII rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Bloque II (PROYECTOS): Concepción y diseño de un proyecto de investigación; Desarrollo de un tema de investigación; Formación de un consorcio, el equipo de investigadores; Proyectos competitivos vs no competitivos; Transferencia del conocimiento; Principales foros" .
+
+# Evaluation System
+:EvalSystem_613000136 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y prueba evaluación global." ;
+    guide:hasEvaluationTrial :Trial_Week3, :Trial_Week5, :Trial_Week17, :Trial_Extraordinary .
+
+:Trial_Week3 rdf:type guide:EvaluationTrial ;
+    guide:trialWeek "3" ;
+    guide:trialType "Presentación en Grupo" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialDescription "Presentación de un trabajo de investigación" .
+
+:Trial_Week5 rdf:type guide:EvaluationTrial ;
+    guide:trialWeek "5" ;
+    guide:trialType "Presentación en Grupo" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialDescription "Exposición de un proyecto de investigación" .
+
+:Trial_Week17 rdf:type guide:EvaluationTrial ;
+    guide:trialWeek "17" ;
+    guide:trialType "Presentación Individual" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialDescription "Presentación de un trabajo de investigación y de un proyecto de I+D+i" .
+
+# Schedule and Activities
+:Schedule_613000136 rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_W1, :Event_W2, :Event_W3, :Event_W4, :Event_W5 .
+
+:Event_W1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :Act_Lecture_1 .
+
+:Act_Lecture_1 rdf:type guide:Activity ;
+    guide:activityDescription "Bloque I: 1.1. El conocimiento y la investigación" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:Event_W2 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 2 ;
+    guide:eventWeek "2" ;
+    guide:hasActivity :Act_ProblemClass_1 .
+
+:Act_ProblemClass_1 rdf:type guide:Activity ;
+    guide:activityDescription "Bloque I: 1.3. Redacción y presentación de trabajos científicos" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "Clase de Problemas" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:Res_Hopf rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Hopf, H., Krief, A., Mehta, G., & Matlin, S. A. (2019). Fake science and the knowledge crisis..." ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_Jones rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Jones, M. (20<0xC2>5). Writing a research proposal..." ;
+    guide:bibliographyType "Bibliografía" .
+
+:Res_Web_JCR rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "https://jcr.clarivate.com/" ;
+    guide:bibliographyType "Recursos web" .

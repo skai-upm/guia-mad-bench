@@ -1,0 +1,222 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix guide: <http://guia-mad-bench.es/data/> .
+
+# Course and Degree Information
+:course_93000965 a guide:Course ;
+    sch:name "Modelado De Sistemas Biomédicos" ;
+    sch:courseCode 93000965 ;
+    guide:courseType "Optativa" ;
+    guide:courseYear 2025 ;
+    guide:semester "Primer semestre" ;
+    sch:hasCourseInstance :guide_93000965_2025_26 .
+
+:degree_09AU a guide:MasterDegree ;
+    sch:name "Master Universitario En Ingenieria Biomedica" ;
+    guide:degreeCode "09AU" ;
+    guide:hasCourse :course_93000965 .
+
+:center_ETS a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" ;
+    guide:offers :degree_09AU .
+
+# Course Guide
+:guide_93000965_2025_26 a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Modelado De Sistemas Biomédicos" ;
+    sch:description "Introduction to the mathematical modelling of physiological systems. Model construction: modelling the system, modelling from data. Mathematical modelling techniques: Compartmental modelling, data-driven modelling, distributed models. Examples of physiological models: Metabolic compartmental models; Drug concentration models; Rythmic components models; Applications. Practical sessions in MATLAB and Simulink." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:numberOfCredits 3.0 ;
+    sch:inLanguage "Inglés/Castellano" ;
+    sch:instructor :lecturer_gema_garcia, :lecturer_maria_elena_hernando ;
+    guide:hasSyllabus :syllabus_93000965 ;
+    guide:hasEvaluation :eval_system_93000965 ;
+    sch:courseSchedule :schedule_93000965 ;
+    guide:hasCompetency :comp_CB06, :comp_CB07, :comp_CB08, :comp_CB09, :comp_CB10, :comp_CE_MIB11, :comp_CG_MIB01, :comp_CG_MIB02, :comp_CG_MIB03, :comp_CG_MIB04, :comp_CG_MIB05, :comp_CG_MIB06, :comp_CG_MIB07 ;
+    guide:hasLearningResult :lr_RA15, :lr_RA13, :lr_RA14 ;
+    guide:hasDidacticResource :res_matlab, :res_book_cobelli, :res_book_ieee, :res_book_refinetti .
+
+# Lecturers
+:lecturer_gema_garcia a guide:Lecturer ;
+    sch:name "Gema Garcia Saez" ;
+    sch:email "gema.garcia.saoez@upm.es" ;
+    guide:office "B-317" ;
+    guide:tutorshipsSchedule "Sin horario. Tutoring appointments can be scheduled by email" .
+
+:lecturer_maria_elena_hernando a guide:Lecturer ;
+    sch:name "Maria Elena Hernando Perez" ;
+    sch:email "mariaelena.hernando@upm.es" ;
+    guide:office "B-316" ;
+    sch:director true ; # Acting as coordinator
+    guide:tutorshipsSchedule "Sin horario. Tutoring appointments can be scheduled by email" .
+
+:lecturer_jose_tapia a guide:Lecturer ;
+    sch:name "Jose Tapia Galisteo" ;
+    sch:email "jose.tapia.galisteo@upm.es" ;
+    rdfs:comment "External Lecturer from CIBER-BBN (GBT-UPM)" .
+
+# Competencies
+:comp_CB06 a guide:Competency ; guide:competencyCode "CB06" ; guide:competencyDescription "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales..." .
+:comp_CB07 a guide:Competency ; guide:competencyCode "CB07" ; guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos..." .
+:comp_CB08 a guide:Competency ; guide:competencyCode "CB08" ; guide:competencyDescription "Que los estudiantes sean capaces de integrar conocimientos y enfrentarse a la complejidad..." .
+:comp_CB09 a guide:Competency ; guide:competencyCode "CB09" ; guide:competencyDescription "Que los estudiantes sepan comunicar sus conclusiones..." .
+:comp_CB10 a guide:Competency ; guide:competencyCode "CB10" ; guide:competencyDescription "Que los estudiantes posean las habilidades de aprendizaje que les permitan continuar estudiando..." .
+:comp_CE_MIB11 a guide:Competency ; guide:competencyCode "CE-MIB11" ; guide:competencyDescription "Seleccionar y aplicar métodos avanzados de modelado para el diseño y simulación de sistemas biomédicos." .
+:comp_CG_MIB01 a guide:Competency ; guide:competencyCode "CG-MIB01" ; guide:competencyDescription "Resolver problemas e integrar conocimiento en temas nuevos..." .
+:comp_CG_MIB02 a guide:Competency ; guide:competencyCode "CG-MIB02" ; guide:competencyDescription "Analizar y aplicar la reglamentación correspondiente a la sensibilidad social y ética..." .
+:comp_CG_MIB03 a guide:Competency ; guide:competencyCode "CG-MIB03" ; guide:competencyDescription "Utilizar la filosofía, el método científico y el método experimental..." .
+:comp_CG_MIB04 a guide:Competency ; guide:competencyCode "CG-MIB04" ; guide:competencyDescription "Utilizar las tecnologías de la información y la comunicación para la búsqueda de información..." .
+:comp_CG_MIB05 a guide:Competency ; guide:competencyCode "CG-MIB05" ; guide:competencyDescription "Utilizar técnicas de expresión oral y escrita para comunicar trabajos..." .
+:comp_CG_MIB06 a guide:Competency ; guide:competencyCode "CG-MIB06" ; guide:competencyDescription "Aplicar técnicas de trabajo colaborativo en equipos multidisciplinares internacionales..." .
+:comp_CG_MIB07 a guide:Competency ; guide:competencyCode "CG-MIB07" ; guide:competencyDescription "Utilizar la lengua inglesa como herramienta de trabajo" .
+
+# Learning Results
+:lr_RA15 a guide:LearningResult ; guide:learningResultCode "RA15" ; guide:learningResultDescription "Aplicar los fundamentos del modelado matemático de sistemas fisiológicos..." .
+:lr_RA13 a guide:LearningResult ; guide:learning．learningResultCode "RA13" ; guide:learningResultDescription "Ser capaz de utilizar técnicas avanzadas de modelado fisiológico y sus aplicaciones en el campo médico" .
+:lr_RA14 a guide:LearningResult ; guide:learningResultCode "RA14" ; guide:learningResultDescription "Aplicar técnicas avanzadas de modelos, construcción y de validación..." .
+
+# Syllabus
+:syllabus_93000965 a guide:Syllabus ;
+    guide:hasItem :item_1, :item_2, :item_3, :item_4, :item_5, :item_6 .
+
+:item_1 a guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "Introduction to the modelling of physiological systems" .
+:item_2 a guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "Model construction" .
+:item_3 a guide:SyllabusItem ; guide:itemIndex 3 ; guide:syllabusDescription "Mathematical modelling techniques" .
+:item_4 a guide:SyllabusItem ; guide:itemIndex 4 ; guide:syllabusDescription "Compartmental modelling" .
+:item_5 a guide:SyllabusItem ; guide:itemIndex 5 ; guide:syllabusDescription "Chronobiological modelling" .
+:item_6 a guide:SyllabusItem ; guide:itemIndex 6 ; guide:syllabusDescription "Applications" .
+
+# Evaluation System
+:eval_system_93000965 a guide:EvaluationSystem ;
+    guide:evaluationDescription "The evaluation consists of progressive assessment and a global examination." ;
+    guide:hasEvaluationTrial :trial_prog_2, :trial_prog_3, :trial_prog_4, :trial_prog_6, :trial_prog_7, :trial_global_17_1, :trial_global_17_2, :trial_global_17_3 .
+
+:trial_prog_2 a guide:EvaluationTrial ;
+    guide:trialType "OT: Otras técnicas evaluativas" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "8%" ;
+    guide:trialMode "No presencial" ;
+    guide:involvesCompetency :comp_CB10, :comp_CG_MIB04, :comp_PG_CB07 .
+
+:trial_prog_3 a guide:EvaluationTrial ;
+    guide:trialType "OT: Otras técnicas evaluativas" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "12%" ;
+    guide:trialMode "No presencial" .
+
+:trial_prog_4 a guide:EvaluationTrial ;
+    guide:trialType "OT: Otras técnicas evaluativas" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "22%" ;
+    guide:trialMode "No presencial" ;
+    guide:involvesCompetency :comp_CG_MIB03, :comp_CG_MIB04, :comp_CB07, :comp_CG_MIB09, :comp_CB10, :comp_CA_MIB11 .
+
+:trial_prog_6 a guide:EvaluationTrial ;
+    guide:trialType "TI: Técnica del tipo Trabajo Individual" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "18%" ;
+    guide:trialMode "No presencial" ;
+    guide:involvesCompetency :comp_CG_MIB04, :comp_CB07, :comp_CG_MIB09, :comp_CB10, :comp_CA_MIB11 .
+
+:trial_prog_7 a guide:EvaluationTrial ;
+    guide:trialType "TI: Técnica del tipo Trabajo Individual" ;
+    guide:evaluationType "Evaluación Progresiva" ;
+    guide:gradePercentage "40%" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "5 / 10" ;
+    guide:involvesCompetency :comp_CG_MIB03, :comp_CG_MIB04, :comp_CG_MIB05, :comp_CG_MIB06, :comp_CG_MIB07, :comp_CG_MIB01, :comp_CG_MIB02, :comp_CB06, :comp_CB07, :comp_CB08, :comp_CB09, :comp_CB10, :comp_CA_MIB11 .
+
+:trial_global_17_1 a guide:EvaluationTrial ;
+    guide:trialType "OT: Otras técnicas evaluativas" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "40%" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "3 / 10" ;
+    guide:involvesCompetency :comp_CG_MIB03, :comp_CG_MIB04, :comp_CG_MIB05, :comp_CG_MIB07, :comp_CG_MIB01, :comp_CB06, :comp_CB07, :comp_CG_MIB09, :comp_CB10, :comp_CA_MIB11 .
+
+:trial_global_17_2 a guide:EvaluationTrial ;
+    guide:trialType "TI: Técnica del tipo Trabajo Individual" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "40%" ;
+    guide:trialMode "Presencial" ;
+    guide:minimumScore "5 / 10" ;
+    guide:involvesCompetency :comp_CG_MIB04, :comp_CG_MIB05, :comp_CG_MIB06, :comp_CG_MIB07, :comp_CG_MIB01, :comp_CG_MIB02, :comp_CB06, :comp_CB07, :comp_CB08, :comp_CB09, :comp_CB10, :comp_CA_MIB11 .
+
+:trial_global_17_3 a guide:EvaluationTrial ;
+    guide:trialType "EX: Técnica del tipo Examen Escrito" ;
+    guide:evaluationType "Evaluación Global" ;
+    guide:gradePercentage "20%" ;
+    guide:trialMode "Presencial" ;
+．
+
+# Schedule
+:schedule_93000965 a guide:Schedule ;
+    sch:eventSchedule :event_week1, :event_week2, :event_week3, :event_week4, :event_week5, :event_week6, :event_week7, :event_week8, :event_week17 .
+
+:event_week1 a guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :act_presentation, :act_practical_work_1 .
+
+:act_presentation a guide:Activity ;
+    guide:activityDescription "Course presentation. Introduction to modelling" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:act_practical_work_1 a guide:Activity ;
+    guide:activityDescription "Practical work" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:attendanceType "Presencial" .
+
+:event_week2 a guide:ScheduleEvent ;
+    guide:eventWeek "2" ;
+    guide:eventIndex 2 ;
+    guide:hasActivity :act_model_construction, :act_practical_lab_2 .
+
+:act_model_construction a guide:Activity ;
+    guide:activityDescription "Model construction. Compartmental modelling" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:act_practical_lab_2 a guide:Activity ;
+    guide:activityDescription "Practical work at the lab" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_matlab a guide:DidacticResource ;
+    sch:name "MATLAB" ;
+    guide:bibliographyType "Software" ;
+    guide:bibliographyDescription "License available for UPM students. Instructions can be found in the UPM Politecnica virtual." .
+
+:res_book_cobelli a guide:DidacticResource ;
+    sch:name "Introduction to Modeling in Physiology and Medicine" ;
+    guide:bibliographyTitle "Introduction to Modeling in Physiology and Medicine. C Cobelli, ER Carson. Elsevier 2008" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_book_ieee a guide:DidacticResource ;
+    sch:name "How Modeling Standards, Software, and Initiatives Support Reproducibility..." ;
+    guide:bibliographyTitle "How Modeling Standards, Software, and Initiatives Support Reproducibility in Systems Biology and Systems Medicine. IEEE TBME OCT. 2016." ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_book_refinetti a guide:DidacticResource ;
+    sch:name "Procedures for numerical analysis of circadian rhythms" ;
+    guide:bibliographyTitle "Refinetti R, Lissen GC, Halberg F. Procedures for numerical analysis of circadian rhythms. Biological rhythm research. 2007;38(4):275-325." ;
+    guide:bibliographyType "Bibliografía" .
+
+# Helper classes/properties used in extraction (not explicitly defined but needed for consistency)
+:comp_PG_CB07 a guide:Competency .
+:comp_CA_MIB11 a guide:Competency .
+:comp_CG_MIB09 a guide:Competency .

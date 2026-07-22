@@ -1,0 +1,223 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+<http://guia-mad-bench.es/data/degree_09AQ> a guide:MasterDegree ;
+    sch:name "Master Universitario En Ingenieria De Telecomunicacion" ;
+    guide:degreeCode "09AQ" .
+
+<http://guint-mad-bench.es/data/center_etsit> a guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Telecomunicacion" .
+
+<http://guia-mad-bench.es/data/center_etsit> guide:offers <http://guia-mad-bench.es/data/degree_09AQ> .
+
+# Course
+<http://guia-mad-bench.es/data/course_93000798> a guide:Course ;
+    sch:name "Aplicaciones Y Servicios" ;
+    sch:courseCode 93000798 ;
+    guide:courseType "Obligatoria" ;
+    sch:hasCourseInstance <http://guia-md-bench.es/data/guide_93000798_2526> .
+
+# Course Guide
+<http://guia-mad-bench.es/data/guide_93000798_2526> a guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Aplicaciones Y Servicios" ;
+    guide:numberOfCredits 6.0 ;
+    guide:semester "Primer semestre" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    sch:inLanguage "Inglés/Castellano" ;
+    guide:hasCompetency <http://guia-mad-bench.es/data/comp_CE6>, <http://guia-mad-bench.es/data/comp_CE7>, <http://guia-mad-bench.es/data/comp_CE8>, <http://guia-mad-bench.es/data/comp_CT4>, <http://guia-mad-bench.es/data/comp_CT5> ;
+    guide:hasLearningResult <http://guia-mad-bench.es/data/lr_RA4>, <http://guia-md-bench.es/data/lr_RA3>, <http://guia-mad-bench.es/data/lr_RA5>, <http://guia-mad-bench.es/data/lr_RA1>, <http://guia-mad-bench.es/data/lr_RA2>, <http://guia-mad-bench.es/data/lr_RA7> ;
+    guide:hasEvaluation <http://guia-mad-bench.es/data/eval_system_progressive>, <http://guia-mad-bench.es/data/eval_system_global> ;
+    guide:hasDidacticResource <http://guia-mad-bench.es/data/res_moodle>, <http://guia-mad-bench.es/data/res_libro1>, <http://guia-mad-bench.es/data/res_libro2> ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_93000798> .
+
+# Competencies
+<http://guia-mad-bench.es/data/comp_CE6> a guide:Competency ;
+    guide:competencyCode "CE6" ;
+    guide:competencyDescription "Capacidad para modelar, diseñar, implantar, gestionar, operar, administrar y mantener redes, servicios y contenidos." .
+
+<http://guia-mad-bench.es/data/comp_CE7> a guide:Competency ;
+    guide:competencyCode "CE7" ;
+    guide:competencyDescription "Capacidad para realizar la planificación, toma de decisiones y empaquetamiento de redes, servicios y aplicaciones considerando la calidad de servicio, los costes directos y de operación, el plan de implantación, supervisión, los procedimientos de seguridad, el escalado y el mantenimiento, así como gestionar y asegurar la calidad en el proceso de desarrollo." .
+
+<http://guia-mad-bench.es/data/comp_CE8> a guide:Competency ;
+    guide:competencyCode "CE8" ;
+    guide:competencyDescription "Capacidad de comprender y saber aplicar el funcionamiento y organización de Internet, las tecnologías y protocolos de Internet de nueva generación, los modelos de componentes, software intermediario y servicios." .
+
+<http://guia-mad-bench/data/comp_CT4> a guide:Competency ;
+    guide:competencyCode "CT4" ;
+    guide:competencyDescription "Capacidad para trabajar de forma efectiva como individuo, organizando y planificando su propio trabajo, de forma independiente o como miembro de un equipo." .
+
+<http://guia-mad-bench.es/data/comp_CT5> a guide:Competency ;
+    guide:competencyCode "CT5" ;
+    guide:competencyDescription "Capacidad para gestionar la información, identificando las fuentes necesarias, los principales tipos de documentos técnicos y científicos, de una manera adecuada y eficiente." .
+
+# Learning Results
+<http://guia-mad-bench.es/data/lr_RA4> a guide:LearningResult ;
+    guide:learningResultCode "RA4" ;
+    guide:learningResultDescription "Conocer los métodos de ingeniería útiles en el desarrollo y operación de aplicaciones y servicios" .
+
+<http://guia-mad-bench.es/data/lr_RA3> a guide:LearningResult ;
+    guide:learningResultCode "RA3" ;
+    guide:learningResultDescription "Conocer los procesos de desarrollo de aplicaciones y servicios más utilizados en las empresas del sector" .
+
+<http://guia-mad-bench.es/data/lr_RA5> a guide:LearningResult ;
+    guide:learningResultCode "RA5" ;
+    guide:learningResultDescription "Comprender los problemas que plantea la gestión con métodos tradicionales de grandes volúmenes de datos, variados y en constante creación, y entender la necesidad de nuevas técnicas para procesar y almacenar este tipo de datos (BigData). Conocer técnicas de procesamiento, gestión y almacenamiento de grandes volúmenes de datos, y plataformas que facilitan estas tareas, incluyendo la experimentación de casos de estudio" .
+
+<http://guia-mad-bench.es/data/lr_RA1> a guide:LearningResult ;
+    guide:learningResultCode "RA1" ;
+    guide:learningResultDescription "Conocer estándares y protocolos utilizados en el desarrollo de aplicaciones orientadas a servicios. Comprender el funcionamiento de aplicaciones software constituidas por un conjunto de servicios interactuando, coordinados por procesos de negocio" .
+
+<http://guia-mad-bench.es/data/lr_RA2> a guide:LearningResult ;
+    guide:learningResultCode "RA2" ;
+    guide:learningResultDescription "Conocer infraestructuras y herramientas para la provisión de servicios compartiendo recursos, incluyendo tecnologías de virtualización y de computación en la nube" .
+
+<http://guia-mad-bench.es/data/lr_RA7> a guide:LearningResult ;
+    guide:learningResultCode "RA7" ;
+    guide:learningResultDescription "Comprender los distintos modelos y posibilidades de negocio de los servicios y aplicaciones Web y su influencia en la selección de tecnologías" .
+
+# Lecturers
+<http://guia-mad-bench.es/data/lecturer_felix> a guide:Lecturer ;
+    sch:name "Felix Aurelio Cuadrado Latasa" ;
+    sch:email "felix.cuadrado@upm.es" ;
+    guide:office "C218" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+<http://guia-mad-bench.es/data/lecturer_david> a guide:Lecturer ;
+    sch:name "David Rodriguez Torrado" ;
+    sch:email "david.rtorrado@upm.es" ;
+    guide:office "C215" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+<http://guia-mad/data/lecturer_javier> a guide:Lecturer ;
+    sch:name "Javier Andion Jimenez" ;
+    sch:email "j.andion@upm.es" ;
+    guide:office "C-210" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+<http://guia-mad-bench.es/data/lecturer_juan_carlos> a guide:Lecturer ;
+    sch:name "Juan Carlos Dueñas Lopez" ;
+    sch:email "juancarlos.duenas@upm.es" ;
+    guide:office "C210" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+<http://guia-mad-bench.es/data/lecturer_juan_yelmo> a guide:Lecturer ;
+    sch:name "Juan Carlos Yelmo Garcia" ;
+    sch:email "juancarlos.yelmo@upm.es" ;
+    guide:office "C217" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+<http://guia-mad-bench.es/data/lecturer_jose_maria> a guide:Lecturer ;
+    sch:name "Jose Maria Del Alamo Ramiro" ;
+    sch:email "jm.delalamo@upm.es" ;
+    guide:office "C218" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+<http://guia-mad-bench.es/data/lecturer_yod> a guide:Lecturer ;
+    sch:name "Yod Samuel Martin Garcia" ;
+    sch:email "ys.martin@upm.es" ;
+    guide:office "B204-1" ;
+    guide:tutorshipsSchedule "Sin horario." .
+
+# Evaluation Systems and Trials
+<http://guia-mad-bench.es/data/eval_system_progressive> a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial_exam1>, <http://guia-mad-bench.es/data/trial_exam2> .
+
+<http://guia-mad-bench.es/data/eval_system_global> a guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación global" ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/trial_exam_final> .
+
+<http://guia-mad-bench.es/data/trial_exam1> a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:involvesCompetency <http://guia-mad-bench.es/data/comp_CT4>, <http://guia-mad-bench.es/data/comp_CT5>, <http://guia-mad-bench.es/data/comp_CE6>, <http://guia-mad-bench.es/data/comp_CE7>, <http://guia-mad-bench.es/data/comp_CE8> .
+
+<http://guia-mad-bench.es/data/trial_exam2> a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4 / 10" ;
+    guide:involvesCompetency <http://guia-mad-bench.es/data/comp_CT4>, <http://guia-mad-bench.es/data/comp_CT5>, <http://guia-mad-bench.es/data/comp_CE6>, <http://guia-mad-bench.es/data/comp_CE7>, <http://guia-mad-bench.es/data/comp_CE8> .
+
+<http://guia-mad-bench.es/data/trial_exam_final> a guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:trialMode "Presencial" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:evaluationDuration "02:00" ;
+    guide:involvesCompetency <http://guia-mad-bench.es/data/comp_CT4>, <http://guia-mad-bench.es/data/comp_CT5>, <http://guia-mad-bench.es/data/comp_CE6>, <http://guia-mad-bench.es/data/comp_CE7>, <http://guia-mad-bench.es/data/comp_CE8> .
+
+# Didactic Resources
+<http://guia-mad-bench.es/data/res_moodle> a guide:DidacticResource ;
+    sch:name "Moodle de la asignatura" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "https://moodle.upm.es/titulaciones/oficiales/login/login.php" .
+
+<http://guia-mad-bench.es/data/res_libro1> a guide:DidacticResource ;
+    sch:name "Libro1" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Engineering software products, I. Sommerville, Pearson 2020." .
+
+<http://guia-mad-bench.es/data/res_libro2> a guide:DidacticResource ;
+    sch:name "Libro2" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Microservices patterns, C. Richardson, Manning 2019." .
+
+# Syllabus and Items
+<http://guia-mad-bench.es/data/syllabus_93000798> a guide:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/item_bloque1>, <http://guia-mad-bench.es/data/item_bloque2>, <http://guia-mad-bench.es/data/item_bloque3>, <http://guia-mad-bench.es/data/item_bloque4>, <http://guia-mad-bench.es/data/item_bloque5>, <http://guia-mad-bench.es/data/item_bloque6> .
+
+<http://guia-mad-bench.es/data/item_bloque1> a guide:SyllabusItem ;
+    guide:syllabusDescription "Bloque I: Dirección de sistemas de información" .
+
+<http://guia-mad-bench.es/data/item_bloque2> a guide:SyllabusItem ;
+    guide:syllabusDescription "Bloque II: Sistemas de información" .
+
+<http://guia-mad-bench.es/data/item_bloque3> a guide:SyllabusItem ;
+    guide:syllabusDescription "Bloque III: Inteligencia de negocio" .
+
+<http://guia-mad-bench.es/data/item_bloque4> a guide:SyllabusItem ;
+    guide:syllabusDescription "Bloque IV: Metodologías ágiles para el desarrollo de software" .
+
+<http://guia-mad-bench.es/data/item_bloque5> a guide:SyllabusItem ;
+    guide:syllabusDescription "Bloque V: Arquitecturas de microservicios en la empresa" .
+
+<http://guia-mad-bench.es/data/item_bloque6> a guide:SyllabusItem ;
+    guide:syllabusDescription "Bloque VI: DevOps" .
+
+# Required Knowledge
+<http://guia-mad-bench.es/data/req_knowledge_93000798> a guide:RequiredKnowledge ;
+    guide:previousKnowledge "Conocimientos de programación en Java; Conocimientos de Ingeniería del Software y desarrollo de aplicaciones" .
+
+# Schedule and Activities (Partial extraction of key events)
+<http://guia-mad-bench.es/data/schedule_93000798> a guide:Schedule ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event_week1>, <http://guia-mad-bench.es/data/event_week2>, <http://guia-mad-bench.es/data/event_week8> .
+
+<http://guia-mad-bench.es/data/event_week1> a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/act_tema1> .
+
+<http://guia-mad-bench.es/data/act_tema1> a guide:Activity ;
+    guide:activityDescription "Tema 1" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+<http://guia-mad-bench.es/data/event_week8> a guide:ScheduleEvent ;
+    guide:eventWeek "Semana 8" ;
+    guide:hasActivity <http://guia-mad-bench.es/data/act_examen1> .
+
+<http://guia-mad-bench.es/data/act_examen1> a guide:Activity ;
+    guide:activityDescription "Examen parcial 1" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:attendanceType "Presencial" .

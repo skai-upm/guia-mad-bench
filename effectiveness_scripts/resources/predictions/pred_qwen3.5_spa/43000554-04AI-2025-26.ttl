@@ -1,0 +1,100 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sch: <https://schema.org/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/ANX-PR-CL-001> rdf:type guide:CourseGuide ;
+    sch:name "43000554 - Experimental Structural Analysis"@en ;
+    dc:title "Experimental Structural Analysis" ;
+    dct:creator <http://guia-mad-bench.es/data/Lecturer-CarlosMartinDeLaConcha>,<http://guia-mad-bench.es/data/Lecturer-AntonioJoseMadridRamos> ;
+    guide:numberOfCredits 4.5^^xsd:decimal ;
+    guide:teachingPeriodMonths "September-January"@en .
+
+<http://guia-mad-bench.es/data/SYLLABUS_43000554> rdf:type guide:Syllabus ;
+    sch:name "Experimental Structural Analysis Syllabus" ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/ANX-PR-CL-001> .
+
+<http://guia-mad-bench.es/data/SI-Unit1> rdf:type guide:SyllabusItem ;
+    itemIndex 1^^xsd:integer ;
+    syllabusDescription "Introduction to instrumentation"@en .
+
+<http://guia-mad-bench.es/data/SI-Unit2> rdf:type guide:SyllabusItem ;
+    itemIndex 2^^xsd:integer ;
+    syllabusDescription "Signal conditioning"@en .
+
+<http://guia-mad-bench.es/data/SI-Unit3> rdf:type guide:SyllabusItem ;
+    itemIndex 3^^xsd:integer ;
+    syllabusDescription "Strain measurement"@en .
+
+<http://guia-mad-bench.es/data/Lecturer-CarlosMartinDeLaConcha> rdf:type guide:Lecturer ;
+    sch:name "Carlos Martin De La Concha" ;
+    guide:office "Lab. Structures"@en ;
+    sch:email <mailto:carlos.martindelaconcha@upm.es> .
+
+<http://guia-mad-bench.es/data/Lecturer-AntonioJoseMadridRamos> rdf:type guide:Lecturer ;
+    sch:name "Antonio Jose Madrid Ramos" ;
+    guide:office "Lab. Structures"@en ;
+    sch:email <mailto:antoniojose.madrid@upm.es> .
+
+<http://guia-mad-bench.es/data/Lecturer-IvanMuñozDiaz> rdf:type guide:Lecturer ;
+    sch:name "Ivan Muñoz Diaz" ;
+    guide:office "Lab. Structures"@en ;
+    sch:email <mailto:ivan.munoz@upm.es> .
+
+<http://guia-mad-bench.es/data/Lecturer-CarlosZanuySanchez> rdf:type guide:Lecturer ;
+    sch:name "Carlos Zanuy Sanchez" ;
+    guide:tutorshipsSchedule "Th - 11:00 - 14:00; F - 11:00 - 14:00"@en .
+
+<http://guia-mad-bench.es/data/Comp-MICCPCE38> rdf:type guide:Competency ;
+    guide:competencyCode "MICCPCE38"^^xsd:string ;
+    guide:competencyDescription "Capacidad para integrar y aplicar los conocimientos técnicos en asesoría, análisis, diseño y modelización físico-matemática en ingeniería estructural."@en .
+
+<http://guia-mad-bench.es/data/Comp-MICCPCGP11> rdf:type guide:Competency ;
+    guide:competencyCode "MICCPCGP11"^^xsd:string ;
+    guide:competencyDescription "Capacidad para el proyecto, ejecución e inspección de estructuras (puentes, edificaciones, etc.), de obras de cimentación y de obras subterráneas de uso civil."@en .
+
+<http://guia-mad-bench.es/data/Comp-MICCPCT01> rdf:type guide:Competency ;
+    guide:competencyCode "MICCPCT01"^^xsd:string ;
+    guide:competencyDescription "Capacidad de preparar y presentar comunicaciones orales, escritas y gráficas, estructurada y argumentadamente."@en .
+
+<http://guia-mad-bench.es/data/Comp-MICCPCGP12> rdf:type guide:Competency ;
+    guide:competencyCode "MICCPCT03"^^xsd:string ;
+    guide:competencyDescription "Capacidad de comunicación técnica oral y escrita en lengua inglesa."@en .
+
+<http://guia-mad-bench.es/data/LR-RA121> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA121"^^xsd:string ;
+    guide:learningResultDescription "The student knows the fundamentals and applications of the most relevant transducers for instrumentation of structures."@en .
+
+<http://guia-mad-bench.es/data/LR-RA122> rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA122"^^xsd:string ;
+    guide:learningResultDescription "The student acquires the fundamentals of static and dynamic experimental techniques in structural engineering, and understands the structural implications of taken measurements."@en .
+
+<http://guia-mad-bench.es/data/EvalSys-ANX> rdf:type guide:EvaluationSystem ;
+    sch:name "Experimental Structural Analysis Evaluation" ;
+    guide:evaluationDescription "Evaluation through continuous assessment (EM1 + EM2) or final exam only. Minimum score 3.5 per part, total minimum 5."@en .
+
+<http://guia-mad-bench.es/data/ET-Progressive> rdf:type guide:EvaluationTrial ;
+    sch:name "Resolution and submission of assigned tasks" ;
+    guide:trialType "Individual work; No Presential"@en ;
+    guide:gradePercentage 5.7^^xsd:string .
+
+<http://guia-mad-bench.es/data/ET-FinalExam> rdf:type guide:EvaluationTrial ;
+    sch:name "Final exam" ;
+    guide:trialMode "Face-to-face"@en ;
+    guide:trialType "Written test; Global examination"@en ;
+    guide:gradePercentage 60.1^^xsd:string .
+
+<http://guia-mad-bench.es/data/Schedule-ANX> rdf:type guide:Schedule ;
+    sch:name "Experimental Structural Analysis Schedule" ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/SE-Wk4>,<http://guia-mad-bench.es/data/SE-FinalExam> .
+
+<http://guia-mad-bench.es/data/SE-Wk4> rdf:type guide:ScheduleEvent ;
+    eventWeek 4^^xsd:string ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/Schedule-ANX> .
+
+<http://guia-mad-bench.es/data/SE-FinalExam> rdf:type guide:ScheduleEvent ;
+    eventWeek "17"@en ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/Schedule-ANX> .

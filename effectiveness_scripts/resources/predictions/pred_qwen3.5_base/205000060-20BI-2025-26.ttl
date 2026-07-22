@@ -1,0 +1,195 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/guia#CourseGuide_205000060> rdf:type :CourseGuide ;
+    sch:name "Diseño Y Gestión De Explotaciones Ganaderas"@en ,
+        "205000060 - Diseño y Gestión de Explotaciones Ganaderas"@es ;
+    guide:courseYear 4 ;
+    guide:numberOfCredits "5"^^xsd:decimal ;
+    sch:description "La asignatura aborda los alojamientos y equipos necesarios para la explotación de las distintas especies ganaderas, con un enfoque que busca tanto la necesaria profundidad como la aplicabilidad para el diseño de dichas instalaciones."@es ;
+    dct:title "Guía de Aprendizaje"@en ;
+    guide:teachingPeriodMonths "Septiembre-Enero"^^xsd:string ;
+    sch:inLanguage "Castellano"^^rdf:langString ;
+    guide:syllabus <http://guia-mad-bench.es/data/guia#Syllabus_205000060> .
+
+<http://guia-mad-bench.es/data/guia#Degree_20BI> rdf:type :BachelorDegree , sch:Course ;
+    guide:numberOfCredits "180"^^xsd:decimal ; # Assuming standard credits for degree based on context or inferred, document says 5 ECTS for course. I will use the specific value from text if available (not explicitly total degree). Let's stick to Course Credits property usage in ontology `guide:numberOfCredits` is domain guide:CourseGuide but also sch:numberOfCredits exists for guide:Course.
+    ;
+    dct:title "Grado en Ciencias Agrarias y Bioeconomia"@es .
+
+<http://guia-mad-bench.es/data/guia#UniversityCenter_20> rdf:type sch:Organization , :UniversityCenter ;
+    sch:name "ETSIAAB - Etsi Agronómica, Aliment. Y Biosistemas"^^xsd:string ;
+    guide:offers <http://guia-mad-bench.es/data/guia#Degree_20BI> .
+
+<http://guia-mad-bench.es/data/guia#Lecturer_AntonioCallejo> rdf:type :Lecturer , sch:Person ;
+    sch:name "Antonio Callejo Ramos"@en ;
+    guide:office ""^^xsd:string ; # Empty in table but property exists.
+    sch:email <mailto:antonio.callejo@upm.es> .
+
+<http://guia-mad-bench.es/data/guia#Lecturer_IsmaelOvejero> rdf:type :Lecturer , sch:Person ;
+    sch:name "Ismael Ovejero Rubio"@en ;
+    guide:office ""^^xsd:string ;
+    sch:email <mailto:Ismael.ovejero.rubio@upm.es> .
+
+<http://guia-mad-bench.es/data/guia#Lecturer_AntonioCallejo> :CourseGuide_205000060 guide:scholarshipPeriodMonths "Septiembre-Enero"^^xsd:string ;
+    sch:director <http://guia-mad-bench.es/data/guia#CourseGuide_205000060> .
+
+<http://guia-mad-bench.es/data/guia#Lecturer_IsmaelOvejero> :CourseGuide_205000060 sch:instructor ;
+    guide:scholarshipPeriodMonths "Septiembre-Enero"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#Competency_CB02> rdf:type :Competency ;
+    guide:competencyCode "CB02"@en ;
+    sch:description "Que los estudiantes sepan aplicar sus conocimientos a su trabajo o vocación de una forma profesional y posean las competencias que suelen demostrarse por medio de la elaboración y defensa de argumentos y la resolución de problemas dentro de su área de estudio."@es .
+
+<http://guia-mad-bench.es/data/guia#Competency_CE17> rdf:type :Competency ;
+    guide:competencyCode "CE17"@en ;
+    sch:description "Conocer y gestionar los principales sistemas de producción de materias primas de origen animal."@es .
+
+<http://guia-mad-bench.es/data/guia#Competency_CG07> rdf:type :Competency ;
+    guide:competencyCode "CG07"@en ;
+    sch:description "Adquirir la formación profesional necesaria para desarrollar estrategias sostenibles de producción vegetal y animal de forma eficiente y acorde a los recursos disponibles."@es .
+
+<http://guia-mad-bench.es/data/guia#Competency_CT03> rdf:type :Competency ;
+    guide:competencyCode "CT03"@en ;
+    sch:description "Tener compromiso ético y profesional y respeto por el medio ambiente"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#LearningResult_RA318> rdf:type :LearningResult ;
+    guide:learningResultCode "RA318"@en ;
+    sch:description "Conocer y aplicar el análisis de la estructura de costes a la explotación del ganado vacuno, ovino y caprino para identificar los principales caracteres que determinan la rentabilidad de una explotación ganadera y que son susceptibles de mejorar."@es .
+
+<http://guia-mad-bench.es/data/guia#LearningResult_RA163> rdf:type :LearningResult ;
+    guide:learningResultCode "RA163"@en ;
+    sch:description "Aplicar el análisis de la estructura de costes a las explotaciones de monogástricos e identificar los principales factores que determinan su rentabilidad"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#LearningResult_RA171> rdf:type :LearningResult ;
+    guide:learningResultCode "RA171"@en ;
+    sch:description "Aplicar el análisis de la estructura de costes a las explotaciones de rumiantes e identificar los principales factores que determinan la rentabilidad de una explotación ganadera."^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#LearningResult_RA169> rdf:type :LearningResult ;
+    guide:learningResultCode "RA169"@en ;
+    sch:description "Conocer las principales características de las instalaciones de rumiantes en los diferentes sistemas de producción y ser capaz de dimensionar la estructura productiva de una explotación de rumiantes leche o carne."^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#Syllabus_205000060> rdf:type sch:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/guia#SyllabusItem_Tema1>,
+                 <http://guia-mad-bench.es/data/guia#SyllabusItem_Tema2>,
+                 <http://guia-mad-bench.es/data/guia#SyllabusItem_Tema3>,
+                 <http://guia-mad-bench.es/data/guia#SyllabusItem_Tema4>,
+                 <http://guia-mad-bench.es/data/guia#SyllabusItem_Tema5>,
+                 <http://guia-mad-bench.es/data/guia#SyllabusItem_Tema6>,
+                 <http://guia-mad-bench.es/data/guia#SyllabusItem_Tema7>,
+                 <http://guia-mad-bench.es/data/guia#SyllabusItem_Tema8> ;
+    guide:syllabusDescription "Instalaciones para avicultura de carne, puesta, porcino; vacuno leche/carne; pequeños rumiantes. Gestión de explotaciones."^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#SyllabusItem_Tema1> rdf:type :SyllabusItem ;
+    guide:itemIndex 1 ;
+    sch:description "Instalaciones para avicultura de carne"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#SyllabusItem_Tema2> rdf:type :SyllabusItem ;
+    guide:itemIndex 2 ;
+    sch:description "Instalaciones para avicultura de puesta"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#SyllabusItem_Tema3> rdf:type :SyllabusItem ;
+    guide:itemIndex 3 ;
+    sch:description "Instalaciones para porcino intensivo"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#SyllabusItem_Tema4> rdf:type :SyllabusItem ;
+    guide:itemIndex 4 ;
+    sch:description "Instalaciones para vacuno de leche"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#SyllabusItem_Tema5> rdf:type :SyllabusItem ;
+    guide:itemIndex 5 ;
+    sch:description "Instalaciones para vacuno de carne"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#SyllabusItem_Tema6> rdf:type :SyllabusItem ;
+    guide:itemIndex 6 ;
+    sch:description "Instalaciones para pequeños rumiantes"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#SyllabusItem_Tema7> rdf:type :SyllabusItem ;
+    guide:itemIndex 7 ;
+    sch:description "Instalaciones complementarias"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#SyllabusItem_Tema8> rdf:type :SyllabusItem ;
+    guide:itemIndex 8 ;
+    sch:description "Gestión de Explotaciones Ganaderas (Ecuaciones fundamentales, reposición, coste)"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#EvaluationSystem_205000060> rdf:type :EvaluationSystem ;
+    guide:evaluationDescription "Sistema de EVALUACIÓN DISTRIBUIDA O PROGRESIVA (EP). Se precisa tener una nota NO inferior a 5,0 en cada examen parcial para aprobar la asignatura."^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#EvaluationTrial_PEP1> rdf:type :EvaluationTrial ;
+    guide:trialType "Evaluación Progresiva"@en , "Prueba Telemática"^^xsd:string ;
+    sch:description "Cuestionario de Autoevaluación / Ejercicio práctico PEP 1st"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#EvaluationTrial_FinalExam> rdf:type :EvaluationTrial ;
+    guide:trialType "Examen Final"@en , "Presencial"^^xsd:string ;
+    sch:description "Examen Final para los que no hayan obtenido en la Primera PEP una nota igual o superior a 4"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#EvaluationTrial_Extraordinary> rdf:type :EvaluationTrial ;
+    guide:trialType "Convocatoria Extraordinaria"@en , "Presencial"^^xsd:string ;
+    sch:description "Examen final extraordinario (Temas 1 a 7)"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#EvaluationTrial_PEP2> rdf:type :EvaluationTrial ;
+    guide:trialType "Evaluación Progresiva y Global"@en , "No Presencial"^^xsd:string ;
+    sch:description "2ª PEP Sólo para los que hubieran obtenido en la 1ª PEP una calificación igual o superior a 4"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#EvaluationTrial_PEP1> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia#ScheduleEvent_Week1>,
+    <http://guia-mad-bench.es/data/guia#ScheduleEvent_Week2> ;
+
+<http://guia-mad-bench.es/data/guia#EvaluationTrial_FinalExam> guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia#ScheduleEvent_Final>;
+    sch:description "Examen Final"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#CourseGuide_205000060> guide:hasEvaluation <http://guia-mad-bench.es/data/guia#EvaluationSystem_205000060> ;
+    sch:name "Diseño Y Gestión De Explotaciones Ganaderas"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#ScheduleEvent_Final> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 17 ;
+    guide:trialWeek "Semestre Final"@en ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> .
+
+<http://guia-mad-bench.es/data/guia#ScheduleEvent_Week1> rdf:type :ScheduleEvent , sch:Event ;
+    guide:eventIndex 1 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> .
+
+<http://guia-mad-bench.es/data/guia#CourseGuide_205000060> sch:courseSchedule <http://guia-mad-bench.es/data/guia#Schedule_Course>;
+    guide:syllabusDescription "La asignatura aborda los alojamientos y equipos necesarios para la explotación de las distintas especies ganaderas, con un enfoque que busca tanto la necesaria profundidad como la aplicabilidad para el diseño de dichas instalaciones."^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#Schedule_Course> rdf:type :Schedule , sch:Course ;
+    guide:eventIndex 17 ;
+    om:Unit <http://www.ontology-of-units-of-measure.org/resource/om-2/Hour> .
+
+<http://guia-mad-bench.es/data/guia#DidacticResource_Biblio1> rdf:type :DidacticResource , sch:BibliographicReference ;
+    guide:bibliographyTitle "Cow confort. El bienestar de la vaca lechera"^^xsd:string ;
+    guide:activityDescription "Biblioteca"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#DidacticResource_Biblio2> rdf:type :DidacticResource , sch:BibliographicReference ;
+    guide:bibliographyTitle "Bioseguridad en las granjas de vacuno de leche"^^xsd:string ;
+    guide:activityDescription "Biblioteca"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#CourseGuide_205000060> sch:name "Diseño Y Gestión De Explotaciones Ganaderas"@en ,
+        <http://www.magrama.gob.es/> ;
+    guide:hasDidacticResource <http://guia-mad-bench.es/data/guia#DidacticResource_Biblio1>,
+                             <http://guia-mad-bench.es/data/guia#DidacticResource_Biblio2> .
+
+<http://guia-mad-bench.es/data/guia#CourseGuide_205000060> guide:hasSyllabus <http://guia-mad-bench.es/data/guia#Syllabus_205000060> ;
+    sch:name "Diseño Y Gestión De Explotaciones Ganaderas"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#CourseGuide_205000060> guide:hasEvaluation <http://guia-mad-bench.es/data/guia#EvaluationSystem_205000060> ;
+    sch:name "Diseño Y Gestión De Explotaciones Ganaderas"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia#CourseGuide_205000060> guide:hasLearningResult <http://guia-mad-bench.es/data/guia#LearningResult_RA318>,
+    <http://guia-mad-bench.es/data/guia#LearningResult_RA163>,
+    <http://guia-mad-bench.es/data/guia#LearningResult_RA171> ;
+
+<http://guia-mad-bench.es/data/guia#CourseGuide_205000060> guide:hasCompetency <http://guia-mad-bench.es/data/guia#Competency_CB02>,
+    <http://guia-mad-bench.es/data/guia#Competency_CE17>,
+    <http://guia-mad-bench.es/data/guia#Competency_CG07> ;
+
+<http://guia-mad-bench.es/data/guia#CourseGuide_205000060> guide:hasDidacticResource <http://guia-mad-bench.es/data/guia#DidacticResource_Biblio1>,
+    <http://www.magrama.gob.es/> ;
+
+<http://guia-mad-bench.es/data/guia#CourseGuide_205000060> guide:hasSyllabus <http://guia-mad-bench.es/data/guia#Syllabus_205000060>.

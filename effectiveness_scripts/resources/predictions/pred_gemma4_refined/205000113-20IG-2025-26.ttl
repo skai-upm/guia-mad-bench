@@ -1,0 +1,124 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Degree and University Center
+:Grado_En_Ingenieria_Agricola rdf:type guide:Degree ;
+    sch:name "Grado En Ingeniero Agrícola" ;
+    guide:degreeCode "20IG" .
+
+:Etsi_Agronomica_Aliment_y_Biosistemas rdf:type guide:UniversityCenter ;
+    sch:name "Etsi Agronómica, Aliment. y Biosistemas" ;
+    guide:offers :Grado_En_Ingenieria_Agricola .
+
+# Course
+:Genetica_Animal rdf:type guide:Course ;
+    sch:name "Genética Animal" ;
+    sch:courseCode 205000113 ;
+    guide:courseType "Optativa" ;
+    guide:semester "Séptimo semestre" .
+
+:Grado_En_Ingenieria_Agricola guide:hasCourse :Genetica_Animal .
+
+# Course Guide
+:Guia_Aprendizaje_Genetica_Animal rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - Genetica Animal" ;
+    sch:hasCourseInstance :Genetica_Animal ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:numberOfCredits 4.0 ;
+    sch:inLanguage "Castellano" .
+
+# Lecturer
+:Nora_Formoso_Rafferty rdf:type guide:Lecturer ;
+    sch:name "Nora Formoso-Rafferty" ;
+    sch:email "nora.formosorafferty@upm.es" ;
+    guide:office "Campos" ;
+    guide:tutorshipsSchedule "L - 10:00 - 13:00" .
+
+:Guia_Aprendizaje_Genetica_Animal sch:instructor :Nora_Formoso_Rafferty .
+
+# Competencies
+:Competencia_CB01 rdf:type guide:Competency ;
+    guide:competencyCode "CB01" ;
+    guide:competencyDescription "Que los estudiantes hayan demostrado poseer y comprender conocimientos en un área de<0xC2><0xA0>estudio..." .
+
+:Competencia_CB03 rdf:type guide:Competency ;
+    guide:competencyCode "CB03" ;
+    guide:competencyDescription "Que los estudiantes tengan la capacidad de reunir e interpretar datos relevantes..." .
+
+:Competencia_CT04 rdf:type guide:Competency ;
+    guide:competencyCode "CT04" ;
+    guide:competencyDescription "Compromiso ético y profesional: capacidad de reconocer los principios éticos para la toma de decisiones..." .
+
+:Guia_Aprendizaje_Genetica_Animal guide:hasCompetency :Competencia_CB01, :Competencia_CB03, :Competencia_CT04 .
+
+# Learning Results
+:Resultado_Aprendizaje_RA271 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA271" ;
+    guide:learningResultDescription "Aplicar los principios de la genética a los procedimientos relacionados con la conservación, selección y mejora de especies de interés ganadero." .
+
+:Resultado_Aprendizaje_RA273 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA273" ;
+    guide:learningResultDescription "Adquirir una base científica y tecnológica suficiente que le permitirá continuar su formación en estudios de postgrado." .
+
+:Guia_Aprendizaje_Genetica_Animal guide:hasLearningResult :Resultado_Aprendizaje_RA271, :Resultado_Aprendizaje_RA273 .
+
+# Syllabus
+:Syllabus_Genetica_Animal rdf:type guide:Syllabus .
+
+:Guia_Aprendizaje_Genetica_Animal guide:hasSyllabus :Syllabus_Genetica_Animal .
+
+:Syllabus_Item_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "Introducción a la genética animal" .
+
+:Syllabus_Item_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "Genética de poblaciones" .
+
+:Syllabus_Item_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "Mejora" .
+
+:Syllabus_Genetica_Animal guide:hasItem :Syllabus_Item_1, :Syllabus_Item_2, :Syllabus_Item_3 .
+
+# Evaluation System and Trials
+:Sistema_Evaluacion_Genetica rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "El sistema de evaluación de esta asignatura está basado en un sistema de evaluación progresiva." .
+
+:Guia_Aprendizaje_Genetica_Animal guide:hasEvaluation :Sistema_Evaluacion_Genetica .
+
+:Prueba_Evaluacion_Progresiva rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "40%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialWeek "8" .
+
+:Sistema_Evaluacion_Genetica guide:hasEvaluationTrial :Prueba_Evaluacion_Progresiva .
+
+# Schedule and Activities
+:Evento_Semana_1 rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 1 ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :Actividad_Tema_1 .
+
+:Actividad_Tema_1 rdf:type guide:Activity ;
+    guide:activityDescription "Tema 1: Introducción" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "Lección Magistral" .
+
+# Didactic Resources
+:Recurso_Falconer rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Falconer: Introducción a la genética cuantitativa" ;
+    guide:bibliographyType "Bibliografía" .
+
+:Recurso_Endog rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Endog" ;
+    guide:bibliographyType "software" .
+
+:Guia_Aprendizaje_Genetica_Animal guide:hasDidacticResource :Recurso_Falconer, :Recurso_Endog .

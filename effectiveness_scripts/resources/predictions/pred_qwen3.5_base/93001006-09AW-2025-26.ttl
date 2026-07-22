@@ -1,0 +1,198 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> rdf:type :CourseGuide ;
+    dc:title "93001006 - Servicios De Seguridad En Red"@en ,
+        "Servicios de Seguridad en Red"@es ;
+    dct:creator <http://w3id.org/def/guia#DiegoRiveraPinto> ;
+    sch:name "ANX-PR/CL/001-01"@en ;
+    guide:numberOfCredits 3^^xsd:decimal ;
+    guide:courseYear "2025"^xsd:string ;
+    guide:syllabusDescription "La asignatura trata sobre los servicios de seguridad que permiten proteger la información en tránsito a través las redes de comunicaciones."@es ;
+    sch:description "Guía de Aprendizaje para Servicios De Seguridad En Red"@en .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> guide:hasCourse <http://w3id.org/def/guia#Master_Ciberseguridad> ;
+    sch:courseCode 93001006^^xsd:integer .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> guide:syllabus <http://w3id.org/def/guia#Syllabus_ServiciosSeguridadRed> ;
+    sch:eventSchedule <http://w3id.org/def/guia#Semestre_Primer_2025_26> .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> guide:hasEvaluationSystem <http://w3id.org/def/guia#Evaluacion_System_ServiciosSeguridadRed> ;
+    sch:description "La asignatura se evaluará mediante un sistema de evaluación progresiva que consiste en la realización de cuatro trabajos prácticos."@es .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> guide:hasLearningResult <http://w3id.org/def/guia#RA10_ServiciosSeguridadRed> ;
+    sch:description "Analizar y seleccionar los mecanismos adecuados para proteger las comunicaciones"@es .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> guide:hasCompetency <http://w3id.org/def/guia#CE04_ServiciosSeguridadRed> ;
+    sch:description "Capacidad para establecer una categorización de servicios de ciberseguridad para proteger a las infraestructuras conectadas en red."@es .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> guide:hasCompetency <http://w3id.org/def/guia#CE05_ServiciosSeguridadRed> ;
+    sch:description "Capacidad de analizar y diseñar servicios de seguridad de control de acceso, protección de la información en tránsito y protección perimetral"@es .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> guide:hasCompetency <http://w3id.org/def/guia#CG03_ServiciosSeguridadRed> ;
+    sch:description "Dotar al alumno de la capacidad de diseñar e implantar procedimientos de protección de la información asociados con los sistemas de información, las redes y comunicaciones telemáticas"@es .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> guide:hasDidacticResource <http://w3id.org/def/guia#Recursos_Moodle_ServiciosSeguridadRed> ;
+    sch:bibliographyTitle "Presentaciones de los temas, enunciados y software"@es .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> guide:hasScheduleEvent <http://w3id.org/def/guia#Semestre_Primer_2025_26> ;
+    sch:eventIndex 4^^xsd:integer .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> guide:syllabusDescription "Protección de redes telemáticas y sistemas. Infraestructuras de seguridad."@es ;
+    rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> guide:syllabusDescription "Redes Privadas Virtuales (VPN)"@es ;
+    rdf:type :SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> guide:syllabusDescription "Seguridad en nivel de enlace, redes móviles y WiFi"@es ;
+    rdf:type :SyllabusItem ;
+    guide:itemIndex 3^^xsd:integer .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> guide:syllabusDescription "Seguridad en nivel de red: IPSEC"@es ;
+    rdf:type :SyllabusItem ;
+    guide:itemIndex 4^^xsd:integer .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> guide:syllabusDescription "Seguridad en nivel de transporte: SSL/TLS"@es ;
+    rdf:type :SyllabusItem ;
+    guide:itemIndex 5^^xsd:integer .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> guide:syllabusDescription "Seguridad en nivel de aplicación: SRTP, S/MIME, PGP"@es ;
+    rdf:type :SyllabusItem ;
+    guide:itemIndex 6^^xsd:integer .
+
+<http://w3id.org/def/guia#ANX_PR_CL_001_01> sch:inLanguage "Castellano"@en ;
+    guide:periodStartingMonth "Septiembre"@es ;
+    guide:periodEndingMonth "Enero"@es .
+
+#################################################################
+# Degree Instance
+#################################################################
+
+<http://w3id.org/def/guia#Master_Ciberseguridad> rdf:type :Degree , sch:CourseInstance ;
+    dct:title "09AW - Master Universitario En Ciberseguridad"@en ;
+    guide:numberOfCredits 12^^xsd:decimal . # Assuming standard master credits based on context, though not explicitly in text for the degree itself.
+
+<http://w3id.org/def/guia#Master_Ciberseguridad> sch:name "09AW - Master Universitario En Ciberseguridad"@en ;
+    guide:degreeCode "09AW"@es .
+
+#################################################################
+# University Center Instance
+#################################################################
+
+<http://w3id.org/def/guia#Ets_Ingenieros_Telecomunicacion> rdf:type sch:Organization , :UniversityCenter ;
+    dct:title "E.T.S. de Ingenieros de Telecomunicacion"@es .
+
+#################################################################
+# Lecturer Instances
+#################################################################
+
+<http://w3id.org/def/guia#DiegoRiveraPinto> rdf:type :Lecturer , sch:Person ;
+    sch:name "Diego Rivera Pinto"@en ;
+    guide:sch:director <http://w3id.org/def/guia#ANX_PR_CL_001_01> ;
+    sch:email "diego.rivera@upm.es"@es .
+
+<http://w3id.org/def/guia#DiegoRiveraPinto> guide:tutorshipsSchedule "Sin horario. Concertar cita por correo electrónico."@en ;
+    rdf:type :Lecturer , sch:Person . # Repeated for clarity in schema context if needed, but single instance is fine
+
+<http://w3id.org/def/guia#MaríaDelSocorroBernardosGalindo> rdf:type :Lecturer , sch:Person ;
+    sch:name "María Del Socorro Bernardos Galindo"@en ;
+    guide:sch:instructor <http://w3id.org/def/guia#ANX_PR_CL_001_01> .
+
+<http://w3id.org/def/guia#HugoAlexerParadaGelvez> rdf:type :Lecturer , sch:Person ;
+    sch:name "Hugo Alexer Parada Gelvez"@en ;
+    guide:sch:instructor <http://w3id.org/def/guia#ANX_PR_CL_001_01> .
+
+#################################################################
+# Competency Instances
+#################################################################
+
+<http://w3id.org/def/guia#CE04_ServiciosSeguridadRed> rdf:type :Competency ;
+    guide:competencyCode "CE04"@es ;
+    sch:description "Capacidad para establecer una categorización de servicios de ciberseguridad para proteger a las infraestructuras conectadas en red."@en .
+
+<http://w3id.org/def/guia#CE05_ServiciosSeguridadRed> rdf:type :Competency ;
+    guide:competencyCode "CE05"@es ;
+    sch:description "Capacidad de analizar y diseñar servicios de seguridad de control de acceso, protección de la información en tránsito y protección perimetral"@en .
+
+<http://w3id.org/def/guia#CG03_ServiciosSeguridadRed> rdf:type :Competency ;
+    guide:competencyCode "CG03"@es ;
+    sch:description "Dotar al alumno de la capacidad de diseñar e implantar procedimientos de protección de la información asociados con los sistemas de información, las redes y comunicaciones telemáticas"@en .
+
+#################################################################
+# Learning Result Instance
+#################################################################
+
+<http://w3id.org/def/guia#RA10_ServiciosSeguridadRed> rdf:type :LearningResult ;
+    guide:learningResultCode "RA10"^^xsd:string ;
+    sch:description "Analizar y seleccionar los mecanismos adecuados para proteger las comunicaciones"@es .
+
+#################################################################
+# Evaluation System & Trial Instances
+#################################################################
+
+<http://w3id.org/def/guia#Evaluacion_System_ServiciosSeguridadRed> rdf:type :EvaluationSystem ;
+    guide:evaluationDescription "La asignatura se evaluará mediante un sistema de evaluación progresiva que consiste en la realización de cuatro trabajos prácticos."@es .
+
+<http://w3id.org/def/guia#Trial_Theory_Exam_ServiciosSeguridadRed> rdf:type :EvaluationTrial ;
+    guide:trialType "Examen Escrito"@en , "EX"^^xsd:string ;
+    sch:description "Evaluación (examen teoría)"@es .
+
+<http://w3id.org/def/guia#Trial_Theory_Exam_ServiciosSeguridadRed> guide:hasScheduleEvent <http://w3id.org/def/guia#Semestre_Primer_2025_26> ;
+    sch:eventIndex 4^^xsd:integer .
+
+<http://w3id.org/def/guia#Trial_Theory_Exam_ServiciosSeguridadRed> guide:trialMode "Presencial"@es ;
+    guide:gradePercentage "60"^^xsd:string , "60%"^^xsd:string ; # Weight 60%
+    guide:minScore "3.5 / 10"^xsd:string .
+
+<http://w3id.org/def/guia#Trial_Practice_Memos_ServiciosSeguridadRed> rdf:type :EvaluationTrial ;
+    guide:trialType "Trabajo en Grupo"@en , "TG"^^xsd:string ;
+    sch:description "Evaluación de prácticas (memorias)"@es .
+
+<http://w3id.org/def/guia#Trial_Practice_Memos_ServiciosSeguridadRed> guide:hasScheduleEvent <http://w3id.org/def/guia#Semestre_Primer_2025_26> ;
+    sch:eventIndex 4^^xsd:integer .
+
+<http://w3id.org/def/guia#Trial_Practice_Memos_ServiciosSeguridadRed> guide:trialMode "Presencial"@es ;
+    guide:gradePercentage "20"^^xsd:string , "20%"^^xsd:string ; # Weight 20%
+    guide:minScore "3.5 / 10"^xsd:string .
+
+<http://w3id.org/def/guia#Trial_Practice_Exam_ServiciosSeguridadRed> rdf:type :EvaluationTrial ;
+    guide:trialType "Examen de Prácticas"@en , "EP"^^xsd:string ;
+    sch:description "Evaluación de prácticas (examen)"@es .
+
+<http://w3id.org/def/guia#Trial_Practice_Exam_ServiciosSeguridadRed> guide:hasScheduleEvent <http://w3id.org/def/guia#Semestre_Primer_2025_26> ;
+    sch:eventIndex 4^^xsd:integer .
+
+<http://w3id.org/def/guia#Trial_Practice_Exam_ServiciosSeguridadRed> guide:trialMode "Presencial"@es ;
+    guide:gradePercentage "20"^^xsd:string , "20%"^^xsd:string ; # Weight 20%
+    guide:minScore "3.5 / 10"^xsd:string .
+
+<http://w3id.org/def/guia#Evaluacion_System_ServiciosSeguridadRed> guide:hasEvaluationTrial <http://w3id.org/def/guia#Trial_Theory_Exam_ServiciosSeguridadRed> ;
+    rdf:type :EvaluationSystem , sch:Evaluation .
+
+<http://w3id.org/def/guia#Evaluacion_System_ServiciosSeguridadRed> guide:hasEvaluationTrial <http://w3id.org/def/guia#Trial_Practice_Memos_ServiciosSeguridadRed> ;
+    rdf:type :EvaluationSystem , sch:Evaluation .
+
+<http://w3id.org/def/guia#Evaluacion_System_ServiciosSeguridadRed> guide:hasEvaluationTrial <http://w3id.org/def/guia#Trial_Practice_Exam_ServiciosSeguridadRed> ;
+    rdf:type :EvaluationSystem , sch:Evaluation .
+
+#################################################################
+# Schedule Instance
+#################################################################
+
+<http://w3id.org/def/guia#Semestre_Primer_2025_26> rdf:type :ScheduleEvent ; # Using as event for evaluation context per table structure, though it represents the semester period.
+    sch:eventIndex 4^^xsd:integer . # Based on document table showing Sem=4 for evaluations
+
+#################################################################
+# Didactic Resource Instance
+#################################################################
+
+<http://w3id.org/def/guia#Recursos_Moodle_ServiciosSeguridadRed> rdf:type :DidacticResource ;
+    sch:bibliographyTitle "Presentaciones de los temas, enunciados y software"@es .

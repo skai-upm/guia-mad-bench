@@ -1,0 +1,801 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Course Guide Instance (Geotecnia)
+#################################################################
+
+<http://guia-mad-bench.es/data/course/geotecnia_145005406> rdf:type :CourseGuide ;
+                                                          sch:courseCode 145005406 ;
+                                                          guide:numberOfCredits "3"^^xsd:decimal ;
+                                                          guide:teachingPeriodMonths "Septiembre-Enero"@en ;
+                                                          guide:syllabusDescription "Introducción a los conceptos básicos de la Geotecnia como disciplina de la Geología Aplicada..."@en ;
+                                                          sch:name "Geotecnia"@es .
+
+#################################################################
+#    Degree Instance (14IA)
+#################################################################
+
+<http://guia-mad-bench.es/data/degree/grado_ingenieria_aeroespacial> rdf:type :BachelorDegree ,
+                                                                           owl:Thing ;
+                                                                        guide:courseYear 2025 .
+
+#################################################################
+#    University Center Instance (ETSIA)
+#################################################################
+
+<http://guia-mad-bench.es/data/center/e.t.s.i.a.e.> rdf:type sch:Organization, :UniversityCenter ;
+                                                        dct:title "E.T.S.I Aeronáutica y del Espacio"@es .
+
+#################################################################
+#    Links between Degree and Course Guide (via hasCourse)
+#################################################################
+
+<http://guia-mad-bench.es/data/course/geotecnia_145005406> rdf:type sch:CourseInstance ;
+                                                              guide:hasCourse <http://guia-mad-bench.es/data/degree/grado_ingenieria_aeroespacial> .
+
+#################################################################
+#    Links between University Center and Degree (via offers)
+#################################################################
+
+<http://guia-mad-bench.es/data/center/e.t.s.i.a.e.> rdf:type :UniversityCenter ;
+                                                        guide:offers <http://guia-mad-bench.es/data/degree/grado_ingenieria_aeroespacial> .
+
+#################################################################
+#    Lecturers (Director and Instructor)
+#################################################################
+
+<http://guia-mad-bench.es/data/person/angel.paris.loreiro> rdf:type sch:Person, :Lecturer ;
+                                                              dct:title "Angel Paris Loreiro"@en ;
+                                                              guide:office "L.Aerop.<br>E.T.S.I Aeronáutica y del Espacio"^^xsd:string ;
+                                                              sch:name "Angel Paris Loreiro"@es .
+
+<http://guia-mad-bench.es/data/person/manuel.tarifa.crespo> rdf:type sch:Person, :Lecturer ;
+                                                               guide:office "Aerop. Edif. B"^^xsd:string ;
+                                                               dct:title "Manuel Agustin Tarifa Crespo"@en .
+
+<http://guia-mad-bench.es/data/person/jesus.rodriguez.romero> rdf:type sch:Person, :Lecturer ;
+                                                                guide:office "L.Aerop.<br>E.T.S.I Aeronáutica y del Espacio"^^xsd:string ;
+                                                                dct:title "Jesus Maria Rodriguez Romero"@en .
+
+<http://guia-mad-bench.es/data/person/antonia.pacios.alvarez> rdf:type sch:Person, :Lecturer ;
+                                                                 guide:office ""^^xsd:string ;
+                                                                 dct:title "Antonia Pacios Alvarez (Coordinador/a)"@es .
+
+#################################################################
+#    Links Lecturers to Course Guide
+#################################################################
+
+<http://guia-mad-bench.es/data/course/geotecnia_145005406> rdf:type :CourseGuide ;
+                                                              sch:director <http://guia-mad-bench.es/data/person/antonia.pacios.alvarez> ,
+                                                                                   <http://guia-mad-bench.es/data/person/jesus.rodriguez.romero>,
+                                                                                   <http://guia-mad-bench.es/data/person/angel.paris.loreiro>,
+                                                                                   <http://guia-mad-bench.es/data/person/manuel.tarifa.crespo> ;
+                                                              sch:instructor <http://guia-mad-bench.es/data/person/jesus.rodriguez.romero>.
+
+#################################################################
+#    Syllabus and Items (Temario)
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type sch:Syllabus, :Syllabus ;
+                                                                 guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                                <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                                <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                                <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                                <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                                <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                                <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                                <http://guia-mad-bench.es/data/item/cimentaciones> ;
+                                                                 guide:hasSyllabusItem .
+
+#################################################################
+#    Syllabus Items (Temario)
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items Details (Temario)
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,
+                                                                               <http://guia-mad-bench.es/data/item/resistencia_elasticidad>,
+                                                                               <http://guia-mad-bench.es/data/item/reconocimientos_geotecnicos>,
+                                                                               <http://guia-mad-bench.es/data/item/estabilidad_taludefes>,
+                                                                               <http://guia-mad-bench.es/data/item/cimentaciones> .
+
+#################################################################
+#    Syllabus Items (Temario) - Specific Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/syllabus/geotecnia_145005406> rdf:type :Syllabus, sch:Syllabus ;
+                                                                guide:hasItem <http://guia-mad-bench.es/data/item/tema_origen_suelos>,
+                                                                               <http://guia-mad-bench.es/data/item/identificacion_clasificacion>,
+                                                                               <http://guia-mad-bench.es/data/item/agua_terreno>,
+                                                                               <http://guia-mad-bench.es/data/item/compresibilidad_hinchamiento>,

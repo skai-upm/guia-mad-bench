@@ -1,0 +1,210 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# --- University Center ---
+:ETS_Minas_Energia rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. de Ingenieros de Minas y Energía" .
+
+# --- Degree ---
+:Grado_Ingenieria_Tecnologia_Minera rdf:type guide:Degree ;
+    sch:name "06TM - Grado En Ingenieria En Tecnologia Minera" ;
+    guide:degreeCode "06TM" ;
+    guide:hasCourse :Course_Teoria_Estructuras .
+
+:ETS_Minas_Energia guide:offers :Grado_Ingenieria_Tecnologia_Minera .
+
+# --- Course ---
+:Course_Teoria_Estructuras rdf:type guide:Course ;
+    sch:courseCode 65001024 ;
+    guide:courseYear 2025 ;
+    guide:courseType "Obligatoria" ;
+    sch:hasCourseInstance :Guide_Teoria_Estructuras .
+
+# --- Course Guide ---
+:Guide_Teoria_Estructuras rdf:type guide:CourseGuide ;
+    sch:name "65001024 - Teoria de Estructuras y Procedimientos de Construc" ;
+    guide:numberOfCredits 4.5 ;
+    guide:semester "Sexto semestre" ;
+    guide:teachingPeriod "2.025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :Syllabus_TeoriaEstructuras ;
+    guide:hasCompetency :Comp_CG1, :Comp_CG2, :Comp_CG3, :Comp_CG4, :Comp_CG5, :Comp_CG6, :Comp_CG9, :Comp_F12, :Comp_F13, :Comp_F14, :Comp_F19, :Comp_F20, :Comp_F30 ;
+    guide:hasLearningResult :LR_RA122, :LR_RA123, :LR_RA121, :LR_RA111, :LR_RA124, :LR_RA125, :LR_RA126, :LR_RA120 ;
+    guide:hasEvaluation :EvalSystem_TeoriaEstructuras ;
+    guide:hasDidacticResource :Res_BenitoOlmeda, :Res_CarreteroPerez, :Res_CerveraRuiz1, :Res_CerveraRuiz2, :Res_MiquelCanet, :Res_ArguellesAlvarez1, :Res_ArguellesAlvarez2, :Res_MonfortLleonart1, :Res_MonfortLleonart2, :Res_JimenezMontoya, :Res_CTE, :Res_CodigoEstructural, :Res_LuqueAlcacer, :Res_SantosMora, :Res_Moodle ;
+    sch:instructor :Lecturer_Anastasio, :Lecturer_MariaChiquito, :Lecturer_M_Covadonga, :Lecturer_RogelioDeLaVega ;
+    sch:director :Lecturer_MariaChiquito .
+
+# --- Lecturers ---
+:Lecturer_Anastasio rdf:type guide:Lecturer ;
+    sch:name "Anastasio Pedro Santos Yanguas" ;
+    sch:email "tasio.santos@upm.es" ;
+    guide:office "632-M3" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 11:00 - 13:00, J - 12:00 - 14:00" .
+
+:Lecturer_MariaChiquito rdf:type guide:Lecturer ;
+    sch:name "Maria Chiquito Nieto" ;
+    sch:email "maria.chiquito@upm.es" ;
+    guide:office "629-M3" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 11:00 - 13:00, J - 12:00 - 14:00" .
+
+:Lecturer_M_Covadonga rdf:type guide:Lecturer ;
+    sch:name "M. Covadonga Alarcon Reyero" ;
+    sch:email "c.alarcon@upm.es" ;
+    guide:office "716-M3" ;
+    guide:tutorshipsSchedule "M - 12:00 - 14:00, X - 12:00 - 14:00, J - 12:00 - 14:00" .
+
+:Lecturer_RogelioDeLaVega rdf:type guide:Lecturer ;
+    sch:name "Rogelio De La Vega Panizo" ;
+    sch:email "rogelio.delavega@upm.es" ;
+    guide:office "602-M3" ;
+    guide:tutorshipsSchedule "M - 11:00 - 14:00, X - 11:00 - 14:00" .
+
+# --- Competencies ---
+:Comp_CG1 rdf:type guide:Competency ; guide:competencyCode "CG 1" ; guide:competencyDescription "Conocer y aplicar conocimientos de ciencias y tecnologías básicas a la práctica de la Tecnología Minera." .
+:Comp_CG2 rdf:type guide:Competency ; guide:competencyCode "CG 2" ; guide:competencyDescription "Poseer capacidad para diseñar, analizar, calcular, proyectar, construir, mantener, conservar, explotar, desarrollar, implementar, gestionar y mejorar productos, sistemas y procesos..." .
+:Comp_CG3 rdf:type guide:Competency ; guide:competencyCode "CG 3" ; guide:competencyDescription "Aplicar los conocimientos adquiridos para identificar, formular y resolver problemas dentro de contextos amplios y multidisciplinarios..." .
+:Comp_CG4 rdf:type guide:Competency ; guide:competencyCode "CG 4" ; guide:competencyDescription "Comprender el impacto de la tecnología minera en el medio ambiente, el desarrollo sostenible de la sociedad..." .
+:Comp_CG5 rdf:type guide:Competency ; guide:competencyCode "CG 5" ; guide:competencyDescription "Saber comunicar los conocimientos y conclusiones, tanto de forma oral, escrita y gráfica..." .
+:Comp_CG6 rdf:type guide:Competency ; guide:competencyCode "CG 6" ; guide:competencyDescription "Poseer habilidades de aprendizaje que permitan continuar estudiando a lo largo de la vida..." .
+:Comp_CG9 rdf:type guide:Competency ; guide:competencyCode "CG 9" ; guide:competencyDescription "Organización y planificación en el ámbito de la empresa, y otras instituciones y organizaciones de proyectos y equipos humanos." .
+:Comp_F12 rdf:type guide:Competency ; guide:competencyCode "F12" ; guide:competencyDescription "Conocimiento de geotecnia y mecánica de suelos y de rocas" .
+:Comp_F13 rdf:type guide:Competency ; guide:competencyCode "F13" ; guide:competencyDescription "Conocimiento de resistencia de materiales y teoría de estructuras" .
+:Comp_F14 rdf:type guide:Competency ; guide:competencyCode "F14" ; guide:competencyDescription "Conocimiento de topografía, fotogrametría y cartografía" .
+:Comp_F19 rdf:type guide:Competency ; guide:competencyCode "F19" ; guide:．competencyDescription "Capacidad de planificación y gestión integral de obras, mediciones, replanteos, control y seguimiento." .
+:Comp_F20 rdf:type guide:Competency ; guide:competencyCode "F20" ; guide:competencyDescription "Conocimiento de procedimientos de construcción" .
+:Comp_F30 rdf:type guide:Competency ; guide:competencyCode "F30" ; guide:competencyDescription "Técnicas de perforación y sostenimiento aplicadas a obras subterráneas y superficiales." .
+
+# --- Learning Results ---
+:LR_RA122 rdf:type guide:LearningResult ; guide:learningResultCode "RA122" ; guide:learningResultDescription "Conocer y utilizar los aspectos básicos de la normativa de edificación, tanto española como europea." .
+:LR_RA123 rdf:type guide:LearningResult ; guide:learning．learningResultCode "RA123" ; guide:learningResultDescription "Calcular y comprobar diferentes elementos constructivos de las estructuras metálicas." .
+:LR_RA121 rdf:type guide:LearningResult ; guide:learningResultCode "RA121" ; guide:learningResultDescription "Aplicar los fundamentos del cálculo matricial de estructuras." .
+:LR_RA111 rdf:type guide:LearningResult ; guide:learningResultCode "RA111" ; guide:learningResultDescription "Conocimiento de resistencia de materiales y cálculo de estructuras" .
+:LR_RA124 rdf:type guide:LearningResult ; guide:learningResultCode "RA124" ; guide:learningResultDescription "Calcular y comprobar diferentes elementos constructivos de las estructuras de hormigón armado (H.A.)." .
+:LR_RA125 rdf:type guide:LearningResult ; guide:learningResultCode "RA125" ; guide:learningResultDescription "Conocimiento de los procedimientos de construcción." .
+:LR_RA126 rdf:type guide:LearningResult ; guide:learningResultCode "RA126" ; guide:learningResultDescription "Capacidad para replantear y medir sobre el terreno, con precisión y rigor..." .
+:LR_RA120 rdf:type guide:LearningResult ; guide:learningResultCode "RA120" ; guide:learningResultDescription "Aplicar las herramientas para el cálculo de estructuras." .
+
+# --- Syllabus ---
+:Syllabus_TeoriaEstructuras rdf:type guide:Syllabus ;
+    guide:hasItem :SyllabusItem_Unit1, :SyllableItem_Unit2, :SyllabusItem_Unit3, :SyllabusItem_Unit4, :SyllabusItem_Unit5, :SyllabusItem_Unit6, :SyllabusItem_Unit7, :SyllabusItem_Unit8, :SyllabusItem_Unit9, :SyllabusItem_Unit10 .
+
+:SyllabusItem_Unit1 rdf:type guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "Fundamentos de Análisis de Estructuras" .
+:SyllabusItem_Unit2 rdf:type guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "Esfuerzos y Movimientos" .
+:SyllabusItem_Unit3 rdf:type guide:SyllabusItem ; guide:itemIndex 3 ; guide:syllabusDescription "Trabajo y energía" .
+:SyllabusItem_Unit4 rdf:type guide:SyllabusItem ; guide:itemIndex 4 ; guide:syllabusDescription "El método de compatibilidad" .
+:SyllabusItem_Unit5 rdf:type guide:SyllabusItem ; guide:itemIndex 5 ; guide:syllabusDescription "El método de equilibrio" .
+:SyllabusItem_Unit6 rdf:type guide:SyllabusItem ; guide:itemIndex 6 ; guide:syllabusDescription "El método de rigidez: cálculo matricial de estructuras" .
+:SyllabusItem_Unit7 rdf:．syllabusDescription "Normativa de edificación" ; guide:itemIndex 7 .
+:SyllabusItem_Unit8 rdf:type guide:SyllabusItem ; guide:itemIndex 8 ; guide:syllabusDescription "Estructuras metálicas" .
+:SyllabusItem_Unit9 rdf:type guide:SyllabusItem ; guide:itemIndex 9 ; guide:syllabusDescription "Procedimientos de construcción en edificación" .
+:SyllabusItem_Unit10 rdf:type guide:SyllabusItem ; guide:itemIndex 10 ; guide:syllabusDescription "Replanteos y mediciones" .
+
+# --- Evaluation System ---
+:EvalSystem_TeoriaEstructuras rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación continua (dos pruebas) y examen final." ;
+    guide:hasEvaluationTrial :Trial_Continua1, :Trial_Continua2, :Trial_Final .
+
+:Trial_Continua1 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4/10" ;
+    guide:trialWeek "8" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" .
+
+:Trial_Continua2 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Esc．t" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4/10" ;
+    guide:trialWeek "15" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" .
+
+:Trial_Final rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "100%" ;
+．minimumScore "5/10" ;
+    guide:trialWeek "17" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "03:00" .
+
+# --- Didactic Resources ---
+:Res_BenitoOlmeda rdf:type guide:DidacticResource ; guide:bibliographyTitle "Principios básicos de estructuras metálicas" ; guide:bibliographyType "Bibliografía" .
+:Res_CarreteroPerez rdf:type guide:DidacticResource ; guide:bibliographyTitle "Problemas de estructuras metálicas" ; guide:bibliographyType "Bibliografía" .
+:Res_CerveraRuiz1 rdf:type guide:DidacticResource ; guide:bibliographyTitle "Mecánica de estructuras: Libro 2" ; guide:bibliographyType "Bibliografía" .
+:Res_CerveraRuiz2 rdf:type guide:DidacticResource ; guide:bibliographyTitle "Mecánica de estructuras: Libro 1" ; guide:bibliographyType "Bibliografía" .
+:Res_MiquelCanet rdf:type guide:DidacticResource ; guide:bibliographyTitle "Cálculo de estructuras: Libro 2" ; guide:bibliographyType "Bibliografía" .
+:Res_ArguellesAlvarez1 rdf:type guide:DidacticResource ; guide:bibliographyTitle "Estructuras de acero: Uniones y sistemas estructurales" ; guide:bibliographyType "Bibliografía" .
+:Res_ArguellesAlvarez2 rdf:type guide:DidacticResource ; guide:bibliographyTitle "Estructuras de acero: fundamentos y cálculo según CTE, EAE y EC 3" ; guide:bibliographyType "Bibliografía" .
+:Res_MonfortLleonart1 rdf:type guide:DidacticResource ; guide:bibliographyTitle "Estructuras metálicas para edificación adaptado al CTE" ; guide:bibliography．bibliographyType "Bibliografía" .
+:Res_MonfortLleonart2 rdf:type guide:DidacticResource ; guide:bibliographyTitle "Problemas de estructuras metálicas para edificación adaptados al CTE" ; guide:bibliographyType "Bibliografía" .
+:Res_JimenezMontoya rdf:type guide:DidacticResource ; guide:bibliographyTitle "Hormigón armado. 15ª edición basada en la EHE" ; guide:bibliographyType "Bibliografía" .
+:Res_CTE rdf:type guide:DidacticResource ; guide:bibliographyTitle "Código Técnico de la Edificación (CTE)" ; guide:bibliographyType "Recursos web" .
+:Res_CodigoEstructural rdf:type guide:DidacticResource ; guide:bibliographyTitle "Código Estructural" ; guide:bibliographyType "Recursos web" .
+:Res_LuqueAlcacer rdf:type guide:DidacticResource ; guide:bibliographyTitle "Prácticas de replanteo en construcción" ; guide:bibliographyType "Bibliografía" .
+:Res_SantosMora rdf:type guide:DidacticResource ; guide:bibliographyTitle "Topografía y replanteos en obras de ingeniería" ; guide:bibliographyType "Bibliografía" .
+:Res_Moodle rdf:type guide:DidacticResource ; guide:bibliographyTitle "Plataforma Moodle de la asignatura" ; guide:bibliographyType "Recursos web" .
+
+# --- Required Knowledge ---
+:PrevKnowledge_TeoriaEstructuras rdf:type guide:RequiredKnowledge ;
+    guide:previousCourses "Tecnologia De Materiales, Mecanica, Geomatica" .
+
+# --- Schedule Events and Activities (Sample from Cronograma) ---
+:Schedule_TeoriaEstructuras rdf:type guide:Schedule ;
+    sch:eventSchedule :Event_Week1, :Event_Week2, :Event_Week8, :Event_Week15, :Event_Week17 .
+
+:Event_Week1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "1" ;
+    guide:hasActivity :Activity_Tema10_Problem, :Activity_Tema10_Lecture .
+
+:Activity_Tema10_Problem rdf:type guide:Activity ;
+    guide:activityDescription "Tema 10 - Clase de Problemas" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "PR" ;
+    guide:attendanceType "Presencial" .
+
+:Activity_Tema10_Lecture rdf:type guide:Activity ;
+    guide:activityDescription "Tema 10 - Lección Magistral" ;
+    guide:activityDuration 1.0 ;
+    guide:activityFormat "LM" ;
+    guide:attendanceType "Presencial" .
+
+:Event_Week8 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "8" ;
+    guide:hasActivity :Activity_EvalContinua1 .
+
+:Activity_EvalContinua1 rdf:type guide:Activity ;
+    guide:activityDescription "Prueba evaluación continua 1" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "EX" ;
+    guide:attendanceType "Presencial" .
+
+:Event_Week15 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "15" ;
+    guide:hasActivity :Activity_EvalContinua2 .
+
+:Activity_EvalContinua2 rdf:type guide:Activity ;
+    guide:activityDescription "Prueba evaluación continua 2" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "EX" ;
+    guide:attendanceType "Presencial" .
+
+:Event_Week17 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "17" ;
+    guide:hasActivity :Activity_EvalFinal .
+
+:Activity_EvalFinal rdf:type guide:Activity ;
+    guide:activityDescription "Prueba evaluación final" ;
+    guide:activityDuration 3.0 ;
+    guide:activityFormat "EX" ;
+    guide:attendanceType "Presencial" .

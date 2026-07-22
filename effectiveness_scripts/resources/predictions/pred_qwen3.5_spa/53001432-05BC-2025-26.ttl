@@ -1,0 +1,133 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course-guide-53001432> rdf:type :CourseGuide ;
+    dct:title "Integración De Procesos Químicos"@en ;
+    sch:courseCode 53001432^^xsd:integer ;
+    guide:numberOfCredits "4.5"^^xsd:decimal ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:inLanguage "Castellano" ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer-manuel-rodriguez-hernandez> ,
+                <http://guia-mad-bench.es/data/lecturer-francisco-ismael-diaz-moreno> ;
+    guide:syllabusDescription "Fundamentos, Integración energética, Integración másica"^^xsd:string .
+
+<http://w3id.org/def/guia#MasterDegree> rdf:type owl:Class .
+
+<http://guia-mad-bench.es/data/university-center-ets-industriales> rdf:type sch:Organization ;
+    guide:offers <http://w3id.org/def/guia#05BC-Master-Univerisario-Ingenieria-Quimica> .
+
+<http://w3id.org/def/guia#Degree_05BC_Master_Universitario_Ingenieria_Quimica> rdf:type :MasterDegree ;
+    sch:name "Master Universitario En Ingenieria Quimica"@en ;
+    guide:degreeCode "05BC"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course-53001432> rdf:type :Course ;
+    sch:courseCode 53001432^^xsd:integer ;
+    guide:scholarshipSchedule <http://w3id.org/def/guia#MasterDegree_05BC_Master_Universitario_Ingenieria_Quimica> .
+
+<http://guia-mad-bench.es/data/course-guide-53001432> sch:hasCourseInstance <http://guia-mad-bench.es/data/course-53001432> ;
+    guide:syllabusDescription "Fundamentos, Integración energética, Integración másica"^^xsd:string .
+
+<http://w3id.org/def/guia#Competency_CE1> rdf:type :Competency ;
+    guide:competencyCode "CE1"^^xsd:string ;
+    sch:description "Aplicar conocimientos de matemáticas..."@en .
+
+<http://guia-mad-bench.es/data/course-guide-53001432> guide:hasCompetency <http://w3id.org/def/guia#Competency_CE1> ,
+                                    <http://w3id.org/def/guia#Competency_CE2> ;
+    sch:description "Integración De Procesos Químicos"@en .
+
+<http://guia-mad-bench.es/data/course-guide-53001432> guide:hasLearningResult <http://w3id.org/def/guia#LearningResult_RA69>,
+                                                    <http://w3id.org/def/guia#LearningResult_RA67> .
+
+<http://guia-mad-bench.es/data/course-guide-53001432> guide:hasEvaluationSystem <http://w3id.org/def/guia#Evaluation_System_53001432> ;
+    sch:description "Integración De Procesos Químicos"@en .
+
+<http://guia-mad-bench.es/data/course-guide-53001432> guide:hasDidacticResource <http://w3id.org/def/guia#Bibliography_Kemp_2007>,
+                                                    <http://w3id.org/def/guia#Bibliography_Smith_2005> .
+
+<http://guia-mad-bench.es/data/course-guide-53001432> sch:courseSchedule <http://guia-mad-bench.es/data/schedule-cronograma-53001432> ;
+    guide:syllabusDescription "Fundamentos, Integración energética, Integración másica"^^xsd:string .
+
+<http://w3id.org/def/guia#Syllabus_53001432> rdf:type :Syllabus ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule-cronograma-53001432> .
+
+<http://w3id.org/def/guia#Item_Fundamentos_1> rdf:type :SyllabusItem ;
+    guide:syllabusDescription "Fundamentos"^^xsd:string ;
+    guide:itemIndex 1^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule-cronograma-53001432> sch:eventSchedule <http://w3id.org/def/guia#Event_Week_1>,
+                                                    <http://w3id.org/def/guia#Event_Week_8> .
+
+<http://guia-mad-bench.es/data/schedule-cronograma-53001432> sch:eventSchedule <http://w3id.org/def/guia#Event_Week_17> ;
+    guide:teachingPeriodMonths "Septiembre-Enero" .
+
+<http://guia-mad-bench.es/data/schedule-cronograma-53001432> sch:eventSchedule <http://w3id.org/def/guia#Event_Week_8> ;
+    guide:syllabusDescription "Tareas integración energética, Prueba integración energética"^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule-cronograma-53001432> sch:eventSchedule <http://w3id.org/def/guia#Event_Week_8> ;
+    guide:teachingPeriodMonths "Septiembre-Enero" .
+
+<http://guia-mad-bench.es/data/course-guide-53001432> sch:syllabusDescription "Fundamentos, Integración energética, Integración másica"^^xsd:string .
+
+<http://w3id.org/def/guia#Evaluation_System_53001432> rdf:type :EvaluationSystem ;
+    guide:evaluationType "Progresiva y Global"@en ;
+    sch:description "Integración De Procesos Químicos"^^xsd:string .
+
+<http://w3id.org/def/guia#Trial_Tareas_Integracion_Energética_1> rdf:type :EvaluationTrial ;
+    guide:trialType "Examen de Prácticas"@en ;
+    sch:description "Tareas integración energética"^^xsd:string ;
+    guide:gradePercentage 0.15^^xsd:decimal .
+
+<http://w3id.org/def/guia#Trial_Tareas_Integracion_Energética_2> rdf:type :EvaluationTrial ;
+    guide:trialType "Trabajo Individual"@en ;
+    sch:description "Tareas integración energética"^^xsd:string ;
+    guide:gradePercentage 0.15^^xsd:decimal .
+
+<http://w3id.org/def/guia#Trial_Prueba_Integracion_Energética> rdf:type :EvaluationTrial ;
+    guide:trialType "Trabajo Individual"@en ;
+    sch:description "Prueba integración energética"^^xsd:string ;
+    guide:gradePercentage 0.3^^xsd:decimal .
+
+<http://w3id.org/def/guia#Trial_Entregas_Integracion_Másica> rdf:type :EvaluationTrial ;
+    guide:trialType "Trabajos individuales y en grupo"@en ;
+    sch:description "Entregas integración másica"^^xsd:string ;
+    guide:gradePercentage 0.4^^xsd:decimal .
+
+<http://guia-mad-bench.es/data/lecturer-manuel-rodriguez-hernandez> rdf:type :Lecturer ;
+    sch:name "Manuel Rodriguez Hernandez"@en ;
+    sch:email <mailtomanuel.rodriguezh@upm.es>^^xsd:string ;
+    guide:tutorshipsSchedule "M - 14:30 - 15:30" .
+
+<http://guia-mad-bench.es/data/lecturer-francisco-ismael-diaz-moreno> rdf:type :Lecturer ;
+    sch:name "Francisco Ismael Diaz Moreno"@en ;
+    sch:email <mailtoismael.diaz@upm.es>^^xsd:string ;
+    guide:tutorshipsSchedule "M - 14:30 - 15:30" .
+
+<http://guia-mad-bench.es/data/lecturer-francisco-ismael-diaz-moreno> sch:director <http://w3id.org/def/guia#CourseGuide_53001432> ;
+    guide:syllabusDescription "Integración De Procesos Químicos"^^xsd:string .
+
+<http://guia-mad-bench.es/data/course-guide-53001432> sch:director <http://guia-mad-bench.es/data/lecturer-francisco-ismael-diaz-moreno> ;
+    guide:syllabusDescription "Integración De Procesos Químicos"^^xsd:string .
+
+<http://w3id.org/def/guia#Bibliography_Kemp_2007> rdf:type :DidacticResource ;
+    sch:name "Pinch Analysis and Process Integration (Second Edition)"@en ;
+    guide:bibliographyType "Biblioteca"@en ;
+    guide:activityDescription "Kemp, I. C."^^xsd:string .
+
+<http://w3id.org/def/guia#Bibliography_Smith_2005> rdf:type :DidacticResource ;
+    sch:name "Chemical Process Design and Integration"@en ;
+    guide:bibliographyType "Biblioteca"@en ;
+    guide:activityDescription "Smith, R."^^xsd:string .
+
+<http://w3id.org/def/guia#LearningResult_RA69> rdf:type :LearningResult ;
+    sch:description "Ser capaz de realizar la evaluación económica básica"^^xsd:string ;
+    guide:learningResultCode "RA69"^^xsd:string .
+
+<http://w3id.org/def/guia#LearningResult_RA67> rdf:type :LearningResult ;
+    sch:description "Ser capaz de realizar la integración energética"^^xsd:string ;
+    guide:learningResultCode "RA67"^^xsd:string .

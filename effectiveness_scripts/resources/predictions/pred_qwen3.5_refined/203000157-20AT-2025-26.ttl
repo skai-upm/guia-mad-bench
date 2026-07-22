@@ -1,0 +1,512 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseguide-203000157> rdf:type :CourseGuide ;
+    dc:title "Nuevas Tecnologías De Envasado de Alimentos"@en ;
+    sch:name "Nuevas Tecnologías De Envasado de Alimentos" ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer-fernando-calderon> ,
+                <http://guia-mad-bench.es/data/lecturer-evana-navascues> ,
+                <http://guia-mad-bench.es/data/lecturer-felipe-palomero> ;
+    guide:numberOfCredits "4"^^xsd:decimal ;
+    sch:description "En la asignatura se presentan y desarrollan las nuevas tecnologías de envasado de alimentos..."@en .
+
+<http://guia-mad-bench.es/data/syllabus-203000157> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabusitem-intro> ,
+                 <http://guia-mad-bench.es/data/syllabusitem-materials-traditional> ,
+                 <http://guia-mad-bench.es/data/syllabusitem-new-materials> ,
+                 <http://guia-mad-bench.es/data/syllabusitem-tech-emergent> ;
+    guide:hasSylbusItem <http://guia-mad-bench.es/data/syllabusitem-labeling> .
+
+<http://guia-mad-bench.es/data/courseguide-203000157> sch:eventSchedule <http://guia-mad-bench.es/data/schedule-20AT_2025-26> ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus-203000157> .
+
+<http://guia-mad-bench.es/data/lecturer-fernando-calderon> rdf:type :Lecturer , sch:Person ;
+    sch:name "Fernando Calderon Fernandez" ;
+    guide:Lecturer <http://w3id.org/def/guia#hasSyllabus> .
+
+<http://guia-mad-bench.es/data/schedule-20AT_2025-26> rdf:type :Schedule , sch:CourseInstance ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/event-schedule-intro>,
+                     <http://guia-mad-bench.es/data/event-schedule-materials-traditional>.
+
+<http://guia-mad-bench.es/data/syllabusitem-intro> rdf:type :SyllabusItem ;
+    guide:sylbusDescription "Introducción" .
+
+<http://guia-mad-bench.es/data/competency-cb8> rdf:type :Competency ;
+    guide:hasLearningResult <http://w3id.org/def/guia#CB8>.
+
+<http://guia-mad-bench.es/data/syllabusitem-materials-traditional> rdf:type :SyllabusItem ;
+    guide:sylbusDescription "Avances en materiales de envasado tradicionales" .
+
+<http://guia-mad-bench.es/data/competency-cg1> rdf:type :Competency ;
+    guide:hasLearningResult <http://w3id.org/def/guia#CG1>.
+
+<http://guia-mad-bench.es/data/syllabusitem-new-materials> rdf:type :SyllabusItem ;
+    guide:sylbusDescription "Nuevos materiales de envasado" .
+
+<http://guia-mad-bench.es/data/competency-cg3> rdf:type :Competency ;
+    guide:hasLearningResult <http://w3id.org/def/guia#CG3>.
+
+<http://guia-mad-bench.es/data/syllabusitem-tech-emergent> rdf:type :SyllabusItem ;
+    guide:sylbusDescription "Tecnologías de envasado emergentes" .
+
+<http://guia-mad-bench.es/data/competency-cg8> rdf:type :Competency ;
+    guide:hasLearningResult <http://w3id.org/def/guia#CG8>.
+
+<http://guia-mad-bench.es/data/syllabusitem-labeling> rdf:type :SyllabusItem ;
+    guide:sylbusDescription "Etiquetado. Información al consumidor" .
+
+<http://guia-mad-bench.es/data/learning-result-ra7-16> rdf:type :LearningResult ;
+    guide:hasCompetency <http://w3id.org/def/guia#CB8>,
+                        <http://w3id.org/def/guia#CG1>.
+
+<http://guia-mad-bench.es/data/syllabusitem-labeling> sch:eventSchedule <http://guia-mad-bench.es/data/event-schedule-labeling>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/eval-trial-sem7>,
+                                                        <http://guia-mad-bench.es/data/eval-trial-sem13>,
+                                                        <http://guia-mad-bench.es/data/eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/syllabusitem-labeling> guide:hasLearningResult <http://w3id.org/def/guia#RA7-RA16>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> sch:instructor <http://guia-mad-bench.es/data/lecturer-felipe-palomero>,
+                                    <http://guia-mad-bench.es/data/lecturer-evana-navascues>.
+
+<http://guia-mad-bench.es/data/syllabusitem-labeling> sch:hasCourseInstance <http://w3id.org/def/guia#20AT_2025-26>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:publishedAt "https://www.upm.es"^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer-felipe-palomero> rdf:type :Lecturer , sch:Person ;
+    sch:name "Felipe Palomero Rodriguez" ;
+    sch:email <mailto:felipe.palomero@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer-evana-navascues> rdf:type :Lecturer , sch:Person ;
+    sch:name "Eva Navascues Lopez-Cordon" ;
+    sch:email <mailto:eva.navascues@upm.es>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:tutorshipsSchedule "M - 10:30 - 12:30"^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer-felipe-palomero> sch:office <http://w3id.org/def/guia#02.01.039.1>.
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:teachingPeriod "Septiembre-Enero"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval-trial-sem7> rdf:type :EvaluationTrial ;
+    sch:name "Evaluación Temas 1-2" ;
+    guide:trialType <https://schema.org/exam>;
+    guide:gradePercentage "35%"^^xsd:string .
+
+<http://guia-mad-bench.es/data/eval-trial-sem7> guide:minScore "4 / 10"^^xsd:string ;
+    sch:eventSchedule <http://w3id.org/def/guia#event-schedule-2>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://guia-mad-bench.es/data/eval-trial-sem7>,
+                                    <http://guia-mad-bench.es/data/eval-trial-sem13>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule-labeling>,
+                                    <http://w3id.org/def/guia#eval-trial-sem15>.
+
+<http://guia-mad-bench.es/data/courseguide-203000157> guide:hasEvaluationTrial <http://w3id.org/def/guia#event-schedule

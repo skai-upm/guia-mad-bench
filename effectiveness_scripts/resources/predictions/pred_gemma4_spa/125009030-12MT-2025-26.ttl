@@ -1,0 +1,136 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Course Guide Instance
+:course_guide_125009030 rdf:type guide:CourseGuide ;
+    sch:name "Redes y Servicios de Telecomunicación" ;
+    guide:numberOfCredits 4.5 ;
+    guide:courseType "Obligatoria" ;
+    guide:teachingPeriod "2025-26" ;
+    guide:semester "Quinto semestre" ;
+    sch:inLanguage "Castellano" ;
+    guide:hasCourse :course_125009030 ;
+    guide:hasSyllabus :syllabus_125009030 ;
+    guide:hasCompetency :comp_12TG_CG8, :comp_12TG_CIST1, :comp_CT1, :comp_CT10, :comp_CT2, :comp_CT9 ;
+    guide:hasLearningResult :lr_RA218, :lr_RA221, :lr_RA229, :lr_RA228, :lr_RA219, :lr_RA220, :lr_RA222, :lr_RA224, :lr_RA226, :lr_RA230, :lr_RA225, :lr_RA223, :lr_RA227, :lr_RA231 ;
+    guide:hasEvaluation :eval_system_125009030 ;
+    sch:instructor :prof_jesus_rodriguez .
+
+# Course Instance
+:course_125009030 rdf:type guide:Course ;
+    sch:courseCode "125009030" ;
+    guide:courseYear 2025 .
+
+# Degree and University Center
+:degree_12MT rdf:type guide:Degree ;
+    sch:name "D.G. En Ing. Geomática Y En Ing. De Las Tecnologías De La Información Geoes" ;
+    guide:degreeCode "12MT" .
+
+:center_ETSI rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S.I Topografia,geodesia,cartografia" ;
+    guide:offers :degree_12MT .
+
+# Lecturer
+:prof_jesus_rodriguez rdf:type guide:Lecturer ;
+    sch:name "Jesus Rodriguez Molina" ;
+    sch:email "jesus.rodriguezm@upm.es" ;
+    guide:tutorshipsSchedule "Sin horario. TBD" .
+
+# Competencies
+:comp_12TG_CG8 rdf:type guide:Competency ;
+    guide:competencyCode "12TG-CG8" ;
+    guide:competencyDescription "Diseñar, desarrollar, gestionar y ejecutar proyectos relacionados con esta ingeniería en el ámbito de la investigación, innovación o producción" .
+
+:comp_12TG_CIST1 rdf:type guide:Competency ;
+    guide:competencyCode "12TG-CIST1" ;
+    guide:competencyDescription "Conocimiento y utilización de los conceptos de arquitectura de red, protocolos e interfaces de comunicaciones" .
+
+:comp_CT1 rdf:type guide:Competency ;
+    guide:competencyCode "CT1" ;
+    guide:competencyDescription "COMUNICACIÓN ORAL Y ESCRITA Capacidad para transmitir conocimientos y expresar ideas y argumentos de manera clara, rigurosa y convincente..." .
+
+:comp_CT10 rdf:type guide:Competency ;
+    guide:competencyCode "CT10" ;
+    guide:competencyDescription "ANÁLISIS Y SÍNTESIS Capacidad de reconocer y describir los elementos constitutivos de una realidad..." .
+
+:comp_CT2 rdf:type guide:Competency ;
+    guide:competencyCode "CT2" ;
+    guide:competencyDescription "USO DE LAS TIC Capacidad sobre conocimientos tecnológicos que permitan desenvolverse cómodamente..." .
+
+:comp_CT9 rdf:type guide:Competency ;
+    guide:competencyCode "CT9" ;
+    guide:competencyDescription "RESOLUCIÓN DE PROBLEMAS Desarrollar en los alumnos una actitud mental mediante la aplicación de procedimientos estructurados..." .
+
+# Learning Results
+:lr_RA218 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA218" ;
+    guide:learningResultDescription "Contextualizar las redes de área local en la arquitectura Internet." .
+
+:lr_RA221 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA221" ;
+    guide:learningResultDescription "Identificar los elementos de las$\\text{redes de telecomunicación}$" .
+
+:lr_RA229 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA229" ;
+    guide:learningResultDescription "Describir los servicios, mecanismos y protocolos de seguridad empleados en las redes de telecomunicación." .
+
+# Syllabus and Items
+:syllabus_125009030 rdf:type guide:Syllabus ;
+    guide:hasItem :item_unit1, :item_unit2, :item_unit3, :item_unit4, :item_unit5 .
+
+:item_unit1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "UNIDAD 1: INTRODUCCIÓN A LAS REDES DE TELECOMUNICACIÓN" .
+
+:item_unit2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "UNIDAD 2: ARQUITECTURAS DE COMUNICACIÓN ESTRATIFICADAS EN NIVELES" .
+
+:item_unit3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "UNIDAD 3: LA CAPA DE ENLACE Y REDES DE ÁREA LOCAL" .
+
+# Evaluation System and Trials
+:eval_system_125009030 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva y global de la asignatura." ;
+    guide:hasEvaluationTrial :trial_ep1, :trial_ep2, :trial_global .
+
+:trial_ep1 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialDescription "Primera prueba de evaluación progresiva (P1, UD1 y UD2)" .
+
+:trial_ep2 rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "0 / 10" ;
+    guide:trialDescription "Segunda prueba de evaluación progresiva (P2, UD3, UD4 y UD5)" .
+
+:trial_global rdf:type guide:EvaluationTrial ;
+    guide:evaluationType "global" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialDescription "Examen global de la asignatura" .
+
+# Activities and Schedule Events
+:act_p1 rdf:type guide:Activity ;
+    guide:activityDescription "Práctica 1: Análisis de protocolos. WireShark" ;
+    guide:activityFormat "Prácticas de Laboratorio" .
+
+:event_week6 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "6" ;
+    guide:hasActivity :act_p1 .
+
+# Didactic Resources
+:res_kurose rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Redes de computadoras: un enfoque descendente" ;
+    guide:bibliographyDescription "James F. Kurose. Redes de computadoras: un enfoque descendente. Pearson, 2017" .
+
+:res_stallings rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Comunicaciones y Redes de Ordenadores" ;
+    guide:bibliographyDescription "Stallings, W. Comunicaciones y Redes de Ordenadores. Séptima Edición. Prentice-Hall International, 2004." .

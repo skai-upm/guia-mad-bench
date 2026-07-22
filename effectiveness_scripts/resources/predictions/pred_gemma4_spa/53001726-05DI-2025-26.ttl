@@ -1,0 +1,116 @@
+@prefix guide: <http://guia-mad-bench.es/data/> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# Course and Guide Information
+guide:Course_53001726 rdf:type guide:Course ;
+    sch:name "Dirección Estratégica Y De La Innovación" ;
+    sch:courseCode 53001726 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Cuarto semestre" ;
+    sch:hasCourseInstance guide:Guide_53001726 .
+
+guide:Guide_53001726 rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje - 53001726" ;
+    sch:description "Guía de aprendizaje para la asignatura Dirección Estratégica Y De La Innovación." ;
+    guide:numberOfCredits 3.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Febrero" ;
+    guide:periodEndingMonth "Junio" ;
+    sch:inLanguage "Castellano" ;
+    sch:instructor guide:Lecturer_Rafael_Ramos_Diaz ;
+    sch:instructor guide:Lecturer_Ebru_Susur_Donkerkan ;
+    guide:hasCompetency guide:Comp_MUII_l, guide:Comp_MUAR_CB06, guide:Comp_MUAR_CB07 ;
+    guide:hasLearningResult guide:LR_RA87, guide:LR_RA8
+
+guide:Degree_05DI rdf:type guide:Degree ;
+    sch:name "05DI - D.M.U. En Ingeniería Industrial Y En Automática Y Robótica" ;
+    guide:degreeCode "05DI" ;
+    guide:hasCourse guide:Course_53001726 .
+
+guide:ETS_Industriales rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Industriales" ;
+    guide:offers guide:Degree_05DI .
+
+# Lecturers
+guide:Lecturer_Rafael_Ramos_Diaz rdf:type guide:Lecturer ;
+    sch:name "Rafael Ramos Diaz" ;
+    sch:email "rafael.ramos@upm.es" ;
+    sch:description "Coordinador/a" .
+
+guide:Lecturer_Ebru_Susur_Donkerkan rdf:type guide:Lecturer ;
+    sch:name "Ebru Susur Donerkan" ;
+    sch:email "ebru.susur@upm.es" ;
+    guide:office "UD Economía" .
+
+# Competencies
+guide:Comp_MUII_l rdf:type guide:Competency ;
+    guide:competencyCode "MUII. (l)" ;
+    guide:competencyDescription "ES BILINGÜE. Capacidad de trabajar en un $\text{entorno}$ bilingüe (inglés/castellano)." .
+
+guide:Comp_MUAR_CB06 rdf:type guide:Competency ;
+    guide:competencyCode "MUAR.CB06" ;
+    guide:competencyDescription "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales en el desarrollo y/o aplicación de ideas, a menudo en un contexto de investigación" .
+
+guide:Comp_MUAR_CB07 rdf:type guide:Competency ;
+    guide:competencyCode "MUAR.CB07" ;
+    guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos y su capacidad de resolución de problemas en entornos nuevos o poco conocidos dentro de contextos más amplios (o multidisciplinares) relacionados con su área de estudio" .
+
+# Learning Results
+guide:LR_RA87 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA87" ;
+    guide:learningResultDescription "Aplicar distintas herramientas y metodologías para el diseño y puesta en práctica de estrategias y políticas de innovación en contextos competitivos" .
+
+guide:LR_RA9 rdf:type guide:LearningResult ;
+    guide:learningResultCode "RA9" ;
+    guide:learningResultDescription "Identificar, analizar, e interpretar los datos del problema planteado por el profesor." .
+
+# Evaluation System and Trials
+guide:EvalSystem_Progresiva rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva de la asignatura" ;
+    guide:hasEvaluationTrial guide:Trial_Entrega_Intermedia_1, guide:Trial_Cuestionarios_1 .
+
+guide:Trial_Entrega_Intermedia_1 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Trabajo en Grupo" ;
+    guide:trialMode "No Presencial" ;
+    guide:evaluationDuration "00:30" ;
+    guide:gradePercentage "5%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialDescription "Entrega intermedia del Taller de Innovación" .
+
+guide:Trial_Cuestionarios_1 rdf:type guide:EvaluationTrial ;
+    guide:trialType "Prueba Telemática" ;
+    guide:trialMode "No Presencial" ;
+    guide:evaluationDuration "00:30" ;
+    guide:gradePercentage "2.5%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialDescription "Cuestionarios de autocomprobación y participación en foros" .
+
+# Didactic Resources
+guide:Resource_Moodle rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "Moodle" ;
+    guide:bibliographyType "Recursos web" ;
+    guide:bibliographyDescription "Temas, casos, lecturas complementarias, foros de debate, cuestionarios de autoevaluación" .
+
+guide:Resource_ChatGPT rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "ChatGPT, Bing, Bard,..." ;
+    guide:bibliographyType "Otros" .
+
+guide:Resource_Book_William rdf:type guide:DidacticResource ;
+    guide:bibliographyTitle "William., Chesbrough, Henry (2003). Open innovation : the new imperative for creating and profiting from technology." ;
+    guide:bibliographyType "Bibliografía" .
+
+# Syllabus Items
+guide:Syllabus_Course_53001726 rdf:type guide:Syllabus ;
+    guide:hasItem guide:SyllabusItem_Tema1, guide:SyllabusItem_Taller1 .
+
+guide:SyllabusItem_Tema1 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "TEMA 1 INNOVACIÓN ESTRATÉGICA, INNOVACIÓN ABIERTA" ;
+    guide:itemIndex 2 .
+
+guide:SyllabusItem_Taller1 rdf:type guide:SyllabusItem ;
+    guide:syllabusDescription "TALLER DE INNOVACIÓN SESIÓN 1: lanzamiento (kick-off) del proyecto y plan de investigación" ;
+    guide:itemIndex 1 .

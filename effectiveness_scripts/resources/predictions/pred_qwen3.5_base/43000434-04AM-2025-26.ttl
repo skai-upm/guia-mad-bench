@@ -1,0 +1,255 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://guia-mad-bench.es/data/guia/GA_4AM-43000434> rdf:type :CourseGuide ;
+    sch:name "Fiabilidad Y Modelos Geotécnicos"@en ,
+        "ANX-PR/CL/001-01 GUÍA DE APRENDIZAJE"@es ;
+    dct:creator "Enrique Asanza Izquierdo",
+                "Rafael Jimenez Rodriguez",
+                "Ignacio Gonzalez Tejada" ;
+    sch:description "El curso pretende familiarizar a los alumnos con aspectos avanzados del comportamiento de los suelos (modelos de estado crítico, suelos parcialmente saturados, medios granulares, etc.), así como con la caracterización y efectos de las incertidumbres asociadas al proyecto geotécnico."@es ;
+    sch:inLanguage "Castellano"@en ;
+    guide:numberOfCredits 4.5^^xsd:decimal ;
+    guide:syllabusDescription "Objetivos y metodología: El curso pretende familiarizar a los alumnos con aspectos avanzados del comportamiento de los suelos (modelos de estado crítico, suelos parcialmente saturados, medios granulares, etc.), así como con la caracterización y efectos de las incertidumbres asociadas al proyecto geotécnico."@es ;
+    guide:teachingPeriod "2025-26"^^xsd:string ;
+    sch:eventSchedule <http://guia-mad-bench.es/data/guia/Schedule_43000434> .
+
+<http://guia-mad-bench.es/data/degree/GA_04AM> rdf:type :MasterDegree ,
+        :Degree ;
+    guide:courseYear 2025^^xsd:integer ;
+    sch:name "Master Universitario Ingenieria De Estructuras, Cimentaciones Y Materiales"@en .
+
+<http://guia-mad-bench.es/data/university-center/E-TS-Caminos-Canal-y-P> rdf:type :UniversityCenter ,
+        sch:Organization ;
+    guide:sch:name "E.T.S. de Ing. de Caminos Canales y P."@es .
+
+#################################################################
+###  Lecturers ###
+#################################################################
+
+<http://guia-mad-bench.es/data/guia/Lecturer_Enrique_Asanza> rdf:type :Lecturer ,
+        sch:Person ;
+    guide:sch:name "Enrique Asanza Izquierdo"@es ;
+    sch:email <mailto:enrique.asanza@upm.es> ;
+    guide:office "Laboratorio"^^xsd:string ;
+    guide:tutorshipsSchedule "L - 15:15 - 17:15<br>J - 15:15 - 17:15"@es .
+
+<http://guia-mad-bench.es/data/guia/Lecturer_Rafael_Jimenez> rdf:type :Lecturer ,
+        sch:Person ;
+    guide:sch:name "Rafael Jimenez Rodriguez"^^xsd:string ;
+    sch:email <mailto:rafael.jimenez@upm.es> ;
+    guide:office "Laboratorio"^^xsd:string ;
+    guide:tutorshipsSchedule "M - 09:00 - 14:00"@es .
+
+<http://guia-mad-bench.es/data/guia/Lecturer_Ignacio_Gonzalez_Tejada> rdf:type :Lecturer ,
+        sch:Person ;
+    guide:sch:name "Ignacio Gonzalez Tejada"^^xsd:string ;
+    sch:email <mailto:ignacio.gtejada@upm.es> ;
+    guide:tutorshipsSchedule "M - 09:00 - 12:00<br>V - 09:00 - 12:00"@es .
+
+#################################################################
+###  Competencies and Learning Results ###
+#################################################################
+
+<http://guia-mad-bench.es/data/guia/Competency_CB10> rdf:type :Competency ;
+    guide:sch:name "CB10"^^xsd:string ;
+    sch:description "Que los estudiantes posean las habilidades de aprendizaje que les permitan continuar estudiando de un modo que habrá de ser en gran medida autodirigido o autónomo."@es .
+
+<http://guia-mad-bench.es/data/guia/Competency_CB9> rdf:type :Competency ;
+    guide:sch:name "CB9"^^xsd:string ;
+    sch:description "Que los estudiantes sepan comunicar sus conclusiones y los conocimientos y razones últimas que las sustentan a públicos especializados y no especializados de un modo claro y sin ambigüedades"@en .
+
+<http://guia-mad-bench.es/data/guia/Competency_CE8> rdf:type :Competency ;
+    guide:sch:name "CE8"^^xsd:string ;
+    sch:description "Capacidad para la participación en actividades de I+D+i mediante la utilización de recursos de modelización predictiva en Fiabilidad de modelos geotécnicos."@es .
+
+<http://guia-mad-bench.es/data/guia/Competency_CG1> rdf:type :Competency ;
+    guide:sch:name "CG1"^^xsd:string ;
+    sch:description "Polivalencia para extender a ámbitos afines las competencias generales adquiridas en el ámbito temático del título."@es .
+
+<http://guia-mad-bench.es/data/guia/Competency_CG4> rdf:type :Competency ;
+    guide:sch:name "CG4"^^xsd:string ;
+    sch:description "Capacidad de comunicación académica de contenido técnico y científico, oral y escrita en lengua inglesa."@es .
+
+<http://guia-mad-bench.es/data/guia/Competency_CT1> rdf:type :Competency ;
+    guide:sch:name "CT1"^^xsd:string ;
+    sch:description "Capacidad de preparar y presentar comunicaciones orales, escritas y gráficas, estructurada y argumentadamente."@es .
+
+<http://guia-mad-bench.es/data/guia/LearningResult_RA2> rdf:type :LearningResult ;
+    guide:sch:name "RA2"^^xsd:string ;
+    sch:description "Presenta comunicaciones orales, escritas y gráficas, estructurada y argumentadamente, en lengua española e inglesa"@es .
+
+<http://guia-mad-bench.es/data/guia/LearningResult_RA1> rdf:type :LearningResult ;
+    guide:sch:name "RA1"^^xsd:string ;
+    sch:description "Utiliza con eficacia, autonomía y polivalencia recursos de modelización predictiva en la temática de la materia"@es .
+
+<http://guia-mad-bench.es/data/guia/LearningResult_RA3> rdf:type :LearningResult ;
+    guide:sch:name "RA3"^^xsd:string ;
+    sch:description "Interioriza los principios de deontología profesional para actividades de I+D+i"@es .
+
+<http://guia-mad-bench.es/data/guia/LearningResult_RA4> rdf:type :LearningResult ;
+    guide:sch:name "RA4"^^xsd:string ;
+    sch:description "Utiliza con eficacia recursos de información y comunicación"@en .
+
+#################################################################
+###  Syllabus ###
+#################################################################
+
+<http://guia-mad-bench.es/data/guia/Syllabus_43000434> rdf:type :Syllabus ,
+        sch:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/guia/Item_Presentacion>,
+                  <http://guia-mad-bench.es/data/guia/Item_Revision_Suelo>,
+                  <http://guia-mad-bench.es/data/guia/Item_Suelos_NoSaturados>,
+                  <http://guia-mad-bench.es/data/guia/Item_Modelos_Constitutivos>,
+                  <http://guia-mad-bench.es/data/guia/Item_Modelos_Particulas>,
+                  <http://guia-mad-bench.es/data/guia/Item_Analisis_Fiabilidad> .
+
+<http://guia-mad-bench.es/data/guia/Syllabus_43000434> guide:hasSyllabusDescription "Objetivos y metodología: El curso pretende familiarizar a los alumnos con aspectos avanzados del comportamiento de los suelos (modelos de estado crítico, suelos parcialmente saturados, medios granulares, etc.), así como con la caracterización y efectos de las incertidumbres asociadas al proyecto geotécnico."@es .
+
+<http://guia-mad-bench.es/data/guia/Item_Presentacion> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    sch:description "Presentación"@en .
+
+<http://guia-mad-bench.es/data/guia/Item_Revision_Suelo> rdf:type :SyllabusItem ;
+    guide:itemIndex 2^^xsd:integer ;
+    sch:description "Revisión del comportamiento básico del suelo. Teorías de estado crítico."@es .
+
+<http://guia-mad-bench.es/data/guia/Item_Revision_Suelo> guide:sch:name "Respuesta con y sin drenaje" ,
+        "Introducción a los modelos de estado crítico"@en ;
+    sch:description "2.1. Respuesta con y sin drenaje.<br>2.2. Introducción a los modelos de estado crítico."@es .
+
+<http://guia-mad-bench.es/data/guia/Item_Suelos_NoSaturados> rdf:type :SyllabusItem ;
+    guide:itemIndex 3^^xsd:integer ;
+    sch:description "Suelos no saturados"@en ;
+    sch:name "Succion. Resistencia. Permeabilidad.<br>Aplicaciones" .
+
+<http://guia-mad-bench.es/data/guia/Item_Modelos_Constitutivos> rdf:type :SyllabusItem ;
+    guide:itemIndex 4^^xsd:integer ;
+    sch:description "Modelos constitutivos"@en ;
+    sch:name "Modelo hiperbólico.<br>Aplicaciones a algunos programas comerciales" .
+
+<http://guia-mad-bench.es/data/guia/Item_Modelos_Particulas> rdf:type :SyllabusItem ;
+    guide:itemIndex 5^^xsd:integer ;
+    sch:description "Modelos de partículas"@en .
+
+<http://guia-mad-bench.es/data/guia/Item_Analisis_Fiabilidad> rdf:type :SyllabusItem ;
+    guide:itemIndex 6^^xsd:integer ;
+    sch:name "Análisis de fiabilidad" ,
+        "Caracterización de incertidumbres y modos de fallo.<br>Métodos de cálculo de la fiabilidad<br>Calibración de modelos bajo incertidumbre"@es .
+
+#################################################################
+###  Schedule and Events ###
+#################################################################
+
+<http://guia-mad-bench.es/data/guia/Schedule_43000434> rdf:type :Schedule ,
+        sch:Schedule ;
+    guide:sch:eventSchedule <http://guia-mad-bench.es/data/guia/Event_Evaluacion_Dummy>,
+                            <http://guia-mad-bench.es/data/guia/Event_Examen_Final> .
+
+<http://guia-mad-bench.es/data/guia/Schedule_43000434> guide:periodEndingMonth "Junio"^^xsd:string ;
+    guide:periodStartingMonth "Febrero"^^xsd:string .
+
+#################################################################
+###  Evaluation Trials ###
+#################################################################
+
+<http://guia-mad-bench.es/data/guia/EvaluationSystem_43000434> rdf:type :EvaluationSystem ,
+        sch:Evaluations ;
+    guide:hasSyllabus <http://guia-mad-bench.es/data/guia/Syllabus_43000434> .
+
+<http://guia-mad-bench.es/data/guia/EvaluationTrial_Progresiva> rdf:type :EvaluationTrial ,
+        sch:Evaluations ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/Event_Evaluacion_Dummy>,
+                          <http://guia-mad-bench.es/data/guia/Event_Examen_Final> .
+
+<http://guia-mad-bench.es/data/guia/EvaluationTrial_Progresiva> guide:trialType "Progresiva"^^xsd:string ;
+    sch:description "Evaluación Progresiva"@es ;
+    guide:evaluationDescription "Técnica del tipo Examen Escrito. Evaluación Progresiva."@en .
+
+<http://guia-mad-bench.es/data/guia/EvaluationTrial_Global> rdf:type :EvaluationTrial ,
+        sch:Evaluations ;
+    guide:sch:name "Examen final"^^xsd:string ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/guia/Event_Examen_Final>,
+                          <http://guia-mad-bench.es/data/guia/Event_Evaluacion_Dummy> .
+
+<http://guia-mad-bench.es/data/guia/EvaluationTrial_Global> guide:trialType "Global"^^xsd:string ;
+    sch:description "Examen final"@es ;
+    guide:evaluationDescription "Técnica del tipo Examen Escrito. Evaluación Global."@en .
+
+#################################################################
+###  Schedule Events ###
+#################################################################
+
+<http://guia-mad-bench.es/data/guia/Event_Evaluacion_Dummy> rdf:type :ScheduleEvent ,
+        sch:Event ;
+    guide:eventWeek "1"^^xsd:integer ;
+    sch:description "Evaluación dummy para validar la Guía."@es .
+
+<http://guia-mad-bench.es/data/guia/Event_Examen_Final> rdf:type :ScheduleEvent ,
+        sch:Event ;
+    guide:eventWeek 17^^xsd:integer ;
+    sch:name "Examen final" ,
+        "Evaluación Global"@en ;
+    guide:sch:description "Técnica del tipo Examen Escrito. Evaluación Progresiva."@es .
+
+#################################################################
+###  Didactic Resources ###
+#################################################################
+
+<http://guia-mad-bench.es/data/guia/Resource_ANG_AHS_Tang_W> rdf:type :DidacticResource ,
+        sch:Book ;
+    guide:bibliographyTitle "Probability concepts in Engineering planning and design. Vol 1"^^xsd:string ;
+    guide:sch:name "John Wiley and Sons"@en .
+
+<http://guia-mad-bench.es/data/guia/Resource_ANG_AHS_Tang_W> sch:description "ANG A.H.S y TANG W. (1975)"@es ;
+    guide:bibliographyDescription "?The Mechanics of Soils. An Introduction to Critical State Soil Mechanics?. Mc Graw Hill." .
+
+<http://guia-mad-bench.es/data/guia/Resource_Atkinson_Bransby> rdf:type :DidacticResource ,
+        sch:Book ;
+    guide:sch:name "Attkinson, J.H. & Bransby, P.L. (1978)"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia/Resource_Atkinson_Bransby> sch:description "?The Mechanics of Soils. An Introduction to Critical State Soil Mechanics?. Mc Graw Hill."@es ;
+    guide:bibliographyDescription "London, 375 p"@en .
+
+<http://guia-mad-bench.es/data/guia/Resource_Baecher_Christian> rdf:type :DidacticResource ,
+        sch:Book ;
+    guide:sch:name "BAECHER G y CHRISTIAN J. (2003)"^^xsd:string .
+
+<http://guia-mad-bench.es/data/guia/Resource_Baecher_Christian> sch:description "Reliability and Statistics in Geotechnical Engineering. Wiley."@es ;
+    guide:bibliographyDescription ""@en .
+
+#################################################################
+###  Links ###
+#################################################################
+
+<http://w3id.org/def/guia#43000434-2S_2025-26> rdf:type :CourseGuide ,
+        sch:CourseInstance ;
+    guide:sch:name "Fiabilidad Y Modelos Geotécnicos"^^xsd:string .
+
+<http://w3id.org/def/guia#43000434-2S_2025-26> rdf:type :Degree ,
+        sch:CourseInstance ;
+    guide:sch:name "Master Universitario Ingenieria De Estructuras, Cimentaciones Y Materiales"^^xsd:string .
+
+<http://w3id.org/def/guia#43000434-2S_2025-26> rdf:type :UniversityCenter ,
+        sch:Organization ;
+    guide:sch:name "E.T.S. de Ing. de Caminos Canales y P."^^xsd:string .
+
+<http://w3id.org/def/guia#43000434-2S_2025-26> rdf:type :Lecturer ,
+        sch:Person ;
+    guide:sch:name "Enrique Asanza Izquierdo"^^xsd:string .
+
+<http://w3id.org/def/guia#43000434-2S_2025-26> rdf:type :Lecturer ,
+        sch:Person ;
+    guide:sch:name "Rafael Jimenez Rodriguez"^^xsd:string .
+
+<http://w3id.org/def/guia#43000434-2S_2025-26> rdf:type :Lecturer ,
+        sch:Person ;
+    guide:sch:name "Ignacio Gonzalez Tejada"^^xsd:string .

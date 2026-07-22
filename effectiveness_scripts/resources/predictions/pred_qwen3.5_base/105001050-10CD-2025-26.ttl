@@ -1,0 +1,208 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course/GA_10CD_105001050> rdf:type :CourseGuide ;
+    dc:title "Ecuaciones Diferenciales Y Modelización De Fenómenos Reales"@en ;
+    dct:creator <http://w3id.org/def/guia#Javier Lopez De La Cruz>,
+                <http://w3id.org/def/guia#Paulo Nicanor Seminario Huertas> ;
+    guide:numberOfCredits "6"^^xsd:decimal ;
+    sch:description "La asignatura pretende ofrecer a los estudiantes una introducción al modelado de fenómenos reales mediante ecuaciones diferenciales ordinarias y sistemas de ecuaciones diferenciales, así como proporcionarles herramientas básicas que les permitan analizar matemáticamente los modelos obtenidos."@en ;
+    guide:syllabus <http://guia-mad-bench.es/data/syllabus/ANX_PR_CL_001_01> .
+
+<http://w3id.org/def/guia#Javier Lopez De La Cruz> rdf:type :Lecturer, sch:Person ;
+    sch:name "Javier Lopez De La Cruz"@en ;
+    guide:office "1312"^^xsd:string ;
+    sch:email <mailto:javier.lopez.delacruz@upm.es> .
+
+<http://w3id.org/def/guia#Paulo Nicanor Seminario Huertas> rdf:type :Lecturer, sch:Person ;
+    sch:name "Paulo Nicanor Seminario Huertas"@en ;
+    guide:office "1312"^^xsd:string ;
+    sch:email <mailto:paulo.seminario.huertas@upm.es> .
+
+<http://guia-mad-bench.es/data/degree/GRADE_CIA_DATOS> rdf:type :Degree, :BachelorDegree ;
+    guide:numberOfCredits "6"^^xsd:decimal ;
+    sch:name "Grado En Ciencia de Datos e Inteligencia Artificial"@en ;
+    sch:description "10CD - Grado en Ciencia de Datos e Inteligencia Artificial"@en .
+
+<http://guia-mad-bench.es/data/university/E_TSI_INFORMATICA> rdf:type :UniversityCenter, sch:Organization ;
+    sch:name "E.T.S. De Ingenieros Informáticos"^^xsd:string ;
+    guide:offers <http://w3id.org/def/guia#GRADE_CIA_DATOS> .
+
+<http://guia-mad-bench.es/data/syllabus/ANX_PR_CL_001_01> rdf:type :Syllabus, sch:Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/item/TOPICO_1>,
+                  <http://guia-mad-bench.es/data/item/TOPICO_2>,
+                  <http://guia-mad-bench.es/data/item/TOPICO_3> ;
+    guide:syllabusDescription "Ecuaciones diferenciales de primer orden, Ecuaciones diferenciales de orden superior, Sistemas diferenciales lineales..."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/SCHEDULE_GA_10CD_2025> rdf:type :Schedule ;
+    sch:courseCode "105001050"^^xsd:integer ;
+    guide:syllabus <http://guia-mad-bench.es/data/syllabus/ANX_PR_CL_001_01> .
+
+<http://guia-mad-bench.es/data/item/TOPICO_1> rdf:type :SyllabusItem, sch:CourseInstance ;
+    guide:itemIndex "1"^^xsd:integer ;
+    guide:syllabusDescription "Ecuaciones diferenciales de primer orden. Introducción a las ecuaciones diferenciales."^^xsd:string .
+
+<http://guia-mad-bench.es/data/item/TOPICO_2> rdf:type :SyllabusItem, sch:CourseInstance ;
+    guide:itemIndex "2"^^xsd:integer ;
+    guide:syllabusDescription "Ecuaciones diferenciales de orden superior. Introducción a las ecuaciones diferenciales de orden superior."^^xsd:string .
+
+<http://guia-mad-bench.es/data/item/TOPICO_3> rdf:type :SyllabusItem, sch:CourseInstance ;
+    guide:itemIndex "3"^^xsd:integer ;
+    guide:syllabusDescription "Sistemas diferenciales lineales de primer orden. Introducción a los sistemas diferenciales."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/SEMESTER_1> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "1"^^xsd:integer ;
+    guide:eventWeek "Semestre 1"^^xsd:string ;
+    sch:description "Explicación de contenidos teóricos y prácticos."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/SEMESTER_2> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "2"^^xsd:integer ;
+    guide:eventWeek "Semestre 2"^^xsd:string ;
+    sch:description "Explicación de contenidos teóricos y prácticos."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/SEMESTER_3> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "3"^^xsd:integer ;
+    guide:eventWeek "Semestre 3"^^xsd:string ;
+    sch:description "Explicación de contenidos teóricos y prácticos."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/SEMESTER_4> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "4"^^xsd:integer ;
+    guide:eventWeek "Semestre 4"^^xsd:string ;
+    sch:description "Explicación de contenidos teóricos y prácticos."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/SEMESTER_5> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "5"^^xsd:integer ;
+    guide:eventWeek "Semestre 5"^^xsd:string ;
+    sch:description "Explicación de contenidos teóricos y prácticos."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/SEMESTER_6> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "6"^^xsd:integer ;
+    guide:eventWeek "Semestre 6"^^xsd:string ;
+    sch:description "Explicación de contenidos teóricos y prácticos."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/SEMESTER_7> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "7"^^xsd:integer ;
+    guide:eventWeek "Semestre 7"^^xsd:string ;
+    sch:description "Explicación de contenidos teóricos y prácticos."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/SEMESTER_8> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "8"^^xsd:integer ;
+    guide:eventWeek "Semestre 8"^^xsd:string ;
+    sch:description "Explicación de contenidos teóricos y prácticos."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/SEMESTER_9> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "9"^^xsd:integer ;
+    guide:eventWeek "Semestre 9"^^xsd:string ;
+    sch:description "Explicación de contenidos teóricos y prácticos."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/SEMESTER_10> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "10"^^xsd:integer ;
+    guide:eventWeek "Semestre 10"^^xsd:string ;
+    sch:description "Explicación de contenidos teóricos y prácticos."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/SEMESTER_11> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "11"^^xsd:integer ;
+    guide:eventWeek "Semestre 11"^^xsd:string ;
+    sch:description "Explicación de contenidos teóricos y prácticos."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/SEMESTER_12> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "12"^^xsd:integer ;
+    guide:eventWeek "Semestre 12"^^xsd:string ;
+    sch:description "Explicación de contenidos teóricos y prácticos."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/SEMESTER_13> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "13"^^xsd:integer ;
+    guide:eventWeek "Semestre 13"^^xsd:string ;
+    sch:description "Trabajo sobre ecuaciones diferenciales de primer orden..."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/SEMESTER_14> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "14"^^xsd:integer ;
+    guide:eventWeek "Semestre 14"^^xsd:string ;
+    sch:description "Trabajo sobre ecuaciones diferenciales de orden superior..."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/SEMESTER_15> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "15"^^xsd:integer ;
+    guide:eventWeek "Semestre 15"^^xsd:string ;
+    sch:description "Trabajo sobre sistemas diferenciales lineales..."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/SEMESTER_16> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "16"^^xsd:integer ;
+    guide:eventWeek "Semestre 16"^^xsd:string ;
+    sch:description "Trabajo sobre sistemas diferenciales no lineales..."^^xsd:string .
+
+<http://guia-mad-bench.es/data/schedule/SEMESTER_17> rdf:type :ScheduleEvent, sch:Event ;
+    guide:eventIndex "17"^^xsd:integer ;
+    guide:eventWeek "Semestre 17"^^xsd:string ;
+    sch:description "Evaluación progresiva y global."^^xsd:string .
+
+<http://guia-mad-bench.es/data/activity/ACTIVIDAD_01> rdf:type :Activity, om:Unit ;
+    guide:activityDescription "Trabajo sobre ecuaciones diferenciales de primer orden..."^^xsd:string ;
+    sch:name "Ecuaciones Diferenciales Primer Orden"^^xsd:string .
+
+<http://guia-mad-bench.es/data/activity/ACTIVIDAD_02> rdf:type :Activity, om:Unit ;
+    guide:activityDescription "Trabajo sobre ecuaciones diferenciales de orden superior..."^^xsd:string ;
+    sch:name "Ecuaciones Diferenciales Orden Superior"^^xsd:string .
+
+<http://guia-mad-bench.es/data/activity/ACTIVIDAD_03> rdf:type :Activity, om:Unit ;
+    guide:activityDescription "Trabajo sobre sistemas diferenciales lineales..."^^xsd:string ;
+    sch:name "Sistemas Diferenciales Lineales"^^xsd:string .
+
+<http://guia-mad-bench.es/data/activity/ACTIVIDAD_04> rdf:type :Activity, om:Unit ;
+    guide:activityDescription "Trabajo sobre sistemas diferenciales no lineales..."^^xsd:string ;
+    sch:name "Sistemas Diferenciales No Lineales"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluation/EVALUACION_01> rdf:type :EvaluationTrial, om:Unit ;
+    guide:trialDescription "Trabajo sobre ecuaciones diferenciales de primer orden..."^^xsd:string ;
+    sch:name "Evaluación Progresiva 1"^^xsd:string ;
+    guide:gradePercentage "25%"^^xsd:string ;
+    guide:minimumScore "3.5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluation/EVALUACION_02> rdf:type :EvaluationTrial, om:Unit ;
+    guide:trialDescription "Trabajo sobre ecuaciones diferenciales de orden superior..."^^xsd:string ;
+    sch:name "Evaluación Progresiva 2"^^xsd:string ;
+    guide:gradePercentage "25%"^^xsd:string ;
+    guide:minimumScore "3.5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluation/EVALUACION_03> rdf:type :EvaluationTrial, om:Unit ;
+    guide:trialDescription "Trabajo sobre sistemas diferenciales lineales..."^^xsd:string ;
+    sch:name "Evaluación Progresiva 3"^^xsd:string ;
+    guide:gradePercentage "25%"^^xsd:string ;
+    guide:minimumScore "3.5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evaluation/EVALUACION_04> rdf:type :EvaluationTrial, om:Unit ;
+    guide:trialDescription "Trabajo sobre sistemas diferenciales no lineales..."^^xsd:string ;
+    sch:name "Evaluación Progresiva 4"^^xsd:string ;
+    guide:gradePercentage "25%"^^xsd:string ;
+    guide:minimumScore "3.5 / 10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CB_04> rdf:type :Competency, om:Unit ;
+    guide:competencyCode "CB04"^^xsd:string ;
+    guide:competencyDescription "Que los estudiantes puedan transmitir información..."^^xsd:string .
+
+<http://guia-mad-bench.es/data/learningresult/RA_133> rdf:type :LearningResult, om:Unit ;
+    guide:learningResultCode "RA133"^^xsd:string ;
+    guide:learningResultDescription "Entender la importancia de las ecuaciones diferenciales..."^^xsd:string .
+
+<http://guia-mad-bench.es/data/competency/CB_04> rdf:type :Competency, om:Unit ;
+    guide:hasSyllabus <http://w3id.org/def/guia#GA_10CD_105001050> .
+
+<http://guia-mad-bench.es/data/course/GA_10CD_105001050> guide:hasCompetency <http://guia-mad-bench.es/data/competency/CB_04>,
+    <http://w3id.org/def/guia#CE_01>,
+    <http://w3id.org/def/guia#CG_02>,
+    <http://w3id.org/def/guia#CG_03>,
+    <http://w3id.org/def/guia#CG_06> ;
+
+<http://guia-mad-bench.es/data/course/GA_10CD_105001050> guide:hasLearningResult <http://guia-mad-bench.es/data/learningresult/RA_133>,
+    <http://w3id.org/def/guia#RA_136>,
+    <http://w3id.org/def/guia#RA_134>,
+    <http://w3id.org/def/guia#RA_135>,
+    <http://w3id.org/def/guia#RA_138> ;
+
+<http://guia-mad-bench.es/data/course/GA_10CD_105001050> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus/ANX_PR_CL_001_01> .

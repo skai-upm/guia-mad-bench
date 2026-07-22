@@ -1,0 +1,102 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/course_guide_203000027> rdf:type :CourseGuide ;
+    dc:title "Computational Approaches In Evolutionary Biology"@en ;
+    dct:creator <http://guia-mad-bench.es/data/lecturer_pagan_munoz> ,
+              <http://guia-mad-bench.es/data/lecturer_saez_sanchez> ;
+    guide:numberOfCredits "3"^^xsd:decimal ;
+    guide:courseType "Optional/elective"@en ;
+    sch:name "ANX-PR/CL/001-01 LEARNING GUIDE"@en ;
+    dct:description "Master Universitario En Biologia Computacional - 20BC"@en .
+
+<http://guia-mad-bench.es/data/syllabus_203000027> rdf:type :Syllabus ;
+    guide:hasItem <http://guia-mad-bench.es/data/syllabus_item_mutation> ,
+                  <http://guia-mad-bench.es/data/syllabus_item_selection> .
+
+<http://guia-mad-bench.es/data/lecturer_pagan_munoz> rdf:type :Lecturer ;
+    sch:name "Jesus Israel Pagan Muñoz"@en ;
+    guide:office "231"^^xsd:string ;
+    sch:email <mailto:jesusisrael.pagan@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer_saez_sanchez> rdf:type :Lecturer ;
+    sch:name "Cristina Saez Sanchez"@en ;
+    guide:office "202 - CBGP"^^xsd:string ;
+    sch:email <mailto:cristina.saez@upm.es> .
+
+<http://guia-mad-bench.es/data/schedule_203000027> rdf:type :Schedule ;
+    guide:eventIndex "1"^^xsd:integer ,
+                    "4"^^xsd:integer ,
+                    "8"^^xsd:integer ,
+                    "15"^^xsd:integer .
+
+<http://guia-mad-bench.es/data/schedule_event_203000027> rdf:type :ScheduleEvent ;
+    guide:eventIndex "4"^^xsd:integer ;
+    sch:description "Problems: Estimation of selection coefficients through the use of fitness measures"@en .
+
+<http://guia-mad-bench.es/data/schedule_event_8_203000027> rdf:type :ScheduleEvent ;
+    guide:eventIndex "8"^^xsd:integer ;
+    sch:description "Practical work: The students will be provided with a nucleotide sequence alignment derived from individuals from a given population of the same organism. They will have to estimate mutation rates and the genetic structure of the population."@en .
+
+<http://guia-mad-bench.es/data/schedule_event_15_203000027> rdf:type :ScheduleEvent ;
+    guide:eventIndex "15"^^xsd:integer ;
+    sch:description "Practical work: The students are provided with an alignment with nucleotide sequence from the genome of various related species, and they have to analyze whether these species followed a simpatric or an allopatric mode of speciation."@en .
+
+<http://guia-mad-bench.es/data/schedule_event_17_203000027> rdf:type :ScheduleEvent ;
+    guide:eventIndex "17"^^xsd:integer ;
+    sch:description "The students will be provided with genetic and phenotypic data for certain organisms and they have to aswer five questions about the evolutionary dynamics of the population."@en .
+
+<http://guia-mad-bench.es/data/schedule_event_4_eval> rdf:type :ScheduleEvent ;
+    guide:trialType "Progressive assessment"@en ;
+    sch:description "Problem-solving test"@en .
+
+<http://guia-mad-bench.es/data/eval_trial_week4> rdf:type :EvaluationTrial ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/schedule_event_203000027> ;
+    sch:description "Problems: Estimation of selection coefficients through the use of fitness measures"@en .
+
+<http://guia-mad-bench.es/data/eval_trial_week8> rdf:type :EvaluationTrial ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/schedule_event_8_203000027> ;
+    sch:description "Practical work: The students will be provided with a nucleotide sequence alignment derived from individuals from a given population of the same organism. They will have to estimate mutation rates and the genetic structure of the population."@en .
+
+<http://guia-mad-bench.es/data/eval_trial_week15> rdf:type :EvaluationTrial ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/schedule_event_15_203000027> ;
+    sch:description "Practical work: The students are provided with an alignment with nucleotide sequence from the genome of various related species, and they have to analyze whether these species followed a simpatric or an allopatric mode of speciation."@en .
+
+<http://guia-mad-bench.es/data/eval_trial_week17> rdf:type :EvaluationTrial ;
+    guide:hasScheduleEvent <http://guia-mad-bench.es/data/schedule_event_17_203000027> ;
+    sch:description "The students will be provided with genetic and phenotypic data for certain organisms and they have to aswer five questions about the evolutionary dynamics of the population."@en .
+
+<http://guia-mad-bench.es/data/syllabus_item_mutation> rdf:type :SyllabusItem ;
+    guide:itemIndex "1"^^xsd:integer ;
+    sch:description "Mechanisms of evolution: mutation"@en .
+
+<http://guia-mad-bench.es/data/syllabus_item_selection> rdf:type :SyllabusItem ;
+    guide:itemIndex "2"^^xsd:integer ;
+    sch:description "Natural selection"@en .
+
+<http://guia-mad-bench.es/data/competency_ce05> rdf:type :Competency ;
+    guide:competencyCode "CE05"^^xsd:string ;
+    guide:competencyDescription "Utilizar herramientas de biología computacional para el análisis genómico, incluida la genómica comparativa y biología evolutiva."@en .
+
+<http://guia-mad-bench.es/data/learning_result_ra18> rdf:type :LearningResult ;
+    guide:learningResultCode "RA18"^^xsd:string ;
+    guide:learningResultDescription "Conocer los supuestos teóricos y la base bioestadística en la que se apoyan los diferentes métodos de análisis computacional de la evolución de los organismos"@en .
+
+<http://guia-mad-bench.es/data/eval_system_203000027> rdf:type :EvaluationSystem ;
+    guide:hasEvaluationTrial <http://guia-mad-bench.es/data/eval_trial_week4> ,
+                            <http://guia-mad-bench.es/data/eval_trial_week8> .
+
+<http://guia-mad-bench.es/data/course_guide_203000027> guide:hasSyllabus <http://guia-mad-bench.es/data/syllabus_203000027> ;
+    sch:courseSchedule <http://guia-mad-bench.es/data/schedule_203000027> .
+
+<http://guia-mad-bench.es/data/course_guide_203000027> guide:sch:director <http://guia-mad-bench.es/data/lecturer_pagan_munoz> ;
+    sch:instructor <http://guia-mad-bench.es/data/lecturer_saez_sanchez> .
+
+<http://guia-mad-bench.es/data/course_guide_203000027> guide:numberOfCredits "3"^^xsd:decimal ;
+    guide:courseType "Optional/elective"@en .

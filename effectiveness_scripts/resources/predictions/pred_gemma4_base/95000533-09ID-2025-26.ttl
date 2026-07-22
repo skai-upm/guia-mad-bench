@@ -1,0 +1,212 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# --- Degree and University Center ---
+
+:degree_09ID rdf:type guide:BachelorDegree ;
+    sch:name "Grado en Ingenieria y Sistemas de Datos" ;
+    guide:degreeCode "09ID" .
+
+:ets_telecom rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros De Telecomunicacion" .
+
+:degree_09ID guide:offers :ets_telecom . # Note: ontology says UniversityCenter offers Degree, but logic is Center hosts/has degree. Using 'offers' as per ontology domain/range if applicable, though usually center is the subject. 
+# Correction based on ontology: guide:offers rdfs:domain guide:UniversityCenter rdfs:range guide:Degree.
+:ets_teleint rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros De Telecomunicacion" ;
+    guide:offers :degree_09ID .
+
+# --- Course ---
+
+:course_95000533 rdf:type guide:Course ;
+    sch:name "Proyectos en Ingeniería de Datos y Sistemas" ;
+    sch:courseCode 95000533 ;
+    guide:courseType "Obligatoria" ;
+    guide:courseYear 2025 ;
+    guide:semester "Séptimo semestre" .
+
+# --- Course Guide ---
+
+:course_guide_95000533 rdf:type guide:CourseGuide ;
+    sch:hasCourseInstance :course_95000533 ;
+    sch:instructor :lecturer_julian_cabrera ;
+    sch:inLanguage "Castellano" ;
+    guide:numberOfCredits 9.0 ;
+    guide:teachingPeriod "2025-26" ;
+    guide:periodStartingMonth "Septiembre" ;
+    guide:periodEndingMonth "Enero" ;
+    guide:hasSyllabus :syllabus_95000533 ;
+    guide:hasEvaluation :eval_system_95000533 ;
+    guide:hasCompetency :comp_CB01, :comp_CB02, :comp_CB05, :comp_CE04, :comp_CE05, :comp_CE18, :comp_CE19, :comp_CE21, :comp_CG01, :comp_CG02, :comp_CG03, :comp_CG04, :comp_CG05, :comp_CG06, :comp_CG07, :comp_CG10, :comp_CG11 ;
+    guide:hasLearningResult :lr_RA112, :lr_RA110, :lr_RA111, :lr_RA113 ;
+    guide:hasDidacticResource :res_moodle ;
+    sch:description "Introducción a la ejecución de proyectos en ingeniería de datos y sistemas, a partir de casos de estudio." .
+
+# --- Lecturers ---
+
+:lecturer_fraile rdf:type guide:Lecturer ;
+    sch:name "Jose Jesus Fraile Ardanuy" ;
+    sch:email "jesus.fraile.ardanuy@upm.es" .
+
+:lecturer_gutierrez rdf:type guide:Lecturer ;
+    sch:name "Alvaro Gutierrez Martin" ;
+    sch:email "a.gutierrez@upm.es" .
+
+:lecturer_fernandez rdf:type guide:Lecturer ;
+    sch:name "Fernando Fernandez Martinez" ;
+    sch:email "fernando.fernandezm@upm.es" .
+
+:lecturer_vinagre rdf:type guide:Lecturer ;
+    sch:name "Juan Jose Vinagre Diaz" ;
+    sch:email "juanjose.vinagre@upm.es" .
+
+:lecturer_sanchez rdf:type guide:Lecturer ;
+    sch:name "Juan Fernando Sanchez Rada" ;
+    sch:email "jf.sanchez@upm.es" .
+
+:lecturer_julian_cabrera rdf:type guide:Lecturer ;
+    sch:name "Julian Cabrera Quesada" ;
+    sch:email "julian.cabrera@upm.es" .
+
+:lecturer_external_fuertes rdf:type guide:Lecturer ;
+    sch:name "Daniel Fuertes Coiras" ;
+    sch:email "d.fcoiras@upm.es" .
+
+# --- Competencies ---
+
+:comp_CB01 rdf:type guide:Competency ; guide:competencyCode "CB01" ; guide:competencyDescription "Conocimientos en un área de estudio... nivel avanzado." .
+:comp_CB02 rdf:type guide:Competency ; guide:competencyCode "CB02" ; guide:competencyDescription "Aplicar conocimientos a su trabajo o vocación profesional." .
+:comp_CB05 rdf:type guide:Competency ; guide:competencyCode "CB05" ; guide:competencyDescription "Habilidades de aprendizaje para estudios posteriores con autonomía." .
+:comp_CE04 rdf:type guide:Competency ; guide:competencyCode "CE04" ; guide:competencyDescription "Aplicar conceptos y tecnologías del ámbito de la ingeniería de telecomunicación." .
+:comp_CE05 rdf:type guide:Competency ; guide:competencyCode "CE05" ; guide:competencyDescription "Analizar requisitos e identificar riesgos de un proyecto de ingeniería de datos." .
+:comp_CE18 rdf:type guide:Competency ; guide:competencyCode "CE18" ; guide:competencyDescription "Gestionar, supervisar y evaluar proyectos de ingeniería de datos." .
+:comp_CE19 rdf:type guide:Competency ; guide:competencyCode "CE19" ; guide:competencyDescription "Entender conceptos y metodologías de teoría de sistemas." .
+:comp_CE21 rdf:type guide:Competency ; guide:competencyCode "CE21" ; guide:competencyDescription "Aplicar normativa, legislación y regulaciones relativas a los sistemas." .
+:comp_CG01 rdf:type guide:Competency ; guide:competencyCode "CG01" ; guide:competencyDescription "Capacidad de trabajar en entornos internacionales y multidisciplinares (Inglés)." .
+:comp_CG02 rdf:type guide:Competency ; guide:competencyCode "CG02" ; guide:competencyDescription "Desarrollar la capacidad de trabajar en equipo empleando metodologías ágiles." .
+:comp_CG03 rdf:type guide:Competency ; guide:competencyCode "CG03" ; guide:competency $\text{competencyDescription}$ "Ser capaz de explicar de forma oral o escrita las soluciones planteadas." .
+:comp_CG04 rdf:type guide:Competency ; guide:competencyCode "CG04" ; guide:competencyDescription "Saber identificar y utilizar herramientas TIC adecuadas." .
+:comp_CG05 rdf:type guide:Competency ; guide:competencyCode "CG05" ; guide:competencyDescription "Capacidad de concebir y proponer soluciones creativas aplicando métodos científicos." .
+:comp_CG06 rdf:type guide:Competency ; guide:competencyCode "CG06" ; guide:competencyDescription "Habilidad para liderar equipos multidisciplinares." .
+:comp_CG07 rdf:type guide:Competency ; guide: $\text{competencyCode}$ "CG07" ; guide:competencyDescription "Saber cómo organizar, planificar y gestionar proyectos de ingeniería." .
+:comp_CG10 rdf:type guide:Competency ; guide:competencyCode "CG10" ; guide:competencyDescription "Proponer e implementar soluciones orientadas a retos sociales (RSC/ODS)." .
+:comp_CG11 rdf:type guide:Competency ; guide:competencyCode "CG11" ; guide:competencyDescription "Ser capaz de trabajar respetando el marco ético." .
+
+# --- Learning Results ---
+
+:lr_RA112 rdf:type guide:LearningResult ; guide:learningResultCode "RA112" ; guide:learningResultDescription "Analizar las tecnologías necesarias para implementar un caso de estudio." .
+:lr_RA110 rdf:type guide:LearningResult ; guide:learningResultCode "RA110" ; guide:learningResultDescription "Saber identificar y definir los requisitos de un proyecto en ingeniería de datos y sistemas." .
+:lr_RA111 rdf:type guide:LearningResult ; guide: $\text{learningResultCode}$ "RA111" ; guide:learningResultDescription "Diseñar una solución para un caso de estudio en ingeniería de datos y sistemas." .
+:lr_RA113 rdf:type guide:LearningResult ; guide:learningResultCode "RA113" ; guide:learningResultDescription "Evaluar y diseñar los aspectos económicos para hacer la solución viable." .
+
+# --- Syllabus ---
+
+:syllabus_95000533 rdf:type guide:Syllabus ;
+    guide:hasItem :unit_1, :unit_2, :unit_3 .
+
+:unit_1 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 1 ;
+    guide:syllabusDescription "UNIDAD 1. Proyecto 1 en Key Application Domain 1 - Caso de Estudio 1" .
+
+:unit_2 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 2 ;
+    guide:syllabusDescription "UNIDAD 2. Proyecto 2 en Key Application Domain 2 - Caso de Estudio 2" .
+
+:unit_3 rdf:type guide:SyllabusItem ;
+    guide:itemIndex 3 ;
+    guide:syllabusDescription "UNIDAD 3. Proyecto 3 en Key Application Domain 3 - Caso de Estudio 3" .
+
+# --- Evaluation System ---
+
+:eval_system_95000533 rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "Evaluación progresiva mediante hitos y examen." ;
+    guide:hasEvaluationTrial :trial_hito1_memoria, :trial_hito1_defensa, :trial_hito2_memoria, :trial_hito2_defensa, :trial_hito3_memoria, :trial_hito3_defensa, :trial_examen_proyecto, :trial_extraordinary_exam .
+
+:trial_hito1_memoria rdf:type guide:EvaluationTrial ;
+    guide:trialType "Memoria Técnica" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "10%" ;
+    guide:trialMode "No presencial" .
+
+:trial_hito1_defensa rdf:type guide:EvaluationTrial ;
+    guide:trialType "Presentación & Defensa" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:trialMode "Presencial" .
+
+:trial_hito2_memoria rdf:type guide:EvaluationTrial ;
+    guide:trialType "Memoria Técnica" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "10%" ;
+    guide:trialMode "No presencial" .
+
+:trial_hito2_defensa rdf:type guide:EvaluationTrial ;
+    guide:trialType "Presentación & Defensa" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:trialMode "Presencial" .
+
+:trial_hito3_memoria rdf:type guide:EvaluationTrial ;
+    guide:trialType "Memoria Técnica" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "10%" ;
+    guide:trialMode "No presencial" .
+
+:trial_hito3_defensa rdf:type guide:EvaluationTrial ;
+    guide:trialType "Presentación & Defensa" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "20%" ;
+    guide:trialMode "Presencial" .
+
+:trial_examen_proyecto rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Escrito" ;
+    guide:evaluationType "progresiva" ;
+    guide:gradePercentage "10%" ;
+    guide:trialMode "Presencial" .
+
+:trial_extraordinary_exam rdf:type guide:EvaluationTrial ;
+    guide:trialType "Examen Final (Extraordinario)" ;
+    guide:evaluationType "extraordinaria" ;
+    guide:gradePercentage "100%" ;
+    guide:minimumScore "5 / 10" ;
+    guide:trialMode "Presencial" .
+
+# --- Schedule and Activities ---
+
+:schedule_95000533 rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week_1, :event_week_2, :event_week_5, :event_week_9, :event_week_14 .
+
+:event_week_1 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :act_presentacion_casos .
+
+:act_presentacion_casos rdf:type guide:Activity ;
+    guide:activityDescription "Presentación - Casos de estudio" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Presencial" .
+
+:event_week_5 rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 5" ;
+    guide:eventIndex 5 ;
+    guide:hasActivity :act_lab_unit1 .
+
+:act_lab_unit1 rdf:type guide:Activity ;
+    guide:activityDescription "Prácticas de Laboratorio Unidad 1" ;
+    guide:activityDuration 2.0 ;
+    guide:attendanceType "Presencial" .
+
+# --- Resources ---
+
+:res_moodle rdf:type guide:DidacticResource ;
+    sch:name "Moodle" ;
+    guide:bibliographyType "Otros" ;
+    guide:bibliographyDescription "Aula virtual para el seguimiento de la asignatura." .
+
+:res_agenda2023 rdf:type guide:DidacticResource ;
+    sch:name "Strategic research and Innovation Agenda 2023" ;
+    guide:bibliographyType "Bibliografía" ;
+    guide:bibliographyDescription "Disponible en https://ecssria.eu/download" .

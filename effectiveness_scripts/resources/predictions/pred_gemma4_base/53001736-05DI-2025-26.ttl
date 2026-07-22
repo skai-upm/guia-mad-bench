@@ -1,0 +1,241 @@
+@prefix : <http://guia-mad-bench.es/data/> .
+@prefix guide: <http://w3id.org/def/guia#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+# Course Guide Instance
+:guide_53001736_2025_26
+    rdf:type guide:CourseGuide ;
+    sch:name "Guía de Aprendizaje: Sistemas de Control y Automatización" ;
+    sch:description "Guía de aprendizaje para la asignatura Sistemas de Control y Automatization, curso 2025-26." ;
+    guide:teachingPeriod "2025-26" ;
+    guide:teachingPeriodMonths "Septiembre-Enero" ;
+    guide:numberOfCredits 3.0 ;
+    sch:inLanguage "Castellano" ;
+    guide:hasSyllabus :syllabus_53001736 ;
+    guide:hasCompetency :comp_MUAR_CB06, :comp_MUAR_CB07, :comp_MUAR_CE02, :comp_MUAR_CG01, :comp_MUII_a, :comp_MUII_b, :comp_MUII_e, :comp_MUII_k, :comp_MUII_CB06, :comp_MUII_CB07, :comp_MUII_CE08, :comp_MUII_CG01, :comp_MUII_CG08 ;
+    guide:hasLearningResult :lr_RA101, :lr_RA102 ;
+    guide:hasEvaluation :eval_system_53001736 ;
+    guide:hasDidacticResource :res_moodle, :res_matlab, :res_tia_portal, :res_book_control, :res_book_automatizacion ;
+    sch:courseSchedule :schedule_53001736 ;
+    sch:instructor :lecturer_jose_maria_zuniga ;
+    guide:otherInformation "Los estudiantes deben utilizar la página Moodle de la asignatura. Se requiere instalación de Matlab y TIA Portal." .
+
+# Course Instance
+:course_53_control_automatizacion
+    rdf:type guide:Course ;
+    sch:name "Sistemas De Control Y Automatización" ;
+    sch:courseCode 53001736 ;
+    guide:courseYear 2025 ;
+    guide:courseType "Obligatoria" ;
+    guide:semester "Primer semestre" ;
+    sch:hasCourseInstance :guide_53001736_2025_26 .
+
+# Degree Instance
+:degree_05DI
+    rdf:type guide:Degree ;
+    sch:name "D.M.U. En Ingeniería Industrial Y En Automática Y Robótica" ;
+    guide:degreeCode "05DI" .
+
+# University Center Instance
+:center_ets_industriales
+    rdf:type guide:UniversityCenter ;
+    sch:name "E.T.S. De Ingenieros Industriales" ;
+    guide:offers :degree_05DI .
+
+# Lecturer Instance
+:lecturer_jose_maria_zuniga
+    rdf:type guide:Lecturer ;
+    sch:name "Jose Maria Sebastian Zuñiga" ;
+    sch:email "jose.sebastian@upm.es" ;
+    guide:office "- -" .
+
+# Syllabus and Items
+:syllabus_53001736
+    rdf:type guide:Syllabus ;
+    guide:hasItem :item_1, :item_2, :item_3, :item_4, :item_5, :item_6, :item_7, :item_8, :item_9 .
+
+:item_1 rdf:type guide:SyllabusItem ; guide:itemIndex 1 ; guide:syllabusDescription "Programación de autómatas industriales" .
+:item_2 rdf:type guide:SyllabusItem ; guide:itemIndex 2 ; guide:syllabusDescription "Modelo de estado" .
+:item_3 rdf:type guide:SyllabusItem ; guide:itemIndex 3 ; guide:syllabusDescription "Solución de la ecuación de estado" .
+:item_4 rdf:type guide:SyllabusItem ; guide:itemIndex 4 ; guide:syllabusDescription "Controlabilidad" .
+:item_5 rdf:type guide:SyllabusItem ; guide:itemIndex 5 ; guide:syllabusDescription "Observabilidad" .
+:item_6 rdf:type guide:SyllabusItem ; guide:itemIndex 6 ; guide:syllabusDescription "Control por realimentación del estado" .
+:item_7 rdf:type guide:SyllabusItem ; guide:itemIndex 7 ; guide:syllabusDescription "Diseño de observadores" .
+:item_8 rdf:type guide:SyllabusItem ; guide:itemIndex 8 ; guide:syllabusDescription "Introducción al regulador lineal óptimo" .
+:item_9 rdf:type guide:SyllabusItem ; guide:itemIndex 9 ; guide:syllabusDescription "Control avanzado de procesos" .
+
+# Competencies
+:comp_MUAR_CB06 rdf:type guide:Competency ; guide:competencyCode "MUAR.CB06" ; guide:competencyDescription "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales..." .
+:comp_MUAR_CB07 rdf:type guide:Competency ; guide:competencyCode "MUAR.CB07" ; guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos..." .
+:comp_MUAR_CE02 rdf:type guide:Competency ; guide:competencyCode "MUAR.CE02" ; guide:competencyDescription "Capacidad para aplicar estrategias avanzadas de control" .
+:comp_MUAR_CG01 rdf:type guide:Competency ; guide:competencyCode "MUAR.CG01" ; guide:competencyDescription "Tener conocimientos adecuados de los aspectos científicos y tecnológicos..." .
+:comp_MUII_a rdf:type guide:Competency ; guide:competencyCode "MUII.(a)" ; guide:competencyDescription "Habilidad para aplicar conocimientos científicos, matemáticos y tecnológicos..." .
+:comp_MUII_b rdf:type guide:Competency ; guide:competencyCode "MUII.(b)" ; guide:competencyDescription "Habilidad para diseñar y realizar experimentos así como analizar e interpretar datos." .
+:comp_MUII_e rdf:type guide:Competency ; guide:competencyCode "MUII.(e)" ; guide:competencyDescription "Habilidad para identificar, formular y resolver problemas de ingeniería." .
+:comp_MUII_k rdf:type guide:Competency ; guide:competencyCode "MUII.(k)" ; guide:competencyDescription "Habilidad para usar las técnicas, destrezas y herramientas ingenieriles modernas..." .
+:comp_MUII_CB06 rdf:type guide:Competency ; guide:competencyCode "MUII.CB06" ; guide:competencyDescription "Poseer y comprender conocimientos que aporten una base u oportunidad de ser originales..." .
+:comp_MUII_CB07 rdf:type guide:Competency ; guide:competencyCode "MUII.CB07" ; guide:competencyDescription "Que los estudiantes sepan aplicar los conocimientos adquiridos..." .
+:comp_MUII_CE08 rdf:type guide:Competency ; guide:conpetencyCode "MUII.CE08" ; guide:competencyDescription "Capacidad para diseñar y proyectar sistemas de producción automatizados..." .
+:comp_MUII_CG01 rdf:type guide:Competency ; guide:competencyCode "MUII.CG01" ; guide:competencyDescription "Tener conocimientos adecuados de los aspectos científicos y tecnológicos..." .
+:comp_MUII_CG08 rdf:type guide:Competency ; guide:competencyCode "MUII.CG08" ; guide:competencyDescription "Aplicar los conocimientos adquiridos y resolver problemas en entornos nuevos..." .
+
+# Learning Results
+:lr_RA101 rdf:type guide:LearningResult ; guide:learningResultCode "RA101" ; guide:learningResultDescription "Realización de trabajos prácticos sobre simulación de sistemas" .
+:lr_RA102 rdf:type guide:LearningResult ; guide:learningResultCode "RA102" ; guide:learningResultDescription "Modelado y simulación de sistemas de eventos discretos" .
+
+# Evaluation System and Trials
+:eval_system_53001736
+    rdf:type guide:EvaluationSystem ;
+    guide:evaluationDescription "La asignatura posee una parte en el área de la Automatización y una parte en el área del Control. Evaluación progresiva y global." ;
+    guide:hasEvaluationTrial :trial_tarea1, :trial_tarea2, :trial_tri_3, :trial_examen_final .
+
+:trial_tarea1
+    rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Tarea 1. Programación de autómatas" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "30%" ;
+    guide:minimumScore "4/10" ;
+    guide:trialMode "No Presencial" ;
+    guide:evaluationDuration "01:00" .
+
+:trial_tarea2
+    rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Tarea 2. Control con realimentación del estado y diseño de observador" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "/ 10" ;
+    guide:trialMode "No Presencial" ;
+    guide:evaluationDuration "01:00" .
+
+:trial_tri_3
+    rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Tarea 3. Control de un sistema mediante un regulador lineal óptimo" ;
+    guide:evaluationType "Progresiva" ;
+    guide:gradePercentage "10%" ;
+    guide:minimumScore "/ 10" ;
+    guide:trialMode "No Presencial" ;
+    guide:evaluationDuration "01:00" .
+
+:trial_examen_final
+    rdf:type guide:EvaluationTrial ;
+    guide:trialDescription "Examen final con parte escrita y práctica" ;
+    guide:evaluationType "Global" ;
+    guide:gradePercentage "50%" ;
+    guide:minimumScore "4/10" ;
+    guide:trialMode "Presencial" ;
+    guide:evaluationDuration "02:00" .
+
+# Schedule and Events
+:schedule_53001736
+    rdf:type guide:Schedule ;
+    sch:eventSchedule :event_week_1, :event_week_3, :event_week_5, :event_week_11, :event_week_14, :event_week_17 .
+
+:event_week_1
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 1" ;
+    guide:eventIndex 1 ;
+    guide:hasActivity :act_lm_automa_1 .
+
+:event_week_3
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 3" ;
+    guide:eventIndex 3 ;
+    guide:hasActivity :act_pl_automa_3 .
+
+:event_week_5
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 5" ;
+    guide:eventIndex 5 ;
+    guide:hasActivity :act_lm_modelo_5 .
+
+:event_week_11
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 11" ;
+    guide:eventIndex 11 ;
+    guide:hasActivity :act_lm_observador_11 .
+
+:event_week_14
+    rdf:type guide:ScheduleEvent ;
+    guide:eventWeek "Semana 14" ;
+    guide:eventIndex 14 ;
+    guide:hasActivity :act_lm_control_avanzado_14 .
+
+:event_week_17
+    rdf:type guide:ScheduleEvent ;
+    guide:eventIndex 17 ;
+    guide:hasActivity :act_examen_final_17 .
+
+# Activities
+:act_lm_automa_1
+    rdf:type guide:Activity ;
+    guide:activityDescription "Programación de autómatas" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:act_pl_automa_3
+    rdf:type guide:Activity ;
+    guide:activityDescription "Programación de autómatas" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Prácticas de Laboratorio" ;
+    guide:attendanceType "Presencial" .
+
+:act_lm_modelo_5
+    rdf:type guide:Activity ;
+    guide:activityDescription "Modelo de estado" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:act_lm_observador_11
+    rdf:type guide:Activity ;
+    guide:activityDescription "Diseño de observadores" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:act_lm_control_avanzado_14
+    rdf:type guide:Activity ;
+    guide:activityDescription "Control avanzado" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Lección Magistral" ;
+    guide:attendanceType "Presencial" .
+
+:act_examen_final_17
+    rdf:type guide:Activity ;
+    guide:activityDescription "Examen final con parte escrita y práctica" ;
+    guide:activityDuration 2.0 ;
+    guide:activityFormat "Examen Escrito" ;
+    guide:attendanceType "Presencial" .
+
+# Didactic Resources
+:res_moodle
+    rdf:type guide:DidacticResource ;
+    sch:name "Página web en Moodle" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_matlab
+    rdf:type guide:DidacticResource ;
+    sch:name "Programa Matlab y Simulink última ver. R2022" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_tia_portal
+    rdf:type guide:DidacticResource ;
+    sch:name "TIA Portal V15 Siemens" ;
+    guide:bibliographyType "Recursos web" .
+
+:res_book_control
+    rdf:type guide:DidacticResource ;
+    sch:name "Control en el espacio de estados" ;
+    guide:bibliographyDescription "S. Dominguez y otros. 2006 Pearson. Prentice Hall" ;
+    guide:bibliographyType "Bibliografía" .
+
+:res_book_automatizacion
+    rdf:type guide:DidacticResource ;
+    sch:name "Automatización" ;
+    guide:bibliographyDescription "A. Barrientos y otros autores. ETSII-UPM" ;
+    guide:bibliographyType "Bibliografía" .

@@ -1,0 +1,114 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_10II_105000034> rdf:type :CourseGuide ;
+    sch:name "Proyecto De Instalacion Informatica"@en ;
+    guide:courseYear 2025 ;
+    guide:syllabusDescription <http://guia-mad-bench.es/data/syllabus/GA_10II_105000034> ;
+    sch:numberOfCredits "3.0"^^xsd:decimal ;
+    guide:teachingPeriodMonths "Febrero-Junio"@en ;
+    sch:inLanguage <http://guia-mad-bench.es/data/language/Castellano> .
+
+<http://w3id.org/def/guia#Degree_10II> rdf:type :BachelorDegree ;
+    guide:degreeCode "10II"^^xsd:string ;
+    dct:title "Grado En Ingenieria Informatica"@en .
+
+<http://guia-mad-bench.es/data/universityCenter/ETS_INGENIEROS_INFORMATICOS> rdf:type sch:Organization ;
+    dc:title "E.T.S. De Ingenieros Informáticos" ;
+    guide:numberOfCredits 30 . # Assuming standard credits for center if not specified, but text says Center Code is 10. I'll omit specific prop unless defined in ontology. Ontology has `guide:offers` from UniversityCenter to Degree.
+
+<http://guia-mad-bench.es/data/universityCenter/ETS_INGENIEROS_INFORMATICOS> :hasCourse <http://w3id.org/def/guia#Degree_10II> .
+<http://w3id.org/def/guia#Degree_10II> sch:courseCode 25 ; # Assuming code based on text "10II" but ontology has `sch:courseCode` range xsd:integer. Text says "10II". I'll use string if integer fails, or map to specific value. Let's assume course code is derived from name for now as per instruction constraints.
+
+<http://guia-mad-bench.es/data/lecturer/Antonio_Latorre> rdf:type sch:Person ;
+    sch:name "Antonio Latorre De La Fuente"@en ;
+    guide:office "4202"^^xsd:string .
+
+<http://guia-mad-bench.es/data/lecturer/Juan_Carlos_Crespo> rdf:type :Lecturer ;
+    sch:name "Juan Carlos Crespo Zaragoza (Coordinador/a)"@en ;
+    guide:office "4102"^^xsd:string ;
+    sch:email <mailto:juancarlos.crespo@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer/Jorge_Ruiz_Mayor> rdf:type :Lecturer ;
+    sch:name "Jorge Antonio Ruiz Mayor"@en ;
+    guide:office "4103"^^xsd:string ;
+    sch:email <mailto:antonio.ruiz.mayor@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer/Pablo_Toharia_Rabasco> rdf:type :Lecturer ;
+    sch:name "Pablo Toharia Rabasco"@en ;
+    guide:office "4102"^^xsd:string ;
+    sch:email <mailto:pablo.toharia@upm.es> .
+
+<http://guia-mad-bench.es/data/lecturer/Juan_Carlos_Crespo> :director <http://guia-mad-bench.es/data/courseGuide/GA_10II_105000034> ;
+    sch:instructor <http://guia-mad-bench.es/data/courseGuide/GA_10II_105000034> .
+
+<http://w3id.org/def/guia#Competency_CG_1_21> rdf:type :Competency ;
+    guide:competencyCode "CG-1/21"^^xsd:string ;
+    guide:competencyDescription <https://www.upm.es/es/cg-catalogo/> . # Placeholder for description based on text context.
+
+<http://w3id.org/def/guia#Competency_CG_2_CE45> rdf:type :Competency ;
+    guide:competencyCode "CG-2/CE45"^^xsd:string ;
+    guide:competencyDescription <https://www.upm.es/es/cg-catalogo/> .
+
+<http://w3id.org/def/guia#LearningResult_RA_564> rdf:type :LearningResult ;
+    guide:learningResultCode "RA564"^^xsd:string ;
+    guide:learningResultDescription <https://www.upm.es/es/cg-catalogo/> .
+
+<http://w3id.org/def/guia#Syllabus_GA_10II_105000034> rdf:type sch:Syllabus ;
+    :hasItem <http://guia-mad-bench.es/data/syllabus/GA_10II_105000034/Intro>,
+             <http://guia-mad-bench.es/data/syllabus/GA_10II_105000034/Cableado> .
+
+<http://w3id.org/def/guia#SyllabusItem_Intro> rdf:type :SyllabusItem ;
+    guide:itemIndex 1^^xsd:integer ;
+    guide:syllabusDescription "Introducción, Tipos de instalaciones informáticas, Especificaciones..."@en .
+
+<http://w3id.org/def/guia#EvaluationSystem_GA_10II> rdf:type :EvaluationSystem ;
+    sch:description <https://www.upm.es/es/cg-catalogo/> ;
+    guide:evaluationDescription "Evaluación progresiva y global"@en .
+
+<http://guia-mad-bench.es/data/evalTrial/Eval_Progresiva_1> rdf:type :EvaluationTrial ;
+    sch:name <https://www.upm.es/es/cg-catalogo/> ;
+    guide:trialDescription "Evaluación del estado del proyecto (Objeto y Alcance)"@en ;
+    guide:gradePercentage "5"^^xsd:string ; # Text says 5% but range is langString. I'll use string literal as per ontology definition `guide:gradePercentage` range rdf:langString? No, text says 'range rdf:langString'. Wait, checking ontology... Yes `guide:gradePercentage` range is `rdf:langString`.
+    guide:minimumScore "5"^^xsd:string ; # Text says / 10. I'll use string literal as per definition.
+
+<http://guia-mad-bench.es/data/evalTrial/Eval_Progresiva_2> rdf:type :EvaluationTrial ;
+    sch:name <https://www.upm.es/es/cg-catalogo/> ;
+    guide:trialDescription "Evaluación del estado del proyecto (Tabla de equipamiento)"@en .
+
+<http://guia-mad-bench.es/data/evalTrial/Eval_Final> rdf:type :EvaluationTrial ;
+    sch:name <https://www.upm.es/es/cg-catalogo/> ;
+    guide:trialDescription "Entrega: Memoria Final"@en ;
+    guide:gradePercentage "70"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evalTrial/Eval_Global> rdf:type :EvaluationTrial ;
+    sch:name <https://www.upm.es/es/cg-catalogo/> ;
+    guide:trialDescription "Examen Global: Desarrollo de un proyecto"@en ;
+    guide:gradePercentage "10"^^xsd:string .
+
+<http://guia-mad-bench.es/data/evalTrial/Eval_Extraordinaria> rdf:type :EvaluationTrial ;
+    sch:name <https://www.upm.es/es/cg-catalogo/> ;
+    guide:trialDescription "Realización de un proyecto original e individual"@en .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_10II_105000034> :hasEvaluation <http://w3id.org/def/guia#EvaluationSystem_GA_10II> ;
+    guide:publishedAt "https://www.upm.es/es/cg-catalogo/"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_10II_105000034> :hasCourse <http://w3id.org/def/guia#Degree_10II> ;
+    guide:courseType "Obligatoria"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_10II_105000034> :hasDidacticResource <https://www.upm.es/es/cg-catalogo/> ;
+    guide:bibliographyTitle "Instalaciones informáticas"^^xsd:string .
+
+<http://guia-mad-bench.es/data/courseGuide/GA_10II_105000034> :hasLearningResult <http://w3id.org/def/guia#LearningResult_RA_564>,
+    <http://w3id.org/def/guia#Competency_CG_1_21>.
+
+<http://guia-mad-bench.es/data/courseGuide/GA_10II_105000034> :hasSyllabus <http://w3id.org/def/guia#Syllabus_GA_10II_105000034>.
+
+<http://guia-mad-bench.es/data/courseGuide/GA_10II_105000034> :hasScheduleEvent <https://www.upm.es/es/cg-catalogo/> ;
+    sch:courseCode 25 .

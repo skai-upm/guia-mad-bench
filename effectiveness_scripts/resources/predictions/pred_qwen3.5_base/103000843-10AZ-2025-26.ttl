@@ -1,0 +1,753 @@
+@prefix : <http://w3id.org/def/guia#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sch: <https://schema.org/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dct:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dct:license rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://schema.org/courseSchedule
+sch:courseSchedule rdf:type owl:ObjectProperty ;
+                   rdfs:domain guide:CourseGuide ;
+                   rdfs:range guide:Schedule ;
+                   rdfs:comment "Links a course guide to the schedule that organizes its planned events."@en ;
+                   rdfs:label "course schedule"@en .
+
+
+###  https://schema.org/director
+sch:director rdf:type owl:ObjectProperty ;
+             rdfs:domain guide:CourseGuide ;
+             rdfs:range guide:Lecturer ;
+             rdfs:comment "Links a course guide to the lecturer acting as course coordinator or academic lead."@en ;
+             rdfs:label "director"@en .
+
+
+###  https://schema.org/eventSchedule
+sch:eventSchedule rdf:type owl:ObjectProperty ;
+                  rdfs:domain guide:Schedule ;
+                  rdfs:range guide:ScheduleEvent ;
+                  rdfs:comment "Links a schedule to one of its schedule events."@en ;
+                  rdfs:label "event schedule"@en .
+
+
+###  https://schema.org/hasCourseInstance
+sch:hasCourseInstance rdf:type owl:ObjectProperty ;
+                      rdfs:domain guide:Course ;
+                      rdfs:range guide:CourseGuide ;
+                      rdfs:comment "Links a course to a concrete course guide or offering for a given academic period."@en ;
+                      rdfs:label "has course instance"@en .
+
+
+###  https://schema.org/instructor
+sch:instructor rdf:type owl:ObjectProperty ;
+               rdfs:domain guide:CourseGuide ;
+               rdfs:range guide:Lecturer ;
+               rdfs:comment "Links a course guide to a lecturer involved in teaching the course."@en ;
+               rdfs:label "instructor"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://schema.org/name
+sch:name rdf:type owl:DatatypeProperty ;
+         rdfs:range rdf:langString ;
+         rdfs:comment "Provides the name of an entity such as a course, person, or university center."@en ;
+         rdfs:label "name"@en .
+
+
+###  https://schema.org/email
+sch:email rdf:type owl:DatatypeProperty ;
+          rdfs:domain guide:Lecturer ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Provides the email address of a person involved in teaching or coordination."@en ;
+          rdfs:label "email"@en .
+
+
+###  https://schema.org/inLanguage
+sch:inLanguage rdf:type owl:DatatypeProperty ;
+               rdfs:domain guide:CourseGuide ;
+               rdfs:range rdf:langString ;
+               rdfs:comment "Indicates the language in which the course guide or teaching is delivered."@en ;
+               rdfs:label "in language"@en .
+
+
+###  https://schema.org/numberOfCredits
+sch:numberOfCredits rdf:type owl:DatatypeProperty ;
+                    rdfs:domain guide:Course ;
+                    rdfs:range xsd:decimal ;
+                    rdfs:comment "States the number of academic credits assigned to a course."@en ;
+                    rdfs:label "number of credits"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://w3id.org/def/guia#CourseGuide
+guide:CourseGuide rdf:type owl:Class ;
+                  rdfs:subClassOf sch:CourseInstance ;
+                  rdfs:comment "A structured academic document that describes a course, including objectives, contents, methodology, resources, schedule, and evaluation."@en ;
+                  rdfs:label "Course Guide"@en .
+
+
+###  http://w3id.org/def/guia#MasterDegree
+guide:MasterDegree rdf:type owl:Class ;
+                   rdfs:subClassOf guide:Degree ;
+                   rdfs:comment "A postgraduate degree programme corresponding to advanced academic or professional specialization."@en ;
+                   rdfs:label "Master's Degree"@en .
+
+
+###  http://w3id.org/def/guia#UniversityCenter
+guide:UniversityCenter rdf:type owl:Class ;
+                       rdfs:subClassOf sch:Organization ;
+                       rdfs:description "An organizational unit within a university where degree programmes are taught, such as a faculty, school, or institute responsible for academic delivery."@en ;
+                       rdfs:label "University Center"@en .
+
+
+###  http://w3id.org/def/guia#Lecturer
+guide:Lecturer rdf:type owl:Class ;
+               rdfs:subClassOf sch:Person ;
+               rdfs:comment "A teaching person responsible for delivering, coordinating, or supporting a course within an academic programme."@en ;
+               rdfs:label "Lecturer"@en .
+
+
+###  http://w3id.org/def/guia#SyllabusItem
+guide:SyllabusItem rdf:type owl:Class ;
+                   rdfs:comment "A single element of a syllabus, representing a topic, unit, lesson, or other content component within the course structure."@en ;
+                   rdfs:label "Syllabus Item"@en .
+
+
+###  http://w3id.org/def/guia#ScheduleEvent
+guide:ScheduleEvent rdf:type owl:Class ;
+                    rdfs:subClassOf sch:Event ;
+                    rdfs:comment "A dated or timed element within a course schedule, such as a class session, deadline, exam, or planned activity."@en ;
+                    rdfs:label "Schedule Event"@en .
+
+
+###  http://w3id.org/def/guia#EvaluationTrial
+guide:EvaluationTrial rdf:type owl:Class ;
+                      rdfs:comment "A specific assessment instance or examination opportunity within the evaluation system, such as an ordinary or extraordinary attempt."@en ;
+                      rdfs:label "Evaluation Trial"@en .
+
+
+###  http://w3id.org/def/guia#DidacticResource
+guide:DidacticResource rdf:type owl:Class ;
+                       rdfs:comment "A teaching or learning resource used in the course, such as readings, software, audiovisual material, or practical tools."@en ;
+                       rdfs:label "Didactic Resource"@en .
+
+
+###  http://w3id.org/def/guia#Competency
+guide:Competency rdf:type owl:Class ;
+                 rdfs:comment "A capability, skill, or integrated learning outcome that students are expected to develop through the course."@en ;
+                 rdfs:label "Competency"@en .
+
+
+###  http://w3id.org/def/guia#Course
+guide:Course rdf:type owl:Class ;
+             rdfs:subClassOf sch:Course ;
+             rdfs:comment "An academic course as defined in the GUIA model, typically described through its content, teaching organization, assessment, and related course guide."@en ;
+             rdfs:label "Course"@en .
+
+
+###  http://w3id.org/def/guia#Degree
+guide:Degree rdf:type owl:Class ;
+             rdfs:comment "An academic degree programme that structures and groups courses within a formal higher education curriculum."@en ;
+             rdfs:label "Degree"@en .
+
+#################################################################
+#    Instances
+#################################################################
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> rdf:type guide:CourseGuide, sch:CourseInstance ;
+                                                        dc:title "Introduction To Technology Watch And Competitive I" ,
+                                                            dct:creator "Alberto Tejero Lopez" ;
+                                                        rdfs:comment "An academic course as defined in the GUIA model."@en ;
+                                                        owl:versionInfo "2025-26"@xsd:string .
+
+<http://guia-mad-bench.es/data/degree-master10AZ> rdf:type guide:MasterDegree, sch:CoursesOfStudy ;
+                                                    dc:title "Master Universitario En Innovación Digital" ,
+                                                        dct:creator "UPM" ;
+                                                    rdfs:comment "Postgraduate degree programme."@en .
+
+<http://guia-mad-bench.es/data/center-Ets-Informaticos> rdf:type guide:UniversityCenter, sch:Organization ;
+                                                           dc:title "E.T.S. De Ingenieros Informáticos" ,
+                                                               dct:creator "UPM" ;
+                                                           rdfs:comment "Organizational unit within a university."@en .
+
+<http://guia-mad-bench.es/data/course-103000843> rdf:type guide:Course, sch:Course ;
+                                                    dc:title "103000843 - Introduction To Technology Watch And Competitive I" ,
+                                                        dct:creator "UPM" ;
+                                                    rdfs:comment "Academic course."@en .
+
+<http://guia-mad-bench.es/data/lecturer-alberto-tejero> rdf:type guide:Lecturer, sch:Person ;
+                                                          dc:title "Alberto Tejero Lopez" ,
+                                                              dct:creator "UPM" ;
+                                                          rdfs:comment "Subject coordinator."@en .
+
+<http://guia-mad-bench.es/data/syllabus-10AZ_2S> rdf:type guide:Syllabus, sch:Syllabus ;
+                                                    dc:title "Introduction To Technology Watch And Competitive I Syllabus" ,
+                                                        dct:creator "UPM" ;
+                                                    rdfs:comment "Structured outline of the course content."@en .
+
+<http://guia-mad-bench.es/data/schedule-10AZ_2S> rdf:type guide:Schedule, sch:Schedule ;
+                                                   dc:title "Introduction To Technology Watch And Competitive I Schedule" ,
+                                                       dct:creator "UPM" ;
+                                                   rdfs:comment "Temporal organization of course-related events."@en .
+
+<http://guia-mad-bench.es/data/evaluation-system-10AZ_2S> rdf:type guide:EvaluationSystem, sch:EvaluationSystem ;
+                                                           dc:title "Introduction To Technology Watch And Competitive I Evaluation System" ,
+                                                               dct:creator "UPM" ;
+                                                           rdfs:comment "Framework for student learning assessment."@en .
+
+<http://guia-mad-bench.es/data/resource-1> rdf:type guide:DidacticResource, sch:BibliographicReference ;
+                                          dc:title "COTEC (1999). Pautas Metodológicas en Gestión de la Tecnología y de la Innovación para Empresas TEMAGUIDE" ,
+                                              dct:creator "Fundación COTEC" ;
+                                          rdfs:comment "Bibliography resource."@en .
+
+<http://guia-mad-bench.es/data/resource-2> rdf:type guide:DidacticResource, sch:BibliographicReference ;
+                                             dc:title "Georghiou et al. (2008). The Handbook of technology foresight" ,
+                                                 dct:creator "Edward Edgar Publishing Ltd." ;
+                                             rdfs:comment "Bibliography resource."@en .
+
+<http://guia-mad-bench.es/data/competency-CB07> rdf:type guide:Competency, sch:EducationalGoal ;
+                                                dc:title "CB07" ,
+                                                    dct:creator "UPM" ;
+                                                rdfs:comment "Apply knowledge in new environments."@en .
+
+<http://guia-mad-bench.es/data/competency-CB08> rdf:type guide:Competency, sch:EducationalGoal ;
+                                                   dc:title "CB08" ,
+                                                       dct:creator "UPM" ;
+                                                   rdfs:comment "Integrate knowledge and face complexity."@en .
+
+<http://guia-mad-bench.es/data/competency-CG01> rdf:type guide:Competency, sch:EducationalGoal ;
+                                                  dc:title "CG01" ,
+                                                      dct:creator "UPM" ;
+                                                  rdfs:comment "Predict and control evolution."@en .
+
+<http://guia-mad-bench.es/data/competency-CE-EIT03> rdf:type guide:Competency, sch:EducationalGoal ;
+                                                       dc:title "CE-EIT03" ,
+                                                           dct:creator "UPM" ;
+                                                       rdfs:comment "Identify technology maturity and develop roadmap."@en .
+
+#################################################################
+#    Relationships (Properties)
+#################################################################
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:name "Introduction To Technology Watch And Competitive I" ;
+                                                       guide:numberOfCredits 1.0 ;
+                                                       dct:creator "Alberto Tejero Lopez" ,
+                                                           "UPM" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:inLanguage "English"@xsd:string ;
+                                                        guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                       dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                        guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ_2S> sch:courseCode 103000843 ;
+                                                       guide:syllabusDescription "Introduction To Technology Watch And Competitive I Syllabus Description"@xsd:string ;
+                                                        dct:title "ANX-PR/CL/001 - LEARNING GUIDE" .
+
+<http://guia-mad-bench.es/data/courseGuide-10AZ
