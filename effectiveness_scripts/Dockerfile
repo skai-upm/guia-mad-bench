@@ -24,4 +24,4 @@ COPY . /app
 
 RUN mkdir -p /cache/huggingface /cache/sentence_transformers && chmod -R 777 /cache
 
-CMD ["python", "efficiency.py", "--help"]
+CMD ["python", "effectiveness.py", "--help"]
