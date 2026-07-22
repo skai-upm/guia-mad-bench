@@ -183,44 +183,10 @@ resources/
     └── my_system/
 ```
 
-## How to cite
-
-If you use GUIA-Madrid-Bench in your research, please cite the associated paper:
-
-```bibtex
-@article{cimmino2026guiamadridbench,
-  title   = {GUIA-Madrid-Bench: A benchmark for RDF generation from unstructured data sources in the academic domain},
-  author  = {Cimmino, Andrea and Amador-Domínguez, Elvira and Mariño-Andrés, Rodrigo and Gayoso-Cabada, Joaquín},
-  journal = {Information Processing & Management},
-  year    = {2026},
-  note    = {To appear}
-}
-```
-
-If you use the repository, dataset, scripts, or ontology directly, please also cite the software repository:
-
-```bibtex
-@software{guia_madrid_bench_repository,
-  title  = {GUIA-Madrid-Bench},
-  author = {Cimmino, Andrea and Amador-Domínguez, Elvira and Mariño-Andrés, Rodrigo and Gayoso-Cabada, Joaquín},
-  year   = {2026},
-  url    = {https://github.com/skai-upm/guia-mad-bench}
-}
-```
-
-Once a DOI is available for the paper or a repository release, replace the placeholder citation with the versioned DOI-based citation.
 
 ## License
 
 This repository is distributed under the Apache License 2.0. See [`LICENSE`](LICENSE).
 
-
-### Acknowledgements
-This project has been partially funded by:
-
- | Project       | Grant |
- |   :---:      |      :---      |
-  | <img height="80" alt="guia-logo" src="https://github.com/user-attachments/assets/84dab4ff-c718-4f07-97bf-54c239fe8f28" /> | The Madrid Government (Comunidad de Madrid-Spain) under the Multiannual Agreement with the Universidad Politécnica de Madrid in the Excellence Programme for University Teaching Staff, in the context of the V PRICIT (Regional Programme of Research and Technological Innovation) through the project [GUIA (M230020126A-AJCA)](https://guia-project.github.io/). <br/><img src="https://github.com/user-attachments/assets/152dc6f1-e418-41bc-9c50-88cc88b33525" height="80"/>|
- | <img src="https://malta.linkeddata.es/malta.png" height="80"/> | The [MALTA](https://malta.linkeddata.es/) project, PID2024-159504OB-I00 funded by MICIU/AEI/10.13039/501100011033 |
 
 
